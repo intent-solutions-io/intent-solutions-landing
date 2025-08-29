@@ -15,7 +15,7 @@ const Footer = () => {
               diagnostic platforms and youth sports development.
             </p>
             <p className="text-background/60 text-sm">
-              © 2024 Intent Solutions Inc. All rights reserved.
+              © 2025 Intent Solutions Inc. All rights reserved.
             </p>
           </div>
           

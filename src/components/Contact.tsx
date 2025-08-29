@@ -38,8 +38,8 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">Get In Touch</div>
-                    <div className="text-muted-foreground">Reach out through our platforms</div>
+                    <div className="font-semibold text-foreground">Contact</div>
+                    <div className="text-muted-foreground text-sm">jeremy@intentsolutions.io</div>
                   </div>
                 </div>
               </div>
