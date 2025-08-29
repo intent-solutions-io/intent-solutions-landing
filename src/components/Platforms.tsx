@@ -53,11 +53,16 @@ const Platforms = () => {
                 variant="cta" 
                 size="lg"
                 onClick={() => window.open('https://diagnosticpro.io', '_blank')}
-                className="px-8 py-4"
+                className="px-8 py-4 mb-4"
               >
                 Explore DiagnosticPro
                 <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
+              
+              <div className="bg-muted/50 p-4 rounded-lg border border-border">
+                <p className="text-sm text-muted-foreground mb-2">Support & Expert Inquiries</p>
+                <p className="font-medium text-foreground text-sm">support@diagnosticpro.io</p>
+              </div>
             </div>
             
             <div className="order-1 lg:order-2">
