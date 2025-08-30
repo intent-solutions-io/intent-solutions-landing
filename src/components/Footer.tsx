@@ -55,7 +55,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://www.linkedin.com/in/jeremylongshore/" 
+                  href="https://www.linkedin.com/company/intent-solutions-inc/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-background/80 hover:text-background transition-colors flex items-center"
