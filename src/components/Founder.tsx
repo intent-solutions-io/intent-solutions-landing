@@ -63,7 +63,7 @@ const Founder = () => {
                   
                   <Button 
                     variant="outline"
-                    onClick={() => window.open('https://www.linkedin.com/in/jeremylongshore/', '_blank')}
+                    onClick={() => window.open('https://www.linkedin.com/company/intent-solutions-inc/', '_blank')}
                   >
                     LinkedIn Profile
                     <ExternalLink className="ml-2 h-4 w-4" />
