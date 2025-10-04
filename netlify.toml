@@ -1,0 +1,30 @@
+[build]
+  command = "bun install && bun run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  BUN_VERSION = "1.0.0"
+
+[[redirects]]
+  from = "http://intentsolutions.io/*"
+  to = "https://intentsolutions.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.intentsolutions.io/*"
+  to = "https://intentsolutions.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.intentsolutions.io/*"
+  to = "https://intentsolutions.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
