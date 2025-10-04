@@ -25,3 +25,25 @@ dist-ssr
 
 # Local Netlify folder
 .netlify
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Security
+*.pem
+*.key
+*.cert
+.secrets/
+
+# IDE (additional exclusions)
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# CI/CD
+.github/workflows/*.secrets
