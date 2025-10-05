@@ -170,12 +170,11 @@ Comprehensive documentation in project root (numeric prefixes for organization):
 - `10-SECURITY.md` - Security practices
 
 ### Claude-Generated Documentation
-All AI-generated audits, reports, and analysis documents are stored in:
-- `claudes-docs/` - Claude audit reports, analysis, and documentation
-  - `audits/` - System audits and assessments (7 files)
-  - `reports/` - Transformation and release reports (6 files)
-  - `analysis/` - DevOps and system analysis (1 file - 49KB)
-  - `plans/`, `tasks/`, `logs/`, `misc/` - Future use
+All AI-generated audits, reports, and analysis documents are in 01-Docs:
+- `01-Docs/audits/` - System audits and assessments (7 files)
+- `01-Docs/reports/` - Transformation and release reports (6 files)
+- `01-Docs/analysis/` - DevOps and system analysis (2 files)
+- `01-Docs/plans/`, `tasks/`, `logs/`, `misc/` - Future use
 
 ## Critical Notes
 
