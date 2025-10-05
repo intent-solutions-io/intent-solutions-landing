@@ -16,7 +16,8 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./02-Src"),
     },
   },
+  publicDir: "04-Assets",
 }));
