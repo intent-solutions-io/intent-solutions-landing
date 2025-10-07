@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 6 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 6 of 15</span>
+            <span class="text-sm text-zinc-400">40%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 40%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">game/competition logging</h1>
+          <p class="text-zinc-400 mb-12">what information matters most after games?</p>
+
+          <div class="space-y-12">
+            <!-- Question 22: Game information to capture -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                22. After a game or competition, what information do you NEED to capture? (Select must-haves)
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="date-time" />
+                  <span>Date and time</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="opponent" />
+                  <span>Opponent or event name</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="score-result" />
+                  <span>Final score/result (W/L/T or placement)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="playing-time" />
+                  <span>Playing time/participation</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="stats" />
+                  <span>Key stats (goals, points, times, etc.)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="performance-rating" />
+                  <span>Personal performance rating (1-5)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="emotional" />
+                  <span>How they felt emotionally</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="soreness" />
+                  <span>Body soreness/injuries</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="highlight" />
+                  <span>Favorite moment or highlight</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="coach-feedback" />
+                  <span>Coach feedback</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="gameInfo" value="weather" />
+                  <span>Weather conditions (for outdoor sports)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 23: Practice logging -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                23. For practice logging, what matters most? (Select must-haves)
+              </label>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="date-time" />
+                  <span>Date and time</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="duration" />
+                  <span>Duration</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="location" />
+                  <span>Location/facility</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="skills" />
+                  <span>Skills worked on (tags/categories)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="effort-rating" />
+                  <span>Effort level or focus rating (1-5)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="felt" />
+                  <span>How they felt</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="weather" />
+                  <span>Weather conditions</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="soreness" />
+                  <span>Body soreness</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="practiceInfo" value="breakthrough" />
+                  <span>Favorite moment or breakthrough</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 24: Sport-specific stats -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                24. Should stats be sport-specific (e.g., goals for soccer, hits for baseball)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="sportSpecificStats" value="yes-customize" required />
+                  <span>Yes, customize fields per sport</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="sportSpecificStats" value="no-simple" />
+                  <span>No, keep it simple and universal</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="sportSpecificStats" value="let-me-choose" />
+                  <span>Let me choose which fields to track</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      nextBtn?.addEventListener('click', () => {
+        const gameInfo = document.querySelectorAll('input[name="gameInfo"]:checked');
+        const sportSpecific = document.querySelector('input[name="sportSpecificStats"]:checked');
+
+        if (gameInfo.length === 0) {
+          alert('Please select at least one must-have for game logging');
+          return;
+        }
+
+        if (!sportSpecific) {
+          alert('Please answer: Should stats be sport-specific?');
+          return;
+        }
+
+        const sectionData = {
+          gameInfo: Array.from(gameInfo).map((el: any) => el.value),
+          practiceInfo: Array.from(document.querySelectorAll('input[name="practiceInfo"]:checked')).map((el: any) => el.value),
+          sportSpecificStats: (sportSpecific as HTMLInputElement).value
+        };
+
+        sessionStorage.setItem('survey_section_6', JSON.stringify(sectionData));
+        window.location.href = '/survey/7';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/5');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option, .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover, .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input, .checkbox-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span, .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,245 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 10 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 10 of 15</span>
+            <span class="text-sm text-zinc-400">67%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 67%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">motivation & gamification</h1>
+          <p class="text-zinc-400 mb-12">keeping athletes engaged with logging</p>
+
+          <div class="space-y-12">
+            <!-- Question 39: Achievement motivation -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                39. Would private achievements (badges, streaks, points) motivate your child to log consistently?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">No effect</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="achievementMotivation" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="achievementMotivation" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="achievementMotivation" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="achievementMotivation" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="achievementMotivation" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Big motivator</span>
+              </div>
+            </div>
+
+            <!-- Question 40: Badge preferences (pick up to 3) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                40. Which badges would your child care about? (Pick up to 3)
+              </label>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="first-win" class="badge-check" />
+                  <span>First Win Logged</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="100-hours" class="badge-check" />
+                  <span>100 Practice Hours</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="30-day-streak" class="badge-check" />
+                  <span>30-Day Logging Streak</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="century-club" class="badge-check" />
+                  <span>Century Club (100 total logs)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="triple-threat" class="badge-check" />
+                  <span>Triple Threat (game, practice, and training in one week)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="iron-athlete" class="badge-check" />
+                  <span>Iron Athlete (50 games logged)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="perfect-week" class="badge-check" />
+                  <span>Perfect Week (logged every day)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="badges" value="season-champion" class="badge-check" />
+                  <span>Season Champion (logged full season)</span>
+                </label>
+              </div>
+              <p class="text-sm text-zinc-500 mt-3">Select up to 3 badges</p>
+            </div>
+
+            <!-- Question 41: Badge privacy -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                41. Badges should be:
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="badgePrivacy" value="private-only" required />
+                  <span>Private to family only (default)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="badgePrivacy" value="shareable" />
+                  <span>Shareable if my child wants</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="badgePrivacy" value="not-interested" />
+                  <span>Not interested in badges</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      // Limit badges to 3 selections
+      const badgeChecks = document.querySelectorAll('.badge-check');
+      badgeChecks.forEach(check => {
+        check.addEventListener('change', () => {
+          const checked = document.querySelectorAll('.badge-check:checked');
+          if (checked.length > 3) {
+            (check as HTMLInputElement).checked = false;
+            alert('Please select up to 3 badges');
+          }
+        });
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        const motivation = document.querySelector('input[name="achievementMotivation"]:checked');
+        const privacy = document.querySelector('input[name="badgePrivacy"]:checked');
+
+        if (!motivation) {
+          alert('Please rate: Achievement motivation (1-5)');
+          return;
+        }
+
+        if (!privacy) {
+          alert('Please answer: Badge privacy preference');
+          return;
+        }
+
+        const sectionData = {
+          achievementMotivation: (motivation as HTMLInputElement).value,
+          badges: Array.from(document.querySelectorAll('input[name="badges"]:checked')).map((el: any) => el.value),
+          badgePrivacy: (privacy as HTMLInputElement).value
+        };
+
+        sessionStorage.setItem('survey_section_10', JSON.stringify(sectionData));
+        window.location.href = '/survey/11';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/9');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option, .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover, .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input, .checkbox-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span, .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    .rating-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .rating-option input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option span {
+      color: rgb(228 228 231);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

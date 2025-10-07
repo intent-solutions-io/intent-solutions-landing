@@ -1,0 +1,294 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="HUSTLE Survey - Section 13 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 13 of 15</span>
+            <span class="text-sm text-zinc-400">87%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 87%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">future features</h1>
+          <p class="text-zinc-400 mb-12">what comes next?</p>
+
+          <div class="space-y-12">
+            <!-- Question 48: AI assistance interest -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                48. Would AI-assisted logging be helpful? (Example: "I saw your kid played today—log it with one tap?")
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="aiAssistance" value="very-helpful" required />
+                  <span>Yes, that sounds very helpful</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="aiAssistance" value="maybe" />
+                  <span>Maybe, depends on accuracy</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="aiAssistance" value="no-too-creepy" />
+                  <span>No, feels too invasive</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="aiAssistance" value="not-sure" />
+                  <span>Not sure</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 49: Video integration -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                49. Would you pay extra for video storage and highlight reels?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="videoStorage" value="yes" required />
+                  <span>Yes, this is a must-have for us</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="videoStorage" value="maybe" />
+                  <span>Maybe, depends on price</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="videoStorage" value="no" />
+                  <span>No, we use other tools for this</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 50: Coach/team integration -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                50. Should coaches or team admins be able to log on behalf of the team?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="coachLogging" value="yes-with-approval" required />
+                  <span>Yes, but I approve what gets added to my child's record</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="coachLogging" value="yes-auto" />
+                  <span>Yes, auto-sync team logs to my child's profile</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="coachLogging" value="no" />
+                  <span>No, I want full control</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 51: Feature wishlist (pick up to 5) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                51. Which future features excite you most? (Pick up to 5)
+              </label>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="team-calendar" class="feature-check" />
+                  <span>Shared team calendar (games, practices)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="recruiting-profile" class="feature-check" />
+                  <span>College recruiting profile builder</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="carpool-coordination" class="feature-check" />
+                  <span>Carpool coordination</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="expense-tracking" class="feature-check" />
+                  <span>Expense tracking (gear, travel, fees)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="multi-sport-view" class="feature-check" />
+                  <span>Multi-sport dashboard (see all kids at once)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="injury-prevention" class="feature-check" />
+                  <span>Injury prevention alerts</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="nutrition-hydration" class="feature-check" />
+                  <span>Nutrition and hydration tracking</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="mental-health" class="feature-check" />
+                  <span>Mental health check-ins</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="coach-feedback" class="feature-check" />
+                  <span>Direct coach feedback/messaging</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="peer-comparison" class="feature-check" />
+                  <span>Peer comparison (same age/sport)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="tournament-finder" class="feature-check" />
+                  <span>Tournament and showcase finder</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="futureFeatures" value="skill-tutorials" class="feature-check" />
+                  <span>Skill-building tutorials/drills</span>
+                </label>
+              </div>
+              <p class="text-sm text-zinc-500 mt-3">Select up to 5 features</p>
+            </div>
+
+            <!-- Question 52: Social features -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                52. Would you want a private parent community (e.g., forum, tips, Q&A)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="parentCommunity" value="yes" required />
+                  <span>Yes, I'd participate</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="parentCommunity" value="maybe-lurk" />
+                  <span>Maybe, I'd read but not post</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="parentCommunity" value="no" />
+                  <span>No, not interested</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      // Limit future features to 5 selections
+      const featureChecks = document.querySelectorAll('.feature-check');
+      featureChecks.forEach(check => {
+        check.addEventListener('change', () => {
+          const checked = document.querySelectorAll('.feature-check:checked');
+          if (checked.length > 5) {
+            (check as HTMLInputElement).checked = false;
+            alert('Please select up to 5 features');
+          }
+        });
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        const ai = document.querySelector('input[name="aiAssistance"]:checked');
+        const video = document.querySelector('input[name="videoStorage"]:checked');
+        const coach = document.querySelector('input[name="coachLogging"]:checked');
+        const community = document.querySelector('input[name="parentCommunity"]:checked');
+
+        if (!ai) {
+          alert('Please answer: AI-assisted logging interest');
+          return;
+        }
+
+        if (!video) {
+          alert('Please answer: Video storage interest');
+          return;
+        }
+
+        if (!coach) {
+          alert('Please answer: Coach/team integration preference');
+          return;
+        }
+
+        if (!community) {
+          alert('Please answer: Parent community interest');
+          return;
+        }
+
+        const sectionData = {
+          aiAssistance: (ai as HTMLInputElement).value,
+          videoStorage: (video as HTMLInputElement).value,
+          coachLogging: (coach as HTMLInputElement).value,
+          futureFeatures: Array.from(document.querySelectorAll('input[name="futureFeatures"]:checked')).map((el: any) => el.value),
+          parentCommunity: (community as HTMLInputElement).value
+        };
+
+        sessionStorage.setItem('survey_section_13', JSON.stringify(sectionData));
+        window.location.href = '/survey/14';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/12');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option, .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover, .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input, .checkbox-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span, .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,364 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 4 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 4 of 15</span>
+            <span class="text-sm text-zinc-400">27%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 27%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">your pain points</h1>
+          <p class="text-zinc-400 mb-12">help us understand what frustrates you most</p>
+
+          <div class="space-y-12">
+            <!-- Question 14: Frustrations (multi-select, pick up to 3) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                14. What frustrates you MOST about tracking your kid's sports life? (Pick up to 3)
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="scattered-info" class="frustration-check" />
+                  <span>Information scattered across multiple apps/places</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="cant-verify-stats" class="frustration-check" />
+                  <span>Can't verify if stats are accurate</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="hard-see-progress" class="frustration-check" />
+                  <span>Hard to see progress over time</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="overtraining" class="frustration-check" />
+                  <span>Don't know when my kid is overtraining or injured</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="manual-entry" class="frustration-check" />
+                  <span>Too much time spent on manual data entry</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="multi-kid-chaos" class="frustration-check" />
+                  <span>Managing multiple kids in different sports is chaotic</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="no-credible-sharing" class="frustration-check" />
+                  <span>No credible way to share accomplishments with coaches/recruiters</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="losing-track-games" class="frustration-check" />
+                  <span>Losing track of what actually happened at games</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="cant-remember-achievements" class="frustration-check" />
+                  <span>Can't remember tournament results or achievements</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="no-mental-health-tracking" class="frustration-check" />
+                  <span>No way to track mental/emotional health alongside physical</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="expensive-apps" class="frustration-check" />
+                  <span>Expensive apps that don't deliver value</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="too-complicated" class="frustration-check" />
+                  <span>Apps are too complicated to use regularly</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other (please specify):</label>
+                <input
+                  type="text"
+                  name="frustrationsOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Other frustrations..."
+                />
+              </div>
+              <p class="text-sm text-zinc-500 mt-3">Select up to 3 options</p>
+            </div>
+
+            <!-- Question 15: How often forget/lose track -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                15. How often do you forget or lose track of your child's games, tournaments, or training sessions?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="forgetFrequency" value="never" required />
+                  <span>Never—I track everything</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="forgetFrequency" value="rarely" />
+                  <span>Rarely—only special events get missed</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="forgetFrequency" value="sometimes" />
+                  <span>Sometimes—maybe once a month</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="forgetFrequency" value="often" />
+                  <span>Often—we lose track regularly</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="forgetFrequency" value="always-chaos" />
+                  <span>Always—it's total chaos</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 16: Impact rating (1-5 scale) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                16. If this problem was completely solved, how much would that improve your family's sports experience?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">Minimal impact</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="impactRating" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="impactRating" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="impactRating" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="impactRating" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="impactRating" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Life-changing</span>
+              </div>
+            </div>
+
+            <!-- Question 17: Previous tracking apps -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                17. Have you tried sports tracking apps before?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="previousApps" value="currently-using" required id="prev-current" />
+                  <span>Yes, currently using one</span>
+                </label>
+                <div id="current-app-input" class="hidden ml-8">
+                  <input
+                    type="text"
+                    name="currentAppName"
+                    placeholder="Which app?"
+                    class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  />
+                </div>
+
+                <label class="radio-option">
+                  <input type="radio" name="previousApps" value="tried-stopped" id="prev-stopped" />
+                  <span>Yes, tried but stopped using</span>
+                </label>
+                <div id="stopped-reason-input" class="hidden ml-8">
+                  <input
+                    type="text"
+                    name="stoppedReason"
+                    placeholder="Why did you stop?"
+                    class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  />
+                </div>
+
+                <label class="radio-option">
+                  <input type="radio" name="previousApps" value="looked-for-one" />
+                  <span>No, but I've looked for one</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="previousApps" value="never-thought" />
+                  <span>No, never thought about it</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      // Limit frustrations to 3 selections
+      const frustrationChecks = document.querySelectorAll('.frustration-check');
+      frustrationChecks.forEach(check => {
+        check.addEventListener('change', () => {
+          const checked = document.querySelectorAll('.frustration-check:checked');
+          if (checked.length > 3) {
+            (check as HTMLInputElement).checked = false;
+            alert('Please select up to 3 frustrations');
+          }
+        });
+      });
+
+      // Show/hide conditional inputs
+      const prevCurrent = document.getElementById('prev-current');
+      const prevStopped = document.getElementById('prev-stopped');
+      const currentAppInput = document.getElementById('current-app-input');
+      const stoppedReasonInput = document.getElementById('stopped-reason-input');
+
+      prevCurrent?.addEventListener('change', () => {
+        if ((prevCurrent as HTMLInputElement).checked) {
+          currentAppInput?.classList.remove('hidden');
+          stoppedReasonInput?.classList.add('hidden');
+        }
+      });
+
+      prevStopped?.addEventListener('change', () => {
+        if ((prevStopped as HTMLInputElement).checked) {
+          stoppedReasonInput?.classList.remove('hidden');
+          currentAppInput?.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('input[name="previousApps"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          const target = e.target as HTMLInputElement;
+          if (target.value !== 'currently-using') currentAppInput?.classList.add('hidden');
+          if (target.value !== 'tried-stopped') stoppedReasonInput?.classList.add('hidden');
+        });
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        const frustrations = document.querySelectorAll('input[name="frustrations"]:checked');
+        const forgetFreq = document.querySelector('input[name="forgetFrequency"]:checked');
+        const impact = document.querySelector('input[name="impactRating"]:checked');
+        const prevApps = document.querySelector('input[name="previousApps"]:checked');
+
+        if (frustrations.length === 0) {
+          alert('Please select at least one frustration');
+          return;
+        }
+
+        if (!forgetFreq) {
+          alert('Please answer: How often do you forget/lose track?');
+          return;
+        }
+
+        if (!impact) {
+          alert('Please rate the impact (1-5)');
+          return;
+        }
+
+        if (!prevApps) {
+          alert('Please answer: Have you tried sports tracking apps?');
+          return;
+        }
+
+        const sectionData = {
+          frustrations: Array.from(frustrations).map((el: any) => el.value),
+          frustrationsOther: (document.querySelector('input[name="frustrationsOther"]') as HTMLInputElement)?.value || '',
+          forgetFrequency: (forgetFreq as HTMLInputElement).value,
+          impactRating: (impact as HTMLInputElement).value,
+          previousApps: (prevApps as HTMLInputElement).value,
+          currentAppName: (document.querySelector('input[name="currentAppName"]') as HTMLInputElement)?.value || '',
+          stoppedReason: (document.querySelector('input[name="stoppedReason"]') as HTMLInputElement)?.value || ''
+        };
+
+        sessionStorage.setItem('survey_section_4', JSON.stringify(sectionData));
+        window.location.href = '/survey/5';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/3');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option, .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover, .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input, .checkbox-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .rating-option input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option span {
+      color: rgb(228 228 231);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,415 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 15 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <!-- Sticky Progress Bar -->
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 15 of 15 - final step!</span>
+            <span class="text-sm text-zinc-400">100%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Survey Form -->
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">beta testing & contact</h1>
+          <p class="text-zinc-400 mb-12">
+            almost done! help us launch hustle and get 1 year free access
+          </p>
+
+          <form
+            name="hustle-survey"
+            method="POST"
+            data-netlify="true"
+            data-netlify-redirect="/survey/thank-you"
+            netlify-honeypot="bot-field"
+            class="space-y-12"
+            id="final-form"
+          >
+            <!-- Hidden fields for Netlify -->
+            <input type="hidden" name="form-name" value="hustle-survey" />
+
+            <!-- Honeypot spam protection -->
+            <p class="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
+
+            <!-- All previous section data will be injected here as hidden fields -->
+            <div id="hidden-data"></div>
+
+            <!-- Question 61: Beta Interest -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                61. Are you interested in beta testing this app?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="betaInterest" value="yes-signup" required />
+                  <span>Yes! Sign me up for beta access + 1 year free</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="betaInterest" value="maybe" />
+                  <span>Maybe, tell me more first</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="betaInterest" value="no-feedback-only" />
+                  <span>No, just wanted to share feedback</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 62: Time Commitment -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                62. If selected for beta, how much time could you commit to testing and feedback?
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="timeCommitment" value="10-15min" />
+                  <span>10-15 minutes per week (quick feedback)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeCommitment" value="30-45min" />
+                  <span>30-45 minutes per week (regular testing)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeCommitment" value="1hr-plus" />
+                  <span>1+ hours per week (power user testing)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeCommitment" value="cant-commit" />
+                  <span>Can't commit to specific time</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 63: Email (REQUIRED) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                63. Email address for beta access and updates:
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                placeholder="your@email.com"
+              />
+              <p class="text-sm text-zinc-500 mt-2">
+                We'll never share your email or spam you. Promise.
+              </p>
+            </div>
+
+            <!-- Question 64: Phone (Optional) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                64. Phone number (optional, for beta testing coordination):
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                placeholder="(555) 123-4567"
+              />
+            </div>
+
+            <!-- Question 65: Best Sports for Beta -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                65. Best sport(s) for us to focus on first in beta?
+              </label>
+              <input
+                type="text"
+                name="bestSportsForBeta"
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                placeholder="e.g., Soccer, Basketball..."
+              />
+            </div>
+
+            <!-- Question 66: Video Interview -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                66. Would you be willing to do a 15-minute video interview to share your experience in more depth?
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="videoInterview" value="yes-love-to" />
+                  <span>Yes, I'd love to help</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="videoInterview" value="maybe-timing" />
+                  <span>Maybe, depends on timing</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="videoInterview" value="no-thanks" />
+                  <span>No thanks</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 67: Sports Parent Groups -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                67. Are you active in sports parent groups (Facebook, team chats, etc.)?
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="parentGroups" value="very-active" />
+                  <span>Yes, very active</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="parentGroups" value="somewhat-active" />
+                  <span>Somewhat active</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="parentGroups" value="not-really" />
+                  <span>Not really</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="parentGroups" value="no" />
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 68: How They Heard -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                68. How did you hear about this survey?
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="heardAbout" value="social-media" />
+                  <span>Social media</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="heardAbout" value="friend-recommendation" />
+                  <span>Friend/parent recommendation</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="heardAbout" value="coach-shared" />
+                  <span>Coach shared it</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="heardAbout" value="team-communication" />
+                  <span>Team/club communication</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="heardAbout" value="online-search" />
+                  <span>Online search</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other (please specify):</label>
+                <input
+                  type="text"
+                  name="heardAboutOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Other source..."
+                />
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between items-center pt-8 border-t border-zinc-800">
+              <button
+                type="button"
+                id="back-btn"
+                class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth"
+              >
+                ← back
+              </button>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="btn-primary px-8 py-4 text-lg"
+              >
+                submit survey
+              </button>
+            </div>
+
+            <p class="text-center text-sm text-zinc-500 mt-4">
+              By submitting, you agree to our <a href="/privacy" class="underline hover:text-zinc-300">privacy policy</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('final-form') as HTMLFormElement;
+      const submitBtn = document.getElementById('submit-btn');
+      const backBtn = document.getElementById('back-btn');
+      const hiddenDataContainer = document.getElementById('hidden-data');
+
+      // Check if user has consented
+      const consent = sessionStorage.getItem('survey_consent');
+      if (!consent || consent !== 'yes') {
+        window.location.href = '/survey/1';
+        return;
+      }
+
+      // Collect ALL sessionStorage data and inject as hidden fields
+      function injectSessionData() {
+        const allData: any = {};
+
+        // Collect all survey sections from sessionStorage
+        for (let i = 1; i <= 15; i++) {
+          const sectionData = sessionStorage.getItem(`survey_section_${i}`);
+          if (sectionData) {
+            try {
+              const parsed = JSON.parse(sectionData);
+              Object.assign(allData, parsed);
+            } catch (e) {
+              console.error(`Error parsing section ${i}:`, e);
+            }
+          }
+        }
+
+        // Create hidden inputs for all collected data
+        if (hiddenDataContainer) {
+          Object.entries(allData).forEach(([key, value]) => {
+            if (Array.isArray(value)) {
+              // For arrays (checkboxes), create multiple inputs with same name
+              value.forEach((item: any) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = String(item);
+                hiddenDataContainer.appendChild(input);
+              });
+            } else {
+              // For single values
+              const input = document.createElement('input');
+              input.type = 'hidden';
+              input.name = key;
+              input.value = String(value);
+              hiddenDataContainer.appendChild(input);
+            }
+          });
+        }
+      }
+
+      // Inject session data on page load
+      injectSessionData();
+
+      // Handle form submission
+      form?.addEventListener('submit', (e) => {
+        const betaInterest = document.querySelector('input[name="betaInterest"]:checked');
+        const email = document.querySelector('input[name="email"]') as HTMLInputElement;
+
+        if (!betaInterest) {
+          e.preventDefault();
+          alert('Please answer: Are you interested in beta testing?');
+          return;
+        }
+
+        if (!email || !email.value) {
+          e.preventDefault();
+          alert('Please provide your email address');
+          return;
+        }
+
+        // Save final section data
+        const finalData = {
+          betaInterest: (betaInterest as HTMLInputElement).value,
+          timeCommitment: (document.querySelector('input[name="timeCommitment"]:checked') as HTMLInputElement)?.value || '',
+          email: email.value,
+          phone: (document.querySelector('input[name="phone"]') as HTMLInputElement)?.value || '',
+          bestSportsForBeta: (document.querySelector('input[name="bestSportsForBeta"]') as HTMLInputElement)?.value || '',
+          videoInterview: (document.querySelector('input[name="videoInterview"]:checked') as HTMLInputElement)?.value || '',
+          parentGroups: (document.querySelector('input[name="parentGroups"]:checked') as HTMLInputElement)?.value || '',
+          heardAbout: (document.querySelector('input[name="heardAbout"]:checked') as HTMLInputElement)?.value || '',
+          heardAboutOther: (document.querySelector('input[name="heardAboutOther"]') as HTMLInputElement)?.value || ''
+        };
+
+        sessionStorage.setItem('survey_section_15', JSON.stringify(finalData));
+
+        // Let form submit naturally to Netlify
+        // After successful submission, Netlify will redirect to /survey/thank-you
+        // Clear sessionStorage after a short delay to ensure form submits
+        setTimeout(() => {
+          sessionStorage.clear();
+        }, 1000);
+      });
+
+      // Back button
+      backBtn?.addEventListener('click', () => {
+        window.location.href = '/survey/2';
+      });
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input[type="radio"] {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .question-block {
+        padding: 1.5rem;
+      }
+
+      .radio-option input[type="radio"] {
+        min-width: 24px;
+        min-height: 24px;
+      }
+    }
+  </style>
+</Layout>

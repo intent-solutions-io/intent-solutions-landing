@@ -1,0 +1,346 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 7 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 7 of 15</span>
+            <span class="text-sm text-zinc-400">47%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 47%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">parent control & multi-kid management</h1>
+          <p class="text-zinc-400 mb-12">managing multiple athletes and keeping oversight</p>
+
+          <div class="space-y-12">
+            <!-- Question 25: Multi-kid importance -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                25. How important is it that ONE parent account can manage multiple kids in different sports?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">Not important</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="multiKidImportance" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="multiKidImportance" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="multiKidImportance" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="multiKidImportance" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="multiKidImportance" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Essential</span>
+              </div>
+            </div>
+
+            <!-- Question 26: Parent notes importance -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                26. Would you want to add notes/comments to your child's logs?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">Not needed</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="notesImportance" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="notesImportance" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="notesImportance" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="notesImportance" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="notesImportance" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Very important</span>
+              </div>
+            </div>
+
+            <!-- Question 27: Correction workflow -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                27. If your child logs something incorrectly, how should corrections work?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="corrections" value="suggest-fix" required />
+                  <span>I want to suggest a fix (they approve it)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="corrections" value="full-edit" />
+                  <span>I want full edit rights (I can change it directly)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="corrections" value="trust-kid" />
+                  <span>I trust my kid to log accurately</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 28: Export importance -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                28. How important is exporting data (CSV/PDF) for college recruiting or records?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">Not important</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="exportImportance" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="exportImportance" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="exportImportance" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="exportImportance" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="exportImportance" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Critical</span>
+              </div>
+            </div>
+
+            <!-- Question 29: Notifications -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                29. What notifications would be helpful? (Select all that apply)
+              </label>
+
+              <div class="space-y-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="notifications" value="new-activity" />
+                  <span>When your child logs a new activity</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="notifications" value="coach-verifies" />
+                  <span>When a coach verifies (or questions) a stat</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="notifications" value="milestones" />
+                  <span>Achievement milestones (e.g., "100 practices logged!")</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="notifications" value="injury-patterns" />
+                  <span>Injury/soreness patterns detected</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="notifications" value="weekly-summary" />
+                  <span>Weekly summary of activity</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="notifications" value="event-reminders" />
+                  <span>Upcoming events reminder</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="notifications" value="none" />
+                  <span>None—I'll check the app when I want</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 30: Notification frequency -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                30. How often would you want notifications?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="notificationFrequency" value="real-time" required />
+                  <span>Real-time (as things happen)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="notificationFrequency" value="daily" />
+                  <span>Once daily (evening digest)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="notificationFrequency" value="weekly" />
+                  <span>Once weekly (Sunday summary)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="notificationFrequency" value="off" />
+                  <span>Off by default (I'll open the app)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      nextBtn?.addEventListener('click', () => {
+        const multiKid = document.querySelector('input[name="multiKidImportance"]:checked');
+        const notes = document.querySelector('input[name="notesImportance"]:checked');
+        const corrections = document.querySelector('input[name="corrections"]:checked');
+        const exportImp = document.querySelector('input[name="exportImportance"]:checked');
+        const notifFreq = document.querySelector('input[name="notificationFrequency"]:checked');
+
+        if (!multiKid) {
+          alert('Please rate: Multi-kid management importance');
+          return;
+        }
+
+        if (!notes) {
+          alert('Please rate: Parent notes importance');
+          return;
+        }
+
+        if (!corrections) {
+          alert('Please answer: How should corrections work?');
+          return;
+        }
+
+        if (!exportImp) {
+          alert('Please rate: Export data importance');
+          return;
+        }
+
+        if (!notifFreq) {
+          alert('Please answer: Notification frequency preference');
+          return;
+        }
+
+        const sectionData = {
+          multiKidImportance: (multiKid as HTMLInputElement).value,
+          notesImportance: (notes as HTMLInputElement).value,
+          corrections: (corrections as HTMLInputElement).value,
+          exportImportance: (exportImp as HTMLInputElement).value,
+          notifications: Array.from(document.querySelectorAll('input[name="notifications"]:checked')).map((el: any) => el.value),
+          notificationFrequency: (notifFreq as HTMLInputElement).value
+        };
+
+        sessionStorage.setItem('survey_section_7', JSON.stringify(sectionData));
+        window.location.href = '/survey/8';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/6');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option, .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover, .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input, .checkbox-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span, .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    .rating-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .rating-option input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option span {
+      color: rgb(228 228 231);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

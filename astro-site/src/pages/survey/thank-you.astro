@@ -1,0 +1,110 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Thank You! - Hustle Survey">
+  <div class="min-h-screen bg-zinc-900 flex items-center justify-center">
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <!-- Success Icon -->
+          <div class="mb-8">
+            <div class="inline-flex items-center justify-center w-24 h-24 bg-zinc-800/50 rounded-full border-2 border-zinc-200">
+              <svg class="w-12 h-12 text-zinc-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-hero font-extrabold text-zinc-50 mb-6">
+            thank you! you're on the list
+          </h1>
+
+          <p class="text-xl text-zinc-300 mb-12 leading-relaxed">
+            your feedback will directly shape HUSTLE
+          </p>
+
+          <!-- What Happens Next -->
+          <div class="card-slate text-left mb-12">
+            <h2 class="text-h2 font-bold text-zinc-50 mb-4">what happens next:</h2>
+            <ul class="space-y-3 text-zinc-300">
+              <li class="flex items-start">
+                <span class="text-zinc-200 mr-3">→</span>
+                <span>if you're selected for beta testing, we'll email you with next steps</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-zinc-200 mr-3">→</span>
+                <span>beta testers get <strong class="text-zinc-100">1 year free access</strong> as a thank-you for helping us build something amazing</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-zinc-200 mr-3">→</span>
+                <span>we'll keep you updated on HUSTLE's progress and launch date</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Share Section -->
+          <div class="mb-12">
+            <p class="text-zinc-400 mb-4">know other sports parents who'd want to help?</p>
+            <p class="text-sm text-zinc-500 mb-6">share this survey with your team, club, or parent groups</p>
+
+            <div class="flex justify-center gap-4">
+              <a
+                href="sms:?body=Help build HUSTLE, the ultimate youth sports tracking app! Take this 10-min survey and get 1 year free access: https://intentsolutions.io/survey"
+                class="px-6 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-200 hover:border-zinc-400 transition-smooth"
+              >
+                📱 text
+              </a>
+              <a
+                href="mailto:?subject=Help Build HUSTLE - Youth Sports Tracking App&body=I just completed this survey for HUSTLE, a new youth sports tracking app. They're looking for feedback from competitive sports parents.%0A%0ATake the 10-minute survey and get 1 year free access when they launch:%0Ahttps://intentsolutions.io/survey"
+                class="px-6 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-200 hover:border-zinc-400 transition-smooth"
+              >
+                ✉️ email
+              </a>
+            </div>
+          </div>
+
+          <!-- About Intent Solutions -->
+          <div class="pt-12 border-t border-zinc-800">
+            <p class="text-zinc-500 mb-4">brought to you by</p>
+            <p class="font-semibold text-zinc-50 text-xl mb-2">intent solutions io</p>
+            <p class="text-sm text-zinc-400 mb-6">creating industries that don't exist</p>
+
+            <div class="flex justify-center gap-6 text-sm mb-8">
+              <a
+                href="mailto:jeremy@intentsolutions.io"
+                class="text-zinc-400 hover:text-zinc-200 transition-smooth"
+              >
+                email
+              </a>
+              <a
+                href="https://github.com/jeremylongshore"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-zinc-400 hover:text-zinc-200 transition-smooth"
+              >
+                github
+              </a>
+              <a
+                href="https://startaitools.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-zinc-400 hover:text-zinc-200 transition-smooth"
+              >
+                blog
+              </a>
+            </div>
+
+            <a
+              href="/"
+              class="inline-block btn-primary px-8 py-3"
+            >
+              return to intentsolutions.io
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

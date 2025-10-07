@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="HUSTLE Survey - Section 12 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 12 of 15</span>
+            <span class="text-sm text-zinc-400">80%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 80%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">privacy & data ownership</h1>
+          <p class="text-zinc-400 mb-12">your data belongs to you</p>
+
+          <div class="space-y-12">
+            <!-- Question 45: Data ownership clarity -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                45. How important is it that YOU own your data (not us)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">Not important</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="dataOwnership" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="dataOwnership" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="dataOwnership" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="dataOwnership" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="dataOwnership" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Essential</span>
+              </div>
+            </div>
+
+            <!-- Question 46: Data deletion control -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                46. Should you be able to delete all your child's data at any time?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="dataDeletion" value="yes-instant" required />
+                  <span>Yes, instantly (no questions asked)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="dataDeletion" value="yes-with-backup" />
+                  <span>Yes, but let me download a backup first</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="dataDeletion" value="not-important" />
+                  <span>Not important to me</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 47: Privacy concerns -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                47. What privacy features matter most to you? (Select all that apply)
+              </label>
+
+              <div class="space-y-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="no-ads" />
+                  <span>No ads ever (ad-free promise)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="no-selling-data" />
+                  <span>We never sell your data (transparent policy)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="private-by-default" />
+                  <span>Everything is private by default</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="control-sharing" />
+                  <span>Full control over what gets shared</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="no-location-tracking" />
+                  <span>No location tracking without permission</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="coppa-compliant" />
+                  <span>COPPA-compliant (protects kids under 13)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="encrypted" />
+                  <span>All data encrypted</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="privacyFeatures" value="transparent-access" />
+                  <span>Transparent about who can see what</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      nextBtn?.addEventListener('click', () => {
+        const ownership = document.querySelector('input[name="dataOwnership"]:checked');
+        const deletion = document.querySelector('input[name="dataDeletion"]:checked');
+
+        if (!ownership) {
+          alert('Please rate: Data ownership importance');
+          return;
+        }
+
+        if (!deletion) {
+          alert('Please answer: Data deletion control preference');
+          return;
+        }
+
+        const sectionData = {
+          dataOwnership: (ownership as HTMLInputElement).value,
+          dataDeletion: (deletion as HTMLInputElement).value,
+          privacyFeatures: Array.from(document.querySelectorAll('input[name="privacyFeatures"]:checked')).map((el: any) => el.value)
+        };
+
+        sessionStorage.setItem('survey_section_12', JSON.stringify(sectionData));
+        window.location.href = '/survey/13';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/11');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option, .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover, .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input, .checkbox-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span, .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    .rating-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .rating-option input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option span {
+      color: rgb(228 228 231);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

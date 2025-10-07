@@ -1,0 +1,349 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="HUSTLE Survey - Section 14 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 14 of 15</span>
+            <span class="text-sm text-zinc-400">93%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 93%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">final thoughts</h1>
+          <p class="text-zinc-400 mb-12">help us understand what matters most</p>
+
+          <div class="space-y-12">
+            <!-- Question 53: Pricing expectations -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                53. If this solved your tracking problem, what would you pay per month (per family)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="pricing" value="free-only" required />
+                  <span>$0 (only if free)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="pricing" value="under-5" />
+                  <span>Under $5/month</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="pricing" value="5-10" />
+                  <span>$5-10/month</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="pricing" value="10-15" />
+                  <span>$10-15/month</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="pricing" value="15-20" />
+                  <span>$15-20/month</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="pricing" value="over-20" />
+                  <span>$20+/month</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 54: Annual vs monthly -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                54. Would you prefer to pay annually (with a discount)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="paymentFrequency" value="yes-annual" required />
+                  <span>Yes, I'd pay upfront for a discount</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="paymentFrequency" value="monthly-only" />
+                  <span>No, monthly only</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="paymentFrequency" value="depends-discount" />
+                  <span>Depends on the discount</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 55: Free tier interest -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                55. If there was a free tier with limited features, would you start there?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="freeTier" value="yes" required />
+                  <span>Yes, I'd try free first</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="freeTier" value="no-pay-upfront" />
+                  <span>No, I'd pay for the full version upfront</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="freeTier" value="depends-features" />
+                  <span>Depends on what's included in free</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 56: Deal breakers -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                56. What would be a deal-breaker for you? (Select all that apply)
+              </label>
+
+              <div class="space-y-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="ads" />
+                  <span>Ads in the app</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="data-selling" />
+                  <span>Selling user data</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="no-export" />
+                  <span>No data export option</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="slow-buggy" />
+                  <span>Slow or buggy app</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="no-privacy" />
+                  <span>Weak privacy controls</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="no-offline" />
+                  <span>No offline mode</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="too-complex" />
+                  <span>Too complex to use</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="dealBreakers" value="no-customer-support" />
+                  <span>Poor customer support</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 57: Referral likelihood -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                57. If HUSTLE works well, how likely are you to recommend it to other sports parents?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">Not likely</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="referralLikelihood" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="referralLikelihood" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="referralLikelihood" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="referralLikelihood" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="referralLikelihood" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Very likely</span>
+              </div>
+            </div>
+
+            <!-- Question 58: Missing features -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                58. What's the ONE thing we haven't asked about that would make this perfect for you?
+              </label>
+
+              <textarea
+                name="missingFeature"
+                rows="4"
+                placeholder="Tell us what we're missing..."
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Question 59: Biggest concern -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                59. What's your biggest concern or hesitation about using an app like this?
+              </label>
+
+              <textarea
+                name="biggestConcern"
+                rows="4"
+                placeholder="What makes you hesitant?"
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Question 60: Additional feedback -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                60. Any final thoughts, ideas, or feedback?
+              </label>
+
+              <textarea
+                name="additionalFeedback"
+                rows="4"
+                placeholder="Anything else you'd like to share..."
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">final section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      nextBtn?.addEventListener('click', () => {
+        const pricing = document.querySelector('input[name="pricing"]:checked');
+        const payment = document.querySelector('input[name="paymentFrequency"]:checked');
+        const freeTier = document.querySelector('input[name="freeTier"]:checked');
+        const referral = document.querySelector('input[name="referralLikelihood"]:checked');
+
+        if (!pricing) {
+          alert('Please answer: Pricing expectation');
+          return;
+        }
+
+        if (!payment) {
+          alert('Please answer: Payment frequency preference');
+          return;
+        }
+
+        if (!freeTier) {
+          alert('Please answer: Free tier interest');
+          return;
+        }
+
+        if (!referral) {
+          alert('Please rate: Referral likelihood');
+          return;
+        }
+
+        const sectionData = {
+          pricing: (pricing as HTMLInputElement).value,
+          paymentFrequency: (payment as HTMLInputElement).value,
+          freeTier: (freeTier as HTMLInputElement).value,
+          dealBreakers: Array.from(document.querySelectorAll('input[name="dealBreakers"]:checked')).map((el: any) => el.value),
+          referralLikelihood: (referral as HTMLInputElement).value,
+          missingFeature: (document.querySelector('textarea[name="missingFeature"]') as HTMLTextAreaElement)?.value || '',
+          biggestConcern: (document.querySelector('textarea[name="biggestConcern"]') as HTMLTextAreaElement)?.value || '',
+          additionalFeedback: (document.querySelector('textarea[name="additionalFeedback"]') as HTMLTextAreaElement)?.value || ''
+        };
+
+        sessionStorage.setItem('survey_section_14', JSON.stringify(sectionData));
+        window.location.href = '/survey/15';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/13');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option, .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover, .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input, .checkbox-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span, .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    .rating-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .rating-option input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option span {
+      color: rgb(228 228 231);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

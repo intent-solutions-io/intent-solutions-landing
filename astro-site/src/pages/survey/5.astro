@@ -1,0 +1,297 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 5 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 5 of 15</span>
+            <span class="text-sm text-zinc-400">33%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 33%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">the app we're building</h1>
+          <p class="text-zinc-400 mb-8">
+            Imagine an app where your kid (or you) can quickly log every game, practice, and training session with a few taps. Stats get verified by you or their coach. Everything lives in one place, regardless of sport.
+          </p>
+
+          <div class="space-y-12">
+            <!-- Question 18: Value rating -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                18. How valuable would this be to you?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="flex justify-between items-center gap-2">
+                <span class="text-sm text-zinc-400">Not valuable</span>
+                <div class="flex gap-3">
+                  <label class="rating-option">
+                    <input type="radio" name="valueRating" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="valueRating" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="valueRating" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="valueRating" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="rating-option">
+                    <input type="radio" name="valueRating" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <span class="text-sm text-zinc-400">Extremely valuable</span>
+              </div>
+            </div>
+
+            <!-- Question 19: Disappointment if didn't exist -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                19. If this app didn't exist, how disappointed would you be?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="disappointment" value="very-disappointed" required />
+                  <span>Very disappointed—I really need this</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="disappointment" value="somewhat-disappointed" />
+                  <span>Somewhat disappointed</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="disappointment" value="not-disappointed" />
+                  <span>Not disappointed—nice to have only</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="disappointment" value="indifferent" />
+                  <span>Indifferent</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 20: Activity importance ranking -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                20. Which activities matter MOST to track? (Rank 1-4, with 1 being most important)
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                  <select name="rank_games" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
+                    <option value="">Rank...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                  <span class="text-zinc-200">Official games/competitions/meets</span>
+                </div>
+                <div class="flex items-center gap-4">
+                  <select name="rank_practices" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
+                    <option value="">Rank...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                  <span class="text-zinc-200">Team practices</span>
+                </div>
+                <div class="flex items-center gap-4">
+                  <select name="rank_private" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
+                    <option value="">Rank...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                  <span class="text-zinc-200">Private coaching/training sessions</span>
+                </div>
+                <div class="flex items-center gap-4">
+                  <select name="rank_individual" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
+                    <option value="">Rank...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                  <span class="text-zinc-200">Individual skill work (drills, conditioning, etc.)</span>
+                </div>
+              </div>
+              <p class="text-sm text-zinc-500 mt-3">Each rank (1-4) should be used only once</p>
+            </div>
+
+            <!-- Question 21: Import historical data -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                21. Would you want to import historical data (past seasons, achievements)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="importData" value="very-important" required />
+                  <span>Yes, very important</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="importData" value="nice-to-have" />
+                  <span>Nice to have</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="importData" value="not-needed" />
+                  <span>Not needed</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
+            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      nextBtn?.addEventListener('click', () => {
+        const value = document.querySelector('input[name="valueRating"]:checked');
+        const disappointment = document.querySelector('input[name="disappointment"]:checked');
+        const rankGames = (document.querySelector('select[name="rank_games"]') as HTMLSelectElement)?.value;
+        const rankPractices = (document.querySelector('select[name="rank_practices"]') as HTMLSelectElement)?.value;
+        const rankPrivate = (document.querySelector('select[name="rank_private"]') as HTMLSelectElement)?.value;
+        const rankIndividual = (document.querySelector('select[name="rank_individual"]') as HTMLSelectElement)?.value;
+        const importData = document.querySelector('input[name="importData"]:checked');
+
+        if (!value) {
+          alert('Please rate how valuable this would be (1-5)');
+          return;
+        }
+
+        if (!disappointment) {
+          alert('Please answer: How disappointed would you be?');
+          return;
+        }
+
+        if (!rankGames || !rankPractices || !rankPrivate || !rankIndividual) {
+          alert('Please rank all 4 activities');
+          return;
+        }
+
+        // Check for duplicate rankings
+        const ranks = [rankGames, rankPractices, rankPrivate, rankIndividual];
+        const uniqueRanks = new Set(ranks);
+        if (uniqueRanks.size !== 4) {
+          alert('Each rank (1-4) should be used only once');
+          return;
+        }
+
+        if (!importData) {
+          alert('Please answer: Import historical data?');
+          return;
+        }
+
+        const sectionData = {
+          valueRating: (value as HTMLInputElement).value,
+          disappointment: (disappointment as HTMLInputElement).value,
+          rankGames,
+          rankPractices,
+          rankPrivate,
+          rankIndividual,
+          importData: (importData as HTMLInputElement).value
+        };
+
+        sessionStorage.setItem('survey_section_5', JSON.stringify(sectionData));
+        window.location.href = '/survey/6';
+      });
+
+      backBtn?.addEventListener('click', () => window.location.href = '/survey/4');
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .rating-option input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .rating-option span {
+      color: rgb(228 228 231);
+      font-weight: 600;
+    }
+
+    select {
+      min-width: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .question-block { padding: 1.5rem; }
+      .radio-option input { min-width: 24px; min-height: 24px; }
+    }
+  </style>
+</Layout>

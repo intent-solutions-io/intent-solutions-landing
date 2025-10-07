@@ -1,0 +1,480 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 2 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <!-- Sticky Progress Bar -->
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 2 of 15</span>
+            <span class="text-sm text-zinc-400">13%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 13.33%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Survey Form -->
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">your sports family</h1>
+          <p class="text-zinc-400 mb-12">
+            tell us about your competitive athlete(s)
+          </p>
+
+          <div class="space-y-12">
+            <!-- Question 2: Number of athletes -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                2. How many kids do you have playing competitive sports?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="numAthletes" value="1" required />
+                  <span>1 athlete</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="numAthletes" value="2" />
+                  <span>2 athletes</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="numAthletes" value="3" />
+                  <span>3 athletes</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="numAthletes" value="4+" />
+                  <span>4+ athletes</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 3: Grades -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                3. What grades are they in? (Select all that apply)
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="5th-or-younger" />
+                  <span>5th or younger</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="6th" />
+                  <span>6th</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="7th" />
+                  <span>7th</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="8th" />
+                  <span>8th</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="9th" />
+                  <span>9th (Freshman)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="10th" />
+                  <span>10th (Sophomore)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="11th" />
+                  <span>11th (Junior)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="grades" value="12th" />
+                  <span>12th (Senior)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 4: Hours per week -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                4. How many hours per week does your child spend on their sport(s)?
+                <span class="text-zinc-400 text-base font-normal">(Include practices, games, private training)</span>
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="hoursPerWeek" value="1-5" required />
+                  <span>1-5 hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="hoursPerWeek" value="6-10" />
+                  <span>6-10 hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="hoursPerWeek" value="11-15" />
+                  <span>11-15 hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="hoursPerWeek" value="16-20" />
+                  <span>16-20 hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="hoursPerWeek" value="20+" />
+                  <span>20+ hours</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 5: College recruitment -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                5. Is your child pursuing college recruitment opportunities?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="collegeRecruitment" value="actively-recruiting" required />
+                  <span>Yes, actively recruiting now</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="collegeRecruitment" value="planning-soon" />
+                  <span>Yes, planning to start soon</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="collegeRecruitment" value="maybe-future" />
+                  <span>Maybe in the future</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="collegeRecruitment" value="no-plans" />
+                  <span>No recruitment plans</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="collegeRecruitment" value="too-young" />
+                  <span>Too young to think about it yet</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 6: Sports (checkboxes) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                6. Which sports do they play? (Select all that apply)
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="soccer" />
+                  <span>Soccer</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="basketball" />
+                  <span>Basketball</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="baseball" />
+                  <span>Baseball</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="softball" />
+                  <span>Softball</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="football" />
+                  <span>Football</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="lacrosse" />
+                  <span>Lacrosse</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="hockey" />
+                  <span>Hockey (ice or field)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="volleyball" />
+                  <span>Volleyball</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="track-field" />
+                  <span>Track & Field</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="swimming" />
+                  <span>Swimming</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="tennis" />
+                  <span>Tennis</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="golf" />
+                  <span>Golf</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="wrestling" />
+                  <span>Wrestling</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="gymnastics" />
+                  <span>Gymnastics</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="sports" value="dance-cheer" />
+                  <span>Dance/Cheer</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other (please specify):</label>
+                <input
+                  type="text"
+                  name="sportsOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="e.g., Rowing, Fencing, etc."
+                />
+              </div>
+            </div>
+
+            <!-- Question 7: Competition level -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                7. What level(s) are they competing at? (Select all that apply)
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="elite-national" />
+                  <span>Elite/National (e.g., ECNL, MLS Next, AAU, USAG)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="regional-premier" />
+                  <span>Regional/Premier (e.g., NPL, Regional League)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="hs-varsity" />
+                  <span>High School Varsity</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="hs-jv" />
+                  <span>High School JV</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="travel-club" />
+                  <span>Travel/Club</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="rec-local" />
+                  <span>Recreational/Local League</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="odp-state-national" />
+                  <span>ODP or State/National Team</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="competitionLevel" value="academy-dev" />
+                  <span>Academy/Development Program</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other (please specify):</label>
+                <input
+                  type="text"
+                  name="competitionLevelOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Other competition level..."
+                />
+              </div>
+            </div>
+
+            <!-- Question 8: Clubs/Teams -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                8. What club(s), team(s), or program(s) do they play for?
+              </label>
+              <input
+                type="text"
+                name="clubsTeams"
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                placeholder="e.g., ABC Soccer Club, XYZ Academy..."
+              />
+            </div>
+
+            <!-- Question 9: Location -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                9. Where are you located? (City, State or Region)
+              </label>
+              <input
+                type="text"
+                name="location"
+                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                placeholder="e.g., Dallas, TX or Southern California"
+              />
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button
+              type="button"
+              id="back-btn"
+              class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              ← back
+            </button>
+
+            <button
+              type="button"
+              id="next-btn"
+              class="btn-primary px-8 py-3"
+            >
+              next section →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      // Check if user has consented
+      const consent = sessionStorage.getItem('survey_consent');
+      if (!consent || consent !== 'yes') {
+        window.location.href = '/survey/1';
+        return;
+      }
+
+      // Validate and save section data
+      nextBtn?.addEventListener('click', () => {
+        // Validate required fields
+        const numAthletes = document.querySelector('input[name="numAthletes"]:checked');
+        const grades = document.querySelectorAll('input[name="grades"]:checked');
+        const hoursPerWeek = document.querySelector('input[name="hoursPerWeek"]:checked');
+        const recruitment = document.querySelector('input[name="collegeRecruitment"]:checked');
+        const sports = document.querySelectorAll('input[name="sports"]:checked');
+        const competitionLevel = document.querySelectorAll('input[name="competitionLevel"]:checked');
+
+        if (!numAthletes) {
+          alert('Please answer: How many kids do you have playing competitive sports?');
+          return;
+        }
+
+        if (grades.length === 0) {
+          alert('Please select at least one grade level');
+          return;
+        }
+
+        if (!hoursPerWeek) {
+          alert('Please answer: How many hours per week?');
+          return;
+        }
+
+        if (!recruitment) {
+          alert('Please answer: Is your child pursuing college recruitment?');
+          return;
+        }
+
+        if (sports.length === 0) {
+          alert('Please select at least one sport');
+          return;
+        }
+
+        if (competitionLevel.length === 0) {
+          alert('Please select at least one competition level');
+          return;
+        }
+
+        // Save section data
+        const sectionData = {
+          numAthletes: (numAthletes as HTMLInputElement).value,
+          grades: Array.from(grades).map((el: any) => el.value),
+          hoursPerWeek: (hoursPerWeek as HTMLInputElement).value,
+          collegeRecruitment: (recruitment as HTMLInputElement).value,
+          sports: Array.from(sports).map((el: any) => el.value),
+          sportsOther: (document.querySelector('input[name="sportsOther"]') as HTMLInputElement)?.value || '',
+          competitionLevel: Array.from(competitionLevel).map((el: any) => el.value),
+          competitionLevelOther: (document.querySelector('input[name="competitionLevelOther"]') as HTMLInputElement)?.value || '',
+          clubsTeams: (document.querySelector('input[name="clubsTeams"]') as HTMLInputElement)?.value || '',
+          location: (document.querySelector('input[name="location"]') as HTMLInputElement)?.value || ''
+        };
+
+        sessionStorage.setItem('survey_section_2', JSON.stringify(sectionData));
+        window.location.href = '/survey/3';
+      });
+
+      // Back button
+      backBtn?.addEventListener('click', () => {
+        window.location.href = '/survey/1';
+      });
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option,
+    .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover,
+    .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input[type="radio"],
+    .checkbox-option input[type="checkbox"] {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span,
+    .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 768px) {
+      .question-block {
+        padding: 1.5rem;
+      }
+
+      .radio-option input[type="radio"],
+      .checkbox-option input[type="checkbox"] {
+        min-width: 24px;
+        min-height: 24px;
+      }
+    }
+  </style>
+</Layout>

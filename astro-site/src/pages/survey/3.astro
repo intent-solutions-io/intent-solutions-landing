@@ -1,0 +1,294 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Hustle Survey - Section 3 of 15">
+  <div class="min-h-screen bg-zinc-900">
+    <!-- Sticky Progress Bar -->
+    <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-zinc-400">section 3 of 15</span>
+            <span class="text-sm text-zinc-400">20%</span>
+          </div>
+          <div class="relative w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-zinc-200 rounded-full transition-all duration-300" style="width: 20%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Survey Form -->
+    <section class="py-12">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">how you track things now</h1>
+          <p class="text-zinc-400 mb-12">
+            tell us about your current tracking methods
+          </p>
+
+          <div class="space-y-12">
+            <!-- Question 10: Current tracking method -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                10. How do you currently keep track of your child's sports activities?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="currentTracking" value="manual" required />
+                  <span>I track everything manually (notes, spreadsheets, photos)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="currentTracking" value="scattered" />
+                  <span>I track some things, but it's scattered across apps</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="currentTracking" value="want-to-track" />
+                  <span>I want to track but don't have a good system</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="currentTracking" value="kid-remembers" />
+                  <span>I rely on my kid to remember</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="currentTracking" value="coach-handles" />
+                  <span>The coach/team handles it</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="currentTracking" value="dont-track" />
+                  <span>I don't track anything</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 11: Apps/Tools used -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                11. What apps or tools do you currently use for sports tracking? (Select all that apply)
+              </label>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="notes-app" />
+                  <span>Notes app</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="excel-sheets" />
+                  <span>Excel/Google Sheets</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="photos" />
+                  <span>Photos/Camera Roll</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="teamsnap" />
+                  <span>TeamSnap</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="sportsengine" />
+                  <span>SportsEngine/LeagueApps</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="maxpreps" />
+                  <span>MaxPreps</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="hudl" />
+                  <span>Hudl</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="gamechanger" />
+                  <span>GameChanger</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="currentApps" value="no-apps" />
+                  <span>No apps, just memory</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other (please specify):</label>
+                <input
+                  type="text"
+                  name="currentAppsOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Other apps or tools..."
+                />
+              </div>
+            </div>
+
+            <!-- Question 12: Time spent managing -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                12. How much time per week do you spend managing your child's sports logistics (scheduling, stats, communication)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="timeManaging" value="less-1hr" required />
+                  <span>Less than 1 hour</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeManaging" value="1-3hrs" />
+                  <span>1-3 hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeManaging" value="4-6hrs" />
+                  <span>4-6 hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeManaging" value="7-10hrs" />
+                  <span>7-10 hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeManaging" value="more-10hrs" />
+                  <span>More than 10 hours</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 13: Devices used -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                13. What devices would you use for tracking? (Select all that apply)
+              </label>
+
+              <div class="space-y-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="devices" value="iphone" />
+                  <span>iPhone</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="devices" value="android" />
+                  <span>Android phone</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="devices" value="tablet" />
+                  <span>iPad/tablet</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="devices" value="desktop" />
+                  <span>Desktop/laptop</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
+            <button
+              type="button"
+              id="back-btn"
+              class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              ← back
+            </button>
+
+            <button
+              type="button"
+              id="next-btn"
+              class="btn-primary px-8 py-3"
+            >
+              next section →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nextBtn = document.getElementById('next-btn');
+      const backBtn = document.getElementById('back-btn');
+
+      nextBtn?.addEventListener('click', () => {
+        const currentTracking = document.querySelector('input[name="currentTracking"]:checked');
+        const timeManaging = document.querySelector('input[name="timeManaging"]:checked');
+
+        if (!currentTracking) {
+          alert('Please answer: How do you currently keep track?');
+          return;
+        }
+
+        if (!timeManaging) {
+          alert('Please answer: How much time per week managing logistics?');
+          return;
+        }
+
+        const sectionData = {
+          currentTracking: (currentTracking as HTMLInputElement).value,
+          currentApps: Array.from(document.querySelectorAll('input[name="currentApps"]:checked')).map((el: any) => el.value),
+          currentAppsOther: (document.querySelector('input[name="currentAppsOther"]') as HTMLInputElement)?.value || '',
+          timeManaging: (timeManaging as HTMLInputElement).value,
+          devices: Array.from(document.querySelectorAll('input[name="devices"]:checked')).map((el: any) => el.value)
+        };
+
+        sessionStorage.setItem('survey_section_3', JSON.stringify(sectionData));
+        window.location.href = '/survey/4';
+      });
+
+      backBtn?.addEventListener('click', () => {
+        window.location.href = '/survey/2';
+      });
+    });
+  </script>
+
+  <style>
+    .question-block {
+      background: rgba(var(--color-bg-secondary), 0.3);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(39 39 42 / 0.2);
+    }
+
+    .radio-option,
+    .checkbox-option {
+      display: flex;
+      align-items: start;
+      padding: 1rem;
+      background: rgba(var(--color-bg-secondary), 0.5);
+      border: 1px solid rgb(39 39 42);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .radio-option:hover,
+    .checkbox-option:hover {
+      border-color: rgb(161 161 170);
+      background: rgb(39 39 42 / 0.8);
+    }
+
+    .radio-option input[type="radio"],
+    .checkbox-option input[type="checkbox"] {
+      margin-top: 0.125rem;
+      margin-right: 0.75rem;
+      min-width: 20px;
+      min-height: 20px;
+      cursor: pointer;
+    }
+
+    .radio-option span,
+    .checkbox-option span {
+      color: rgb(228 228 231);
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .question-block {
+        padding: 1.5rem;
+      }
+
+      .radio-option input[type="radio"],
+      .checkbox-option input[type="checkbox"] {
+        min-width: 24px;
+        min-height: 24px;
+      }
+    }
+  </style>
+</Layout>
