@@ -25,87 +25,45 @@ import Layout from '../../layouts/Layout.astro';
         <div class="max-w-3xl mx-auto">
           <h1 class="text-h1 font-bold text-zinc-50 mb-4">how you track things now</h1>
           <p class="text-zinc-400 mb-12">
-            tell us about your current tracking methods
+            tell us about your current tracking methods and challenges
           </p>
 
           <div class="space-y-12">
-            <!-- Question 10: Current tracking method -->
+            <!-- Question 10: Current tracking method (Multi-select) -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                10. How do you currently keep track of your child's sports activities?
+                10. How do you currently keep track of your child's sports activities? (Select all that apply)
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
-                <label class="radio-option">
-                  <input type="radio" name="currentTracking" value="manual" required />
-                  <span>I track everything manually (notes, spreadsheets, photos)</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="currentTracking" value="scattered" />
-                  <span>I track some things, but it's scattered across apps</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="currentTracking" value="want-to-track" />
-                  <span>I want to track but don't have a good system</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="currentTracking" value="kid-remembers" />
-                  <span>I rely on my kid to remember</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="currentTracking" value="coach-handles" />
-                  <span>The coach/team handles it</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="currentTracking" value="dont-track" />
+                <label class="checkbox-option">
+                  <input type="checkbox" name="trackingMethods" value="dont-track" />
                   <span>I don't track anything</span>
                 </label>
-              </div>
-            </div>
-
-            <!-- Question 11: Apps/Tools used -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                11. What apps or tools do you currently use for sports tracking? (Select all that apply)
-              </label>
-
-              <div class="grid md:grid-cols-2 gap-3">
                 <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="notes-app" />
-                  <span>Notes app</span>
+                  <input type="checkbox" name="trackingMethods" value="mental-notes" />
+                  <span>Mental notes</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="excel-sheets" />
-                  <span>Excel/Google Sheets</span>
+                  <input type="checkbox" name="trackingMethods" value="paper-calendar" />
+                  <span>Paper calendar/planner</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="photos" />
-                  <span>Photos/Camera Roll</span>
+                  <input type="checkbox" name="trackingMethods" value="phone-notes" />
+                  <span>Phone notes app</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="teamsnap" />
-                  <span>TeamSnap</span>
+                  <input type="checkbox" name="trackingMethods" value="spreadsheet" />
+                  <span>Spreadsheet (Excel/Google Sheets)</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="sportsengine" />
-                  <span>SportsEngine/LeagueApps</span>
+                  <input type="checkbox" name="trackingMethods" value="team-app" />
+                  <span>Team app (TeamSnap, SportsEngine, etc.)</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="maxpreps" />
-                  <span>MaxPreps</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="hudl" />
-                  <span>Hudl</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="gamechanger" />
-                  <span>GameChanger</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="currentApps" value="no-apps" />
-                  <span>No apps, just memory</span>
+                  <input type="checkbox" name="trackingMethods" value="dedicated-app" />
+                  <span>Dedicated sports tracking app</span>
                 </label>
               </div>
 
@@ -113,9 +71,53 @@ import Layout from '../../layouts/Layout.astro';
                 <label class="block text-sm text-zinc-400 mb-2">Other (please specify):</label>
                 <input
                   type="text"
-                  name="currentAppsOther"
+                  name="trackingMethodsOther"
                   class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
-                  placeholder="Other apps or tools..."
+                  placeholder="Other tracking method..."
+                />
+              </div>
+            </div>
+
+            <!-- Question 11: Apps used (Multi-select) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                11. If you use apps, which ones? (Select all that apply)
+              </label>
+
+              <div class="space-y-3">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="appsUsed" value="teamsnap" />
+                  <span>TeamSnap</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="appsUsed" value="sportsengine" />
+                  <span>SportsEngine</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="appsUsed" value="gamechanger" />
+                  <span>GameChanger</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="appsUsed" value="hudl" />
+                  <span>Hudl</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="appsUsed" value="maxpreps" />
+                  <span>MaxPreps</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="appsUsed" value="hometeamscores" />
+                  <span>HomeTeamScores</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other apps (please specify):</label>
+                <input
+                  type="text"
+                  name="appsUsedOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Other apps..."
                 />
               </div>
             </div>
@@ -123,56 +125,180 @@ import Layout from '../../layouts/Layout.astro';
             <!-- Question 12: Time spent managing -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                12. How much time per week do you spend managing your child's sports logistics (scheduling, stats, communication)?
+                12. How much time per week do you spend managing sports logistics (schedules, tracking, communication)?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="timeManaging" value="less-1hr" required />
+                  <input type="radio" name="timeSpentManaging" value="less-than-1" required />
                   <span>Less than 1 hour</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="timeManaging" value="1-3hrs" />
+                  <input type="radio" name="timeSpentManaging" value="1-3" />
                   <span>1-3 hours</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="timeManaging" value="4-6hrs" />
-                  <span>4-6 hours</span>
+                  <input type="radio" name="timeSpentManaging" value="3-5" />
+                  <span>3-5 hours</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="timeManaging" value="7-10hrs" />
-                  <span>7-10 hours</span>
+                  <input type="radio" name="timeSpentManaging" value="5-10" />
+                  <span>5-10 hours</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="timeManaging" value="more-10hrs" />
-                  <span>More than 10 hours</span>
+                  <input type="radio" name="timeSpentManaging" value="10-plus" />
+                  <span>10+ hours</span>
                 </label>
               </div>
             </div>
 
-            <!-- Question 13: Devices used -->
+            <!-- Question 13: Track game stats -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                13. What devices would you use for tracking? (Select all that apply)
+                13. Do you currently track game stats (goals, assists, minutes played, etc.)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="trackGameStats" value="yes-detailed" required />
+                  <span>Yes, very detailed</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackGameStats" value="yes-basic" />
+                  <span>Yes, basic tracking</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackGameStats" value="sometimes" />
+                  <span>Sometimes, inconsistently</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackGameStats" value="no-wish-did" />
+                  <span>No, but I wish I did</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackGameStats" value="no-not-interested" />
+                  <span>No, not interested</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 14: Track practice -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                14. Do you track practice activities or training sessions?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="trackPractice" value="yes-detailed" required />
+                  <span>Yes, detailed logs</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackPractice" value="yes-basic" />
+                  <span>Yes, basic notes</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackPractice" value="sometimes" />
+                  <span>Sometimes</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackPractice" value="no-want-to" />
+                  <span>No, but I want to</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="trackPractice" value="no-not-necessary" />
+                  <span>No, not necessary</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 15: Biggest frustrations (Select up to 3) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                15. What's the BIGGEST frustration with how you track things now? (Select up to 3)
+                <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="checkbox-option">
-                  <input type="checkbox" name="devices" value="iphone" />
-                  <span>iPhone</span>
+                  <input type="checkbox" name="frustrations" value="scattered-apps" class="frustration-checkbox" />
+                  <span>Stats scattered across multiple apps</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="devices" value="android" />
-                  <span>Android phone</span>
+                  <input type="checkbox" name="frustrations" value="no-verification" class="frustration-checkbox" />
+                  <span>No easy way to verify accuracy</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="devices" value="tablet" />
-                  <span>iPad/tablet</span>
+                  <input type="checkbox" name="frustrations" value="hard-see-progress" class="frustration-checkbox" />
+                  <span>Hard to see progress over time</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="devices" value="desktop" />
-                  <span>Desktop/laptop</span>
+                  <input type="checkbox" name="frustrations" value="cant-track-injuries" class="frustration-checkbox" />
+                  <span>Can't track injuries or soreness</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="manual-entry" class="frustration-checkbox" />
+                  <span>Too much manual data entry</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="multiple-kids" class="frustration-checkbox" />
+                  <span>No single place for multiple kids</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="hard-share" class="frustration-checkbox" />
+                  <span>Hard to share credible info with coaches/recruiters</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="frustrations" value="nothing-right" class="frustration-checkbox" />
+                  <span>Nothing tracks what I actually need</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other frustrations (please specify):</label>
+                <input
+                  type="text"
+                  name="frustrationsOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Other frustrations..."
+                />
+              </div>
+
+              <p class="text-sm text-zinc-500 mt-3">
+                Select up to 3 options. Additional selections will be ignored.
+              </p>
+            </div>
+
+            <!-- Question 16: ONE app importance (1-5 scale) -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                16. How important would it be to have ONE app that tracks everything? (1-5 scale)
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="oneAppImportance" value="1" required />
+                  <span>1 = Not important</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="oneAppImportance" value="2" />
+                  <span>2 = Slightly important</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="oneAppImportance" value="3" />
+                  <span>3 = Moderately important</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="oneAppImportance" value="4" />
+                  <span>4 = Very important</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="oneAppImportance" value="5" />
+                  <span>5 = Critical need</span>
                 </label>
               </div>
             </div>
@@ -206,32 +332,84 @@ import Layout from '../../layouts/Layout.astro';
       const nextBtn = document.getElementById('next-btn');
       const backBtn = document.getElementById('back-btn');
 
+      // Check if user has consented
+      const consent = sessionStorage.getItem('survey_consent');
+      if (!consent || consent !== 'yes') {
+        window.location.href = '/survey/1';
+        return;
+      }
+
+      // Limit frustrations to 3 selections
+      const frustrationCheckboxes = document.querySelectorAll('.frustration-checkbox');
+      frustrationCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const checked = document.querySelectorAll('.frustration-checkbox:checked');
+          if (checked.length > 3) {
+            (checkbox as HTMLInputElement).checked = false;
+            alert('Please select up to 3 frustrations only');
+          }
+        });
+      });
+
+      // Validate and save section data
       nextBtn?.addEventListener('click', () => {
-        const currentTracking = document.querySelector('input[name="currentTracking"]:checked');
-        const timeManaging = document.querySelector('input[name="timeManaging"]:checked');
+        // Validate required fields
+        const trackingMethods = document.querySelectorAll('input[name="trackingMethods"]:checked');
+        const timeSpent = document.querySelector('input[name="timeSpentManaging"]:checked');
+        const trackStats = document.querySelector('input[name="trackGameStats"]:checked');
+        const trackPractice = document.querySelector('input[name="trackPractice"]:checked');
+        const frustrations = document.querySelectorAll('input[name="frustrations"]:checked');
+        const oneAppImportance = document.querySelector('input[name="oneAppImportance"]:checked');
 
-        if (!currentTracking) {
-          alert('Please answer: How do you currently keep track?');
+        if (trackingMethods.length === 0) {
+          alert('Please select at least one tracking method (Q10)');
           return;
         }
 
-        if (!timeManaging) {
-          alert('Please answer: How much time per week managing logistics?');
+        if (!timeSpent) {
+          alert('Please answer: How much time per week do you spend managing? (Q12)');
           return;
         }
 
+        if (!trackStats) {
+          alert('Please answer: Do you track game stats? (Q13)');
+          return;
+        }
+
+        if (!trackPractice) {
+          alert('Please answer: Do you track practice activities? (Q14)');
+          return;
+        }
+
+        if (frustrations.length === 0) {
+          alert('Please select at least one frustration (Q15)');
+          return;
+        }
+
+        if (!oneAppImportance) {
+          alert('Please answer: How important is ONE app? (Q16)');
+          return;
+        }
+
+        // Save section data
         const sectionData = {
-          currentTracking: (currentTracking as HTMLInputElement).value,
-          currentApps: Array.from(document.querySelectorAll('input[name="currentApps"]:checked')).map((el: any) => el.value),
-          currentAppsOther: (document.querySelector('input[name="currentAppsOther"]') as HTMLInputElement)?.value || '',
-          timeManaging: (timeManaging as HTMLInputElement).value,
-          devices: Array.from(document.querySelectorAll('input[name="devices"]:checked')).map((el: any) => el.value)
+          trackingMethods: Array.from(trackingMethods).map((el: any) => el.value),
+          trackingMethodsOther: (document.querySelector('input[name="trackingMethodsOther"]') as HTMLInputElement)?.value || '',
+          appsUsed: Array.from(document.querySelectorAll('input[name="appsUsed"]:checked')).map((el: any) => el.value),
+          appsUsedOther: (document.querySelector('input[name="appsUsedOther"]') as HTMLInputElement)?.value || '',
+          timeSpentManaging: (timeSpent as HTMLInputElement).value,
+          trackGameStats: (trackStats as HTMLInputElement).value,
+          trackPractice: (trackPractice as HTMLInputElement).value,
+          frustrations: Array.from(frustrations).map((el: any) => el.value),
+          frustrationsOther: (document.querySelector('input[name="frustrationsOther"]') as HTMLInputElement)?.value || '',
+          oneAppImportance: (oneAppImportance as HTMLInputElement).value
         };
 
         sessionStorage.setItem('survey_section_3', JSON.stringify(sectionData));
         window.location.href = '/survey/4';
       });
 
+      // Back button
       backBtn?.addEventListener('click', () => {
         window.location.href = '/survey/2';
       });
@@ -279,6 +457,7 @@ import Layout from '../../layouts/Layout.astro';
       flex: 1;
     }
 
+    /* Mobile optimization */
     @media (max-width: 768px) {
       .question-block {
         padding: 1.5rem;

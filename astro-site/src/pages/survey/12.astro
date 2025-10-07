@@ -22,105 +22,107 @@ import Layout from '../../layouts/Layout.astro';
       <div class="container mx-auto px-8">
         <div class="max-w-3xl mx-auto">
           <h1 class="text-h1 font-bold text-zinc-50 mb-4">privacy & data ownership</h1>
-          <p class="text-zinc-400 mb-12">your data belongs to you</p>
+          <p class="text-zinc-400 mb-12">
+            your control over your child's athletic data
+          </p>
 
           <div class="space-y-12">
-            <!-- Question 45: Data ownership clarity -->
+            <!-- Question 55: Data privacy importance -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                45. How important is it that YOU own your data (not us)?
-                <span class="text-red-400 ml-1">*</span>
-              </label>
-
-              <div class="flex justify-between items-center gap-2">
-                <span class="text-sm text-zinc-400">Not important</span>
-                <div class="flex gap-3">
-                  <label class="rating-option">
-                    <input type="radio" name="dataOwnership" value="1" required />
-                    <span>1</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="dataOwnership" value="2" />
-                    <span>2</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="dataOwnership" value="3" />
-                    <span>3</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="dataOwnership" value="4" />
-                    <span>4</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="dataOwnership" value="5" />
-                    <span>5</span>
-                  </label>
-                </div>
-                <span class="text-sm text-zinc-400">Essential</span>
-              </div>
-            </div>
-
-            <!-- Question 46: Data deletion control -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                46. Should you be able to delete all your child's data at any time?
+                55. How important is data privacy for your child's athletic records?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="dataDeletion" value="yes-instant" required />
-                  <span>Yes, instantly (no questions asked)</span>
+                  <input type="radio" name="dataPrivacy" value="extremely-important" required />
+                  <span>Extremely important - this is sensitive</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="dataDeletion" value="yes-with-backup" />
-                  <span>Yes, but let me download a backup first</span>
+                  <input type="radio" name="dataPrivacy" value="very-important" />
+                  <span>Very important</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="dataDeletion" value="not-important" />
-                  <span>Not important to me</span>
+                  <input type="radio" name="dataPrivacy" value="somewhat-important" />
+                  <span>Somewhat important</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="dataPrivacy" value="not-major-concern" />
+                  <span>Not a major concern</span>
                 </label>
               </div>
             </div>
 
-            <!-- Question 47: Privacy concerns -->
+            <!-- Question 56: Data ownership -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                47. What privacy features matter most to you? (Select all that apply)
+                56. Who should own the data?
+                <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="no-ads" />
-                  <span>No ads ever (ad-free promise)</span>
+                <label class="radio-option">
+                  <input type="radio" name="dataOwnership" value="i-own-can-delete" required />
+                  <span>I own it, can delete anytime</span>
                 </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="no-selling-data" />
-                  <span>We never sell your data (transparent policy)</span>
+                <label class="radio-option">
+                  <input type="radio" name="dataOwnership" value="app-owns-i-access" />
+                  <span>App owns it, I have access</span>
                 </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="private-by-default" />
-                  <span>Everything is private by default</span>
+                <label class="radio-option">
+                  <input type="radio" name="dataOwnership" value="shared-ownership" />
+                  <span>Shared ownership</span>
                 </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="control-sharing" />
-                  <span>Full control over what gets shared</span>
+                <label class="radio-option">
+                  <input type="radio" name="dataOwnership" value="dont-care" />
+                  <span>Don't care</span>
                 </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="no-location-tracking" />
-                  <span>No location tracking without permission</span>
+              </div>
+            </div>
+
+            <!-- Question 57: Anonymized research data -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                57. Would you be comfortable with anonymized data being used for research (e.g., youth sports trends)?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="anonymizedResearch" value="yes-if-anonymous" required />
+                  <span>Yes, if fully anonymous</span>
                 </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="coppa-compliant" />
-                  <span>COPPA-compliant (protects kids under 13)</span>
+                <label class="radio-option">
+                  <input type="radio" name="anonymizedResearch" value="maybe-depends" />
+                  <span>Maybe, depends on what's shared</span>
                 </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="encrypted" />
-                  <span>All data encrypted</span>
+                <label class="radio-option">
+                  <input type="radio" name="anonymizedResearch" value="no-keep-private" />
+                  <span>No, keep my data private</span>
                 </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="privacyFeatures" value="transparent-access" />
-                  <span>Transparent about who can see what</span>
+              </div>
+            </div>
+
+            <!-- Question 58: Export and delete data -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                58. Should you be able to export and delete ALL data if you stop using the app?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="exportDeleteData" value="yes-absolutely-critical" required />
+                  <span>Yes, absolutely (this is critical)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="exportDeleteData" value="yes-export-enough" />
+                  <span>Yes, but export is enough</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="exportDeleteData" value="doesnt-matter" />
+                  <span>Doesn't matter</span>
                 </label>
               </div>
             </div>
@@ -140,31 +142,57 @@ import Layout from '../../layouts/Layout.astro';
       const nextBtn = document.getElementById('next-btn');
       const backBtn = document.getElementById('back-btn');
 
+      // Check if user has consented
+      const consent = sessionStorage.getItem('survey_consent');
+      if (!consent || consent !== 'yes') {
+        window.location.href = '/survey/1';
+        return;
+      }
+
+      // Validate and save section data
       nextBtn?.addEventListener('click', () => {
-        const ownership = document.querySelector('input[name="dataOwnership"]:checked');
-        const deletion = document.querySelector('input[name="dataDeletion"]:checked');
+        // Validate required fields
+        const dataPrivacy = document.querySelector('input[name="dataPrivacy"]:checked');
+        const dataOwnership = document.querySelector('input[name="dataOwnership"]:checked');
+        const anonymizedResearch = document.querySelector('input[name="anonymizedResearch"]:checked');
+        const exportDeleteData = document.querySelector('input[name="exportDeleteData"]:checked');
 
-        if (!ownership) {
-          alert('Please rate: Data ownership importance');
+        if (!dataPrivacy) {
+          alert('Please answer: Data privacy importance? (Q55)');
           return;
         }
 
-        if (!deletion) {
-          alert('Please answer: Data deletion control preference');
+        if (!dataOwnership) {
+          alert('Please answer: Who should own the data? (Q56)');
           return;
         }
 
+        if (!anonymizedResearch) {
+          alert('Please answer: Comfortable with anonymized research? (Q57)');
+          return;
+        }
+
+        if (!exportDeleteData) {
+          alert('Please answer: Export and delete data capability? (Q58)');
+          return;
+        }
+
+        // Save section data
         const sectionData = {
-          dataOwnership: (ownership as HTMLInputElement).value,
-          dataDeletion: (deletion as HTMLInputElement).value,
-          privacyFeatures: Array.from(document.querySelectorAll('input[name="privacyFeatures"]:checked')).map((el: any) => el.value)
+          dataPrivacy: (dataPrivacy as HTMLInputElement).value,
+          dataOwnership: (dataOwnership as HTMLInputElement).value,
+          anonymizedResearch: (anonymizedResearch as HTMLInputElement).value,
+          exportDeleteData: (exportDeleteData as HTMLInputElement).value
         };
 
         sessionStorage.setItem('survey_section_12', JSON.stringify(sectionData));
         window.location.href = '/survey/13';
       });
 
-      backBtn?.addEventListener('click', () => window.location.href = '/survey/11');
+      // Back button
+      backBtn?.addEventListener('click', () => {
+        window.location.href = '/survey/11';
+      });
     });
   </script>
 

@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout title="Hustle Survey - Section 5 of 15">
   <div class="min-h-screen bg-zinc-900">
+    <!-- Sticky Progress Bar -->
     <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
       <div class="container mx-auto px-8">
         <div class="max-w-3xl mx-auto">
@@ -18,156 +19,169 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
 
+    <!-- Survey Form -->
     <section class="py-12">
       <div class="container mx-auto px-8">
         <div class="max-w-3xl mx-auto">
           <h1 class="text-h1 font-bold text-zinc-50 mb-4">the app we're building</h1>
-          <p class="text-zinc-400 mb-8">
-            Imagine an app where your kid (or you) can quickly log every game, practice, and training session with a few taps. Stats get verified by you or their coach. Everything lives in one place, regardless of sport.
+          <p class="text-zinc-400 mb-12">
+            your feedback on our vision
           </p>
 
           <div class="space-y-12">
-            <!-- Question 18: Value rating -->
+            <!-- Question 20: Interest level -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                18. How valuable would this be to you?
-                <span class="text-red-400 ml-1">*</span>
-              </label>
-
-              <div class="flex justify-between items-center gap-2">
-                <span class="text-sm text-zinc-400">Not valuable</span>
-                <div class="flex gap-3">
-                  <label class="rating-option">
-                    <input type="radio" name="valueRating" value="1" required />
-                    <span>1</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="valueRating" value="2" />
-                    <span>2</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="valueRating" value="3" />
-                    <span>3</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="valueRating" value="4" />
-                    <span>4</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="valueRating" value="5" />
-                    <span>5</span>
-                  </label>
-                </div>
-                <span class="text-sm text-zinc-400">Extremely valuable</span>
-              </div>
-            </div>
-
-            <!-- Question 19: Disappointment if didn't exist -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                19. If this app didn't exist, how disappointed would you be?
+                20. We're building Hustle: a simple app to log games, practices, training, and track your child's athletic progress. How interested are you in this?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="disappointment" value="very-disappointed" required />
-                  <span>Very disappointed—I really need this</span>
+                  <input type="radio" name="interestLevel" value="extremely-interested" required />
+                  <span>Extremely interested - sign me up now</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="disappointment" value="somewhat-disappointed" />
-                  <span>Somewhat disappointed</span>
+                  <input type="radio" name="interestLevel" value="very-interested" />
+                  <span>Very interested - tell me more</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="disappointment" value="not-disappointed" />
-                  <span>Not disappointed—nice to have only</span>
+                  <input type="radio" name="interestLevel" value="somewhat-interested" />
+                  <span>Somewhat interested - depends on features</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="disappointment" value="indifferent" />
-                  <span>Indifferent</span>
+                  <input type="radio" name="interestLevel" value="not-very-interested" />
+                  <span>Not very interested</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="interestLevel" value="not-interested" />
+                  <span>Not interested at all</span>
                 </label>
               </div>
-            </div>
-
-            <!-- Question 20: Activity importance ranking -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                20. Which activities matter MOST to track? (Rank 1-4, with 1 being most important)
-                <span class="text-red-400 ml-1">*</span>
-              </label>
-
-              <div class="space-y-4">
-                <div class="flex items-center gap-4">
-                  <select name="rank_games" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
-                    <option value="">Rank...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                  <span class="text-zinc-200">Official games/competitions/meets</span>
-                </div>
-                <div class="flex items-center gap-4">
-                  <select name="rank_practices" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
-                    <option value="">Rank...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                  <span class="text-zinc-200">Team practices</span>
-                </div>
-                <div class="flex items-center gap-4">
-                  <select name="rank_private" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
-                    <option value="">Rank...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                  <span class="text-zinc-200">Private coaching/training sessions</span>
-                </div>
-                <div class="flex items-center gap-4">
-                  <select name="rank_individual" required class="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400">
-                    <option value="">Rank...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                  <span class="text-zinc-200">Individual skill work (drills, conditioning, etc.)</span>
-                </div>
-              </div>
-              <p class="text-sm text-zinc-500 mt-3">Each rank (1-4) should be used only once</p>
             </div>
 
             <!-- Question 21: Import historical data -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                21. Would you want to import historical data (past seasons, achievements)?
+                21. Would you import historical data (past games, stats) if we made it easy?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="importData" value="very-important" required />
-                  <span>Yes, very important</span>
+                  <input type="radio" name="importData" value="yes-definitely" required />
+                  <span>Yes, definitely</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="importData" value="nice-to-have" />
-                  <span>Nice to have</span>
+                  <input type="radio" name="importData" value="maybe-if-simple" />
+                  <span>Maybe, if it's simple</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="importData" value="not-needed" />
-                  <span>Not needed</span>
+                  <input type="radio" name="importData" value="no-fresh-start" />
+                  <span>No, fresh start is fine</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 22: Simple vs comprehensive -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                22. Which is more important for you?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="simpleVsDetailed" value="simple-fast" required />
+                  <span>Simple and fast (fewer fields, quick logging)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="simpleVsDetailed" value="comprehensive" />
+                  <span>Comprehensive and detailed (more fields, complete picture)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="simpleVsDetailed" value="balanced" />
+                  <span>Balanced between both</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 23: Logging frequency -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                23. How often would you log activities?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="loggingFrequency" value="real-time" required />
+                  <span>Immediately after every game/practice (real-time)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="loggingFrequency" value="few-hours" />
+                  <span>Within a few hours</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="loggingFrequency" value="end-of-day" />
+                  <span>End of each day</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="loggingFrequency" value="weekly" />
+                  <span>Once a week</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="loggingFrequency" value="less-than-weekly" />
+                  <span>Less than once a week</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 24: Who would log -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                24. Who would log the activities?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="whoLogs" value="parent" required />
+                  <span>I would (parent)</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="whoLogs" value="child" />
+                  <span>My child would</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="whoLogs" value="both" />
+                  <span>We'd both contribute</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="whoLogs" value="coach" />
+                  <span>Coach would (if they had access)</span>
                 </label>
               </div>
             </div>
           </div>
 
+          <!-- Navigation -->
           <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
-            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
-            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+            <button
+              type="button"
+              id="back-btn"
+              class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              ← back
+            </button>
+
+            <button
+              type="button"
+              id="next-btn"
+              class="btn-primary px-8 py-3"
+            >
+              next section →
+            </button>
           </div>
         </div>
       </div>
@@ -179,58 +193,64 @@ import Layout from '../../layouts/Layout.astro';
       const nextBtn = document.getElementById('next-btn');
       const backBtn = document.getElementById('back-btn');
 
+      // Check if user has consented
+      const consent = sessionStorage.getItem('survey_consent');
+      if (!consent || consent !== 'yes') {
+        window.location.href = '/survey/1';
+        return;
+      }
+
+      // Validate and save section data
       nextBtn?.addEventListener('click', () => {
-        const value = document.querySelector('input[name="valueRating"]:checked');
-        const disappointment = document.querySelector('input[name="disappointment"]:checked');
-        const rankGames = (document.querySelector('select[name="rank_games"]') as HTMLSelectElement)?.value;
-        const rankPractices = (document.querySelector('select[name="rank_practices"]') as HTMLSelectElement)?.value;
-        const rankPrivate = (document.querySelector('select[name="rank_private"]') as HTMLSelectElement)?.value;
-        const rankIndividual = (document.querySelector('select[name="rank_individual"]') as HTMLSelectElement)?.value;
+        // Validate required fields
+        const interestLevel = document.querySelector('input[name="interestLevel"]:checked');
         const importData = document.querySelector('input[name="importData"]:checked');
+        const simpleVsDetailed = document.querySelector('input[name="simpleVsDetailed"]:checked');
+        const loggingFrequency = document.querySelector('input[name="loggingFrequency"]:checked');
+        const whoLogs = document.querySelector('input[name="whoLogs"]:checked');
 
-        if (!value) {
-          alert('Please rate how valuable this would be (1-5)');
-          return;
-        }
-
-        if (!disappointment) {
-          alert('Please answer: How disappointed would you be?');
-          return;
-        }
-
-        if (!rankGames || !rankPractices || !rankPrivate || !rankIndividual) {
-          alert('Please rank all 4 activities');
-          return;
-        }
-
-        // Check for duplicate rankings
-        const ranks = [rankGames, rankPractices, rankPrivate, rankIndividual];
-        const uniqueRanks = new Set(ranks);
-        if (uniqueRanks.size !== 4) {
-          alert('Each rank (1-4) should be used only once');
+        if (!interestLevel) {
+          alert('Please answer: How interested are you? (Q20)');
           return;
         }
 
         if (!importData) {
-          alert('Please answer: Import historical data?');
+          alert('Please answer: Would you import historical data? (Q21)');
           return;
         }
 
+        if (!simpleVsDetailed) {
+          alert('Please answer: Simple or comprehensive? (Q22)');
+          return;
+        }
+
+        if (!loggingFrequency) {
+          alert('Please answer: How often would you log? (Q23)');
+          return;
+        }
+
+        if (!whoLogs) {
+          alert('Please answer: Who would log activities? (Q24)');
+          return;
+        }
+
+        // Save section data
         const sectionData = {
-          valueRating: (value as HTMLInputElement).value,
-          disappointment: (disappointment as HTMLInputElement).value,
-          rankGames,
-          rankPractices,
-          rankPrivate,
-          rankIndividual,
-          importData: (importData as HTMLInputElement).value
+          interestLevel: (interestLevel as HTMLInputElement).value,
+          importData: (importData as HTMLInputElement).value,
+          simpleVsDetailed: (simpleVsDetailed as HTMLInputElement).value,
+          loggingFrequency: (loggingFrequency as HTMLInputElement).value,
+          whoLogs: (whoLogs as HTMLInputElement).value
         };
 
         sessionStorage.setItem('survey_section_5', JSON.stringify(sectionData));
         window.location.href = '/survey/6';
       });
 
-      backBtn?.addEventListener('click', () => window.location.href = '/survey/4');
+      // Back button
+      backBtn?.addEventListener('click', () => {
+        window.location.href = '/survey/4';
+      });
     });
   </script>
 
@@ -242,7 +262,8 @@ import Layout from '../../layouts/Layout.astro';
       border: 1px solid rgb(39 39 42 / 0.2);
     }
 
-    .radio-option {
+    .radio-option,
+    .checkbox-option {
       display: flex;
       align-items: start;
       padding: 1rem;
@@ -253,12 +274,14 @@ import Layout from '../../layouts/Layout.astro';
       transition: all 0.2s ease;
     }
 
-    .radio-option:hover {
+    .radio-option:hover,
+    .checkbox-option:hover {
       border-color: rgb(161 161 170);
       background: rgb(39 39 42 / 0.8);
     }
 
-    .radio-option input {
+    .radio-option input[type="radio"],
+    .checkbox-option input[type="checkbox"] {
       margin-top: 0.125rem;
       margin-right: 0.75rem;
       min-width: 20px;
@@ -266,32 +289,23 @@ import Layout from '../../layouts/Layout.astro';
       cursor: pointer;
     }
 
-    .rating-option {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-    }
-
-    .rating-option input {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-    }
-
-    .rating-option span {
+    .radio-option span,
+    .checkbox-option span {
       color: rgb(228 228 231);
-      font-weight: 600;
+      flex: 1;
     }
 
-    select {
-      min-width: 100px;
-    }
-
+    /* Mobile optimization */
     @media (max-width: 768px) {
-      .question-block { padding: 1.5rem; }
-      .radio-option input { min-width: 24px; min-height: 24px; }
+      .question-block {
+        padding: 1.5rem;
+      }
+
+      .radio-option input[type="radio"],
+      .checkbox-option input[type="checkbox"] {
+        min-width: 24px;
+        min-height: 24px;
+      }
     }
   </style>
 </Layout>

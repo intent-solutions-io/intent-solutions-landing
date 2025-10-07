@@ -1,0 +1,196 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: section 2 of 15
+      - generic [ref=e8]: 13%
+    - generic [ref=e13]:
+      - heading "your sports family" [level=1] [ref=e14]
+      - paragraph [ref=e15]: tell us about your competitive athlete(s)
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: 2. How many kids do you have playing competitive sports? *
+          - generic [ref=e19]:
+            - generic [ref=e20] [cursor=pointer]:
+              - radio "1 athlete" [ref=e21]
+              - generic [ref=e22]: 1 athlete
+            - generic [ref=e23] [cursor=pointer]:
+              - radio "2 athletes" [ref=e24]
+              - generic [ref=e25]: 2 athletes
+            - generic [ref=e26] [cursor=pointer]:
+              - radio "3 athletes" [ref=e27]
+              - generic [ref=e28]: 3 athletes
+            - generic [ref=e29] [cursor=pointer]:
+              - radio "4+ athletes" [ref=e30]
+              - generic [ref=e31]: 4+ athletes
+        - generic [ref=e32]:
+          - generic [ref=e33]: 3. What grades are they in? (Select all that apply) *
+          - generic [ref=e34]:
+            - generic [ref=e35] [cursor=pointer]:
+              - checkbox "5th or younger" [ref=e36]
+              - generic [ref=e37]: 5th or younger
+            - generic [ref=e38] [cursor=pointer]:
+              - checkbox "6th" [ref=e39]
+              - generic [ref=e40]: 6th
+            - generic [ref=e41] [cursor=pointer]:
+              - checkbox "7th" [ref=e42]
+              - generic [ref=e43]: 7th
+            - generic [ref=e44] [cursor=pointer]:
+              - checkbox "8th" [ref=e45]
+              - generic [ref=e46]: 8th
+            - generic [ref=e47] [cursor=pointer]:
+              - checkbox "9th (Freshman)" [ref=e48]
+              - generic [ref=e49]: 9th (Freshman)
+            - generic [ref=e50] [cursor=pointer]:
+              - checkbox "10th (Sophomore)" [ref=e51]
+              - generic [ref=e52]: 10th (Sophomore)
+            - generic [ref=e53] [cursor=pointer]:
+              - checkbox "11th (Junior)" [ref=e54]
+              - generic [ref=e55]: 11th (Junior)
+            - generic [ref=e56] [cursor=pointer]:
+              - checkbox "12th (Senior)" [ref=e57]
+              - generic [ref=e58]: 12th (Senior)
+        - generic [ref=e59]:
+          - generic [ref=e60]: 4. How many hours per week does your child spend on their sport(s)? (Include practices, games, private training) *
+          - generic [ref=e61]:
+            - generic [ref=e62] [cursor=pointer]:
+              - radio "1-5 hours" [ref=e63]
+              - generic [ref=e64]: 1-5 hours
+            - generic [ref=e65] [cursor=pointer]:
+              - radio "6-10 hours" [ref=e66]
+              - generic [ref=e67]: 6-10 hours
+            - generic [ref=e68] [cursor=pointer]:
+              - radio "11-15 hours" [ref=e69]
+              - generic [ref=e70]: 11-15 hours
+            - generic [ref=e71] [cursor=pointer]:
+              - radio "16-20 hours" [ref=e72]
+              - generic [ref=e73]: 16-20 hours
+            - generic [ref=e74] [cursor=pointer]:
+              - radio "20+ hours" [ref=e75]
+              - generic [ref=e76]: 20+ hours
+        - generic [ref=e77]:
+          - generic [ref=e78]: 5. Is your child pursuing college recruitment opportunities? *
+          - generic [ref=e79]:
+            - generic [ref=e80] [cursor=pointer]:
+              - radio "Yes, actively recruiting now" [ref=e81]
+              - generic [ref=e82]: Yes, actively recruiting now
+            - generic [ref=e83] [cursor=pointer]:
+              - radio "Yes, planning to start soon" [ref=e84]
+              - generic [ref=e85]: Yes, planning to start soon
+            - generic [ref=e86] [cursor=pointer]:
+              - radio "Maybe in the future" [ref=e87]
+              - generic [ref=e88]: Maybe in the future
+            - generic [ref=e89] [cursor=pointer]:
+              - radio "No recruitment plans" [ref=e90]
+              - generic [ref=e91]: No recruitment plans
+            - generic [ref=e92] [cursor=pointer]:
+              - radio "Too young to think about it yet" [ref=e93]
+              - generic [ref=e94]: Too young to think about it yet
+        - generic [ref=e95]:
+          - generic [ref=e96]: 6. Which sports do they play? (Select all that apply) *
+          - generic [ref=e97]:
+            - generic [ref=e98] [cursor=pointer]:
+              - checkbox "Soccer" [ref=e99]
+              - generic [ref=e100]: Soccer
+            - generic [ref=e101] [cursor=pointer]:
+              - checkbox "Basketball" [ref=e102]
+              - generic [ref=e103]: Basketball
+            - generic [ref=e104] [cursor=pointer]:
+              - checkbox "Baseball" [ref=e105]
+              - generic [ref=e106]: Baseball
+            - generic [ref=e107] [cursor=pointer]:
+              - checkbox "Softball" [ref=e108]
+              - generic [ref=e109]: Softball
+            - generic [ref=e110] [cursor=pointer]:
+              - checkbox "Football" [ref=e111]
+              - generic [ref=e112]: Football
+            - generic [ref=e113] [cursor=pointer]:
+              - checkbox "Lacrosse" [ref=e114]
+              - generic [ref=e115]: Lacrosse
+            - generic [ref=e116] [cursor=pointer]:
+              - checkbox "Hockey (ice or field)" [ref=e117]
+              - generic [ref=e118]: Hockey (ice or field)
+            - generic [ref=e119] [cursor=pointer]:
+              - checkbox "Volleyball" [ref=e120]
+              - generic [ref=e121]: Volleyball
+            - generic [ref=e122] [cursor=pointer]:
+              - checkbox "Track & Field" [ref=e123]
+              - generic [ref=e124]: Track & Field
+            - generic [ref=e125] [cursor=pointer]:
+              - checkbox "Swimming" [ref=e126]
+              - generic [ref=e127]: Swimming
+            - generic [ref=e128] [cursor=pointer]:
+              - checkbox "Tennis" [ref=e129]
+              - generic [ref=e130]: Tennis
+            - generic [ref=e131] [cursor=pointer]:
+              - checkbox "Golf" [ref=e132]
+              - generic [ref=e133]: Golf
+            - generic [ref=e134] [cursor=pointer]:
+              - checkbox "Wrestling" [ref=e135]
+              - generic [ref=e136]: Wrestling
+            - generic [ref=e137] [cursor=pointer]:
+              - checkbox "Gymnastics" [ref=e138]
+              - generic [ref=e139]: Gymnastics
+            - generic [ref=e140] [cursor=pointer]:
+              - checkbox "Dance/Cheer" [ref=e141]
+              - generic [ref=e142]: Dance/Cheer
+          - generic [ref=e143]:
+            - generic [ref=e144]: "Other (please specify):"
+            - textbox "e.g., Rowing, Fencing, etc." [ref=e145]
+        - generic [ref=e146]:
+          - generic [ref=e147]: 7. What level(s) are they competing at? (Select all that apply) *
+          - generic [ref=e148]:
+            - generic [ref=e149] [cursor=pointer]:
+              - checkbox "Elite/National (e.g., ECNL, MLS Next, AAU, USAG)" [ref=e150]
+              - generic [ref=e151]: Elite/National (e.g., ECNL, MLS Next, AAU, USAG)
+            - generic [ref=e152] [cursor=pointer]:
+              - checkbox "Regional/Premier (e.g., NPL, Regional League)" [ref=e153]
+              - generic [ref=e154]: Regional/Premier (e.g., NPL, Regional League)
+            - generic [ref=e155] [cursor=pointer]:
+              - checkbox "High School Varsity" [ref=e156]
+              - generic [ref=e157]: High School Varsity
+            - generic [ref=e158] [cursor=pointer]:
+              - checkbox "High School JV" [ref=e159]
+              - generic [ref=e160]: High School JV
+            - generic [ref=e161] [cursor=pointer]:
+              - checkbox "Travel/Club" [ref=e162]
+              - generic [ref=e163]: Travel/Club
+            - generic [ref=e164] [cursor=pointer]:
+              - checkbox "Recreational/Local League" [ref=e165]
+              - generic [ref=e166]: Recreational/Local League
+            - generic [ref=e167] [cursor=pointer]:
+              - checkbox "ODP or State/National Team" [ref=e168]
+              - generic [ref=e169]: ODP or State/National Team
+            - generic [ref=e170] [cursor=pointer]:
+              - checkbox "Academy/Development Program" [ref=e171]
+              - generic [ref=e172]: Academy/Development Program
+          - generic [ref=e173]:
+            - generic [ref=e174]: "Other (please specify):"
+            - textbox "Other competition level..." [ref=e175]
+        - generic [ref=e176]:
+          - generic [ref=e177]: 8. What club(s), team(s), or program(s) do they play for?
+          - textbox "e.g., ABC Soccer Club, XYZ Academy..." [ref=e178]
+        - generic [ref=e179]:
+          - generic [ref=e180]: 9. Where are you located? (City, State or Region)
+          - textbox "e.g., Dallas, TX or Southern California" [ref=e181]
+      - generic [ref=e182]:
+        - button "← back" [ref=e183]
+        - button "next section →" [ref=e184]
+  - generic [ref=e187]:
+    - button "Menu" [ref=e188]:
+      - img [ref=e190]
+      - generic: Menu
+    - button "Inspect" [ref=e194]:
+      - img [ref=e196]
+      - generic: Inspect
+    - button "Audit" [ref=e198]:
+      - generic [ref=e199]:
+        - img [ref=e200]
+        - img [ref=e203]
+      - generic: Audit
+    - button "Settings" [ref=e206]:
+      - img [ref=e208]
+      - generic: Settings
+```

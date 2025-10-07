@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout title="Hustle Survey - Section 7 of 15">
   <div class="min-h-screen bg-zinc-900">
+    <!-- Sticky Progress Bar -->
     <div class="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 py-4">
       <div class="container mx-auto px-8">
         <div class="max-w-3xl mx-auto">
@@ -18,210 +19,211 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
 
+    <!-- Survey Form -->
     <section class="py-12">
       <div class="container mx-auto px-8">
         <div class="max-w-3xl mx-auto">
           <h1 class="text-h1 font-bold text-zinc-50 mb-4">parent control & multi-kid management</h1>
-          <p class="text-zinc-400 mb-12">managing multiple athletes and keeping oversight</p>
+          <p class="text-zinc-400 mb-12">
+            managing multiple athletes and family access
+          </p>
 
           <div class="space-y-12">
-            <!-- Question 25: Multi-kid importance -->
+            <!-- Question 32: Multi-kid management -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                25. How important is it that ONE parent account can manage multiple kids in different sports?
-                <span class="text-red-400 ml-1">*</span>
-              </label>
-
-              <div class="flex justify-between items-center gap-2">
-                <span class="text-sm text-zinc-400">Not important</span>
-                <div class="flex gap-3">
-                  <label class="rating-option">
-                    <input type="radio" name="multiKidImportance" value="1" required />
-                    <span>1</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="multiKidImportance" value="2" />
-                    <span>2</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="multiKidImportance" value="3" />
-                    <span>3</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="multiKidImportance" value="4" />
-                    <span>4</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="multiKidImportance" value="5" />
-                    <span>5</span>
-                  </label>
-                </div>
-                <span class="text-sm text-zinc-400">Essential</span>
-              </div>
-            </div>
-
-            <!-- Question 26: Parent notes importance -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                26. Would you want to add notes/comments to your child's logs?
-                <span class="text-red-400 ml-1">*</span>
-              </label>
-
-              <div class="flex justify-between items-center gap-2">
-                <span class="text-sm text-zinc-400">Not needed</span>
-                <div class="flex gap-3">
-                  <label class="rating-option">
-                    <input type="radio" name="notesImportance" value="1" required />
-                    <span>1</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="notesImportance" value="2" />
-                    <span>2</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="notesImportance" value="3" />
-                    <span>3</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="notesImportance" value="4" />
-                    <span>4</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="notesImportance" value="5" />
-                    <span>5</span>
-                  </label>
-                </div>
-                <span class="text-sm text-zinc-400">Very important</span>
-              </div>
-            </div>
-
-            <!-- Question 27: Correction workflow -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                27. If your child logs something incorrectly, how should corrections work?
+                32. If you manage multiple athletes, how important is ONE account for all kids?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="corrections" value="suggest-fix" required />
-                  <span>I want to suggest a fix (they approve it)</span>
+                  <input type="radio" name="multiKidAccount" value="critical" required />
+                  <span>Critical (I'm not using separate apps per kid)</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="corrections" value="full-edit" />
-                  <span>I want full edit rights (I can change it directly)</span>
+                  <input type="radio" name="multiKidAccount" value="very-important" />
+                  <span>Very important</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="corrections" value="trust-kid" />
-                  <span>I trust my kid to log accurately</span>
+                  <input type="radio" name="multiKidAccount" value="somewhat-important" />
+                  <span>Somewhat important</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="multiKidAccount" value="not-applicable" />
+                  <span>Not applicable (only 1 athlete)</span>
                 </label>
               </div>
             </div>
 
-            <!-- Question 28: Export importance -->
+            <!-- Question 33: Kid login -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                28. How important is exporting data (CSV/PDF) for college recruiting or records?
-                <span class="text-red-400 ml-1">*</span>
-              </label>
-
-              <div class="flex justify-between items-center gap-2">
-                <span class="text-sm text-zinc-400">Not important</span>
-                <div class="flex gap-3">
-                  <label class="rating-option">
-                    <input type="radio" name="exportImportance" value="1" required />
-                    <span>1</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="exportImportance" value="2" />
-                    <span>2</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="exportImportance" value="3" />
-                    <span>3</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="exportImportance" value="4" />
-                    <span>4</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="exportImportance" value="5" />
-                    <span>5</span>
-                  </label>
-                </div>
-                <span class="text-sm text-zinc-400">Critical</span>
-              </div>
-            </div>
-
-            <!-- Question 29: Notifications -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                29. What notifications would be helpful? (Select all that apply)
-              </label>
-
-              <div class="space-y-3">
-                <label class="checkbox-option">
-                  <input type="checkbox" name="notifications" value="new-activity" />
-                  <span>When your child logs a new activity</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="notifications" value="coach-verifies" />
-                  <span>When a coach verifies (or questions) a stat</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="notifications" value="milestones" />
-                  <span>Achievement milestones (e.g., "100 practices logged!")</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="notifications" value="injury-patterns" />
-                  <span>Injury/soreness patterns detected</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="notifications" value="weekly-summary" />
-                  <span>Weekly summary of activity</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="notifications" value="event-reminders" />
-                  <span>Upcoming events reminder</span>
-                </label>
-                <label class="checkbox-option">
-                  <input type="checkbox" name="notifications" value="none" />
-                  <span>None—I'll check the app when I want</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Question 30: Notification frequency -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                30. How often would you want notifications?
+                33. Should kids have their own login to see their own data?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="notificationFrequency" value="real-time" required />
-                  <span>Real-time (as things happen)</span>
+                  <input type="radio" name="kidLogin" value="yes-see-everything" required />
+                  <span>Yes, they should see everything</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="notificationFrequency" value="daily" />
-                  <span>Once daily (evening digest)</span>
+                  <input type="radio" name="kidLogin" value="yes-parent-controls" />
+                  <span>Yes, but parent controls what they see</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="notificationFrequency" value="weekly" />
-                  <span>Once weekly (Sunday summary)</span>
+                  <input type="radio" name="kidLogin" value="no-parent-only" />
+                  <span>No, parent-view only</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="notificationFrequency" value="off" />
-                  <span>Off by default (I'll open the app)</span>
+                  <input type="radio" name="kidLogin" value="dont-care" />
+                  <span>Don't care</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 34: Private notes -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                34. Should parents be able to add private notes kids can't see?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="privateNotes" value="yes-absolutely" required />
+                  <span>Yes, absolutely</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="privateNotes" value="maybe-depends" />
+                  <span>Maybe, depends on the note</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="privateNotes" value="no-transparency" />
+                  <span>No, full transparency</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 35: Export data -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                35. How important is exporting data (PDF, CSV) for recruiting or records?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="exportImportance" value="very-important" required />
+                  <span>Very important - I need this for college recruiting</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="exportImportance" value="somewhat-important" />
+                  <span>Somewhat important - nice to have</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="exportImportance" value="not-important" />
+                  <span>Not important</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 36: Share with coaches -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                36. Would you want to share read-only access with coaches?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="coachAccess" value="yes-definitely" required />
+                  <span>Yes, definitely</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="coachAccess" value="maybe-some-coaches" />
+                  <span>Maybe, for some coaches</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="coachAccess" value="no-private" />
+                  <span>No, I'd rather keep it private</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 37: Family plan pricing -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                37. Would you pay for family plan pricing if you have multiple kids?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="familyPlan" value="yes-if-saves" required />
+                  <span>Yes, if it saves vs. individual plans</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="familyPlan" value="maybe-depends" />
+                  <span>Maybe, depends on price</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="familyPlan" value="no-per-athlete" />
+                  <span>No, I'd pay per athlete</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Question 38: Decision maker -->
+            <div class="question-block">
+              <label class="block text-lg font-medium text-zinc-200 mb-4">
+                38. Who should make decisions about the app in your household?
+                <span class="text-red-400 ml-1">*</span>
+              </label>
+
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="decisionMaker" value="i-decide" required />
+                  <span>I decide</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="decisionMaker" value="spouse-decides" />
+                  <span>My spouse/partner decides</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="decisionMaker" value="we-decide-together" />
+                  <span>We decide together</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="decisionMaker" value="child-decides" />
+                  <span>My child decides</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="decisionMaker" value="family-decides" />
+                  <span>We decide together as a family</span>
                 </label>
               </div>
             </div>
           </div>
 
+          <!-- Navigation -->
           <div class="flex justify-between items-center pt-8 mt-12 border-t border-zinc-800">
-            <button type="button" id="back-btn" class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth">← back</button>
-            <button type="button" id="next-btn" class="btn-primary px-8 py-3">next section →</button>
+            <button
+              type="button"
+              id="back-btn"
+              class="px-6 py-3 text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              ← back
+            </button>
+
+            <button
+              type="button"
+              id="next-btn"
+              class="btn-primary px-8 py-3"
+            >
+              next section →
+            </button>
           </div>
         </div>
       </div>
@@ -233,52 +235,78 @@ import Layout from '../../layouts/Layout.astro';
       const nextBtn = document.getElementById('next-btn');
       const backBtn = document.getElementById('back-btn');
 
+      // Check if user has consented
+      const consent = sessionStorage.getItem('survey_consent');
+      if (!consent || consent !== 'yes') {
+        window.location.href = '/survey/1';
+        return;
+      }
+
+      // Validate and save section data
       nextBtn?.addEventListener('click', () => {
-        const multiKid = document.querySelector('input[name="multiKidImportance"]:checked');
-        const notes = document.querySelector('input[name="notesImportance"]:checked');
-        const corrections = document.querySelector('input[name="corrections"]:checked');
-        const exportImp = document.querySelector('input[name="exportImportance"]:checked');
-        const notifFreq = document.querySelector('input[name="notificationFrequency"]:checked');
+        // Validate required fields
+        const multiKidAccount = document.querySelector('input[name="multiKidAccount"]:checked');
+        const kidLogin = document.querySelector('input[name="kidLogin"]:checked');
+        const privateNotes = document.querySelector('input[name="privateNotes"]:checked');
+        const exportImportance = document.querySelector('input[name="exportImportance"]:checked');
+        const coachAccess = document.querySelector('input[name="coachAccess"]:checked');
+        const familyPlan = document.querySelector('input[name="familyPlan"]:checked');
+        const decisionMaker = document.querySelector('input[name="decisionMaker"]:checked');
 
-        if (!multiKid) {
-          alert('Please rate: Multi-kid management importance');
+        if (!multiKidAccount) {
+          alert('Please answer: Multi-kid account importance? (Q32)');
           return;
         }
 
-        if (!notes) {
-          alert('Please rate: Parent notes importance');
+        if (!kidLogin) {
+          alert('Please answer: Should kids have their own login? (Q33)');
           return;
         }
 
-        if (!corrections) {
-          alert('Please answer: How should corrections work?');
+        if (!privateNotes) {
+          alert('Please answer: Private parent notes? (Q34)');
           return;
         }
 
-        if (!exportImp) {
-          alert('Please rate: Export data importance');
+        if (!exportImportance) {
+          alert('Please answer: Export data importance? (Q35)');
           return;
         }
 
-        if (!notifFreq) {
-          alert('Please answer: Notification frequency preference');
+        if (!coachAccess) {
+          alert('Please answer: Share with coaches? (Q36)');
           return;
         }
 
+        if (!familyPlan) {
+          alert('Please answer: Family plan pricing? (Q37)');
+          return;
+        }
+
+        if (!decisionMaker) {
+          alert('Please answer: Who makes decisions? (Q38)');
+          return;
+        }
+
+        // Save section data
         const sectionData = {
-          multiKidImportance: (multiKid as HTMLInputElement).value,
-          notesImportance: (notes as HTMLInputElement).value,
-          corrections: (corrections as HTMLInputElement).value,
-          exportImportance: (exportImp as HTMLInputElement).value,
-          notifications: Array.from(document.querySelectorAll('input[name="notifications"]:checked')).map((el: any) => el.value),
-          notificationFrequency: (notifFreq as HTMLInputElement).value
+          multiKidAccount: (multiKidAccount as HTMLInputElement).value,
+          kidLogin: (kidLogin as HTMLInputElement).value,
+          privateNotes: (privateNotes as HTMLInputElement).value,
+          exportImportance: (exportImportance as HTMLInputElement).value,
+          coachAccess: (coachAccess as HTMLInputElement).value,
+          familyPlan: (familyPlan as HTMLInputElement).value,
+          decisionMaker: (decisionMaker as HTMLInputElement).value
         };
 
         sessionStorage.setItem('survey_section_7', JSON.stringify(sectionData));
         window.location.href = '/survey/8';
       });
 
-      backBtn?.addEventListener('click', () => window.location.href = '/survey/6');
+      // Back button
+      backBtn?.addEventListener('click', () => {
+        window.location.href = '/survey/6';
+      });
     });
   </script>
 
@@ -290,7 +318,8 @@ import Layout from '../../layouts/Layout.astro';
       border: 1px solid rgb(39 39 42 / 0.2);
     }
 
-    .radio-option, .checkbox-option {
+    .radio-option,
+    .checkbox-option {
       display: flex;
       align-items: start;
       padding: 1rem;
@@ -301,12 +330,14 @@ import Layout from '../../layouts/Layout.astro';
       transition: all 0.2s ease;
     }
 
-    .radio-option:hover, .checkbox-option:hover {
+    .radio-option:hover,
+    .checkbox-option:hover {
       border-color: rgb(161 161 170);
       background: rgb(39 39 42 / 0.8);
     }
 
-    .radio-option input, .checkbox-option input {
+    .radio-option input[type="radio"],
+    .checkbox-option input[type="checkbox"] {
       margin-top: 0.125rem;
       margin-right: 0.75rem;
       min-width: 20px;
@@ -314,33 +345,23 @@ import Layout from '../../layouts/Layout.astro';
       cursor: pointer;
     }
 
-    .radio-option span, .checkbox-option span {
+    .radio-option span,
+    .checkbox-option span {
       color: rgb(228 228 231);
       flex: 1;
     }
 
-    .rating-option {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-    }
-
-    .rating-option input {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-    }
-
-    .rating-option span {
-      color: rgb(228 228 231);
-      font-weight: 600;
-    }
-
+    /* Mobile optimization */
     @media (max-width: 768px) {
-      .question-block { padding: 1.5rem; }
-      .radio-option input, .checkbox-option input { min-width: 24px; min-height: 24px; }
+      .question-block {
+        padding: 1.5rem;
+      }
+
+      .radio-option input[type="radio"],
+      .checkbox-option input[type="checkbox"] {
+        min-width: 24px;
+        min-height: 24px;
+      }
     }
   </style>
 </Layout>

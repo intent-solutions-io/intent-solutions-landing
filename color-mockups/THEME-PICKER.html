@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>theme picker - intent solutions io - pick your favorite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+    }
+
+    /* Theme Picker UI */
+    .theme-picker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .picker-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .picker-label {
+      font-size: 0.875rem;
+      color: #A1A1AA;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+
+    .theme-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .theme-btn {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #A1A1AA;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .theme-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+    }
+
+    .theme-btn.active {
+      background: #FFFFFF;
+      border-color: #FFFFFF;
+      color: #000000;
+    }
+
+    .current-theme {
+      font-size: 0.875rem;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    /* Content Container */
+    .content-wrapper {
+      margin-top: 5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 0.875rem 1.75rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.9375rem;
+    }
+
+    .products {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .product-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-card p {
+      font-size: 0.9375rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
+
+    /* Theme Styles */
+    body.theme-1 { background: linear-gradient(180deg, #0A0A0A 0%, #1A0A2E 100%); color: #FFFFFF; }
+    body.theme-1 h1 { background: linear-gradient(135deg, #FFFFFF 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-1 p { color: #A1A1AA; }
+    body.theme-1 .cta { background: #8B5CF6; color: #FFFFFF; box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+    body.theme-1 .cta:hover { background: #7C3AED; }
+    body.theme-1 .products { background: #0A0A0A; }
+    body.theme-1 .section-title { color: #FFFFFF; }
+    body.theme-1 .product-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); }
+    body.theme-1 .product-card:hover { background: rgba(255, 255, 255, 0.05); border-color: #8B5CF6; }
+    body.theme-1 .product-card h3 { color: #FFFFFF; }
+    body.theme-1 .product-card p { color: #A1A1AA; }
+    body.theme-1 .badge { background: rgba(139, 92, 246, 0.2); color: #C4B5FD; }
+
+    body.theme-2 { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 50%, #FAFAF9 100%); color: #1C1917; }
+    body.theme-2 h1 { background: linear-gradient(135deg, #1C1917 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-2 p { color: #57534E; }
+    body.theme-2 .cta { background: #8B5CF6; color: #FFFFFF; }
+    body.theme-2 .products { background: #FFFFFF; }
+    body.theme-2 .section-title { color: #1C1917; }
+    body.theme-2 .product-card { background: #FFFFFF; border: 1px solid #E7E5E4; }
+    body.theme-2 .product-card:hover { border-color: #8B5CF6; }
+    body.theme-2 .product-card h3 { color: #1C1917; }
+    body.theme-2 .product-card p { color: #57534E; }
+    body.theme-2 .badge { background: #F5F3FF; color: #7C3AED; border: 1px solid #EDE9FE; }
+
+    body.theme-3 { background: #000000; color: #FFFFFF; }
+    body.theme-3 h1 { color: #FFFFFF; }
+    body.theme-3 p { color: #A3A3A3; }
+    body.theme-3 .cta { background: #FFFFFF; color: #000000; }
+    body.theme-3 .cta:hover { background: #3B82F6; color: #FFFFFF; }
+    body.theme-3 .products { background: #000000; }
+    body.theme-3 .section-title { color: #FFFFFF; }
+    body.theme-3 .product-card { background: #000000; border: 1px solid #262626; }
+    body.theme-3 .product-card:hover { border-color: #3B82F6; }
+    body.theme-3 .product-card h3 { color: #FFFFFF; }
+    body.theme-3 .product-card p { color: #A3A3A3; }
+    body.theme-3 .badge { background: transparent; color: #737373; border: 1px solid #262626; }
+
+    body.theme-4 { background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%); color: #F1F5F9; }
+    body.theme-4 h1 { background: linear-gradient(135deg, #F1F5F9 0%, #38BDF8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-4 p { color: #94A3B8; }
+    body.theme-4 .cta { background: #0EA5E9; color: #FFFFFF; }
+    body.theme-4 .products { background: #0F172A; }
+    body.theme-4 .section-title { color: #F1F5F9; }
+    body.theme-4 .product-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); }
+    body.theme-4 .product-card:hover { border-color: #0EA5E9; }
+    body.theme-4 .product-card h3 { color: #F1F5F9; }
+    body.theme-4 .product-card p { color: #94A3B8; }
+    body.theme-4 .badge { background: rgba(14, 165, 233, 0.2); color: #7DD3FC; }
+
+    body.theme-5 { background: linear-gradient(180deg, #0C1810 0%, #14532D 100%); color: #F0FDF4; }
+    body.theme-5 h1 { background: linear-gradient(135deg, #F0FDF4 0%, #22C55E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-5 p { color: #86EFAC; }
+    body.theme-5 .cta { background: #16A34A; color: #FFFFFF; }
+    body.theme-5 .products { background: #0C1810; }
+    body.theme-5 .section-title { color: #F0FDF4; }
+    body.theme-5 .product-card { background: rgba(20, 83, 45, 0.3); border: 1px solid rgba(134, 239, 172, 0.2); }
+    body.theme-5 .product-card:hover { border-color: #16A34A; }
+    body.theme-5 .product-card h3 { color: #F0FDF4; }
+    body.theme-5 .product-card p { color: #86EFAC; }
+    body.theme-5 .badge { background: rgba(22, 163, 74, 0.2); color: #BBF7D0; }
+
+    body.theme-6 { background: linear-gradient(180deg, #1C0A00 0%, #431407 100%); color: #FFF7ED; }
+    body.theme-6 h1 { background: linear-gradient(135deg, #FFF7ED 0%, #F97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-6 p { color: #FDBA74; }
+    body.theme-6 .cta { background: #EA580C; color: #FFFFFF; }
+    body.theme-6 .products { background: #1C0A00; }
+    body.theme-6 .section-title { color: #FFF7ED; }
+    body.theme-6 .product-card { background: rgba(67, 20, 7, 0.4); border: 1px solid rgba(253, 186, 116, 0.2); }
+    body.theme-6 .product-card:hover { border-color: #EA580C; }
+    body.theme-6 .product-card h3 { color: #FFF7ED; }
+    body.theme-6 .product-card p { color: #FDBA74; }
+    body.theme-6 .badge { background: rgba(234, 88, 12, 0.2); color: #FED7AA; }
+
+    body.theme-7 { background: linear-gradient(180deg, #18181B 0%, #27272A 100%); color: #FAFAFA; }
+    body.theme-7 h1 { color: #FAFAFA; }
+    body.theme-7 p { color: #A1A1AA; }
+    body.theme-7 .cta { background: #E4E4E7; color: #18181B; }
+    body.theme-7 .cta:hover { background: #FAFAFA; }
+    body.theme-7 .products { background: #18181B; }
+    body.theme-7 .section-title { color: #FAFAFA; }
+    body.theme-7 .product-card { background: rgba(39, 39, 42, 0.6); border: 1px solid rgba(161, 161, 170, 0.2); }
+    body.theme-7 .product-card:hover { border-color: #A1A1AA; }
+    body.theme-7 .product-card h3 { color: #FAFAFA; }
+    body.theme-7 .product-card p { color: #A1A1AA; }
+    body.theme-7 .badge { background: rgba(228, 228, 231, 0.1); color: #D4D4D8; border: 1px solid rgba(228, 228, 231, 0.2); }
+
+    body.theme-8 { background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FEFCE8 100%); color: #292524; }
+    body.theme-8 h1 { background: linear-gradient(135deg, #292524 0%, #D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-8 p { color: #78716C; }
+    body.theme-8 .cta { background: #D97706; color: #FFFFFF; }
+    body.theme-8 .products { background: #FEFCE8; }
+    body.theme-8 .section-title { color: #292524; }
+    body.theme-8 .product-card { background: #FFFBEB; border: 1px solid #FDE68A; }
+    body.theme-8 .product-card:hover { border-color: #D97706; }
+    body.theme-8 .product-card h3 { color: #292524; }
+    body.theme-8 .product-card p { color: #78716C; }
+    body.theme-8 .badge { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+
+    body.theme-9 { background: linear-gradient(180deg, #190A0F 0%, #4C0519 100%); color: #FFF1F2; }
+    body.theme-9 h1 { background: linear-gradient(135deg, #FFF1F2 0%, #FB7185 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-9 p { color: #FECDD3; }
+    body.theme-9 .cta { background: #E11D48; color: #FFFFFF; }
+    body.theme-9 .products { background: #190A0F; }
+    body.theme-9 .section-title { color: #FFF1F2; }
+    body.theme-9 .product-card { background: rgba(76, 5, 25, 0.4); border: 1px solid rgba(254, 205, 211, 0.2); }
+    body.theme-9 .product-card:hover { border-color: #E11D48; }
+    body.theme-9 .product-card h3 { color: #FFF1F2; }
+    body.theme-9 .product-card p { color: #FECDD3; }
+    body.theme-9 .badge { background: rgba(225, 29, 72, 0.2); color: #FDA4AF; }
+
+    body.theme-10 { background: linear-gradient(180deg, #083344 0%, #155E75 100%); color: #ECFEFF; }
+    body.theme-10 h1 { background: linear-gradient(135deg, #ECFEFF 0%, #22D3EE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-10 p { color: #A5F3FC; }
+    body.theme-10 .cta { background: #06B6D4; color: #FFFFFF; }
+    body.theme-10 .products { background: #083344; }
+    body.theme-10 .section-title { color: #ECFEFF; }
+    body.theme-10 .product-card { background: rgba(21, 94, 117, 0.4); border: 1px solid rgba(165, 243, 252, 0.2); }
+    body.theme-10 .product-card:hover { border-color: #06B6D4; }
+    body.theme-10 .product-card h3 { color: #ECFEFF; }
+    body.theme-10 .product-card p { color: #A5F3FC; }
+    body.theme-10 .badge { background: rgba(6, 182, 212, 0.2); color: #67E8F9; }
+
+    body.theme-11 { background: linear-gradient(180deg, #1E1B4B 0%, #312E81 100%); color: #EDE9FE; }
+    body.theme-11 h1 { background: linear-gradient(135deg, #EDE9FE 0%, #A78BFA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-11 p { color: #C4B5FD; }
+    body.theme-11 .cta { background: #7C3AED; color: #FFFFFF; }
+    body.theme-11 .products { background: #1E1B4B; }
+    body.theme-11 .section-title { color: #EDE9FE; }
+    body.theme-11 .product-card { background: rgba(49, 46, 129, 0.5); border: 1px solid rgba(196, 181, 253, 0.2); }
+    body.theme-11 .product-card:hover { border-color: #7C3AED; }
+    body.theme-11 .product-card h3 { color: #EDE9FE; }
+    body.theme-11 .product-card p { color: #C4B5FD; }
+    body.theme-11 .badge { background: rgba(124, 58, 237, 0.2); color: #DDD6FE; }
+
+    body.theme-12 { background: linear-gradient(180deg, #1A2E05 0%, #365314 100%); color: #F7FEE7; }
+    body.theme-12 h1 { background: linear-gradient(135deg, #F7FEE7 0%, #84CC16 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-12 p { color: #D9F99D; }
+    body.theme-12 .cta { background: #65A30D; color: #FFFFFF; }
+    body.theme-12 .products { background: #1A2E05; }
+    body.theme-12 .section-title { color: #F7FEE7; }
+    body.theme-12 .product-card { background: rgba(54, 83, 20, 0.4); border: 1px solid rgba(217, 249, 157, 0.2); }
+    body.theme-12 .product-card:hover { border-color: #65A30D; }
+    body.theme-12 .product-card h3 { color: #F7FEE7; }
+    body.theme-12 .product-card p { color: #D9F99D; }
+    body.theme-12 .badge { background: rgba(101, 163, 13, 0.2); color: #BEF264; }
+
+    body.theme-13 { background: linear-gradient(180deg, #1E293B 0%, #334155 100%); color: #F8FAFC; }
+    body.theme-13 h1 { background: linear-gradient(135deg, #F8FAFC 0%, #818CF8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    body.theme-13 p { color: #CBD5E1; }
+    body.theme-13 .cta { background: #6366F1; color: #FFFFFF; }
+    body.theme-13 .products { background: #1E293B; }
+    body.theme-13 .section-title { color: #F8FAFC; }
+    body.theme-13 .product-card { background: rgba(51, 65, 85, 0.5); border: 1px solid rgba(203, 213, 225, 0.2); }
+    body.theme-13 .product-card:hover { border-color: #6366F1; }
+    body.theme-13 .product-card h3 { color: #F8FAFC; }
+    body.theme-13 .product-card p { color: #CBD5E1; }
+    body.theme-13 .badge { background: rgba(99, 102, 241, 0.2); color: #A5B4FC; }
+  </style>
+</head>
+<body class="theme-7">
+
+  <!-- Theme Picker -->
+  <div class="theme-picker">
+    <div class="picker-content">
+      <div class="picker-label">pick your theme:</div>
+      <div class="theme-buttons">
+        <button class="theme-btn" data-theme="1">1</button>
+        <button class="theme-btn" data-theme="2">2</button>
+        <button class="theme-btn" data-theme="3">3</button>
+        <button class="theme-btn" data-theme="4">4</button>
+        <button class="theme-btn" data-theme="5">5</button>
+        <button class="theme-btn" data-theme="6">6</button>
+        <button class="theme-btn active" data-theme="7">7 (default)</button>
+        <button class="theme-btn" data-theme="8">8</button>
+        <button class="theme-btn" data-theme="9">9</button>
+        <button class="theme-btn" data-theme="10">10</button>
+        <button class="theme-btn" data-theme="11">11</button>
+        <button class="theme-btn" data-theme="12">12</button>
+        <button class="theme-btn" data-theme="13">13</button>
+      </div>
+      <div class="current-theme">current: <span id="theme-name">charcoal slate</span></div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content-wrapper">
+    <section>
+      <div class="container">
+        <div class="content">
+          <h1>creating industries<br>that don't exist</h1>
+          <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+          <a href="#products" class="cta">view my work</a>
+
+          <div class="products" id="products">
+            <h2 class="section-title">products i've shipped</h2>
+            <div class="product-grid">
+              <div class="product-card">
+                <h3>diagnosticpro</h3>
+                <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend processing real customer diagnostics.</p>
+                <span class="badge">typescript • react • vertex ai</span>
+              </div>
+              <div class="product-card">
+                <h3>vibe prd ⭐ 15 stars</h3>
+                <p>ai-powered documentation generator transforming ideas into enterprise-ready docs in 5 minutes. used by developers worldwide.</p>
+                <span class="badge">python • claude api • cli</span>
+              </div>
+              <div class="product-card">
+                <h3>hustle</h3>
+                <p>youth sports tracking app for competitive families. currently in research phase - validating with parent surveys.</p>
+                <span class="badge">next.js • postgresql • research</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const themeNames = {
+      1: 'dark professional',
+      2: 'polished casual',
+      3: 'high contrast minimal',
+      4: 'midnight blue',
+      5: 'forest green',
+      6: 'sunset orange',
+      7: 'charcoal slate',
+      8: 'warm cream',
+      9: 'deep rose',
+      10: 'electric cyan',
+      11: 'deep violet',
+      12: 'lime burst',
+      13: 'indigo navy'
+    };
+
+    const buttons = document.querySelectorAll('.theme-btn');
+    const body = document.body;
+    const themeName = document.getElementById('theme-name');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const theme = button.dataset.theme;
+
+        // Remove all theme classes
+        for (let i = 1; i <= 13; i++) {
+          body.classList.remove(`theme-${i}`);
+        }
+
+        // Add new theme class
+        body.classList.add(`theme-${theme}`);
+
+        // Update active button
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Update theme name
+        themeName.textContent = themeNames[theme];
+
+        // Save to localStorage
+        localStorage.setItem('selectedTheme', theme);
+      });
+    });
+
+    // Load saved theme on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('selectedTheme') || '7';
+      const savedButton = document.querySelector(`[data-theme="${savedTheme}"]`);
+
+      if (savedButton) {
+        savedButton.click();
+      }
+    });
+  </script>
+
+</body>
+</html>

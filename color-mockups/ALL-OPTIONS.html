@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13 color schemes - intent solutions io - scroll to compare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+    }
+
+    .option-label {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 0.875rem 1.75rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.9375rem;
+    }
+
+    .products {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .product-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-card p {
+      font-size: 0.9375rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
+
+    /* OPTION 1: Dark Professional */
+    .opt1 { background: linear-gradient(180deg, #0A0A0A 0%, #1A0A2E 100%); color: #FFFFFF; }
+    .opt1 .option-label { background: rgba(10, 10, 10, 0.9); color: #8B5CF6; border-bottom: 1px solid rgba(139, 92, 246, 0.3); }
+    .opt1 h1 { background: linear-gradient(135deg, #FFFFFF 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt1 p { color: #A1A1AA; }
+    .opt1 .cta { background: #8B5CF6; color: #FFFFFF; box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+    .opt1 .cta:hover { background: #7C3AED; box-shadow: 0 0 30px rgba(139, 92, 246, 0.5); }
+    .opt1 .products { background: #0A0A0A; }
+    .opt1 .section-title { color: #FFFFFF; }
+    .opt1 .product-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .opt1 .product-card:hover { background: rgba(255, 255, 255, 0.05); border-color: #8B5CF6; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2); }
+    .opt1 .product-card h3 { color: #FFFFFF; }
+    .opt1 .product-card p { color: #A1A1AA; }
+    .opt1 .badge { background: rgba(139, 92, 246, 0.2); color: #C4B5FD; }
+
+    /* OPTION 2: Polished Casual */
+    .opt2 { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 50%, #FAFAF9 100%); color: #1C1917; }
+    .opt2 .option-label { background: rgba(245, 243, 255, 0.9); color: #8B5CF6; border-bottom: 1px solid #EDE9FE; }
+    .opt2 h1 { background: linear-gradient(135deg, #1C1917 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt2 p { color: #57534E; }
+    .opt2 .cta { background: #8B5CF6; color: #FFFFFF; box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3); }
+    .opt2 .cta:hover { background: #7C3AED; box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
+    .opt2 .products { background: #FFFFFF; }
+    .opt2 .section-title { color: #1C1917; }
+    .opt2 .product-card { background: #FFFFFF; border: 1px solid #E7E5E4; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+    .opt2 .product-card:hover { border-color: #8B5CF6; box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15); }
+    .opt2 .product-card h3 { color: #1C1917; }
+    .opt2 .product-card p { color: #57534E; }
+    .opt2 .badge { background: #F5F3FF; color: #7C3AED; border: 1px solid #EDE9FE; }
+
+    /* OPTION 3: High Contrast Minimal */
+    .opt3 { background: #000000; color: #FFFFFF; }
+    .opt3 .option-label { background: rgba(0, 0, 0, 0.9); color: #3B82F6; border-bottom: 1px solid #262626; }
+    .opt3 h1 { color: #FFFFFF; }
+    .opt3 p { color: #A3A3A3; }
+    .opt3 .cta { background: #FFFFFF; color: #000000; text-transform: uppercase; letter-spacing: 0.05em; }
+    .opt3 .cta:hover { background: #3B82F6; color: #FFFFFF; }
+    .opt3 .products { background: #000000; border-top: 1px solid #262626; }
+    .opt3 .section-title { color: #FFFFFF; }
+    .opt3 .product-card { background: #000000; border: 1px solid #262626; }
+    .opt3 .product-card:hover { background: #0A0A0A; }
+    .opt3 .product-card:hover h3 { color: #3B82F6; }
+    .opt3 .product-card h3 { color: #FFFFFF; }
+    .opt3 .product-card p { color: #A3A3A3; }
+    .opt3 .badge { background: transparent; color: #737373; border: 1px solid #262626; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* OPTION 4: Midnight Blue */
+    .opt4 { background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%); color: #F1F5F9; }
+    .opt4 .option-label { background: rgba(15, 23, 42, 0.9); color: #38BDF8; border-bottom: 1px solid rgba(56, 189, 248, 0.3); }
+    .opt4 h1 { background: linear-gradient(135deg, #F1F5F9 0%, #38BDF8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt4 p { color: #94A3B8; }
+    .opt4 .cta { background: #0EA5E9; color: #FFFFFF; box-shadow: 0 0 20px rgba(14, 165, 233, 0.3); }
+    .opt4 .cta:hover { background: #0284C7; box-shadow: 0 0 30px rgba(14, 165, 233, 0.5); }
+    .opt4 .products { background: #0F172A; }
+    .opt4 .section-title { color: #F1F5F9; }
+    .opt4 .product-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); }
+    .opt4 .product-card:hover { background: rgba(30, 41, 59, 0.7); border-color: #0EA5E9; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2); }
+    .opt4 .product-card h3 { color: #F1F5F9; }
+    .opt4 .product-card p { color: #94A3B8; }
+    .opt4 .badge { background: rgba(14, 165, 233, 0.2); color: #7DD3FC; }
+
+    /* OPTION 5: Forest Green */
+    .opt5 { background: linear-gradient(180deg, #0C1810 0%, #14532D 100%); color: #F0FDF4; }
+    .opt5 .option-label { background: rgba(12, 24, 16, 0.9); color: #22C55E; border-bottom: 1px solid rgba(34, 197, 94, 0.3); }
+    .opt5 h1 { background: linear-gradient(135deg, #F0FDF4 0%, #22C55E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt5 p { color: #86EFAC; }
+    .opt5 .cta { background: #16A34A; color: #FFFFFF; box-shadow: 0 0 20px rgba(22, 163, 74, 0.3); }
+    .opt5 .cta:hover { background: #15803D; box-shadow: 0 0 30px rgba(22, 163, 74, 0.5); }
+    .opt5 .products { background: #0C1810; }
+    .opt5 .section-title { color: #F0FDF4; }
+    .opt5 .product-card { background: rgba(20, 83, 45, 0.3); border: 1px solid rgba(134, 239, 172, 0.2); }
+    .opt5 .product-card:hover { background: rgba(20, 83, 45, 0.5); border-color: #16A34A; box-shadow: 0 10px 30px rgba(22, 163, 74, 0.2); }
+    .opt5 .product-card h3 { color: #F0FDF4; }
+    .opt5 .product-card p { color: #86EFAC; }
+    .opt5 .badge { background: rgba(22, 163, 74, 0.2); color: #BBF7D0; }
+
+    /* OPTION 6: Sunset Orange */
+    .opt6 { background: linear-gradient(180deg, #1C0A00 0%, #431407 100%); color: #FFF7ED; }
+    .opt6 .option-label { background: rgba(28, 10, 0, 0.9); color: #F97316; border-bottom: 1px solid rgba(249, 115, 22, 0.3); }
+    .opt6 h1 { background: linear-gradient(135deg, #FFF7ED 0%, #F97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt6 p { color: #FDBA74; }
+    .opt6 .cta { background: #EA580C; color: #FFFFFF; box-shadow: 0 0 25px rgba(234, 88, 12, 0.4); }
+    .opt6 .cta:hover { background: #C2410C; box-shadow: 0 0 35px rgba(234, 88, 12, 0.6); }
+    .opt6 .products { background: #1C0A00; }
+    .opt6 .section-title { color: #FFF7ED; }
+    .opt6 .product-card { background: rgba(67, 20, 7, 0.4); border: 1px solid rgba(253, 186, 116, 0.2); }
+    .opt6 .product-card:hover { background: rgba(67, 20, 7, 0.6); border-color: #EA580C; box-shadow: 0 10px 30px rgba(234, 88, 12, 0.3); }
+    .opt6 .product-card h3 { color: #FFF7ED; }
+    .opt6 .product-card p { color: #FDBA74; }
+    .opt6 .badge { background: rgba(234, 88, 12, 0.2); color: #FED7AA; }
+
+    /* OPTION 7: Charcoal Slate */
+    .opt7 { background: linear-gradient(180deg, #18181B 0%, #27272A 100%); color: #FAFAFA; }
+    .opt7 .option-label { background: rgba(24, 24, 27, 0.9); color: #D4D4D8; border-bottom: 1px solid rgba(161, 161, 170, 0.3); }
+    .opt7 h1 { color: #FAFAFA; }
+    .opt7 p { color: #A1A1AA; }
+    .opt7 .cta { background: #E4E4E7; color: #18181B; }
+    .opt7 .cta:hover { background: #FAFAFA; box-shadow: 0 4px 12px rgba(228, 228, 231, 0.3); }
+    .opt7 .products { background: #18181B; }
+    .opt7 .section-title { color: #FAFAFA; }
+    .opt7 .product-card { background: rgba(39, 39, 42, 0.6); border: 1px solid rgba(161, 161, 170, 0.2); }
+    .opt7 .product-card:hover { background: rgba(39, 39, 42, 0.8); border-color: #A1A1AA; box-shadow: 0 10px 30px rgba(161, 161, 170, 0.15); }
+    .opt7 .product-card h3 { color: #FAFAFA; }
+    .opt7 .product-card p { color: #A1A1AA; }
+    .opt7 .badge { background: rgba(228, 228, 231, 0.1); color: #D4D4D8; border: 1px solid rgba(228, 228, 231, 0.2); }
+
+    /* OPTION 8: Warm Cream */
+    .opt8 { background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FEFCE8 100%); color: #292524; }
+    .opt8 .option-label { background: rgba(255, 251, 235, 0.9); color: #D97706; border-bottom: 1px solid #FDE68A; }
+    .opt8 h1 { background: linear-gradient(135deg, #292524 0%, #D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt8 p { color: #78716C; }
+    .opt8 .cta { background: #D97706; color: #FFFFFF; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
+    .opt8 .cta:hover { background: #B45309; box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4); }
+    .opt8 .products { background: #FEFCE8; }
+    .opt8 .section-title { color: #292524; }
+    .opt8 .product-card { background: #FFFBEB; border: 1px solid #FDE68A; box-shadow: 0 2px 8px rgba(217, 119, 6, 0.05); }
+    .opt8 .product-card:hover { border-color: #D97706; box-shadow: 0 12px 24px rgba(217, 119, 6, 0.15); }
+    .opt8 .product-card h3 { color: #292524; }
+    .opt8 .product-card p { color: #78716C; }
+    .opt8 .badge { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+
+    /* OPTION 9: Deep Rose */
+    .opt9 { background: linear-gradient(180deg, #190A0F 0%, #4C0519 100%); color: #FFF1F2; }
+    .opt9 .option-label { background: rgba(25, 10, 15, 0.9); color: #FB7185; border-bottom: 1px solid rgba(251, 113, 133, 0.3); }
+    .opt9 h1 { background: linear-gradient(135deg, #FFF1F2 0%, #FB7185 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt9 p { color: #FECDD3; }
+    .opt9 .cta { background: #E11D48; color: #FFFFFF; box-shadow: 0 0 20px rgba(225, 29, 72, 0.3); }
+    .opt9 .cta:hover { background: #BE123C; box-shadow: 0 0 30px rgba(225, 29, 72, 0.5); }
+    .opt9 .products { background: #190A0F; }
+    .opt9 .section-title { color: #FFF1F2; }
+    .opt9 .product-card { background: rgba(76, 5, 25, 0.4); border: 1px solid rgba(254, 205, 211, 0.2); }
+    .opt9 .product-card:hover { background: rgba(76, 5, 25, 0.6); border-color: #E11D48; box-shadow: 0 10px 30px rgba(225, 29, 72, 0.2); }
+    .opt9 .product-card h3 { color: #FFF1F2; }
+    .opt9 .product-card p { color: #FECDD3; }
+    .opt9 .badge { background: rgba(225, 29, 72, 0.2); color: #FDA4AF; }
+
+    /* OPTION 10: Electric Cyan */
+    .opt10 { background: linear-gradient(180deg, #083344 0%, #155E75 100%); color: #ECFEFF; }
+    .opt10 .option-label { background: rgba(8, 51, 68, 0.9); color: #22D3EE; border-bottom: 1px solid rgba(34, 211, 238, 0.3); }
+    .opt10 h1 { background: linear-gradient(135deg, #ECFEFF 0%, #22D3EE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt10 p { color: #A5F3FC; }
+    .opt10 .cta { background: #06B6D4; color: #FFFFFF; box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
+    .opt10 .cta:hover { background: #0891B2; box-shadow: 0 0 30px rgba(6, 182, 212, 0.5); }
+    .opt10 .products { background: #083344; }
+    .opt10 .section-title { color: #ECFEFF; }
+    .opt10 .product-card { background: rgba(21, 94, 117, 0.4); border: 1px solid rgba(165, 243, 252, 0.2); }
+    .opt10 .product-card:hover { background: rgba(21, 94, 117, 0.6); border-color: #06B6D4; box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2); }
+    .opt10 .product-card h3 { color: #ECFEFF; }
+    .opt10 .product-card p { color: #A5F3FC; }
+    .opt10 .badge { background: rgba(6, 182, 212, 0.2); color: #67E8F9; }
+
+    /* OPTION 11: Deep Violet */
+    .opt11 { background: linear-gradient(180deg, #1E1B4B 0%, #312E81 100%); color: #EDE9FE; }
+    .opt11 .option-label { background: rgba(30, 27, 75, 0.9); color: #A78BFA; border-bottom: 1px solid rgba(167, 139, 250, 0.3); }
+    .opt11 h1 { background: linear-gradient(135deg, #EDE9FE 0%, #A78BFA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt11 p { color: #C4B5FD; }
+    .opt11 .cta { background: #7C3AED; color: #FFFFFF; box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+    .opt11 .cta:hover { background: #6D28D9; box-shadow: 0 0 30px rgba(124, 58, 237, 0.5); }
+    .opt11 .products { background: #1E1B4B; }
+    .opt11 .section-title { color: #EDE9FE; }
+    .opt11 .product-card { background: rgba(49, 46, 129, 0.5); border: 1px solid rgba(196, 181, 253, 0.2); }
+    .opt11 .product-card:hover { background: rgba(49, 46, 129, 0.7); border-color: #7C3AED; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2); }
+    .opt11 .product-card h3 { color: #EDE9FE; }
+    .opt11 .product-card p { color: #C4B5FD; }
+    .opt11 .badge { background: rgba(124, 58, 237, 0.2); color: #DDD6FE; }
+
+    /* OPTION 12: Lime Burst */
+    .opt12 { background: linear-gradient(180deg, #1A2E05 0%, #365314 100%); color: #F7FEE7; }
+    .opt12 .option-label { background: rgba(26, 46, 5, 0.9); color: #84CC16; border-bottom: 1px solid rgba(132, 204, 22, 0.3); }
+    .opt12 h1 { background: linear-gradient(135deg, #F7FEE7 0%, #84CC16 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt12 p { color: #D9F99D; }
+    .opt12 .cta { background: #65A30D; color: #FFFFFF; box-shadow: 0 0 20px rgba(101, 163, 13, 0.3); }
+    .opt12 .cta:hover { background: #4D7C0F; box-shadow: 0 0 30px rgba(101, 163, 13, 0.5); }
+    .opt12 .products { background: #1A2E05; }
+    .opt12 .section-title { color: #F7FEE7; }
+    .opt12 .product-card { background: rgba(54, 83, 20, 0.4); border: 1px solid rgba(217, 249, 157, 0.2); }
+    .opt12 .product-card:hover { background: rgba(54, 83, 20, 0.6); border-color: #65A30D; box-shadow: 0 10px 30px rgba(101, 163, 13, 0.2); }
+    .opt12 .product-card h3 { color: #F7FEE7; }
+    .opt12 .product-card p { color: #D9F99D; }
+    .opt12 .badge { background: rgba(101, 163, 13, 0.2); color: #BEF264; }
+
+    /* OPTION 13: Indigo Navy */
+    .opt13 { background: linear-gradient(180deg, #1E293B 0%, #334155 100%); color: #F8FAFC; }
+    .opt13 .option-label { background: rgba(30, 41, 59, 0.9); color: #818CF8; border-bottom: 1px solid rgba(129, 140, 248, 0.3); }
+    .opt13 h1 { background: linear-gradient(135deg, #F8FAFC 0%, #818CF8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .opt13 p { color: #CBD5E1; }
+    .opt13 .cta { background: #6366F1; color: #FFFFFF; box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+    .opt13 .cta:hover { background: #4F46E5; box-shadow: 0 0 30px rgba(99, 102, 241, 0.5); }
+    .opt13 .products { background: #1E293B; }
+    .opt13 .section-title { color: #F8FAFC; }
+    .opt13 .product-card { background: rgba(51, 65, 85, 0.5); border: 1px solid rgba(203, 213, 225, 0.2); }
+    .opt13 .product-card:hover { background: rgba(51, 65, 85, 0.7); border-color: #6366F1; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2); }
+    .opt13 .product-card h3 { color: #F8FAFC; }
+    .opt13 .product-card p { color: #CBD5E1; }
+    .opt13 .badge { background: rgba(99, 102, 241, 0.2); color: #A5B4FC; }
+  </style>
+</head>
+<body>
+
+  <!-- OPTION 1: Dark Professional -->
+  <section class="opt1">
+    <div class="option-label">option 1: dark professional (purple on black)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 2: Polished Casual -->
+  <section class="opt2">
+    <div class="option-label">option 2: polished casual (purple on cream)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 3: High Contrast Minimal -->
+  <section class="opt3">
+    <div class="option-label">option 3: high contrast minimal (pure black/white)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 4: Midnight Blue -->
+  <section class="opt4">
+    <div class="option-label">option 4: midnight blue (cyan on navy)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 5: Forest Green -->
+  <section class="opt5">
+    <div class="option-label">option 5: forest green (emerald on dark)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 6: Sunset Orange -->
+  <section class="opt6">
+    <div class="option-label">option 6: sunset orange (orange on charcoal)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 7: Charcoal Slate -->
+  <section class="opt7">
+    <div class="option-label">option 7: charcoal slate (gray monochrome)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 8: Warm Cream -->
+  <section class="opt8">
+    <div class="option-label">option 8: warm cream (amber on cream)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 9: Deep Rose -->
+  <section class="opt9">
+    <div class="option-label">option 9: deep rose (pink/rose on dark)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 10: Electric Cyan -->
+  <section class="opt10">
+    <div class="option-label">option 10: electric cyan (bright cyan on teal)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 11: Deep Violet -->
+  <section class="opt11">
+    <div class="option-label">option 11: deep violet (purple/violet on indigo)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 12: Lime Burst -->
+  <section class="opt12">
+    <div class="option-label">option 12: lime burst (bright lime on dark green)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION 13: Indigo Navy -->
+  <section class="opt13">
+    <div class="option-label">option 13: indigo navy (indigo on slate)</div>
+    <div class="container">
+      <div class="content">
+        <h1>creating industries<br>that don't exist</h1>
+        <p>independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.</p>
+        <a href="#" class="cta">view my work</a>
+
+        <div class="products">
+          <h2 class="section-title">products i've shipped</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <h3>diagnosticpro</h3>
+              <p>live automotive ai diagnostic platform. vertex ai + firebase/firestore backend.</p>
+              <span class="badge">typescript • react</span>
+            </div>
+            <div class="product-card">
+              <h3>vibe prd ⭐ 15</h3>
+              <p>ai documentation generator used by developers worldwide.</p>
+              <span class="badge">python • claude</span>
+            </div>
+            <div class="product-card">
+              <h3>hustle</h3>
+              <p>youth sports tracking app. currently in research phase.</p>
+              <span class="badge">next.js • research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

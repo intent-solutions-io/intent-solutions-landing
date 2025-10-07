@@ -1,0 +1,43 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e6]:
+      - link "← back to intro" [ref=e7] [cursor=pointer]:
+        - /url: /survey
+      - generic [ref=e8]: section 1 of 15
+    - generic [ref=e13]:
+      - heading "quick start" [level=1] [ref=e14]
+      - paragraph [ref=e15]: before we begin, we need your consent to participate in this research survey
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: 1. Do you consent to participate in this research survey? *
+          - generic [ref=e19]:
+            - generic [ref=e20] [cursor=pointer]:
+              - radio "Yes, I'm in!" [ref=e21]
+              - generic [ref=e22]: Yes, I'm in!
+            - generic [ref=e23] [cursor=pointer]:
+              - radio "No thanks" [ref=e24]
+              - generic [ref=e25]: No thanks
+          - paragraph [ref=e26]: Your responses will be kept confidential and used only to improve Hustle.
+        - generic [ref=e27]:
+          - link "← back" [ref=e28] [cursor=pointer]:
+            - /url: /survey
+          - button "next section →" [ref=e29]
+  - generic [ref=e32]:
+    - button "Menu" [ref=e33]:
+      - img [ref=e35]
+      - generic: Menu
+    - button "Inspect" [ref=e39]:
+      - img [ref=e41]
+      - generic: Inspect
+    - button "Audit" [ref=e43]:
+      - generic [ref=e44]:
+        - img [ref=e45]
+        - img [ref=e48]
+      - generic: Audit
+    - button "Settings" [ref=e51]:
+      - img [ref=e53]
+      - generic: Settings
+```

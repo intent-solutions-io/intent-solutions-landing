@@ -1,180 +1,87 @@
-# Intent Solutions - Professional Services Landing Page
+# Intent Solutions Landing Page
 
-Modern, responsive landing page for Intent Solutions professional services and business offerings.
+Professional React/TypeScript landing page for Intent Solutions services.
 
-## 🚀 Features
+**Live Site:** https://intentsolutions.io
 
-- **Service Showcase**: Detailed service descriptions and offerings
-- **Contact Forms**: Lead generation and inquiry forms
-- **Portfolio Section**: Client work and case studies
-- **Testimonials**: Client reviews and success stories  
-- **SEO Optimized**: Meta tags, structured data, sitemap
-- **Mobile First**: Fully responsive design
-- **Performance**: Optimized for Core Web Vitals
-
-## 📦 Installation
+## Quick Start
 
 ```bash
-# Clone the repository
-git clone [your-git-url]
-cd intent-solutions-landing
+# Install dependencies (Bun required)
+bun install
 
-# Install dependencies
-npm install
+# Development server (http://localhost:8080)
+bun run dev
 
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
+# Production build
+bun run build
 
 # Preview production build
-npm run preview
+bun run preview
 ```
 
-## 🏗️ Project Structure
+## Technology Stack
+
+- **Runtime**: Bun
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite with SWC
+- **UI Library**: shadcn/ui (57 components) + Tailwind CSS
+- **Deployment**: Netlify (auto-deploy from main branch)
+- **Domain**: intentsolutions.io (DNS via Porkbun)
+
+## Documentation
+
+All comprehensive documentation is located in `01-Docs/`:
+
+- **Claude Instructions**: `01-Docs/022-ref-claude-instructions.md` - Complete AI context and development guide
+- **Project Overview**: `01-Docs/023-ref-project-overview.md` - Detailed project information
+- **Deployment Guide**: `01-Docs/02-NETLIFY-DEPLOYMENT-GUIDE.md`
+- **Architecture**: `01-Docs/07-ARCHITECTURE.md`
+- **Security**: `01-Docs/10-SECURITY.md`
+- **Changelog**: `01-Docs/021-chg-version-history.md`
+
+For a complete list of documentation, see `01-Docs/20-README-docs-index.md`.
+
+## Directory Standards
+
+This project follows the MASTER DIRECTORY STANDARDS.
+See `.directory-standards.md` for details.
+All documentation is stored in `01-Docs/` using the `NNN-abv-description.ext` format.
+
+## Project Structure
 
 ```
 intent-solutions-landing/
-├── docs/
-│   ├── PRDs/           # Product requirements & AI dev tasks
-│   ├── ADRs/           # Architecture decision records
-│   ├── specifications/ # Technical specifications
-│   └── tasks/          # Task tracking
-├── src/
-│   ├── components/     # React components
-│   ├── pages/          # Page components
-│   ├── assets/         # Images, fonts, etc.
-│   └── styles/         # CSS/Tailwind styles
-├── public/             # Static assets
-└── .github/            # GitHub templates
+├── 01-Docs/                    # All documentation (see docs index)
+├── 02-Src/                     # React source code
+├── 03-Tests/                   # Test suites
+├── 04-Assets/                  # Static assets
+├── 05-Scripts/                 # Automation scripts
+├── 06-Infrastructure/          # Infrastructure as Code
+├── 07-Releases/                # Release artifacts
+├── 99-Archive/                 # Archived items
+├── .directory-standards.md     # Directory organization standards
+├── README.md                   # This file
+├── CLAUDE.md                   # Claude Code instructions
+├── CHANGELOG.md                # Version history
+└── LICENSE                     # MIT License
 ```
 
-## 🛠️ Technology Stack
+## Development
 
-- **Framework**: React with TypeScript
-- **Build Tool**: Vite
-- **UI Components**: shadcn/ui
-- **Styling**: Tailwind CSS
-- **Forms**: React Hook Form
-- **Icons**: Lucide React
-- **Analytics**: Google Analytics (configurable)
+For complete development instructions, architecture details, and deployment procedures, please refer to `01-Docs/022-ref-claude-instructions.md`.
 
-## 📋 Development Workflow
+## Deployment
 
-### AI-Driven Development Process
+- **Auto-deploy**: Push to `main` branch triggers Netlify build
+- **Build command**: `bun install && bun run build`
+- **Output directory**: `dist/`
+- **Live site**: https://intentsolutions.io
 
-This project uses the AI dev task workflow:
+## License
 
-1. **Create PRD**: Use `docs/PRDs/create-prd.md` to define features
-2. **Generate Tasks**: Use `docs/PRDs/generate-tasks.md` to break down work
-3. **Execute Tasks**: Use `docs/PRDs/process-task-list.md` to implement
-4. **Document**: Record decisions in `docs/ADRs/`
+MIT License - See `LICENSE` file for details
 
-### Common Commands
+---
 
-```bash
-# Development
-npm run dev          # Start dev server
-npm run build        # Build for production
-npm run preview      # Preview build locally
-npm run lint         # Run ESLint
-npm run type-check   # TypeScript checking
-
-# Testing
-npm test            # Run tests
-npm run test:watch  # Run tests in watch mode
-```
-
-## 🎨 Design System
-
-### Colors
-- Primary: Business blue tones
-- Secondary: Professional grays
-- Accent: Call-to-action colors
-
-### Components
-- Hero sections
-- Feature cards
-- Testimonial sliders
-- Contact forms
-- Navigation (sticky/responsive)
-- Footer with links
-
-## 📱 Responsive Design
-
-- Mobile: 320px - 767px
-- Tablet: 768px - 1023px  
-- Desktop: 1024px+
-- Wide: 1440px+
-
-## 🚦 Performance Targets
-
-- Lighthouse Score: 95+
-- First Contentful Paint: < 1.5s
-- Time to Interactive: < 3.5s
-- Cumulative Layout Shift: < 0.1
-
-## 🔒 Security Best Practices
-
-- Form validation and sanitization
-- HTTPS enforced
-- Content Security Policy headers
-- Regular dependency updates
-- Environment variables for sensitive data
-
-## 📊 SEO Features
-
-- Meta tags optimization
-- Open Graph tags
-- Twitter Card support
-- XML sitemap
-- Robots.txt
-- Schema markup for business info
-
-## 🌐 Deployment
-
-### Lovable Platform
-
-This project is configured for Lovable deployment:
-
-1. Visit [Lovable Project](https://lovable.dev/projects/226460ae-0cff-4da1-ab04-be890486035c)
-2. Click Share → Publish
-3. Connect custom domain if needed
-
-### Alternative Deployment
-
-```bash
-# Build the project
-npm run build
-
-# Deploy dist/ folder to:
-# - Netlify
-# - Vercel
-# - AWS S3 + CloudFront
-# - GitHub Pages
-```
-
-## 📝 Documentation
-
-- **CLAUDE.md**: AI assistant context and guidelines
-- **docs/PRDs/**: Feature requirements and planning
-- **docs/ADRs/**: Architecture decisions
-- **docs/specifications/**: Technical specs
-- **docs/tasks/**: Task tracking
-
-## 🤝 Contributing
-
-1. Create feature branch: `git checkout -b feature/your-feature`
-2. Make changes and test thoroughly
-3. Commit: `git commit -m "feat: add new feature"`
-4. Push: `git push origin feature/your-feature`
-5. Create Pull Request
-
-## 📧 Support
-
-For questions or support, please contact the Intent Solutions team.
-
-## 📄 License
-
-[License Type] - See LICENSE file for details
+**For full documentation, see `01-Docs/` directory**

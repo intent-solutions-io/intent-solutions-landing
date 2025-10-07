@@ -21,208 +21,226 @@ import Layout from '../../layouts/Layout.astro';
     <section class="py-12">
       <div class="container mx-auto px-8">
         <div class="max-w-3xl mx-auto">
-          <h1 class="text-h1 font-bold text-zinc-50 mb-4">final thoughts</h1>
-          <p class="text-zinc-400 mb-12">help us understand what matters most</p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">pricing & value</h1>
+          <p class="text-zinc-400 mb-12">
+            help us understand what you'd be willing to pay
+          </p>
 
           <div class="space-y-12">
-            <!-- Question 53: Pricing expectations -->
+            <!-- Question 63: Monthly pricing -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                53. If this solved your tracking problem, what would you pay per month (per family)?
+                63. What would you expect to pay MONTHLY for this app (per athlete)?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="pricing" value="free-only" required />
-                  <span>$0 (only if free)</span>
+                  <input type="radio" name="monthlyPrice" value="free-with-ads" required />
+                  <span>Free (with ads)</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="pricing" value="under-5" />
-                  <span>Under $5/month</span>
+                  <input type="radio" name="monthlyPrice" value="2.99" />
+                  <span>$2.99/month</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="pricing" value="5-10" />
-                  <span>$5-10/month</span>
+                  <input type="radio" name="monthlyPrice" value="4.99" />
+                  <span>$4.99/month</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="pricing" value="10-15" />
-                  <span>$10-15/month</span>
+                  <input type="radio" name="monthlyPrice" value="9.99" />
+                  <span>$9.99/month</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="pricing" value="15-20" />
-                  <span>$15-20/month</span>
+                  <input type="radio" name="monthlyPrice" value="14.99" />
+                  <span>$14.99/month</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="pricing" value="over-20" />
-                  <span>$20+/month</span>
+                  <input type="radio" name="monthlyPrice" value="19.99" />
+                  <span>$19.99/month</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="monthlyPrice" value="20-plus" />
+                  <span>More than $20/month</span>
                 </label>
               </div>
             </div>
 
-            <!-- Question 54: Annual vs monthly -->
+            <!-- Question 64: Billing preference -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                54. Would you prefer to pay annually (with a discount)?
+                64. Would you prefer monthly or annual billing?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="paymentFrequency" value="yes-annual" required />
-                  <span>Yes, I'd pay upfront for a discount</span>
+                  <input type="radio" name="billingPreference" value="monthly-flexibility" required />
+                  <span>Monthly (more flexibility)</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="paymentFrequency" value="monthly-only" />
-                  <span>No, monthly only</span>
+                  <input type="radio" name="billingPreference" value="annual-save-money" />
+                  <span>Annual (save money with upfront payment)</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="paymentFrequency" value="depends-discount" />
-                  <span>Depends on the discount</span>
+                  <input type="radio" name="billingPreference" value="either-works" />
+                  <span>Either works</span>
                 </label>
               </div>
             </div>
 
-            <!-- Question 55: Free tier interest -->
+            <!-- Question 65: Pricing model -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                55. If there was a free tier with limited features, would you start there?
+                65. What pricing model makes most sense?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="radio-option">
-                  <input type="radio" name="freeTier" value="yes" required />
-                  <span>Yes, I'd try free first</span>
+                  <input type="radio" name="pricingModel" value="free-basic-paid-premium" required />
+                  <span>Free basic + paid premium features</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="freeTier" value="no-pay-upfront" />
-                  <span>No, I'd pay for the full version upfront</span>
+                  <input type="radio" name="pricingModel" value="free-trial-paid-subscription" />
+                  <span>Free trial + paid subscription</span>
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="freeTier" value="depends-features" />
-                  <span>Depends on what's included in free</span>
+                  <input type="radio" name="pricingModel" value="one-time-purchase" />
+                  <span>One-time purchase</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="pricingModel" value="freemium-optional-upgrades" />
+                  <span>Freemium (free forever with optional upgrades)</span>
                 </label>
               </div>
             </div>
 
-            <!-- Question 56: Deal breakers -->
+            <!-- Question 66: Premium features (Multi-select) -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                56. What would be a deal-breaker for you? (Select all that apply)
+                66. Which premium features would be worth paying extra for? (Select all that apply)
+                <span class="text-red-400 ml-1">*</span>
               </label>
 
               <div class="space-y-3">
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="ads" />
-                  <span>Ads in the app</span>
+                  <input type="checkbox" name="premiumFeatures" value="unlimited-storage" />
+                  <span>Unlimited photo/video storage</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="data-selling" />
-                  <span>Selling user data</span>
+                  <input type="checkbox" name="premiumFeatures" value="ai-insights" />
+                  <span>AI-powered insights and recommendations</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="no-export" />
-                  <span>No data export option</span>
+                  <input type="checkbox" name="premiumFeatures" value="advanced-analytics" />
+                  <span>Advanced analytics and charts</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="slow-buggy" />
-                  <span>Slow or buggy app</span>
+                  <input type="checkbox" name="premiumFeatures" value="coach-verification" />
+                  <span>Coach verification and access</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="no-privacy" />
-                  <span>Weak privacy controls</span>
+                  <input type="checkbox" name="premiumFeatures" value="recruiting-profile" />
+                  <span>College recruiting profile tools</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="no-offline" />
-                  <span>No offline mode</span>
+                  <input type="checkbox" name="premiumFeatures" value="export-pdf" />
+                  <span>Export to PDF for recruiting</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="too-complex" />
-                  <span>Too complex to use</span>
+                  <input type="checkbox" name="premiumFeatures" value="priority-support" />
+                  <span>Priority customer support</span>
                 </label>
                 <label class="checkbox-option">
-                  <input type="checkbox" name="dealBreakers" value="no-customer-support" />
-                  <span>Poor customer support</span>
+                  <input type="checkbox" name="premiumFeatures" value="ad-free" />
+                  <span>Ad-free experience</span>
                 </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="premiumFeatures" value="family-plan" />
+                  <span>Family plan (multiple athletes)</span>
+                </label>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-sm text-zinc-400 mb-2">Other (please specify):</label>
+                <input
+                  type="text"
+                  name="premiumFeaturesOther"
+                  class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Other premium features..."
+                />
               </div>
             </div>
 
-            <!-- Question 57: Referral likelihood -->
+            <!-- Question 67: Annual pricing -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                57. If HUSTLE works well, how likely are you to recommend it to other sports parents?
+                67. How much would you pay ANNUALLY (per athlete) if you got 2 months free?
                 <span class="text-red-400 ml-1">*</span>
               </label>
 
-              <div class="flex justify-between items-center gap-2">
-                <span class="text-sm text-zinc-400">Not likely</span>
-                <div class="flex gap-3">
-                  <label class="rating-option">
-                    <input type="radio" name="referralLikelihood" value="1" required />
-                    <span>1</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="referralLikelihood" value="2" />
-                    <span>2</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="referralLikelihood" value="3" />
-                    <span>3</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="referralLikelihood" value="4" />
-                    <span>4</span>
-                  </label>
-                  <label class="rating-option">
-                    <input type="radio" name="referralLikelihood" value="5" />
-                    <span>5</span>
-                  </label>
-                </div>
-                <span class="text-sm text-zinc-400">Very likely</span>
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="annualPrice" value="under-30" required />
+                  <span>Under $30/year</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="annualPrice" value="30-50" />
+                  <span>$30-50/year</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="annualPrice" value="50-75" />
+                  <span>$50-75/year</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="annualPrice" value="75-100" />
+                  <span>$75-100/year</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="annualPrice" value="100-150" />
+                  <span>$100-150/year</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="annualPrice" value="150-plus" />
+                  <span>More than $150/year</span>
+                </label>
               </div>
             </div>
 
-            <!-- Question 58: Missing features -->
+            <!-- Question 68: Time savings value -->
             <div class="question-block">
               <label class="block text-lg font-medium text-zinc-200 mb-4">
-                58. What's the ONE thing we haven't asked about that would make this perfect for you?
+                68. If this app saved you 2+ hours per week, what would it be worth to you monthly?
+                <span class="text-red-400 ml-1">*</span>
               </label>
 
-              <textarea
-                name="missingFeature"
-                rows="4"
-                placeholder="Tell us what we're missing..."
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
-              ></textarea>
-            </div>
-
-            <!-- Question 59: Biggest concern -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                59. What's your biggest concern or hesitation about using an app like this?
-              </label>
-
-              <textarea
-                name="biggestConcern"
-                rows="4"
-                placeholder="What makes you hesitant?"
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
-              ></textarea>
-            </div>
-
-            <!-- Question 60: Additional feedback -->
-            <div class="question-block">
-              <label class="block text-lg font-medium text-zinc-200 mb-4">
-                60. Any final thoughts, ideas, or feedback?
-              </label>
-
-              <textarea
-                name="additionalFeedback"
-                rows="4"
-                placeholder="Anything else you'd like to share..."
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
-              ></textarea>
+              <div class="space-y-3">
+                <label class="radio-option">
+                  <input type="radio" name="timeSavingsValue" value="under-5" required />
+                  <span>Under $5</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeSavingsValue" value="5-10" />
+                  <span>$5-10</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeSavingsValue" value="10-15" />
+                  <span>$10-15</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeSavingsValue" value="15-20" />
+                  <span>$15-20</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeSavingsValue" value="20-30" />
+                  <span>$20-30</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="timeSavingsValue" value="30-plus" />
+                  <span>More than $30</span>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -240,48 +258,72 @@ import Layout from '../../layouts/Layout.astro';
       const nextBtn = document.getElementById('next-btn');
       const backBtn = document.getElementById('back-btn');
 
+      // Check if user has consented
+      const consent = sessionStorage.getItem('survey_consent');
+      if (!consent || consent !== 'yes') {
+        window.location.href = '/survey/1';
+        return;
+      }
+
+      // Validate and save section data
       nextBtn?.addEventListener('click', () => {
-        const pricing = document.querySelector('input[name="pricing"]:checked');
-        const payment = document.querySelector('input[name="paymentFrequency"]:checked');
-        const freeTier = document.querySelector('input[name="freeTier"]:checked');
-        const referral = document.querySelector('input[name="referralLikelihood"]:checked');
+        // Validate required fields
+        const monthlyPrice = document.querySelector('input[name="monthlyPrice"]:checked');
+        const billingPreference = document.querySelector('input[name="billingPreference"]:checked');
+        const pricingModel = document.querySelector('input[name="pricingModel"]:checked');
+        const premiumFeatures = document.querySelectorAll('input[name="premiumFeatures"]:checked');
+        const annualPrice = document.querySelector('input[name="annualPrice"]:checked');
+        const timeSavingsValue = document.querySelector('input[name="timeSavingsValue"]:checked');
 
-        if (!pricing) {
-          alert('Please answer: Pricing expectation');
+        if (!monthlyPrice) {
+          alert('Please answer: Monthly pricing expectation? (Q63)');
           return;
         }
 
-        if (!payment) {
-          alert('Please answer: Payment frequency preference');
+        if (!billingPreference) {
+          alert('Please answer: Billing preference? (Q64)');
           return;
         }
 
-        if (!freeTier) {
-          alert('Please answer: Free tier interest');
+        if (!pricingModel) {
+          alert('Please answer: Preferred pricing model? (Q65)');
           return;
         }
 
-        if (!referral) {
-          alert('Please rate: Referral likelihood');
+        if (premiumFeatures.length === 0) {
+          alert('Please select at least one premium feature (Q66)');
           return;
         }
 
+        if (!annualPrice) {
+          alert('Please answer: Annual pricing? (Q67)');
+          return;
+        }
+
+        if (!timeSavingsValue) {
+          alert('Please answer: Time savings value? (Q68)');
+          return;
+        }
+
+        // Save section data
         const sectionData = {
-          pricing: (pricing as HTMLInputElement).value,
-          paymentFrequency: (payment as HTMLInputElement).value,
-          freeTier: (freeTier as HTMLInputElement).value,
-          dealBreakers: Array.from(document.querySelectorAll('input[name="dealBreakers"]:checked')).map((el: any) => el.value),
-          referralLikelihood: (referral as HTMLInputElement).value,
-          missingFeature: (document.querySelector('textarea[name="missingFeature"]') as HTMLTextAreaElement)?.value || '',
-          biggestConcern: (document.querySelector('textarea[name="biggestConcern"]') as HTMLTextAreaElement)?.value || '',
-          additionalFeedback: (document.querySelector('textarea[name="additionalFeedback"]') as HTMLTextAreaElement)?.value || ''
+          monthlyPrice: (monthlyPrice as HTMLInputElement).value,
+          billingPreference: (billingPreference as HTMLInputElement).value,
+          pricingModel: (pricingModel as HTMLInputElement).value,
+          premiumFeatures: Array.from(premiumFeatures).map((el: any) => el.value),
+          premiumFeaturesOther: (document.querySelector('input[name="premiumFeaturesOther"]') as HTMLInputElement)?.value || '',
+          annualPrice: (annualPrice as HTMLInputElement).value,
+          timeSavingsValue: (timeSavingsValue as HTMLInputElement).value
         };
 
         sessionStorage.setItem('survey_section_14', JSON.stringify(sectionData));
         window.location.href = '/survey/15';
       });
 
-      backBtn?.addEventListener('click', () => window.location.href = '/survey/13');
+      // Back button
+      backBtn?.addEventListener('click', () => {
+        window.location.href = '/survey/13';
+      });
     });
   </script>
 
