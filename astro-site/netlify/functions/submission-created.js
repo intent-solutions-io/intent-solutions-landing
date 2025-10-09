@@ -10,10 +10,15 @@ export const handler = async (event) => {
   try {
     // Parse the Netlify form submission event
     const submission = JSON.parse(event.body);
-    const formData = submission.data;
+
+    // Netlify sends form data in submission.payload.data
+    const formData = submission.payload?.data || submission.data;
+
+    console.log('Full submission event:', JSON.stringify(submission, null, 2));
+    console.log('Form data extracted:', JSON.stringify(formData, null, 2));
 
     // Extract email from submission
-    const userEmail = formData.email;
+    const userEmail = formData?.email;
     const userName = userEmail ? userEmail.split('@')[0] : 'there';
 
     if (!userEmail) {
