@@ -112,6 +112,24 @@
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  /* Home link - Mobile-optimized tap target */
+  .home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem; /* 14px - larger than text-xs */
+    font-weight: 700; /* bold */
+    color: rgb(161 161 170); /* zinc-400 */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .home-link:hover {
+    color: rgba(255, 255, 255, 0.7); /* #FFFFFF at 70% opacity */
+  }
 }
 
 /* Mobile responsive typography */
