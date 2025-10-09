@@ -1,32 +1,20 @@
-// Netlify Function to handle Web3Forms webhook and send thank you emails
+// Netlify Function triggered on form submission
+// This runs automatically when a Netlify Form is submitted
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const handler = async (event) => {
-  // Only accept POST requests
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: 'Method not allowed' })
-    };
-  }
+  // This function is triggered by Netlify's "submission-created" event
 
   try {
-    // Parse the form submission data from Netlify Forms
-    // Netlify sends form data as URL-encoded or JSON
-    let data;
-    if (event.headers['content-type']?.includes('application/json')) {
-      data = JSON.parse(event.body);
-    } else {
-      // Parse URL-encoded form data
-      const params = new URLSearchParams(event.body);
-      data = Object.fromEntries(params);
-    }
+    // Parse the Netlify form submission event
+    const submission = JSON.parse(event.body);
+    const formData = submission.data;
 
     // Extract email from submission
-    const userEmail = data.email;
-    const userName = data.email ? data.email.split('@')[0] : 'there';
+    const userEmail = formData.email;
+    const userName = userEmail ? userEmail.split('@')[0] : 'there';
 
     if (!userEmail) {
       console.log('No email provided in submission');
@@ -35,6 +23,8 @@ export const handler = async (event) => {
         body: JSON.stringify({ message: 'No email to send to' })
       };
     }
+
+    console.log(`Processing submission for: ${userEmail}`);
 
     // Your personalized thank you email content
     const emailHtml = `
@@ -51,23 +41,23 @@ export const handler = async (event) => {
       padding: 20px;
     }
     .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #52525b 0%, #27272a 100%);
       color: white;
       padding: 30px;
       text-align: center;
       border-radius: 8px 8px 0 0;
     }
     .content {
-      background: #f9fafb;
+      background: #f4f4f5;
       padding: 30px;
       border-radius: 0 0 8px 8px;
     }
     .footer {
       margin-top: 30px;
       padding-top: 20px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #e4e4e7;
       font-size: 14px;
-      color: #6b7280;
+      color: #71717a;
       font-style: italic;
     }
   </style>

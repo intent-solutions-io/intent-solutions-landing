@@ -29,22 +29,21 @@ import Layout from '../../layouts/Layout.astro';
           </p>
 
           <form
-            action="https://api.web3forms.com/submit"
+            name="hustle-survey"
             method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="/thank-you"
             class="space-y-12"
             id="final-form"
           >
-            <!-- Web3Forms Access Key -->
-            <input type="hidden" name="access_key" value="c8f55df4-ba80-4bfc-8402-2a0d9c76b7a2" />
-
-            <!-- Redirect to thank you page after submission -->
-            <input type="hidden" name="redirect" value="https://intentsolutions.io/thank-you" />
-
-            <!-- Webhook to send personalized thank you email -->
-            <input type="hidden" name="webhook" value="https://intentsolutions.io/.netlify/functions/survey-webhook" />
+            <!-- Netlify Forms -->
+            <input type="hidden" name="form-name" value="hustle-survey" />
 
             <!-- Honeypot spam protection -->
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+            <p class="hidden">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
 
             <!-- All previous section data will be injected here as hidden fields -->
             <div id="hidden-data"></div>
