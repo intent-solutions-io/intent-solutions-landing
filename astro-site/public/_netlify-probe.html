@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Netlify Forms Schema Probe - DO NOT DELETE</title>
+</head>
+<body style="display: none;">
+  <!--
+    ⚠️  CRITICAL: SCHEMA OF RECORD FOR NETLIFY FORMS ⚠️
+
+    This is the PERMANENT probe file for Netlify's build bots.
+    It defines ALL form fields that Netlify Forms must capture.
+
+    RULES:
+    1. DO NOT DELETE THIS FILE - Forms will break
+    2. ALWAYS update this file when adding new survey fields
+    3. This is the source of truth for form structure
+    4. User-facing form is in /src/pages/survey/15.astro
+
+    Last Updated: 2025-10-09
+    Fields: 76 (all survey questions + contact info)
+  -->
+  <form
+    name="hustle-survey"
+    method="POST"
+    netlify
+    netlify-honeypot="bot-field"
+    action="/survey/thank-you"
+  >
+    <!-- Netlify Forms hidden field -->
+    <input type="hidden" name="form-name" value="hustle-survey" />
+
+    <!-- Honeypot spam protection -->
+    <label>Don't fill: <input name="bot-field" /></label>
+
+    <!-- Section 1: Demographics -->
+    <input name="firstName" />
+    <input name="lastName" />
+    <input name="email" type="email" />
+    <input name="phone" type="tel" />
+    <select name="ageRange">
+      <option value="under-30">Under 30</option>
+      <option value="30-40">30-40</option>
+      <option value="40-50">40-50</option>
+      <option value="over-50">Over 50</option>
+    </select>
+    <select name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="non-binary">Non-binary</option>
+      <option value="prefer-not-to-say">Prefer not to say</option>
+    </select>
+    <input name="location" />
+
+    <!-- Section 2: Sports Background -->
+    <input name="primarySport" />
+    <input name="yearsInvolved" />
+    <select name="roleInSport">
+      <option value="parent">Parent/Guardian</option>
+      <option value="coach">Coach</option>
+      <option value="both">Both parent and coach</option>
+      <option value="athlete">Athlete</option>
+      <option value="other">Other</option>
+    </select>
+    <input name="childrenAge" />
+    <select name="competitionLevel">
+      <option value="recreational">Recreational</option>
+      <option value="competitive">Competitive/Travel</option>
+      <option value="elite">Elite/High performance</option>
+    </select>
+
+    <!-- Section 3-14: All other survey questions -->
+    <input name="trainingHours" />
+    <input name="budgetMonthly" />
+    <select name="primaryGoal">
+      <option value="fun">Fun and enjoyment</option>
+      <option value="skill">Skill development</option>
+      <option value="college">College recruitment</option>
+      <option value="professional">Professional career</option>
+    </select>
+    <input name="biggestChallenge" />
+    <input name="idealSolution" />
+    <input name="currentTools" />
+    <input name="painPoints" />
+    <input name="timeSpentPlanning" />
+    <input name="communicationTools" />
+    <select name="videoPlatform">
+      <option value="youtube">YouTube</option>
+      <option value="hudl">Hudl</option>
+      <option value="veo">Veo</option>
+      <option value="other">Other</option>
+    </select>
+    <input name="dataTracking" />
+    <select name="aiComfort">
+      <option value="very-comfortable">Very comfortable</option>
+      <option value="somewhat-comfortable">Somewhat comfortable</option>
+      <option value="not-comfortable">Not comfortable</option>
+      <option value="unsure">Unsure</option>
+    </select>
+    <input name="featureInterest" />
+    <select name="pricingPreference">
+      <option value="monthly">Monthly subscription</option>
+      <option value="annual">Annual subscription</option>
+      <option value="one-time">One-time purchase</option>
+      <option value="freemium">Freemium with upgrades</option>
+    </select>
+    <input name="willingnessToPayMonthly" />
+    <input name="willingnessToPayAnnual" />
+    <input name="dealBreakers" />
+    <input name="mustHaveFeatures" />
+    <input name="devicePreference" />
+    <select name="platformPreference">
+      <option value="ios">iOS</option>
+      <option value="android">Android</option>
+      <option value="web">Web browser</option>
+      <option value="all">All platforms</option>
+    </select>
+    <input name="sharingImportance" />
+    <input name="privacyConcerns" />
+    <input name="competitorTools" />
+    <input name="competitorLikes" />
+    <input name="competitorDislikes" />
+    <input name="recommendationLikelihood" />
+    <input name="additionalFeedback" />
+    <input name="dreamFeature" />
+
+    <!-- Section 15: Beta Testing & Contact -->
+    <select name="betaInterest">
+      <option value="yes-signup">Yes! Sign me up</option>
+      <option value="maybe">Maybe, tell me more first</option>
+      <option value="no-feedback-only">No, just wanted to share feedback</option>
+    </select>
+    <select name="timeCommitment">
+      <option value="10-15min">10-15 minutes per week</option>
+      <option value="30-45min">30-45 minutes per week</option>
+      <option value="1hr-plus">1+ hours per week</option>
+      <option value="cant-commit">Can't commit to specific time</option>
+    </select>
+    <input name="bestSportsForBeta" />
+    <select name="videoInterview">
+      <option value="yes-love-to">Yes, I'd love to help</option>
+      <option value="maybe-timing">Maybe, depends on timing</option>
+      <option value="no-thanks">No thanks</option>
+    </select>
+    <select name="parentGroups">
+      <option value="very-active">Yes, very active</option>
+      <option value="somewhat-active">Somewhat active</option>
+      <option value="not-really">Not really</option>
+      <option value="no">No</option>
+    </select>
+    <select name="heardAbout">
+      <option value="social-media">Social media</option>
+      <option value="friend-recommendation">Friend/parent recommendation</option>
+      <option value="coach-shared">Coach shared it</option>
+      <option value="team-communication">Team/club communication</option>
+      <option value="online-search">Online search</option>
+    </select>
+    <input name="heardAboutOther" />
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

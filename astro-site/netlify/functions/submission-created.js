@@ -11,25 +11,43 @@ export const handler = async (event) => {
     // Parse the Netlify form submission event
     const submission = JSON.parse(event.body);
 
-    // Netlify sends form data in submission.payload.data
-    const formData = submission.payload?.data || submission.data;
+    // Netlify sends form data in submission.payload.data (with fallbacks)
+    const formData = submission?.payload?.data ?? submission?.data ?? {};
 
-    console.log('Full submission event:', JSON.stringify(submission, null, 2));
-    console.log('Form data extracted:', JSON.stringify(formData, null, 2));
+    // Extract Netlify request ID for tracing
+    const netlifyReqId = event.headers?.["x-nf-request-id"] || "unknown";
 
-    // Extract email from submission
-    const userEmail = formData?.email;
+    // Comprehensive logging
+    console.log(JSON.stringify({
+      event: "form_submission_received",
+      netlify_request_id: netlifyReqId,
+      form_name: formData?.["form-name"] || "unknown",
+      has_email: !!formData?.email,
+      field_count: Object.keys(formData).length,
+      timestamp: new Date().toISOString()
+    }));
+
+    // Extract email with fallback
+    const userEmail = formData?.email || process.env.RESEND_TO_FALLBACK;
     const userName = userEmail ? userEmail.split('@')[0] : 'there';
 
     if (!userEmail) {
-      console.log('No email provided in submission');
+      console.log(JSON.stringify({
+        event: "no_recipient",
+        netlify_request_id: netlifyReqId,
+        message: "No email in submission and no fallback configured"
+      }));
       return {
         statusCode: 200,
         body: JSON.stringify({ message: 'No email to send to' })
       };
     }
 
-    console.log(`Processing submission for: ${userEmail}`);
+    console.log(JSON.stringify({
+      event: "processing_email",
+      to: userEmail,
+      netlify_request_id: netlifyReqId
+    }));
 
     // Your personalized thank you email content
     const emailHtml = `
@@ -148,7 +166,41 @@ https://intentsolutions.io
       ]
     });
 
-    console.log('Thank you email sent:', emailResponse);
+    // Structured logging for monitoring
+    console.log(JSON.stringify({
+      event: "email_sent",
+      to: userEmail,
+      messageId: emailResponse.id,
+      netlify: { reqId: netlifyReqId },
+      timestamp: new Date().toISOString()
+    }));
+
+    // Send notification to Slack if configured
+    if (process.env.SLACK_WEBHOOK_URL) {
+      try {
+        await fetch(process.env.SLACK_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            text: `✅ Survey submission received → ${userEmail}`,
+            blocks: [
+              {
+                type: "section",
+                text: {
+                  type: "mrkdwn",
+                  text: `*Survey Submission*\n• Email: ${userEmail}\n• Message ID: ${emailResponse.id}\n• Time: ${new Date().toISOString()}`
+                }
+              }
+            ]
+          })
+        });
+      } catch (slackError) {
+        console.log(JSON.stringify({
+          event: "slack_notification_failed",
+          error: slackError.message
+        }));
+      }
+    }
 
     return {
       statusCode: 200,
