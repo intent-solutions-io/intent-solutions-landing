@@ -25,6 +25,14 @@
   status = 301
   force = true
 
+# Allow Netlify Forms to redirect to survey thank-you page
+[[redirects]]
+  from = "/survey/thank-you"
+  to = "/survey/thank-you"
+  status = 200
+  force = false
+
+# SPA catch-all (must be AFTER specific redirects)
 [[redirects]]
   from = "/*"
   to = "/index.html"
