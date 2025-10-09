@@ -14,13 +14,29 @@ export default function Hero() {
           className="max-w-4xl"
         >
           <motion.h1
-            className="text-hero font-extrabold text-zinc-50 mb-6"
+            className="text-hero font-extrabold text-zinc-50 mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             creating industries<br />that don't exist
           </motion.h1>
+
+          <motion.p
+            className="text-lg text-zinc-500 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <a
+              href="https://jeremylongshore.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-zinc-300 transition-colors"
+            >
+              jeremy_longshore
+            </a>
+          </motion.p>
 
           <motion.p
             className="text-body-lg text-zinc-400 mb-8 max-w-2xl"
@@ -33,13 +49,16 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex gap-4"
+            className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <a href="#products" className="btn-primary">
               view my work
+            </a>
+            <a href="/survey" className="px-6 py-3 text-sm bg-zinc-700 hover:bg-zinc-600 text-white font-medium rounded-lg transition-all duration-200">
+              HUSTLE Survey →
             </a>
           </motion.div>
         </motion.div>

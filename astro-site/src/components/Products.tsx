@@ -15,16 +15,34 @@ export default function Products() {
       link: 'https://diagnosticpro.io',
     },
     {
-      name: 'vibe prd ⭐ 15 stars',
-      description: 'ai-powered documentation generator transforming ideas into enterprise-ready docs in 5 minutes. used by developers worldwide.',
-      badge: 'python • claude api • cli',
-      link: 'https://github.com/jeremylongshore/vibe-prd',
+      name: 'ai devops documentation',
+      description: 'ai-powered documentation generator. transform ideas into enterprise-ready docs in 5 minutes. 17 stars on github.',
+      badge: 'javascript • claude api • automation',
+      link: 'https://github.com/jeremylongshore/ai-devops-intent-solutions',
     },
     {
-      name: 'hustle',
+      name: 'HUSTLE',
       description: 'youth sports tracking app for competitive families. currently in research phase - validating with parent surveys.',
       badge: 'next.js • postgresql • research',
-      link: null,
+      link: '/survey',
+    },
+    {
+      name: 'waygate mcp',
+      description: 'foundational mcp server framework. secure, containerized model context protocol server for ai integrations.',
+      badge: 'python • docker • security',
+      link: 'https://github.com/jeremylongshore/waygate-mcp',
+    },
+    {
+      name: 'disposable marketplace',
+      description: 'instant marketplace creation for quote collection. csv-based reseller management with automated ranking. 2 stars.',
+      badge: 'shell • automation • n8n',
+      link: 'https://github.com/jeremylongshore/disposable-marketplace-n8n',
+    },
+    {
+      name: 'news pipeline',
+      description: 'automated daily news monitoring and analysis pipeline. transform scattered news sources into organized intelligence.',
+      badge: 'n8n • ai analysis • automation',
+      link: 'https://github.com/jeremylongshore/news-pipeline-n8n',
     },
   ];
 
@@ -40,7 +58,7 @@ export default function Products() {
           products i've shipped
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {products.map((product, index) => (
             <motion.div
               key={product.name}
