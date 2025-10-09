@@ -5,7 +5,7 @@ const {
   generateTestEmail,
   logTestResult,
   saveTestEvidence
-} = require('./helpers');
+} = require('../helpers.cjs');
 require('dotenv').config({ path: '.env.test' });
 
 test.describe('Survey Form - Netlify Integration Tests', () => {

@@ -1,7 +1,7 @@
 // tests/netlify-api.spec.js
 const { test, expect } = require('@playwright/test');
 const axios = require('axios');
-const { logTestResult, saveTestEvidence } = require('./helpers');
+const { logTestResult, saveTestEvidence } = require('../helpers.cjs');
 require('dotenv').config({ path: '.env.test' });
 
 test.describe('Netlify API Integration Tests', () => {
