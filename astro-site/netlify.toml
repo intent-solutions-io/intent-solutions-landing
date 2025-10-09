@@ -1,6 +1,17 @@
 [build]
   command = "bun run build"
   publish = "dist"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+
+# Automatically trigger submission-created function when Netlify Form is submitted
+[[plugins]]
+  package = "@netlify/plugin-functions"
+
+[plugins.inputs]
+  netlifyConfig = "netlify.toml"
