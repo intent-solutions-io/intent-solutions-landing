@@ -1,5 +1,7 @@
 # intent solutions io
 
+**Version**: 2.1.1
+
 premium landing page built with astro + react islands + tailwind css
 
 ## 🎨 design
@@ -70,6 +72,9 @@ netlify deploy --prod
 - ✅ seo optimized with meta tags
 - ✅ mobile responsive
 - ✅ lighthouse 95+ score ready
+- ✅ HUSTLE survey system (15 sections, 76 questions)
+- ✅ Netlify Forms integration with automated emails
+- ✅ Event-triggered serverless functions
 
 ## 📊 performance
 
