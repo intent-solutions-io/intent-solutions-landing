@@ -1,0 +1,133 @@
+name: Release Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'Version bump type'
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      skip_tests:
+        description: 'Skip test suite (not recommended)'
+        required: false
+        type: boolean
+        default: false
+
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        if: ${{ !inputs.skip_tests }}
+        run: |
+          npx playwright install chromium
+          npm test
+        env:
+          SURVEY_URL: https://intentsolutions.io
+
+      - name: Bump version
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npm version ${{ inputs.bump_type }} -m "chore: bump version to %s"
+          echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+
+      - name: Extract version from tag
+        if: github.event_name == 'push'
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Generate changelog entry
+        run: |
+          echo "## [$VERSION] - $(date +%Y-%m-%d)" > release-notes.md
+          echo "" >> release-notes.md
+          echo "### Changes" >> release-notes.md
+          git log --pretty=format:"- %s" $(git describe --tags --abbrev=0 HEAD^)..HEAD >> release-notes.md || echo "- Initial release" >> release-notes.md
+
+      - name: Update CHANGELOG.md
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          cat release-notes.md CHANGELOG.md > CHANGELOG.new.md
+          mv CHANGELOG.new.md CHANGELOG.md
+          git add CHANGELOG.md
+          git commit -m "docs: update changelog for v$VERSION"
+
+      - name: Update README version
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          sed -i "s/\*\*Version\*\*: [0-9.]\+/**Version**: $VERSION/" README.md
+          git add README.md
+          git commit -m "docs: sync version to v$VERSION" || echo "No README changes"
+
+      - name: Push changes
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git push
+          git push --tags
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v$VERSION" \
+            --title "Release v$VERSION" \
+            --notes-file release-notes.md \
+            --latest
+
+      - name: Archive release artifacts
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          mkdir -p .github/audits/v$VERSION/
+          cp CHANGELOG.md .github/audits/v$VERSION/changelog.md
+          cp release-notes.md .github/audits/v$VERSION/release-notes.md
+          git add .github/audits/
+          git commit -m "chore: archive v$VERSION release artifacts" || echo "No new artifacts"
+          git push || echo "No changes to push"
+
+      - name: Create announcement issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "🎉 Release v$VERSION" \
+            --body "$(cat release-notes.md)
+
+---
+
+**Upgrade:** \`npm install @latest\` or visit https://intentsolutions.io
+
+See the [full changelog](CHANGELOG.md) for complete details." \
+            --label "announcement,release"
+
+      - name: Comment on success
+        if: success()
+        run: |
+          echo "✅ Release v$VERSION created successfully!"
+          echo "🔗 https://github.com/${{ github.repository }}/releases/tag/v$VERSION"
