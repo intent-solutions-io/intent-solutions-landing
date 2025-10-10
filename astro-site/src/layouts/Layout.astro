@@ -11,6 +11,9 @@ const {
   title,
   description = 'independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.'
 } = Astro.props;
+
+// Generate canonical URL using configured site
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -30,11 +33,13 @@ const {
     <SEO
       title={title}
       description={description}
+      canonical={canonicalURL}
       openGraph={{
         basic: {
           title: title,
           type: 'website',
           image: 'https://intentsolutions.io/og-image.jpg',
+          url: canonicalURL,
         },
         optional: {
           description: description,
