@@ -57,7 +57,7 @@ export default function Hero() {
             <a href="#products" className="btn-primary">
               view my work
             </a>
-            <a href="/survey" className="px-6 py-3 text-sm bg-zinc-700 hover:bg-zinc-600 text-white font-medium rounded-lg transition-all duration-200">
+            <a href="/survey" className="btn-primary">
               HUSTLE Survey →
             </a>
           </motion.div>
