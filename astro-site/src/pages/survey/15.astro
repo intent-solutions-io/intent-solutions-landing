@@ -248,9 +248,18 @@ import Layout from '../../layouts/Layout.astro';
               </button>
             </div>
 
-            <p class="text-center text-sm text-zinc-500 mt-4">
-              By submitting, you agree to our <a href="/privacy" class="underline hover:text-zinc-300">privacy policy</a>
-            </p>
+            <!-- Legal Consent Notice -->
+            <div class="mt-6 p-4 bg-zinc-800/30 border border-zinc-700/50 rounded-lg">
+              <p class="text-center text-sm text-zinc-300 leading-relaxed">
+                By signing up, you agree to our
+                <a href="/terms" target="_blank" class="text-zinc-100 underline hover:text-white transition-smooth">Terms of Service</a>,
+                <a href="/acceptable-use" target="_blank" class="text-zinc-100 underline hover:text-white transition-smooth">Acceptable Use Policy</a>, and
+                <a href="/privacy" target="_blank" class="text-zinc-100 underline hover:text-white transition-smooth">Privacy Policy</a>.
+              </p>
+              <p class="text-center text-xs text-zinc-400 mt-2">
+                This survey collects information about youth athletes. We are committed to protecting children's privacy in compliance with COPPA and GDPR.
+              </p>
+            </div>
           </form>
         </div>
       </div>
