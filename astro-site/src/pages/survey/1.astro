@@ -109,11 +109,16 @@ import Layout from '../../layouts/Layout.astro';
   </div>
 
   <script>
+    import { restoreSurveySection } from '../../utils/surveyRestore';
+
     // Handle consent validation and navigation
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('survey-form') as HTMLFormElement;
       const nextBtn = document.getElementById('next-btn');
       const consentNo = document.getElementById('consent-no') as HTMLInputElement;
+
+      // Restore previously saved data for this section
+      restoreSurveySection(1);
 
       // Handle "No thanks" selection - end survey
       consentNo?.addEventListener('change', () => {

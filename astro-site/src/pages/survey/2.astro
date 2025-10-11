@@ -347,6 +347,8 @@ import Layout from '../../layouts/Layout.astro';
   </div>
 
   <script>
+    import { restoreSurveySection } from '../../utils/surveyRestore';
+
     document.addEventListener('DOMContentLoaded', () => {
       const nextBtn = document.getElementById('next-btn');
       const backBtn = document.getElementById('back-btn');
@@ -357,6 +359,9 @@ import Layout from '../../layouts/Layout.astro';
         window.location.href = '/survey/1';
         return;
       }
+
+      // Restore previously saved data for this section
+      restoreSurveySection(2);
 
       // Validate and save section data
       nextBtn?.addEventListener('click', () => {

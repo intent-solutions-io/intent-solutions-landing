@@ -46,7 +46,95 @@ import Layout from '../../layouts/Layout.astro';
             </p>
 
             <!-- All previous section data will be injected here as hidden fields -->
-            <div id="hidden-data"></div>
+            <!-- CRITICAL: These fields must be pre-declared in HTML for Netlify Forms to detect them at build time -->
+            <div id="hidden-data">
+              <!-- Section 1 (1 field) -->
+              <input type="hidden" name="consent" value="" />
+
+              <!-- Section 2 (10 fields) -->
+              <input type="hidden" name="numAthletes" value="" />
+              <input type="hidden" name="grades" value="" />
+              <input type="hidden" name="hoursPerWeek" value="" />
+              <input type="hidden" name="collegeRecruitment" value="" />
+              <input type="hidden" name="sports" value="" />
+              <input type="hidden" name="sportsOther" value="" />
+              <input type="hidden" name="competitionLevel" value="" />
+              <input type="hidden" name="competitionLevelOther" value="" />
+              <input type="hidden" name="clubsTeams" value="" />
+              <input type="hidden" name="location" value="" />
+
+              <!-- Section 3 (9 fields) -->
+              <input type="hidden" name="trackingMethods" value="" />
+              <input type="hidden" name="trackingMethodsOther" value="" />
+              <input type="hidden" name="appsUsed" value="" />
+              <input type="hidden" name="appsUsedOther" value="" />
+              <input type="hidden" name="timeSpentManaging" value="" />
+              <input type="hidden" name="trackGameStats" value="" />
+              <input type="hidden" name="trackPractice" value="" />
+              <input type="hidden" name="frustrations" value="" />
+              <input type="hidden" name="frustrationsOther" value="" />
+              <input type="hidden" name="oneAppImportance" value="" />
+
+              <!-- Section 4-14 (remaining 60+ fields) -->
+              <input type="hidden" name="interestLevel" value="" />
+              <input type="hidden" name="importData" value="" />
+              <input type="hidden" name="simpleVsDetailed" value="" />
+              <input type="hidden" name="loggingFrequency" value="" />
+              <input type="hidden" name="whoLogs" value="" />
+              <input type="hidden" name="timeToLog" value="" />
+              <input type="hidden" name="photoVideo" value="" />
+              <input type="hidden" name="celebrateMilestones" value="" />
+              <input type="hidden" name="goalSetting" value="" />
+              <input type="hidden" name="gameInfo" value="" />
+              <input type="hidden" name="gameInfoOther" value="" />
+              <input type="hidden" name="insights" value="" />
+              <input type="hidden" name="insightsOther" value="" />
+              <input type="hidden" name="visualProgress" value="" />
+              <input type="hidden" name="celebrateAchievements" value="" />
+              <input type="hidden" name="shareAchievements" value="" />
+              <input type="hidden" name="leaderboards" value="" />
+              <input type="hidden" name="achievementBadges" value="" />
+              <input type="hidden" name="privateNotes" value="" />
+              <input type="hidden" name="sorenessTracking" value="" />
+              <input type="hidden" name="weatherTracking" value="" />
+              <input type="hidden" name="wearableIntegration" value="" />
+              <input type="hidden" name="teamCommunication" value="" />
+              <input type="hidden" name="coachAccess" value="" />
+              <input type="hidden" name="kidLogin" value="" />
+              <input type="hidden" name="kidsLogging" value="" />
+              <input type="hidden" name="parentVerificationValue" value="" />
+              <input type="hidden" name="verificationTimeLimit" value="" />
+              <input type="hidden" name="coachVerification" value="" />
+              <input type="hidden" name="verifiedBadgeUseful" value="" />
+              <input type="hidden" name="futureFeatures" value="" />
+              <input type="hidden" name="futureFeaturesOther" value="" />
+              <input type="hidden" name="trendImportance" value="" />
+              <input type="hidden" name="exportImportance" value="" />
+              <input type="hidden" name="aiRecommendations" value="" />
+              <input type="hidden" name="offlineImportance" value="" />
+              <input type="hidden" name="customDays" value="" />
+              <input type="hidden" name="addToHomeScreen" value="" />
+              <input type="hidden" name="triedOtherApps" value="" />
+              <input type="hidden" name="whyStopped" value="" />
+              <input type="hidden" name="whyStoppedOther" value="" />
+              <input type="hidden" name="disappointmentLevel" value="" />
+              <input type="hidden" name="timeSavingsValue" value="" />
+              <input type="hidden" name="multiKidAccount" value="" />
+              <input type="hidden" name="familyPlan" value="" />
+              <input type="hidden" name="payPremium" value="" />
+              <input type="hidden" name="pricingModel" value="" />
+              <input type="hidden" name="monthlyPrice" value="" />
+              <input type="hidden" name="annualPrice" value="" />
+              <input type="hidden" name="billingPreference" value="" />
+              <input type="hidden" name="premiumFeatures" value="" />
+              <input type="hidden" name="premiumFeaturesOther" value="" />
+              <input type="hidden" name="decisionMaker" value="" />
+              <input type="hidden" name="emotionalState" value="" />
+              <input type="hidden" name="dataPrivacy" value="" />
+              <input type="hidden" name="dataOwnership" value="" />
+              <input type="hidden" name="exportDeleteData" value="" />
+              <input type="hidden" name="anonymizedResearch" value="" />
+            </div>
 
             <!-- Question 69: Beta Interest -->
             <div class="question-block">
@@ -280,7 +368,9 @@ import Layout from '../../layouts/Layout.astro';
         return;
       }
 
-      // Collect ALL sessionStorage data and inject as hidden fields
+      // Collect ALL sessionStorage data and populate hidden fields
+      // CRITICAL: We now UPDATE existing hidden fields instead of creating new ones
+      // This is required for Netlify Forms to detect fields at build time
       function injectSessionData() {
         const allData: any = {};
 
@@ -297,28 +387,33 @@ import Layout from '../../layouts/Layout.astro';
           }
         }
 
-        // Create hidden inputs for all collected data
-        if (hiddenDataContainer) {
-          Object.entries(allData).forEach(([key, value]) => {
+        console.log('📋 Collected survey data from sessionStorage:', allData);
+
+        // Update values of pre-existing hidden fields
+        let fieldsPopulated = 0;
+        Object.entries(allData).forEach(([key, value]) => {
+          const input = document.querySelector(`input[name="${key}"]`) as HTMLInputElement;
+
+          if (input) {
             if (Array.isArray(value)) {
-              // For arrays (checkboxes), create multiple inputs with same name
-              value.forEach((item: any) => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = String(item);
-                hiddenDataContainer.appendChild(input);
-              });
+              // For arrays (checkboxes): join with comma or JSON
+              input.value = value.length > 0 ? value.join(', ') : '';
             } else {
               // For single values
-              const input = document.createElement('input');
-              input.type = 'hidden';
-              input.name = key;
               input.value = String(value);
-              hiddenDataContainer.appendChild(input);
             }
-          });
-        }
+            fieldsPopulated++;
+          } else {
+            console.warn(`⚠️ Field "${key}" not found in hidden fields`);
+          }
+        });
+
+        console.log(`✅ Populated ${fieldsPopulated} hidden fields for Netlify submission`);
+
+        // Debug: Show what will be submitted
+        const allHiddenFields = Array.from(document.querySelectorAll('#hidden-data input[type="hidden"]')) as HTMLInputElement[];
+        const filledFields = allHiddenFields.filter(input => input.value !== '');
+        console.log(`📊 Total hidden fields: ${allHiddenFields.length}, Filled: ${filledFields.length}`);
       }
 
       // Inject session data on page load
