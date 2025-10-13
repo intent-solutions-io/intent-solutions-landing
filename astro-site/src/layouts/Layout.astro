@@ -5,11 +5,13 @@ import { SEO } from 'astro-seo';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
 const {
   title,
-  description = 'independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.'
+  description = 'independent ai consultant building automation systems and shipping real products. from automotive diagnostics to youth sports tracking.',
+  ogImage = 'https://intentsolutions.io/og-default.png'
 } = Astro.props;
 
 // Generate canonical URL using configured site
@@ -38,7 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
         basic: {
           title: title,
           type: 'website',
-          image: 'https://intentsolutions.io/og-image.jpg',
+          image: ogImage,
           url: canonicalURL,
         },
         optional: {
@@ -50,7 +52,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
         card: 'summary_large_image',
         title: title,
         description: description,
-        image: 'https://intentsolutions.io/og-image.jpg',
+        image: ogImage,
       }}
     />
   </head>
