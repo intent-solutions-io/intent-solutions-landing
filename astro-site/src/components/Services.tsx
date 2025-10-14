@@ -9,20 +9,24 @@ export default function Services() {
 
   const services = [
     {
-      title: 'ai workflow automation',
-      description: 'n8n workflows, claude api integration, custom automation systems that eliminate manual processes',
+      title: 'automation programs',
+      description:
+        'Design and implement n8n, Netlify Functions, and Vertex AI workflows that replace manual reporting and onboarding tasks.',
     },
     {
-      title: 'rapid prototyping',
-      description: 'full-stack react/typescript applications deployed in days, not months. get to market fast.',
+      title: 'ai agents & rag systems',
+      description:
+        'Deploy Claude- and OpenAI-powered agents backed by your docs, vector stores, and safety rails so teams trust every recommendation.',
     },
     {
-      title: 'enterprise data systems',
-      description: 'bigquery architecture, firebase/firestore backends, scalable cloud infrastructure',
+      title: 'data & infra foundations',
+      description:
+        'Architect BigQuery, Firebase, and Postgres pipelines with telemetry, access control, and monitoring baked in from day one.',
     },
     {
-      title: 'ai agents & rag',
-      description: 'custom ai agents, local rag systems, knowledge graphs with neo4j, intelligent document processing',
+      title: 'launch-ready product builds',
+      description:
+        'Ship Astro + React experiences, surveys, and admin tools with coherent design systems, copy, and analytics instrumentation included.',
     },
   ];
 
