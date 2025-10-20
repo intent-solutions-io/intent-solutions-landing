@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Automation Programs"
+  description="Replace repetitive processes with n8n, Netlify, and custom workflows tuned to your ops team."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            automation
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            Automations that feel like an extra teammate
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            We design n8n and Netlify automation programs that handle the boring stuff—reporting, onboarding,
+            follow-ups—while keeping humans in the driver’s seat. Everything is documented, observable, and ready
+            for audits.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Automation menu</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Sales & quoting</h3>
+            <p class="text-sm text-zinc-400">
+              Auto-generate proposals, route approvals, and sync updates back to CRM without the copy-paste grind.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Customer onboarding</h3>
+            <p class="text-sm text-zinc-400">
+              Collect docs, spin up accounts, assign tasks, and nudge teams when human touch is required.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Operations dashboards</h3>
+            <p class="text-sm text-zinc-400">
+              Pull from spreadsheets, ERPs, and APIs to build daily snapshots with alerts for outliers.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Revenue collection</h3>
+            <p class="text-sm text-zinc-400">
+              Trigger reminders, process payments, and reconcile ledgers with audit trails intact.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Internal comms</h3>
+            <p class="text-sm text-zinc-400">
+              Schedule updates, summarize meetings, and push highlights to Slack, Teams, or email digests.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Field service</h3>
+            <p class="text-sm text-zinc-400">
+              Log work orders, sync photos, and dispatch follow-up tasks so nothing slips through the cracks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">Our automation stack</h2>
+            <ul class="space-y-4 text-sm text-zinc-300">
+              <li><span class="font-semibold text-zinc-100">n8n:</span> Visual builders with TypeScript nodes for custom logic.</li>
+              <li><span class="font-semibold text-zinc-100">Netlify Functions:</span> Lightweight serverless endpoints for quick integrations.</li>
+              <li><span class="font-semibold text-zinc-100">Supabase & Firestore:</span> Secure storage for state, history, and analytics.</li>
+              <li><span class="font-semibold text-zinc-100">Playwright:</span> Browser automations for stubborn legacy apps.</li>
+              <li><span class="font-semibold text-zinc-100">Observability:</span> Structured logging, dashboards, and alerting so ops can debug fast.</li>
+            </ul>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Implementation process</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-zinc-300">
+              <li>Map the current workflow and turnaround expectations.</li>
+              <li>Prototype the automation in a sandbox with sample data.</li>
+              <li>Run a shadow period where humans review every action.</li>
+              <li>Roll into production with monitoring and iterative tweaks.</li>
+            </ol>
+            <p class="text-sm text-zinc-400">
+              Typical timeline is 10 business days from kickoff to production for a single workflow lane.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-8">Runbook & support</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Documented playbooks</h3>
+            <p class="text-sm text-zinc-400">
+              You get editable runbooks, diagrams, and rollback steps so the program can live beyond any one vendor.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Training included</h3>
+            <p class="text-sm text-zinc-400">
+              We onboard your operators, teach them how to request new automations, and set up feedback loops.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Fixed monthly support</h3>
+            <p class="text-sm text-zinc-400">
+              Flat-rate plans cover monitoring, patching, and incremental tweaks so you can budget confidently.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Compliance friendly</h3>
+            <p class="text-sm text-zinc-400">
+              Audit logs, access controls, and approval trails keep legal and finance teams comfortable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Ready to map an automation trail?</h2>
+            <p class="text-sm text-zinc-400 mb-6">
+              Bring one workflow, we’ll show you a path to full automation plus the reporting leadership wants.
+            </p>
+            <a href="/#contact" class="btn-primary">Request an automation audit</a>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">FAQ</h3>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">How do you price automations?</p>
+              <p class="text-sm text-zinc-400">Flat cost per workflow lane + optional monthly retainer for support.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Can you integrate with legacy systems?</p>
+              <p class="text-sm text-zinc-400">Yes—screen automation, CSV bridges, and lightweight APIs keep everything talking.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">How do we request changes?</p>
+              <p class="text-sm text-zinc-400">Submit tweaks via a shared board; most updates ship within 48 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

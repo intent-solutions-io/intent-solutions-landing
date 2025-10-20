@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Cloud & Google Cloud Architecture"
+  description="Design and launch Google Cloud, Vertex AI, and BigQuery foundations with observability, security, and speed."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            cloud & data
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            Google Cloud foundations built for speed and safety
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            From Vertex AI pipelines to BigQuery analytics and Firebase backends, we build cloud systems that ship fast,
+            stay compliant, and remain simple enough for your team to maintain.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Core capabilities</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Vertex AI pipelines</h3>
+            <p class="text-sm text-zinc-400">
+              Model training, evaluation, and deployment workflows with automated guardrails and rollback.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">BigQuery analytics</h3>
+            <p class="text-sm text-zinc-400">
+              Data warehouses with dbt, scheduled transformations, and Looker Studio dashboards your ops team can trust.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Firebase / Firestore</h3>
+            <p class="text-sm text-zinc-400">
+              Real-time application backends with security rules, multitenant support, and offline-first UX.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Cloud Run & Functions</h3>
+            <p class="text-sm text-zinc-400">
+              Serverless APIs, cron jobs, and automation endpoints that scale without upkeep.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Identity & access</h3>
+            <p class="text-sm text-zinc-400">
+              IAM, service accounts, and workload identity federation configured to keep auditors happy.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Observability</h3>
+            <p class="text-sm text-zinc-400">
+              Cloud Logging, Metrics, and Grafana dashboards wired from day one so issues surface immediately.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2 items-start">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">Engagement blueprint</h2>
+            <ol class="list-decimal list-inside space-y-3 text-sm text-zinc-300">
+              <li>Audit your current architecture and capture success metrics.</li>
+              <li>Design reference architecture diagrams and IaC templates.</li>
+              <li>Implement environments with CI/CD, testing, and monitoring hooks.</li>
+              <li>Roll out to production with training for your engineers and operators.</li>
+            </ol>
+            <p class="text-sm text-zinc-400 mt-4">
+              Most foundations deploy within four weeks, with optional retained support for continuous optimization.
+            </p>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Tooling we lean on</h3>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li>Terraform, Pulumi, and Google Cloud Deploy for repeatable infrastructure.</li>
+              <li>Cloud Build, GitHub Actions, and Artifact Registry for delivery pipelines.</li>
+              <li>Secret Manager + KMS for key rotation and least privilege access.</li>
+              <li>Cloud Armor, VPC Service Controls, and BeyondCorp for secure perimeters.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Why operators choose intent solutions io</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Ship fast, stay sane</h3>
+            <p class="text-sm text-zinc-400">
+              We prioritize workable MVPs with clear handoff docs instead of sprawling multi-quarter projects.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Operator-first communication</h3>
+            <p class="text-sm text-zinc-400">
+              Weekly syncs, shared Kanban boards, and transparent burn rates keep leadership aligned.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Compliance ready</h3>
+            <p class="text-sm text-zinc-400">
+              Access policies, logging, and backup strategies tuned for HIPAA, SOC2, PCI, or CJIS environments.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Handoff without drama</h3>
+            <p class="text-sm text-zinc-400">
+              Internal teams get training, runbooks, and co-working sessions so they feel confident owning the stack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Let’s tune your cloud roadmap</h2>
+            <p class="text-sm text-zinc-400 mb-6">
+              Bring your current diagrams (or napkin sketches). We’ll highlight gaps, quick wins, and rollout strategies.
+            </p>
+            <a href="/#contact" class="btn-primary">Schedule a cloud workshop</a>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Frequently asked</h3>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Do you only work on Google Cloud?</p>
+              <p class="text-sm text-zinc-400">GCP is home base, but we bridge to AWS, Azure, and on-prem systems when needed.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Can you support us after launch?</p>
+              <p class="text-sm text-zinc-400">Yes—choose a retainer for monitoring, cost tuning, and roadmap execution.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">What about data migrations?</p>
+              <p class="text-sm text-zinc-400">We provide migration runbooks, rehearsal plans, and rollback strategies to keep stakeholders calm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

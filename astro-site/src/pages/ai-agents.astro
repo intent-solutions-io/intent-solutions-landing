@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="AI Agents That Work Like Teammates"
+  description="Deploy lightweight AI agents that reason over your playbooks, take action, and keep your operators in the loop."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            ai agents
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            Simple, reliable agents that follow your SOPs
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            No enterprise buzzwords—just polished assistants that read your playbooks, make logical decisions,
+            and close the loop with your team. We build agents that stay in-bounds, document every step, and
+            plug into the tools you already love.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-12">Where our agents shine</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Daily dashboards</h3>
+            <p class="text-sm text-zinc-400">
+              Agents pull metrics from your CRM, spreadsheets, or warehouse software and deliver a quick status
+              digest with action items.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Inbox triage</h3>
+            <p class="text-sm text-zinc-400">
+              Route customer emails, flag escalations, draft replies, and keep humans in the loop for final send.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Onboarding flows</h3>
+            <p class="text-sm text-zinc-400">
+              Collect docs, update internal databases, and notify teammates when it’s time for a personal touch.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Field reports</h3>
+            <p class="text-sm text-zinc-400">
+              Turn technician notes, voice memos, or photos into structured reports and push them back into your systems.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Compliance reminders</h3>
+            <p class="text-sm text-zinc-400">
+              Agents check checklists, document proof, and surface issues before audits notice them.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Knowledge search</h3>
+            <p class="text-sm text-zinc-400">
+              Private RAG pipelines answer team questions using your SOPs, manuals, and case studies—without exposing data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">Our agent toolkit</h2>
+            <ul class="space-y-4 text-sm text-zinc-300">
+              <li>
+                <span class="font-semibold text-zinc-100">Reasoning models:</span>
+                Llama 3.1, Claude, and GPT-4o-mini tuned for fast, logical decision making.
+              </li>
+              <li>
+                <span class="font-semibold text-zinc-100">Memory + context:</span>
+                Vector stores, Redis caches, and temporal memory so agents learn without leaking data.
+              </li>
+              <li>
+                <span class="font-semibold text-zinc-100">Action layer:</span>
+                n8n, Netlify Functions, custom APIs, and webhooks to complete real-world tasks.
+              </li>
+              <li>
+                <span class="font-semibold text-zinc-100">Guardrails:</span>
+                Rubrics, sandbox testing, and human handoffs so nothing goes rogue.
+              </li>
+              <li>
+                <span class="font-semibold text-zinc-100">Observability:</span>
+                Automatic transcripts, analytics, and rollback tools to keep leadership comfortable.
+              </li>
+            </ul>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">What launch looks like</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-zinc-300">
+              <li>Document the workflow and “definition of done”.</li>
+              <li>Build a sandbox agent with synthetic data.</li>
+              <li>Run pilot with a small user group and daily standups.</li>
+              <li>Scale to production with monitoring and feedback loops.</li>
+            </ol>
+            <p class="text-sm text-zinc-400">
+              Most teams see their first agent in production within two weeks, with incremental releases after.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Polished, casual experience for your team</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Friendly UI, serious results</h3>
+            <p class="text-sm text-zinc-400">
+              Chat-style interfaces with inline approvals keep things familiar. Agents explain each step so operators
+              always know what happened.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Bring your team along</h3>
+            <p class="text-sm text-zinc-400">
+              Every rollout includes training sessions, resource guides, and built-in feedback capture so adoption sticks.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Cost that scales with wins</h3>
+            <p class="text-sm text-zinc-400">
+              Fixed-monthly pricing to maintain agents, plus optional lane-based pricing if you want to grow the fleet.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Always under your control</h3>
+            <p class="text-sm text-zinc-400">
+              You decide when agents act autonomously, when they pause, and when humans review. It’s your process—we just automate it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">FAQs</h2>
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">How “hands-off” can agents be?</h3>
+                <p class="text-sm text-zinc-400">
+                  You choose. Many clients start with suggestions + human approval, then graduate to automatic actions once the team trusts the flow.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">Do we need our own data warehouse?</h3>
+                <p class="text-sm text-zinc-400">
+                  Not required. We integrate with spreadsheets, CRMs, Firestore, PostgreSQL, or whatever system you live in today.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">How do you keep things safe?</h3>
+                <p class="text-sm text-zinc-400">
+                  Every agent ships with audit logs, rate limits, and scope boundaries. If something looks off, operators can pause the agent instantly.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">Can we bring our own models?</h3>
+                <p class="text-sm text-zinc-400">
+                  Yes. We support OpenAI, Anthropic, Vertex AI, and fully self-hosted models, depending on your compliance needs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-50 mb-3">Let’s build your agent playbook</h3>
+            <p class="text-sm text-zinc-300 mb-4">
+              We’ll map workflows, highlight quick wins, and propose a rollout plan that keeps your operators smiling.
+            </p>
+            <a href="/#contact" class="btn-primary">Book a working session</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

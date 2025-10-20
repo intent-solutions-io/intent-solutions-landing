@@ -1,0 +1,40 @@
+---
+const links = [
+  { href: '/', label: 'home' },
+  { href: '/about', label: 'about' },
+  { href: '/private-ai', label: 'private ai' },
+  { href: '/ai-agents', label: 'ai agents' },
+  { href: '/automation', label: 'automation' },
+  { href: '/cloud', label: 'cloud & data' },
+];
+---
+
+<nav class="sticky top-0 z-50 backdrop-blur-md bg-zinc-950/70 border-b border-zinc-800/60">
+  <div class="container mx-auto px-6 sm:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="home-link">
+        intent solutions io
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        {
+          links.map(({ href, label }) => (
+            <a
+              href={href}
+              class="text-sm text-zinc-400 hover:text-zinc-100 transition-smooth"
+            >
+              {label}
+            </a>
+          ))
+        }
+        <a href="/#contact" class="btn-primary text-sm">
+          start a project
+        </a>
+      </div>
+      <div class="md:hidden">
+        <a href="/#contact" class="btn-primary text-sm">
+          start
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

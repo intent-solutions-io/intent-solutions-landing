@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
 import Hero from '../components/Hero';
 import Products from '../components/Products';
 import Services from '../components/Services';
@@ -8,7 +9,51 @@ import Footer from '../components/Footer';
 ---
 
 <Layout title="intent solutions io - ai consultant building real products">
+  <SiteNav />
   <Hero client:load />
+
+  <section class="py-24 bg-zinc-950 border-t border-b border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-4">explore tailored build paths</h2>
+        <p class="text-zinc-400">
+          Pick the journey that matches your next launch—agents, automation, private AI, or cloud infrastructure.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <a href="/ai-agents" class="card-slate h-full flex flex-col">
+          <h3 class="text-lg font-semibold text-zinc-50 mb-3">AI Agents</h3>
+          <p class="text-sm text-zinc-400 flex-1">
+            Lightweight assistants that reason and execute against your SOPs, dashboards, and pipelines.
+          </p>
+          <span class="mt-6 text-sm text-zinc-200">See agent playbooks →</span>
+        </a>
+        <a href="/private-ai" class="card-slate h-full flex flex-col">
+          <h3 class="text-lg font-semibold text-zinc-50 mb-3">Private AI</h3>
+          <p class="text-sm text-zinc-400 flex-1">
+            Keep data on your cloud while offering a ChatGPT-style experience to every teammate.
+          </p>
+          <span class="mt-6 text-sm text-zinc-200">Review pricing & ROI →</span>
+        </a>
+        <a href="/automation" class="card-slate h-full flex flex-col">
+          <h3 class="text-lg font-semibold text-zinc-50 mb-3">Automation</h3>
+          <p class="text-sm text-zinc-400 flex-1">
+            n8n + Netlify workflows that eliminate manual reporting, onboarding, and follow-ups.
+          </p>
+          <span class="mt-6 text-sm text-zinc-200">Automation menu →</span>
+        </a>
+        <a href="/cloud" class="card-slate h-full flex flex-col">
+          <h3 class="text-lg font-semibold text-zinc-50 mb-3">Cloud & Data</h3>
+          <p class="text-sm text-zinc-400 flex-1">
+            Google Cloud-native architectures—Vertex AI, BigQuery, Firebase—with observability baked in.
+          </p>
+          <span class="mt-6 text-sm text-zinc-200">See cloud blueprint →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <Products client:visible />
   <Services client:visible />
   <Contact client:visible />
