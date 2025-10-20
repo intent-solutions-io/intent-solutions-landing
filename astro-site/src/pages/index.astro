@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
 import Hero from '../components/Hero';
 import Products from '../components/Products';
 import Services from '../components/Services';
@@ -8,6 +9,7 @@ import Footer from '../components/Footer';
 ---
 
 <Layout title="intent solutions io - ai consultant building real products">
+  <SiteNav />
   <Hero client:load />
   <Products client:visible />
   <Services client:visible />
