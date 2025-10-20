@@ -1,0 +1,286 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Private AI Infrastructure"
+  description="Keep AI in your own cloud with fixed pricing, compliance-ready guardrails, and a 48-hour rollout."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            private ai for enterprises
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            Your AI. Your data. Your control.
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            Launch a ChatGPT-style experience that runs entirely inside your infrastructure. No per-seat
+            pricing, no mystery data trails—just fast, private AI your team actually trusts.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Why cloud AI falls short</h2>
+            <p class="text-zinc-400 mb-6">
+              Public tools like ChatGPT or Claude are incredible, but they open up three headaches for
+              operators handling sensitive data.
+            </p>
+            <ul class="space-y-4 text-sm text-zinc-300">
+              <li class="flex gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-red-400"></span>
+                <span><strong>Data privacy:</strong> Every prompt leaves your environment and lives on somebody else’s servers.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-red-400"></span>
+                <span><strong>Compliance risk:</strong> HIPAA, SOC 2, and privilege requirements all hinge on keeping records in-house.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-red-400"></span>
+                <span><strong>Total cost:</strong> $60+ per user adds up fast when every seat needs access.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-50 mb-4">Side-by-side snapshot</h3>
+            <table class="w-full text-sm text-left text-zinc-300">
+              <thead>
+                <tr class="text-zinc-400 uppercase text-xs tracking-widest">
+                  <th class="py-2">Cloud AI</th>
+                  <th class="py-2">Your Private AI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-t border-zinc-800">
+                  <td class="py-3 pr-4">Data on vendor servers</td>
+                  <td class="py-3">Data never leaves your network</td>
+                </tr>
+                <tr class="border-t border-zinc-800">
+                  <td class="py-3 pr-4">$60/user/month</td>
+                  <td class="py-3">$3k/month, unlimited users</td>
+                </tr>
+                <tr class="border-t border-zinc-800">
+                  <td class="py-3 pr-4">Forced updates + terms</td>
+                  <td class="py-3">You decide when models change</td>
+                </tr>
+                <tr class="border-t border-zinc-800">
+                  <td class="py-3 pr-4">Limited customization</td>
+                  <td class="py-3">Full control over prompts + policies</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-12">Simple pricing that scales with trust</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-xl font-semibold text-zinc-50 mb-2">Professional Package</h3>
+            <p class="text-sm text-zinc-400 mb-4">Best for teams getting started with private AI.</p>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li><span class="font-semibold text-zinc-100">Starting at $8,000 one-time</span> — infrastructure deployment, 3 models, team training</li>
+              <li><span class="font-semibold text-zinc-100">Starting at $3,000/month</span> — hosting, monitoring, support, unlimited users</li>
+              <li>Includes onboarding playbooks and documentation handoff</li>
+            </ul>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-xl font-semibold text-zinc-50 mb-2">Enterprise Package</h3>
+            <p class="text-sm text-zinc-400 mb-4">For organizations that need deeper integrations and oversight.</p>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li><span class="font-semibold text-zinc-100">Starting at $15,000 one-time</span> — custom integrations, fine-tuning, extended onboarding</li>
+              <li><span class="font-semibold text-zinc-100">Starting at $5,000/month</span> — priority support, dedicated optimization</li>
+              <li>Includes compliance documentation and change management playbooks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">What’s included</h2>
+            <div class="grid gap-4">
+              <a
+                href="/infrastructure"
+                class="card-slate block transition-smooth hover:border-zinc-600 group"
+              >
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
+                  Infrastructure
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Runs in your cloud account (GCP, AWS, or Azure) with enterprise GPUs, auto-scaling,
+                  and 99.9% uptime SLA.
+                </p>
+                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+                  Learn how we deploy infrastructure
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+              <a
+                href="/ai-models"
+                class="card-slate block transition-smooth hover:border-zinc-600 group"
+              >
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
+                  AI models
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Llama&nbsp;3.1&nbsp;70B for deep reasoning, Mistral&nbsp;7B for quick responses, and Qwen&nbsp;2.5&nbsp;14B for
+                  specialized tasks—plus optional fine-tunes.
+                </p>
+                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+                  Explore the model catalog
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+              <a
+                href="/applications"
+                class="card-slate block transition-smooth hover:border-zinc-600 group"
+              >
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
+                  Applications
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Web app, mobile apps, Office add-ins, and open APIs so your workflows stay seamless.
+                </p>
+                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+                  See the application playbook
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+              <a
+                href="/security-compliance"
+                class="card-slate block transition-smooth hover:border-zinc-600 group"
+              >
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
+                  Security &amp; compliance
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Encryption, RBAC, audit logging, HIPAA/SOC2 readiness, and data residency controls.
+                </p>
+                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+                  Review security and compliance guardrails
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+              <a
+                href="/support"
+                class="card-slate block transition-smooth hover:border-zinc-600 group"
+              >
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
+                  Support
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  White-glove onboarding, 24/7 monitoring, 4-hour response SLA (1-hour for enterprise),
+                  and monthly optimization reviews.
+                </p>
+                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+                  Understand the support program
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="card-slate space-y-6">
+            <div>
+              <h3 class="text-lg font-semibold text-zinc-50 mb-2">Example scopes & pain points</h3>
+              <ul class="space-y-3 text-sm text-zinc-300">
+                <li><strong>Healthcare practice · Birmingham, AL:</strong> Needed HIPAA-safe chat over treatment guidelines; we deployed a private portal with audit trails.</li>
+                <li><strong>Law firm · Gulf Shores, AL:</strong> Required privileged research assistant; we configured secure document retrieval with approval checkpoints.</li>
+                <li><strong>CPA firm · Mobile, AL:</strong> Sought faster workpaper summaries; we delivered a restricted agent that drafts memos from internal records.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-zinc-50 mb-2">48-hour launch plan</h3>
+              <ol class="space-y-2 text-sm text-zinc-300 list-decimal list-inside">
+                <li>Kickoff call (30 minutes)</li>
+                <li>Infrastructure deployed</li>
+                <li>Models installed & tested</li>
+                <li>Team training session</li>
+                <li>Go live with support</li>
+              </ol>
+              <p class="text-sm text-zinc-400 mt-3">
+                Recent deployments have gone live within two to five business days, depending on data integrations and reviews.
+              </p>
+            </div>
+            <div class="bg-zinc-800/40 rounded-lg p-5 border border-zinc-700">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Security-first data flow</h3>
+              <p class="text-sm text-zinc-400 mb-2">
+                Cloud AI: <span class="text-zinc-100">User → Internet → Vendor → Training Data → Response</span>
+              </p>
+              <p class="text-sm text-zinc-400">
+                Private AI: <span class="text-zinc-100">User → Your Network → Response</span>
+              </p>
+              <p class="text-xs text-zinc-500 mt-2">Zero external transmission. Ever.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Common questions</h2>
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">Can we customize it?</h3>
+                <p class="text-sm text-zinc-400">Absolutely. Bring your industry prompts, templates, or tools—everything plugs into the platform.</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">What if intent solutions io disappears?</h3>
+                <p class="text-sm text-zinc-400">You own the infrastructure inside your account. If we vanish, your system keeps running.</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">How do you handle compliance?</h3>
+                <p class="text-sm text-zinc-400">We deliver HIPAA/SOC2-ready documentation, BAAs, audit trails, and retention policies.</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">Can we integrate it?</h3>
+                <p class="text-sm text-zinc-400">Yes—connect via API to your EHR, CRM, accounting suite, or homegrown tools.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-slate space-y-6">
+            <div>
+              <h3 class="text-lg font-semibold text-zinc-50 mb-3">Ready to get started?</h3>
+              <p class="text-sm text-zinc-300 mb-4">
+                Book a 15-minute demo and we’ll tailor the proposal to your team size, compliance needs,
+                and model preferences.
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-400">
+                <li>📧 <a href="mailto:jeremy@intentsolutions.io" class="hover:text-zinc-200 transition-smooth">jeremy@intentsolutions.io</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-zinc-50 mb-3">About intent solutions io</h3>
+              <p class="text-sm text-zinc-400">
+                Jeremy Longshore brings 20 years of operations experience plus AI automation expertise. We ship
+                production systems in days—not months—and support every build right here in Gulf Shores.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

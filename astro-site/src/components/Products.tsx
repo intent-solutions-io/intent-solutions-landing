@@ -9,39 +9,45 @@ export default function Products() {
 
   const products = [
     {
-      name: 'diagnosticpro',
-      description: 'live automotive ai diagnostic platform. vertex ai + firebase/firestore backend processing real customer diagnostics.',
-      badge: 'typescript • react • vertex ai',
+      name: 'DiagnosticPro',
+      description:
+        'Live automotive diagnostics for service centers—Vertex AI orchestrates triage while Firebase keeps technicians synced in real time.',
+      badge: 'TypeScript • React • Vertex AI',
       link: 'https://diagnosticpro.io',
     },
     {
-      name: 'ai devops documentation',
-      description: 'ai-powered documentation generator. transform ideas into enterprise-ready docs in 5 minutes. 17 stars on github.',
-      badge: 'javascript • claude api • automation',
+      name: 'AI DevOps Documentation',
+      description:
+        'Claude-powered runbook generator that ships enterprise-ready docs in minutes; teams deploy it to unblock audits and handoffs.',
+      badge: 'JavaScript • Claude API • Automation',
       link: 'https://github.com/jeremylongshore/ai-devops-intent-solutions',
     },
     {
       name: 'HUSTLE',
-      description: 'youth sports tracking app for competitive families. currently in research phase - validating with parent surveys.',
-      badge: 'next.js • postgresql • research',
+      description:
+        'Youth sports performance tracking backed by a 76-question parent research study—now collecting beta testers via Netlify forms.',
+      badge: 'Next.js • PostgreSQL • Research',
       link: '/survey',
     },
     {
-      name: 'waygate mcp',
-      description: 'foundational mcp server framework. secure, containerized model context protocol server for ai integrations.',
-      badge: 'python • docker • security',
+      name: 'Waygate MCP',
+      description:
+        'Secure Model Context Protocol server that drops into enterprise stacks so operators can run AI agents with container isolation.',
+      badge: 'Python • Docker • Security',
       link: 'https://github.com/jeremylongshore/waygate-mcp',
     },
     {
-      name: 'disposable marketplace',
-      description: 'instant marketplace creation for quote collection. csv-based reseller management with automated ranking. 2 stars.',
-      badge: 'shell • automation • n8n',
+      name: 'Disposable Marketplace',
+      description:
+        'Instant micro-marketplaces for manufacturers to collect quotes—CSV-driven inventory, ranked responses, zero custom CMS required.',
+      badge: 'Shell • Automation • n8n',
       link: 'https://github.com/jeremylongshore/disposable-marketplace-n8n',
     },
     {
-      name: 'news pipeline',
-      description: 'automated daily news monitoring and analysis pipeline. transform scattered news sources into organized intelligence.',
-      badge: 'n8n • ai analysis • automation',
+      name: 'News Pipeline',
+      description:
+        'Automated monitoring that converts daily news into structured intelligence briefs for decision makers.',
+      badge: 'n8n • AI Analysis • Automation',
       link: 'https://github.com/jeremylongshore/news-pipeline-n8n',
     },
   ];

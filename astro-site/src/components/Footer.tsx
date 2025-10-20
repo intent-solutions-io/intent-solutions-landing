@@ -45,6 +45,12 @@ export default function Footer() {
             >
               privacy policy
             </a>
+            <a
+              href="/acceptable-use"
+              className="text-zinc-500 hover:text-zinc-300 transition-smooth"
+            >
+              acceptable use
+            </a>
           </div>
 
           <p className="text-xs text-zinc-600 pt-6">

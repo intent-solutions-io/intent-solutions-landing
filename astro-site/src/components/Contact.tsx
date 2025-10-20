@@ -5,6 +5,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
 
+const encodeFormData = (data: Record<string, string>) =>
+  Object.entries(data)
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value ?? '')}`
+    )
+    .join('&');
+
 const contactSchema = z.object({
   name: z.string().min(2, 'name must be at least 2 characters'),
   email: z.string().email('invalid email address'),
@@ -21,6 +29,7 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -32,9 +41,30 @@ export default function Contact() {
   });
 
   const onSubmit = async (data: ContactForm) => {
-    // Form will be handled by Netlify Forms
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    try {
+      setSubmitError(null);
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData({
+          'form-name': 'contact',
+          'bot-field': '',
+          ...data,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Netlify form submission failed with status ${response.status}`);
+      }
+
+      setSubmitted(true);
+      reset();
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Failed to submit contact form', error);
+      setSubmitError('Something went wrong. Please email jeremy@intentsolutions.io directly.');
+    }
   };
 
   return (
@@ -138,9 +168,19 @@ export default function Contact() {
               )}
             </div>
 
+            {submitError && (
+              <p className="text-sm text-red-400 text-center">{submitError}</p>
+            )}
+            {submitted && !submitError && (
+              <p className="text-sm text-zinc-300 text-center">
+                Thanks for reaching out—expect a reply within one business day.
+              </p>
+            )}
+
             <button
               type="submit"
               className="w-full btn-primary"
+              disabled={submitted}
             >
               {submitted ? 'sent!' : 'send message'}
             </button>
