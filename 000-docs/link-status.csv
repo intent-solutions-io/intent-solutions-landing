@@ -1,0 +1,17 @@
+url,status
+/,200
+/about,301
+/acceptable-use,301
+/ai-agents,301
+/ai-models,200
+/applications,200
+/automation,301
+/cloud,301
+/infrastructure,200
+/privacy,301
+/private-ai,301
+/security-compliance,200
+/support,200
+/survey,301
+/terms,301
+/thank-you,301

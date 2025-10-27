@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Private AI Infrastructure"
+  description="Understand how intent solutions io deploys secure, auto-scaling infrastructure in your own cloud tenancy."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            infrastructure
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            Infrastructure that lives in your cloud account
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            We deploy private AI foundations inside your AWS, Google Cloud, or Azure tenancy so you keep custody of the data,
+            network, and cost controls. Every component ships with auto-scaling, GPU orchestration, and health probes tuned
+            for 99.9% uptime targets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">What we stand up for you</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">GPU-ready clusters</h3>
+            <p class="text-sm text-zinc-400">
+              Managed Kubernetes or serverless GPU pools sized for the models you select, with autoscaling policies that react
+              to real demand.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Networking guardrails</h3>
+            <p class="text-sm text-zinc-400">
+              Private VPCs, load balancers, and firewall rules that isolate AI workloads while keeping latency low for end users.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Observability stack</h3>
+            <p class="text-sm text-zinc-400">
+              Logging, metrics, and alerting wired into your existing tools (Cloud Monitoring, Datadog, Grafana) so your team
+              sees the same dashboards we do.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Secrets and config</h3>
+            <p class="text-sm text-zinc-400">
+              Centralized secret storage (Secret Manager, AWS Secrets Manager, Key Vault) with rotation policies and scoped access.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">CI/CD pipeline</h3>
+            <p class="text-sm text-zinc-400">
+              GitHub Actions or Cloud Build workflows that promote infrastructure changes safely through dev, staging, and production.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Disaster readiness</h3>
+            <p class="text-sm text-zinc-400">
+              Backups, multi-region replication options, and documented recovery drills so you can prove resilience to stakeholders.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2 items-start">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">Operator-first rollout</h2>
+            <ol class="space-y-3 text-sm text-zinc-300 list-decimal list-inside">
+              <li>Baseline assessment of your cloud account and security policies.</li>
+              <li>Reference architecture and Terraform or Pulumi blueprints delivered for review.</li>
+              <li>Joint deployment session with your engineering or IT team to ensure shared ownership.</li>
+              <li>Handoff workshop covering scaling policies, upgrades, and incident response.</li>
+            </ol>
+            <p class="text-sm text-zinc-400 mt-4">
+              Most customers see production traffic flowing within the first week, with optimization sprints scheduled as
+              usage grows.
+            </p>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Platform options</h3>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li><strong>Google Cloud:</strong> GKE Autopilot, Vertex AI endpoints, Cloud Run for supporting APIs.</li>
+              <li><strong>AWS:</strong> EKS with managed node groups, Bedrock integration, Lambda for lightweight tasks.</li>
+              <li><strong>Azure:</strong> AKS with GPU node pools, Azure OpenAI Service, Functions for automation hooks.</li>
+            </ul>
+            <p class="text-xs text-zinc-500">
+              Already standardized on another orchestrator? We adapt to OpenShift, Nomad, and on-prem Kubernetes clusters too.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-6">Educational resources for your team</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Runbooks and diagrams</h3>
+            <p class="text-sm text-zinc-400">
+              Every build ships with architecture maps, dependency charts, and day-two operations checklists so new teammates
+              ramp quickly.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Hands-on labs</h3>
+            <p class="text-sm text-zinc-400">
+              Interactive walkthroughs show how to scale nodes, drain clusters, and roll back deployments without risking production.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Cost visibility</h3>
+            <p class="text-sm text-zinc-400">
+              Shared dashboards demonstrate how GPU spend, data egress, and storage costs trend over time so finance stays aligned.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Continuity planning</h3>
+            <p class="text-sm text-zinc-400">
+              Tabletop exercises and simulated failovers keep response muscle memory fresh for operations and leadership alike.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Ready to review your current setup?</h2>
+            <p class="text-sm text-zinc-400 mb-6">
+              We will audit existing infrastructure diagrams, highlight quick wins, and propose a rollout that keeps control in your hands.
+            </p>
+            <a href="/#contact" class="btn-primary">Schedule an infrastructure briefing</a>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Common questions</h3>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Who manages the cloud account?</p>
+              <p class="text-sm text-zinc-400">You do. We provision using your access policies and leave the environment under your control.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Can we start without GPUs?</p>
+              <p class="text-sm text-zinc-400">Yes. We can begin with CPU instances and add GPUs once usage warrants it, minimizing upfront spend.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">How do upgrades work?</p>
+              <p class="text-sm text-zinc-400">Versioned infrastructure code and staged environments make upgrades predictable and reversible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

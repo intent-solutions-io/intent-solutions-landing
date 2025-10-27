@@ -1,0 +1,47 @@
+graph TD
+    Home["/"] --> Services[Services Pages]
+    Home --> Legal[Legal Pages]
+    Home --> Survey[Survey Flow]
+    Home --> Contact["#contact"]
+
+    Services --> AIModels["/ai-models"]
+    Services --> Applications["/applications"]
+    Services --> Infrastructure["/infrastructure"]
+    Services --> SecurityCompliance["/security-compliance"]
+    Services --> Support["/support"]
+    Services --> AIAgents["/ai-agents"]
+    Services --> Automation["/automation"]
+    Services --> Cloud["/cloud"]
+    Services --> PrivateAI["/private-ai"]
+
+    Legal --> Privacy["/privacy"]
+    Legal --> Terms["/terms"]
+    Legal --> AcceptableUse["/acceptable-use"]
+    Legal --> About["/about"]
+
+    Survey --> Survey1["/survey/1"]
+    Survey1 --> Survey2["/survey/2"]
+    Survey2 --> Survey3["/survey/3"]
+    Survey3 --> Survey4["/survey/4"]
+    Survey4 --> Survey5["/survey/5"]
+    Survey5 --> Survey6["/survey/6"]
+    Survey6 --> Survey7["/survey/7"]
+    Survey7 --> Survey8["/survey/8"]
+    Survey8 --> Survey9["/survey/9"]
+    Survey9 --> Survey10["/survey/10"]
+    Survey10 --> Survey11["/survey/11"]
+    Survey11 --> Survey12["/survey/12"]
+    Survey12 --> Survey13["/survey/13"]
+    Survey13 --> Survey14["/survey/14"]
+    Survey14 --> Survey15["/survey/15"]
+    Survey15 --> SurveyThankYou["/survey/thank-you"]
+
+    classDef serviceNode fill:#4f46e5,stroke:#312e81,color:#fff
+    classDef legalNode fill:#059669,stroke:#065f46,color:#fff
+    classDef surveyNode fill:#dc2626,stroke:#991b1b,color:#fff
+    classDef homeNode fill:#f59e0b,stroke:#b45309,color:#fff
+
+    class Home homeNode
+    class AIModels,Applications,Infrastructure,SecurityCompliance,Support,AIAgents,Automation,Cloud,PrivateAI serviceNode
+    class Privacy,Terms,AcceptableUse,About legalNode
+    class Survey1,Survey2,Survey3,Survey4,Survey5,Survey6,Survey7,Survey8,Survey9,Survey10,Survey11,Survey12,Survey13,Survey14,Survey15,SurveyThankYou surveyNode

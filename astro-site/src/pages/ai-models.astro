@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Private AI Model Catalog"
+  description="Dive into the model lineup powering intent solutions io deployments, from reasoning-grade Llama 3.1 to specialized Qwen variants."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            model strategy
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            The model stack behind every private deployment
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            Your private AI environment ships with a curated trio of foundation models so every workflow is covered. We balance
+            latency, reasoning ability, and parameter count to keep quality high without overspending on compute.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Primary models included</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Llama 3.1 70B</h3>
+            <p class="text-sm text-zinc-400">
+              Enterprise reasoning workhorse for long-form answers, structured plans, and high stakes decision support.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-zinc-300">
+              <li>Context window: 128k tokens</li>
+              <li>Best for: policies, summaries, draft generation</li>
+            </ul>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Mistral 7B</h3>
+            <p class="text-sm text-zinc-400">
+              Lightning fast assistant for chatty interactions, form filling, and routing logic where speed is vital.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-zinc-300">
+              <li>Context window: 32k tokens</li>
+              <li>Best for: quick replies, automations, fallback logic</li>
+            </ul>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Qwen 2.5 14B</h3>
+            <p class="text-sm text-zinc-400">
+              Specialized model tuned for technical content, multilingual responses, and structured data extraction.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-zinc-300">
+              <li>Context window: 64k tokens</li>
+              <li>Best for: spreadsheets, code, financial memos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2 items-start">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">Selecting the right model for each task</h2>
+            <p class="text-sm text-zinc-400 mb-4">
+              During onboarding we map your workflows to the appropriate model tier. The orchestration layer automatically
+              routes calls so agents and end users see consistent performance.
+            </p>
+            <table class="w-full text-sm text-left text-zinc-300 border border-zinc-800 rounded-lg overflow-hidden">
+              <thead class="bg-zinc-800/60 text-xs uppercase tracking-wider text-zinc-400">
+                <tr>
+                  <th class="px-4 py-3">Scenario</th>
+                  <th class="px-4 py-3">Recommended model</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-t border-zinc-800">
+                  <td class="px-4 py-3">Executive briefings and long reports</td>
+                  <td class="px-4 py-3">Llama 3.1 70B</td>
+                </tr>
+                <tr class="border-t border-zinc-800">
+                  <td class="px-4 py-3">Slack or Teams agent responders</td>
+                  <td class="px-4 py-3">Mistral 7B</td>
+                </tr>
+                <tr class="border-t border-zinc-800">
+                  <td class="px-4 py-3">Spreadsheet cleanup and analytics</td>
+                  <td class="px-4 py-3">Qwen 2.5 14B</td>
+                </tr>
+                <tr class="border-t border-zinc-800">
+                  <td class="px-4 py-3">Multi-step automations</td>
+                  <td class="px-4 py-3">Mistral 7B with tool calling</td>
+                </tr>
+                <tr class="border-t border-zinc-800">
+                  <td class="px-4 py-3">Legal or medical policy memos</td>
+                  <td class="px-4 py-3">Llama 3.1 70B + retrieval</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Routing intelligence</h3>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li>Usage telemetry helps us rebalance workloads between models without touching your applications.</li>
+              <li>Fallback policies redirect to a secondary model if latency spikes or a service is unavailable.</li>
+              <li>Guardrails enforce token, cost, and compliance limits per team or integration.</li>
+            </ul>
+            <p class="text-xs text-zinc-500">
+              Prefer another OSS checkpoint? Bring your weights. We validate performance and update routing rules accordingly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-6">Fine-tuning and extensions</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Domain adapters</h3>
+            <p class="text-sm text-zinc-400">
+              LoRA adapters capture your vocabulary, templates, and tone without retraining the entire model.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Retrieval augmented generation</h3>
+            <p class="text-sm text-zinc-400">
+              We plug structured knowledge bases into the prompt so answers stay grounded in your source of truth.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Safety tuning</h3>
+            <p class="text-sm text-zinc-400">
+              Custom moderation rules and refusal behaviors align with your compliance policies and brand voice.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Evaluation harness</h3>
+            <p class="text-sm text-zinc-400">
+              Automated benchmarks track accuracy, latency, and cost across releases so upgrades are data driven.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Explore the model roadmap with us</h2>
+            <p class="text-sm text-zinc-400 mb-6">
+              We share quarterly guidance on emerging checkpoints, parameter trade-offs, and licensing changes so you can plan ahead.
+            </p>
+            <a href="/#contact" class="btn-primary">Book a model strategy session</a>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Common questions</h3>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Can we swap in proprietary models?</p>
+              <p class="text-sm text-zinc-400">Yes. We integrate with Azure OpenAI, Anthropic, or Gemini while keeping routing logic consistent.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Do you support vision or multimodal models?</p>
+              <p class="text-sm text-zinc-400">We deploy multimodal variants on demand, including image understanding pipelines for field teams.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">How are weights stored?</p>
+              <p class="text-sm text-zinc-400">Artifacts stay inside your object storage buckets with lifecycle policies and restricted access groups.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

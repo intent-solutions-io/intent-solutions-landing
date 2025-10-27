@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Private AI Applications"
+  description="See how intent solutions io delivers web, mobile, and productivity integrations that make private AI accessible to every team."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            applications
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            Interfaces that bring private AI to your teams
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            From browser dashboards to native mobile and Office add-ins, we ship applications that plug into the way your teams
+            already work. Every interface talks to the same secure APIs so adoption is smooth and governance stays simple.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Core application surfaces</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Web console</h3>
+            <p class="text-sm text-zinc-400">
+              Responsive web app with role-based views, conversation history, and workflow launchers.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Mobile companion</h3>
+            <p class="text-sm text-zinc-400">
+              iOS and Android builds (React Native) for field teams that need AI access on the road or shop floor.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Office add-ins</h3>
+            <p class="text-sm text-zinc-400">
+              Outlook and Excel integrations streamline drafting, summarizing, and data cleanup without leaving the document.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Open APIs</h3>
+            <p class="text-sm text-zinc-400">
+              REST and GraphQL endpoints powering your custom dashboards, CRMs, or automation platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2 items-start">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">End-user experience highlights</h2>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li>Single sign-on via your identity provider keeps governance consistent.</li>
+              <li>Shared prompt libraries, citation trails, and export tools build trust with operators.</li>
+              <li>Offline-safe drafts and queued tasks let field reps stay productive even with spotty connections.</li>
+              <li>Localization and accessibility baked in so every team member can participate.</li>
+            </ul>
+            <p class="text-sm text-zinc-400 mt-4">
+              We prototype flows with your subject matter experts first, then iterate with telemetry once the apps reach production.
+            </p>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Integration lanes</h3>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li>Embed widgets inside Salesforce, HubSpot, or custom CRMs via iframe or component toolkit.</li>
+              <li>Connect workflow engines like n8n, Zapier, or Workato using secure API tokens.</li>
+              <li>Stream events to data warehouses (BigQuery, Snowflake) for analytics and auditability.</li>
+            </ul>
+            <p class="text-xs text-zinc-500">
+              Need a different surface? Kiosk screens, IVR, and in-vehicle experiences are available as scoped add-ons.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-6">Delivery toolkit</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Design systems</h3>
+            <p class="text-sm text-zinc-400">
+              Figma libraries and component inventories align the private AI experiences with your existing brand.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Testing harness</h3>
+            <p class="text-sm text-zinc-400">
+              Playwright regression suites, accessibility audits, and device labs ensure reliability across browsers and devices.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Release automation</h3>
+            <p class="text-sm text-zinc-400">
+              CI/CD pipelines push updates to Netlify, App Store Connect, Google Play, and your internal catalogs without downtime.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Adoption playbooks</h3>
+            <p class="text-sm text-zinc-400">
+              Role-based coaching materials, office hours, and KPI dashboards help change agents champion the rollout.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Let us map the right interfaces</h2>
+            <p class="text-sm text-zinc-400 mb-6">
+              Share your current workflow stack and user personas. We will suggest the mix of web, mobile, and productivity tools
+              that unlock fast value.
+            </p>
+            <a href="/#contact" class="btn-primary">Talk through application options</a>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Common questions</h3>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Do you support white-labeling?</p>
+              <p class="text-sm text-zinc-400">Yes. Colors, typography, and logos follow your brand standards so the experience feels native.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">How do updates reach end users?</p>
+              <p class="text-sm text-zinc-400">We coordinate release schedules with your IT team, including phased rollouts and change logs.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Can we embed AI in existing apps?</p>
+              <p class="text-sm text-zinc-400">Absolutely. We provide SDKs and API recipes to drop private AI into current products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

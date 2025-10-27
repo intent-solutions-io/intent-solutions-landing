@@ -1,0 +1,171 @@
+{
+  "framework": "Astro 5.14.1",
+  "totalRoutes": 33,
+  "routes": [
+    {
+      "path": "/",
+      "file": "src/pages/index.astro",
+      "type": "home"
+    },
+    {
+      "path": "/about",
+      "file": "src/pages/about.astro",
+      "type": "service"
+    },
+    {
+      "path": "/acceptable-use",
+      "file": "src/pages/acceptable-use.astro",
+      "type": "legal"
+    },
+    {
+      "path": "/ai-agents",
+      "file": "src/pages/ai-agents.astro",
+      "type": "service"
+    },
+    {
+      "path": "/ai-models",
+      "file": "src/pages/ai-models.astro",
+      "type": "service"
+    },
+    {
+      "path": "/applications",
+      "file": "src/pages/applications.astro",
+      "type": "service"
+    },
+    {
+      "path": "/automation",
+      "file": "src/pages/automation.astro",
+      "type": "service"
+    },
+    {
+      "path": "/cloud",
+      "file": "src/pages/cloud.astro",
+      "type": "service"
+    },
+    {
+      "path": "/infrastructure",
+      "file": "src/pages/infrastructure.astro",
+      "type": "service"
+    },
+    {
+      "path": "/privacy",
+      "file": "src/pages/privacy.astro",
+      "type": "legal"
+    },
+    {
+      "path": "/private-ai",
+      "file": "src/pages/private-ai.astro",
+      "type": "service"
+    },
+    {
+      "path": "/security-compliance",
+      "file": "src/pages/security-compliance.astro",
+      "type": "service"
+    },
+    {
+      "path": "/support",
+      "file": "src/pages/support.astro",
+      "type": "service"
+    },
+    {
+      "path": "/survey",
+      "file": "src/pages/survey.astro",
+      "type": "service"
+    },
+    {
+      "path": "/survey/1",
+      "file": "src/pages/survey/1.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/2",
+      "file": "src/pages/survey/2.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/3",
+      "file": "src/pages/survey/3.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/4",
+      "file": "src/pages/survey/4.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/5",
+      "file": "src/pages/survey/5.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/6",
+      "file": "src/pages/survey/6.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/7",
+      "file": "src/pages/survey/7.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/8",
+      "file": "src/pages/survey/8.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/9",
+      "file": "src/pages/survey/9.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/10",
+      "file": "src/pages/survey/10.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/11",
+      "file": "src/pages/survey/11.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/12",
+      "file": "src/pages/survey/12.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/13",
+      "file": "src/pages/survey/13.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/14",
+      "file": "src/pages/survey/14.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/15",
+      "file": "src/pages/survey/15.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/test-submit",
+      "file": "src/pages/survey/test-submit.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/survey/thank-you",
+      "file": "src/pages/survey/thank-you.astro",
+      "type": "survey"
+    },
+    {
+      "path": "/terms",
+      "file": "src/pages/terms.astro",
+      "type": "legal"
+    },
+    {
+      "path": "/thank-you",
+      "file": "src/pages/thank-you.astro",
+      "type": "service"
+    }
+  ]
+}
