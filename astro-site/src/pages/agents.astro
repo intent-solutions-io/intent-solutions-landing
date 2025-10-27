@@ -1,0 +1,353 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout title="AI Agents - Containerized Automation | Intent Solutions">
+  <SiteNav />
+
+  <!-- Hero Section -->
+  <section class="min-h-[60vh] flex items-center bg-gradient-main relative overflow-hidden">
+    <div class="absolute w-96 h-96 bg-zinc-100/5 rounded-full blur-3xl top-0 right-0 -translate-y-1/2 translate-x-1/2" />
+
+    <div class="container mx-auto px-8 py-24 relative z-10">
+      <div class="max-w-4xl">
+        <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-400 mb-6">
+          containerized ai agents
+        </p>
+
+        <h1 class="text-hero font-extrabold text-zinc-50 mb-6">
+          ship agents,<br />not hours
+        </h1>
+
+        <p class="text-body-lg text-zinc-400 mb-8 max-w-2xl">
+          Three containerized AI agents that automate LinkedIn outreach, meeting intelligence, and customer support. Deploy in under 2 hours. No vendor lock-in.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#pricing" class="btn-primary">
+            see pricing
+          </a>
+          <a
+            href="mailto:jeremy@intentsolutions.io?subject=AI Agent Demo Request"
+            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+          >
+            book a demo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agents Grid -->
+  <section class="py-24 bg-zinc-950">
+    <div class="container mx-auto px-8">
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <!-- LinkedIn Agent -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <h3 class="text-2xl font-bold text-zinc-50 mb-3">LinkedIn Outbound Agent</h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Finds prospects, enriches data, writes personalized messages, sends outreach, books meetings
+          </p>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Integrates with:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">LinkedIn Sales Navigator</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Apollo.io</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Instantly.ai</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">HubSpot</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">ROI:</h4>
+            <p class="text-sm text-zinc-400">Replaces 3-5 SDRs earning $75K+/year ($18,750/mo) for $197-647/mo</p>
+          </div>
+
+          <div class="border-t border-zinc-800 pt-6">
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Self-serve</span>
+                <span class="text-lg font-semibold text-zinc-50">$197/mo</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Managed</span>
+                <span class="text-lg font-semibold text-zinc-50">$647/mo</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Custom</span>
+                <span class="text-sm text-zinc-400">$5-15K + $297/mo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meeting Agent -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <h3 class="text-2xl font-bold text-zinc-50 mb-3">Meeting Intelligence Agent</h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Joins meetings, transcribes, summarizes, extracts action items, sends follow-ups, updates CRM
+          </p>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Integrates with:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Google Meet</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Zoom</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Notion</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Slack</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">ROI:</h4>
+            <p class="text-sm text-zinc-400">Saves 5+ hours/week per person with 98% transcription accuracy</p>
+          </div>
+
+          <div class="border-t border-zinc-800 pt-6">
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Self-serve</span>
+                <span class="text-lg font-semibold text-zinc-50">$97/mo</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Managed</span>
+                <span class="text-lg font-semibold text-zinc-50">$297/mo</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Custom</span>
+                <span class="text-sm text-zinc-400">$5-15K + $297/mo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support Agent -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <h3 class="text-2xl font-bold text-zinc-50 mb-3">Customer Support Triage Agent</h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Monitors tickets, categorizes, drafts responses (human approval required), escalates complex issues
+          </p>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Integrates with:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Zendesk</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Intercom</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Notion</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Confluence</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">ROI:</h4>
+            <p class="text-sm text-zinc-400">Reduces first response time from 4 hours to 4 minutes</p>
+          </div>
+
+          <div class="border-t border-zinc-800 pt-6">
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Self-serve</span>
+                <span class="text-lg font-semibold text-zinc-50">$147/mo</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Managed</span>
+                <span class="text-lg font-semibold text-zinc-50">$497/mo</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-zinc-400">Custom</span>
+                <span class="text-sm text-zinc-400">$5-15K + $297/mo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Comparison -->
+  <section id="pricing" class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-h1 font-bold text-zinc-50 mb-4">compare deployment options</h2>
+          <p class="text-zinc-400">
+            Self-serve: You deploy on your infrastructure. Managed: We host and manage everything.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Self-Serve -->
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <h3 class="text-xl font-bold text-zinc-50 mb-4">Self-Serve</h3>
+            <p class="text-sm text-zinc-400 mb-6">Deploy on your infrastructure with Docker Compose</p>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>You deploy on your AWS/GCP infrastructure</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Docker container with full source access</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Deploy in under 2 hours with our docs</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Email support within 24 hours</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Fully exportable configs and data—no lock-in</span>
+              </li>
+            </ul>
+
+            <div class="space-y-2">
+              <p class="text-sm text-zinc-400">Starting at:</p>
+              <p class="text-3xl font-bold text-zinc-50">$97<span class="text-lg text-zinc-400">/month</span></p>
+            </div>
+          </div>
+
+          <!-- Managed -->
+          <div class="bg-zinc-900 border border-indigo-500/30 rounded-lg p-8 relative">
+            <div class="absolute top-4 right-4 px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-semibold rounded">
+              RECOMMENDED
+            </div>
+
+            <h3 class="text-xl font-bold text-zinc-50 mb-4">Managed</h3>
+            <p class="text-sm text-zinc-400 mb-6">We host, monitor, and manage everything</p>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>We host on secure cloud infrastructure</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>99.9% uptime SLA with monitoring</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Instant access—no deployment needed</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Priority support within 4 hours</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Daily backups and auto-scaling included</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-400">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Export your data anytime—no lock-in</span>
+              </li>
+            </ul>
+
+            <div class="space-y-2">
+              <p class="text-sm text-zinc-400">Starting at:</p>
+              <p class="text-3xl font-bold text-zinc-50">$297<span class="text-lg text-zinc-400">/month</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Tier -->
+        <div class="mt-8 bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-xl font-bold text-zinc-50 mb-3">Custom Development</h3>
+              <p class="text-sm text-zinc-400 mb-4">
+                Bespoke agent development for complex, industry-specific workflows
+              </p>
+              <ul class="space-y-2 text-sm text-zinc-400">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400 flex-shrink-0"></span>
+                  <span>Custom integrations with proprietary systems</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400 flex-shrink-0"></span>
+                  <span>Advanced ML tuning for your specific use case</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400 flex-shrink-0"></span>
+                  <span>Dedicated support and SLA guarantees</span>
+                </li>
+              </ul>
+            </div>
+            <div class="text-right">
+              <p class="text-sm text-zinc-400 mb-2">Custom pricing:</p>
+              <p class="text-2xl font-bold text-zinc-50 mb-1">$5,000–$15,000</p>
+              <p class="text-sm text-zinc-400 mb-6">one-time setup + $297/mo maintenance</p>
+              <a
+                href="mailto:jeremy@intentsolutions.io?subject=Custom AI Agent Development"
+                class="inline-block px-6 py-3 bg-zinc-50 hover:bg-zinc-200 text-zinc-900 font-semibold rounded transition-colors"
+              >
+                Discuss Custom Build
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-4">ready to ship agents?</h2>
+        <p class="text-zinc-400 mb-8">
+          Book a 15-minute demo to see the agents in action and discuss your use case.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="mailto:jeremy@intentsolutions.io?subject=AI Agent Demo Request"
+            class="btn-primary"
+          >
+            book a demo
+          </a>
+          <a
+            href="#pricing"
+            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+          >
+            see pricing again ↑
+          </a>
+        </div>
+        <p class="text-sm text-zinc-500 mt-6">
+          jeremy@intentsolutions.io · no contracts · no lock-in · export your data anytime
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
