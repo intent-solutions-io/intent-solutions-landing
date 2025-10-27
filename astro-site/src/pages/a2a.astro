@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout title="A2A Framework - Intelligence Before Automation | intent solutions io">
+  <SiteNav />
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center bg-gradient-main relative overflow-hidden">
+    <div class="absolute w-96 h-96 bg-zinc-100/5 rounded-full blur-3xl top-0 right-0 -translate-y-1/2 translate-x-1/2" />
+
+    <div class="container mx-auto px-8 py-24 relative z-10">
+      <div class="max-w-4xl">
+        <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-400 mb-6">
+          agent-to-agent framework
+        </p>
+
+        <h1 class="text-hero font-extrabold text-zinc-50 mb-6">
+          intelligence before<br />automation
+        </h1>
+
+        <p class="text-body-lg text-zinc-400 mb-8 max-w-2xl">
+          Stop spraying and praying. Our A2A framework adds an intelligence layer that learns from your closed deals, scores leads against your ICP, and tells your automation agents exactly who to contact—and who to ignore.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#architecture" class="btn-primary">
+            see how it works
+          </a>
+          <a
+            href="mailto:jeremy@intentsolutions.io"
+            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+          >
+            book a demo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-8 text-center">the automation trap</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-zinc-900 border border-red-900/30 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-red-400 mb-4">Dumb Automation</h3>
+            <ul class="space-y-3 text-sm text-zinc-400">
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>Scrape 10,000 leads from Apollo</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>Send generic messages to everyone</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>0.5% response rate</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>Burn through your domain reputation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>No learning, no improvement</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-900 border border-green-900/30 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-green-400 mb-4">Intelligence-First A2A</h3>
+            <ul class="space-y-3 text-sm text-zinc-400">
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>Scrape 10,000 leads from Apollo</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>Intelligence agent scores against your ICP</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>Only contact top 500 A-tier leads (5%)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>5-10% response rate (10x better)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">•</span>
+                <span>Learns from every conversation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <p class="text-2xl font-bold text-zinc-50 mb-2">10x better results</p>
+          <p class="text-zinc-400">by focusing on the right leads, not all leads</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section id="architecture" class="py-24 bg-zinc-950">
+    <div class="container mx-auto px-8">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-4 text-center">two-layer architecture</h2>
+        <p class="text-zinc-400 text-center mb-16 max-w-2xl mx-auto">
+          Intelligence agents analyze and score. Automation agents execute. They talk to each other using Google's A2A Protocol.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Intelligence Layer -->
+          <div class="bg-gradient-to-br from-blue-950/20 to-zinc-900 border border-blue-900/30 rounded-lg p-8">
+            <div class="inline-block px-3 py-1 bg-blue-900/30 text-blue-300 text-xs font-semibold rounded mb-4">
+              LAYER 1
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-50 mb-4">Intelligence Agent</h3>
+            <p class="text-sm text-zinc-400 mb-6">
+              Learns from your past wins, builds your ICP model, scores every lead
+            </p>
+
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What it does</h4>
+            <ul class="space-y-3 text-sm text-zinc-400 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <span>Ingests data from Apollo, Sales Navigator, HubSpot, Clearbit</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <span>Analyzes your closed deals for patterns</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <span>Scores leads A-tier, B-tier, C-tier based on ICP match</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <span>Tells automation agent who to contact</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <span>Learns from feedback and improves</span>
+              </li>
+            </ul>
+
+            <div class="bg-zinc-950/50 rounded p-4">
+              <p class="text-xs text-zinc-500 mb-2">Tech stack</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">FastAPI</span>
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">PostgreSQL</span>
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">LangChain</span>
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">scikit-learn</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automation Layer -->
+          <div class="bg-gradient-to-br from-green-950/20 to-zinc-900 border border-green-900/30 rounded-lg p-8">
+            <div class="inline-block px-3 py-1 bg-green-900/30 text-green-300 text-xs font-semibold rounded mb-4">
+              LAYER 2
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-50 mb-4">Automation Agent</h3>
+            <p class="text-sm text-zinc-400 mb-6">
+              Receives scored leads, executes outreach, reports results back
+            </p>
+
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What it does</h4>
+            <ul class="space-y-3 text-sm text-zinc-400 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
+                <span>Receives A-tier scored leads from intelligence agent</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
+                <span>Sends personalized outreach via LinkedIn and email</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
+                <span>Tracks responses and meeting bookings</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
+                <span>Sends feedback on what messaging worked</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
+                <span>Intelligence agent learns and refines ICP</span>
+              </li>
+            </ul>
+
+            <div class="bg-zinc-950/50 rounded p-4">
+              <p class="text-xs text-zinc-500 mb-2">Tech stack</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">FastAPI</span>
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">PostgreSQL</span>
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">n8n</span>
+                <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Apollo API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-4">ready to add intelligence to your automation?</h2>
+        <p class="text-zinc-400 mb-8">
+          Custom A2A framework development starts at $15K. Schedule a call to discuss your use case.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="mailto:jeremy@intentsolutions.io"
+            class="btn-primary"
+          >
+            book strategy call
+          </a>
+          <a
+            href="/agents"
+            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+          >
+            see our other agents →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
