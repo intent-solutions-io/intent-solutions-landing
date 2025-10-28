@@ -169,49 +169,121 @@ import Footer from '../components/Footer';
             </div>
           </div>
 
-          <!-- Step 4 -->
+        </div>
+
+        <div class="mt-12 bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-zinc-50 mb-4">Model 1 Output</h3>
+          <p class="text-zinc-400 mb-4">
+            IAE: Model 1 delivers scored leads with detailed reasoning. What you do with them is up to you.
+          </p>
+          <div class="bg-zinc-800/50 p-4 rounded border border-zinc-700 font-mono text-xs">
+            <div class="text-green-400 mb-2">A-Tier Leads (Score: 85+)</div>
+            <div class="text-zinc-500 space-y-1">
+              <div>• Stripe - Score: 94 - Series A fintech, 35 employees, uses Salesforce</div>
+              <div>• Plaid - Score: 89 - Series A fintech, 28 employees, recent $50M raise</div>
+              <div>• Brex - Score: 87 - Series B fintech, 45 employees, fast growth signals</div>
+            </div>
+            <div class="mt-4 text-zinc-400">
+              Intelligence insights ready. Add IAE: Model 2 for execution or export for manual outreach.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-On Models -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-12 text-center">build your intelligence workflow</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Model 2 -->
           <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0 w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-lg flex items-center justify-center">
-                <span class="text-xl font-bold text-emerald-300">4</span>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-zinc-50">IAE: Model 2</h3>
+              <span class="px-2 py-1 bg-zinc-700 text-zinc-300 text-xs font-semibold rounded">REQUIRES M1</span>
+            </div>
+            <p class="text-sm text-zinc-400 mb-6">
+              Execution Layer. Takes your scored A-tier leads and executes personalized outreach across LinkedIn and email. Meeting intelligence captures insights and feeds them back to M1.
+            </p>
+            <ul class="text-sm text-zinc-400 space-y-2 mb-6">
+              <li>• LinkedIn connection requests</li>
+              <li>• Personalized email campaigns</li>
+              <li>• Meeting transcription and action items</li>
+              <li>• Response tracking and conversion analytics</li>
+              <li>• Feedback loop to improve M1 accuracy</li>
+            </ul>
+            <div class="pt-4 border-t border-zinc-800">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm text-zinc-400">A la carte</span>
+                <span class="text-lg font-semibold text-zinc-50">$1,997/mo</span>
               </div>
-              <div class="flex-1">
-                <h3 class="text-xl font-bold text-zinc-50 mb-3">Automation Layer: Execution</h3>
-                <p class="text-zinc-400 mb-4">
-                  Receives scored leads from Intelligence Agent and executes personalized outreach
-                </p>
-                <ul class="text-sm text-zinc-400 space-y-2">
-                  <li>• Sends connection requests on LinkedIn</li>
-                  <li>• Personalized messages (not templates)</li>
-                  <li>• Rate-limited to protect sender reputation</li>
-                  <li>• Tracks responses and conversions</li>
-                </ul>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-zinc-400">M1+M2 bundle</span>
+                <span class="text-lg font-semibold text-indigo-400">$2,997/mo</span>
               </div>
+              <p class="text-xs text-zinc-500 mt-2">Save $497/mo with bundle</p>
             </div>
           </div>
 
-          <!-- Step 5 -->
+          <!-- Model 3 -->
           <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-            <div class="flex items-start gap-6">
-              <div class="flex-shrink-0 w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-lg flex items-center justify-center">
-                <span class="text-xl font-bold text-purple-300">5</span>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-zinc-50">IAE: Model 3</h3>
+              <span class="px-2 py-1 bg-zinc-700 text-zinc-300 text-xs font-semibold rounded">REQUIRES M1+M2</span>
+            </div>
+            <p class="text-sm text-zinc-400 mb-6">
+              Support Intelligence. Monitors your support tickets, identifies customer pain points, predicts churn risk, drafts responses using M2 execution layer.
+            </p>
+            <ul class="text-sm text-zinc-400 space-y-2 mb-6">
+              <li>• Zendesk/Intercom integration</li>
+              <li>• Urgent ticket escalation (4 min vs 4 hours)</li>
+              <li>• Response drafting with human approval</li>
+              <li>• Churn prediction signals to M1</li>
+              <li>• Customer health scoring</li>
+            </ul>
+            <div class="pt-4 border-t border-zinc-800">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm text-zinc-400">A la carte</span>
+                <span class="text-lg font-semibold text-zinc-50">$997/mo</span>
               </div>
-              <div class="flex-1">
-                <h3 class="text-xl font-bold text-zinc-50 mb-3">Feedback Loop: Continuous Learning</h3>
-                <p class="text-zinc-400 mb-4">
-                  Automation Agent reports results back to Intelligence Agent for model improvement
-                </p>
-                <div class="bg-zinc-800/50 p-4 rounded border border-zinc-700">
-                  <div class="text-sm text-zinc-400">
-                    <div class="font-semibold text-zinc-300 mb-2">A2A Communication:</div>
-                    <div class="text-xs text-zinc-500 space-y-1">
-                      <div>Automation → Intelligence: "Lead abc123 booked meeting"</div>
-                      <div>Intelligence updates model: "Increase weight for this pattern"</div>
-                      <div>Next batch: More accurate targeting</div>
-                    </div>
-                  </div>
-                </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-zinc-400">Full stack bundle</span>
+                <span class="text-lg font-semibold text-indigo-400">$3,997/mo</span>
               </div>
+              <p class="text-xs text-zinc-500 mt-2">Save $1,491/mo with full stack</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third-Party Connectors -->
+        <div class="mt-8 bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-zinc-50 mb-4">Additional Data Connectors</h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Model 1 includes ONE data source connector (Apollo, Sales Navigator, or HubSpot). Add more sources for richer intelligence.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">Apollo.io</div>
+              <div class="text-xs text-zinc-500">+$197/mo</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">Sales Navigator</div>
+              <div class="text-xs text-zinc-500">+$197/mo</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">HubSpot</div>
+              <div class="text-xs text-zinc-500">+$197/mo</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">Clearbit</div>
+              <div class="text-xs text-zinc-500">+$197/mo</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">ZoomInfo</div>
+              <div class="text-xs text-zinc-500">+$197/mo</div>
             </div>
           </div>
         </div>
