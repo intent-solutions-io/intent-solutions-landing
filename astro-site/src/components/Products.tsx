@@ -9,6 +9,13 @@ export default function Products() {
 
   const products = [
     {
+      name: 'Claude Code Plugins Hub',
+      description:
+        '227 plugins for Claude Code with Skills Powerkit for plugin management—197 GitHub stars, 26 forks, community-driven development.',
+      badge: 'JavaScript • Open Source • 197★',
+      link: 'https://github.com/jeremylongshore/claude-code-plugins-plus',
+    },
+    {
       name: 'DiagnosticPro',
       description:
         'Live automotive diagnostics for service centers—Vertex AI orchestrates triage while Firebase keeps technicians synced in real time.',
@@ -16,18 +23,25 @@ export default function Products() {
       link: 'https://diagnosticpro.io',
     },
     {
+      name: 'StartAITools',
+      description:
+        'Technical research blog documenting real AI implementations, production systems, and practical development guides for engineers.',
+      badge: 'Hugo • Technical Writing • Education',
+      link: 'https://startaitools.com',
+    },
+    {
+      name: "Bob's Brain",
+      description:
+        'Collaborative AI assistant with Slack integration—Google Gemini 2.5 Flash, Neo4j knowledge graphs, BigQuery analytics, Cloud Run deployment.',
+      badge: 'Python • Gemini • Neo4j',
+      link: 'https://github.com/jeremylongshore/bobs-brain',
+    },
+    {
       name: 'AI DevOps Documentation',
       description:
         'Claude-powered runbook generator that ships enterprise-ready docs in minutes; teams deploy it to unblock audits and handoffs.',
-      badge: 'JavaScript • Claude API • Automation',
+      badge: 'JavaScript • Claude API • 19★',
       link: 'https://github.com/jeremylongshore/ai-devops-intent-solutions',
-    },
-    {
-      name: 'HUSTLE',
-      description:
-        'Youth sports performance tracking backed by a 76-question parent research study—now collecting beta testers via Netlify forms.',
-      badge: 'Next.js • PostgreSQL • Research',
-      link: '/survey',
     },
     {
       name: 'Waygate MCP',
@@ -37,18 +51,25 @@ export default function Products() {
       link: 'https://github.com/jeremylongshore/waygate-mcp',
     },
     {
-      name: 'Disposable Marketplace',
+      name: 'HUSTLE',
       description:
-        'Instant micro-marketplaces for manufacturers to collect quotes—CSV-driven inventory, ranked responses, zero custom CMS required.',
-      badge: 'Shell • Automation • n8n',
-      link: 'https://github.com/jeremylongshore/disposable-marketplace-n8n',
+        'Youth sports performance tracking backed by a 76-question parent research study—now collecting beta testers via Netlify forms.',
+      badge: 'Next.js • PostgreSQL • Research',
+      link: '/survey',
     },
     {
       name: 'News Pipeline',
       description:
         'Automated monitoring that converts daily news into structured intelligence briefs for decision makers.',
-      badge: 'n8n • AI Analysis • Automation',
+      badge: 'n8n • AI Analysis • 4★',
       link: 'https://github.com/jeremylongshore/news-pipeline-n8n',
+    },
+    {
+      name: 'Disposable Marketplace',
+      description:
+        'Instant micro-marketplaces for manufacturers to collect quotes—CSV-driven inventory, ranked responses, zero custom CMS required.',
+      badge: 'Shell • n8n • Automation',
+      link: 'https://github.com/jeremylongshore/disposable-marketplace-n8n',
     },
   ];
 
