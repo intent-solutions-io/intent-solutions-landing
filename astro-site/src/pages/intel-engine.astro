@@ -151,20 +151,11 @@ import Footer from '../components/Footer';
                 <p class="text-zinc-400 mb-4">
                   Scores every prospect 0-100 and prioritizes A/B/C tiers
                 </p>
-                <div class="grid md:grid-cols-3 gap-4">
-                  <div class="bg-green-500/10 border border-green-500/30 rounded p-4">
-                    <div class="text-green-400 font-semibold mb-1">A-Tier (80-100)</div>
-                    <div class="text-xs text-zinc-500">Top 5% of leads<br/>Contact immediately</div>
-                  </div>
-                  <div class="bg-yellow-500/10 border border-yellow-500/30 rounded p-4">
-                    <div class="text-yellow-400 font-semibold mb-1">B-Tier (60-79)</div>
-                    <div class="text-xs text-zinc-500">Top 15% of leads<br/>Contact after A-tier</div>
-                  </div>
-                  <div class="bg-zinc-700/30 border border-zinc-700 rounded p-4">
-                    <div class="text-zinc-400 font-semibold mb-1">C-Tier (<60)</div>
-                    <div class="text-xs text-zinc-500">Low probability<br/>Skip entirely</div>
-                  </div>
-                </div>
+                <ul class="text-sm text-zinc-400 space-y-2">
+                  <li>• A-Tier (80-100): Top 5% of leads, highest conversion probability</li>
+                  <li>• B-Tier (60-79): Good fit, contact after A-tier exhausted</li>
+                  <li>• C-Tier (below 60): Low probability, skip or deprioritize</li>
+                </ul>
               </div>
             </div>
           </div>
