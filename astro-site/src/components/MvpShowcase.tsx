@@ -107,11 +107,11 @@ export default function MvpShowcase({ isOpen, onClose }: MvpShowcaseProps) {
                   id="modal-title"
                   className="text-2xl font-bold text-zinc-50 mb-4"
                 >
-                  pipelinepilot: live mvp with 4 specialized agents
+                  pipelinepilot: 4 customized iam agents
                 </h2>
 
                 <p className="text-zinc-400 mb-6">
-                  PipelinePilot is a production SDR automation platform built with Intent Agent Engine. Here's how the 4 agents work together:
+                  PipelinePilot is a live MVP showing customized Intent Agent Models (IAM) for SDR automation. Here's how the 4 custom IAM agents work together:
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -166,7 +166,7 @@ export default function MvpShowcase({ isOpen, onClose }: MvpShowcaseProps) {
 
                 <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-4 mb-8">
                   <p className="text-sm text-zinc-300 mb-2">
-                    <strong className="text-indigo-300">This is ONE live MVP.</strong> We build custom agents for compliance monitoring, data enrichment, document processing, research automation, or any workflow you need. IAE models adapt to your business logic.
+                    <strong className="text-indigo-300">Intent Agent Models are fully customizable.</strong> These 4 agents were configured specifically for SDR workflows. We customize IAM for compliance monitoring, data enrichment, document processing, research automation, or any business logic you need. Pre-configured packages (M1/M2/M3) available as starters.
                   </p>
                   <a
                     href="https://pipelinepilot-prod.web.app"
