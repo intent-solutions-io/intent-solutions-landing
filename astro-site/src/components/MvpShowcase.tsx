@@ -107,61 +107,78 @@ export default function MvpShowcase({ isOpen, onClose }: MvpShowcaseProps) {
                   id="modal-title"
                   className="text-2xl font-bold text-zinc-50 mb-4"
                 >
-                  example mvp: 3 containerized agents
+                  pipelinepilot: live mvp with 4 specialized agents
                 </h2>
 
                 <p className="text-zinc-400 mb-6">
-                  This is one starter configuration. We tailor agents to your stack, data, and
-                  goals.
+                  PipelinePilot is a production SDR automation platform built with Intent Agent Engine. Here's how the 4 agents work together:
                 </p>
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400 flex-shrink-0" />
                     <div>
                       <h3 className="text-zinc-100 font-semibold mb-1">
-                        outbound research + enrichment
+                        orchestrator agent
                       </h3>
                       <p className="text-sm text-zinc-400">
-                        Analyze closed deals, build ICP scoring, prioritize high-value leads.
-                        Integrates with Apollo, Sales Navigator, HubSpot.
+                        Coordinates workflows and delegates tasks between specialized agents. Routes lead data through enrichment, content generation, and campaign execution.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400 flex-shrink-0" />
                     <div>
                       <h3 className="text-zinc-100 font-semibold mb-1">
-                        meeting intelligence + notes to crm
+                        data captain agent
                       </h3>
                       <p className="text-sm text-zinc-400">
-                        Transcribe calls, extract action items, sync to CRM automatically. Works
-                        with Zoom, Meet, Teams.
+                        Retrieves, normalizes, deduplicates, and enriches lead records from Clay, Apollo, Clearbit, and Crunchbase APIs.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400 flex-shrink-0" />
                     <div>
                       <h3 className="text-zinc-100 font-semibold mb-1">
-                        support triage + knowledge search
+                        content analyst agent
                       </h3>
                       <p className="text-sm text-zinc-400">
-                        Monitor tickets, draft responses, escalate urgent issues. Connects to
-                        Zendesk, Intercom, Slack.
+                        Generates personalized email sequences using Gemini 2.5 Flash. Context-aware messaging optimized for conversion.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-zinc-100 font-semibold mb-1">
+                        readiness auditor agent
+                      </h3>
+                      <p className="text-sm text-zinc-400">
+                        Validates configurations, API credentials, and data quality before campaign launch. Prevents errors before they happen.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 mb-8">
-                  <p className="text-sm text-zinc-300">
-                    <strong className="text-zinc-100">Note:</strong> This is one example
-                    configuration. We mix and match agents per client needs. Models and providers
-                    are pluggable (Google, AWS, Azure, on-prem).
+                <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-4 mb-8">
+                  <p className="text-sm text-zinc-300 mb-2">
+                    <strong className="text-indigo-300">This is ONE live MVP.</strong> We build custom agents for compliance monitoring, data enrichment, document processing, research automation, or any workflow you need. IAE models adapt to your business logic.
                   </p>
+                  <a
+                    href="https://pipelinepilot-prod.web.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-indigo-400 hover:text-indigo-300 transition-smooth inline-flex items-center gap-1"
+                  >
+                    See PipelinePilot live
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </div>
 
                 {/* CTAs */}
