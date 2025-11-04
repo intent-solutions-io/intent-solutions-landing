@@ -1,0 +1,340 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import Footer from '../../components/Footer';
+---
+
+<Layout
+  title="Security for Production Agents | Intent Solutions"
+  description="Why we recommend Vertex Agent Engine for production agents. Comparison with self-hosted low-code approaches."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <!-- Hero -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            education
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            security for production agents
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            Why we recommend Vertex Agent Engine for production deployments. We support
+            self-hosted and low-code when appropriate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Matrix -->
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8 text-center">
+            vertex agent engine vs self-hosted low-code
+          </h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="text-zinc-400 uppercase text-xs tracking-widest border-b border-zinc-800">
+                <tr>
+                  <th class="py-4 pr-4 font-semibold">security dimension</th>
+                  <th class="py-4 px-4 font-semibold">vertex agent engine</th>
+                  <th class="py-4 pl-4 font-semibold">self-hosted low-code</th>
+                </tr>
+              </thead>
+              <tbody class="text-zinc-300">
+                <tr class="border-b border-zinc-800">
+                  <td class="py-4 pr-4 font-medium text-zinc-100">identity & access</td>
+                  <td class="py-4 px-4">IAM, per-workspace service accounts</td>
+                  <td class="py-4 pl-4 text-zinc-400">App-level credentials</td>
+                </tr>
+                <tr class="border-b border-zinc-800">
+                  <td class="py-4 pr-4 font-medium text-zinc-100">network boundary</td>
+                  <td class="py-4 px-4">VPC, Private Service Connect, perimeter control</td>
+                  <td class="py-4 pl-4 text-zinc-400">Public ingress common</td>
+                </tr>
+                <tr class="border-b border-zinc-800">
+                  <td class="py-4 pr-4 font-medium text-zinc-100">keys & secrets</td>
+                  <td class="py-4 px-4">Secret Manager, rotation policies, Kyber-safe TLS</td>
+                  <td class="py-4 pl-4 text-zinc-400">Env vars or Vault add-ons</td>
+                </tr>
+                <tr class="border-b border-zinc-800">
+                  <td class="py-4 pr-4 font-medium text-zinc-100">data controls</td>
+                  <td class="py-4 px-4">Regions, data residency, CMEK, DLP options</td>
+                  <td class="py-4 pl-4 text-zinc-400">Depends on ops maturity</td>
+                </tr>
+                <tr class="border-b border-zinc-800">
+                  <td class="py-4 pr-4 font-medium text-zinc-100">audit & forensics</td>
+                  <td class="py-4 px-4">Cloud Audit Logs, Cloud Logging, SIEM export</td>
+                  <td class="py-4 pl-4 text-zinc-400">Plugins vary</td>
+                </tr>
+                <tr class="border-b border-zinc-800">
+                  <td class="py-4 pr-4 font-medium text-zinc-100">supply chain</td>
+                  <td class="py-4 px-4">Artifact Registry, Binary Authorization, SLSA provenance</td>
+                  <td class="py-4 pl-4 text-zinc-400">Manual controls</td>
+                </tr>
+                <tr class="border-b border-zinc-800">
+                  <td class="py-4 pr-4 font-medium text-zinc-100">llm safety</td>
+                  <td class="py-4 px-4">Evals, guardrails, rollback, staging gates</td>
+                  <td class="py-4 pl-4 text-zinc-400">Custom or third-party</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-8 bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+            <p class="text-zinc-300 leading-relaxed">
+              <strong class="text-zinc-100">Conclusion:</strong> Production agents benefit from
+              Vertex defaults and controls. We still deliver self-hosted or low-code when the risk
+              profile and budget fit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Vertex for Production -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">why vertex for production agents</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                security by default
+              </h3>
+              <p class="text-sm text-zinc-400">
+                IAM policies, VPC-SC patterns, CMEK, and audit logs are built-in. No configuration
+                drift from manual setups.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                compliance ready
+              </h3>
+              <p class="text-sm text-zinc-400">
+                HIPAA, SOC 2, PCI DSS, and FedRAMP High compliance inherited from Google Cloud
+                platform certifications.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                supply chain integrity
+              </h3>
+              <p class="text-sm text-zinc-400">
+                Artifact Registry with vulnerability scanning, Binary Authorization for admission
+                control, SLSA provenance tracking.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                llm-specific guardrails
+              </h3>
+              <p class="text-sm text-zinc-400">
+                Built-in evaluation frameworks, staging environments, rollback capabilities, and
+                safety filters for production agents.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                observability & forensics
+              </h3>
+              <p class="text-sm text-zinc-400">
+                Cloud Logging, Cloud Monitoring, Error Reporting, and Cloud Trace provide full
+                visibility into agent behavior.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                managed scaling
+              </h3>
+              <p class="text-sm text-zinc-400">
+                Auto-scaling, multi-region failover, and load balancing managed by Google Cloud—no
+                ops overhead.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- When Self-Hosted Fits -->
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">
+            when self-hosted low-code fits
+          </h2>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8 mb-8">
+            <p class="text-zinc-300 leading-relaxed mb-6">
+              Self-hosted low-code platforms like n8n are effective for:
+            </p>
+
+            <ul class="space-y-3 text-zinc-300">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">Integration glue:</strong> Connecting APIs,
+                  webhooks, and simple workflows without complex logic.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">Quick wins:</strong> Non-critical automations where
+                  downtime is acceptable and data sensitivity is low.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">Air-gapped environments:</strong> Fully on-premises
+                  deployments where external cloud services are prohibited.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">Tight budgets:</strong> Teams with strong DevOps
+                  capabilities willing to manage their own infrastructure.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
+            <p class="text-sm text-zinc-400">
+              <strong class="text-zinc-300">We pair them often:</strong> n8n for orchestration
+              glue, Vertex Agent Engine for the agent brain. This gives you visual workflow
+              building for integrations while maintaining security and guardrails for AI reasoning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Rationale -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">detailed security rationale</h2>
+
+          <div class="space-y-6">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                1. identity & access management
+              </h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong class="text-zinc-300">Vertex:</strong> Fine-grained IAM policies per
+                service account. Workload Identity binds Kubernetes pods to GCP service accounts.
+                Least privilege by default.
+              </p>
+              <p class="text-sm text-zinc-400">
+                <strong class="text-zinc-300">Self-hosted:</strong> Application-level credentials
+                (API keys, basic auth). Often stored in environment variables or external vaults.
+                Risk of over-permissioned tokens.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                2. network security
+              </h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong class="text-zinc-300">Vertex:</strong> Private Service Connect for
+                private endpoints. VPC Service Controls for data perimeters. Cloud Armor for DDoS
+                protection.
+              </p>
+              <p class="text-sm text-zinc-400">
+                <strong class="text-zinc-300">Self-hosted:</strong> Typically exposed via public
+                ingress. Requires manual firewall rules, reverse proxies, and SSL certificate
+                management.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                3. secrets management
+              </h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong class="text-zinc-300">Vertex:</strong> Secret Manager with automatic
+                rotation, audit logging, and IAM-based access. Secrets never in code or configs.
+              </p>
+              <p class="text-sm text-zinc-400">
+                <strong class="text-zinc-300">Self-hosted:</strong> Requires external tools
+                (HashiCorp Vault, AWS Secrets Manager). Often fall back to .env files or Kubernetes
+                secrets (base64, not encrypted at rest).
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                4. audit & compliance
+              </h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong class="text-zinc-300">Vertex:</strong> Cloud Audit Logs capture every API
+                call. Automatically exported to SIEM. Immutable, tamper-proof logs.
+              </p>
+              <p class="text-sm text-zinc-400">
+                <strong class="text-zinc-300">Self-hosted:</strong> Logging depends on application
+                implementation. Easy to miss events or have gaps. Requires manual setup for
+                centralized logging.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="py-24 bg-zinc-950">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-6">
+            vertex agent engine gives you iam, vpc-sc patterns, cmek, audit logs, and supply-chain
+            controls by default
+          </h2>
+          <p class="text-zinc-400 mb-8 leading-relaxed">
+            Self-hosted low-code is effective for glue work and small automations. For production
+            agents that handle sensitive data, we recommend Vertex to reduce operational risk. We
+            still support self-hosted when it fits the risk and budget.
+          </p>
+
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="/automation" class="btn-primary">
+              see automation pairing patterns
+            </a>
+            <a
+              href="/#contact"
+              class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+            >
+              discuss your security requirements →
+            </a>
+          </div>
+
+          <div class="mt-8">
+            <a
+              href="/learn"
+              class="text-sm text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              ← back to learn hub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,119 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import Footer from '../../components/Footer';
+---
+
+<Layout
+  title="Learn - Education Hub | Intent Solutions"
+  description="Understand how we price, secure, and deliver AI solutions. Model-agnostic, cloud-agnostic, no vendor lock-in."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            education hub
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            learn how we work
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            Transparent pricing, security-first architecture, and model-agnostic delivery. No
+            vendor lock-in, no surprises.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+          <!-- Pricing Card -->
+          <a
+            href="/learn/pricing"
+            class="card-slate block transition-smooth hover:border-zinc-600 group h-full flex flex-col"
+          >
+            <div class="text-4xl mb-4">💰</div>
+            <h3 class="text-xl font-semibold text-zinc-100 mb-3 group-hover:text-zinc-50">
+              how pricing works
+            </h3>
+            <p class="text-sm text-zinc-400 flex-1 mb-4">
+              Flat platform fee + usage at provider list prices. Budget controls, prepaid blocks,
+              and export flexibility. No lock-in.
+            </p>
+            <span class="text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+              Read guide
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <!-- Security Card -->
+          <a
+            href="/learn/security"
+            class="card-slate block transition-smooth hover:border-zinc-600 group h-full flex flex-col"
+          >
+            <div class="text-4xl mb-4">🔒</div>
+            <h3 class="text-xl font-semibold text-zinc-100 mb-3 group-hover:text-zinc-50">
+              security: vertex vs self-hosted
+            </h3>
+            <p class="text-sm text-zinc-400 flex-1 mb-4">
+              Why we recommend Vertex Agent Engine for production agents. Comparison with
+              self-hosted low-code and when each approach fits.
+            </p>
+            <span class="text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+              Compare approaches
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <!-- Models Card -->
+          <a
+            href="/learn/models"
+            class="card-slate block transition-smooth hover:border-zinc-600 group h-full flex flex-col"
+          >
+            <div class="text-4xl mb-4">🤖</div>
+            <h3 class="text-xl font-semibold text-zinc-100 mb-3 group-hover:text-zinc-50">
+              model-agnostic delivery
+            </h3>
+            <p class="text-sm text-zinc-400 flex-1 mb-4">
+              Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, or local. We select per
+              use case, data policy, latency, and cost.
+            </p>
+            <span class="text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
+              See options
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="py-16 bg-zinc-900 border-t border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-6">ready to start?</h2>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="/agents" class="btn-primary">
+              see agent options
+            </a>
+            <a href="/private-ai" class="btn-primary">
+              explore private ai
+            </a>
+            <a
+              href="/#contact"
+              class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+            >
+              discuss your use case →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

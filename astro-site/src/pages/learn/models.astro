@@ -1,0 +1,346 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import Footer from '../../components/Footer';
+---
+
+<Layout
+  title="Model-Agnostic Delivery | Intent Solutions"
+  description="Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, or local. We select per use case, data policy, latency, and cost."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <!-- Hero -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            education
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            model-agnostic delivery
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            We are model- and cloud-agnostic. Options include Claude, OpenAI, Gemini, Llama,
+            Mistral, Qwen, fine-tunes, and local deployments. We select per use case, data
+            policy, latency, and cost.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Available Models -->
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8 text-center">
+            model families we deploy
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Anthropic Claude</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                Claude 3.5 Sonnet, Opus, Haiku. Strong reasoning, long context, constitutional AI
+                safety.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: Complex reasoning, document analysis</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">OpenAI GPT</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                GPT-4, GPT-4 Turbo, GPT-3.5. Industry standard, broad ecosystem, function calling.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: General purpose, tool use, rapid iteration</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Google Gemini</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                Gemini 1.5 Pro, Flash. Multimodal, long context (2M tokens), native Google Cloud
+                integration.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: Multimodal tasks, GCP-native deployments</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Meta Llama</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                Llama 3.1 (8B, 70B, 405B). Open source, self-hostable, fine-tunable, cost-effective.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: Cost optimization, data sovereignty, fine-tuning</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Mistral AI</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                Mistral Large, Medium, Small. European option, efficient inference, strong coding.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: EU data residency, balanced cost/performance</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Alibaba Qwen</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                Qwen 2.5 (7B, 14B, 72B). Multilingual, open-weights, competitive on benchmarks.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: Multilingual apps, specialized domains</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Fine-Tuned Models</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                Custom models trained on your data. Domain-specific accuracy, lower latency, cost
+                reduction.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: Highly specialized tasks, high volume</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Local Deployments</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                On-premises models via Ollama, vLLM, or TGI. Full data control, no external API
+                calls.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: Air-gapped environments, zero external egress</span>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Other Providers</h3>
+              <p class="text-sm text-zinc-400 mb-3">
+                Cohere, AI21 Labs, Anthropic via AWS Bedrock, Azure OpenAI Service, and more.
+              </p>
+              <span class="text-xs text-zinc-500">Best for: Specific feature requirements, vendor diversity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evaluation Criteria -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">evaluation criteria</h2>
+
+          <div class="space-y-6">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">1. accuracy & task fit</h3>
+              <p class="text-sm text-zinc-400">
+                We run evals on your specific tasks. Models vary significantly by domain—legal
+                reasoning, code generation, multilingual support, and instruction following all
+                have different leaders. We test before committing.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">2. latency & throughput</h3>
+              <p class="text-sm text-zinc-400">
+                Real-time applications need sub-second response. Batch processing can tolerate
+                higher latency for better cost. We measure P50, P95, P99 latency and tokens per
+                second for your workload.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">3. cost structure</h3>
+              <p class="text-sm text-zinc-400">
+                Input vs output token pricing, batch discounts, reserved capacity, and self-hosting
+                costs all factor in. We model your expected volume to find the lowest total cost
+                of ownership.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">4. data policy & compliance</h3>
+              <p class="text-sm text-zinc-400">
+                Some models are zero-retention by default (Claude, OpenAI enterprise). Others
+                require explicit contracts. For air-gapped or CMEK requirements, self-hosted or
+                private endpoints are mandatory.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">5. ecosystem & tooling</h3>
+              <p class="text-sm text-zinc-400">
+                Function calling quality, integration with observability platforms, support for
+                multi-modal inputs, and availability of eval frameworks all impact operational
+                efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Switching Policy -->
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">switching & versioning policy</h2>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8 mb-8">
+            <h3 class="text-xl font-semibold text-zinc-100 mb-4">
+              you control when models change
+            </h3>
+            <p class="text-zinc-400 mb-6">
+              Unlike SaaS AI platforms that force model upgrades, we let you:
+            </p>
+
+            <ul class="space-y-3 text-zinc-300">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">Pin versions:</strong> Lock to a specific model
+                  version (e.g., gpt-4-0613) to avoid breaking changes.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">A/B test safely:</strong> Shadow traffic to new
+                  models, compare outputs, roll back if quality degrades.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">Schedule upgrades:</strong> Test new versions in
+                  staging, validate with evals, promote on your timeline.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-zinc-200 flex-shrink-0" />
+                <span>
+                  <strong class="text-zinc-100">Switch providers:</strong> Model-agnostic
+                  architecture means swapping Claude for OpenAI requires config changes, not code
+                  rewrites.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">staging environments</h3>
+              <p class="text-sm text-zinc-400">
+                Every deployment includes staging for model testing. Catch regressions before
+                production.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">automated evals</h3>
+              <p class="text-sm text-zinc-400">
+                Run eval suites on new model versions. Block deployments if quality metrics drop
+                below thresholds.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">rollback in minutes</h3>
+              <p class="text-sm text-zinc-400">
+                Revert to previous model version with a single command. No downtime, no data loss.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">usage tracking per model</h3>
+              <p class="text-sm text-zinc-400">
+                Monitor cost and quality metrics per model. Optimize spend by switching to
+                cheaper alternatives for simple tasks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hosting Options -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">hosting options</h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">managed apis</h3>
+              <p class="text-sm text-zinc-400 mb-4">
+                Use provider APIs (OpenAI, Anthropic, Google). Lowest operational overhead, pay
+                per token, auto-scaling.
+              </p>
+              <div class="text-xs text-zinc-500">
+                <strong class="text-zinc-300">Best for:</strong> Rapid iteration, variable
+                workloads, standard compliance
+              </div>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">private endpoints</h3>
+              <p class="text-sm text-zinc-400 mb-4">
+                Deploy models in your cloud account (AWS Bedrock, Azure OpenAI, GCP Vertex AI).
+                Data never leaves your VPC.
+              </p>
+              <div class="text-xs text-zinc-500">
+                <strong class="text-zinc-300">Best for:</strong> Strict data residency, CMEK
+                requirements, dedicated capacity
+              </div>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">on-premises</h3>
+              <p class="text-sm text-zinc-400 mb-4">
+                Self-host models with Ollama, vLLM, or TGI. Full control, zero external API calls,
+                GPU management required.
+              </p>
+              <div class="text-xs text-zinc-500">
+                <strong class="text-zinc-300">Best for:</strong> Air-gapped networks, sensitive
+                government/defense, cost at massive scale
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="py-24 bg-zinc-950">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-6">
+            model-agnostic by design
+          </h2>
+          <p class="text-zinc-400 mb-8 leading-relaxed">
+            Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, or local. Pick what fits
+            policy, latency, and cost. Switch anytime without rebuilding.
+          </p>
+
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="/private-ai" class="btn-primary">
+              see private ai options
+            </a>
+            <a
+              href="/#contact"
+              class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+            >
+              discuss your model requirements →
+            </a>
+          </div>
+
+          <div class="mt-8">
+            <a
+              href="/learn"
+              class="text-sm text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              ← back to learn hub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

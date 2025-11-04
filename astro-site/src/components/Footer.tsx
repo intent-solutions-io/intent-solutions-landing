@@ -32,6 +32,21 @@ export default function Footer() {
             </a>
           </div>
 
+          <div className="pt-4 flex justify-center gap-6 text-sm">
+            <a
+              href="/learn"
+              className="text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              learn
+            </a>
+            <a
+              href="/resellers"
+              className="text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              resellers
+            </a>
+          </div>
+
           <div className="pt-4 flex justify-center gap-6 text-xs">
             <a
               href="/terms"

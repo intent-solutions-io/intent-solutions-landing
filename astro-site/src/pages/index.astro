@@ -6,11 +6,34 @@ import Products from '../components/Products';
 import Services from '../components/Services';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import MvpShowcase from '../components/MvpShowcase';
 ---
 
 <Layout title="intent solutions io - ai consultant building real products">
   <SiteNav />
+
+  <!-- Hero Badge for Resellers -->
+  <div class="bg-zinc-950 border-b border-zinc-800/50 py-3">
+    <div class="container mx-auto px-8">
+      <div class="text-center">
+        <a
+          href="/resellers"
+          class="inline-flex items-center gap-2 text-sm text-zinc-300 hover:text-zinc-50 transition-smooth"
+        >
+          <span
+            class="px-2 py-1 bg-zinc-800/50 border border-zinc-700 rounded text-xs font-semibold text-zinc-200"
+          >
+            NEW
+          </span>
+          <span>you sell, we build · white-label ai products for agencies</span>
+          <span class="text-zinc-500">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <Hero client:load />
+  <MvpShowcase client:load />
 
   <section class="py-24 bg-zinc-950 border-t border-b border-zinc-800/50">
     <div class="container mx-auto px-8">
@@ -25,9 +48,9 @@ import Footer from '../components/Footer';
         <a href="/agents" class="card-slate h-full flex flex-col">
           <h3 class="text-lg font-semibold text-zinc-50 mb-3">AI Agents</h3>
           <p class="text-sm text-zinc-400 flex-1">
-            3 containerized agents: LinkedIn outbound, meeting intelligence, support triage. Deploy in under 2 hours.
+            Example: PipelinePilot for LinkedIn outbound. We build agents for any workflow—support, research, analytics.
           </p>
-          <span class="mt-6 text-sm text-zinc-200">See pricing & agents →</span>
+          <span class="mt-6 text-sm text-zinc-200">See pricing & examples →</span>
         </a>
         <a href="/private-ai" class="card-slate h-full flex flex-col">
           <h3 class="text-lg font-semibold text-zinc-50 mb-3">Private AI</h3>

@@ -1,0 +1,323 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import Footer from '../../components/Footer';
+---
+
+<Layout
+  title="How Pricing Works | Intent Solutions"
+  description="Transparent pricing by design. Flat platform fee + usage at provider list prices. No vendor lock-in."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <!-- Hero -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            education
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            how pricing works
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            Transparent by design. Flat platform fee + usage at provider list prices. No lock-in,
+            full portability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement Ladder -->
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">engagement ladder</h2>
+
+          <div class="space-y-6">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-semibold text-zinc-100">discovery sprint</h3>
+                <span class="text-sm text-zinc-400">1–2 weeks</span>
+              </div>
+              <div class="text-2xl font-bold text-zinc-50 mb-3">$1,500</div>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong className="text-zinc-300">Deliverables:</strong> Architecture diagram,
+                prioritized backlog, rollout plan with risk assessment.
+              </p>
+              <p class="text-xs text-zinc-500">
+                Validates technical feasibility, scopes MVP, and sets expectations before build.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-semibold text-zinc-100">mvp build</h3>
+                <span class="text-sm text-zinc-400">2–6 weeks</span>
+              </div>
+              <div class="text-2xl font-bold text-zinc-50 mb-3">$8K–$25K fixed-bid typical</div>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong className="text-zinc-300">Scope-dependent.</strong> Includes deployment,
+                testing, documentation, and team training handoff.
+              </p>
+              <p class="text-xs text-zinc-500">
+                Price varies by data integrations, compliance requirements, and custom logic
+                complexity.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-semibold text-zinc-100">managed service</h3>
+                <span class="text-sm text-zinc-400">flat + usage</span>
+              </div>
+              <div class="text-2xl font-bold text-zinc-50 mb-3">from $1,497/mo</div>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong className="text-zinc-300">Includes:</strong> Platform operations,
+                monitoring, on-call support, first quota of search queries and index storage.
+              </p>
+              <p class="text-xs text-zinc-500">
+                Usage beyond included quota billed at provider list prices. See "What drives
+                usage" below.
+              </p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="text-xl font-semibold text-zinc-100">enterprise private ai</h3>
+                <span class="text-sm text-zinc-400">+ infrastructure</span>
+              </div>
+              <div class="text-2xl font-bold text-zinc-50 mb-3">from $3,000/mo</div>
+              <p class="text-sm text-zinc-400 mb-3">
+                <strong className="text-zinc-300">Includes:</strong> Dedicated infrastructure,
+                priority support (1-hour SLA), compliance documentation, monthly optimization
+                reviews.
+              </p>
+              <p class="text-xs text-zinc-500">
+                Custom pricing for multi-region, high-volume, or specialized compliance needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Drives Usage -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">what drives usage</h2>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-6">
+            <p class="text-zinc-400 mb-4">
+              We use a flat platform fee to cover managed operations, monitoring, and support. We
+              include a clear quota for monthly usage. Beyond that, usage is billed at provider
+              list prices for search, storage, models, and network. You can bring your own cloud
+              accounts. Budgets are enforced with caps, alerts, and prepaid blocks.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">queries & invocations</h3>
+              <ul class="space-y-2 text-sm text-zinc-400">
+                <li>• Search API calls (vector, hybrid, keyword)</li>
+                <li>• Model inference requests</li>
+                <li>• Tool and function executions</li>
+                <li>• Workflow orchestration steps</li>
+              </ul>
+            </div>
+
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">storage</h3>
+              <ul class="space-y-2 text-sm text-zinc-400">
+                <li>• Vector index storage (per GB)</li>
+                <li>• Document and artifact storage</li>
+                <li>• Backup and snapshot retention</li>
+                <li>• Log and audit trail storage</li>
+              </ul>
+            </div>
+
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">compute</h3>
+              <ul class="space-y-2 text-sm text-zinc-400">
+                <li>• Batch embedding jobs</li>
+                <li>• Scheduled evaluation runs</li>
+                <li>• Data transformation pipelines</li>
+                <li>• Custom processing workflows</li>
+              </ul>
+            </div>
+
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">network & quality ops</h3>
+              <ul class="space-y-2 text-sm text-zinc-400">
+                <li>• Downstream API calls (egress)</li>
+                <li>• Third-party integrations</li>
+                <li>• Evaluation and testing runs</li>
+                <li>• Incident response budget</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example MVP Bundle -->
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">example mvp bundle</h2>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold text-zinc-100 mb-4">
+                monthly fee includes:
+              </h3>
+              <ul class="space-y-2 text-zinc-400">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Managed platform operations, monitoring, and on-call support</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>First 10,000 search queries per month</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Up to 50GB index storage</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Basic monthly reports and dashboards</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="border-t border-zinc-800 pt-6">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
+                usage beyond included quota:
+              </h3>
+              <p class="text-sm text-zinc-400">
+                Billed at provider list prices for search, storage, models, and network. Provider
+                can be swapped per client policy. No markup—we pass through provider pricing
+                directly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Budget Controls -->
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">budget controls</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">prepaid blocks</h3>
+              <p class="text-sm text-zinc-400">
+                Purchase usage credits in advance with volume discounts. Alerts when balance runs
+                low.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">per-workspace caps</h3>
+              <p class="text-sm text-zinc-400">
+                Set spending limits per team, project, or environment. Hard caps prevent overruns.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">monthly rollups</h3>
+              <p class="text-sm text-zinc-400">
+                Detailed usage breakdowns by service, workspace, and time period. Export for
+                chargeback.
+              </p>
+            </div>
+
+            <div class="card-slate">
+              <h3 class="text-lg font-semibold text-zinc-100 mb-2">live dashboards</h3>
+              <p class="text-sm text-zinc-400">
+                Real-time cost tracking with forecasting. See spend trends and optimize before
+                month-end.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portability -->
+    <section class="py-24 bg-zinc-950">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-zinc-50 mb-8">portability & lock-in prevention</h2>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
+                  bring-your-own cloud keys
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Use your own Google Cloud, AWS, or Azure accounts. We never hold your data
+                  hostage.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
+                  export data and indexes anytime
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Full data export in standard formats. Indexes can be migrated to other platforms.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
+                  switch providers without rebuild
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Model-agnostic architecture means you can swap Claude for OpenAI, Gemini for
+                  Llama, without code rewrites.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-zinc-400 mb-6">
+              Questions about pricing or want a custom quote?
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+              <a href="/#contact" class="btn-primary">
+                discuss your use case
+              </a>
+              <a
+                href="/learn"
+                class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+              >
+                ← back to learn hub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
