@@ -4,6 +4,9 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Owner email for notifications
+const OWNER_EMAIL = 'jeremy@intentsolutions.io';
+
 export const handler = async (event) => {
   // This function is triggered by Netlify's "submission-created" event
 
@@ -13,6 +16,7 @@ export const handler = async (event) => {
 
     // Netlify sends form data in submission.payload.data (with fallbacks)
     const formData = submission?.payload?.data ?? submission?.data ?? {};
+    const formName = formData?.["form-name"] || "unknown";
 
     // Extract Netlify request ID for tracing
     const netlifyReqId = event.headers?.["x-nf-request-id"] || "unknown";
@@ -21,13 +25,18 @@ export const handler = async (event) => {
     console.log(JSON.stringify({
       event: "form_submission_received",
       netlify_request_id: netlifyReqId,
-      form_name: formData?.["form-name"] || "unknown",
+      form_name: formName,
       has_email: !!formData?.email,
       field_count: Object.keys(formData).length,
       timestamp: new Date().toISOString()
     }));
 
-    // Extract email with fallback
+    // Handle partner-inquiry form - notify owner
+    if (formName === 'partner-inquiry') {
+      return await handlePartnerInquiry(formData, netlifyReqId);
+    }
+
+    // Handle HUSTLE survey forms - send thank you to user
     const userEmail = formData?.email || process.env.RESEND_TO_FALLBACK;
     const userName = userEmail ? userEmail.split('@')[0] : 'there';
 
@@ -223,3 +232,156 @@ https://intentsolutions.io
     };
   }
 };
+
+// Handle partner inquiry form - sends notification to owner
+async function handlePartnerInquiry(formData, netlifyReqId) {
+  const companyName = formData['company-name'] || 'Not provided';
+  const contactName = formData['contact-name'] || 'Not provided';
+  const email = formData.email || 'Not provided';
+  const interest = formData.interest || 'Not specified';
+  const message = formData.message || 'No message';
+
+  const interestLabels = {
+    'exploring': 'Just exploring options',
+    'distribution-partner': 'Becoming a distribution partner',
+    'direct-client': 'AI solution for their business',
+    'learn-more': 'Learning more about services'
+  };
+
+  const emailHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px 8px 0 0;
+    }
+    .content {
+      background: #f8fafc;
+      padding: 24px;
+      border-radius: 0 0 8px 8px;
+      border: 1px solid #e2e8f0;
+      border-top: none;
+    }
+    .field {
+      margin-bottom: 16px;
+    }
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    .value {
+      font-size: 16px;
+      color: #1e293b;
+    }
+    .message-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 16px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1 style="margin: 0; font-size: 20px;">New Partner Inquiry</h1>
+  </div>
+  <div class="content">
+    <div class="field">
+      <div class="label">Company</div>
+      <div class="value">${companyName}</div>
+    </div>
+    <div class="field">
+      <div class="label">Contact Name</div>
+      <div class="value">${contactName}</div>
+    </div>
+    <div class="field">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:${email}">${email}</a></div>
+    </div>
+    <div class="field">
+      <div class="label">Interest</div>
+      <div class="value">${interestLabels[interest] || interest}</div>
+    </div>
+    <div class="field">
+      <div class="label">Message</div>
+      <div class="message-box">${message}</div>
+    </div>
+    <p style="font-size: 12px; color: #94a3b8; margin-top: 24px;">
+      Submitted: ${new Date().toISOString()}
+    </p>
+  </div>
+</body>
+</html>
+  `;
+
+  const emailText = `
+New Partner Inquiry
+
+Company: ${companyName}
+Contact: ${contactName}
+Email: ${email}
+Interest: ${interestLabels[interest] || interest}
+
+Message:
+${message}
+
+Submitted: ${new Date().toISOString()}
+  `;
+
+  try {
+    const emailResponse = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || 'Intent Solutions <notifications@intentsolutions.io>',
+      to: OWNER_EMAIL,
+      subject: `Partner Inquiry: ${companyName} - ${contactName}`,
+      html: emailHtml,
+      text: emailText,
+      replyTo: email,
+      tags: [
+        { name: 'type', value: 'partner-inquiry' }
+      ]
+    });
+
+    console.log(JSON.stringify({
+      event: "partner_inquiry_notification_sent",
+      to: OWNER_EMAIL,
+      from_email: email,
+      company: companyName,
+      messageId: emailResponse.id,
+      netlify_request_id: netlifyReqId,
+      timestamp: new Date().toISOString()
+    }));
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        success: true,
+        message: 'Partner inquiry notification sent',
+        emailId: emailResponse.id
+      })
+    };
+  } catch (error) {
+    console.error('Error sending partner inquiry notification:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: 'Failed to send notification',
+        message: error.message
+      })
+    };
+  }
+}

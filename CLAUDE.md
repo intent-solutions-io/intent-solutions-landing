@@ -10,6 +10,51 @@ Intent Solutions landing page - Professional website showcasing customizable Int
 **Deployed at**: https://intentsolutions.io
 **Deployment**: Netlify (auto-deploy on push to main)
 
+## Commands
+
+All commands run from `astro-site/` directory:
+
+```bash
+# Development
+bun install          # Install dependencies
+bun run dev          # Dev server at http://localhost:4321
+bun run build        # Production build
+bun run preview      # Preview production build
+
+# Testing (Playwright)
+bun run test                  # Run all E2E tests headless
+bun run test:ui               # Interactive Playwright UI
+bun run test:headed           # Run with visible browser
+bun run test:debug            # Step-through debugging
+bun run test:report           # View HTML test report
+bun run test:chromium         # Chrome only
+bun run test:firefox          # Firefox only
+bun run test:webkit           # Safari only
+bun run test:mobile           # Mobile devices only
+bun run test:all              # All browsers + mobile
+npx playwright install        # First-time browser setup
+```
+
+## Architecture
+
+### Astro + React Islands Pattern
+- **Astro pages** (`.astro`) handle routing and static content
+- **React components** (`.tsx`) are hydrated client-side for interactivity
+- Layout wrapper: `src/layouts/Layout.astro` provides SEO, fonts, meta tags
+- Navigation: `src/components/SiteNav.astro` (Astro component)
+- Interactive sections: `Hero.tsx`, `Products.tsx`, `Services.tsx`, `Contact.tsx` (React islands with Framer Motion)
+
+### Netlify Functions
+- `netlify/functions/survey-webhook.js` - Survey form processing
+- `netlify/functions/submission-created.js` - Form submission handler
+- Functions directory configured in `netlify.toml`
+
+### Testing Infrastructure
+- E2E tests in `tests/e2e/` using Playwright
+- Test server runs on port 8080 (see `playwright.config.ts`)
+- Multi-browser: Chrome, Firefox, Safari + mobile devices (iPhone 12, Pixel 5, iPad Pro)
+- Test artifacts: `test-results/` for reports, screenshots on failure
+
 ## Core Positioning
 
 ### Intent Agent Models (IAM)
@@ -31,178 +76,53 @@ Intent Solutions landing page - Professional website showcasing customizable Int
 - Vertex-first security for production (with n8n for orchestration)
 - No vendor lock-in messaging
 
-## Site Structure
+## Routes
 
-```
-/
-├── /                          # Homepage with hero, products, services, contact
-├── /agents                    # IAM packages (M1/M2/M3) + PipelinePilot example
-├── /private-ai                # Model-agnostic private AI infrastructure
-├── /automation                # n8n automation + Vertex comparison
-├── /cloud                     # Google Cloud services
-├── /about                     # About page
-├── /resellers                 # White-label reseller program
-├── /learn                     # Education hub
-│   ├── /learn/pricing         # Transparent pricing explanation
-│   ├── /learn/security        # Vertex vs self-hosted comparison
-│   └── /learn/models          # Model-agnostic delivery (9 model families)
-└── /survey                    # HUSTLE survey flow (15 sections, 76 questions)
-```
-
-## Key Components
-
-### New Components (2025-01-03 refactor)
-- **MvpShowcase.tsx** - Modal showcasing PipelinePilot's 4 custom IAM agents
-- **PricingBlocks.tsx** - Reusable transparent pricing component
-
-### Core Components
-- **Hero.tsx** - Main hero with Framer Motion animations
-- **Products.tsx** - 9 product showcase items
-- **Services.tsx** - Service offerings grid
-- **Contact.tsx** - React Hook Form + Zod validation + Netlify Forms
-- **Footer.tsx** - Footer with learn/resellers links
-- **SiteNav.astro** - Navigation with learn/resellers links
-
-## Recent Major Updates (2025-01-03)
-
-### Complete Site Refactor
-1. **IAM Positioning**: Emphasized customizability of Intent Agent Models
-2. **Education Hub**: Created `/learn` with pricing/security/models pages
-3. **Resellers Program**: Added `/resellers` white-label program page
-4. **PipelinePilot Integration**: Linked live MVP showing 4 custom IAM agents
-5. **Model-Agnostic Messaging**: Emphasized flexibility across all pages
-6. **Transparent Pricing**: Clear engagement ladder (discovery → MVP → managed → enterprise)
-
-### Key Messaging Updates
-- IAM are "fully customizable" for any workflow
-- PipelinePilot shows "customized IAM for SDR automation"
-- M1/M2/M3 are "pre-configured starters"
-- Vertex recommended for production, n8n for orchestration glue
-- 9 model families supported (Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, local, others)
-
-## Development Workflow
-
-### Installation
-```bash
-cd astro-site
-bun install
-```
-
-### Development
-```bash
-bun run dev  # http://localhost:4321
-```
-
-### Build & Preview
-```bash
-bun run build
-bun run preview
-```
-
-### Deployment
-**Automatic**: Push to `main` branch triggers Netlify deployment
-
-```bash
-git add .
-git commit -m "feat: description"
-git push origin main
-```
-
-Netlify auto-detects settings from `netlify.toml`:
-- Build command: `bun run build`
-- Publish directory: `dist`
+| Path | Purpose |
+|------|---------|
+| `/` | Homepage with hero, products, services, contact |
+| `/agents` | IAM packages (M1/M2/M3) + PipelinePilot example |
+| `/private-ai` | Model-agnostic private AI infrastructure |
+| `/automation` | n8n automation + Vertex comparison |
+| `/cloud` | Google Cloud services |
+| `/about` | About page |
+| `/resellers` | White-label reseller program |
+| `/learn` | Education hub |
+| `/learn/pricing` | Transparent pricing explanation |
+| `/learn/security` | Vertex vs self-hosted comparison |
+| `/learn/models` | Model-agnostic delivery (9 model families) |
+| `/survey` | HUSTLE survey flow (15 sections, 76 questions) |
+| `/survey/1-15` | Individual survey sections |
 
 ## Tech Stack
 
 - **Framework**: Astro 5.14 (SSG)
 - **UI**: React 19 islands (partial hydration)
-- **Styling**: Tailwind CSS 4
+- **Styling**: Tailwind CSS 4 (via `@tailwindcss/vite`)
 - **Animations**: Framer Motion
-- **Forms**: React Hook Form + Zod
-- **Deployment**: Netlify
-- **Domain**: intentsolutions.io
+- **Forms**: React Hook Form + Zod validation + Netlify Forms
+- **Testing**: Playwright (E2E)
+- **Deployment**: Netlify (auto-deploy on push to main)
 
 ## Design System
 
-### Charcoal Slate Theme
 - **Colors**: Zinc palette (900-50)
 - **Typography**: Inter font family
-- **Style**: Minimal professional gray monochrome
-- **Animations**: Framer Motion page load + scroll triggers
-
-### Key Classes
-- `card-slate` - Standard content card
-- `btn-primary` - Primary CTA button
-- `text-h1` - Hero heading size
-- `transition-smooth` - Consistent transitions
-
-## Important Files
-
-### Configuration
-- `astro-site/astro.config.mjs` - Astro configuration
-- `astro-site/tailwind.config.mjs` - Tailwind theme
-- `astro-site/netlify.toml` - Netlify build settings
-- `astro-site/src/styles/global.css` - Theme variables
-
-### Documentation
-- `claudes-docs/INTENT-SOLUTIONS-WEB-DESIGN-DOCUMENTATION.md` - Complete site documentation
-- `claudes-docs/REFACTOR-IMPLEMENTATION-GUIDE.md` - Refactor implementation notes
+- **Key Classes**: `card-slate`, `btn-primary`, `text-h1`, `transition-smooth`
+- **Theme**: `src/styles/global.css`
 
 ## Content Guidelines
 
 ### Messaging Do's
-✅ Emphasize IAM customizability
-✅ Position PipelinePilot as proof of customization
-✅ Show model-agnostic flexibility
-✅ Be transparent about pricing
-✅ Recommend Vertex for production with clear reasoning
-✅ Link to PipelinePilot MVP: https://pipelinepilot-prod.web.app
+- Emphasize IAM customizability
+- Position PipelinePilot as proof of customization
+- Show model-agnostic flexibility
+- Be transparent about pricing
+- Recommend Vertex for production with clear reasoning
 
 ### Messaging Don'ts
-❌ Don't imply vendor lock-in
-❌ Don't say "3 agents" as a product cap
-❌ Don't link IAM to specific platforms (LinkedIn, etc.)
-❌ Don't hide pricing or make it opaque
-❌ Don't imply Vertex is the only option
-
-## SEO
-
-### Meta Descriptions
-- Default: "Model-agnostic AI agents, private AI infrastructure, and n8n automation. Transparent pricing, Vertex-first security, no vendor lock-in."
-- Each page has custom title/description
-
-### Key Pages for SEO
-- Homepage: Core positioning and offerings
-- /agents: IAM packages and PipelinePilot example
-- /learn: Education hub with pricing/security/models
-- /resellers: White-label program for agencies
-
-## Support & Contact
-
-- **Email**: jeremy@intentsolutions.io
-- **Location**: Gulf Shores, Alabama
-- **Blog**: https://startaitools.com
-- **GitHub**: https://github.com/jeremylongshore
-
-## Quick Reference
-
-### View Site Locally
-```bash
-cd astro-site && bun run dev
-```
-
-### Deploy Changes
-```bash
-git add . && git commit -m "your message" && git push origin main
-```
-
-### Test Production Build
-```bash
-bun run build && bun run preview
-```
-
----
-
-**Last Updated**: 2025-01-03
-**Version**: 2.1.1
-**Status**: ✅ Production site with complete refactor deployed
+- Don't imply vendor lock-in
+- Don't say "3 agents" as a product cap
+- Don't link IAM to specific platforms (LinkedIn, etc.)
+- Don't hide pricing or make it opaque
+- Don't imply Vertex is the only option
