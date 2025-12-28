@@ -1,13 +1,11 @@
 ---
 const links = [
-  { href: '/', label: 'home' },
+  { href: '/#tiers', label: 'claude code', featured: true },
   { href: '/about', label: 'about' },
-  { href: '/private-ai', label: 'private ai' },
   { href: '/agents', label: 'ai agents' },
   { href: '/automation', label: 'automation' },
-  { href: '/cloud', label: 'cloud & data' },
+  { href: '/cloud', label: 'cloud' },
   { href: '/learn', label: 'learn' },
-  { href: '/resellers', label: 'resellers' },
 ];
 ---
 
@@ -19,17 +17,20 @@ const links = [
       </a>
       <div class="hidden md:flex items-center gap-6">
         {
-          links.map(({ href, label }) => (
+          links.map(({ href, label, featured }) => (
             <a
               href={href}
-              class="text-sm text-zinc-400 hover:text-zinc-100 transition-smooth"
+              class:list={[
+              'text-sm transition-smooth',
+              featured ? 'text-zinc-50 font-medium' : 'text-zinc-400 hover:text-zinc-100'
+            ]}
             >
               {label}
             </a>
           ))
         }
         <a href="/#contact" class="btn-primary text-sm">
-          start a project
+          get started
         </a>
       </div>
       <div class="md:hidden">

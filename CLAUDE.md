@@ -1,29 +1,29 @@
-## Task Tracking (Beads / bd)
-- Use `bd` for ALL tasks/issues (no markdown TODO lists).
-- Start of session: `bd ready`
-- Create work: `bd create "Title" -p 1 --description "Context + acceptance criteria"`
-- Update status: `bd update <id> --status in_progress`
-- Finish: `bd close <id> --reason "Done"`
-- End of session: `bd sync` (flush/import/export + git sync)
-- Manual testing safety:
-  - Prefer `BEADS_DIR` to isolate a workspace if needed. (`BEADS_DB` exists but is deprecated.)
-
-
 # CLAUDE.md
 
-
-### Beads upgrades
-- After upgrading `bd`, run: `bd info --whats-new`
-- If `bd info` warns about hooks, run: `bd hooks install`
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Task Tracking (Beads / bd)
+
+Use `bd` for all tasks/issues (no markdown TODO lists).
+
+```bash
+bd ready                                    # Start of session
+bd create "Title" -p 1 --description "..."  # Create work
+bd update <id> --status in_progress         # Begin task
+bd close <id> --reason "Done"               # Complete task
+bd sync                                     # End of session
+```
+
+After upgrading `bd`: run `bd info --whats-new` and `bd hooks install` if warned.
 
 ## Repository Overview
 
-Intent Solutions landing page - Professional website showcasing customizable Intent Agent Models (IAM), private AI infrastructure, automation services, and education resources.
+Intent Solutions landing page - **Claude Code Systems** is the primary service (build + train). Additional services include AI agents, private AI infrastructure, and automation.
 
-**Active Project**: `/astro-site` (Astro 5.14 + React 19 islands)
-**Deployed at**: https://intentsolutions.io
-**Deployment**: Netlify (auto-deploy on push to main)
+- **Active Project**: `astro-site/` (Astro 5.14 + React 19 islands)
+- **Deployed at**: https://intentsolutions.io
+- **Deployment**: Netlify (auto-deploy on push to main)
+- **Plugin Marketplace**: https://claudecodeplugins.io (258+ plugins)
 
 ## Commands
 
@@ -32,112 +32,76 @@ All commands run from `astro-site/` directory:
 ```bash
 # Development
 bun install          # Install dependencies
-bun run dev          # Dev server at http://localhost:4321
+bun run dev          # Dev server at localhost:4321
 bun run build        # Production build
 bun run preview      # Preview production build
 
 # Testing (Playwright)
-bun run test                  # Run all E2E tests headless
+bun run test                  # All E2E tests headless
 bun run test:ui               # Interactive Playwright UI
 bun run test:headed           # Run with visible browser
 bun run test:debug            # Step-through debugging
-bun run test:report           # View HTML test report
 bun run test:chromium         # Chrome only
 bun run test:firefox          # Firefox only
 bun run test:webkit           # Safari only
 bun run test:mobile           # Mobile devices only
-bun run test:all              # All browsers + mobile
 npx playwright install        # First-time browser setup
 ```
 
 ## Architecture
 
 ### Astro + React Islands Pattern
-- **Astro pages** (`.astro`) handle routing and static content
-- **React components** (`.tsx`) are hydrated client-side for interactivity
-- Layout wrapper: `src/layouts/Layout.astro` provides SEO, fonts, meta tags
-- Navigation: `src/components/SiteNav.astro` (Astro component)
-- Interactive sections: `Hero.tsx`, `Products.tsx`, `Services.tsx`, `Contact.tsx` (React islands with Framer Motion)
+
+- **Astro pages** (`.astro`) in `src/pages/` handle routing and static content
+- **React components** (`.tsx`) in `src/components/` are hydrated client-side for interactivity
+- **Layout**: `src/layouts/Layout.astro` provides SEO, fonts, meta tags
+- **Navigation**: `src/components/SiteNav.astro` (static Astro component)
+- **Interactive sections**: `Hero.tsx`, `Products.tsx`, `Services.tsx`, `Contact.tsx` (React islands with Framer Motion animations)
 
 ### Netlify Functions
-- `netlify/functions/survey-webhook.js` - Survey form processing
-- `netlify/functions/submission-created.js` - Form submission handler
-- Functions directory configured in `netlify.toml`
+
+Located in `astro-site/netlify/functions/`:
+- `survey-webhook.js` - Survey form processing
+- `submission-created.js` - Form submission handler
 
 ### Testing Infrastructure
-- E2E tests in `tests/e2e/` using Playwright
-- Test server runs on port 8080 (see `playwright.config.ts`)
-- Multi-browser: Chrome, Firefox, Safari + mobile devices (iPhone 12, Pixel 5, iPad Pro)
-- Test artifacts: `test-results/` for reports, screenshots on failure
 
-## Core Positioning
-
-### Intent Agent Models (IAM)
-- **IAM** = Intent Agent Models - fully customizable AI agent building blocks
-- **IAE** = Intent Agent Engine - the framework powering IAM
-- **M1/M2/M3** = Pre-configured IAE packages (starters for common use cases)
-- **Key Message**: "We customize any IAM for any workflow"
-
-### PipelinePilot MVP
-- **What**: Live production SDR automation platform
-- **How**: Built with 4 customized IAM agents
-- **Purpose**: Proof of IAM customizability
-- **URL**: https://pipelinepilot-prod.web.app
-- **4 Agents**: Orchestrator, Data Captain, Content Analyst, Readiness Auditor
-
-### Site Principles
-- Model-agnostic (Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, local)
-- Transparent pricing (flat fee + usage pass-through)
-- Vertex-first security for production (with n8n for orchestration)
-- No vendor lock-in messaging
-
-## Routes
-
-| Path | Purpose |
-|------|---------|
-| `/` | Homepage with hero, products, services, contact |
-| `/agents` | IAM packages (M1/M2/M3) + PipelinePilot example |
-| `/private-ai` | Model-agnostic private AI infrastructure |
-| `/automation` | n8n automation + Vertex comparison |
-| `/cloud` | Google Cloud services |
-| `/about` | About page |
-| `/resellers` | White-label reseller program |
-| `/learn` | Education hub |
-| `/learn/pricing` | Transparent pricing explanation |
-| `/learn/security` | Vertex vs self-hosted comparison |
-| `/learn/models` | Model-agnostic delivery (9 model families) |
-| `/survey` | HUSTLE survey flow (15 sections, 76 questions) |
-| `/survey/1-15` | Individual survey sections |
-
-## Tech Stack
-
-- **Framework**: Astro 5.14 (SSG)
-- **UI**: React 19 islands (partial hydration)
-- **Styling**: Tailwind CSS 4 (via `@tailwindcss/vite`)
-- **Animations**: Framer Motion
-- **Forms**: React Hook Form + Zod validation + Netlify Forms
-- **Testing**: Playwright (E2E)
-- **Deployment**: Netlify (auto-deploy on push to main)
+- E2E tests in `astro-site/tests/e2e/` using Playwright
+- Test server runs on port 8080 (configured in `playwright.config.ts`)
+- Multi-browser: Chrome, Firefox, Safari + mobile (iPhone 12, Pixel 5, iPad Pro)
 
 ## Design System
 
-- **Colors**: Zinc palette (900-50)
+Theme defined in `src/styles/global.css`:
+- **Colors**: Zinc palette (900-50), charcoal slate monochrome
 - **Typography**: Inter font family
-- **Key Classes**: `card-slate`, `btn-primary`, `text-h1`, `transition-smooth`
-- **Theme**: `src/styles/global.css`
+- **Key Classes**: `card-slate`, `btn-primary`, `text-h1`, `text-hero`, `transition-smooth`
+
+## Core Positioning
+
+### Claude Code Systems (Primary Service)
+- **Tagline**: "Build + Train"
+- **What**: Custom Claude Code setups for teams of any size
+- **Tiers**: Starter → Growth → Scale → Enterprise
+- **Backed by**: claudecodeplugins.io (258+ plugins, 239 skills)
+- **Model**: Retainer + hourly + project-based
+
+### Secondary Services
+- **AI Agents**: Custom Intent Agent Models for workflows
+- **Private AI**: ChatGPT-style on your cloud
+- **Automation**: n8n workflows
+- **Cloud**: Google Cloud architectures
 
 ## Content Guidelines
 
-### Messaging Do's
-- Emphasize IAM customizability
-- Position PipelinePilot as proof of customization
-- Show model-agnostic flexibility
-- Be transparent about pricing
-- Recommend Vertex for production with clear reasoning
+**Do**:
+- Lead with Claude Code Systems as the primary service
+- Emphasize "build + train" positioning
+- Reference 258+ plugins as proof of capability
+- Offer flexible contact options (Discord, WhatsApp, LinkedIn, X, phone)
+- Show tiered packages clearly
 
-### Messaging Don'ts
-- Don't imply vendor lock-in
-- Don't say "3 agents" as a product cap
-- Don't link IAM to specific platforms (LinkedIn, etc.)
-- Don't hide pricing or make it opaque
-- Don't imply Vertex is the only option
+**Don't**:
+- Bury Claude Code under other services
+- Require rigid form fields (let people choose their contact method)
+- Over-emphasize secondary services on homepage

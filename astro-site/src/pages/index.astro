@@ -2,83 +2,62 @@
 import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import Hero from '../components/Hero';
+import ClaudeCodeTiers from '../components/ClaudeCodeTiers';
 import Products from '../components/Products';
-import Services from '../components/Services';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import MvpShowcase from '../components/MvpShowcase';
 ---
 
-<Layout title="intent solutions io - ai consultant building real products">
+<Layout title="Claude Code Systems - Build + Train | intent solutions io">
   <SiteNav />
 
-  <!-- Hero Badge for Resellers -->
-  <div class="bg-zinc-950 border-b border-zinc-800/50 py-3">
-    <div class="container mx-auto px-8">
-      <div class="text-center">
-        <a
-          href="/resellers"
-          class="inline-flex items-center gap-2 text-sm text-zinc-300 hover:text-zinc-50 transition-smooth"
-        >
-          <span
-            class="px-2 py-1 bg-zinc-800/50 border border-zinc-700 rounded text-xs font-semibold text-zinc-200"
-          >
-            NEW
-          </span>
-          <span>you sell, we build · white-label ai products for agencies</span>
-          <span class="text-zinc-500">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <Hero client:load />
-  <MvpShowcase client:load />
+  <ClaudeCodeTiers client:visible />
 
-  <section class="py-24 bg-zinc-950 border-t border-b border-zinc-800/50">
+  <!-- Other Services (Secondary) -->
+  <section class="py-24 bg-zinc-900">
     <div class="container mx-auto px-8">
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <h2 class="text-h1 font-bold text-zinc-50 mb-4">explore tailored build paths</h2>
+        <h2 class="text-h2 font-bold text-zinc-50 mb-4">also available</h2>
         <p class="text-zinc-400">
-          Pick the journey that matches your next launch—agents, automation, private AI, or cloud infrastructure.
+          Beyond Claude Code—additional AI and automation services.
         </p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <a href="/agents" class="card-slate h-full flex flex-col">
-          <h3 class="text-lg font-semibold text-zinc-50 mb-3">AI Agents (IAM)</h3>
+          <h3 class="text-lg font-semibold text-zinc-50 mb-3">AI Agents</h3>
           <p class="text-sm text-zinc-400 flex-1">
-            Customizable Intent Agent Models for any workflow. Pre-configured packages (M1/M2/M3) available. Example: PipelinePilot with 4 custom IAM agents for SDR automation.
+            Custom Intent Agent Models for any workflow.
           </p>
-          <span class="mt-6 text-sm text-zinc-200">See IAM packages & pricing →</span>
+          <span class="mt-4 text-sm text-zinc-200">Learn more →</span>
         </a>
         <a href="/private-ai" class="card-slate h-full flex flex-col">
           <h3 class="text-lg font-semibold text-zinc-50 mb-3">Private AI</h3>
           <p class="text-sm text-zinc-400 flex-1">
-            Keep data on your cloud while offering a ChatGPT-style experience to every teammate.
+            ChatGPT-style experience on your own cloud.
           </p>
-          <span class="mt-6 text-sm text-zinc-200">Review pricing & ROI →</span>
+          <span class="mt-4 text-sm text-zinc-200">Learn more →</span>
         </a>
         <a href="/automation" class="card-slate h-full flex flex-col">
           <h3 class="text-lg font-semibold text-zinc-50 mb-3">Automation</h3>
           <p class="text-sm text-zinc-400 flex-1">
-            n8n + Netlify workflows that eliminate manual reporting, onboarding, and follow-ups.
+            n8n workflows that eliminate manual work.
           </p>
-          <span class="mt-6 text-sm text-zinc-200">Automation menu →</span>
+          <span class="mt-4 text-sm text-zinc-200">Learn more →</span>
         </a>
         <a href="/cloud" class="card-slate h-full flex flex-col">
           <h3 class="text-lg font-semibold text-zinc-50 mb-3">Cloud & Data</h3>
           <p class="text-sm text-zinc-400 flex-1">
-            Google Cloud-native architectures—Vertex AI, BigQuery, Firebase—with observability baked in.
+            Google Cloud-native architectures.
           </p>
-          <span class="mt-6 text-sm text-zinc-200">See cloud blueprint →</span>
+          <span class="mt-4 text-sm text-zinc-200">Learn more →</span>
         </a>
       </div>
     </div>
   </section>
 
   <Products client:visible />
-  <Services client:visible />
   <Contact client:visible />
   <Footer />
 </Layout>

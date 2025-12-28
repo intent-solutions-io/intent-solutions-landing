@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   const focusAreas = [
-    'automation programs that eliminate manual reporting',
-    'ai agents and rag systems grounded in your data',
-    'production-ready astro, react, and n8n launches',
+    'custom plugin development + 258 plugin marketplace',
+    'team configuration and workflow optimization',
+    'training and enablement for your developers',
   ];
 
   return (
@@ -25,7 +25,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            ai systems that ship to production
+            build + train
           </motion.p>
 
           <motion.h1
@@ -34,7 +34,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25 }}
           >
-            creating industries<br />that don't exist
+            Claude Code<br />Systems
           </motion.h1>
 
           <motion.p
@@ -51,7 +51,7 @@ export default function Hero() {
             >
               jeremy_longshore
             </a>{' '}
-            · independent ai consultant
+            · claude code specialist
           </motion.p>
 
           <motion.p
@@ -60,8 +60,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            I build measurable automation, data, and agent workflows for operators who need real
-            outcomes—faster onboarding, fewer spreadsheets, and launch-ready customer experiences.
+            Custom Claude Code setups for teams of any size—from solo developers to enterprise.
+            I build your system and train your team to use it.
           </motion.p>
 
           <motion.ul
@@ -85,13 +85,15 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <a href="#contact" className="btn-primary">
-              start a project
+              get started
             </a>
             <a
-              href="/survey"
+              href="https://claudecodeplugins.io"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
             >
-              view the hustle research survey →
+              explore 258+ plugins →
             </a>
           </motion.div>
         </motion.div>

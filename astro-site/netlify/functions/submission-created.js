@@ -1,65 +1,103 @@
 // Netlify Function triggered on form submission
-// This runs automatically when a Netlify Form is submitted
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Owner email for notifications
 const OWNER_EMAIL = 'jeremy@intentsolutions.io';
 
 export const handler = async (event) => {
-  // This function is triggered by Netlify's "submission-created" event
-
   try {
-    // Parse the Netlify form submission event
     const submission = JSON.parse(event.body);
-
-    // Netlify sends form data in submission.payload.data (with fallbacks)
     const formData = submission?.payload?.data ?? submission?.data ?? {};
     const formName = formData?.["form-name"] || "unknown";
-
-    // Extract Netlify request ID for tracing
     const netlifyReqId = event.headers?.["x-nf-request-id"] || "unknown";
 
-    // Comprehensive logging
     console.log(JSON.stringify({
       event: "form_submission_received",
       netlify_request_id: netlifyReqId,
       form_name: formName,
-      has_email: !!formData?.email,
-      field_count: Object.keys(formData).length,
       timestamp: new Date().toISOString()
     }));
 
-    // Handle partner-inquiry form - notify owner
+    // Handle Claude Code Systems contact form
+    if (formName === 'contact') {
+      return await handleContactForm(formData, netlifyReqId);
+    }
+
+    // Handle partner inquiry form
     if (formName === 'partner-inquiry') {
       return await handlePartnerInquiry(formData, netlifyReqId);
     }
 
-    // Handle HUSTLE survey forms - send thank you to user
-    const userEmail = formData?.email || process.env.RESEND_TO_FALLBACK;
-    const userName = userEmail ? userEmail.split('@')[0] : 'there';
-
-    if (!userEmail) {
-      console.log(JSON.stringify({
-        event: "no_recipient",
-        netlify_request_id: netlifyReqId,
-        message: "No email in submission and no fallback configured"
-      }));
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ message: 'No email to send to' })
-      };
-    }
-
+    // Unknown form - just log it
     console.log(JSON.stringify({
-      event: "processing_email",
-      to: userEmail,
+      event: "unknown_form",
+      form_name: formName,
       netlify_request_id: netlifyReqId
     }));
 
-    // Your personalized thank you email content
-    const emailHtml = `
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Form received but no handler configured' })
+    };
+
+  } catch (error) {
+    console.error('Error processing form:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Failed to process form', message: error.message })
+    };
+  }
+};
+
+// Handle Claude Code Systems contact form
+async function handleContactForm(formData, netlifyReqId) {
+  const email = formData.email || '';
+  const teamSize = formData.teamSize || 'Not specified';
+  const discord = formData.discord || '';
+  const whatsapp = formData.whatsapp || '';
+  const phone = formData.phone || '';
+  const linkedin = formData.linkedin || '';
+  const xHandle = formData.xHandle || '';
+  const businessName = formData.businessName || '';
+
+  const teamSizeLabels = {
+    'solo': 'Solo Developer',
+    'small-team': 'Small Team',
+    'department': 'Department',
+    'enterprise': 'Enterprise'
+  };
+
+  // Build contact methods list
+  const contactMethods = [];
+  if (discord) contactMethods.push(`Discord: ${discord}`);
+  if (whatsapp) contactMethods.push(`WhatsApp: ${whatsapp}`);
+  if (phone) contactMethods.push(`Phone: ${phone}`);
+  if (linkedin) contactMethods.push(`LinkedIn: ${linkedin}`);
+  if (xHandle) contactMethods.push(`X/Twitter: ${xHandle}`);
+
+  // 1. Send thank you email to the lead
+  if (email) {
+    await sendThankYouEmail(email, teamSizeLabels[teamSize] || teamSize);
+  }
+
+  // 2. Send notification to Jeremy
+  await sendLeadNotification({
+    email,
+    teamSize: teamSizeLabels[teamSize] || teamSize,
+    contactMethods,
+    businessName,
+    netlifyReqId
+  });
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ success: true, message: 'Contact form processed' })
+  };
+}
+
+// Send thank you email to the person who submitted
+async function sendThankYouEmail(email, teamSize) {
+  const emailHtml = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +111,7 @@ export const handler = async (event) => {
       padding: 20px;
     }
     .header {
-      background: linear-gradient(135deg, #52525b 0%, #27272a 100%);
+      background: linear-gradient(135deg, #27272a 0%, #18181b 100%);
       color: white;
       padding: 30px;
       text-align: center;
@@ -84,169 +122,96 @@ export const handler = async (event) => {
       padding: 30px;
       border-radius: 0 0 8px 8px;
     }
-    .footer {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #e4e4e7;
-      font-size: 14px;
-      color: #71717a;
-      font-style: italic;
+    .highlight {
+      background: #27272a;
+      color: #fafafa;
+      padding: 20px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+    a {
+      color: #3b82f6;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1 style="margin: 0;">Thank You!</h1>
+    <h1 style="margin: 0; font-size: 24px;">Thanks for reaching out!</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">Claude Code Systems</p>
   </div>
 
   <div class="content">
-    <p>Hi ${userName},</p>
+    <p>Hey there,</p>
 
-    <p>Thank you for taking the time to complete our survey. I know how busy life gets when you're juggling work, family, and those never-ending sports schedules - so I genuinely appreciate you spending 10 minutes with us.</p>
+    <p>I got your message and I'm excited to connect. I'll be in touch within one business day to discuss your ${teamSize} Claude Code setup.</p>
 
-    <h2>Let me tell you why I'm building this:</h2>
-
-    <p>I spent 20+ years in the restaurant business, then ran a trucking company for about 5 years before making what seemed like a crazy pivot - diving into AI and technology. People thought I'd lost it. But here's the thing: I've always been drawn to solving real problems for real people.</p>
-
-    <p>Recently, I got accepted into the Google Cloud Startup Program (still feels surreal to say that). But more importantly, I live, eat, and breathe soccer now. And suddenly, all those years of building systems, managing operations, and leveraging technology clicked into place with a new purpose.</p>
-
-    <p><strong>We spend ridiculous amounts of money, time, and energy on our kids' sports.</strong> Tournament fees, travel expenses, private training, equipment - it adds up fast. But here's what drives me crazy: when it comes time for college recruitment, most of us are scrambling through our phones trying to remember stats from games 2 years ago, or hunting down coaches who've long since moved on.</p>
-
-    <p>Our kids' efforts deserve better than that. Every goal, every assist, every improvement should be documented, tracked, and ready to submit when it matters most.</p>
-
-    <p><strong>That's why I'm building HUSTLE™.</strong></p>
-
-    <p>Not as some fancy tech company looking to make millions (though I wouldn't complain 😄). But as a parent-first solution, built by someone who's been in the trenches - whether that's running a kitchen during a Friday night rush, managing a fleet of trucks, or now, trying to remember which tournament had that incredible save my kid made.</p>
-
-    <p>Your survey responses are going to directly shape this app. I'm reading every single one, and I'll be reaching out to beta testers. If you indicated interest in testing, you'll hear from me personally.</p>
-
-    <div class="footer">
-      <p>Fair warning: while I'm over here talking about building apps and systems, my wife Mandy is the one who actually keeps our family (and this whole operation) running. She's the real MVP - I just get to play with code and pretend I'm busy. 😊</p>
+    <div class="highlight">
+      <p style="margin: 0 0 10px 0; font-weight: 600;">What happens next:</p>
+      <p style="margin: 0;">I'll reach out via your preferred contact method to schedule a quick call. We'll talk through your team's needs and I'll recommend the right tier for you.</p>
     </div>
+
+    <p>In the meantime, feel free to explore the <a href="https://claudecodeplugins.io">258+ plugins</a> available in the marketplace. All of them are open-source and ready to use.</p>
+
+    <p>If you have any questions before we connect, just reply to this email.</p>
 
     <p style="margin-top: 30px;">
       <strong>Jeremy Longshore</strong><br>
-      Founder, HUSTLE™<br>
+      Claude Code Specialist<br>
       <a href="https://intentsolutions.io">intentsolutions.io</a>
     </p>
   </div>
 </body>
 </html>
-    `;
+  `;
 
-    const emailText = `
-Hi ${userName},
+  const emailText = `
+Thanks for reaching out!
 
-Thank you for taking the time to complete our survey. I know how busy life gets when you're juggling work, family, and those never-ending sports schedules - so I genuinely appreciate you spending 10 minutes with us.
+Hey there,
 
-Let me tell you why I'm building this:
+I got your message and I'm excited to connect. I'll be in touch within one business day to discuss your ${teamSize} Claude Code setup.
 
-I spent 20+ years in the restaurant business, then ran a trucking company for about 5 years before making what seemed like a crazy pivot - diving into AI and technology. People thought I'd lost it. But here's the thing: I've always been drawn to solving real problems for real people.
+What happens next:
+I'll reach out via your preferred contact method to schedule a quick call. We'll talk through your team's needs and I'll recommend the right tier for you.
 
-Recently, I got accepted into the Google Cloud Startup Program (still feels surreal to say that). But more importantly, I live, eat, and breathe soccer now. And suddenly, all those years of building systems, managing operations, and leveraging technology clicked into place with a new purpose.
+In the meantime, feel free to explore the 258+ plugins available at https://claudecodeplugins.io
 
-We spend ridiculous amounts of money, time, and energy on our kids' sports. Tournament fees, travel expenses, private training, equipment - it adds up fast. But here's what drives me crazy: when it comes time for college recruitment, most of us are scrambling through our phones trying to remember stats from games 2 years ago, or hunting down coaches who've long since moved on.
-
-Our kids' efforts deserve better than that. Every goal, every assist, every improvement should be documented, tracked, and ready to submit when it matters most.
-
-That's why I'm building HUSTLE™.
-
-Not as some fancy tech company looking to make millions (though I wouldn't complain 😄). But as a parent-first solution, built by someone who's been in the trenches - whether that's running a kitchen during a Friday night rush, managing a fleet of trucks, or now, trying to remember which tournament had that incredible save my kid made.
-
-Your survey responses are going to directly shape this app. I'm reading every single one, and I'll be reaching out to beta testers. If you indicated interest in testing, you'll hear from me personally.
-
-Fair warning: while I'm over here talking about building apps and systems, my wife Mandy is the one who actually keeps our family (and this whole operation) running. She's the real MVP - I just get to play with code and pretend I'm busy. 😊
+If you have any questions before we connect, just reply to this email.
 
 Jeremy Longshore
-Founder, HUSTLE™
+Claude Code Specialist
 https://intentsolutions.io
-    `;
+  `;
 
-    // Send email via Resend
-    const emailResponse = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'HUSTLE <thankyou@intentsolutions.io>',
-      to: userEmail,
-      subject: 'Thank You for Your Survey Response - HUSTLE™',
+  try {
+    const response = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || 'Jeremy <jeremy@intentsolutions.io>',
+      to: email,
+      subject: 'Thanks for reaching out - Claude Code Systems',
       html: emailHtml,
       text: emailText,
       tags: [
-        { name: 'campaign', value: 'survey-thank-you' },
-        { name: 'type', value: 'transactional' }
+        { name: 'type', value: 'contact-thank-you' },
+        { name: 'campaign', value: 'claude-code-systems' }
       ]
     });
 
-    // Structured logging for monitoring
     console.log(JSON.stringify({
-      event: "email_sent",
-      to: userEmail,
-      messageId: emailResponse.id,
-      netlify: { reqId: netlifyReqId },
+      event: "thank_you_email_sent",
+      to: email,
+      messageId: response.id,
       timestamp: new Date().toISOString()
     }));
-
-    // Send notification to Slack if configured
-    if (process.env.SLACK_WEBHOOK_URL) {
-      try {
-        await fetch(process.env.SLACK_WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            text: `✅ Survey submission received → ${userEmail}`,
-            blocks: [
-              {
-                type: "section",
-                text: {
-                  type: "mrkdwn",
-                  text: `*Survey Submission*\n• Email: ${userEmail}\n• Message ID: ${emailResponse.id}\n• Time: ${new Date().toISOString()}`
-                }
-              }
-            ]
-          })
-        });
-      } catch (slackError) {
-        console.log(JSON.stringify({
-          event: "slack_notification_failed",
-          error: slackError.message
-        }));
-      }
-    }
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        message: 'Thank you email sent',
-        emailId: emailResponse.id
-      })
-    };
-
   } catch (error) {
-    console.error('Error sending thank you email:', error);
-
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: 'Failed to send email',
-        message: error.message
-      })
-    };
+    console.error('Failed to send thank you email:', error);
   }
-};
+}
 
-// Handle partner inquiry form - sends notification to owner
-async function handlePartnerInquiry(formData, netlifyReqId) {
-  const companyName = formData['company-name'] || 'Not provided';
-  const contactName = formData['contact-name'] || 'Not provided';
-  const email = formData.email || 'Not provided';
-  const interest = formData.interest || 'Not specified';
-  const message = formData.message || 'No message';
-
-  const interestLabels = {
-    'exploring': 'Just exploring options',
-    'distribution-partner': 'Becoming a distribution partner',
-    'direct-client': 'AI solution for their business',
-    'learn-more': 'Learning more about services'
-  };
+// Send lead notification to Jeremy
+async function sendLeadNotification({ email, teamSize, contactMethods, businessName, netlifyReqId }) {
+  const contactList = contactMethods.length > 0
+    ? contactMethods.map(m => `• ${m}`).join('\n')
+    : '• None provided';
 
   const emailHtml = `
 <!DOCTYPE html>
@@ -262,7 +227,7 @@ async function handlePartnerInquiry(formData, netlifyReqId) {
       padding: 20px;
     }
     .header {
-      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
       color: white;
       padding: 20px;
       border-radius: 8px 8px 0 0;
@@ -287,42 +252,42 @@ async function handlePartnerInquiry(formData, netlifyReqId) {
       font-size: 16px;
       color: #1e293b;
     }
-    .message-box {
+    .contact-box {
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
       padding: 16px;
       margin-top: 8px;
+      white-space: pre-line;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1 style="margin: 0; font-size: 20px;">New Partner Inquiry</h1>
+    <h1 style="margin: 0; font-size: 20px;">New Claude Code Lead</h1>
   </div>
   <div class="content">
     <div class="field">
-      <div class="label">Company</div>
-      <div class="value">${companyName}</div>
-    </div>
-    <div class="field">
-      <div class="label">Contact Name</div>
-      <div class="value">${contactName}</div>
+      <div class="label">Team Size</div>
+      <div class="value" style="font-weight: 600; font-size: 18px;">${teamSize}</div>
     </div>
     <div class="field">
       <div class="label">Email</div>
       <div class="value"><a href="mailto:${email}">${email}</a></div>
     </div>
+    ${businessName ? `
     <div class="field">
-      <div class="label">Interest</div>
-      <div class="value">${interestLabels[interest] || interest}</div>
+      <div class="label">Business</div>
+      <div class="value">${businessName}</div>
     </div>
+    ` : ''}
     <div class="field">
-      <div class="label">Message</div>
-      <div class="message-box">${message}</div>
+      <div class="label">Contact Methods</div>
+      <div class="contact-box">${contactMethods.join('<br>') || 'None provided'}</div>
     </div>
     <p style="font-size: 12px; color: #94a3b8; margin-top: 24px;">
-      Submitted: ${new Date().toISOString()}
+      Submitted: ${new Date().toISOString()}<br>
+      Request ID: ${netlifyReqId}
     </p>
   </div>
 </body>
@@ -330,58 +295,109 @@ async function handlePartnerInquiry(formData, netlifyReqId) {
   `;
 
   const emailText = `
-New Partner Inquiry
+New Claude Code Lead
 
-Company: ${companyName}
-Contact: ${contactName}
+Team Size: ${teamSize}
 Email: ${email}
-Interest: ${interestLabels[interest] || interest}
-
-Message:
-${message}
+${businessName ? `Business: ${businessName}\n` : ''}
+Contact Methods:
+${contactList}
 
 Submitted: ${new Date().toISOString()}
   `;
 
   try {
-    const emailResponse = await resend.emails.send({
+    const response = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'Intent Solutions <notifications@intentsolutions.io>',
       to: OWNER_EMAIL,
-      subject: `Partner Inquiry: ${companyName} - ${contactName}`,
+      subject: `Claude Code Lead: ${teamSize}${businessName ? ` - ${businessName}` : ''}`,
       html: emailHtml,
       text: emailText,
       replyTo: email,
       tags: [
-        { name: 'type', value: 'partner-inquiry' }
+        { name: 'type', value: 'lead-notification' },
+        { name: 'tier', value: teamSize.toLowerCase().replace(/\s+/g, '-') }
       ]
     });
 
     console.log(JSON.stringify({
-      event: "partner_inquiry_notification_sent",
+      event: "lead_notification_sent",
       to: OWNER_EMAIL,
-      from_email: email,
-      company: companyName,
-      messageId: emailResponse.id,
-      netlify_request_id: netlifyReqId,
+      lead_email: email,
+      team_size: teamSize,
+      messageId: response.id,
+      timestamp: new Date().toISOString()
+    }));
+  } catch (error) {
+    console.error('Failed to send lead notification:', error);
+  }
+}
+
+// Handle partner inquiry form
+async function handlePartnerInquiry(formData, netlifyReqId) {
+  const companyName = formData['company-name'] || 'Not provided';
+  const contactName = formData['contact-name'] || 'Not provided';
+  const email = formData.email || 'Not provided';
+  const interest = formData.interest || 'Not specified';
+  const message = formData.message || 'No message';
+
+  const interestLabels = {
+    'exploring': 'Just exploring options',
+    'distribution-partner': 'Becoming a distribution partner',
+    'direct-client': 'AI solution for their business',
+    'learn-more': 'Learning more about services'
+  };
+
+  const emailHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0; }
+    .content { background: #f8fafc; padding: 24px; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none; }
+    .field { margin-bottom: 16px; }
+    .label { font-size: 12px; text-transform: uppercase; color: #64748b; margin-bottom: 4px; }
+    .value { font-size: 16px; color: #1e293b; }
+    .message-box { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1 style="margin: 0; font-size: 20px;">New Partner Inquiry</h1>
+  </div>
+  <div class="content">
+    <div class="field"><div class="label">Company</div><div class="value">${companyName}</div></div>
+    <div class="field"><div class="label">Contact</div><div class="value">${contactName}</div></div>
+    <div class="field"><div class="label">Email</div><div class="value"><a href="mailto:${email}">${email}</a></div></div>
+    <div class="field"><div class="label">Interest</div><div class="value">${interestLabels[interest] || interest}</div></div>
+    <div class="field"><div class="label">Message</div><div class="message-box">${message}</div></div>
+    <p style="font-size: 12px; color: #94a3b8; margin-top: 24px;">Submitted: ${new Date().toISOString()}</p>
+  </div>
+</body>
+</html>
+  `;
+
+  try {
+    const response = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || 'Intent Solutions <notifications@intentsolutions.io>',
+      to: OWNER_EMAIL,
+      subject: `Partner Inquiry: ${companyName} - ${contactName}`,
+      html: emailHtml,
+      text: `Partner Inquiry\n\nCompany: ${companyName}\nContact: ${contactName}\nEmail: ${email}\nInterest: ${interestLabels[interest] || interest}\n\nMessage:\n${message}`,
+      replyTo: email,
+      tags: [{ name: 'type', value: 'partner-inquiry' }]
+    });
+
+    console.log(JSON.stringify({
+      event: "partner_inquiry_sent",
+      messageId: response.id,
       timestamp: new Date().toISOString()
     }));
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        message: 'Partner inquiry notification sent',
-        emailId: emailResponse.id
-      })
-    };
+    return { statusCode: 200, body: JSON.stringify({ success: true }) };
   } catch (error) {
-    console.error('Error sending partner inquiry notification:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: 'Failed to send notification',
-        message: error.message
-      })
-    };
+    console.error('Failed to send partner inquiry:', error);
+    return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
   }
 }
