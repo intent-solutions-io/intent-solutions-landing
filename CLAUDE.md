@@ -25,6 +25,7 @@ Intent Solutions landing page - **Claude Code Systems** is the primary service (
 - **Firebase Hosting**: https://intent-landing-page.web.app
 - **Custom Domain**: https://intentsolutions.io (pending DNS configuration)
 - **Plugin Marketplace**: https://claudecodeplugins.io (258+ plugins)
+- **Booking Link**: https://calendar.app.google/Dj5qDi9oQjDzGkcq8
 
 ## Commands
 
