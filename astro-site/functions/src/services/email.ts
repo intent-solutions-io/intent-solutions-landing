@@ -9,7 +9,7 @@ function getResend(): Resend {
 }
 
 function getFromEmail(): string {
-  return getFromEmail() || "Jeremy <jeremy@intentsolutions.io>";
+  return resendFromEmail.value() || "Jeremy <jeremy@intentsolutions.io>";
 }
 
 const OWNER_EMAIL = "jeremy@intentsolutions.io";

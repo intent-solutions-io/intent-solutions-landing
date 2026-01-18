@@ -43,6 +43,7 @@ const partnerSchema = z.object({
 const corsOrigins = [
   "https://intentsolutions.io",
   "https://www.intentsolutions.io",
+  "https://intent-landing-page.web.app",
   "http://localhost:4321",
   "http://localhost:5000",
 ];
