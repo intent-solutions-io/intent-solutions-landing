@@ -116,7 +116,9 @@ export const submitContact = onRequest(
         res.status(400).json({ error: "Validation failed", details: error.errors });
         return;
       }
-      logger.error("Contact submission failed", { error });
+      const errMsg = error instanceof Error ? error.message : String(error);
+      const errStack = error instanceof Error ? error.stack : undefined;
+      logger.error("Contact submission failed", { message: errMsg, stack: errStack });
       res.status(500).json({ error: "Internal server error" });
     }
   }
