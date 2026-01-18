@@ -69,13 +69,13 @@ export const submitContact = onRequest(
       const data = contactSchema.parse(req.body);
       logger.info("Contact form submission", { email: data.email, teamSize: data.teamSize });
 
-      const contactMethods = {
-        discord: data.discord,
-        whatsapp: data.whatsapp,
-        phone: data.phone,
-        linkedin: data.linkedin,
-        xHandle: data.xHandle,
-      };
+      // Filter out undefined values - Firestore doesn't accept them
+      const contactMethods: Record<string, string> = {};
+      if (data.discord) contactMethods.discord = data.discord;
+      if (data.whatsapp) contactMethods.whatsapp = data.whatsapp;
+      if (data.phone) contactMethods.phone = data.phone;
+      if (data.linkedin) contactMethods.linkedin = data.linkedin;
+      if (data.xHandle) contactMethods.xHandle = data.xHandle;
 
       // Save to Firestore FIRST
       const docId = await saveContactSubmission({
