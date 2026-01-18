@@ -1,0 +1,54 @@
+import { Timestamp } from "firebase-admin/firestore";
+
+export interface ContactSubmission {
+  id?: string;
+  email: string;
+  teamSize: "solo" | "small-team" | "department" | "enterprise";
+  businessName?: string;
+  contactMethods: {
+    discord?: string;
+    whatsapp?: string;
+    phone?: string;
+    linkedin?: string;
+    xHandle?: string;
+  };
+  formType: "contact";
+  status: "new" | "contacted" | "converted" | "closed";
+  createdAt: Timestamp;
+  emailsSent: {
+    thankYou?: Timestamp;
+    leadNotification?: Timestamp;
+  };
+  source?: string;
+  userAgent?: string;
+}
+
+export interface PartnerInquiry {
+  id?: string;
+  email: string;
+  companyName: string;
+  contactName: string;
+  interest: "exploring" | "distribution-partner" | "direct-client" | "learn-more";
+  message?: string;
+  formType: "partner-inquiry";
+  status: "new" | "contacted" | "converted" | "closed";
+  createdAt: Timestamp;
+  emailsSent: {
+    partnerNotification?: Timestamp;
+  };
+  source?: string;
+  userAgent?: string;
+}
+
+export interface SurveySubmission {
+  id?: string;
+  email: string;
+  responses: Record<string, unknown>;
+  formType: "survey";
+  createdAt: Timestamp;
+  emailsSent: {
+    thankYou?: Timestamp;
+  };
+}
+
+export type FormSubmission = ContactSubmission | PartnerInquiry | SurveySubmission;

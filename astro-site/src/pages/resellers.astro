@@ -656,18 +656,9 @@ import Footer from '../components/Footer';
           </p>
 
           <form
-            name="partner-inquiry"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
+            id="partner-form"
             class="space-y-6"
           >
-            <input type="hidden" name="form-name" value="partner-inquiry" />
-            <p class="hidden">
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
 
             <div>
               <label for="company-name" class="block text-sm font-medium text-zinc-300 mb-2">
@@ -755,3 +746,57 @@ import Footer from '../components/Footer';
 
   <Footer />
 </Layout>
+
+<script>
+  const form = document.getElementById('partner-form') as HTMLFormElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = {
+      companyName: formData.get('company-name') as string,
+      contactName: formData.get('contact-name') as string,
+      email: formData.get('email') as string,
+      interest: formData.get('interest') as string,
+      message: formData.get('message') as string || undefined,
+    };
+
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'sending...';
+
+    try {
+      const response = await fetch('/api/partner', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        form.innerHTML = `
+          <div class="text-center py-8">
+            <p class="text-zinc-50 text-lg mb-2">Thanks for reaching out!</p>
+            <p class="text-zinc-400">We'll be in touch within 1 business day.</p>
+          </div>
+        `;
+
+        // Track in Firebase Analytics
+        if ((window as any).gtag) {
+          (window as any).gtag('event', 'form_submit', {
+            form_name: 'partner-inquiry',
+            interest: data.interest,
+          });
+        }
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Partner form error:', error);
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      alert('Something went wrong. Please email jeremy@intentsolutions.io directly.');
+    }
+  });
+</script>

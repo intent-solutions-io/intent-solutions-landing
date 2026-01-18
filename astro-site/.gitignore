@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 test-results/
 tests/reports/
+
+# Firebase cache
+.firebase/

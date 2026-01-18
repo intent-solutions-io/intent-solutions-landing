@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Contact Us | Intent Solutions - Claude Code Systems"
+  description="Get in touch about Claude Code Systems, AI agents, or custom solutions. We respond within one business day."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <div class="container mx-auto px-8 pt-8">
+      <a href="/" class="text-sm text-zinc-400 hover:text-zinc-200 transition-smooth">
+        &larr; Back to Home
+      </a>
+    </div>
+
+    <Contact client:load />
+
+    <section class="py-16 bg-zinc-950 border-t border-zinc-800">
+      <div class="container mx-auto px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-xl font-semibold text-zinc-50 mb-6">Other Ways to Reach Us</h2>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="card-slate text-center">
+              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Email</h3>
+              <a href="mailto:jeremy@intentsolutions.io" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
+                jeremy@intentsolutions.io
+              </a>
+            </div>
+
+            <div class="card-slate text-center">
+              <h3 class="text-sm font-semibold text-zinc-200 mb-2">LinkedIn</h3>
+              <a href="https://linkedin.com/in/jeremylongshore" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
+                /in/jeremylongshore
+              </a>
+            </div>
+
+            <div class="card-slate text-center">
+              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Location</h3>
+              <p class="text-zinc-400 text-sm">Gulf Shores, Alabama</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

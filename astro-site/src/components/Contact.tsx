@@ -5,14 +5,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
 
-const encodeFormData = (data: Record<string, string>) =>
-  Object.entries(data)
-    .filter(([, value]) => value !== undefined && value !== '')
-    .map(
-      ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(value ?? '')}`
-    )
-    .join('&');
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    gtag?: (command: string, eventName: string, params?: Record<string, unknown>) => void;
+  }
+}
 
 const contactSchema = z.object({
   teamSize: z.enum(['solo', 'small-team', 'department', 'enterprise'], {
@@ -65,26 +63,31 @@ export default function Contact() {
     try {
       setSubmitError(null);
 
-      const response = await fetch('/', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encodeFormData({
-          'form-name': 'contact',
-          'bot-field': '',
-          teamSize: data.teamSize,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           email: data.email,
-          discord: data.discord || '',
-          whatsapp: data.whatsapp || '',
-          phone: data.phone || '',
-          linkedin: data.linkedin || '',
-          xHandle: data.xHandle || '',
-          businessName: data.businessName || '',
+          teamSize: data.teamSize,
+          discord: data.discord || undefined,
+          whatsapp: data.whatsapp || undefined,
+          phone: data.phone || undefined,
+          linkedin: data.linkedin || undefined,
+          xHandle: data.xHandle || undefined,
+          businessName: data.businessName || undefined,
         }),
       });
 
       if (!response.ok) {
-        throw new Error(`Form submission failed with status ${response.status}`);
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Form submission failed with status ${response.status}`);
       }
+
+      // Track conversion in Firebase Analytics
+      window.gtag?.('event', 'form_submit', {
+        form_name: 'contact',
+        team_size: data.teamSize,
+      });
 
       setSubmitted(true);
       reset();
@@ -112,19 +115,9 @@ export default function Contact() {
           </p>
 
           <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-8"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <p className="hidden">
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
 
             {/* Team Size - Radio Buttons */}
             <div>
