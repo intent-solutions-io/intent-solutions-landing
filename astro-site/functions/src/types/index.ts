@@ -23,6 +23,28 @@ export interface ContactSubmission {
   userAgent?: string;
 }
 
+export interface EnhancedContactSubmission {
+  id?: string;
+  name: string;
+  email: string;
+  message: string;
+  company?: string;
+  phone?: string;
+  interest: "consulting" | "learn" | "colab" | "other";
+  projectType?: "ai-ml" | "workflow-automation" | "gcp" | "strategy";
+  budget?: "under-5k" | "5k-15k" | "15k-50k" | "50k-plus" | "discuss";
+  timeline?: "immediate" | "this-month" | "this-quarter" | "exploring";
+  formType: "enhanced-contact";
+  status: "new" | "contacted" | "converted" | "closed";
+  createdAt: Timestamp;
+  emailsSent: {
+    thankYou?: Timestamp;
+    leadNotification?: Timestamp;
+  };
+  source?: string;
+  userAgent?: string;
+}
+
 export interface PartnerInquiry {
   id?: string;
   email: string;
@@ -51,4 +73,4 @@ export interface SurveySubmission {
   };
 }
 
-export type FormSubmission = ContactSubmission | PartnerInquiry | SurveySubmission;
+export type FormSubmission = ContactSubmission | EnhancedContactSubmission | PartnerInquiry | SurveySubmission;

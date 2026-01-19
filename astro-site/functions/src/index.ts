@@ -3,14 +3,14 @@ import { onRequest } from "firebase-functions/v2/https";
 import { logger } from "firebase-functions/v2";
 import { z } from "zod";
 import {
-  saveContactSubmission,
+  saveEnhancedContactSubmission,
   savePartnerInquiry,
   saveSurveySubmission,
   markEmailSent,
 } from "./services/firestore";
 import {
-  sendContactThankYou,
-  sendLeadNotification,
+  sendEnhancedContactThankYou,
+  sendEnhancedLeadNotification,
   sendPartnerNotification,
   resendApiKey,
   resendFromEmail,
@@ -21,14 +21,16 @@ initializeApp();
 
 // Validation schemas
 const contactSchema = z.object({
-  email: z.string().email(),
-  teamSize: z.enum(["solo", "small-team", "department", "enterprise"]),
-  discord: z.string().optional(),
-  whatsapp: z.string().optional(),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(10, "Please provide more details about your project"),
+  company: z.string().optional(),
   phone: z.string().optional(),
-  linkedin: z.string().optional(),
-  xHandle: z.string().optional(),
-  businessName: z.string().optional(),
+  interest: z.enum(["consulting", "learn", "colab", "other"]),
+  projectType: z.enum(["ai-ml", "workflow-automation", "gcp", "strategy"]).optional(),
+  budget: z.enum(["under-5k", "5k-15k", "15k-50k", "50k-plus", "discuss"]).optional(),
+  timeline: z.enum(["immediate", "this-month", "this-quarter", "exploring"]).optional(),
+  website: z.string().max(0, "Spam detected").optional(), // Honeypot field
 });
 
 const partnerSchema = z.object({
@@ -67,42 +69,59 @@ export const submitContact = onRequest(
 
     try {
       const data = contactSchema.parse(req.body);
-      logger.info("Contact form submission", { email: data.email, teamSize: data.teamSize });
 
-      // Filter out undefined values - Firestore doesn't accept them
-      const contactMethods: Record<string, string> = {};
-      if (data.discord) contactMethods.discord = data.discord;
-      if (data.whatsapp) contactMethods.whatsapp = data.whatsapp;
-      if (data.phone) contactMethods.phone = data.phone;
-      if (data.linkedin) contactMethods.linkedin = data.linkedin;
-      if (data.xHandle) contactMethods.xHandle = data.xHandle;
+      // Honeypot check - if website field has content, it's a bot
+      if (data.website && data.website.length > 0) {
+        logger.warn("Honeypot triggered", { email: data.email });
+        // Return success to not alert the bot, but don't save
+        res.status(200).json({ success: true, id: "honeypot" });
+        return;
+      }
 
-      // Save to Firestore FIRST
-      const docId = await saveContactSubmission({
+      logger.info("Contact form submission", {
         email: data.email,
-        teamSize: data.teamSize,
-        businessName: data.businessName,
-        contactMethods,
+        interest: data.interest,
+        budget: data.budget,
+      });
+
+      // Save to Firestore
+      const docId = await saveEnhancedContactSubmission({
+        name: data.name,
+        email: data.email,
+        message: data.message,
+        company: data.company,
+        phone: data.phone,
+        interest: data.interest,
+        projectType: data.projectType,
+        budget: data.budget,
+        timeline: data.timeline,
         source: req.headers.referer as string || "direct",
         userAgent: req.headers["user-agent"] as string,
       });
 
-      logger.info("Saved contact submission", { docId });
+      logger.info("Saved enhanced contact submission", { docId });
 
       // Send thank you email
-      if (data.email) {
-        const emailId = await sendContactThankYou(data.email, data.teamSize);
-        if (emailId) {
-          await markEmailSent(docId, "thankYou");
-        }
+      const emailId = await sendEnhancedContactThankYou(
+        data.email,
+        data.name,
+        data.interest
+      );
+      if (emailId) {
+        await markEmailSent(docId, "thankYou");
       }
 
       // Send notification to owner
-      const notifId = await sendLeadNotification({
+      const notifId = await sendEnhancedLeadNotification({
+        name: data.name,
         email: data.email,
-        teamSize: data.teamSize,
-        contactMethods,
-        businessName: data.businessName,
+        company: data.company,
+        phone: data.phone,
+        interest: data.interest,
+        projectType: data.projectType,
+        budget: data.budget,
+        timeline: data.timeline,
+        message: data.message,
         docId,
       });
       if (notifId) {

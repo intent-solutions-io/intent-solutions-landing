@@ -13,32 +13,56 @@ declare global {
 }
 
 const contactSchema = z.object({
-  teamSize: z.enum(['solo', 'small-team', 'department', 'enterprise'], {
-    required_error: 'please select your team size',
-  }),
+  name: z.string().min(1, 'name is required'),
   email: z.string().email('invalid email address'),
-  discord: z.string().optional(),
-  whatsapp: z.string().optional(),
+  company: z.string().optional(),
   phone: z.string().optional(),
-  linkedin: z.string().optional(),
-  xHandle: z.string().optional(),
-  businessName: z.string().optional(),
-}).refine(
-  (data) => data.discord || data.whatsapp || data.phone || data.linkedin || data.xHandle,
-  {
-    message: 'please provide at least one additional contact method',
-    path: ['discord'], // Show error on first additional field
-  }
-);
+  interest: z.enum(['consulting', 'learn', 'colab', 'other'], {
+    required_error: 'please select what you\'re interested in',
+  }),
+  projectType: z.enum(['ai-ml', 'workflow-automation', 'gcp', 'strategy']).optional(),
+  budget: z.enum(['under-5k', '5k-15k', '15k-50k', '50k-plus', 'discuss']).optional(),
+  timeline: z.enum(['immediate', 'this-month', 'this-quarter', 'exploring']).optional(),
+  message: z.string().min(10, 'please tell us a bit more about your project'),
+  website: z.string().max(0).optional(), // Honeypot
+});
 
 type ContactForm = z.infer<typeof contactSchema>;
 
-const teamSizeOptions = [
-  { value: 'solo', label: 'Solo' },
-  { value: 'small-team', label: 'Small Team' },
-  { value: 'department', label: 'Department' },
-  { value: 'enterprise', label: 'Enterprise' },
+const interestOptions = [
+  { value: 'consulting', label: 'Consulting / Custom Build' },
+  { value: 'learn', label: 'Learn with Jeremy' },
+  { value: 'colab', label: 'Colab with Jeremy' },
+  { value: 'other', label: 'Other' },
 ] as const;
+
+const projectTypeOptions = [
+  { value: 'ai-ml', label: 'AI / Machine Learning' },
+  { value: 'workflow-automation', label: 'Workflow Automation' },
+  { value: 'gcp', label: 'GCP / Cloud Infrastructure' },
+  { value: 'strategy', label: 'AI Strategy Consulting' },
+] as const;
+
+const budgetOptions = [
+  { value: 'under-5k', label: 'Under $5K' },
+  { value: '5k-15k', label: '$5K - $15K' },
+  { value: '15k-50k', label: '$15K - $50K' },
+  { value: '50k-plus', label: '$50K+' },
+  { value: 'discuss', label: "Let's Discuss" },
+] as const;
+
+const timelineOptions = [
+  { value: 'immediate', label: 'Immediate (this week)' },
+  { value: 'this-month', label: 'This Month' },
+  { value: 'this-quarter', label: 'This Quarter' },
+  { value: 'exploring', label: 'Just Exploring' },
+] as const;
+
+const steps = [
+  { number: 1, title: 'You reach out', description: 'Tell me about your project and goals' },
+  { number: 2, title: 'We connect', description: 'Quick call to understand your needs' },
+  { number: 3, title: 'We ship', description: 'Build, train, and deploy together' },
+];
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -52,12 +76,14 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
     watch,
   } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
   });
+
+  const selectedInterest = watch('interest');
 
   const onSubmit = async (data: ContactForm) => {
     try {
@@ -67,14 +93,16 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          name: data.name,
           email: data.email,
-          teamSize: data.teamSize,
-          discord: data.discord || undefined,
-          whatsapp: data.whatsapp || undefined,
+          company: data.company || undefined,
           phone: data.phone || undefined,
-          linkedin: data.linkedin || undefined,
-          xHandle: data.xHandle || undefined,
-          businessName: data.businessName || undefined,
+          interest: data.interest,
+          projectType: data.projectType || undefined,
+          budget: data.budget || undefined,
+          timeline: data.timeline || undefined,
+          message: data.message,
+          website: data.website || undefined, // Honeypot
         }),
       });
 
@@ -85,8 +113,9 @@ export default function Contact() {
 
       // Track conversion in Firebase Analytics
       window.gtag?.('event', 'form_submit', {
-        form_name: 'contact',
-        team_size: data.teamSize,
+        form_name: 'enhanced_contact',
+        interest: data.interest,
+        budget: data.budget,
       });
 
       setSubmitted(true);
@@ -107,185 +136,247 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-h1 font-bold text-zinc-50 mb-4 text-center">
-            let's build your system
-          </h2>
-          <p className="text-zinc-400 text-center mb-12">
-            Tell me about your team and how to reach you—I'll be in touch within one business day.
+          {/* Trust Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-h1 font-bold text-zinc-50 mb-4">
+              Let's Build Something That Ships to Production
+            </h2>
+            <p className="text-zinc-400 text-lg">
+              Tired of AI demos that never make it past the POC phase?
+            </p>
+          </div>
+
+          {/* What Happens Next - 3 Steps */}
+          <div className="grid md:grid-cols-3 gap-4 mb-8">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.number}
+                className="card-slate text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="w-8 h-8 bg-zinc-700 rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-semibold text-zinc-200">
+                  {step.number}
+                </div>
+                <h3 className="text-sm font-semibold text-zinc-50 mb-1">{step.title}</h3>
+                <p className="text-xs text-zinc-500">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Response commitment */}
+          <p className="text-center text-sm text-zinc-500 mb-8">
+            We respond within 24 hours
           </p>
 
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="space-y-8"
-          >
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Name & Email - Side by side on desktop */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-2">
+                  Name <span className="text-zinc-500">*</span>
+                </label>
+                <input
+                  {...register('name')}
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Your name"
+                />
+                {errors.name && (
+                  <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
+                )}
+              </div>
 
-            {/* Team Size - Radio Buttons */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-2">
+                  Email <span className="text-zinc-500">*</span>
+                </label>
+                <input
+                  {...register('email')}
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="you@example.com"
+                />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
+                )}
+              </div>
+            </div>
+
+            {/* Company & Phone - Side by side */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium text-zinc-300 mb-2">
+                  Company / Organization <span className="text-zinc-500">(optional)</span>
+                </label>
+                <input
+                  {...register('company')}
+                  type="text"
+                  id="company"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="Your company"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-zinc-300 mb-2">
+                  Phone <span className="text-zinc-500">(optional)</span>
+                </label>
+                <input
+                  {...register('phone')}
+                  type="tel"
+                  id="phone"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
+                  placeholder="+1 555 123 4567"
+                />
+              </div>
+            </div>
+
+            {/* Interest Dropdown */}
             <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-3">
-                team size
+              <label htmlFor="interest" className="block text-sm font-medium text-zinc-300 mb-2">
+                What are you interested in? <span className="text-zinc-500">*</span>
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {teamSizeOptions.map((option) => (
-                  <label
-                    key={option.value}
-                    className="relative flex items-center justify-center"
-                  >
-                    <input
-                      {...register('teamSize')}
-                      type="radio"
-                      value={option.value}
-                      className="peer sr-only"
-                    />
-                    <div className="w-full py-3 px-4 bg-zinc-800/50 border border-zinc-700 rounded-lg text-center text-zinc-300 cursor-pointer transition-smooth peer-checked:border-zinc-200 peer-checked:bg-zinc-800 peer-checked:text-zinc-50 hover:border-zinc-500">
-                      {option.label}
-                    </div>
-                  </label>
+              <select
+                {...register('interest')}
+                id="interest"
+                className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400 transition-smooth"
+              >
+                <option value="">Select an option...</option>
+                {interestOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
-              </div>
-              {errors.teamSize && (
-                <p className="mt-2 text-sm text-red-400">{errors.teamSize.message}</p>
+              </select>
+              {errors.interest && (
+                <p className="mt-1 text-sm text-red-400">{errors.interest.message}</p>
               )}
             </div>
 
-            {/* Email - Required */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-2">
-                email <span className="text-zinc-500">(required)</span>
-              </label>
-              <input
-                {...register('email')}
-                type="email"
-                id="email"
-                className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
-                placeholder="you@example.com"
-              />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
-              )}
-            </div>
+            {/* Project Type - Conditional, only shows if consulting selected */}
+            {selectedInterest === 'consulting' && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <label htmlFor="projectType" className="block text-sm font-medium text-zinc-300 mb-2">
+                  Project Type <span className="text-zinc-500">(optional)</span>
+                </label>
+                <select
+                  {...register('projectType')}
+                  id="projectType"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400 transition-smooth"
+                >
+                  <option value="">Select project type...</option>
+                  {projectTypeOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </motion.div>
+            )}
 
-            {/* Additional Contact Methods */}
-            <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-2">
-                additional contact <span className="text-zinc-500">(at least one)</span>
-              </label>
-              <p className="text-xs text-zinc-500 mb-4">
-                How else can I reach you? Pick your preferred method(s).
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="discord" className="block text-xs text-zinc-400 mb-1">
-                    Discord
-                  </label>
-                  <input
-                    {...register('discord')}
-                    type="text"
-                    id="discord"
-                    className="w-full px-4 py-2.5 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-600 focus:outline-none focus:border-zinc-400 transition-smooth text-sm"
-                    placeholder="username#1234"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="whatsapp" className="block text-xs text-zinc-400 mb-1">
-                    WhatsApp
-                  </label>
-                  <input
-                    {...register('whatsapp')}
-                    type="text"
-                    id="whatsapp"
-                    className="w-full px-4 py-2.5 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-600 focus:outline-none focus:border-zinc-400 transition-smooth text-sm"
-                    placeholder="+1 555 123 4567"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-xs text-zinc-400 mb-1">
-                    Phone
-                  </label>
-                  <input
-                    {...register('phone')}
-                    type="tel"
-                    id="phone"
-                    className="w-full px-4 py-2.5 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-600 focus:outline-none focus:border-zinc-400 transition-smooth text-sm"
-                    placeholder="+1 555 123 4567"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="linkedin" className="block text-xs text-zinc-400 mb-1">
-                    LinkedIn
-                  </label>
-                  <input
-                    {...register('linkedin')}
-                    type="text"
-                    id="linkedin"
-                    className="w-full px-4 py-2.5 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-600 focus:outline-none focus:border-zinc-400 transition-smooth text-sm"
-                    placeholder="linkedin.com/in/yourprofile"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label htmlFor="xHandle" className="block text-xs text-zinc-400 mb-1">
-                    X / Twitter
-                  </label>
-                  <input
-                    {...register('xHandle')}
-                    type="text"
-                    id="xHandle"
-                    className="w-full px-4 py-2.5 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-600 focus:outline-none focus:border-zinc-400 transition-smooth text-sm"
-                    placeholder="@yourhandle"
-                  />
-                </div>
+            {/* Budget & Timeline - Side by side */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="budget" className="block text-sm font-medium text-zinc-300 mb-2">
+                  Budget Range <span className="text-zinc-500">(optional)</span>
+                </label>
+                <select
+                  {...register('budget')}
+                  id="budget"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400 transition-smooth"
+                >
+                  <option value="">Select budget...</option>
+                  {budgetOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
-              {errors.discord && (
-                <p className="mt-2 text-sm text-red-400">{errors.discord.message}</p>
+              <div>
+                <label htmlFor="timeline" className="block text-sm font-medium text-zinc-300 mb-2">
+                  Timeline <span className="text-zinc-500">(optional)</span>
+                </label>
+                <select
+                  {...register('timeline')}
+                  id="timeline"
+                  className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400 transition-smooth"
+                >
+                  <option value="">Select timeline...</option>
+                  {timelineOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-zinc-300 mb-2">
+                Project Details <span className="text-zinc-500">*</span>
+              </label>
+              <textarea
+                {...register('message')}
+                id="message"
+                rows={4}
+                className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
+                placeholder="Tell me about your project, goals, and any specific challenges..."
+              />
+              {errors.message && (
+                <p className="mt-1 text-sm text-red-400">{errors.message.message}</p>
               )}
             </div>
 
-            {/* Business Name - Optional */}
-            <div>
-              <label htmlFor="businessName" className="block text-sm font-medium text-zinc-300 mb-2">
-                business name <span className="text-zinc-500">(optional)</span>
-              </label>
-              <input
-                {...register('businessName')}
-                type="text"
-                id="businessName"
-                className="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
-                placeholder="Your Company"
-              />
-            </div>
+            {/* Honeypot - Hidden field for spam protection */}
+            <input
+              {...register('website')}
+              type="text"
+              name="website"
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+            />
 
             {submitError && (
               <p className="text-sm text-red-400 text-center">{submitError}</p>
             )}
             {submitted && !submitError && (
               <p className="text-sm text-zinc-300 text-center">
-                Thanks for reaching out—I'll be in touch within one business day.
+                Thanks for reaching out! I'll be in touch within 24 hours.
               </p>
             )}
 
             <button
               type="submit"
               className="w-full btn-primary"
-              disabled={submitted}
+              disabled={isSubmitting || submitted}
             >
-              {submitted ? 'sent!' : 'get started'}
+              {isSubmitting ? 'Sending...' : submitted ? 'Sent!' : 'Get Started'}
             </button>
           </form>
 
+          {/* Direct contact footer */}
           <div className="mt-12 pt-12 border-t border-zinc-800 text-center space-y-4">
             <p className="text-zinc-400 text-sm">or reach out directly:</p>
             <a
-              href="https://calendar.app.google/Dj5qDi9oQjDzGkcq8"
+              href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
               target="_blank"
               rel="noopener"
               className="inline-block px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-zinc-200 hover:bg-zinc-700 hover:text-zinc-50 transition-smooth font-medium"
             >
-              Schedule a Call
+              Book a Call
             </a>
             <div className="space-y-1">
               <a
