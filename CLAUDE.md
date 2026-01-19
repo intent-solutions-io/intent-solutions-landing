@@ -22,10 +22,9 @@ Intent Solutions landing page - **Claude Code Systems** is the primary service (
 
 - **Active Project**: `astro-site/` (Astro 5.14 + React 19 islands)
 - **GCP Project**: `intent-landing-page`
-- **Firebase Hosting**: https://intent-landing-page.web.app
-- **Custom Domain**: https://intentsolutions.io (pending DNS configuration)
+- **Deployed at**: https://intentsolutions.io (Firebase Hosting)
 - **Plugin Marketplace**: https://claudecodeplugins.io (258+ plugins)
-- **Booking Link**: https://calendar.app.google/Dj5qDi9oQjDzGkcq8
+- **Booking Link**: https://calendar.app.google/Wqbt8EJuEh5xvvV58
 
 ## Commands
 
@@ -89,13 +88,18 @@ Located in `astro-site/functions/src/`:
 Collection: `contactSubmissions`
 ```typescript
 {
+  name: string,
   email: string,
-  formType: 'contact' | 'partner-inquiry' | 'survey',
-  status: 'new' | 'contacted' | 'converted',
+  message: string,
+  company?: string,
+  phone?: string,
+  interest: 'consulting' | 'learn' | 'colab' | 'other',
+  projectType?: 'ai-ml' | 'workflow-automation' | 'gcp' | 'strategy',
+  budget?: 'under-5k' | '5k-15k' | '15k-50k' | '50k-plus' | 'discuss',
+  timeline?: 'immediate' | 'this-month' | 'this-quarter' | 'exploring',
+  formType: 'enhanced-contact' | 'partner-inquiry' | 'survey',
+  status: 'new' | 'contacted' | 'converted' | 'closed',
   createdAt: Timestamp,
-  teamSize?: string,
-  businessName?: string,
-  contactMethods?: { discord?, whatsapp?, phone?, linkedin?, xHandle? },
   emailsSent?: { thankYou?: Timestamp, leadNotification?: Timestamp }
 }
 ```
@@ -122,6 +126,8 @@ Theme in `src/styles/global.css` (Charcoal Slate / Theme 7):
 |-------|---------|
 | `card-slate` | Semi-transparent cards with backdrop blur |
 | `btn-primary` | Zinc-200 background buttons |
+| `btn-secondary` | Transparent with zinc border |
+| `btn-sm` | Smaller button padding |
 | `text-hero` | 3.5rem/2.5rem mobile hero text |
 | `text-h1`, `text-h2` | Heading sizes with tight tracking |
 | `transition-smooth` | Cubic-bezier transitions |
@@ -133,14 +139,17 @@ Colors: Zinc palette (950-50), Inter font family.
 | Route | Purpose |
 |-------|---------|
 | `/` | Homepage - Claude Code Systems + secondary services |
-| `/contact` | Standalone contact page (linkable from external sites) |
+| `/learn` | Learn with Jeremy - training, coaching, workshops |
+| `/colab` | Colab with Jeremy - partnerships, joint ventures |
+| `/contact` | Standalone contact page |
 | `/agents` | AI Agents (Intent Agent Models) |
 | `/private-ai` | Private AI infrastructure |
 | `/automation` | n8n automation services |
 | `/cloud` | Google Cloud services |
 | `/resellers` | Distribution partner program |
-| `/learn/*` | Education hub (pricing, security, models) |
-| `/survey` | Legacy HUSTLE survey system |
+| `/learn/pricing` | How pricing works |
+| `/learn/security` | Vertex vs self-hosted comparison |
+| `/learn/models` | Model-agnostic delivery |
 
 ## Content Guidelines
 
