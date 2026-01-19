@@ -277,15 +277,25 @@ export default function Contact() {
             </button>
           </form>
 
-          <div className="mt-12 pt-12 border-t border-zinc-800 text-center space-y-2">
+          <div className="mt-12 pt-12 border-t border-zinc-800 text-center space-y-4">
             <p className="text-zinc-400 text-sm">or reach out directly:</p>
             <a
-              href="mailto:jeremy@intentsolutions.io"
-              className="block text-zinc-200 hover:text-zinc-50 transition-smooth"
+              href="https://calendar.app.google/Dj5qDi9oQjDzGkcq8"
+              target="_blank"
+              rel="noopener"
+              className="inline-block px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-zinc-200 hover:bg-zinc-700 hover:text-zinc-50 transition-smooth font-medium"
             >
-              jeremy@intentsolutions.io
+              Schedule a Call
             </a>
-            <p className="text-zinc-500 text-sm">gulf shores, alabama</p>
+            <div className="space-y-1">
+              <a
+                href="mailto:jeremy@intentsolutions.io"
+                className="block text-zinc-200 hover:text-zinc-50 transition-smooth"
+              >
+                jeremy@intentsolutions.io
+              </a>
+              <p className="text-zinc-500 text-sm">gulf shores, alabama</p>
+            </div>
           </div>
         </motion.div>
       </div>
