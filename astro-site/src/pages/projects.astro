@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+import ProjectsHero from '../components/ProjectsHero';
+import ProjectsGrid from '../components/ProjectsGrid';
+import FeaturedFork from '../components/FeaturedFork';
+import PabloCredits from '../components/PabloCredits';
+import Contact from '../components/Contact';
+---
+
+<Layout
+  title="Projects | Intent Solutions"
+  description="17 active projects shipping to production. From AI agents to developer tools - see what Intent Solutions is building."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <ProjectsHero client:load />
+    <ProjectsGrid client:visible />
+    <FeaturedFork client:visible />
+    <PabloCredits client:visible />
+    <Contact client:visible />
+  </main>
+
+  <Footer />
+</Layout>
