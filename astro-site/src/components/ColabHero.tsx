@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+const proofPoints = [
+  '258+ Claude Code plugins',
+  '15+ years ops experience',
+  'Production deployments',
+];
+
 export default function ColabHero() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -16,18 +22,38 @@ export default function ColabHero() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-hero font-bold text-zinc-50 mb-6">
-            Colab with Jeremy
-          </h1>
-          <p className="text-xl text-zinc-400 mb-8 leading-relaxed">
-            Build together. Ship together. Win together.
+          {/* Audience label */}
+          <p className="text-sm text-zinc-500 uppercase tracking-wider mb-4">
+            For teams ready to ship
           </p>
 
-          {/* Value prop */}
-          <p className="text-lg text-zinc-500 mb-10 max-w-2xl mx-auto">
-            Looking for a technical partner who can actually build, not just advise?
-            Let's create something real.
+          <h1 className="text-hero font-bold text-zinc-50 mb-6">
+            Build and Ship with Jeremy
+          </h1>
+
+          <p className="text-xl text-zinc-400 mb-6 leading-relaxed">
+            Implementation partner in your repo: we ship Claude Code workflows, plugins, and agents alongside your team.
           </p>
+
+          {/* What Colab delivers */}
+          <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm text-zinc-300">
+              <span className="font-semibold text-zinc-200">What you get:</span>{' '}
+              Real PRs in your repo, reviewed and deployed. CI guardrails, documentation, and training so your team can maintain it.
+            </p>
+          </div>
+
+          {/* Proof bar */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            {proofPoints.map((point) => (
+              <div
+                key={point}
+                className="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-full text-sm text-zinc-300"
+              >
+                {point}
+              </div>
+            ))}
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,13 +67,13 @@ export default function ColabHero() {
               rel="noopener"
               className="btn-primary text-lg"
             >
-              Let's Talk Partnership
+              Start a Delivery Sprint
             </a>
             <a
-              href="#contact"
+              href="#engagements"
               className="btn-secondary text-lg"
             >
-              Send a Proposal
+              See Engagement Options
             </a>
           </motion.div>
         </motion.div>

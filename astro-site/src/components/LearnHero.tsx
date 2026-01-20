@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+const proofPoints = [
+  '258+ Claude Code plugins',
+  '15+ years ops experience',
+  'Production deployments',
+];
+
 export default function LearnHero() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -16,24 +22,37 @@ export default function LearnHero() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-hero font-bold text-zinc-50 mb-6">
-            Learn with Jeremy
-          </h1>
-          <p className="text-xl text-zinc-400 mb-8 leading-relaxed">
-            Skip the tutorials that stop at "Hello World" — learn to build AI systems that actually ship to production.
+          {/* Audience label */}
+          <p className="text-sm text-zinc-500 uppercase tracking-wider mb-4">
+            For executives and leaders
           </p>
 
-          {/* Credibility badges */}
+          <h1 className="text-hero font-bold text-zinc-50 mb-6">
+            Claude Code for Decision-Makers
+          </h1>
+
+          <p className="text-xl text-zinc-400 mb-6 leading-relaxed">
+            Understand what it is, how it fits your org, and how to roll it out safely.
+          </p>
+
+          {/* Claude Code definition */}
+          <div className="bg-zinc-800/50 border border-zinc-700/50 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm text-zinc-300">
+              <span className="font-semibold text-zinc-200">What is Claude Code?</span>{' '}
+              An AI coding assistant that works directly in your codebase—reading, writing, and running code with your team's oversight.
+            </p>
+          </div>
+
+          {/* Proof bar */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <div className="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-full text-sm text-zinc-300">
-              227+ plugins created
-            </div>
-            <div className="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-full text-sm text-zinc-300">
-              15+ years ops experience
-            </div>
-            <div className="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-full text-sm text-zinc-300">
-              Real production deployments
-            </div>
+            {proofPoints.map((point) => (
+              <div
+                key={point}
+                className="px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-full text-sm text-zinc-300"
+              >
+                {point}
+              </div>
+            ))}
           </div>
 
           <motion.div
@@ -48,13 +67,13 @@ export default function LearnHero() {
               rel="noopener"
               className="btn-primary text-lg"
             >
-              Book a Learning Session
+              Book an Executive Onramp
             </a>
             <a
-              href="#contact"
+              href="#packages"
               className="btn-secondary text-lg"
             >
-              Ask a Question
+              See Session Options
             </a>
           </motion.div>
         </motion.div>

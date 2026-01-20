@@ -5,11 +5,53 @@ import Footer from '../../components/Footer';
 import LearnHero from '../../components/LearnHero';
 import LearnOfferings from '../../components/LearnOfferings';
 import Contact from '../../components/Contact';
+
+const faqs = [
+  {
+    q: 'Do I need to be technical?',
+    a: 'No. These sessions are designed for decision-makers, not developers. We explain concepts in business terms and focus on outcomes, risks, and rollout planning—not code syntax.',
+  },
+  {
+    q: 'Is this safe for our codebase and data?',
+    a: 'Claude Code operates in your environment under your control. We cover permissions, human approval gates, and data handling so you can enforce the guardrails that fit your risk tolerance.',
+  },
+  {
+    q: 'What should I delegate to my team?',
+    a: 'We help you define that. The deliverables include a team enablement plan that clarifies who does what—so you know what to own versus hand off.',
+  },
+  {
+    q: 'How do we pick the first use case?',
+    a: 'We walk through a prioritization framework based on ROI, risk, and complexity. You leave with a ranked shortlist, not a vague "start somewhere" suggestion.',
+  },
+  {
+    q: 'What happens after the session?',
+    a: 'You get written deliverables (briefing, rollout plan, etc.) within 48 hours. Async follow-up questions are included. If you need implementation help, that is what Colab is for.',
+  },
+];
+
+const guardrails = [
+  {
+    title: 'Human approval required',
+    desc: 'Claude Code proposes changes; your team reviews and merges. No code ships without human sign-off.',
+  },
+  {
+    title: 'Scoped permissions',
+    desc: 'You control what Claude Code can access—repos, branches, tools. Start narrow, expand as trust builds.',
+  },
+  {
+    title: 'No data exfiltration',
+    desc: 'Code stays in your environment. We cover data handling policies and what to watch for.',
+  },
+  {
+    title: 'Audit trail',
+    desc: 'Every action Claude Code takes is logged. You can review what it did and why.',
+  },
+];
 ---
 
 <Layout
-  title="Learn with Jeremy | Claude Code Training & Coaching"
-  description="Skip the tutorials that stop at 'Hello World'. 1:1 coaching, live workshops, and hands-on training from a Claude Code specialist with 227+ plugins."
+  title="Claude Code for Leaders | Executive Onramp & Training"
+  description="Understand Claude Code well enough to green-light or de-risk it for your team. Executive briefings, rollout plans, and governance guidance—not coding lessons."
 >
   <SiteNav />
 
@@ -17,74 +59,85 @@ import Contact from '../../components/Contact';
     <LearnHero client:load />
     <LearnOfferings client:visible />
 
-    <!-- Resources Section - Previous education cards -->
-    <section class="py-20 bg-zinc-900 border-t border-zinc-800/60">
+    <!-- Risk & Guardrails Section -->
+    <section class="py-16 bg-zinc-950 border-t border-zinc-800/60">
       <div class="container mx-auto px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-h2 font-bold text-zinc-50 mb-4">
-            resources
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-h2 font-bold text-zinc-50 mb-4 text-center">
+            Risk & Guardrails
           </h2>
-          <p class="text-zinc-400">
-            Self-serve guides on how we work
+          <p class="text-zinc-400 text-center mb-8 max-w-2xl mx-auto">
+            Claude Code is powerful, but power without control is risk. Here is how we keep it safe.
           </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            {guardrails.map((item) => (
+              <div class="p-4 bg-zinc-800/30 border border-zinc-700/50 rounded-lg">
+                <h3 class="text-zinc-200 font-medium mb-1">{item.title}</h3>
+                <p class="text-sm text-zinc-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-          <!-- Pricing Card -->
+    <!-- FAQ Section -->
+    <section class="py-16 bg-zinc-900 border-t border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-h2 font-bold text-zinc-50 mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-zinc-200 font-medium mb-2">{faq.q}</h3>
+                <p class="text-sm text-zinc-400">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision Block -->
+    <section class="py-16 bg-zinc-950 border-t border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-h2 font-bold text-zinc-50 mb-4">
+            Ready to Ship?
+          </h2>
+          <p class="text-zinc-400 mb-6">
+            If your team is past the evaluation phase and ready to implement Claude Code workflows in your codebase, Colab is the next step.
+          </p>
           <a
-            href="/learn/pricing"
-            class="card-slate block transition-smooth hover:border-zinc-600 group h-full flex flex-col"
+            href="/colab"
+            class="inline-flex items-center gap-2 text-zinc-200 hover:text-zinc-50 transition-smooth font-medium"
           >
-            <div class="text-4xl mb-4">💰</div>
-            <h3 class="text-xl font-semibold text-zinc-100 mb-3 group-hover:text-zinc-50">
-              how pricing works
-            </h3>
-            <p class="text-sm text-zinc-400 flex-1 mb-4">
-              Flat platform fee + usage at provider list prices. Budget controls, prepaid blocks,
-              and export flexibility. No lock-in.
-            </p>
-            <span class="text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-              Read guide
-              <span aria-hidden="true">→</span>
-            </span>
+            Explore Colab with Jeremy
+            <span aria-hidden="true">→</span>
           </a>
+        </div>
+      </div>
+    </section>
 
-          <!-- Security Card -->
+    <!-- Final CTA -->
+    <section class="py-16 bg-zinc-900 border-t border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-h2 font-bold text-zinc-50 mb-4">
+            Get Started
+          </h2>
+          <p class="text-zinc-400 mb-6">
+            Book an Executive Onramp and walk away with a clear understanding of Claude Code and a practical rollout plan for your organization.
+          </p>
           <a
-            href="/learn/security"
-            class="card-slate block transition-smooth hover:border-zinc-600 group h-full flex flex-col"
+            href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary text-lg"
           >
-            <div class="text-4xl mb-4">🔒</div>
-            <h3 class="text-xl font-semibold text-zinc-100 mb-3 group-hover:text-zinc-50">
-              security: vertex vs self-hosted
-            </h3>
-            <p class="text-sm text-zinc-400 flex-1 mb-4">
-              Why we recommend Vertex Agent Engine for production agents. Comparison with
-              self-hosted low-code and when each approach fits.
-            </p>
-            <span class="text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-              Compare approaches
-              <span aria-hidden="true">→</span>
-            </span>
-          </a>
-
-          <!-- Models Card -->
-          <a
-            href="/learn/models"
-            class="card-slate block transition-smooth hover:border-zinc-600 group h-full flex flex-col"
-          >
-            <div class="text-4xl mb-4">🤖</div>
-            <h3 class="text-xl font-semibold text-zinc-100 mb-3 group-hover:text-zinc-50">
-              model-agnostic delivery
-            </h3>
-            <p class="text-sm text-zinc-400 flex-1 mb-4">
-              Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, or local. We select per
-              use case, data policy, latency, and cost.
-            </p>
-            <span class="text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-              See options
-              <span aria-hidden="true">→</span>
-            </span>
+            Book an Executive Onramp
           </a>
         </div>
       </div>

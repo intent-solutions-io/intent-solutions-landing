@@ -6,11 +6,34 @@ import ColabHero from '../components/ColabHero';
 import ColabTypes from '../components/ColabTypes';
 import ColabIdealFor from '../components/ColabIdealFor';
 import Contact from '../components/Contact';
+
+const faqs = [
+  {
+    q: 'How does pricing work?',
+    a: 'Sprints are scoped and priced upfront based on deliverables. Monthly engagements are retainer-based with a set number of hours. Advisory is hourly. We agree on scope before any work begins.',
+  },
+  {
+    q: 'How do you access our codebase?',
+    a: 'You grant me access to specific repos with the permissions you choose. I work in branches, submit PRs, and your team reviews and merges. I never push directly to main without review.',
+  },
+  {
+    q: 'What if our team needs to take over?',
+    a: 'Clean handoff is part of every engagement. You get documentation, runbooks, and training. The goal is for your team to maintain and extend the work independently.',
+  },
+  {
+    q: 'Do you use AI to write our code?',
+    a: 'Yes — that is the point. I use Claude Code (and other tools) to accelerate delivery. But every line is reviewed by me and then by your team before it ships. AI is the accelerant, not the autopilot.',
+  },
+  {
+    q: 'What if we need something outside Claude Code?',
+    a: 'I also do Vertex AI agents, GCP infrastructure, and general automation. If your project involves adjacent work, we can scope that in. If it is outside my wheelhouse, I will tell you.',
+  },
+];
 ---
 
 <Layout
-  title="Colab with Jeremy | Partnerships & Joint Ventures"
-  description="Build together. Ship together. Win together. Looking for a technical partner who can actually build? Joint ventures, white-label solutions, revenue share, and more."
+  title="Colab with Jeremy | Claude Code Implementation Partner"
+  description="Implementation partner in your repo: we ship Claude Code workflows, plugins, and agents alongside your team. Real PRs, reviewed and deployed."
 >
   <SiteNav />
 
@@ -18,6 +41,69 @@ import Contact from '../components/Contact';
     <ColabHero client:load />
     <ColabTypes client:visible />
     <ColabIdealFor client:visible />
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-zinc-950 border-t border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-h2 font-bold text-zinc-50 mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="border-b border-zinc-800 pb-6">
+                <h3 class="text-zinc-200 font-medium mb-2">{faq.q}</h3>
+                <p class="text-sm text-zinc-400">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision Block -->
+    <section class="py-16 bg-zinc-900 border-t border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-h2 font-bold text-zinc-50 mb-4">
+            New to Claude Code?
+          </h2>
+          <p class="text-zinc-400 mb-6">
+            If you are still evaluating Claude Code or need to get leadership buy-in first, start with an Executive Onramp. Learn is designed for decision-makers who need clarity before committing resources.
+          </p>
+          <a
+            href="/learn"
+            class="inline-flex items-center gap-2 text-zinc-200 hover:text-zinc-50 transition-smooth font-medium"
+          >
+            Explore Learn with Jeremy
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-zinc-950 border-t border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-h2 font-bold text-zinc-50 mb-4">
+            Ready to Ship?
+          </h2>
+          <p class="text-zinc-400 mb-6">
+            Book a call to scope your first Delivery Sprint. We will define the deliverables, timeline, and get to work.
+          </p>
+          <a
+            href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary text-lg"
+          >
+            Start a Delivery Sprint
+          </a>
+        </div>
+      </div>
+    </section>
+
     <Contact client:visible />
   </main>
 
