@@ -1,30 +1,551 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
+const lastUpdated = 'January 19, 2025';
 ---
 
-<Layout title="Acceptable Use Policy - intent solutions io">
-  <div class="min-h-screen bg-zinc-900 py-24">
-    <div class="container mx-auto px-8 max-w-4xl">
-      <h1 class="text-h1 font-bold text-zinc-50 mb-12">Acceptable Use Policy</h1>
-
-      <div class="getterms-document-embed"
-           data-getterms="wH2cn"
-           data-getterms-document="acceptable-use"
-           data-getterms-lang="en-us"
-           data-getterms-mode="direct"
-           data-getterms-env="https://gettermscdn.com">
+<LayoutRedesign title="Acceptable Use Policy - Intent Solutions">
+  <!-- SECTION 1: Hero + Introduction (IMAGE BACKGROUND) -->
+  <section class="acceptable-use-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Acceptable <span class="highlight-box">Use</span> Policy
+        </h1>
+        <p class="last-updated">Last Updated: {lastUpdated}</p>
+        <p class="hero-description">
+          This Acceptable Use Policy outlines prohibited activities when using Intent Solutions' services. By accessing our AI solutions, consulting services, or products, you agree to use them responsibly and lawfully.
+        </p>
       </div>
-
-      <script type="text/javascript">
-        (function(d, s, id) {
-          var js, ref = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://gettermscdn.com/dist/js/embed.js";
-          ref.parentNode.insertBefore(js, ref);
-        })(document, "script", "getterms-embed-js");
-      </script>
     </div>
-  </div>
-</Layout>
+  </section>
+
+  <!-- SECTION 2: Main Policy Content (DARK BACKGROUND ONLY) -->
+  <section class="policy-content">
+    <div class="container">
+      <div class="policy-text">
+
+        <!-- Overview -->
+        <h2>1. <span class="highlight-box">Overview</span></h2>
+        <p>
+          This Acceptable Use Policy ("Policy") governs your use of Intent Solutions' services, including our AI/ML consulting, software products, cloud infrastructure, and related offerings. This Policy is incorporated into our Terms of Service.
+        </p>
+        <p>
+          We reserve the right to investigate any violation of this Policy and take appropriate action, including suspension or termination of services, removal of content, and reporting to law enforcement authorities.
+        </p>
+
+        <!-- Prohibited Activities -->
+        <h2>2. <span class="highlight-box">Prohibited Activities</span></h2>
+        <p>
+          You may not use our Services to engage in, facilitate, or promote any of the following activities:
+        </p>
+
+        <h3>2.1 Illegal Activities</h3>
+        <ul>
+          <li><strong>Criminal Conduct:</strong> Any activity that violates federal, state, local, or international laws</li>
+          <li><strong>Fraud:</strong> Deceptive practices, identity theft, phishing, or financial fraud</li>
+          <li><strong>Intellectual Property Infringement:</strong> Copyright violation, trademark infringement, or unauthorized use of proprietary content</li>
+          <li><strong>Unauthorized Access:</strong> Hacking, password cracking, or bypassing security measures</li>
+          <li><strong>Distribution of Malware:</strong> Creating, distributing, or facilitating viruses, ransomware, or malicious code</li>
+        </ul>
+
+        <h3>2.2 Harmful Content</h3>
+        <ul>
+          <li><strong>Child Safety:</strong> Content exploiting or endangering minors in any way</li>
+          <li><strong>Violence:</strong> Graphic violence, terrorism promotion, or content inciting harm</li>
+          <li><strong>Hate Speech:</strong> Content promoting hatred, discrimination, or violence based on race, ethnicity, religion, gender, sexual orientation, disability, or other protected characteristics</li>
+          <li><strong>Harassment:</strong> Threatening, bullying, stalking, or abusive behavior toward individuals or groups</li>
+          <li><strong>Non-Consensual Content:</strong> Intimate images shared without consent, deepfakes, or unauthorized impersonation</li>
+        </ul>
+
+        <h3>2.3 Spam and Abuse</h3>
+        <ul>
+          <li><strong>Mass Unsolicited Communications:</strong> Sending spam emails, SMS, or other bulk messages</li>
+          <li><strong>Automated Scraping:</strong> Using bots or automated tools to scrape data without authorization</li>
+          <li><strong>Resource Abuse:</strong> Excessive API calls, denial-of-service attacks, or intentional service degradation</li>
+          <li><strong>Fake Accounts:</strong> Creating multiple accounts for deceptive purposes or circumventing restrictions</li>
+        </ul>
+
+        <!-- AI-Specific Restrictions -->
+        <h2>3. AI-Specific <span class="highlight-box">Restrictions</span></h2>
+        <p>
+          When using our AI services, including Claude Code plugins, custom AI agents, or AI infrastructure:
+        </p>
+
+        <h3>3.1 Model Misuse</h3>
+        <ul>
+          <li><strong>Jailbreaking:</strong> Attempting to bypass safety filters, content policies, or usage restrictions</li>
+          <li><strong>Malicious Prompts:</strong> Crafting prompts designed to generate harmful, illegal, or dangerous content</li>
+          <li><strong>Bias Amplification:</strong> Intentionally exploiting or amplifying model biases for harmful purposes</li>
+          <li><strong>Misinformation:</strong> Using AI to generate misleading content, fake news, or manipulated media at scale</li>
+        </ul>
+
+        <h3>3.2 Unauthorized Usage</h3>
+        <ul>
+          <li><strong>Competing Products:</strong> Using our AI infrastructure to build direct competing products without authorization</li>
+          <li><strong>Reverse Engineering:</strong> Attempting to extract model weights, training data, or proprietary algorithms</li>
+          <li><strong>Benchmark Gaming:</strong> Manipulating benchmarks or performance metrics to misrepresent capabilities</li>
+          <li><strong>Credential Theft:</strong> Using AI to generate phishing content, fake credentials, or social engineering attacks</li>
+        </ul>
+
+        <h3>3.3 Data Privacy Violations</h3>
+        <ul>
+          <li><strong>PII Processing:</strong> Processing personally identifiable information without proper consent or legal basis</li>
+          <li><strong>Training Data Misuse:</strong> Using customer data to train models without explicit permission</li>
+          <li><strong>Data Exfiltration:</strong> Attempting to extract other users' data or system information</li>
+          <li><strong>Cross-Tenant Access:</strong> Attempting to access data or resources from other customers</li>
+        </ul>
+
+        <!-- Security and Infrastructure -->
+        <h2>4. Security and <span class="highlight-box">Infrastructure</span></h2>
+        <p>
+          You must use our cloud infrastructure and services securely:
+        </p>
+        <ul>
+          <li><strong>Security Testing:</strong> Do not perform penetration testing or vulnerability scanning without written permission</li>
+          <li><strong>Network Attacks:</strong> No port scanning, DDoS attacks, or other network-based attacks</li>
+          <li><strong>Credential Sharing:</strong> Do not share API keys, passwords, or access credentials</li>
+          <li><strong>Encryption Requirements:</strong> Use encryption for sensitive data in transit and at rest</li>
+          <li><strong>Vulnerability Disclosure:</strong> Report security vulnerabilities responsibly through proper channels</li>
+        </ul>
+
+        <!-- Data Usage and Retention -->
+        <h2>5. Data <span class="highlight-box">Usage</span> and Retention</h2>
+        <p>
+          When using our services, you must:
+        </p>
+        <ul>
+          <li><strong>Legal Compliance:</strong> Ensure all data usage complies with GDPR, CCPA, and other applicable privacy laws</li>
+          <li><strong>Data Minimization:</strong> Collect and process only necessary data for your use case</li>
+          <li><strong>User Consent:</strong> Obtain proper consent for data collection and processing</li>
+          <li><strong>Retention Limits:</strong> Follow data retention policies and delete data when no longer needed</li>
+          <li><strong>Third-Party Data:</strong> Respect third-party data rights and licensing agreements</li>
+        </ul>
+
+        <!-- Rate Limits and Resource Usage -->
+        <h2>6. Rate Limits and <span class="highlight-box">Resource Usage</span></h2>
+        <p>
+          To ensure fair usage for all customers:
+        </p>
+        <ul>
+          <li><strong>API Rate Limits:</strong> Respect published API rate limits and quotas</li>
+          <li><strong>Compute Resources:</strong> Use compute resources efficiently and as specified in your plan</li>
+          <li><strong>Storage Limits:</strong> Stay within allocated storage quotas</li>
+          <li><strong>Bandwidth:</strong> Avoid excessive bandwidth consumption that impacts other users</li>
+          <li><strong>Burst Traffic:</strong> Implement proper rate limiting and caching to avoid sudden traffic spikes</li>
+        </ul>
+
+        <!-- Commercial Use Restrictions -->
+        <h2>7. Commercial <span class="highlight-box">Use</span> Restrictions</h2>
+        <p>
+          For open-source tools and free-tier services:
+        </p>
+        <ul>
+          <li><strong>Attribution:</strong> Provide proper attribution as required by open-source licenses</li>
+          <li><strong>License Compliance:</strong> Follow MIT, Apache 2.0, or other applicable license terms</li>
+          <li><strong>Free Tier Limits:</strong> Do not abuse free-tier services for commercial purposes beyond stated limits</li>
+          <li><strong>Resale Restrictions:</strong> Do not resell access to our services without authorization</li>
+        </ul>
+
+        <!-- Enforcement and Consequences -->
+        <h2>8. <span class="highlight-box">Enforcement</span> and Consequences</h2>
+        <p>
+          Violations of this Policy may result in:
+        </p>
+
+        <h3>8.1 Immediate Actions</h3>
+        <ul>
+          <li><strong>Content Removal:</strong> Immediate removal of violating content or data</li>
+          <li><strong>Service Suspension:</strong> Temporary suspension of account access pending investigation</li>
+          <li><strong>Rate Limiting:</strong> Throttling or limiting API access for abuse</li>
+          <li><strong>Account Termination:</strong> Permanent termination of services for serious violations</li>
+        </ul>
+
+        <h3>8.2 Legal Actions</h3>
+        <ul>
+          <li><strong>Law Enforcement:</strong> Reporting criminal activity to appropriate authorities</li>
+          <li><strong>Civil Liability:</strong> Pursuing legal action for damages caused by violations</li>
+          <li><strong>Third-Party Claims:</strong> Cooperation with third-party intellectual property or legal claims</li>
+          <li><strong>Data Preservation:</strong> Preserving data for legal proceedings as required</li>
+        </ul>
+
+        <h3>8.3 No Refunds</h3>
+        <p>
+          Violations of this Policy may result in immediate termination without refund of any prepaid fees or subscription costs.
+        </p>
+
+        <!-- Reporting Violations -->
+        <h2>9. Reporting <span class="highlight-box">Violations</span></h2>
+        <p>
+          If you become aware of any violations of this Policy:
+        </p>
+        <ul>
+          <li><strong>Contact Us:</strong> Email <a href="mailto:jeremy@intentsolutions.io">jeremy@intentsolutions.io</a> with detailed information</li>
+          <li><strong>Provide Evidence:</strong> Include URLs, screenshots, or other evidence of violations</li>
+          <li><strong>Response Time:</strong> We will investigate and respond within 48 hours</li>
+          <li><strong>Confidentiality:</strong> Reports are handled confidentially where possible</li>
+        </ul>
+
+        <!-- Changes to This Policy -->
+        <h2>10. Changes to This <span class="highlight-box">Policy</span></h2>
+        <p>
+          We may update this Acceptable Use Policy from time to time. Material changes will be communicated via:
+        </p>
+        <ul>
+          <li>Email notification to registered users</li>
+          <li>Prominent notice on our website</li>
+          <li>In-app notification for significant changes</li>
+        </ul>
+        <p>
+          Continued use of our Services after changes constitutes acceptance of the updated Policy.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Reporting Contact (DARK + TEAL WAVE BACKGROUND) -->
+  <section class="policy-contact">
+    <!-- Teal wave background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="contact-content">
+        <h2>Report Policy <span class="highlight-box">Violations</span></h2>
+        <p>
+          If you encounter content or behavior that violates this Acceptable Use Policy, please report it immediately.
+        </p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <strong>Email:</strong>
+            <a href="mailto:jeremy@intentsolutions.io">jeremy@intentsolutions.io</a>
+          </div>
+          <div class="contact-item">
+            <strong>Response Time:</strong>
+            <span>Within 48 hours</span>
+          </div>
+          <div class="contact-item">
+            <strong>Include:</strong>
+            <span>URLs, screenshots, and detailed description</span>
+          </div>
+          <div class="contact-item">
+            <strong>Confidential:</strong>
+            <span>Reports handled with discretion</span>
+          </div>
+        </div>
+        <p class="legal-note">
+          Thank you for helping us maintain a safe, secure, and lawful environment for all users.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</LayoutRedesign>
+
+<style>
+  /* ============================================
+     SECTION 1: Hero + Introduction (IMAGE BACKGROUND)
+     ============================================ */
+  .acceptable-use-hero {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.80) 100%
+      ),
+      url('/images/acceptable-use-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    padding: 10rem 0 5rem;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+
+  .last-updated {
+    font-size: 0.875rem;
+    color: var(--color-accent-secondary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .acceptable-use-hero {
+      padding: 8rem 0 4rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 2: Main Policy Content (DARK BACKGROUND ONLY)
+     ============================================ */
+  .policy-content {
+    background: var(--bg-dark);
+    padding: 4rem 0;
+  }
+
+  .policy-text {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .policy-text h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(13, 148, 136, 0.3);
+  }
+
+  .policy-text h2:first-child {
+    margin-top: 0;
+  }
+
+  .policy-text h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .policy-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .policy-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .policy-text li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light-muted);
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .policy-text li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-secondary);
+    border-radius: 50%;
+  }
+
+  .policy-text a {
+    color: var(--color-accent-secondary);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+  }
+
+  .policy-text a:hover {
+    color: #14b8a6;
+  }
+
+  @media (max-width: 768px) {
+    .policy-content {
+      padding: 3rem 0 4rem;
+    }
+
+    .policy-text h2 {
+      font-size: 1.5rem;
+    }
+
+    .policy-text h3 {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 3: Reporting Contact (DARK + TEAL WAVE)
+     ============================================ */
+  .policy-contact {
+    position: relative;
+    background: var(--bg-dark);
+    overflow: hidden;
+    padding: 4rem 0 6rem;
+  }
+
+  /* Teal wave background */
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .contact-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-content > p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(13, 148, 136, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(13, 148, 136, 0.3);
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .contact-item strong {
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  .contact-item span {
+    color: var(--text-light-muted);
+  }
+
+  .contact-item a {
+    color: var(--color-accent-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-item a:hover {
+    color: #14b8a6;
+  }
+
+  .legal-note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .policy-contact {
+      padding: 3rem 0;
+    }
+
+    .contact-content h2 {
+      font-size: 1.75rem;
+    }
+
+    .contact-details {
+      padding: 1.5rem;
+    }
+
+    .contact-item {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+
+  /* ============================================
+     Highlight Box (Lime)
+     ============================================ */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Container */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+</style>

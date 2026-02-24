@@ -1,0 +1,525 @@
+---
+// Horizontal Projects Carousel with colorful backgrounds
+---
+
+<section class="projects-section">
+  <div class="container">
+    <!-- Header with Navigation Arrows -->
+    <div class="projects-header">
+      <div>
+        <span class="section-badge animate-on-scroll">
+          <span class="badge-dot"></span>
+          OUR WORK
+        </span>
+        <h2 class="section-title animate-on-scroll">
+          Products We've
+          <span class="highlight-box">Shipped</span>
+        </h2>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="carousel-nav">
+        <button class="nav-arrow prev" aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="nav-arrow next" aria-label="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Carousel Track -->
+    <div class="carousel-container">
+      <div class="carousel-track">
+
+        <!-- Project Card 1 - Purple -->
+        <div class="project-card" style="--card-bg: #8b5cf6;">
+          <div class="project-image">
+            <img src="/projects/claude-plugins.jpg" alt="Claude Code Plugins Hub" />
+          </div>
+          <div class="project-info">
+            <h3>Claude Code Plugins Hub</h3>
+            <p>227 plugins for Claude Code with Skills Powerkit — 197 GitHub stars, community-driven development.</p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>Open Source</span>
+              <span>197★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 - Teal -->
+        <div class="project-card" style="--card-bg: #14b8a6;">
+          <div class="project-image">
+            <img src="/projects/diagnostic-pro.jpg" alt="DiagnosticPro" />
+          </div>
+          <div class="project-info">
+            <h3>DiagnosticPro</h3>
+            <p>Live automotive diagnostics for service centers — Vertex AI orchestrates triage while Firebase keeps technicians synced.</p>
+            <div class="project-tags">
+              <span>TypeScript</span>
+              <span>React</span>
+              <span>Vertex AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 - Coral/Orange -->
+        <div class="project-card" style="--card-bg: #f97316;">
+          <div class="project-image">
+            <img src="/projects/bobs-brain.jpg" alt="Bob's Brain" />
+          </div>
+          <div class="project-info">
+            <h3>Bob's Brain</h3>
+            <p>Collaborative AI assistant with Slack integration — Google Gemini 2.5, Neo4j knowledge graphs, BigQuery analytics.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Gemini</span>
+              <span>Neo4j</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 - Blue -->
+        <div class="project-card" style="--card-bg: #3b82f6;">
+          <div class="project-image">
+            <img src="/projects/waygate-mcp.jpg" alt="Waygate MCP" />
+          </div>
+          <div class="project-info">
+            <h3>Waygate MCP</h3>
+            <p>Secure Model Context Protocol server for enterprise stacks — container isolation for AI agents.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Docker</span>
+              <span>Security</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 5 - Green -->
+        <div class="project-card" style="--card-bg: #22c55e;">
+          <div class="project-image">
+            <img src="/projects/hustle.jpg" alt="HUSTLE" />
+          </div>
+          <div class="project-info">
+            <h3>HUSTLE</h3>
+            <p>Youth sports performance tracking backed by a 76-question parent research study — collecting beta testers.</p>
+            <div class="project-tags">
+              <span>Next.js</span>
+              <span>PostgreSQL</span>
+              <span>Research</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 6 - Pink -->
+        <div class="project-card" style="--card-bg: #ec4899;">
+          <div class="project-image">
+            <img src="/projects/news-pipeline.jpg" alt="News Pipeline" />
+          </div>
+          <div class="project-info">
+            <h3>News Pipeline</h3>
+            <p>Automated monitoring that converts daily news into structured intelligence briefs for decision makers.</p>
+            <div class="project-tags">
+              <span>n8n</span>
+              <span>AI Analysis</span>
+              <span>4★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 7 - Purple (Start AI Tools) -->
+        <div class="project-card" style="--card-bg: #a855f7;">
+          <div class="project-image">
+            <img src="/projects/start-ai-tools.jpg" alt="Start AI Tools" />
+          </div>
+          <div class="project-info">
+            <h3>Start AI Tools</h3>
+            <p>AI tools directory with tutorials and implementation guides — 6 GitHub stars, developer-focused.</p>
+            <div class="project-tags">
+              <span>Hugo</span>
+              <span>Netlify</span>
+              <span>Markdown</span>
+              <span>6★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 8 - Sky Blue (Perception) -->
+        <div class="project-card" style="--card-bg: #0ea5e9;">
+          <div class="project-image">
+            <img src="/projects/perception.jpg" alt="Perception" />
+          </div>
+          <div class="project-info">
+            <h3>Perception</h3>
+            <p>Multi-agent news monitoring with 8 Vertex AI agents — real-time analysis from 50+ sources.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Firebase</span>
+              <span>Vertex AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 9 - Indigo (PipelinePilot) -->
+        <div class="project-card" style="--card-bg: #6366f1;">
+          <div class="project-image">
+            <img src="/projects/pipelinepilot.jpg" alt="PipelinePilot" />
+          </div>
+          <div class="project-info">
+            <h3>PipelinePilot</h3>
+            <p>B2B sales automation with AI lead qualification — SDR orchestration for multi-channel outreach.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Firestore</span>
+              <span>Google ADK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 10 - Emerald (CostPlusDB) -->
+        <div class="project-card" style="--card-bg: #10b981;">
+          <div class="project-image">
+            <img src="/projects/costplusdb.jpg" alt="CostPlusDB" />
+          </div>
+          <div class="project-info">
+            <h3>CostPlusDB</h3>
+            <p>PostgreSQL hosting at cost + 25% — transparent pricing with published benchmarks.</p>
+            <div class="project-tags">
+              <span>PostgreSQL</span>
+              <span>GCP Compute</span>
+              <span>Terraform</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 11 - Amber (Git With Intent) -->
+        <div class="project-card" style="--card-bg: #f59e0b;">
+          <div class="project-image">
+            <img src="/projects/git-with-intent.jpg" alt="Git With Intent" />
+          </div>
+          <div class="project-info">
+            <h3>Git With Intent</h3>
+            <p>AI-powered git workflows and commit analysis — automated changelogs and PR drafting.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Git</span>
+              <span>Vertex AI</span>
+              <span>1★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 12 - Red (IntentMail) -->
+        <div class="project-card" style="--card-bg: #ef4444;">
+          <div class="project-image">
+            <img src="/projects/intentmail.jpg" alt="IntentMail" />
+          </div>
+          <div class="project-info">
+            <h3>IntentMail</h3>
+            <p>Unified Gmail + Outlook with MCP integration — AI-powered email drafting for agents.</p>
+            <div class="project-tags">
+              <span>TypeScript</span>
+              <span>MCP Protocol</span>
+              <span>OAuth 2.0</span>
+              <span>1★</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="carousel-progress">
+      <div class="progress-bar"></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    padding: var(--section-padding) 0;
+    background: var(--bg-secondary);
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  /* Section Badge */
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-secondary);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .highlight-box {
+    display: inline-block;
+    background-color: var(--color-highlight);
+    color: var(--text-primary);
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0 0.25rem;
+  }
+
+  /* Navigation Arrows */
+  .carousel-nav {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .nav-arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+  }
+
+  .nav-arrow:hover {
+    background: var(--color-accent-primary);
+    transform: scale(1.05);
+  }
+
+  .nav-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .nav-arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Carousel Container */
+  .carousel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 -1.5rem;
+    padding: 0 1.5rem;
+    scroll-behavior: smooth;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  /* Project Card */
+  .project-card {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .project-image {
+    height: 200px;
+    background: var(--card-bg);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    position: relative;
+    z-index: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover .project-image img {
+    transform: scale(1.05);
+  }
+
+  .project-info {
+    padding: 1.5rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .project-info p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .project-tags span {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  /* Progress Bar */
+  .carousel-progress {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-top: 2rem;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 30%;
+    background: var(--color-accent-primary);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .projects-section {
+      padding: 3rem 0;
+    }
+
+    .projects-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .carousel-nav {
+      display: none;
+    }
+
+    .project-card {
+      flex: 0 0 280px;
+    }
+
+    .carousel-container {
+      margin: 0 -1rem;
+      padding: 0 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.carousel-container');
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.nav-arrow.prev');
+    const nextBtn = document.querySelector('.nav-arrow.next');
+    const progressBar = document.querySelector('.progress-bar');
+
+    const cardWidth = 320 + 24; // card width + gap
+
+    if (prevBtn && nextBtn && container) {
+      prevBtn.addEventListener('click', () => {
+        container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
+
+      // Update progress bar on scroll
+      container.addEventListener('scroll', () => {
+        const scrollPercent = container.scrollLeft / (container.scrollWidth - container.clientWidth);
+        if (progressBar) {
+          progressBar.style.width = `${Math.max(30, scrollPercent * 100)}%`;
+        }
+      });
+    }
+  });
+</script>

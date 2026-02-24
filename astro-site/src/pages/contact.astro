@@ -1,61 +1,468 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteNav from '../components/SiteNav.astro';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
 ---
 
-<Layout
-  title="Contact Us | Intent Solutions - Claude Code Systems"
-  description="Get in touch about Claude Code Systems, AI agents, or custom solutions. We respond within one business day."
->
-  <SiteNav />
+<LayoutRedesign title="Contact Us - Intent Solutions">
+  <!-- SECTION 1: Hero (IMAGE BACKGROUND) -->
+  <section class="contact-hero">
+    <div class="container">
+      <span class="section-badge">Get in Touch</span>
+      <h1 class="hero-title">Let's Build Something <span class="highlight-box">Together</span></h1>
+      <p class="hero-description">
+        Have a project in mind? Fill out the form below or book a call directly. We typically respond within 24 hours.
+      </p>
+    </div>
+  </section>
 
-  <main class="bg-zinc-900">
-    <div class="container mx-auto px-8 pt-8">
-      <a href="/" class="text-sm text-zinc-400 hover:text-zinc-200 transition-smooth">
-        &larr; Back to Home
-      </a>
+  <!-- SECTION 2: Contact Form + Info (DARK + TEAL WAVE) -->
+  <section class="contact-form-section">
+    <!-- Teal wave background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
     </div>
 
-    <Contact client:load />
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left: Form -->
+        <div class="form-container">
+          <h2>Send Us a <span class="highlight-box">Message</span></h2>
+          <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
 
-    <section class="py-16 bg-zinc-950 border-t border-zinc-800">
-      <div class="container mx-auto px-8">
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-xl font-semibold text-zinc-50 mb-6">Other Ways to Reach Us</h2>
-
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Schedule a Call</h3>
-              <a href="https://calendar.app.google/Dj5qDi9oQjDzGkcq8" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
-                Book a Meeting
-              </a>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="john@company.com">
+              </div>
             </div>
 
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Email</h3>
-              <a href="mailto:jeremy@intentsolutions.io" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
-                jeremy@intentsolutions.io
-              </a>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Acme Inc.">
+              </div>
+              <div class="form-group">
+                <label for="project-type">Project Type *</label>
+                <select id="project-type" name="project-type" required>
+                  <option value="">Select a service...</option>
+                  <option value="claude-code">Claude Code Setup</option>
+                  <option value="ai-agents">AI Agents (IAM)</option>
+                  <option value="private-ai">Private AI Deployment</option>
+                  <option value="automation">Automation (n8n)</option>
+                  <option value="cloud">Cloud & Data</option>
+                  <option value="consulting">General Consulting</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
 
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">LinkedIn</h3>
-              <a href="https://linkedin.com/in/jeremylongshore" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
-                /in/jeremylongshore
-              </a>
+            <div class="form-group">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="">Select budget range...</option>
+                <option value="under-5k">Under $5,000</option>
+                <option value="5k-15k">$5,000 - $15,000</option>
+                <option value="15k-50k">$15,000 - $50,000</option>
+                <option value="50k-plus">$50,000+</option>
+                <option value="ongoing">Ongoing Retainer</option>
+              </select>
             </div>
 
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Location</h3>
-              <p class="text-zinc-400 text-sm">Gulf Shores, Alabama</p>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Describe your project, goals, and timeline..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Right: Contact Info + Booking -->
+        <div class="contact-info">
+          <div class="info-card">
+            <h3>Prefer to Talk?</h3>
+            <p>Book a free 30-minute discovery call to discuss your project.</p>
+            <a href="https://calendar.app.google/ZZoyT2DFkMLbLsXw9" target="_blank" rel="noopener noreferrer" class="btn-primary btn-full">
+              📅 Book a Call
+            </a>
+          </div>
+
+          <div class="info-card">
+            <h3>Contact Details</h3>
+            <ul>
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:jeremy@intentsolutions.io">jeremy@intentsolutions.io</a>
+              </li>
+              <li>
+                <strong>Location:</strong>
+                Gulf Shores, Alabama
+              </li>
+              <li>
+                <strong>Response Time:</strong>
+                Within 24 hours
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="https://x.com/asphaltcowb0y" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                @asphaltcowb0y
+              </a>
+              <a href="https://github.com/jeremylongshore" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/jeremylongshore" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <Footer />
-</Layout>
+</LayoutRedesign>
+
+<style>
+  /* ============================================
+     SECTION 1: Hero (IMAGE BACKGROUND)
+     ============================================ */
+  .contact-hero {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.80) 100%
+      ),
+      url('/images/contact-hero-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    color: var(--color-accent-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .contact-hero {
+      padding: 6rem 0 3rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 2: Form + Info (DARK + TEAL WAVE)
+     ============================================ */
+  .contact-form-section {
+    position: relative;
+    background: var(--bg-dark);
+    padding: 5rem 0 6rem;
+    overflow: hidden;
+  }
+
+  /* Teal wave background */
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .contact-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 968px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ============================================
+     Form Container
+     ============================================ */
+  .form-container {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container h2 {
+    color: var(--text-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .btn-full {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--color-accent-primary), rgb(67 56 202));
+    border: none;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  }
+
+  /* ============================================
+     Contact Info Cards
+     ============================================ */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .info-card h3 {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .info-card p {
+    color: var(--text-light-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-card ul li {
+    color: var(--text-light-muted);
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+  }
+
+  .info-card ul li strong {
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .info-card ul li a {
+    color: var(--color-accent-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .info-card ul li a:hover {
+    color: #14b8a6;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light-muted);
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .social-link:hover {
+    color: var(--text-light);
+  }
+
+  .social-link svg {
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     Highlight Box (Lime)
+     ============================================ */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Container */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+</style>

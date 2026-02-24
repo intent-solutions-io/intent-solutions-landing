@@ -1,30 +1,525 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
+const lastUpdated = 'January 19, 2025';
 ---
 
-<Layout title="Terms of Service - intent solutions io">
-  <div class="min-h-screen bg-zinc-900 py-24">
-    <div class="container mx-auto px-8 max-w-4xl">
-      <h1 class="text-h1 font-bold text-zinc-50 mb-12">Terms of Service</h1>
-
-      <div class="getterms-document-embed"
-           data-getterms="wH2cn"
-           data-getterms-document="terms-of-service"
-           data-getterms-lang="en-us"
-           data-getterms-mode="direct"
-           data-getterms-env="https://gettermscdn.com">
+<LayoutRedesign title="Terms of Service - Intent Solutions">
+  <!-- SECTION 1: Hero + Introduction (IMAGE BACKGROUND) -->
+  <section class="terms-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Terms of <span class="highlight-box">Service</span>
+        </h1>
+        <p class="last-updated">Last Updated: {lastUpdated}</p>
+        <p class="hero-description">
+          Welcome to Intent Solutions. By accessing or using our services, you agree to be bound by these Terms of Service. Please read them carefully before using our AI solutions, consulting services, or products.
+        </p>
       </div>
-
-      <script type="text/javascript">
-        (function(d, s, id) {
-          var js, ref = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://gettermscdn.com/dist/js/embed.js";
-          ref.parentNode.insertBefore(js, ref);
-        })(document, "script", "getterms-embed-js");
-      </script>
     </div>
-  </div>
-</Layout>
+  </section>
+
+  <!-- SECTION 2: Main Terms Content (DARK BACKGROUND ONLY) -->
+  <section class="terms-content">
+    <div class="container">
+      <div class="terms-text">
+
+        <!-- Agreement to Terms -->
+        <h2>1. <span class="highlight-box">Agreement</span> to Terms</h2>
+        <p>
+          By accessing intentsolutions.io ("Website") or using any of our services, consulting, software products, or AI solutions ("Services"), you agree to these Terms of Service and our Privacy Policy. If you disagree with any part of these terms, you may not access our Services.
+        </p>
+
+        <!-- Services Description -->
+        <h2>2. Services <span class="highlight-box">Description</span></h2>
+        <p>
+          Intent Solutions provides AI/ML consulting, custom AI agent development, private AI infrastructure setup, cloud architecture design, automation solutions, and related professional services. Our offerings include:
+        </p>
+        <ul>
+          <li>Claude Code plugins and custom AI tools development</li>
+          <li>Private AI infrastructure deployment (Google Cloud, Firebase, Vertex AI)</li>
+          <li>Multi-agent orchestration and RAG pipeline implementation</li>
+          <li>AI automation and workflow optimization</li>
+          <li>Consulting and technical advisory services</li>
+          <li>Open-source software tools and frameworks</li>
+        </ul>
+
+        <!-- Acceptable Use -->
+        <h2>3. <span class="highlight-box">Acceptable Use</span></h2>
+        <p>
+          You agree to use our Services only for lawful purposes and in accordance with these Terms. You agree not to:
+        </p>
+        <ul>
+          <li>Use the Services in any way that violates applicable federal, state, local, or international law</li>
+          <li>Engage in unauthorized access, hacking, or attempts to bypass security measures</li>
+          <li>Transmit malicious code, viruses, or any harmful software</li>
+          <li>Misrepresent your identity or affiliation with any person or organization</li>
+          <li>Use the Services to develop competing products or services</li>
+          <li>Reverse engineer, decompile, or disassemble proprietary software</li>
+          <li>Use automated systems to scrape or collect data without authorization</li>
+        </ul>
+
+        <!-- Intellectual Property -->
+        <h2>4. Intellectual <span class="highlight-box">Property</span></h2>
+        <p>
+          All content, trademarks, service marks, logos, and intellectual property on our Website and within our Services are owned by Intent Solutions or our licensors. This includes but is not limited to:
+        </p>
+        <ul>
+          <li>Source code, software, and technical implementations</li>
+          <li>Documentation, tutorials, and educational materials</li>
+          <li>Design elements, graphics, and branding assets</li>
+          <li>Custom AI models, prompts, and training methodologies</li>
+        </ul>
+        <p>
+          Open-source software we publish is governed by their respective licenses (MIT, Apache 2.0, etc.). Commercial work product developed for clients remains subject to individual client agreements.
+        </p>
+
+        <!-- Privacy and Data -->
+        <h2>5. Privacy and <span class="highlight-box">Data Protection</span></h2>
+        <p>
+          We are committed to protecting your privacy. Our collection, use, and disclosure of personal information is governed by our Privacy Policy. Key principles:
+        </p>
+        <ul>
+          <li>We collect only necessary data for service delivery</li>
+          <li>Client data is encrypted in transit and at rest</li>
+          <li>We do not sell or share personal information with third parties</li>
+          <li>You retain ownership of your data and content</li>
+          <li>Data deletion requests are honored within 30 days</li>
+        </ul>
+
+        <!-- Payment Terms -->
+        <h2>6. Payment <span class="highlight-box">Terms</span></h2>
+        <p>
+          For paid Services, you agree to pay all fees as specified in your agreement or invoice. Payment terms include:
+        </p>
+        <ul>
+          <li>Consulting services are billed hourly or project-based as agreed</li>
+          <li>Payment is due within 15 days of invoice date unless otherwise specified</li>
+          <li>Late payments may incur interest charges of 1.5% per month</li>
+          <li>Subscription services auto-renew unless canceled 30 days prior to renewal</li>
+          <li>Refunds are provided at our discretion on a case-by-case basis</li>
+        </ul>
+
+        <!-- Warranties and Disclaimers -->
+        <h2>7. Warranties and <span class="highlight-box">Disclaimers</span></h2>
+        <p>
+          Our Services are provided "as is" without warranties of any kind, either express or implied. We disclaim all warranties including merchantability, fitness for a particular purpose, and non-infringement.
+        </p>
+        <p>
+          While we strive for excellence, we do not warrant that:
+        </p>
+        <ul>
+          <li>Services will be uninterrupted, timely, secure, or error-free</li>
+          <li>Results obtained will be accurate, reliable, or meet your requirements</li>
+          <li>AI models will produce perfect outputs in all scenarios</li>
+          <li>Third-party integrations will function without limitation</li>
+        </ul>
+
+        <!-- Limitation of Liability -->
+        <h2>8. Limitation of <span class="highlight-box">Liability</span></h2>
+        <p>
+          To the maximum extent permitted by law, Intent Solutions shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:
+        </p>
+        <ul>
+          <li>Loss of profits, revenue, or business opportunities</li>
+          <li>Loss of data or business interruption</li>
+          <li>Cost of substitute services or products</li>
+          <li>Damages arising from third-party services or integrations</li>
+        </ul>
+        <p>
+          Our total liability for any claims arising from Services shall not exceed the amount you paid us in the 12 months preceding the claim.
+        </p>
+
+        <!-- Indemnification -->
+        <h2>9. <span class="highlight-box">Indemnification</span></h2>
+        <p>
+          You agree to indemnify, defend, and hold harmless Intent Solutions, its officers, directors, employees, and agents from any claims, liabilities, damages, losses, or expenses arising from:
+        </p>
+        <ul>
+          <li>Your use or misuse of the Services</li>
+          <li>Violation of these Terms or applicable laws</li>
+          <li>Infringement of third-party intellectual property rights</li>
+          <li>Your content, data, or materials provided to us</li>
+        </ul>
+
+        <!-- Termination -->
+        <h2>10. <span class="highlight-box">Termination</span></h2>
+        <p>
+          We may terminate or suspend your access to Services immediately, without prior notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties.
+        </p>
+        <p>
+          You may terminate your account at any time by contacting us. Upon termination:
+        </p>
+        <ul>
+          <li>All licenses and rights granted to you will cease</li>
+          <li>You must cease all use of the Services</li>
+          <li>Outstanding fees remain payable</li>
+          <li>We will delete your data within 30 days unless legally required to retain it</li>
+        </ul>
+
+        <!-- Changes to Terms -->
+        <h2>11. Changes to <span class="highlight-box">Terms</span></h2>
+        <p>
+          We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to the Website. Your continued use of Services after changes constitutes acceptance of the modified Terms.
+        </p>
+        <p>
+          We will make reasonable efforts to notify you of material changes via email or Website notice.
+        </p>
+
+        <!-- Governing Law -->
+        <h2>12. Governing <span class="highlight-box">Law</span></h2>
+        <p>
+          These Terms shall be governed by and construed in accordance with the laws of the State of Alabama, United States, without regard to its conflict of law provisions.
+        </p>
+        <p>
+          Any legal action or proceeding arising under these Terms shall be brought exclusively in the federal or state courts located in Baldwin County, Alabama.
+        </p>
+
+        <!-- Dispute Resolution -->
+        <h2>13. Dispute <span class="highlight-box">Resolution</span></h2>
+        <p>
+          In the event of any dispute, claim, or controversy arising from these Terms, the parties agree to first attempt resolution through good-faith negotiation for 30 days.
+        </p>
+        <p>
+          If negotiation fails, disputes shall be resolved through binding arbitration in accordance with the American Arbitration Association rules, conducted in Baldwin County, Alabama.
+        </p>
+
+        <!-- Severability -->
+        <h2>14. <span class="highlight-box">Severability</span></h2>
+        <p>
+          If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions will continue in full force and effect. The invalid provision will be modified to the minimum extent necessary to make it valid and enforceable.
+        </p>
+
+        <!-- Entire Agreement -->
+        <h2>15. Entire <span class="highlight-box">Agreement</span></h2>
+        <p>
+          These Terms, together with our Privacy Policy and any applicable client agreements, constitute the entire agreement between you and Intent Solutions regarding the Services.
+        </p>
+        <p>
+          These Terms supersede all prior or contemporaneous communications and proposals, whether electronic, oral, or written.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Contact/Questions (DARK + TEAL WAVE BACKGROUND) -->
+  <section class="terms-contact">
+    <!-- Teal wave background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="contact-content">
+        <h2>Questions About These <span class="highlight-box">Terms</span>?</h2>
+        <p>
+          If you have any questions about these Terms of Service, please contact us:
+        </p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <strong>Email:</strong>
+            <a href="mailto:jeremy@intentsolutions.io">jeremy@intentsolutions.io</a>
+          </div>
+          <div class="contact-item">
+            <strong>Location:</strong>
+            <span>Gulf Shores, Alabama</span>
+          </div>
+          <div class="contact-item">
+            <strong>Website:</strong>
+            <a href="https://intentsolutions.io">intentsolutions.io</a>
+          </div>
+        </div>
+        <p class="legal-note">
+          By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</LayoutRedesign>
+
+<style>
+  /* ============================================
+     SECTION 1: Hero + Introduction (IMAGE BACKGROUND)
+     ============================================ */
+  .terms-hero {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.80) 100%
+      ),
+      url('/images/terms-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    padding: 10rem 0 5rem;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+
+  .last-updated {
+    font-size: 0.875rem;
+    color: var(--color-accent-secondary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .terms-hero {
+      padding: 8rem 0 4rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 2: Main Terms Content (DARK BACKGROUND ONLY)
+     ============================================ */
+  .terms-content {
+    background: var(--bg-dark);
+    padding: 4rem 0;
+  }
+
+  .terms-text {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .terms-text h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(13, 148, 136, 0.3);
+  }
+
+  .terms-text h2:first-child {
+    margin-top: 0;
+  }
+
+  .terms-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .terms-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .terms-text li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light-muted);
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .terms-text li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-secondary);
+    border-radius: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .terms-content {
+      padding: 3rem 0 4rem;
+    }
+
+    .terms-text h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 3: Contact/Questions (DARK + TEAL WAVE)
+     ============================================ */
+  .terms-contact {
+    position: relative;
+    background: var(--bg-dark);
+    overflow: hidden;
+    padding: 4rem 0 6rem;
+  }
+
+  /* Teal wave background */
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .contact-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-content > p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(13, 148, 136, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(13, 148, 136, 0.3);
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .contact-item strong {
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  .contact-item span {
+    color: var(--text-light-muted);
+  }
+
+  .contact-item a {
+    color: var(--color-accent-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-item a:hover {
+    color: #14b8a6;
+  }
+
+  .legal-note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .terms-contact {
+      padding: 3rem 0 4rem;
+    }
+
+    .contact-content h2 {
+      font-size: 1.75rem;
+    }
+
+    .contact-details {
+      padding: 1.5rem;
+    }
+
+    .contact-item {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+
+  /* ============================================
+     Highlight Box (Lime)
+     ============================================ */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Container */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+</style>

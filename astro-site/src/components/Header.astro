@@ -1,0 +1,448 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <nav class="nav-container">
+    <div class="nav-content">
+      <!-- Logo -->
+      <a href="/" class="logo">
+        <span class="logo-text">Intent Solutions</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <!-- Solutions Dropdown -->
+        <div class="dropdown">
+          <button class="nav-link dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            Solutions
+            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="/claude-code" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">Claude Code</div>
+                <div class="dropdown-item-desc">Custom Claude Code setups for teams</div>
+              </div>
+            </a>
+            <a href="/agents" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">AI Agents</div>
+                <div class="dropdown-item-desc">Intent Agent Models (IAM) for workflows</div>
+              </div>
+            </a>
+            <a href="/private-ai" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">Private AI</div>
+                <div class="dropdown-item-desc">ChatGPT on your own cloud</div>
+              </div>
+            </a>
+            <a href="/automation" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">Automation</div>
+                <div class="dropdown-item-desc">n8n + Netlify workflows</div>
+              </div>
+            </a>
+            <a href="/cloud" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">Cloud & Data</div>
+                <div class="dropdown-item-desc">Google Cloud architecture</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="dropdown">
+          <button class="nav-link dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            Resources
+            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="/learn" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">Learn</div>
+                <div class="dropdown-item-desc">Guides and documentation</div>
+              </div>
+            </a>
+            <a href="https://claude-code-plugins.intentsolutions.io" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">Plugins Hub</div>
+                <div class="dropdown-item-desc">258+ open-source plugins</div>
+              </div>
+            </a>
+            <a href="/resellers" class="dropdown-item">
+              <div class="dropdown-item-content">
+                <div class="dropdown-item-title">Partners</div>
+                <div class="dropdown-item-desc">White-label AI for agencies</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Regular Links -->
+        <a href="/pricing" class={`nav-link ${currentPath === '/pricing' ? 'active' : ''}`}>
+          Pricing
+        </a>
+        <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}>
+          About
+        </a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary">
+          Start a Project
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" style="display: none;">
+      <!-- Solutions Section -->
+      <div class="mobile-menu-section">
+        <button class="mobile-dropdown-trigger">
+          <span>Solutions</span>
+          <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content" style="display: none;">
+          <a href="/claude-code" class="mobile-menu-item">Claude Code</a>
+          <a href="/agents" class="mobile-menu-item">AI Agents</a>
+          <a href="/private-ai" class="mobile-menu-item">Private AI</a>
+          <a href="/automation" class="mobile-menu-item">Automation</a>
+          <a href="/cloud" class="mobile-menu-item">Cloud & Data</a>
+        </div>
+      </div>
+
+      <!-- Resources Section -->
+      <div class="mobile-menu-section">
+        <button class="mobile-dropdown-trigger">
+          <span>Resources</span>
+          <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content" style="display: none;">
+          <a href="/learn" class="mobile-menu-item">Learn</a>
+          <a href="https://claude-code-plugins.intentsolutions.io" target="_blank" rel="noopener noreferrer" class="mobile-menu-item">Plugins Hub</a>
+          <a href="/resellers" class="mobile-menu-item">Partners</a>
+        </div>
+      </div>
+
+      <a href="/pricing" class="mobile-menu-item">Pricing</a>
+      <a href="/about" class="mobile-menu-item">About</a>
+      <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">
+        Start a Project
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(250, 250, 248, 0.95);
+    backdrop-filter: blur(8px);
+    /* No border - clean Idealink-style */
+  }
+
+  .nav-container {
+    width: 100%;
+  }
+
+  .nav-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    gap: 2rem;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: rgb(var(--color-text-primary));
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .logo:hover {
+    color: rgb(var(--color-accent-primary));
+  }
+
+  .logo-text {
+    white-space: nowrap;
+  }
+
+  /* Desktop Navigation */
+  .nav-links {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-links {
+      display: flex;
+    }
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgb(var(--color-text-secondary));
+    background: none;
+    border: none;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover {
+    color: rgb(var(--color-text-primary));
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .nav-link.active {
+    color: rgb(var(--color-accent-primary));
+    background-color: rgb(var(--color-accent-light));
+  }
+
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .dropdown-icon {
+    transition: transform var(--transition-fast);
+  }
+
+  .dropdown:hover .dropdown-icon,
+  .dropdown-trigger[aria-expanded="true"] .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    min-width: 280px;
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all var(--transition-base);
+    padding: 0.5rem;
+  }
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown-trigger[aria-expanded="true"] + .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-item {
+    display: block;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+    color: rgb(var(--color-text-primary));
+    text-decoration: none;
+  }
+
+  .dropdown-item:hover {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .dropdown-item-title {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin-bottom: 0.125rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .dropdown-item-desc {
+    font-size: 0.8125rem;
+    color: rgb(var(--color-text-tertiary));
+    line-height: 1.4;
+  }
+
+  /* CTA */
+  .nav-cta {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-cta {
+      display: block;
+    }
+  }
+
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: rgb(var(--color-text-primary));
+    cursor: pointer;
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-menu-btn {
+      display: none;
+    }
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgb(var(--color-border));
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+
+  .mobile-menu-section {
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: rgb(var(--color-text-primary));
+    background: none;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+  }
+
+  .mobile-dropdown-trigger:hover {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .mobile-dropdown-content {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .mobile-menu-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+    color: rgb(var(--color-text-secondary));
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-menu-item:hover {
+    color: rgb(var(--color-text-primary));
+    background-color: rgb(var(--color-bg-secondary));
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const menuIcon = document.querySelector('.menu-icon');
+  const closeIcon = document.querySelector('.close-icon');
+
+  if (mobileMenuBtn && mobileMenu && menuIcon && closeIcon) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.style.display === 'block';
+      mobileMenu.style.display = isOpen ? 'none' : 'block';
+      menuIcon.style.display = isOpen ? 'block' : 'none';
+      closeIcon.style.display = isOpen ? 'none' : 'block';
+      mobileMenuBtn.setAttribute('aria-expanded', (!isOpen).toString());
+    });
+  }
+
+  // Mobile dropdown toggles
+  document.querySelectorAll('.mobile-dropdown-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const content = trigger.nextElementSibling as HTMLElement;
+      const icon = trigger.querySelector('.dropdown-icon') as HTMLElement;
+      if (content && icon) {
+        const isOpen = content.style.display === 'block';
+        content.style.display = isOpen ? 'none' : 'block';
+        icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+      }
+    });
+  });
+
+  // Desktop dropdown keyboard accessibility
+  document.querySelectorAll('.dropdown-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', (!isExpanded).toString());
+    });
+
+    trigger.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Escape') {
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-trigger').forEach((trigger) => {
+        trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+</script>

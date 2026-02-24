@@ -1,285 +1,1429 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/Footer';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
 ---
 
-<Layout
-  title="Private AI Infrastructure"
-  description="Keep AI in your own cloud with fixed pricing, compliance-ready guardrails, and a 48-hour rollout."
->
-  <SiteNav />
-
-  <main class="bg-zinc-900">
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-3xl">
-          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
-            private ai for enterprises
-          </p>
-          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
-            Your AI. Your data. Your control.
-          </h1>
-          <p class="text-lg text-zinc-400 leading-relaxed">
-            Launch a ChatGPT-style experience that runs entirely inside your infrastructure. No per-seat
-            pricing, no mystery data trails—just fast, private AI your team actually trusts.
-          </p>
+<LayoutRedesign title="Private AI - Intent Solutions">
+  <!-- SECTION 1: Hero + Why Private AI? (IMAGE BACKGROUND) -->
+  <section class="private-ai-hero-section">
+    <div class="container">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <span class="section-badge">Private AI Infrastructure</span>
+        <h1>Your <span class="highlight-box">AI</span>. Your data. Your control.</h1>
+        <p>Keep data on your cloud while offering a ChatGPT-style experience to every teammate. Model-agnostic, HIPAA-ready, and fully managed.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">Start Your Private AI</a>
+          <a href="#pricing" class="btn-secondary-light">View Pricing</a>
         </div>
       </div>
-    </section>
 
-    <section class="py-20 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-12 lg:grid-cols-2 items-center">
-          <div>
-            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Why cloud AI falls short</h2>
-            <p class="text-zinc-400 mb-6">
-              Public tools like ChatGPT or Claude are incredible, but they open up three headaches for
-              operators handling sensitive data.
-            </p>
-            <ul class="space-y-4 text-sm text-zinc-300">
-              <li class="flex gap-3">
-                <span class="mt-1 h-2 w-2 rounded-full bg-red-400"></span>
-                <span><strong>Data privacy:</strong> Every prompt leaves your environment and lives on somebody else’s servers.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1 h-2 w-2 rounded-full bg-red-400"></span>
-                <span><strong>Compliance risk:</strong> HIPAA, SOC 2, and privilege requirements all hinge on keeping records in-house.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-1 h-2 w-2 rounded-full bg-red-400"></span>
-                <span><strong>Total cost:</strong> $60+ per user adds up fast when every seat needs access.</span>
-              </li>
+      <!-- Comparison Content -->
+      <div class="comparison-content">
+        <h2>Why <span class="highlight-box">Private AI</span>?</h2>
+        <p class="section-subtitle">Compare cloud-based AI with private infrastructure built for your organization.</p>
+        <div class="comparison-grid">
+          <div class="comparison-card cloud">
+            <h3>Cloud AI</h3>
+            <p class="subtitle">(ChatGPT, Claude, Gemini)</p>
+            <ul>
+              <li class="con">Your data leaves your infrastructure</li>
+              <li class="con">Limited control over model versions</li>
+              <li class="con">Vendor lock-in with single provider</li>
+              <li class="con">Compliance concerns (HIPAA, SOC 2)</li>
+              <li class="con">No custom model fine-tuning</li>
             </ul>
           </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-4">Side-by-side snapshot</h3>
-            <table class="w-full text-sm text-left text-zinc-300">
-              <thead>
-                <tr class="text-zinc-400 uppercase text-xs tracking-widest">
-                  <th class="py-2">Cloud AI</th>
-                  <th class="py-2">Your Private AI</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-t border-zinc-800">
-                  <td class="py-3 pr-4">Data on vendor servers</td>
-                  <td class="py-3">Data never leaves your network</td>
-                </tr>
-                <tr class="border-t border-zinc-800">
-                  <td class="py-3 pr-4">$60/user/month</td>
-                  <td class="py-3">$3k/month, unlimited users</td>
-                </tr>
-                <tr class="border-t border-zinc-800">
-                  <td class="py-3 pr-4">Forced updates + terms</td>
-                  <td class="py-3">You decide when models change</td>
-                </tr>
-                <tr class="border-t border-zinc-800">
-                  <td class="py-3 pr-4">Limited customization</td>
-                  <td class="py-3">Full control over prompts + policies</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <h2 class="text-3xl font-bold text-zinc-50 mb-12">Simple pricing that scales with trust</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          <div class="card-slate">
-            <h3 class="text-xl font-semibold text-zinc-50 mb-2">Professional Package</h3>
-            <p class="text-sm text-zinc-400 mb-4">Best for teams getting started with private AI.</p>
-            <ul class="space-y-3 text-sm text-zinc-300">
-              <li><span class="font-semibold text-zinc-100">Starting at $8,000 one-time</span> — infrastructure deployment, 3 models, team training</li>
-              <li><span class="font-semibold text-zinc-100">Starting at $3,000/month</span> — hosting, monitoring, support, unlimited users</li>
-              <li>Includes onboarding playbooks and documentation handoff</li>
-            </ul>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-xl font-semibold text-zinc-50 mb-2">Enterprise Package</h3>
-            <p class="text-sm text-zinc-400 mb-4">For organizations that need deeper integrations and oversight.</p>
-            <ul class="space-y-3 text-sm text-zinc-300">
-              <li><span class="font-semibold text-zinc-100">Starting at $15,000 one-time</span> — custom integrations, fine-tuning, extended onboarding</li>
-              <li><span class="font-semibold text-zinc-100">Starting at $5,000/month</span> — priority support, dedicated optimization</li>
-              <li>Includes compliance documentation and change management playbooks</li>
+          <div class="comparison-card private">
+            <h3>Private AI</h3>
+            <p class="subtitle">(Your Infrastructure)</p>
+            <ul>
+              <li class="pro">Data stays in your Google Cloud project</li>
+              <li class="pro">Switch between 8+ AI models anytime</li>
+              <li class="pro">No vendor lock-in—complete portability</li>
+              <li class="pro">HIPAA-ready, audit logs included</li>
+              <li class="pro">Fine-tune models on your data</li>
             </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-10 lg:grid-cols-2">
-          <div>
-            <h2 class="text-3xl font-bold text-zinc-50 mb-6">What’s included</h2>
-            <div class="grid gap-4">
-              <a
-                href="/infrastructure"
-                class="card-slate block transition-smooth hover:border-zinc-600 group"
-              >
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
-                  Infrastructure
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  Runs in your cloud account (GCP, AWS, or Azure) with enterprise GPUs, auto-scaling,
-                  and 99.9% uptime SLA.
-                </p>
-                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-                  Learn how we deploy infrastructure
-                  <span aria-hidden="true">→</span>
-                </span>
-              </a>
-              <a
-                href="/learn/models"
-                class="card-slate block transition-smooth hover:border-zinc-600 group"
-              >
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
-                  AI models (model-agnostic)
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  Deploy Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, or local models. Pick what fits your policy, latency, and cost requirements. Switch anytime without rebuilding.
-                </p>
-                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-                  See model-agnostic delivery
-                  <span aria-hidden="true">→</span>
-                </span>
-              </a>
-              <a
-                href="/applications"
-                class="card-slate block transition-smooth hover:border-zinc-600 group"
-              >
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
-                  Applications
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  Web app, mobile apps, Office add-ins, and open APIs so your workflows stay seamless.
-                </p>
-                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-                  See the application playbook
-                  <span aria-hidden="true">→</span>
-                </span>
-              </a>
-              <a
-                href="/security-compliance"
-                class="card-slate block transition-smooth hover:border-zinc-600 group"
-              >
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
-                  Security &amp; compliance
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  Encryption, RBAC, audit logging, HIPAA/SOC2 readiness, and data residency controls.
-                </p>
-                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-                  Review security and compliance guardrails
-                  <span aria-hidden="true">→</span>
-                </span>
-              </a>
-              <a
-                href="/support"
-                class="card-slate block transition-smooth hover:border-zinc-600 group"
-              >
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-zinc-50">
-                  Support
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  White-glove onboarding, 24/7 monitoring, 4-hour response SLA (1-hour for enterprise),
-                  and monthly optimization reviews.
-                </p>
-                <span class="mt-3 text-sm text-zinc-200 group-hover:text-zinc-50 inline-flex items-center gap-2">
-                  Understand the support program
-                  <span aria-hidden="true">→</span>
-                </span>
-              </a>
+  <!-- SECTION 2: Private AI Packages + What's Included (DARK BACKGROUND) -->
+  <section class="packages-included-section" id="pricing">
+    <!-- Private AI Packages -->
+    <div class="packages-content">
+      <div class="container">
+        <h2>Private AI <span class="highlight-box">Packages</span></h2>
+        <p class="section-subtitle">Choose the package that fits your team's needs. All packages include deployment, training, and ongoing support.</p>
+        <div class="packages-grid">
+          <!-- Professional Package -->
+          <div class="package-card">
+            <h3>Professional Package</h3>
+            <p class="description">For teams of 10-50 who need enterprise AI without enterprise complexity</p>
+            <div class="price-row">
+              <div class="price-item">
+                <span class="price-label">Setup</span>
+                <span class="price-value">$8,000</span>
+                <span class="price-note">one-time</span>
+              </div>
+              <div class="price-item">
+                <span class="price-label">Monthly</span>
+                <span class="price-value">$3,000</span>
+                <span class="price-note">per month</span>
+              </div>
             </div>
+            <ul>
+              <li>ChatGPT-style web interface</li>
+              <li>9+ AI models (Claude, Gemini, Llama, etc.)</li>
+              <li>Deployed to your Google Cloud project</li>
+              <li>HIPAA-ready infrastructure</li>
+              <li>User authentication & role management</li>
+              <li>Basic monitoring & logging</li>
+              <li>4 hours training + documentation</li>
+              <li>Email support (24hr response)</li>
+            </ul>
+            <a href="#contact" class="btn">Get Started</a>
           </div>
-          <div class="card-slate space-y-6">
-            <div>
-              <h3 class="text-lg font-semibold text-zinc-50 mb-2">Example scopes & pain points</h3>
-              <ul class="space-y-3 text-sm text-zinc-300">
-                <li><strong>Healthcare practice · Birmingham, AL:</strong> Needed HIPAA-safe chat over treatment guidelines; we deployed a private portal with audit trails.</li>
-                <li><strong>Law firm · Gulf Shores, AL:</strong> Required privileged research assistant; we configured secure document retrieval with approval checkpoints.</li>
-                <li><strong>CPA firm · Mobile, AL:</strong> Sought faster workpaper summaries; we delivered a restricted agent that drafts memos from internal records.</li>
+
+          <!-- Enterprise Package -->
+          <div class="package-card popular">
+            <h3>Enterprise Package</h3>
+            <p class="description">For organizations requiring custom integrations, advanced security, and dedicated support</p>
+            <div class="price-row">
+              <div class="price-item">
+                <span class="price-label">Setup</span>
+                <span class="price-value">$15,000</span>
+                <span class="price-note">one-time</span>
+              </div>
+              <div class="price-item">
+                <span class="price-label">Monthly</span>
+                <span class="price-value">$5,000</span>
+                <span class="price-note">per month</span>
+              </div>
+            </div>
+            <ul>
+              <li><strong>Everything in Professional, plus:</strong></li>
+              <li>Custom model fine-tuning</li>
+              <li>Advanced RAG with vector search</li>
+              <li>Custom integrations (Slack, Teams, CRM)</li>
+              <li>SSO/SAML authentication</li>
+              <li>Advanced monitoring & alerting</li>
+              <li>Multi-region deployment</li>
+              <li>Dedicated Slack channel</li>
+              <li>Priority support (4hr response)</li>
+              <li>Quarterly strategy sessions</li>
+            </ul>
+            <a href="#contact" class="btn">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's Included -->
+    <div class="included-content">
+      <div class="container">
+        <h2>What's <span class="highlight-box">Included</span></h2>
+        <p class="section-subtitle">Everything you need for production-ready private AI infrastructure.</p>
+        <div class="included-grid">
+          <div class="card">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h3>Infrastructure</h3>
+            <ul>
+              <li>Google Cloud Run deployment</li>
+              <li>Firebase authentication</li>
+              <li>Cloud Storage for files</li>
+              <li>Firestore for chat history</li>
+              <li>Load balancing & auto-scaling</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 2l-4.2 4.2m13.2-5.2h-6m-6 0H1m13.2 5.2l-4.2-4.2m0-2L5.8 5.8"></path>
+              </svg>
+            </div>
+            <h3>AI Models</h3>
+            <ul>
+              <li>Claude 3.5 Sonnet, Opus</li>
+              <li>Gemini 1.5 Pro, Flash</li>
+              <li>Llama 3.1, 3.2</li>
+              <li>Command R+, Mistral</li>
+              <li>Switch models anytime</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="9" x2="15" y2="9"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3>Applications</h3>
+            <ul>
+              <li>ChatGPT-style web interface</li>
+              <li>Mobile-responsive design</li>
+              <li>File upload & analysis</li>
+              <li>Conversation history</li>
+              <li>Prompt templates</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3>Security</h3>
+            <ul>
+              <li>Data stays in your cloud</li>
+              <li>HIPAA-ready infrastructure</li>
+              <li>SOC 2 compliance ready</li>
+              <li>Audit logs & monitoring</li>
+              <li>Role-based access control</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3>Support</h3>
+            <ul>
+              <li>48-hour deployment</li>
+              <li>Team training included</li>
+              <li>Complete documentation</li>
+              <li>Email & Slack support</li>
+              <li>Regular updates & patches</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: FAQ + CTA (DARK + TEAL WAVE) -->
+  <section class="faq-cta-section">
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <!-- FAQ Content -->
+    <div class="faq-content">
+      <div class="container">
+        <h2>Frequently Asked <span class="highlight-box">Questions</span></h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Do I need my own Google Cloud account?</h3>
+            <p>Yes. Private AI deploys to your Google Cloud project, ensuring your data stays under your control. We'll help you set everything up if you don't have an account yet.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What are the ongoing Google Cloud costs?</h3>
+            <p>Typical usage for a 20-person team runs $200-500/month for infrastructure (Cloud Run, Firestore, Storage) plus AI model API costs ($0.50-2/1M tokens depending on model).</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I switch AI models after launch?</h3>
+            <p>Absolutely. Our platform is model-agnostic. You can switch between Claude, Gemini, Llama, and other models anytime through the admin dashboard—no redeployment needed.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How does authentication work?</h3>
+            <p>We use Firebase Authentication, which supports email/password, Google SSO, Microsoft SSO, and SAML for enterprise customers. You control who has access.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is this really HIPAA-ready?</h3>
+            <p>Yes. Your data never leaves your Google Cloud project. Google Cloud is HIPAA-compliant, and we configure your infrastructure following HIPAA best practices. You'll still need to sign a BAA with Google.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What if I want to move to a different provider later?</h3>
+            <p>No lock-in. You own the infrastructure in your Google Cloud account. We can help you migrate to AWS, Azure, or on-premises if needed (additional fees apply).</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you integrate with our existing tools?</h3>
+            <p>Yes (Enterprise Package). We can integrate with Slack, Microsoft Teams, Salesforce, and other tools via custom APIs. Let us know your requirements.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What happens after the initial setup?</h3>
+            <p>Your monthly fee covers infrastructure management, security updates, model updates, ongoing support, and training for new team members. You'll have a dedicated support channel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Content -->
+    <div class="cta-content" id="contact">
+      <div class="container">
+        <h2>Ready to launch your <span class="highlight-box">private AI</span>?</h2>
+        <p>Let's discuss your requirements and get you launched in 48 hours.</p>
+        <a href="mailto:jeremy@intentsolutions.io" class="btn-primary">Get Started</a>
+        <div class="contact-info">
+          <span>📧 jeremy@intentsolutions.io</span>
+          <span>📍 Gulf Shores, Alabama</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Example Scopes + 48-Hour Launch Plan + Security-First Data Flow (NEW IMAGE BACKGROUND) -->
+  <section class="scopes-launch-security-section">
+    <!-- Example Scopes -->
+    <div class="scopes-content">
+      <div class="container">
+        <h2>Example <span class="highlight-box">Scopes</span></h2>
+        <p class="section-subtitle">Real-world implementations we've built for clients across industries.</p>
+        <div class="scopes-grid">
+          <!-- Healthcare Practice -->
+          <div class="scope-card">
+            <div class="card-header">
+              <h3>Healthcare Practice</h3>
+              <span class="badge hipaa">HIPAA Ready</span>
+            </div>
+            <p class="scope-desc"><strong>Scope:</strong> 15-person clinic needed HIPAA-compliant AI for clinical notes, patient communication drafts, and research.</p>
+            <dl>
+              <dt>Solution:</dt>
+              <dd>Professional Package</dd>
+              <dt>Models:</dt>
+              <dd>Claude 3.5 Sonnet (primary), Gemini 1.5 Pro (backup)</dd>
+              <dt>Integration:</dt>
+              <dd>Custom prompts for clinical documentation</dd>
+              <dt>Timeline:</dt>
+              <dd>48 hours from kickoff to launch</dd>
+              <dt>Cost:</dt>
+              <dd>$8K setup + $3K/month</dd>
+            </dl>
+          </div>
+
+          <!-- Law Firm -->
+          <div class="scope-card">
+            <div class="card-header">
+              <h3>Law Firm</h3>
+              <span class="badge enterprise">Enterprise</span>
+            </div>
+            <p class="scope-desc"><strong>Scope:</strong> 50-attorney firm needed private AI with document analysis, legal research, and contract review capabilities.</p>
+            <dl>
+              <dt>Solution:</dt>
+              <dd>Enterprise Package</dd>
+              <dt>Models:</dt>
+              <dd>Claude Opus, Gemini Pro, fine-tuned Llama</dd>
+              <dt>Integration:</dt>
+              <dd>RAG with 10K+ legal documents, custom Slack bot</dd>
+              <dt>Timeline:</dt>
+              <dd>2 weeks (custom RAG pipeline)</dd>
+              <dt>Cost:</dt>
+              <dd>$15K setup + $5K/month</dd>
+            </dl>
+          </div>
+
+          <!-- CPA Firm -->
+          <div class="scope-card">
+            <div class="card-header">
+              <h3>CPA Firm</h3>
+              <span class="badge professional">Professional</span>
+            </div>
+            <p class="scope-desc"><strong>Scope:</strong> 20-person accounting firm needed secure AI for tax research, client communication, and document preparation.</p>
+            <dl>
+              <dt>Solution:</dt>
+              <dd>Professional Package</dd>
+              <dt>Models:</dt>
+              <dd>Claude 3.5 Sonnet, Gemini Flash</dd>
+              <dt>Integration:</dt>
+              <dd>Custom tax research prompts, audit logging</dd>
+              <dt>Timeline:</dt>
+              <dd>48 hours</dd>
+              <dt>Cost:</dt>
+              <dd>$8K setup + $3K/month</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 48-Hour Launch Plan -->
+    <div class="launch-content">
+      <div class="container">
+        <h2>Your <span class="highlight-box">48-Hour</span> Launch Plan</h2>
+        <p class="section-subtitle">We move fast. Here's exactly what happens from kickoff to launch.</p>
+        <div class="launch-timeline">
+          <!-- Day 1 -->
+          <div class="day">
+            <div class="day-number">1</div>
+            <div class="day-content">
+              <h3>Day 1: Setup & Configuration</h3>
+              <ul>
+                <li><strong>Hour 0-2:</strong> Kickoff call, gather requirements, review security needs</li>
+                <li><strong>Hour 2-4:</strong> Create Google Cloud project, enable APIs, configure IAM</li>
+                <li><strong>Hour 4-6:</strong> Deploy infrastructure (Cloud Run, Firebase, Firestore)</li>
+                <li><strong>Hour 6-8:</strong> Configure AI models, test API connections</li>
               </ul>
             </div>
-            <div>
-              <h3 class="text-lg font-semibold text-zinc-50 mb-2">48-hour launch plan</h3>
-              <ol class="space-y-2 text-sm text-zinc-300 list-decimal list-inside">
-                <li>Kickoff call (30 minutes)</li>
-                <li>Infrastructure deployed</li>
-                <li>Models installed & tested</li>
-                <li>Team training session</li>
-                <li>Go live with support</li>
-              </ol>
-              <p class="text-sm text-zinc-400 mt-3">
-                Recent deployments have gone live within two to five business days, depending on data integrations and reviews.
-              </p>
-            </div>
-            <div class="bg-zinc-800/40 rounded-lg p-5 border border-zinc-700">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">Security-first data flow</h3>
-              <p class="text-sm text-zinc-400 mb-2">
-                Cloud AI: <span class="text-zinc-100">User → Internet → Vendor → Training Data → Response</span>
-              </p>
-              <p class="text-sm text-zinc-400">
-                Private AI: <span class="text-zinc-100">User → Your Network → Response</span>
-              </p>
-              <p class="text-xs text-zinc-500 mt-2">Zero external transmission. Ever.</p>
-            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="py-24">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-10 lg:grid-cols-2">
-          <div>
-            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Common questions</h2>
-            <div class="space-y-6">
-              <div>
-                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">Can we customize it?</h3>
-                <p class="text-sm text-zinc-400">Absolutely. Bring your industry prompts, templates, or tools—everything plugs into the platform.</p>
-              </div>
-              <div>
-                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">What if intent solutions io disappears?</h3>
-                <p class="text-sm text-zinc-400">You own the infrastructure inside your account. If we vanish, your system keeps running.</p>
-              </div>
-              <div>
-                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">How do you handle compliance?</h3>
-                <p class="text-sm text-zinc-400">We deliver HIPAA/SOC2-ready documentation, BAAs, audit trails, and retention policies.</p>
-              </div>
-              <div>
-                <h3 class="text-sm font-semibold text-zinc-200 uppercase tracking-widest mb-1">Can we integrate it?</h3>
-                <p class="text-sm text-zinc-400">Yes—connect via API to your EHR, CRM, accounting suite, or homegrown tools.</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-slate space-y-6">
-            <div>
-              <h3 class="text-lg font-semibold text-zinc-50 mb-3">Ready to get started?</h3>
-              <p class="text-sm text-zinc-300 mb-4">
-                Book a 15-minute demo and we’ll tailor the proposal to your team size, compliance needs,
-                and model preferences.
-              </p>
-              <ul class="space-y-2 text-sm text-zinc-400">
-                <li>📧 <a href="mailto:jeremy@intentsolutions.io" class="hover:text-zinc-200 transition-smooth">jeremy@intentsolutions.io</a></li>
+          <!-- Day 2 -->
+          <div class="day">
+            <div class="day-number">2</div>
+            <div class="day-content">
+              <h3>Day 2: Testing & Training</h3>
+              <ul>
+                <li><strong>Hour 0-2:</strong> Internal testing, security review, user acceptance testing</li>
+                <li><strong>Hour 2-4:</strong> Team training session, walkthrough documentation</li>
+                <li><strong>Hour 4-6:</strong> Launch to pilot users, monitor performance</li>
+                <li><strong>Hour 6-8:</strong> Address feedback, final tweaks, full team launch</li>
               </ul>
             </div>
-            <div>
-              <h3 class="text-lg font-semibold text-zinc-50 mb-3">About intent solutions io</h3>
-              <p class="text-sm text-zinc-400">
-                Jeremy Longshore brings 20 years of operations experience plus AI automation expertise. We ship
-                production systems in days—not months—and support every build right here in Gulf Shores.
-              </p>
-            </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <Footer />
-</Layout>
+    <!-- Security-First Data Flow -->
+    <div class="security-content">
+      <div class="container">
+        <h2>Security-First <span class="highlight-box">Data Flow</span></h2>
+        <p class="section-subtitle">Your data never leaves your infrastructure. Here's how it works.</p>
+        <div class="data-flow">
+          <div class="flow-step">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h4>1. User Input</h4>
+            <p>Team member asks question through your private web interface</p>
+          </div>
+
+          <div class="flow-arrow">→</div>
+
+          <div class="flow-step">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h4>2. Your Cloud</h4>
+            <p>Request stays in your Google Cloud project (us-central1)</p>
+          </div>
+
+          <div class="flow-arrow">→</div>
+
+          <div class="flow-step">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6"></path>
+              </svg>
+            </div>
+            <h4>3. AI Processing</h4>
+            <p>Vertex AI processes request using your chosen model</p>
+          </div>
+
+          <div class="flow-arrow">→</div>
+
+          <div class="flow-step">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h4>4. Secure Storage</h4>
+            <p>Response saved in your Firestore, audit logged</p>
+          </div>
+        </div>
+        <div class="compliance-badges">
+          <span>✓ HIPAA Ready</span>
+          <span>✓ SOC 2 Compliant</span>
+          <span>✓ Audit Logs</span>
+          <span>✓ Data Residency</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</LayoutRedesign>
+
+<style>
+  /* ============================================
+     Highlight Box
+     ============================================ */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ============================================
+     SECTION 1: Hero + Why Private AI? (IMAGE)
+     ============================================ */
+  .private-ai-hero-section {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.75) 40%,
+        rgba(10, 15, 26, 0.80) 100%
+      ),
+      url('/images/private-ai-hero-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    overflow: hidden;
+  }
+
+  /* Hero Content */
+  .hero-content {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .hero-content h1 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--text-light);
+    color: var(--bg-dark);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-light);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .btn-secondary-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-light);
+    transform: translateY(-2px);
+  }
+
+  /* Comparison Content */
+  .comparison-content {
+    padding: 4rem 0 6rem;
+    text-align: center;
+  }
+
+  .comparison-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    color: var(--text-light-muted);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .comparison-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    text-align: left;
+    transition: var(--transition-base);
+  }
+
+  .comparison-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .comparison-card h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .comparison-card .subtitle {
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .comparison-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comparison-card ul li {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .comparison-card ul li.con::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: 700;
+  }
+
+  .comparison-card ul li.pro::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-secondary);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 6rem 0 3rem;
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr;
+      max-width: 450px;
+    }
+
+    .comparison-content {
+      padding: 3rem 0 4rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 2: Packages + Included (DARK)
+     ============================================ */
+  .packages-included-section {
+    background: var(--bg-dark);
+  }
+
+  /* Private AI Packages */
+  .packages-content {
+    padding: 5rem 0 4rem;
+  }
+
+  .packages-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .packages-content .section-subtitle {
+    color: var(--text-light-muted);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .package-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    position: relative;
+    transition: var(--transition-base);
+  }
+
+  .package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .package-card.popular {
+    border: 2px solid var(--color-accent-secondary);
+  }
+
+  .package-card.popular::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent-secondary);
+    color: var(--text-light);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .package-card h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .package-card .description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .price-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .price-item {
+    text-align: center;
+  }
+
+  .price-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-value {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .price-note {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  .package-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .package-card ul li {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    padding: 0.375rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .package-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-secondary);
+    font-weight: 700;
+  }
+
+  .package-card .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--color-accent-primary);
+    color: var(--text-light);
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .package-card .btn:hover {
+    background: var(--color-accent-secondary);
+    transform: translateY(-2px);
+  }
+
+  /* What's Included */
+  .included-content {
+    padding: 4rem 0 5rem;
+  }
+
+  .included-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .included-content .section-subtitle {
+    color: var(--text-light-muted);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .included-grid .card:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .included-grid .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+  }
+
+  .included-grid .card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .card-icon svg {
+    color: var(--text-light);
+  }
+
+  .included-grid .card h3 {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .included-grid .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .included-grid .card ul li {
+    color: var(--text-light-muted);
+    font-size: 0.8125rem;
+    padding: 0.25rem 0;
+    padding-left: 0.75rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .included-grid .card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-secondary);
+  }
+
+  @media (max-width: 968px) {
+    .packages-grid {
+      grid-template-columns: 1fr;
+      max-width: 450px;
+    }
+
+    .included-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .included-grid .card:nth-child(5) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .included-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ============================================
+     SECTION 3: FAQ + CTA (DARK + WAVES)
+     ============================================ */
+  .faq-cta-section {
+    position: relative;
+    background: var(--bg-dark);
+    overflow: hidden;
+  }
+
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .faq-content,
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* FAQ Content */
+  .faq-content {
+    padding: 5rem 0 4rem;
+  }
+
+  .faq-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+  }
+
+  .faq-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-item h3 {
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Content */
+  .cta-content {
+    padding: 4rem 0 6rem;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content > p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-info span {
+    color: var(--text-light-muted);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 4: Scopes + Launch + Security (IMAGE)
+     ============================================ */
+  .scopes-launch-security-section {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.75) 40%,
+        rgba(10, 15, 26, 0.80) 100%
+      ),
+      url('/images/private-ai-scopes-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    overflow: hidden;
+  }
+
+  /* Example Scopes */
+  .scopes-content {
+    padding: 5rem 0 4rem;
+  }
+
+  .scopes-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .scopes-content .section-subtitle {
+    text-align: center;
+  }
+
+  .scopes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .scope-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+  }
+
+  .scope-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .scope-card h3 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .badge {
+    font-size: 0.6875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+  }
+
+  .badge.hipaa {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+  }
+
+  .badge.enterprise {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+  }
+
+  .badge.professional {
+    background: rgba(13, 148, 136, 0.1);
+    color: #0d9488;
+  }
+
+  .scope-desc {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .scope-card dl {
+    font-size: 0.8125rem;
+  }
+
+  .scope-card dt {
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .scope-card dd {
+    color: var(--text-secondary);
+    margin-left: 0;
+    line-height: 1.5;
+  }
+
+  /* 48-Hour Launch Plan */
+  .launch-content {
+    padding: 4rem 0;
+  }
+
+  .launch-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .launch-content .section-subtitle {
+    text-align: center;
+  }
+
+  .launch-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .day {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .day-number {
+    width: 40px;
+    height: 40px;
+    background: var(--color-accent-primary);
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  .day-content {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    flex: 1;
+  }
+
+  .day-content h3 {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .day-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .day-content ul li {
+    color: var(--text-light-muted);
+    font-size: 0.8125rem;
+    padding: 0.375rem 0;
+    line-height: 1.5;
+  }
+
+  .day-content ul li strong {
+    color: var(--color-accent-secondary);
+    font-weight: 600;
+  }
+
+  /* Security-First Data Flow */
+  .security-content {
+    padding: 4rem 0 5rem;
+    text-align: center;
+  }
+
+  .security-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .security-content .section-subtitle {
+    text-align: center;
+  }
+
+  .data-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .flow-step {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    min-width: 150px;
+    flex: 1;
+    max-width: 200px;
+    transition: var(--transition-base);
+  }
+
+  .flow-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+  }
+
+  .step-icon svg {
+    color: var(--color-accent-primary);
+  }
+
+  .flow-step h4 {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .flow-step p {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .flow-arrow {
+    color: var(--text-light-muted);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .compliance-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .compliance-badges span {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+  }
+
+  @media (max-width: 968px) {
+    .scopes-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .day {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .data-flow {
+      flex-direction: column;
+    }
+
+    .flow-step {
+      max-width: 300px;
+    }
+
+    .flow-arrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .scopes-content {
+      padding: 3rem 0 2rem;
+    }
+
+    .launch-content {
+      padding: 3rem 0 2rem;
+    }
+
+    .security-content {
+      padding: 3rem 0 4rem;
+    }
+  }
+</style>

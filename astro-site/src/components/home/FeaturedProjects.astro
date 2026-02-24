@@ -1,0 +1,291 @@
+---
+// Featured Projects section
+---
+
+<section class="featured-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll fade-up">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-description">
+        Real AI systems we've built and deployed to production.
+      </p>
+    </div>
+
+    <div class="projects-grid stagger-children">
+      <!-- Project 1: Claude Code Enterprise -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <div class="project-status">
+            <span class="status-badge live">Live</span>
+          </div>
+        </div>
+        <h3 class="project-title">Claude Code Enterprise Setup</h3>
+        <p class="project-description">
+          Complete Claude Code infrastructure for 50+ developer team with custom plugins, SSO integration, and compliance controls.
+        </p>
+        <div class="project-tags">
+          <span class="tech-tag">Claude API</span>
+          <span class="tech-tag">MCP Protocol</span>
+          <span class="tech-tag">Custom Plugins</span>
+          <span class="tech-tag">SSO</span>
+        </div>
+        <a href="/claude-code" class="project-link">
+          View details <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Project 2: DiagnosticPro AI Agent -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="project-status">
+            <span class="status-badge live">Live</span>
+          </div>
+        </div>
+        <h3 class="project-title">DiagnosticPro AI Agent</h3>
+        <p class="project-description">
+          Medical diagnostic assistant processing 10k+ patient records. Multi-model architecture with Vertex AI and custom fine-tuned models.
+        </p>
+        <div class="project-tags">
+          <span class="tech-tag">Vertex AI</span>
+          <span class="tech-tag">Claude 3.5</span>
+          <span class="tech-tag">HIPAA</span>
+          <span class="tech-tag">Firebase</span>
+        </div>
+        <a href="/agents" class="project-link">
+          View details <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Project 3: Enterprise Automation Pipeline -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <polyline points="9 10 9 9 15 9 15 10"></polyline>
+              <polyline points="9 14 9 15 15 15 15 14"></polyline>
+            </svg>
+          </div>
+          <div class="project-status">
+            <span class="status-badge live">Live</span>
+          </div>
+        </div>
+        <h3 class="project-title">Enterprise Automation Pipeline</h3>
+        <p class="project-description">
+          End-to-end customer onboarding automation processing 500+ customers/month. n8n workflows with 15+ integration points.
+        </p>
+        <div class="project-tags">
+          <span class="tech-tag">n8n</span>
+          <span class="tech-tag">Netlify</span>
+          <span class="tech-tag">Webhooks</span>
+          <span class="tech-tag">API Gateway</span>
+        </div>
+        <a href="/automation" class="project-link">
+          View details <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Project 4: Private AI Infrastructure -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <div class="project-status">
+            <span class="status-badge live">Live</span>
+          </div>
+        </div>
+        <h3 class="project-title">Private AI Infrastructure</h3>
+        <p class="project-description">
+          ChatGPT-style interface on customer's GCP with 9+ model options. Zero data leaves their cloud. 2,000+ daily active users.
+        </p>
+        <div class="project-tags">
+          <span class="tech-tag">GCP</span>
+          <span class="tech-tag">BigQuery</span>
+          <span class="tech-tag">Firestore</span>
+          <span class="tech-tag">Multi-Model</span>
+        </div>
+        <a href="/private-ai" class="project-link">
+          View details <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-section {
+    padding: 6rem 0;
+    background-color: rgb(var(--color-bg-secondary));
+    border-top: 1px solid rgb(var(--color-border));
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: rgb(var(--color-text-primary));
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+  }
+
+  .project-card:hover {
+    border-color: rgb(var(--color-accent-primary));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(var(--color-accent-light));
+    border-radius: var(--radius-md);
+    color: rgb(var(--color-accent-primary));
+  }
+
+  .project-status {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .status-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  .status-badge.live {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: rgb(22, 163, 74);
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .project-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    background-color: rgb(var(--color-bg-secondary));
+    color: rgb(var(--color-text-secondary));
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-full);
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: rgb(var(--color-accent-primary));
+    text-decoration: none;
+    transition: gap var(--transition-fast);
+  }
+
+  .arrow {
+    transition: transform var(--transition-fast);
+  }
+
+  .project-card:hover .project-link {
+    gap: 0.75rem;
+  }
+
+  .project-card:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .featured-section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

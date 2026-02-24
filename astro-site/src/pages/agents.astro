@@ -1,239 +1,504 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/Footer';
-import PricingBlocks from '../components/PricingBlocks';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
 ---
 
-<Layout title="AI Agents - Containerized Automation | Intent Solutions">
-  <SiteNav />
+<LayoutRedesign title="AI Agents - Containerized Automation | Intent Solutions">
+  <!-- SECTION 1: Hero + Example + IAE Models (IMAGE BACKGROUND) -->
+  <section class="agents-hero-section">
+    <div class="container">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <span class="section-badge">AI Agents</span>
+        <h1>Customizable Intent <span class="highlight-box">Agent Models</span> (IAM)</h1>
+        <p>We customize Intent Agent Models for any workflow. Pre-configured packages (M1/M2/M3) for sales and support, or fully custom implementations.</p>
+      </div>
 
-  <!-- Hero Section -->
-  <section class="min-h-[60vh] flex items-center bg-gradient-main relative overflow-hidden">
-    <div class="absolute w-96 h-96 bg-zinc-100/5 rounded-full blur-3xl top-0 right-0 -translate-y-1/2 translate-x-1/2" />
+      <!-- Example Content -->
+      <div class="example-content">
+        <span class="example-badge">EXAMPLE: CUSTOMIZED IAM FOR SDR AUTOMATION</span>
+        <p>PipelinePilot shows what's possible with customized Intent Agent Models. It uses 4 specialized IAM agents (Orchestrator, Data Captain, Content Analyst, Readiness Auditor) configured for SDR workflows—from Clay/Apollo ingestion to multi-step outbound campaigns. The IAE packages below (M1/M2/M3) are pre-configured starters. We customize IAM for any workflow.</p>
+        <a href="https://pipelinepilot-prod.web.app" target="_blank" rel="noopener noreferrer" class="link">See PipelinePilot MVP →</a>
+      </div>
 
-    <div class="container mx-auto px-8 py-24 relative z-10">
-      <div class="max-w-4xl">
-        <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-400 mb-6">
-          ai agents · custom built for your workflow
-        </p>
+      <!-- Models Content -->
+      <div class="models-content">
+        <h2>Intent Agent Engine <span class="highlight-box">(IAE)</span> Models</h2>
+        <p class="section-subtitle">Pre-configured packages for sales and support teams</p>
 
-        <h1 class="text-hero font-extrabold text-zinc-50 mb-6">
-          customizable intent agent models (IAM)
-        </h1>
+        <div class="models-grid">
+          <!-- Model M1 -->
+          <div class="model-card">
+            <h3>Model M1</h3>
+            <p class="tier-label">Solo/Startup</p>
+            <p class="description">Single-agent automation for basic lead qualification and email responses</p>
+            <ul>
+              <li>1 IAM agent</li>
+              <li>Basic workflow automation</li>
+              <li>Email integration</li>
+              <li>Setup & training included</li>
+            </ul>
+            <a href="mailto:jeremy@intentsolutions.io" class="btn">Get Started</a>
+          </div>
 
-        <p class="text-body-lg text-zinc-400 mb-8 max-w-2xl">
-          We customize Intent Agent Models for any workflow. Below are pre-configured packages (M1/M2/M3) for sales and support. See PipelinePilot MVP for a custom 4-agent SDR automation built with IAM. We configure agents for research, compliance, data processing, content generation, or any business logic you need.
-        </p>
+          <!-- Model M2 (Popular) -->
+          <div class="model-card popular">
+            <h3>Model M2</h3>
+            <p class="tier-label">Growing Team</p>
+            <p class="description">2-agent system for lead qualification + content generation</p>
+            <ul>
+              <li>2 IAM agents (coordinated)</li>
+              <li>CRM integration</li>
+              <li>Content personalization</li>
+              <li>Extended support (30 days)</li>
+            </ul>
+            <a href="mailto:jeremy@intentsolutions.io" class="btn">Get Started</a>
+          </div>
 
-        <div class="flex flex-wrap gap-4">
-          <a href="/learn/pricing" class="btn-primary">
-            see how pricing works
-          </a>
-          <a
-            href="mailto:jeremy@intentsolutions.io?subject=AI Agent Demo Request"
-            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
-          >
-            book a demo →
-          </a>
+          <!-- Model M3 -->
+          <div class="model-card">
+            <h3>Model M3</h3>
+            <p class="tier-label">Enterprise</p>
+            <p class="description">Multi-agent orchestration for complex workflows</p>
+            <ul>
+              <li>4+ IAM agents (orchestrated)</li>
+              <li>Custom workflow design</li>
+              <li>Full system integration</li>
+              <li>Ongoing support & optimization</li>
+            </ul>
+            <a href="mailto:jeremy@intentsolutions.io" class="btn">Get Started</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Example Callout -->
-  <section class="py-6 bg-indigo-500/10 border-y border-indigo-500/20">
-    <div class="container mx-auto px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="text-sm text-indigo-300 font-semibold uppercase tracking-widest mb-2">
-          example: customized iam for sdr automation
-        </p>
-        <p class="text-zinc-300 mb-3">
-          PipelinePilot shows what's possible with customized Intent Agent Models. It uses 4 specialized IAM agents (Orchestrator, Data Captain, Content Analyst, Readiness Auditor) configured for SDR workflows—from Clay/Apollo ingestion to multi-step outbound campaigns. The IAE packages below (M1/M2/M3) are pre-configured starters. We customize IAM for any workflow.
-        </p>
-        <a
-          href="https://pipelinepilot-prod.web.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-sm text-indigo-400 hover:text-indigo-300 transition-smooth"
-        >
-          See PipelinePilot MVP →
-        </a>
+  <!-- SECTION 2: Custom + CTA (DARK + TEAL WAVE) -->
+  <section class="agents-cta-section">
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="custom-content">
+      <div class="container">
+        <h2>Need Something <span class="highlight-box">Custom</span>?</h2>
+        <p>We configure Intent Agent Models for research, compliance, data processing, content generation, or any business logic you need.</p>
+        <a href="mailto:jeremy@intentsolutions.io" class="btn-secondary-light">Discuss Your Use Case</a>
+      </div>
+    </div>
+
+    <div class="cta-content">
+      <div class="container">
+        <h2>Ready to Build Your <span class="highlight-box">AI System</span>?</h2>
+        <p>Tell us about your team and goals — we'll respond within 24 hours.</p>
+        <a href="mailto:jeremy@intentsolutions.io" class="btn-primary">Start a Project</a>
       </div>
     </div>
   </section>
+</LayoutRedesign>
 
-  <!-- Agents Grid -->
-  <section class="py-24 bg-zinc-950">
-    <div class="container mx-auto px-8">
-      <h2 class="text-2xl font-bold text-zinc-50 mb-8 text-center">intent agent engine (IAE) models</h2>
-      <div class="grid gap-8 md:grid-cols-3">
+<style>
+  /* ============================================
+     Highlight Box
+     ============================================ */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
 
-        <!-- IAE: Model 1 -->
-        <a href="/intel-engine" class="group block bg-zinc-900 border border-zinc-800 hover:border-indigo-500/50 rounded-lg p-8 transition-all hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1">
-          <h3 class="text-2xl font-bold text-zinc-50 group-hover:text-indigo-400 transition-colors mb-3">
-            IAE: Model 1 →
-          </h3>
-          <p class="text-sm text-zinc-400 mb-6">
-            Intelligence Core. Analyzes your closed deals, learns your ICP, scores leads from one data source. Intelligence only—no execution. Google Cloud native.
-          </p>
+  /* ============================================
+     SECTION 1: Hero + Example + Models (IMAGE)
+     ============================================ */
+  .agents-hero-section {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.90) 0%,
+        rgba(10, 15, 26, 0.80) 30%,
+        rgba(10, 15, 26, 0.75) 60%,
+        rgba(10, 15, 26, 0.85) 100%
+      ),
+      url('/images/agents-hero-bg-new.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    overflow: hidden;
+  }
 
-          <div class="mb-6">
-            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What's Included:</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Vertex AI Anthropic</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">1 Data Connector</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">ICP Scoring</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">BigQuery Analytics</span>
-            </div>
-          </div>
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
 
-          <div class="mb-6">
-            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Replaces:</h4>
-            <p class="text-sm text-zinc-400">1-2 data analysts at $80-160K/year salary. Save 78-89% with managed service at $1,497/mo.</p>
-          </div>
+  /* Hero Content */
+  .hero-content {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
 
-          <div class="border-t border-zinc-800 pt-6">
-            <div class="space-y-3 mb-6">
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-400">Self-serve</span>
-                <span class="text-lg font-semibold text-zinc-50">$497/mo</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-400">Managed</span>
-                <span class="text-lg font-semibold text-zinc-50">$1,497/mo</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-400">Custom build</span>
-                <span class="text-sm text-zinc-400">$15-30K + $497/mo</span>
-              </div>
-            </div>
-          </div>
-        </a>
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
 
-        <!-- IAE: Model 2 -->
-        <a href="mailto:jeremy@intentsolutions.io?subject=IAE Model 2 Demo" class="group block bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-lg p-8 transition-all hover:shadow-lg hover:shadow-zinc-800/50 hover:-translate-y-1">
-          <h3 class="text-2xl font-bold text-zinc-50 group-hover:text-zinc-300 transition-colors mb-3">IAE: Model 2 →</h3>
-          <p class="text-sm text-zinc-400 mb-6">
-            Execution Layer. Takes scored leads from M1, executes personalized outreach, captures meeting intelligence, sends feedback to M1. Multi-channel orchestration.
-          </p>
+  .hero-content h1 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
 
-          <div class="mb-6">
-            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What It Adds:</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Outbound Execution</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Email Campaigns</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Meeting Intelligence</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Feedback Loop</span>
-            </div>
-          </div>
+  .hero-content p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
-          <div class="mb-6">
-            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Replaces:</h4>
-            <p class="text-sm text-zinc-400">3-5 SDRs at $225-375K/year salary. 10x better response rates. Total with M1: $2,997/mo bundle.</p>
-          </div>
+  /* Example Content */
+  .example-content {
+    padding: 3rem 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
-          <div class="border-t border-zinc-800 pt-6">
-            <div class="space-y-3 mb-6">
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-400">A la carte</span>
-                <span class="text-lg font-semibold text-zinc-50">$1,997/mo</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-400">M1+M2 bundle</span>
-                <span class="text-lg font-semibold text-indigo-400">$2,997/mo</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-500 text-xs">Save $497/mo with bundle</span>
-              </div>
-            </div>
-          </div>
-        </a>
+  .example-badge {
+    display: inline-block;
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
 
-        <!-- IAE: Model 3 -->
-        <a href="mailto:jeremy@intentsolutions.io?subject=IAE Model 3 Demo" class="group block bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-lg p-8 transition-all hover:shadow-lg hover:shadow-zinc-800/50 hover:-translate-y-1">
-          <h3 class="text-2xl font-bold text-zinc-50 group-hover:text-zinc-300 transition-colors mb-3">IAE: Model 3 →</h3>
-          <p class="text-sm text-zinc-400 mb-6">
-            Support Intelligence. Monitors support tickets, identifies pain points, sends churn signals to M1, drafts responses using M2 execution layer. Human-in-the-loop approval.
-          </p>
+  .example-content p {
+    color: var(--text-light-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
 
-          <div class="mb-6">
-            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What It Adds:</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Ticket Triage</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Response Drafting</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Churn Prediction</span>
-              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">ICP Refinement</span>
-            </div>
-          </div>
+  .example-content .link {
+    color: var(--color-accent-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
 
-          <div class="mb-6">
-            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Replaces:</h4>
-            <p class="text-sm text-zinc-400">2 support agents at $120-160K/year salary. First response in 4 minutes vs 4 hours. Full stack: $3,997/mo bundle.</p>
-          </div>
+  .example-content .link:hover {
+    color: var(--color-accent-secondary);
+  }
 
-          <div class="border-t border-zinc-800 pt-6">
-            <div class="space-y-3 mb-6">
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-400">A la carte</span>
-                <span class="text-lg font-semibold text-zinc-50">$997/mo</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-400">Full stack bundle</span>
-                <span class="text-lg font-semibold text-indigo-400">$3,997/mo</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-zinc-500 text-xs">Save $1,491/mo with bundle</span>
-              </div>
-            </div>
-          </div>
-        </a>
+  /* Models Content */
+  .models-content {
+    padding: 4rem 0 6rem;
+    text-align: center;
+  }
 
-      </div>
-    </div>
-  </section>
+  .models-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-24 bg-zinc-950 border-t border-zinc-800/50">
-    <div class="container mx-auto px-8">
-      <div class="max-w-4xl mx-auto mb-12 text-center">
-        <h2 class="text-h1 font-bold text-zinc-50 mb-4">how pricing works</h2>
-        <p class="text-zinc-400">
-          Transparent engagement ladder. Discovery sprint, MVP build, managed service, or enterprise.
-        </p>
-      </div>
-      <PricingBlocks client:visible />
-    </div>
-  </section>
+  .section-subtitle {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 auto 2.5rem;
+  }
 
-  <!-- CTA Section -->
-  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
-    <div class="container mx-auto px-8">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-h1 font-bold text-zinc-50 mb-4">intentional ai, practical solutions</h2>
-        <p class="text-zinc-400 mb-8">
-          Book a 15-minute demo to see the agents in action and discuss your use case.
-        </p>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a
-            href="mailto:jeremy@intentsolutions.io?subject=AI Agent Demo Request"
-            class="btn-primary"
-          >
-            book a demo
-          </a>
-          <a
-            href="#pricing"
-            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
-          >
-            see pricing again ↑
-          </a>
-        </div>
-        <p class="text-sm text-zinc-500 mt-6">
-          jeremy@intentsolutions.io · no contracts · no lock-in · export your data anytime
-        </p>
-      </div>
-    </div>
-  </section>
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-  <Footer />
-</Layout>
+  .model-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    text-align: left;
+    position: relative;
+    transition: var(--transition-base);
+  }
+
+  .model-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .model-card.popular {
+    border: 2px solid var(--color-accent-secondary);
+  }
+
+  .model-card.popular::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent-secondary);
+    color: var(--text-light);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .model-card h3 {
+    color: var(--color-accent-primary);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .model-card .tier-label {
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    margin-bottom: 1rem;
+  }
+
+  .model-card .description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .model-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .model-card ul li {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    padding: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .model-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-secondary);
+    font-weight: 700;
+  }
+
+  .model-card .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--color-accent-secondary);
+    color: var(--text-light);
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .model-card .btn:hover {
+    background: #0f766e;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 968px) {
+    .hero-content {
+      padding: 6rem 0 3rem;
+    }
+
+    .models-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+
+    .models-content {
+      padding: 3rem 0 4rem;
+    }
+
+    .example-content {
+      padding: 2rem 0;
+    }
+  }
+
+  /* ============================================
+     SECTION 2: Custom + CTA (DARK + WAVES)
+     ============================================ */
+  .agents-cta-section {
+    position: relative;
+    background: var(--bg-dark);
+    overflow: hidden;
+  }
+
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .custom-content,
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  /* Custom Content */
+  .custom-content {
+    padding: 5rem 0 4rem;
+  }
+
+  .custom-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .custom-content p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .btn-secondary-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-light);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .btn-secondary-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-light);
+    transform: translateY(-2px);
+  }
+
+  /* CTA Content */
+  .cta-content {
+    padding: 4rem 0 6rem;
+  }
+
+  .cta-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--text-light);
+    color: var(--bg-dark);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .custom-content {
+      padding: 3rem 0 2rem;
+    }
+
+    .cta-content {
+      padding: 3rem 0 5rem;
+    }
+  }
+</style>

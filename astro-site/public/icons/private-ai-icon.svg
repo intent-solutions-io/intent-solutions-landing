@@ -1,0 +1,45 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield outline -->
+  <path d="M32 8L14 16V28C14 40 20 50 32 56C44 50 50 40 50 28V16L32 8Z"
+        stroke="url(#shield-gradient)"
+        stroke-width="2.5"
+        fill="none"
+        stroke-linejoin="round" />
+
+  <!-- Inner shield fill with subtle gradient -->
+  <path d="M32 12L18 18V28C18 38 23 46 32 51C41 46 46 38 46 28V18L32 12Z"
+        fill="url(#shield-fill)"
+        opacity="0.15" />
+
+  <!-- Cloud shape inside shield -->
+  <path d="M38 28C40 28 42 30 42 32C42 34 40 36 38 36H26C24 36 22 34 22 32C22 30.5 23 29 24.5 28.5C24.5 26 26.5 24 29 24C30 24 31 24.5 31.5 25C32 23 34 22 36 22C38.5 22 40.5 24 40.5 26.5C39.5 27 38.5 27.5 38 28Z"
+        fill="url(#cloud-gradient)" />
+
+  <!-- Lock icon in center -->
+  <rect x="30" y="30" width="4" height="4" rx="0.5" fill="url(#lock-gradient)" />
+  <path d="M29 30V28C29 26.5 30 25 32 25C34 25 35 26.5 35 28V30"
+        stroke="url(#lock-gradient)"
+        stroke-width="1.5"
+        fill="none"
+        stroke-linecap="round" />
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="shield-gradient" x1="14" y1="8" x2="50" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B8DEF" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+    <linearGradient id="shield-fill" x1="18" y1="12" x2="46" y2="51" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B8DEF" />
+      <stop offset="100%" stop-color="#00D9FF" />
+    </linearGradient>
+    <linearGradient id="cloud-gradient" x1="22" y1="22" x2="42" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B8DEF" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+    <linearGradient id="lock-gradient" x1="29" y1="25" x2="35" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00D9FF" />
+      <stop offset="100%" stop-color="#5B8DEF" />
+    </linearGradient>
+  </defs>
+</svg>

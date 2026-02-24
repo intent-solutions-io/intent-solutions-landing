@@ -31,8 +31,11 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-main" ref={ref}>
-      <div className="container mx-auto px-8">
+    <section className="py-24 bg-gradient-main relative overflow-hidden" ref={ref}>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+
+      <div className="container mx-auto px-8 relative z-10">
         <motion.h2
           className="text-h1 font-bold text-zinc-50 mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}

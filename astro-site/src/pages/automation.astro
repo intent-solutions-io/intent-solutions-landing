@@ -1,227 +1,335 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/Footer';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
 ---
 
-<Layout
-  title="Automation Programs"
-  description="Replace repetitive processes with n8n, Netlify, and custom workflows tuned to your ops team."
->
-  <SiteNav />
-
-  <main class="bg-zinc-900">
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-3xl">
-          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
-            automation
-          </p>
-          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
-            Automations that feel like an extra teammate
-          </h1>
-          <p class="text-lg text-zinc-400 leading-relaxed">
-            We design n8n and Netlify automation programs that handle the boring stuff—reporting, onboarding,
-            follow-ups—while keeping humans in the driver’s seat. Everything is documented, observable, and ready
-            for audits.
-          </p>
-        </div>
+<LayoutRedesign title="Automation Programs - Intent Solutions">
+  <!-- SECTION 1: Hero + Features (IMAGE BACKGROUND) -->
+  <section class="automation-hero-section">
+    <div class="container">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <span class="section-badge">Automation</span>
+        <h1><span class="highlight-box">Automations</span> That Feel Like An Extra Teammate</h1>
+        <p>We design n8n and Netlify automation programs that handle the boring stuff—reporting, onboarding, follow-ups—while keeping humans in the driver's seat.</p>
       </div>
-    </section>
 
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Automation menu</h2>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Sales & quoting</h3>
-            <p class="text-sm text-zinc-400">
-              Auto-generate proposals, route approvals, and sync updates back to CRM without the copy-paste grind.
-            </p>
+      <!-- Features Content -->
+      <div class="features-content">
+        <div class="features-grid">
+          <div class="feature">
+            <h3>Observable & Auditable</h3>
+            <p>Everything is documented with clear logs, making it easy to review what happened and when for compliance needs.</p>
           </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Customer onboarding</h3>
-            <p class="text-sm text-zinc-400">
-              Collect docs, spin up accounts, assign tasks, and nudge teams when human touch is required.
-            </p>
+          <div class="feature">
+            <h3>Humans in the Loop</h3>
+            <p>Automations assist your team rather than replace them. Critical decisions always have human oversight.</p>
           </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Operations dashboards</h3>
-            <p class="text-sm text-zinc-400">
-              Pull from spreadsheets, ERPs, and APIs to build daily snapshots with alerts for outliers.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Revenue collection</h3>
-            <p class="text-sm text-zinc-400">
-              Trigger reminders, process payments, and reconcile ledgers with audit trails intact.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Internal comms</h3>
-            <p class="text-sm text-zinc-400">
-              Schedule updates, summarize meetings, and push highlights to Slack, Teams, or email digests.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Field service</h3>
-            <p class="text-sm text-zinc-400">
-              Log work orders, sync photos, and dispatch follow-up tasks so nothing slips through the cracks.
-            </p>
+          <div class="feature">
+            <h3>Ready for Scale</h3>
+            <p>Built on n8n and Netlify infrastructure that grows with your business without breaking.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-12 lg:grid-cols-2">
-          <div>
-            <h2 class="text-3xl font-bold text-zinc-50 mb-6">Our automation stack</h2>
-            <ul class="space-y-4 text-sm text-zinc-300">
-              <li><span class="font-semibold text-zinc-100">n8n:</span> Visual builders with TypeScript nodes for custom logic.</li>
-              <li><span class="font-semibold text-zinc-100">Netlify Functions:</span> Lightweight serverless endpoints for quick integrations.</li>
-              <li><span class="font-semibold text-zinc-100">Supabase & Firestore:</span> Secure storage for state, history, and analytics.</li>
-              <li><span class="font-semibold text-zinc-100">Playwright:</span> Browser automations for stubborn legacy apps.</li>
-              <li><span class="font-semibold text-zinc-100">Observability:</span> Structured logging, dashboards, and alerting so ops can debug fast.</li>
-            </ul>
-          </div>
-          <div class="card-slate space-y-4">
-            <h3 class="text-lg font-semibold text-zinc-50">Implementation process</h3>
-            <ol class="list-decimal list-inside space-y-2 text-sm text-zinc-300">
-              <li>Map the current workflow and turnaround expectations.</li>
-              <li>Prototype the automation in a sandbox with sample data.</li>
-              <li>Run a shadow period where humans review every action.</li>
-              <li>Roll into production with monitoring and iterative tweaks.</li>
-            </ol>
-            <p class="text-sm text-zinc-400">
-              Typical timeline is 10 business days from kickoff to production for a single workflow lane.
-            </p>
-          </div>
-        </div>
+  <!-- SECTION 2: Custom + CTA (DARK + TEAL WAVE) -->
+  <section class="automation-cta-section">
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="custom-content">
+      <div class="container">
+        <h2>Need Something <span class="highlight-box">Custom</span>?</h2>
+        <p>We configure Intent Agent Models for research, compliance, data processing, content generation, or any business logic you need.</p>
+        <a href="mailto:jeremy@intentsolutions.io" class="btn-secondary-light">Discuss Your Use Case</a>
       </div>
-    </section>
+    </div>
 
-    <!-- n8n vs Vertex Comparison -->
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8 text-center">
-            when to use n8n vs vertex agent engine
-          </h2>
-          <p class="text-zinc-400 text-center mb-12 max-w-3xl mx-auto">
-            We pair them often: n8n for orchestration glue, Vertex Agent Engine for the agent brain. This gives you visual workflow building for integrations while maintaining security and guardrails for AI reasoning.
-          </p>
-
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead class="text-zinc-400 uppercase text-xs tracking-widest border-b border-zinc-800">
-                <tr>
-                  <th class="py-4 pr-4 font-semibold">dimension</th>
-                  <th class="py-4 px-4 font-semibold">n8n (self-hosted low-code)</th>
-                  <th class="py-4 pl-4 font-semibold">vertex agent engine</th>
-                </tr>
-              </thead>
-              <tbody class="text-zinc-300">
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">best for</td>
-                  <td class="py-4 px-4">Integration glue, webhooks, simple workflows</td>
-                  <td class="py-4 pl-4">Production agents with LLM reasoning and guardrails</td>
-                </tr>
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">security</td>
-                  <td class="py-4 px-4">App-level credentials, manual controls</td>
-                  <td class="py-4 pl-4">IAM, VPC-SC, CMEK, audit logs by default</td>
-                </tr>
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">complexity</td>
-                  <td class="py-4 px-4">Quick wins for non-critical automations</td>
-                  <td class="py-4 pl-4">Complex multi-step reasoning with sensitive data</td>
-                </tr>
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">deployment</td>
-                  <td class="py-4 px-4">Self-hosted or cloud, you manage infrastructure</td>
-                  <td class="py-4 pl-4">Managed by Google Cloud, auto-scaling</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="mt-8 bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-            <p class="text-zinc-300 leading-relaxed">
-              <strong class="text-zinc-100">Our recommendation:</strong> Use n8n for orchestration and data flow between systems. Use Vertex Agent Engine when the workflow requires LLM reasoning, sensitive data handling, or production-grade guardrails. We often deploy both together for best results.
-            </p>
-            <div class="mt-4">
-              <a href="/learn/security" class="text-sm text-indigo-400 hover:text-indigo-300 transition-smooth">
-                Learn more about security comparison →
-              </a>
-            </div>
-          </div>
-        </div>
+    <div class="cta-content">
+      <div class="container">
+        <h2>Ready to Build Your <span class="highlight-box">AI System</span>?</h2>
+        <p>Tell us about your team and goals — we'll respond within 24 hours.</p>
+        <a href="mailto:jeremy@intentsolutions.io" class="btn-primary">Start a Project</a>
       </div>
-    </section>
+    </div>
+  </section>
+</LayoutRedesign>
 
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <h2 class="text-3xl font-bold text-zinc-50 mb-8">Runbook & support</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Documented playbooks</h3>
-            <p class="text-sm text-zinc-400">
-              You get editable runbooks, diagrams, and rollback steps so the program can live beyond any one vendor.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Training included</h3>
-            <p class="text-sm text-zinc-400">
-              We onboard your operators, teach them how to request new automations, and set up feedback loops.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Fixed monthly support</h3>
-            <p class="text-sm text-zinc-400">
-              Flat-rate plans cover monitoring, patching, and incremental tweaks so you can budget confidently.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Compliance friendly</h3>
-            <p class="text-sm text-zinc-400">
-              Audit logs, access controls, and approval trails keep legal and finance teams comfortable.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+<style>
+  /* ============================================
+     Highlight Box
+     ============================================ */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
 
-    <section class="py-24">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-10 lg:grid-cols-2">
-          <div>
-            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Ready to map an automation trail?</h2>
-            <p class="text-sm text-zinc-400 mb-6">
-              Bring one workflow, we’ll show you a path to full automation plus the reporting leadership wants.
-            </p>
-            <a href="/#contact" class="btn-primary">Request an automation audit</a>
-          </div>
-          <div class="card-slate space-y-4">
-            <h3 class="text-lg font-semibold text-zinc-50">FAQ</h3>
-            <div>
-              <p class="text-sm text-zinc-300 font-medium">How do you price automations?</p>
-              <p class="text-sm text-zinc-400">Flat cost per workflow lane + optional monthly retainer for support.</p>
-            </div>
-            <div>
-              <p class="text-sm text-zinc-300 font-medium">Can you integrate with legacy systems?</p>
-              <p class="text-sm text-zinc-400">Yes—screen automation, CSV bridges, and lightweight APIs keep everything talking.</p>
-            </div>
-            <div>
-              <p class="text-sm text-zinc-300 font-medium">How do we request changes?</p>
-              <p class="text-sm text-zinc-400">Submit tweaks via a shared board; most updates ship within 48 hours.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  /* ============================================
+     SECTION 1: Hero + Features (IMAGE)
+     ============================================ */
+  .automation-hero-section {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.75) 40%,
+        rgba(10, 15, 26, 0.80) 100%
+      ),
+      url('/images/hero-automation.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    overflow: hidden;
+  }
 
-  <Footer />
-</Layout>
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Hero Content */
+  .hero-content {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .hero-content h1 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* Features Content */
+  .features-content {
+    padding: 4rem 0 6rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .feature {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+  }
+
+  .feature:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .feature h3 {
+    color: var(--color-accent-secondary);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature p {
+    color: var(--text-light-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 6rem 0 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .features-content {
+      padding: 3rem 0 4rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 2: Custom + CTA (DARK + WAVES)
+     ============================================ */
+  .automation-cta-section {
+    position: relative;
+    background: var(--bg-dark);
+    overflow: hidden;
+  }
+
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .custom-content,
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  /* Custom Content */
+  .custom-content {
+    padding: 5rem 0 4rem;
+  }
+
+  .custom-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .custom-content p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .btn-secondary-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-light);
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .btn-secondary-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-light);
+    transform: translateY(-2px);
+  }
+
+  /* CTA Content */
+  .cta-content {
+    padding: 4rem 0 6rem;
+  }
+
+  .cta-content h2 {
+    color: var(--text-light);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    color: var(--text-light-muted);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--text-light);
+    color: var(--bg-dark);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .custom-content {
+      padding: 3rem 0 2rem;
+    }
+
+    .cta-content {
+      padding: 3rem 0 5rem;
+    }
+  }
+</style>

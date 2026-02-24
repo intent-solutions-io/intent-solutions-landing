@@ -1,802 +1,1591 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/Footer';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
 ---
 
-<Layout
-  title="Distribution Partner Program | Intent Solutions"
-  description="Your distribution channel for AI solutions. Partners get tenant access to our in-house systems. Model- and cloud-agnostic. Vertex-first security."
->
-  <SiteNav />
+<LayoutRedesign title="Distribution Partner Program | Intent Solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge badge-light">Distribution Partner Program</span>
+        </div>
 
-  <main class="bg-zinc-900">
-    <!-- Hero -->
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-3xl">
-          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
-            distribution partner program
+        <h1 class="hero-title hero-title-light">
+          You sell, we host
+        </h1>
+
+        <p class="hero-description hero-description-light">
+          Become a distribution channel for our AI solutions. Your clients get tenant access to our
+          in-house systems—we handle the infrastructure, you own the relationship.
+          Model- and cloud-agnostic. Vertex-first security. No lock-in.
+        </p>
+
+        <div class="hero-info-box">
+          <p><strong>How it works:</strong> You bring clients. We provision tenants. They get hosted AI solutions.</p>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Become a Partner
+          </a>
+          <a href="#catalog" class="btn btn-secondary btn-lg">
+            View Solutions Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: Distribution Channel + Ideal Distribution Partners (DARK + TEAL WAVE) -->
+  <section class="distribution-partners-section">
+    <!-- Teal Wave Background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <!-- Distribution Channel Content -->
+      <div class="section-header">
+        <h2>Distribution Channel for <span class="highlight-box">Hosted AI Solutions</span></h2>
+      </div>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Tenant Provisioning</h3>
+          <p>
+            Each of your clients gets their own isolated tenant on our infrastructure. Separate
+            data, separate configs, shared platform.
           </p>
-          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
-            you sell, we host
-          </h1>
-          <p class="text-lg text-zinc-400 leading-relaxed mb-6">
-            Become a distribution channel for our AI solutions. Your clients get tenant access to our
-            in-house systems—we handle the infrastructure, you own the relationship.
-            Model- and cloud-agnostic. Vertex-first security. No lock-in.
+        </div>
+
+        <div class="value-card">
+          <h3>White-Label Access</h3>
+          <p>
+            Your brand on the UI. Clients interact with your logo and your domain—they access
+            our hosted systems through you.
           </p>
-          <div class="inline-block px-4 py-2 bg-zinc-800/50 border border-zinc-700 rounded-lg">
-            <p class="text-sm text-zinc-300">
-              <strong>How it works:</strong> You bring clients. We provision tenants. They get hosted AI solutions.
+        </div>
+
+        <div class="value-card">
+          <h3>We Handle Operations</h3>
+          <p>
+            Infrastructure, monitoring, updates, incident response. We run everything—you focus
+            on sales and client relationships.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Scale Without Overhead</h3>
+          <p>
+            Add clients without adding infrastructure. Each new tenant is a configuration, not
+            a deployment project.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ideal Distribution Partners Content -->
+      <div class="partners-content">
+        <div class="section-header">
+          <h2>Ideal Distribution <span class="highlight-box">Partners</span></h2>
+        </div>
+
+        <div class="partners-list">
+          <div class="partner-type-card">
+            <h3>Agencies Wanting to Offer AI Without Building Infrastructure</h3>
+            <p>
+              You have clients asking for AI solutions. We give you tenant access to hosted
+              systems you can resell under your brand.
+            </p>
+          </div>
+
+          <div class="partner-type-card">
+            <h3>Vertical Specialists Who Know Their Market</h3>
+            <p>
+              You understand healthcare, finance, or legal. We provide the hosted AI platform—you
+              configure tenants for your vertical.
+            </p>
+          </div>
+
+          <div class="partner-type-card">
+            <h3>Consultancies Adding AI to Their Service Mix</h3>
+            <p>
+              Expand from advisory to hosted solutions. We provision tenants—you own the client
+              relationship and set your margins.
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Value Props -->
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-12 text-center">
-            distribution channel for hosted ai solutions
-          </h2>
+  <!-- SECTION 2: Partner Engagement Models + Hosted Solutions Catalog (IMAGE BACKGROUND) -->
+  <section class="engagement-catalog-section" id="catalog">
+    <div class="image-overlay"></div>
 
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                tenant provisioning
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Each of your clients gets their own isolated tenant on our infrastructure. Separate
-                data, separate configs, shared platform.
-              </p>
-            </div>
+    <div class="container">
+      <!-- Partner Engagement Models Content -->
+      <div class="section-header">
+        <h2>Partner <span class="highlight-box">Engagement Models</span></h2>
+      </div>
 
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                white-label access
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Your brand on the UI. Clients interact with your logo and your domain—they access
-                our hosted systems through you.
-              </p>
-            </div>
+      <div class="engagement-grid">
+        <div class="engagement-card">
+          <h3>Rev-Share Partnership</h3>
+          <div class="price">$0 upfront</div>
+          <p class="description">
+            Revenue share on each tenant you bring. We host the solution, you bring clients.
+            Good for testing the partnership.
+          </p>
+          <ul class="features">
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>No upfront cost to partner</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>We provision tenants for your clients</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Aligned incentives on growth</span>
+            </li>
+          </ul>
+        </div>
 
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                we handle operations
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Infrastructure, monitoring, updates, incident response. We run everything—you focus
-                on sales and client relationships.
-              </p>
-            </div>
+        <div class="engagement-card">
+          <h3>Wholesale Tenant Pricing</h3>
+          <div class="price">Fixed per-tenant rate</div>
+          <p class="description">
+            Fixed wholesale cost per tenant. You set your retail price and keep the margin.
+            Predictable costs for you.
+          </p>
+          <ul class="features">
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Predictable cost per tenant</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>You control retail pricing</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>White-label included</span>
+            </li>
+          </ul>
+        </div>
 
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                scale without overhead
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Add clients without adding infrastructure. Each new tenant is a configuration, not
-                a deployment project.
-              </p>
-            </div>
-          </div>
+        <div class="engagement-card">
+          <h3>Partner Retainer</h3>
+          <div class="price">Monthly partnership</div>
+          <p class="description">
+            Monthly retainer for priority support, custom configurations, and dedicated
+            onboarding for your clients.
+          </p>
+          <ul class="features">
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Priority tenant provisioning</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Custom configuration support</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Dedicated onboarding assistance</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="engagement-card">
+          <h3>Per-Tenant Managed Service</h3>
+          <div class="price">Flat + usage</div>
+          <p class="description">
+            Flat platform fee per tenant + usage at provider list prices. Full managed
+            service—we handle everything.
+          </p>
+          <ul class="features">
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Usage at provider list prices</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Full managed operations</span>
+            </li>
+            <li>
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Budget caps and alerts per tenant</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Ideal Partners -->
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8">ideal distribution partners</h2>
+      <div class="onboarding-note">
+        <p>
+          <strong>Onboarding:</strong> $1,500 one-time setup covers partner
+          portal access, white-label configuration, and first tenant provisioning
+        </p>
+      </div>
 
-          <div class="space-y-4">
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                agencies wanting to offer ai without building infrastructure
-              </h3>
-              <p class="text-sm text-zinc-400">
-                You have clients asking for AI solutions. We give you tenant access to hosted
-                systems you can resell under your brand.
-              </p>
-            </div>
+      <!-- Hosted Solutions Catalog Content -->
+      <div class="catalog-content">
+        <div class="section-header">
+          <h2>Hosted Solutions <span class="highlight-box">Catalog</span></h2>
+        </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                vertical specialists who know their market
-              </h3>
-              <p class="text-sm text-zinc-400">
-                You understand healthcare, finance, or legal. We provide the hosted AI platform—you
-                configure tenants for your vertical.
-              </p>
-            </div>
+        <div class="catalog-grid">
+          <div class="catalog-card">
+            <h3>Outbound SDR Agents</h3>
+            <ul>
+              <li>• Research + enrich leads</li>
+              <li>• ICP scoring</li>
+              <li>• Personalized outreach</li>
+              <li>• Meeting intelligence</li>
+            </ul>
+            <span class="setup-time">Tenant setup: 1–2 weeks</span>
+          </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                consultancies adding ai to their service mix
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Expand from advisory to hosted solutions. We provision tenants—you own the client
-                relationship and set your margins.
-              </p>
-            </div>
+          <div class="catalog-card">
+            <h3>Knowledge Search + Grounded Answers</h3>
+            <ul>
+              <li>• Docs and wiki integration</li>
+              <li>• Vector search</li>
+              <li>• Citation tracking</li>
+              <li>• Access controls</li>
+            </ul>
+            <span class="setup-time">Tenant setup: 1–2 weeks</span>
+          </div>
+
+          <div class="catalog-card">
+            <h3>Support Triage Agents</h3>
+            <ul>
+              <li>• CRM + ticket integrations</li>
+              <li>• Response drafting</li>
+              <li>• Escalation rules</li>
+              <li>• Churn prediction</li>
+            </ul>
+            <span class="setup-time">Tenant setup: 2–3 weeks</span>
+          </div>
+
+          <div class="catalog-card">
+            <h3>Private AI Portal</h3>
+            <ul>
+              <li>• Internal ChatGPT-style UI</li>
+              <li>• Model selection (Claude, GPT, Gemini)</li>
+              <li>• Company data integration</li>
+              <li>• Usage tracking</li>
+            </ul>
+            <span class="setup-time">Tenant setup: 1–2 weeks</span>
+          </div>
+
+          <div class="catalog-card">
+            <h3>Automation + Agent Pairing</h3>
+            <ul>
+              <li>• n8n for orchestration glue</li>
+              <li>• Vertex for agent workflows</li>
+              <li>• API integrations</li>
+              <li>• Scheduled jobs</li>
+            </ul>
+            <span class="setup-time">Tenant setup: 1–2 weeks</span>
+          </div>
+
+          <div class="catalog-card">
+            <h3>Custom Configuration</h3>
+            <p>
+              Combine solutions, custom integrations, specialized workflows. We configure the
+              tenant to match client needs.
+            </p>
+            <span class="setup-time">Setup varies by complexity</span>
           </div>
         </div>
+
+        <div class="catalog-note">
+          <p>
+            <strong>Note:</strong> All solutions are model- and cloud-agnostic. Tenants can use
+            Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, or local models based on
+            requirements.
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Engagement Models -->
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-12 text-center">
-            partner engagement models
-          </h2>
+  <!-- SECTION 3: How the Partnership Works + What Partners Get (DARK + TEAL WAVE) -->
+  <section class="partnership-benefits-section">
+    <!-- Teal Wave Background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
 
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-              <h3 class="text-xl font-semibold text-zinc-100 mb-3">rev-share partnership</h3>
-              <div class="text-2xl font-bold text-zinc-50 mb-4">$0 upfront</div>
-              <p class="text-sm text-zinc-400 mb-6">
-                Revenue share on each tenant you bring. We host the solution, you bring clients.
-                Good for testing the partnership.
-              </p>
-              <ul class="space-y-2 text-sm text-zinc-400">
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>No upfront cost to partner</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>We provision tenants for your clients</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Aligned incentives on growth</span>
-                </li>
-              </ul>
-            </div>
+    <div class="container">
+      <!-- How the Partnership Works Content -->
+      <div class="section-header">
+        <h2>How the <span class="highlight-box">Partnership</span> Works</h2>
+      </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-              <h3 class="text-xl font-semibold text-zinc-100 mb-3">wholesale tenant pricing</h3>
-              <div class="text-2xl font-bold text-zinc-50 mb-4">fixed per-tenant rate</div>
-              <p class="text-sm text-zinc-400 mb-6">
-                Fixed wholesale cost per tenant. You set your retail price and keep the margin.
-                Predictable costs for you.
-              </p>
-              <ul class="space-y-2 text-sm text-zinc-400">
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Predictable cost per tenant</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>You control retail pricing</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>White-label included</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-              <h3 class="text-xl font-semibold text-zinc-100 mb-3">partner retainer</h3>
-              <div class="text-2xl font-bold text-zinc-50 mb-4">monthly partnership</div>
-              <p class="text-sm text-zinc-400 mb-6">
-                Monthly retainer for priority support, custom configurations, and dedicated
-                onboarding for your clients.
-              </p>
-              <ul class="space-y-2 text-sm text-zinc-400">
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Priority tenant provisioning</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Custom configuration support</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Dedicated onboarding assistance</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-              <h3 class="text-xl font-semibold text-zinc-100 mb-3">per-tenant managed service</h3>
-              <div class="text-2xl font-bold text-zinc-50 mb-4">flat + usage</div>
-              <p class="text-sm text-zinc-400 mb-6">
-                Flat platform fee per tenant + usage at provider list prices. Full managed
-                service—we handle everything.
-              </p>
-              <ul class="space-y-2 text-sm text-zinc-400">
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Usage at provider list prices</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Full managed operations</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Budget caps and alerts per tenant</span>
-                </li>
-              </ul>
-            </div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Partner Onboarding</h3>
+            <p>
+              Initial call to understand your market, client types, and goals. We set up your
+              partner portal and white-label configuration.
+            </p>
           </div>
+        </div>
 
-          <div class="mt-8 text-center">
-            <p class="text-sm text-zinc-400">
-              <strong class="text-zinc-300">Onboarding:</strong> $1,500 one-time setup covers partner
-              portal access, white-label configuration, and first tenant provisioning
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>You Bring a Client</h3>
+            <p>
+              When you close a deal, tell us the client's requirements. We assess fit and
+              confirm which hosted solution works best.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>We Provision Their Tenant</h3>
+            <p>
+              We create an isolated tenant on our infrastructure. Separate data, separate
+              configs, your branding. Client gets access credentials.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Configure and Customize</h3>
+            <p>
+              We configure the tenant for your client's specific workflows—integrations, models,
+              budget caps, access controls.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Client Goes Live</h3>
+            <p>
+              Tenant is active with monitoring, usage tracking, and alerts. Client interacts
+              with your branded interface—we handle the backend.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Ongoing Managed Service</h3>
+            <p>
+              We handle infrastructure, updates, monitoring, and incident response. You handle
+              the client relationship.
             </p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Starter Packs -->
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8">hosted solutions catalog</h2>
+      <!-- What Partners Get Content -->
+      <div class="benefits-content">
+        <div class="section-header">
+          <h2>What Partners <span class="highlight-box">Get</span></h2>
+        </div>
 
-          <div class="grid md:grid-cols-3 gap-6 mb-8">
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                outbound sdr agents
-              </h3>
-              <ul class="text-sm text-zinc-400 space-y-2 mb-4">
-                <li>• Research + enrich leads</li>
-                <li>• ICP scoring</li>
-                <li>• Personalized outreach</li>
-                <li>• Meeting intelligence</li>
-              </ul>
-              <span class="text-xs text-zinc-500">Tenant setup: 1–2 weeks</span>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                knowledge search + grounded answers
-              </h3>
-              <ul class="text-sm text-zinc-400 space-y-2 mb-4">
-                <li>• Docs and wiki integration</li>
-                <li>• Vector search</li>
-                <li>• Citation tracking</li>
-                <li>• Access controls</li>
-              </ul>
-              <span class="text-xs text-zinc-500">Tenant setup: 1–2 weeks</span>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                support triage agents
-              </h3>
-              <ul class="text-sm text-zinc-400 space-y-2 mb-4">
-                <li>• CRM + ticket integrations</li>
-                <li>• Response drafting</li>
-                <li>• Escalation rules</li>
-                <li>• Churn prediction</li>
-              </ul>
-              <span class="text-xs text-zinc-500">Tenant setup: 2–3 weeks</span>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                private ai portal
-              </h3>
-              <ul class="text-sm text-zinc-400 space-y-2 mb-4">
-                <li>• Internal ChatGPT-style UI</li>
-                <li>• Model selection (Claude, GPT, Gemini)</li>
-                <li>• Company data integration</li>
-                <li>• Usage tracking</li>
-              </ul>
-              <span class="text-xs text-zinc-500">Tenant setup: 1–2 weeks</span>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                automation + agent pairing
-              </h3>
-              <ul class="text-sm text-zinc-400 space-y-2 mb-4">
-                <li>• n8n for orchestration glue</li>
-                <li>• Vertex for agent workflows</li>
-                <li>• API integrations</li>
-                <li>• Scheduled jobs</li>
-              </ul>
-              <span class="text-xs text-zinc-500">Tenant setup: 1–2 weeks</span>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-3">
-                custom configuration
-              </h3>
-              <p class="text-sm text-zinc-400 mb-4">
-                Combine solutions, custom integrations, specialized workflows. We configure the
-                tenant to match client needs.
-              </p>
-              <span class="text-xs text-zinc-500">Setup varies by complexity</span>
-            </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Partner Portal Access</h3>
+            <p>
+              Dashboard to view your tenants, usage metrics, billing, and client status at a glance.
+            </p>
           </div>
 
-          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-            <p class="text-sm text-zinc-300">
-              <strong>Note:</strong> All solutions are model- and cloud-agnostic. Tenants can use
-              Claude, OpenAI, Gemini, Llama, Mistral, Qwen, fine-tunes, or local models based on
-              requirements.
+          <div class="benefit-card">
+            <h3>Tenant Management</h3>
+            <p>
+              Request new tenants, configure settings, view logs, manage access controls for each client.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>Usage Dashboards and Budgets</h3>
+            <p>
+              Per-tenant monitoring, cost tracking, usage alerts, performance metrics visible to you and your clients.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>White-Label Configuration</h3>
+            <p>
+              Your branding on the interface—logo, colors, domain. Clients see your brand, not ours.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>Sales Enablement Kit</h3>
+            <p>
+              One-pagers, demo scripts, pitch deck, objection handling guides to help you close deals.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>Client-Facing Documentation</h3>
+            <p>
+              White-labeled user guides, onboarding docs, and support resources for your clients.
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- How It Works -->
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8 text-center">how the partnership works</h2>
+  <!-- SECTION 4: Let's Talk / Contact Form (DARK + TEAL WAVE) -->
+  <section class="contact-form-section" id="contact">
+    <!-- Teal Wave Background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
 
-          <div class="space-y-8">
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-100 font-bold">
-                1
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                  partner onboarding
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  Initial call to understand your market, client types, and goals. We set up your
-                  partner portal and white-label configuration.
-                </p>
-              </div>
-            </div>
+    <div class="container">
+      <div class="form-wrapper">
+        <h2>Let's <span class="highlight-box">Talk</span></h2>
+        <p class="form-intro">
+          Whether you're exploring partnership options, need a hosted AI solution for your business,
+          or just want to learn more—we'd love to hear from you.
+        </p>
 
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-100 font-bold">
-                2
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                  you bring a client
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  When you close a deal, tell us the client's requirements. We assess fit and
-                  confirm which hosted solution works best.
-                </p>
-              </div>
-            </div>
+        <form
+          name="partner-inquiry"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="partner-form"
+        >
+          <input type="hidden" name="form-name" value="partner-inquiry" />
+          <p class="hidden">
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
 
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-100 font-bold">
-                3
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                  we provision their tenant
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  We create an isolated tenant on our infrastructure. Separate data, separate
-                  configs, your branding. Client gets access credentials.
-                </p>
-              </div>
-            </div>
+          <div class="form-group">
+            <label for="company-name">Company Name</label>
+            <input
+              type="text"
+              id="company-name"
+              name="company-name"
+              required
+              placeholder="Your Company"
+            />
+          </div>
 
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-100 font-bold">
-                4
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                  configure and customize
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  We configure the tenant for your client's specific workflows—integrations, models,
-                  budget caps, access controls.
-                </p>
-              </div>
-            </div>
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="contact-name"
+              required
+              placeholder="Your Name"
+            />
+          </div>
 
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-100 font-bold">
-                5
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                  client goes live
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  Tenant is active with monitoring, usage tracking, and alerts. Client interacts
-                  with your branded interface—we handle the backend.
-                </p>
-              </div>
-            </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@company.com"
+            />
+          </div>
 
-            <div class="flex gap-6">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-100 font-bold">
-                6
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                  ongoing managed service
-                </h3>
-                <p class="text-sm text-zinc-400">
-                  We handle infrastructure, updates, monitoring, and incident response. You handle
-                  the client relationship.
-                </p>
-              </div>
-            </div>
+          <div class="form-group">
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="interest">
+              <option value="exploring">Just exploring options</option>
+              <option value="distribution-partner">Becoming a distribution partner</option>
+              <option value="direct-client">AI solution for my business</option>
+              <option value="learn-more">Learning more about your services</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us more (optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="What are you looking to accomplish?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Get in Touch
+          </button>
+
+          <p class="form-note">
+            We'll get back to you within 1 business day.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Why Vertex for Production + Partner Pricing Reference (IMAGE BACKGROUND) -->
+  <section class="vertex-pricing-section">
+    <div class="image-overlay"></div>
+
+    <div class="container">
+      <!-- Why Vertex for Production Content -->
+      <div class="section-header">
+        <h2>Why <span class="highlight-box">Vertex</span> for Production</h2>
+      </div>
+
+      <div class="vertex-content">
+        <p class="vertex-intro">
+          Production agents benefit from Vertex defaults and controls. We still support
+          self-hosted and low-code when the risk profile and budget fit.
+        </p>
+
+        <div class="vertex-comparison">
+          <div class="comparison-column">
+            <h3>Vertex Agent Engine</h3>
+            <ul>
+              <li>• IAM, per-workspace service accounts</li>
+              <li>• VPC options, Private Service Connect</li>
+              <li>• Secret Manager, rotation, SLSA provenance</li>
+              <li>• Audit logs, SIEM export, policy controls</li>
+              <li>• Evals, guardrails, rollback gates</li>
+            </ul>
+          </div>
+
+          <div class="comparison-column">
+            <h3>Self-Hosted / Low-Code</h3>
+            <ul>
+              <li>• Good for orchestration glue</li>
+              <li>• Quick integration wins</li>
+              <li>• Lower volume automations</li>
+              <li>• Air-gapped requirements</li>
+              <li>• Budget-constrained projects</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Standard Deliverables -->
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8">what partners get</h2>
-
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                partner portal access
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Dashboard to view your tenants, usage metrics, billing, and client status at a glance.
-              </p>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                tenant management
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Request new tenants, configure settings, view logs, manage access controls for each client.
-              </p>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                usage dashboards and budgets
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Per-tenant monitoring, cost tracking, usage alerts, performance metrics visible to you and your clients.
-              </p>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                white-label configuration
-              </h3>
-              <p class="text-sm text-zinc-400">
-                Your branding on the interface—logo, colors, domain. Clients see your brand, not ours.
-              </p>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                sales enablement kit
-              </h3>
-              <p class="text-sm text-zinc-400">
-                One-pagers, demo scripts, pitch deck, objection handling guides to help you close deals.
-              </p>
-            </div>
-
-            <div class="card-slate">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">
-                client-facing documentation
-              </h3>
-              <p class="text-sm text-zinc-400">
-                White-labeled user guides, onboarding docs, and support resources for your clients.
-              </p>
-            </div>
-          </div>
+        <div class="vertex-link">
+          <a href="/learn/security">
+            Learn: Security comparison (Vertex vs self-hosted) →
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- Why Vertex -->
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8">why vertex for production</h2>
+      <!-- Partner Pricing Reference Content -->
+      <div class="pricing-content">
+        <div class="section-header">
+          <h2>Partner Pricing <span class="highlight-box">Reference</span></h2>
+        </div>
 
-          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8 mb-6">
-            <p class="text-zinc-300 leading-relaxed mb-6">
-              Production agents benefit from Vertex defaults and controls. We still support
-              self-hosted and low-code when the risk profile and budget fit.
+        <div class="pricing-ref-grid">
+          <div class="pricing-ref-card">
+            <h3>Partner Onboarding</h3>
+            <div class="ref-price">$1,500 one-time</div>
+            <p>
+              Portal setup, white-label configuration, first tenant provisioning, sales kit.
             </p>
-
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 class="text-sm font-semibold text-zinc-100 mb-2 uppercase tracking-widest">
-                  Vertex Agent Engine
-                </h3>
-                <ul class="space-y-2 text-sm text-zinc-400">
-                  <li>• IAM, per-workspace service accounts</li>
-                  <li>• VPC options, Private Service Connect</li>
-                  <li>• Secret Manager, rotation, SLSA provenance</li>
-                  <li>• Audit logs, SIEM export, policy controls</li>
-                  <li>• Evals, guardrails, rollback gates</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 class="text-sm font-semibold text-zinc-100 mb-2 uppercase tracking-widest">
-                  Self-Hosted / Low-Code
-                </h3>
-                <ul class="space-y-2 text-sm text-zinc-400">
-                  <li>• Good for orchestration glue</li>
-                  <li>• Quick integration wins</li>
-                  <li>• Lower volume automations</li>
-                  <li>• Air-gapped requirements</li>
-                  <li>• Budget-constrained projects</li>
-                </ul>
-              </div>
-            </div>
           </div>
 
-          <div class="text-center">
-            <a
-              href="/learn/security"
-              class="text-sm text-zinc-200 hover:text-zinc-50 transition-smooth inline-flex items-center gap-2"
-            >
-              Learn: Security comparison (Vertex vs self-hosted)
-              <span aria-hidden="true">→</span>
+          <div class="pricing-ref-card">
+            <h3>Per-Tenant Fee</h3>
+            <div class="ref-price">From $497/mo</div>
+            <p>
+              Flat platform fee per tenant + usage at provider list prices. You set retail pricing.
+            </p>
+          </div>
+
+          <div class="pricing-ref-card">
+            <h3>Enterprise Tenants</h3>
+            <div class="ref-price">From $1,997/mo</div>
+            <p>
+              Dedicated resources, priority support, compliance documentation, custom SLAs.
+            </p>
+          </div>
+
+          <div class="pricing-ref-card">
+            <h3>Optional Add-Ons</h3>
+            <div class="ref-price">Custom pricing</div>
+            <p>
+              Custom integrations, compliance audits (HIPAA, SOC 2), dedicated support hours.
+            </p>
+          </div>
+        </div>
+
+        <div class="pricing-ref-note">
+          <p>
+            <strong>Usage pricing:</strong> Billed at provider list prices
+            for AI models, search, storage, and compute. Per-tenant budgets enforced with caps,
+            alerts, and prepaid blocks.
+          </p>
+          <p class="disclaimer">
+            Prices subject to change. Contact us for current partner pricing.
+          </p>
+          <div class="learn-link">
+            <a href="/learn/pricing">
+              Learn: How pricing works →
             </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</LayoutRedesign>
 
-    <!-- Pricing Anchors -->
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8">partner pricing reference</h2>
+<style>
+  /* Global Variables */
+  :root {
+    --bg-dark: #0a0f1a;
+    --text-light: #ffffff;
+    --text-light-muted: #e2e8f0;
+    --color-highlight: #d4f542;
+  }
 
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">partner onboarding</h3>
-              <div class="text-2xl font-bold text-zinc-50 mb-3">$1,500 one-time</div>
-              <p class="text-sm text-zinc-400">
-                Portal setup, white-label configuration, first tenant provisioning, sales kit.
-              </p>
-            </div>
+  /* Highlight Box */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">per-tenant fee</h3>
-              <div class="text-2xl font-bold text-zinc-50 mb-3">from $497/mo</div>
-              <p class="text-sm text-zinc-400">
-                Flat platform fee per tenant + usage at provider list prices. You set retail pricing.
-              </p>
-            </div>
+  /* Hero Section - Dark with Image */
+  .hero-section {
+    position: relative;
+    padding: 10rem 0 6rem;
+    background:
+      linear-gradient(rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.9)),
+      url('/images/hero-resellers.jpg') center/cover no-repeat;
+    overflow: hidden;
+  }
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">enterprise tenants</h3>
-              <div class="text-2xl font-bold text-zinc-50 mb-3">from $1,997/mo</div>
-              <p class="text-sm text-zinc-400">
-                Dedicated resources, priority support, compliance documentation, custom SLAs.
-              </p>
-            </div>
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(13, 148, 136, 0.1));
+    pointer-events: none;
+  }
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-zinc-100 mb-2">optional add-ons</h3>
-              <div class="text-lg font-bold text-zinc-50 mb-3">custom pricing</div>
-              <p class="text-sm text-zinc-400">
-                Custom integrations, compliance audits (HIPAA, SOC 2), dedicated support hours.
-              </p>
-            </div>
-          </div>
+  .badge-light {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+  }
 
-          <div class="mt-8 bg-zinc-900/50 border border-zinc-800 rounded-lg p-6">
-            <p class="text-sm text-zinc-400">
-              <strong class="text-zinc-300">Usage pricing:</strong> Billed at provider list prices
-              for AI models, search, storage, and compute. Per-tenant budgets enforced with caps,
-              alerts, and prepaid blocks.
-            </p>
-            <p class="text-xs text-zinc-500 mt-3">
-              Prices subject to change. Contact us for current partner pricing.
-            </p>
-            <div class="mt-4">
-              <a
-                href="/learn/pricing"
-                class="text-sm text-zinc-200 hover:text-zinc-50 transition-smooth inline-flex items-center gap-2"
-              >
-                Learn: How pricing works
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  .hero-title-light {
+    color: white !important;
+  }
 
-    <!-- Contact Form -->
-    <section class="py-24 bg-zinc-950">
-      <div class="container mx-auto px-8">
-        <div class="max-w-2xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-6 text-center">
-            let's talk
-          </h2>
-          <p class="text-zinc-400 mb-8 text-center">
-            Whether you're exploring partnership options, need a hosted AI solution for your business,
-            or just want to learn more—we'd love to hear from you.
-          </p>
+  .hero-description-light {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
 
-          <form
-            id="partner-form"
-            class="space-y-6"
-          >
-
-            <div>
-              <label for="company-name" class="block text-sm font-medium text-zinc-300 mb-2">
-                company name
-              </label>
-              <input
-                type="text"
-                id="company-name"
-                name="company-name"
-                required
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
-                placeholder="Your Company"
-              />
-            </div>
-
-            <div>
-              <label for="contact-name" class="block text-sm font-medium text-zinc-300 mb-2">
-                your name
-              </label>
-              <input
-                type="text"
-                id="contact-name"
-                name="contact-name"
-                required
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
-                placeholder="Your Name"
-              />
-            </div>
-
-            <div>
-              <label for="email" class="block text-sm font-medium text-zinc-300 mb-2">
-                email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth"
-                placeholder="you@company.com"
-              />
-            </div>
-
-            <div>
-              <label for="interest" class="block text-sm font-medium text-zinc-300 mb-2">
-                what are you interested in?
-              </label>
-              <select
-                id="interest"
-                name="interest"
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 focus:outline-none focus:border-zinc-400 transition-smooth"
-              >
-                <option value="exploring">Just exploring options</option>
-                <option value="distribution-partner">Becoming a distribution partner</option>
-                <option value="direct-client">AI solution for my business</option>
-                <option value="learn-more">Learning more about your services</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message" class="block text-sm font-medium text-zinc-300 mb-2">
-                tell us more (optional)
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                class="w-full px-4 py-3 bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-50 placeholder-zinc-500 focus:outline-none focus:border-zinc-400 transition-smooth resize-none"
-                placeholder="What are you looking to accomplish?"
-              ></textarea>
-            </div>
-
-            <button type="submit" class="w-full btn-primary">
-              get in touch
-            </button>
-
-            <p class="text-xs text-zinc-500 text-center">
-              We'll get back to you within 1 business day.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
-</Layout>
-
-<script>
-  const form = document.getElementById('partner-form') as HTMLFormElement | null;
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const data = {
-      companyName: formData.get('company-name') as string,
-      contactName: formData.get('contact-name') as string,
-      email: formData.get('email') as string,
-      interest: formData.get('interest') as string,
-      message: formData.get('message') as string || undefined,
-    };
-
-    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'sending...';
-
-    try {
-      const response = await fetch('/api/partner', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        form.innerHTML = `
-          <div class="text-center py-8">
-            <p class="text-zinc-50 text-lg mb-2">Thanks for reaching out!</p>
-            <p class="text-zinc-400">We'll be in touch within 1 business day.</p>
-          </div>
-        `;
-
-        // Track in Firebase Analytics
-        if ((window as any).gtag) {
-          (window as any).gtag('event', 'form_submit', {
-            form_name: 'partner-inquiry',
-            interest: data.interest,
-          });
-        }
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (error) {
-      console.error('Partner form error:', error);
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-      alert('Something went wrong. Please email jeremy@intentsolutions.io directly.');
+  @media (min-width: 768px) {
+    .hero-section {
+      padding: 8rem 0 6rem;
     }
-  });
-</script>
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgb(var(--color-accent-primary));
+    background-color: rgb(var(--color-accent-light));
+    border: 1px solid rgb(var(--color-accent-lighter));
+    border-radius: var(--radius-full);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgb(var(--color-text-secondary));
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-info-box {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+  }
+
+  .hero-info-box p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* SECTION 1: Distribution Channel + Ideal Partners (DARK + TEAL WAVE) */
+  .distribution-partners-section {
+    position: relative;
+    background: var(--bg-dark);
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-animation-1 15s ease-in-out infinite;
+    opacity: 1;
+  }
+
+  .wave-2 {
+    animation: wave-animation-2 20s ease-in-out infinite;
+    opacity: 1;
+  }
+
+  @keyframes wave-animation-1 {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-25%) translateY(-10px);
+    }
+  }
+
+  @keyframes wave-animation-2 {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(25%) translateY(-15px);
+    }
+  }
+
+  .distribution-partners-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .distribution-partners-section h2,
+  .distribution-partners-section h3 {
+    color: var(--text-light);
+  }
+
+  .distribution-partners-section p {
+    color: var(--text-light-muted);
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .value-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .value-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .value-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .value-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .partners-content {
+    margin-top: 3rem;
+  }
+
+  .partners-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .partner-type-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+  }
+
+  .partner-type-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .partner-type-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+  }
+
+  .partner-type-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-light-muted);
+    margin: 0;
+  }
+
+  /* SECTION 2: Engagement Models + Catalog (IMAGE BACKGROUND) */
+  .engagement-catalog-section {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.85) 30%,
+        rgba(10, 15, 26, 0.80) 60%,
+        rgba(10, 15, 26, 0.85) 100%
+      ),
+      url('/images/partners-engagement-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(13, 148, 136, 0.05));
+    pointer-events: none;
+  }
+
+  .engagement-catalog-section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .engagement-catalog-section h2,
+  .engagement-catalog-section h3 {
+    color: var(--text-light);
+  }
+
+  .engagement-catalog-section p,
+  .engagement-catalog-section li {
+    color: var(--text-light-muted);
+  }
+
+  .engagement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .engagement-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .engagement-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .engagement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .engagement-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .engagement-card .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent-primary);
+    margin-bottom: 1rem;
+  }
+
+  .engagement-card .description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .engagement-card .features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .engagement-card .features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .engagement-card .features .icon {
+    color: #16a34a;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .onboarding-note {
+    margin-bottom: 5rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+  }
+
+  .onboarding-note p {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  .catalog-content {
+    margin-top: 3rem;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .catalog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .catalog-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .catalog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .catalog-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .catalog-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .catalog-card ul li {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .catalog-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .catalog-card .setup-time {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+  }
+
+  .catalog-note {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+  }
+
+  .catalog-note p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  /* SECTION 3: Partnership Works + Benefits (DARK + TEAL WAVE) */
+  .partnership-benefits-section {
+    position: relative;
+    background: var(--bg-dark);
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  .partnership-benefits-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .partnership-benefits-section h2,
+  .partnership-benefits-section h3 {
+    color: var(--text-light);
+  }
+
+  .partnership-benefits-section p {
+    color: var(--text-light-muted);
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 5rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 640px) {
+    .step {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bg-dark);
+    background: var(--color-highlight);
+    border-radius: var(--radius-full);
+  }
+
+  .step-content h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+  }
+
+  .step-content p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-light-muted);
+    margin: 0;
+  }
+
+  .benefits-content {
+    margin-top: 3rem;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .benefit-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .benefit-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .benefit-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* SECTION 4: Contact Form (DARK + TEAL WAVE) */
+  .contact-form-section {
+    position: relative;
+    background: var(--bg-dark);
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  .contact-form-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-wrapper h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+
+  .form-intro {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--text-light-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .partner-form {
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    background-color: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  .form-group textarea {
+    resize: none;
+    font-family: inherit;
+  }
+
+  .form-note {
+    font-size: 0.75rem;
+    text-align: center;
+    color: var(--text-tertiary);
+    margin: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* SECTION 5: Vertex + Pricing (IMAGE BACKGROUND) */
+  .vertex-pricing-section {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.85) 30%,
+        rgba(10, 15, 26, 0.80) 60%,
+        rgba(10, 15, 26, 0.85) 100%
+      ),
+      url('/images/partners-vertex-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  .vertex-pricing-section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .vertex-pricing-section h2,
+  .vertex-pricing-section h3 {
+    color: var(--text-light);
+  }
+
+  .vertex-pricing-section p,
+  .vertex-pricing-section li {
+    color: var(--text-light-muted);
+  }
+
+  .vertex-content {
+    max-width: 900px;
+    margin: 0 auto 5rem;
+  }
+
+  .vertex-intro {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    margin-bottom: 2rem;
+  }
+
+  .vertex-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .vertex-comparison {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .comparison-column h3 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .comparison-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .comparison-column ul li {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .vertex-link {
+    text-align: center;
+  }
+
+  .vertex-link a {
+    font-size: 0.9375rem;
+    color: var(--color-highlight);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .vertex-link a:hover {
+    color: #c4e532;
+  }
+
+  .pricing-content {
+    margin-top: 3rem;
+  }
+
+  .pricing-ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-ref-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .pricing-ref-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .pricing-ref-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .pricing-ref-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .pricing-ref-card .ref-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent-primary);
+    margin-bottom: 1rem;
+  }
+
+  .pricing-ref-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .pricing-ref-note {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+  }
+
+  .pricing-ref-note p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .pricing-ref-note p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .pricing-ref-note .disclaimer {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 1rem;
+  }
+
+  .pricing-ref-note .learn-link {
+    margin-top: 1rem;
+  }
+
+  .pricing-ref-note .learn-link a {
+    font-size: 0.9375rem;
+    color: var(--color-highlight);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .pricing-ref-note .learn-link a:hover {
+    color: #c4e532;
+  }
+</style>
