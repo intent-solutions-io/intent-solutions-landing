@@ -15,6 +15,7 @@ import {
   resendApiKey,
   resendFromEmail,
 } from "./services/email";
+import { isRateLimited } from "./utils/rate-limit";
 
 // Initialize Firebase Admin
 initializeApp();
@@ -64,6 +65,14 @@ export const submitContact = onRequest(
   async (req, res) => {
     if (req.method !== "POST") {
       res.status(405).json({ error: "Method not allowed" });
+      return;
+    }
+
+    // Rate limit: 3 submissions per IP per hour
+    const clientIp = req.ip || req.headers["x-forwarded-for"] as string || "unknown";
+    if (await isRateLimited(clientIp)) {
+      logger.warn("Rate limited contact submission", { ip: clientIp });
+      res.status(429).json({ error: "Too many requests. Please try again later." });
       return;
     }
 
@@ -157,6 +166,14 @@ export const submitPartnerInquiry = onRequest(
   async (req, res) => {
     if (req.method !== "POST") {
       res.status(405).json({ error: "Method not allowed" });
+      return;
+    }
+
+    // Rate limit: 3 submissions per IP per hour
+    const clientIp = req.ip || req.headers["x-forwarded-for"] as string || "unknown";
+    if (await isRateLimited(clientIp)) {
+      logger.warn("Rate limited partner submission", { ip: clientIp });
+      res.status(429).json({ error: "Too many requests. Please try again later." });
       return;
     }
 
