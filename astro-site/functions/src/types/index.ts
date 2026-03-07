@@ -74,3 +74,40 @@ export interface SurveySubmission {
 }
 
 export type FormSubmission = ContactSubmission | EnhancedContactSubmission | PartnerInquiry | SurveySubmission;
+
+export interface LearnIntake {
+  id?: string;
+  name: string;
+  email: string;
+  message: string;
+  company?: string;
+  phone?: string;
+  source?: string;
+  userAgent?: string;
+  createdAt?: Timestamp;
+  ai?: Omit<LearnAnalysis, "analyzedAt">;
+  slackMessageTs?: string;
+  slackChannelId?: string;
+}
+
+export interface LearnAnalysis {
+  os: "mac" | "windows" | "linux" | "unknown";
+  experienceLevel: "beginner" | "intermediate" | "advanced";
+  recommendedTier: 1 | 2 | 3 | 4;
+  fit: "good" | "maybe" | "poor";
+  reasoning: string;
+  emailDraft: string;
+  analyzedAt?: Timestamp;
+}
+
+export interface SlackActionPayload {
+  type: string;
+  user: { id: string; username: string; name: string };
+  actions: Array<{
+    action_id: string;
+    value: string;
+    type: string;
+  }>;
+  trigger_id: string;
+  message?: { ts: string };
+}
