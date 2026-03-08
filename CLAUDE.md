@@ -25,7 +25,7 @@ Intent Solutions landing page — **Discovery-first engagement model**. Three co
 - **Deployed at**: https://intentsolutions.io (Firebase Hosting)
 - **Plugin Marketplace**: https://claudecodeplugins.io (270+ plugins)
 - **Booking Link**: https://calendar.app.google/Wqbt8EJuEh5xvvV58
-- **Proof Points**: 1,167+ GitHub stars, 270+ plugins, 1,537 agent skills, only external Google Agent Starter Pack contributor, 20+ years ops
+- **Proof Points**: 1,550+ GitHub stars, 270+ plugins, 1,537 agent skills, only external Google Agent Starter Pack contributor, 20+ years ops
 - **Legacy**: `99-Archive/` contains old React/Vite SPA (not in production)
 
 ## Commands
@@ -203,7 +203,7 @@ Colors: Zinc palette (950-50), Inter font family. Animation: Framer Motion (Reac
 **Do**:
 - Lead with Claude Code Systems as the primary service
 - Emphasize "build + train" positioning and discovery-first engagement
-- Reference 270+ plugins, 1,167+ GitHub stars, 1,537 agent skills as proof of capability
+- Reference 270+ plugins, 1,550+ GitHub stars, 1,537 agent skills as proof of capability
 - All CTAs point to discovery call booking (calendar link), not pricing
 - Offer flexible contact options (Discord, WhatsApp, LinkedIn, X, phone)
 - Show tiered packages clearly

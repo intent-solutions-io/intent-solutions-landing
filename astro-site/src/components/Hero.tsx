@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   const focusAreas = [
-    '270+ plugins · 1,167+ GitHub stars · 1,537 agent skills',
+    '270+ plugins · 1,550+ GitHub stars · 1,537 agent skills',
     'team configuration and workflow optimization',
     'only external contributor to Google Agent Starter Pack',
   ];

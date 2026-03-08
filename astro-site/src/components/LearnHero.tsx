@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const proofPoints = [
-  '270+ Claude Code plugins · 1,167+ GitHub stars',
+  '270+ Claude Code plugins · 1,550+ GitHub stars',
   '1,537 agent skills · 20+ years ops experience',
   'Only external Google Agent Starter Pack contributor',
 ];
