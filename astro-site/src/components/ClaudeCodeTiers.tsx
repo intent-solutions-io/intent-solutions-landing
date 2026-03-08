@@ -105,14 +105,16 @@ export default function ClaudeCodeTiers() {
               </ul>
 
               <a
-                href="#contact"
+                href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
+                target="_blank"
+                rel="noopener"
                 className={`text-center py-3 px-4 rounded-lg font-medium transition-smooth ${
                   tier.featured
                     ? 'bg-zinc-200 text-zinc-900 hover:bg-zinc-50'
                     : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                 }`}
               >
-                Get Started
+                Book a Discovery Call
               </a>
             </motion.div>
           ))}
@@ -131,7 +133,7 @@ export default function ClaudeCodeTiers() {
             rel="noopener noreferrer"
             className="text-zinc-300 hover:text-zinc-50 transition-colors"
           >
-            258+ open-source plugins
+            270+ open-source plugins
           </a>
         </motion.p>
       </div>

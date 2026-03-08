@@ -199,7 +199,7 @@ export default function LearnOfferings() {
                       : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                   }`}
                 >
-                  Book Now
+                  Book a Discovery Call
                 </a>
               </motion.div>
             ))}

@@ -11,8 +11,8 @@ export default function Products() {
     {
       name: 'Claude Code Plugins Hub',
       description:
-        '227 plugins for Claude Code with Skills Powerkit for plugin management—197 GitHub stars, 26 forks, community-driven development.',
-      badge: 'JavaScript • Open Source • 197★',
+        '270+ plugins for Claude Code with Skills Powerkit for plugin management—1,167+ GitHub stars, community-driven development.',
+      badge: 'JavaScript • Open Source • 1,167★',
       link: 'https://github.com/jeremylongshore/claude-code-plugins-plus',
     },
     {
@@ -49,13 +49,6 @@ export default function Products() {
         'Secure Model Context Protocol server that drops into enterprise stacks so operators can run AI agents with container isolation.',
       badge: 'Python • Docker • Security',
       link: 'https://github.com/jeremylongshore/waygate-mcp',
-    },
-    {
-      name: 'HUSTLE',
-      description:
-        'Youth sports performance tracking backed by a 76-question parent research study—now collecting beta testers via Netlify forms.',
-      badge: 'Next.js • PostgreSQL • Research',
-      link: '/survey',
     },
     {
       name: 'News Pipeline',

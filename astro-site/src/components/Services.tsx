@@ -26,7 +26,7 @@ export default function Services() {
     {
       title: 'launch-ready product builds',
       description:
-        'Ship Astro + React experiences, surveys, and admin tools with coherent design systems, copy, and analytics instrumentation included.',
+        'Ship Astro + React experiences and admin tools with coherent design systems, copy, and analytics instrumentation included.',
     },
   ];
 
