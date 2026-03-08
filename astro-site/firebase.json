@@ -16,8 +16,7 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       { "source": "/api/contact", "function": "submitContact" },
-      { "source": "/api/partner", "function": "submitPartnerInquiry" },
-      { "source": "/api/survey", "function": "submitSurvey" }
+      { "source": "/api/partner", "function": "submitPartnerInquiry" }
     ],
     "headers": [
       {
@@ -41,6 +40,11 @@
           { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
         ]
       }
+    ],
+    "redirects": [
+      { "source": "/survey", "destination": "/", "type": 301 },
+      { "source": "/survey/**", "destination": "/", "type": 301 },
+      { "source": "/learn/pricing", "destination": "/learn", "type": 301 }
     ],
     "cleanUrls": true,
     "trailingSlash": false

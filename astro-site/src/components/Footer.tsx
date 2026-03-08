@@ -40,6 +40,12 @@ export default function Footer() {
               learn
             </a>
             <a
+              href="/colab"
+              className="text-zinc-400 hover:text-zinc-200 transition-smooth"
+            >
+              colab
+            </a>
+            <a
               href="/resellers"
               className="text-zinc-400 hover:text-zinc-200 transition-smooth"
             >

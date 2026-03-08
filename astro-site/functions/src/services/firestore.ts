@@ -1,5 +1,5 @@
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
-import type { ContactSubmission, EnhancedContactSubmission, PartnerInquiry, SurveySubmission } from "../types";
+import type { ContactSubmission, EnhancedContactSubmission, PartnerInquiry } from "../types";
 
 const COLLECTION = "contactSubmissions";
 
@@ -60,21 +60,6 @@ export async function savePartnerInquiry(
     ...data,
     formType: "partner-inquiry",
     status: "new",
-    createdAt: Timestamp.now(),
-    emailsSent: {},
-  };
-
-  const docRef = await db.collection(COLLECTION).add(submission);
-  return docRef.id;
-}
-
-export async function saveSurveySubmission(
-  data: Omit<SurveySubmission, "id" | "createdAt" | "emailsSent" | "formType">
-): Promise<string> {
-  const db = getDb();
-  const submission: Omit<SurveySubmission, "id"> = {
-    ...data,
-    formType: "survey",
     createdAt: Timestamp.now(),
     emailsSent: {},
   };

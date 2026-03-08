@@ -11,9 +11,51 @@ export default function Products() {
     {
       name: 'Claude Code Plugins Hub',
       description:
-        '227 plugins for Claude Code with Skills Powerkit for plugin management—197 GitHub stars, 26 forks, community-driven development.',
-      badge: 'JavaScript • Open Source • 197★',
-      link: 'https://github.com/jeremylongshore/claude-code-plugins-plus',
+        '270+ plugins with 1,537 agent skills, CCPI package manager, and interactive tutorials—1,550+ GitHub stars, 186 forks, community-driven.',
+      badge: 'Python • Open Source • 1,550★',
+      link: 'https://github.com/jeremylongshore/claude-code-plugins-plus-skills',
+    },
+    {
+      name: 'IRSB',
+      description:
+        'On-chain guardrails for AI agents—EIP-7702 spend limits, cryptographic execution receipts, and automated dispute resolution. No agent should hold unguarded keys.',
+      badge: 'TypeScript • Ethereum • EIP-7702',
+      link: 'https://github.com/jeremylongshore/irsb',
+    },
+    {
+      name: 'Moat',
+      description:
+        'Verified Agent Capabilities Marketplace—MCP-first trust, policy, and execution layer for agents. Prove what your agent can do before it runs.',
+      badge: 'Python • MCP • Agent Trust',
+      link: 'https://github.com/jeremylongshore/moat',
+    },
+    {
+      name: 'Intent Scout',
+      description:
+        'The first AI that can earn its own existence, replicate, and evolve—without needing a human. Autonomous agent economics research.',
+      badge: 'TypeScript • Autonomous Agents',
+      link: 'https://github.com/jeremylongshore/intent-scout',
+    },
+    {
+      name: 'News Pipeline',
+      description:
+        'Automated monitoring that converts daily news into structured intelligence briefs for decision makers.',
+      badge: 'n8n • AI Analysis • 10★',
+      link: 'https://github.com/jeremylongshore/news-pipeline-n8n',
+    },
+    {
+      name: 'Excel Analyst Pro',
+      description:
+        'Professional financial modeling toolkit for Claude Code—DCF models, LBO analysis, variance reports, and pivot tables via natural language.',
+      badge: 'Claude Code Skill • 8★',
+      link: 'https://github.com/jeremylongshore/excel-analyst-pro',
+    },
+    {
+      name: 'StartAITools',
+      description:
+        'Technical research blog with 37+ posts documenting real AI implementations, production systems, and practical development guides.',
+      badge: 'Hugo • Technical Writing • 7★',
+      link: 'https://startaitools.com',
     },
     {
       name: 'DiagnosticPro',
@@ -23,53 +65,11 @@ export default function Products() {
       link: 'https://diagnosticpro.io',
     },
     {
-      name: 'StartAITools',
-      description:
-        'Technical research blog documenting real AI implementations, production systems, and practical development guides for engineers.',
-      badge: 'Hugo • Technical Writing • Education',
-      link: 'https://startaitools.com',
-    },
-    {
       name: "Bob's Brain",
       description:
         'Collaborative AI assistant with Slack integration—Google Gemini 2.5 Flash, Neo4j knowledge graphs, BigQuery analytics, Cloud Run deployment.',
       badge: 'Python • Gemini • Neo4j',
       link: 'https://github.com/jeremylongshore/bobs-brain',
-    },
-    {
-      name: 'AI DevOps Documentation',
-      description:
-        'Claude-powered runbook generator that ships enterprise-ready docs in minutes; teams deploy it to unblock audits and handoffs.',
-      badge: 'JavaScript • Claude API • 19★',
-      link: 'https://github.com/jeremylongshore/ai-devops-intent-solutions',
-    },
-    {
-      name: 'Waygate MCP',
-      description:
-        'Secure Model Context Protocol server that drops into enterprise stacks so operators can run AI agents with container isolation.',
-      badge: 'Python • Docker • Security',
-      link: 'https://github.com/jeremylongshore/waygate-mcp',
-    },
-    {
-      name: 'HUSTLE',
-      description:
-        'Youth sports performance tracking backed by a 76-question parent research study—now collecting beta testers via Netlify forms.',
-      badge: 'Next.js • PostgreSQL • Research',
-      link: '/survey',
-    },
-    {
-      name: 'News Pipeline',
-      description:
-        'Automated monitoring that converts daily news into structured intelligence briefs for decision makers.',
-      badge: 'n8n • AI Analysis • 4★',
-      link: 'https://github.com/jeremylongshore/news-pipeline-n8n',
-    },
-    {
-      name: 'Disposable Marketplace',
-      description:
-        'Instant micro-marketplaces for manufacturers to collect quotes—CSV-driven inventory, ranked responses, zero custom CMS required.',
-      badge: 'Shell • n8n • Automation',
-      link: 'https://github.com/jeremylongshore/disposable-marketplace-n8n',
     },
   ];
 

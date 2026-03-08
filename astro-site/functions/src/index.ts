@@ -5,7 +5,6 @@ import { z } from "zod";
 import {
   saveEnhancedContactSubmission,
   savePartnerInquiry,
-  saveSurveySubmission,
   markEmailSent,
 } from "./services/firestore";
 import {
@@ -218,40 +217,3 @@ export const submitPartnerInquiry = onRequest(
   }
 );
 
-// ============================================
-// SURVEY WEBHOOK HANDLER
-// ============================================
-export const submitSurvey = onRequest(
-  {
-    cors: corsOrigins,
-    region: "us-central1",
-    memory: "256MiB",
-    timeoutSeconds: 60,
-  },
-  async (req, res) => {
-    if (req.method !== "POST") {
-      res.status(405).json({ error: "Method not allowed" });
-      return;
-    }
-
-    try {
-      const { email, responses } = req.body;
-
-      if (!email) {
-        res.status(200).json({ message: "No email to process" });
-        return;
-      }
-
-      const docId = await saveSurveySubmission({
-        email,
-        responses: responses || {},
-      });
-
-      logger.info("Saved survey submission", { docId, email });
-      res.status(200).json({ success: true, id: docId });
-    } catch (error) {
-      logger.error("Survey submission failed", { error });
-      res.status(500).json({ error: "Internal server error" });
-    }
-  }
-);

@@ -62,15 +62,6 @@ export interface PartnerInquiry {
   userAgent?: string;
 }
 
-export interface SurveySubmission {
-  id?: string;
-  email: string;
-  responses: Record<string, unknown>;
-  formType: "survey";
-  createdAt: Timestamp;
-  emailsSent: {
-    thankYou?: Timestamp;
-  };
-}
+export type FormSubmission = ContactSubmission | EnhancedContactSubmission | PartnerInquiry;
 
-export type FormSubmission = ContactSubmission | EnhancedContactSubmission | PartnerInquiry | SurveySubmission;
+export { LearnIntake, LearnAnalysis, LearnApproval, LearnIntakeInput, SlackActionPayload } from "./learn";

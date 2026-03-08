@@ -191,11 +191,13 @@ export default function MvpShowcase({ isOpen, onClose }: MvpShowcaseProps) {
                     see agent options
                   </a>
                   <a
-                    href="/learn/pricing"
+                    href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
+                    target="_blank"
+                    rel="noopener"
                     className="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth text-sm"
                     onClick={onClose}
                   >
-                    how pricing works →
+                    Book a Discovery Call →
                   </a>
                   <a
                     href="/#contact"

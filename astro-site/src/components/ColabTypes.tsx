@@ -108,7 +108,7 @@ export default function ColabTypes() {
                       : 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
                   }`}
                 >
-                  Get Started
+                  Book a Discovery Call
                 </a>
               </motion.div>
             ))}

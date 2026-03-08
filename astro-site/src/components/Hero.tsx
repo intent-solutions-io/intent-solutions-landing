@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   const focusAreas = [
-    'custom plugin development + 258 plugin marketplace',
+    '270+ plugins · 1,550+ GitHub stars · 1,537 agent skills',
     'team configuration and workflow optimization',
-    'training and enablement for your developers',
+    'only external contributor to Google Agent Starter Pack',
   ];
 
   return (
@@ -84,8 +84,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <a href="#contact" className="btn-primary">
-              get started
+            <a href="https://calendar.app.google/Wqbt8EJuEh5xvvV58" target="_blank" rel="noopener" className="btn-primary">
+              Book a Discovery Call
             </a>
             <a
               href="https://claudecodeplugins.io"
@@ -93,7 +93,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
             >
-              explore 258+ plugins →
+              explore 270+ plugins →
             </a>
           </motion.div>
         </motion.div>

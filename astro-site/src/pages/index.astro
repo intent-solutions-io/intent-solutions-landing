@@ -14,6 +14,45 @@ import Footer from '../components/Footer';
   <Hero client:load />
   <ClaudeCodeTiers client:visible />
 
+  <!-- Learn + Colab -->
+  <section class="py-24 bg-zinc-900 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-h2 font-bold text-zinc-50 mb-4">three ways to work together</h2>
+        <p class="text-zinc-400">
+          Learn Claude Code, build with an expert, or accelerate with a cohort.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+        <a href="/learn" class="card-slate h-full flex flex-col group hover:border-zinc-600 transition-smooth">
+          <p class="text-sm text-zinc-500 uppercase tracking-wider mb-2">For decision-makers</p>
+          <h3 class="text-xl font-bold text-zinc-50 mb-3 group-hover:text-zinc-200">Learn with Jeremy</h3>
+          <p class="text-sm text-zinc-400 flex-1 mb-4">
+            Executive onramps, leadership workshops, and team enablement. Understand what Claude Code is, how it fits your org, and how to roll it out safely.
+          </p>
+          <span class="text-sm text-zinc-200 group-hover:text-zinc-50">Explore Learn →</span>
+        </a>
+        <a href="/colab" class="card-slate h-full flex flex-col group hover:border-zinc-600 transition-smooth">
+          <p class="text-sm text-zinc-500 uppercase tracking-wider mb-2">For teams ready to ship</p>
+          <h3 class="text-xl font-bold text-zinc-50 mb-3 group-hover:text-zinc-200">Colab with Jeremy</h3>
+          <p class="text-sm text-zinc-400 flex-1 mb-4">
+            Implementation partner in your repo. Delivery sprints, monthly cadence, or advisory. Real PRs, reviewed and deployed.
+          </p>
+          <span class="text-sm text-zinc-200 group-hover:text-zinc-50">Explore Colab →</span>
+        </a>
+        <a href="https://whop.com/claude-code-cowork-accelerator/" target="_blank" rel="noopener" aria-label="Join the Cowork Accelerator (opens in new tab)" class="card-slate h-full flex flex-col group hover:border-zinc-600 transition-smooth">
+          <p class="text-sm text-zinc-500 uppercase tracking-wider mb-2">For builders who want speed</p>
+          <h3 class="text-xl font-bold text-zinc-50 mb-3 group-hover:text-zinc-200">Cowork Accelerator</h3>
+          <p class="text-sm text-zinc-400 flex-1 mb-4">
+            Cohort-based Claude Code + Cowork program. Hands-on exercises, live sessions, and a community of builders shipping real projects together.
+          </p>
+          <span class="text-sm text-zinc-200 group-hover:text-zinc-50">Join the Accelerator →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Other Services (Secondary) -->
   <section class="py-24 bg-zinc-900">
     <div class="container mx-auto px-8">

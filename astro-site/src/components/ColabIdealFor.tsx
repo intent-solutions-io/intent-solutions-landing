@@ -46,11 +46,11 @@ const humanApprovalPolicy = [
 
 const whatIBring = [
   {
-    title: '258+ Claude Code plugins',
+    title: '270+ Claude Code plugins',
     description: 'The largest public plugin collection at claudecodeplugins.io',
   },
   {
-    title: '15+ years ops experience',
+    title: '20+ years ops experience',
     description: 'Production discipline, not just demos. I ship.',
   },
   {
@@ -207,7 +207,7 @@ export default function ColabIdealFor() {
                 rel="noopener"
                 className="btn-primary"
               >
-                Start a Delivery Sprint
+                Book a Discovery Call
               </a>
             </motion.div>
           </div>
