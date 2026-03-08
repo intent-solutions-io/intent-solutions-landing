@@ -1,0 +1,172 @@
+---
+// Trust Bar with Logo Marquee
+---
+
+<section class="trust-bar">
+  <p class="trust-label">Trusted by teams building with AI</p>
+  <div class="logo-marquee">
+    <div class="logo-track">
+      <!-- First set of logos/badges -->
+      <span class="trust-logo trust-logo-github">GitHub</span>
+      <span class="trust-logo trust-logo-google-cloud">Google Cloud</span>
+      <span class="trust-logo trust-logo-anthropic">Anthropic</span>
+      <span class="trust-logo trust-logo-n8n">n8n</span>
+      <span class="trust-logo trust-logo-claude">Claude</span>
+      <span class="stat-badge">258+ Plugins</span>
+      <span class="stat-badge">197 GitHub Stars</span>
+      <span class="trust-logo trust-logo-netlify">Netlify</span>
+      <span class="trust-logo trust-logo-bigquery">BigQuery</span>
+      <span class="trust-logo trust-logo-python">Python</span>
+
+      <!-- Duplicate for seamless loop -->
+      <span class="trust-logo trust-logo-github">GitHub</span>
+      <span class="trust-logo trust-logo-google-cloud">Google Cloud</span>
+      <span class="trust-logo trust-logo-anthropic">Anthropic</span>
+      <span class="trust-logo trust-logo-n8n">n8n</span>
+      <span class="trust-logo trust-logo-claude">Claude</span>
+      <span class="stat-badge">258+ Plugins</span>
+      <span class="stat-badge">197 GitHub Stars</span>
+      <span class="trust-logo trust-logo-netlify">Netlify</span>
+      <span class="trust-logo trust-logo-bigquery">BigQuery</span>
+      <span class="trust-logo trust-logo-python">Python</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-bar {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .trust-label {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .logo-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .logo-track {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    animation: marquee 40s linear infinite;
+    width: max-content;
+  }
+
+  .logo-track:hover {
+    animation-play-state: paused;
+  }
+
+  .trust-logo {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: var(--transition-base);
+    white-space: nowrap;
+    cursor: default;
+  }
+
+  .trust-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  /* Brand Colors */
+  .trust-logo-netlify {
+    color: #00c7b7;
+  }
+
+  .trust-logo-bigquery {
+    color: #4285f4;
+  }
+
+  .trust-logo-python {
+    color: #3776ab;
+  }
+
+  .trust-logo-github {
+    color: #333333;
+  }
+
+  .trust-logo-google-cloud {
+    color: #4285f4;
+  }
+
+  .trust-logo-anthropic {
+    color: #d4a574;
+  }
+
+  .trust-logo-n8n {
+    color: #ea4b71;
+  }
+
+  .trust-logo-claude {
+    color: #d4a574;
+  }
+
+  .stat-badge {
+    background: var(--color-accent-primary);
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.025em;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .trust-bar {
+      padding: 1.5rem 0;
+    }
+
+    .logo-track {
+      gap: 2rem;
+      animation-duration: 30s;
+    }
+
+    .tech-name {
+      font-size: 0.875rem;
+    }
+
+    .stat-badge {
+      font-size: 0.6875rem;
+      padding: 0.375rem 0.75rem;
+    }
+  }
+</style>

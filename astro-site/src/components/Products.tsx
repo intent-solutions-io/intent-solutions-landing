@@ -74,8 +74,11 @@ export default function Products() {
   ];
 
   return (
-    <section id="products" className="py-24 bg-zinc-900" ref={ref}>
-      <div className="container mx-auto px-8">
+    <section id="products" className="py-24 relative overflow-hidden" style={{ backgroundColor: 'rgb(var(--color-bg-primary))' }} ref={ref}>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 grid-pattern opacity-20" />
+
+      <div className="container mx-auto px-8 relative z-10">
         <motion.h2
           className="text-h1 font-bold text-zinc-50 mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}

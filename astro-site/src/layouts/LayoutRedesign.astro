@@ -1,0 +1,128 @@
+---
+import '../styles/global-redesign.css';
+import { SEO } from 'astro-seo';
+import Header from '../components/Header.astro';
+import Footer from '../components/FooterRedesign.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Model-agnostic AI agents, private AI infrastructure, and automation solutions. Transparent pricing, enterprise-grade security, no vendor lock-in.',
+  ogImage = `${Astro.site}og-image.svg`
+} = Astro.props;
+
+// Generate canonical URL using configured site
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- SEO -->
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          title: title,
+          type: 'website',
+          image: ogImage,
+          url: canonicalURL,
+        },
+        optional: {
+          description: description,
+          siteName: 'Intent Solutions',
+        }
+      }}
+      twitter={{
+        card: 'summary_large_image',
+        title: title,
+        description: description,
+        image: ogImage,
+      }}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Enhanced scroll animations with support for multiple animation types
+      function initScrollAnimations() {
+        if (!('IntersectionObserver' in window)) {
+          return;
+        }
+
+        // Respect reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.querySelectorAll('.animate-on-scroll, .fade-in-on-scroll, .stagger-children, .fade-up, .fade-down, .fade-left, .fade-right, .fade-scale').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.transition = 'none';
+          });
+          return;
+        }
+
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -100px 0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add visible class for all animation types
+              entry.target.classList.add('visible');
+              // Legacy support
+              entry.target.classList.add('fade-in-visible');
+              // Unobserve after animating
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        const selectors = [
+          '.animate-on-scroll',
+          '.fade-in-on-scroll',
+          '.stagger-children',
+          '.fade-up',
+          '.fade-down',
+          '.fade-left',
+          '.fade-right',
+          '.fade-scale'
+        ];
+
+        selectors.forEach(selector => {
+          document.querySelectorAll(selector).forEach((el) => observer.observe(el));
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
+  </body>
+</html>

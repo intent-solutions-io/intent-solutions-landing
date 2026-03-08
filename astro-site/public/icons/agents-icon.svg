@@ -1,0 +1,40 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central node -->
+  <circle cx="32" cy="32" r="6" fill="url(#gradient1)" />
+
+  <!-- Surrounding nodes -->
+  <circle cx="16" cy="16" r="4" fill="url(#gradient2)" />
+  <circle cx="48" cy="16" r="4" fill="url(#gradient2)" />
+  <circle cx="16" cy="48" r="4" fill="url(#gradient2)" />
+  <circle cx="48" cy="48" r="4" fill="url(#gradient2)" />
+
+  <!-- Connection lines with gradient -->
+  <line x1="20" y1="16" x2="26" y2="26" stroke="url(#gradient3)" stroke-width="2" stroke-linecap="round" />
+  <line x1="44" y1="16" x2="38" y2="26" stroke="url(#gradient3)" stroke-width="2" stroke-linecap="round" />
+  <line x1="20" y1="48" x2="26" y2="38" stroke="url(#gradient3)" stroke-width="2" stroke-linecap="round" />
+  <line x1="44" y1="48" x2="38" y2="38" stroke="url(#gradient3)" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Outer glow circles -->
+  <circle cx="32" cy="32" r="10" stroke="url(#gradient4)" stroke-width="1.5" fill="none" opacity="0.4" />
+  <circle cx="32" cy="32" r="14" stroke="url(#gradient4)" stroke-width="1" fill="none" opacity="0.2" />
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="26" y1="26" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B8DEF" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B8DEF" />
+      <stop offset="100%" stop-color="#00D9FF" />
+    </linearGradient>
+    <linearGradient id="gradient3" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5B8DEF" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="gradient4" x1="22" y1="22" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00D9FF" />
+      <stop offset="100%" stop-color="#5B8DEF" />
+    </linearGradient>
+  </defs>
+</svg>

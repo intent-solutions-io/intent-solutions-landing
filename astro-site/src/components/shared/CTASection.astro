@@ -1,0 +1,148 @@
+---
+// Reusable CTA Section for all pages
+---
+
+<section class="cta-section">
+  <div class="wave-background">
+    <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+    <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+  </div>
+  <div class="container">
+    <h2 class="section-title section-title-light animate-on-scroll">
+      Ready to Build Your
+      <span class="highlight-box">AI System</span>?
+    </h2>
+    <p class="section-subtitle section-subtitle-light animate-on-scroll">
+      Tell us about your team and goals — we'll respond within 24 hours.
+    </p>
+    <div class="cta-button animate-on-scroll">
+      <a href="mailto:jeremy@intentsolutions.io" class="btn-primary-large">Start a Project</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    position: relative;
+    padding: 5rem 0;
+    background:
+      linear-gradient(rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.9)),
+      linear-gradient(135deg, #0a0f1a 0%, #1a1f2e 50%, #0a0f1a 100%);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* Wave Background */
+  .wave-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title-light {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .highlight-box {
+    display: inline-block;
+    background-color: var(--color-highlight);
+    color: var(--text-primary);
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0 0.25rem;
+  }
+
+  .section-subtitle-light {
+    font-size: 1.125rem;
+    color: var(--text-light-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .cta-button {
+    margin-top: 2rem;
+  }
+
+  .btn-primary-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--color-accent-primary), rgb(67 56 202));
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-primary-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .cta-section {
+      padding: 3rem 0;
+    }
+
+    .section-title-light {
+      font-size: 2rem;
+    }
+
+    .section-subtitle-light {
+      font-size: 1rem;
+    }
+
+    .wave {
+      height: 30%;
+    }
+  }
+</style>

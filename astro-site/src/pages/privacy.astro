@@ -1,30 +1,600 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
+const lastUpdated = 'January 19, 2025';
 ---
 
-<Layout title="Privacy Policy - intent solutions io">
-  <div class="min-h-screen bg-zinc-900 py-24">
-    <div class="container mx-auto px-8 max-w-4xl">
-      <h1 class="text-h1 font-bold text-zinc-50 mb-12">Privacy Policy</h1>
-
-      <div class="getterms-document-embed"
-           data-getterms="wH2cn"
-           data-getterms-document="privacy"
-           data-getterms-lang="en-us"
-           data-getterms-mode="direct"
-           data-getterms-env="https://gettermscdn.com">
+<LayoutRedesign title="Privacy Policy - Intent Solutions">
+  <!-- SECTION 1: Hero + Introduction (IMAGE BACKGROUND) -->
+  <section class="privacy-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Privacy <span class="highlight-box">Policy</span>
+        </h1>
+        <p class="last-updated">Last Updated: {lastUpdated}</p>
+        <p class="hero-description">
+          At Intent Solutions, we take your privacy seriously. This Privacy Policy explains how we collect, use, protect, and share your personal information when you use our AI solutions, consulting services, and products.
+        </p>
       </div>
-
-      <script type="text/javascript">
-        (function(d, s, id) {
-          var js, ref = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://gettermscdn.com/dist/js/embed.js";
-          ref.parentNode.insertBefore(js, ref);
-        })(document, "script", "getterms-embed-js");
-      </script>
     </div>
-  </div>
-</Layout>
+  </section>
+
+  <!-- SECTION 2: Main Privacy Content (DARK BACKGROUND ONLY) -->
+  <section class="privacy-content">
+    <div class="container">
+      <div class="privacy-text">
+
+        <!-- Overview -->
+        <h2>1. <span class="highlight-box">Overview</span></h2>
+        <p>
+          Intent Solutions ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy applies to all services provided through intentsolutions.io and related platforms, including our AI consulting, software products, and cloud solutions.
+        </p>
+        <p>
+          By using our Services, you consent to the data practices described in this policy. If you do not agree with our practices, please do not use our Services.
+        </p>
+
+        <!-- Information We Collect -->
+        <h2>2. Information We <span class="highlight-box">Collect</span></h2>
+        <p>
+          We collect information to provide better services to our users. The types of information we collect include:
+        </p>
+
+        <h3>2.1 Information You Provide</h3>
+        <ul>
+          <li><strong>Account Information:</strong> Name, email address, company name, phone number, and billing details</li>
+          <li><strong>Service Data:</strong> Information you provide when using our AI tools, consulting services, or cloud platforms</li>
+          <li><strong>Communications:</strong> Messages, feedback, and support inquiries you send to us</li>
+          <li><strong>Payment Information:</strong> Credit card details, billing address (processed securely through third-party payment processors)</li>
+        </ul>
+
+        <h3>2.2 Information We Collect Automatically</h3>
+        <ul>
+          <li><strong>Usage Data:</strong> Pages visited, features used, time spent, and interaction patterns</li>
+          <li><strong>Device Information:</strong> Browser type, operating system, IP address, device identifiers</li>
+          <li><strong>Cookies and Tracking:</strong> Session cookies, analytics cookies, and similar technologies</li>
+          <li><strong>Log Data:</strong> Server logs, error reports, and performance metrics</li>
+        </ul>
+
+        <h3>2.3 Information from Third Parties</h3>
+        <ul>
+          <li><strong>Authentication Providers:</strong> Google, GitHub, or other OAuth providers for account creation</li>
+          <li><strong>Cloud Platforms:</strong> Google Cloud, Firebase, Vertex AI usage data (when you use our managed services)</li>
+          <li><strong>Analytics Services:</strong> Google Analytics, Firebase Analytics (anonymized where possible)</li>
+        </ul>
+
+        <!-- How We Use Your Information -->
+        <h2>3. How We Use Your <span class="highlight-box">Information</span></h2>
+        <p>
+          We use the information we collect for the following purposes:
+        </p>
+        <ul>
+          <li><strong>Service Delivery:</strong> To provide, maintain, and improve our AI solutions, consulting, and cloud services</li>
+          <li><strong>Account Management:</strong> To create and manage your account, authenticate users, and process payments</li>
+          <li><strong>Communication:</strong> To send service updates, technical notices, security alerts, and support messages</li>
+          <li><strong>Personalization:</strong> To customize your experience and provide relevant recommendations</li>
+          <li><strong>Analytics:</strong> To understand usage patterns, improve performance, and develop new features</li>
+          <li><strong>Security:</strong> To detect fraud, protect against abuse, and ensure platform security</li>
+          <li><strong>Legal Compliance:</strong> To comply with legal obligations, resolve disputes, and enforce agreements</li>
+          <li><strong>Marketing:</strong> To send promotional content (only with your explicit consent, opt-out available)</li>
+        </ul>
+
+        <!-- Data Sharing and Disclosure -->
+        <h2>4. Data Sharing and <span class="highlight-box">Disclosure</span></h2>
+        <p>
+          We do not sell your personal information. We may share your information in the following limited circumstances:
+        </p>
+
+        <h3>4.1 Service Providers</h3>
+        <ul>
+          <li><strong>Cloud Infrastructure:</strong> Google Cloud Platform, Firebase, Vertex AI (for hosting and processing)</li>
+          <li><strong>Payment Processors:</strong> Stripe, PayPal (for secure payment processing)</li>
+          <li><strong>Analytics:</strong> Google Analytics, Firebase Analytics (for usage insights)</li>
+          <li><strong>Communication:</strong> Email service providers (for transactional and marketing emails)</li>
+        </ul>
+
+        <h3>4.2 Business Transfers</h3>
+        <p>
+          If Intent Solutions is involved in a merger, acquisition, or sale of assets, your information may be transferred. We will notify you before your information becomes subject to a different privacy policy.
+        </p>
+
+        <h3>4.3 Legal Requirements</h3>
+        <p>
+          We may disclose your information if required by law, court order, subpoena, or to:
+        </p>
+        <ul>
+          <li>Comply with legal processes and government requests</li>
+          <li>Protect the rights, property, or safety of Intent Solutions, our users, or the public</li>
+          <li>Detect, prevent, or address fraud, security, or technical issues</li>
+          <li>Enforce our Terms of Service and other agreements</li>
+        </ul>
+
+        <h3>4.4 With Your Consent</h3>
+        <p>
+          We may share your information with third parties when you explicitly consent to such sharing.
+        </p>
+
+        <!-- Data Security -->
+        <h2>5. Data <span class="highlight-box">Security</span></h2>
+        <p>
+          We implement industry-standard security measures to protect your information:
+        </p>
+        <ul>
+          <li><strong>Encryption:</strong> All data transmitted between your device and our servers is encrypted using TLS/SSL</li>
+          <li><strong>At-Rest Encryption:</strong> Sensitive data is encrypted when stored in our databases</li>
+          <li><strong>Access Controls:</strong> Strict authentication and authorization protocols limit employee access</li>
+          <li><strong>Security Audits:</strong> Regular security assessments and vulnerability testing</li>
+          <li><strong>Incident Response:</strong> Comprehensive incident response plan for data breaches</li>
+          <li><strong>Secure Infrastructure:</strong> Google Cloud Platform with enterprise-grade security</li>
+        </ul>
+        <p>
+          While we use reasonable security measures, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.
+        </p>
+
+        <!-- Data Retention -->
+        <h2>6. Data <span class="highlight-box">Retention</span></h2>
+        <p>
+          We retain your information for as long as necessary to provide our Services and fulfill the purposes outlined in this policy:
+        </p>
+        <ul>
+          <li><strong>Account Data:</strong> Retained while your account is active and for 90 days after deletion</li>
+          <li><strong>Service Data:</strong> Retained according to your contract or subscription terms</li>
+          <li><strong>Financial Records:</strong> Retained for 7 years for tax and accounting purposes</li>
+          <li><strong>Logs and Analytics:</strong> Typically retained for 90 days, anonymized data may be kept longer</li>
+          <li><strong>Legal Holds:</strong> Data may be retained longer if required by law or legal proceedings</li>
+        </ul>
+
+        <!-- Your Rights -->
+        <h2>7. Your <span class="highlight-box">Rights</span></h2>
+        <p>
+          You have the following rights regarding your personal information:
+        </p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+          <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+          <li><strong>Deletion:</strong> Request deletion of your personal information (subject to legal obligations)</li>
+          <li><strong>Data Portability:</strong> Request a copy of your data in a machine-readable format</li>
+          <li><strong>Opt-Out:</strong> Unsubscribe from marketing emails at any time</li>
+          <li><strong>Restrict Processing:</strong> Request limitation of how we process your data</li>
+          <li><strong>Object:</strong> Object to processing based on legitimate interests</li>
+          <li><strong>Withdraw Consent:</strong> Withdraw consent for processing (where consent is the legal basis)</li>
+        </ul>
+        <p>
+          To exercise these rights, contact us at <a href="mailto:jeremy@intentsolutions.io">jeremy@intentsolutions.io</a>. We will respond within 30 days.
+        </p>
+
+        <!-- Cookies and Tracking -->
+        <h2>8. Cookies and <span class="highlight-box">Tracking</span></h2>
+        <p>
+          We use cookies and similar tracking technologies to improve your experience:
+        </p>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for authentication, security, and core functionality</li>
+          <li><strong>Analytics Cookies:</strong> Google Analytics, Firebase Analytics (for usage insights)</li>
+          <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+          <li><strong>Marketing Cookies:</strong> Track conversions and ad performance (only with consent)</li>
+        </ul>
+        <p>
+          You can control cookies through your browser settings. Disabling cookies may affect functionality.
+        </p>
+
+        <!-- Third-Party Services -->
+        <h2>9. <span class="highlight-box">Third-Party Services</span></h2>
+        <p>
+          Our Services integrate with third-party platforms. These services have their own privacy policies:
+        </p>
+        <ul>
+          <li><strong>Google Cloud Platform:</strong> <a href="https://cloud.google.com/privacy" target="_blank" rel="noopener noreferrer">cloud.google.com/privacy</a></li>
+          <li><strong>Firebase:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com/support/privacy</a></li>
+          <li><strong>Vertex AI:</strong> Covered by Google Cloud privacy policy</li>
+          <li><strong>Stripe:</strong> <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">stripe.com/privacy</a></li>
+          <li><strong>GitHub:</strong> <a href="https://docs.github.com/en/site-policy/privacy-policies" target="_blank" rel="noopener noreferrer">GitHub Privacy</a></li>
+        </ul>
+
+        <!-- Children's Privacy -->
+        <h2>10. Children's <span class="highlight-box">Privacy</span></h2>
+        <p>
+          Our Services are not directed to individuals under 18. We do not knowingly collect personal information from children. If you believe we have collected information from a child, contact us immediately.
+        </p>
+
+        <!-- International Data Transfers -->
+        <h2>11. International Data <span class="highlight-box">Transfers</span></h2>
+        <p>
+          Your information may be transferred to and processed in the United States and other countries where we or our service providers operate. These countries may have different data protection laws.
+        </p>
+        <p>
+          We ensure appropriate safeguards are in place, including:
+        </p>
+        <ul>
+          <li>Standard Contractual Clauses approved by regulatory authorities</li>
+          <li>Compliance with EU-U.S. Data Privacy Framework principles</li>
+          <li>Adequate data protection measures under applicable laws</li>
+        </ul>
+
+        <!-- California Privacy Rights -->
+        <h2>12. California Privacy <span class="highlight-box">Rights</span> (CCPA)</h2>
+        <p>
+          California residents have additional rights under the California Consumer Privacy Act (CCPA):
+        </p>
+        <ul>
+          <li><strong>Right to Know:</strong> Request disclosure of personal information collected and shared</li>
+          <li><strong>Right to Delete:</strong> Request deletion of personal information</li>
+          <li><strong>Right to Opt-Out:</strong> Opt-out of the sale of personal information (we do not sell data)</li>
+          <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising your rights</li>
+        </ul>
+
+        <!-- GDPR Compliance -->
+        <h2>13. GDPR Compliance (EU/UK <span class="highlight-box">Residents</span>)</h2>
+        <p>
+          If you are in the European Union or United Kingdom, you have rights under the General Data Protection Regulation (GDPR):
+        </p>
+        <ul>
+          <li><strong>Legal Basis:</strong> We process data based on consent, contract, legal obligation, or legitimate interests</li>
+          <li><strong>Data Protection Officer:</strong> Contact jeremy@intentsolutions.io for privacy concerns</li>
+          <li><strong>Right to Lodge Complaint:</strong> You can file a complaint with your local data protection authority</li>
+          <li><strong>Automated Decision-Making:</strong> We do not use automated decision-making or profiling in ways that significantly affect you</li>
+        </ul>
+
+        <!-- Changes to This Policy -->
+        <h2>14. Changes to This <span class="highlight-box">Policy</span></h2>
+        <p>
+          We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. Material changes will be communicated via:
+        </p>
+        <ul>
+          <li>Email notification to registered users</li>
+          <li>Prominent notice on our website</li>
+          <li>In-app notification for significant changes</li>
+        </ul>
+        <p>
+          Continued use of our Services after changes constitutes acceptance of the updated policy.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Contact Information (DARK + TEAL WAVE BACKGROUND) -->
+  <section class="privacy-contact">
+    <!-- Teal wave background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="contact-content">
+        <h2>Privacy <span class="highlight-box">Questions</span>?</h2>
+        <p>
+          If you have questions, concerns, or requests regarding this Privacy Policy or our data practices:
+        </p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <strong>Email:</strong>
+            <a href="mailto:jeremy@intentsolutions.io">jeremy@intentsolutions.io</a>
+          </div>
+          <div class="contact-item">
+            <strong>Data Protection:</strong>
+            <span>Submit requests within 30 days</span>
+          </div>
+          <div class="contact-item">
+            <strong>Location:</strong>
+            <span>Gulf Shores, Alabama, United States</span>
+          </div>
+          <div class="contact-item">
+            <strong>Website:</strong>
+            <a href="https://intentsolutions.io">intentsolutions.io</a>
+          </div>
+        </div>
+        <p class="legal-note">
+          By using our Services, you acknowledge that you have read and understood this Privacy Policy and agree to our data practices.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</LayoutRedesign>
+
+<style>
+  /* ============================================
+     SECTION 1: Hero + Introduction (IMAGE BACKGROUND)
+     ============================================ */
+  .privacy-hero {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.80) 100%
+      ),
+      url('/images/privacy-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    padding: 10rem 0 5rem;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+
+  .last-updated {
+    font-size: 0.875rem;
+    color: var(--color-accent-secondary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .privacy-hero {
+      padding: 8rem 0 4rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 2: Main Privacy Content (DARK BACKGROUND ONLY)
+     ============================================ */
+  .privacy-content {
+    background: var(--bg-dark);
+    padding: 4rem 0;
+  }
+
+  .privacy-text {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .privacy-text h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(13, 148, 136, 0.3);
+  }
+
+  .privacy-text h2:first-child {
+    margin-top: 0;
+  }
+
+  .privacy-text h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .privacy-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .privacy-text li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light-muted);
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .privacy-text li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-secondary);
+    border-radius: 50%;
+  }
+
+  .privacy-text a {
+    color: var(--color-accent-secondary);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+  }
+
+  .privacy-text a:hover {
+    color: #14b8a6;
+  }
+
+  @media (max-width: 768px) {
+    .privacy-content {
+      padding: 3rem 0 4rem;
+    }
+
+    .privacy-text h2 {
+      font-size: 1.5rem;
+    }
+
+    .privacy-text h3 {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* ============================================
+     SECTION 3: Contact Information (DARK + TEAL WAVE)
+     ============================================ */
+  .privacy-contact {
+    position: relative;
+    background: var(--bg-dark);
+    overflow: hidden;
+    padding: 4rem 0 6rem;
+  }
+
+  /* Teal wave background */
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  .contact-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-content > p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(13, 148, 136, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(13, 148, 136, 0.3);
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .contact-item strong {
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  .contact-item span {
+    color: var(--text-light-muted);
+  }
+
+  .contact-item a {
+    color: var(--color-accent-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-item a:hover {
+    color: #14b8a6;
+  }
+
+  .legal-note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .privacy-contact {
+      padding: 3rem 0;
+    }
+
+    .contact-content h2 {
+      font-size: 1.75rem;
+    }
+
+    .contact-details {
+      padding: 1.5rem;
+    }
+
+    .contact-item {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+
+  /* ============================================
+     Highlight Box (Lime)
+     ============================================ */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Container */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+</style>

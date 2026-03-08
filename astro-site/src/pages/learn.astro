@@ -1,0 +1,749 @@
+---
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
+---
+
+<LayoutRedesign title="Learn - Guides, Documentation & Resources | Intent Solutions">
+  <!-- SECTION 1: Hero + Explore Topics (IMAGE BACKGROUND) -->
+  <section class="learn-hero-topics">
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge badge-light">Knowledge Base</span>
+      </div>
+
+      <h1 class="hero-title">
+        Learn about <span class="highlight-box">AI agents</span>,<br />automation, and cloud
+      </h1>
+
+      <p class="hero-description">
+        Guides, documentation, and resources to help you understand our solutions
+        and make informed decisions about AI infrastructure.
+      </p>
+    </div>
+
+    <!-- Topics Content -->
+    <div class="container topics-content">
+      <div class="section-header">
+        <h2>Explore <span class="highlight-box">Topics</span></h2>
+        <p>Deep dives into AI agents, automation, security, and pricing</p>
+      </div>
+
+      <div class="topics-grid">
+        <!-- Getting Started -->
+        <a href="#getting-started" class="topic-card">
+          <div class="topic-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <h3>Getting Started</h3>
+          <p>New to AI agents or automation? Start here to understand the fundamentals and what's possible.</p>
+        </a>
+
+        <!-- AI Models -->
+        <a href="/learn/models" class="topic-card">
+          <div class="topic-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h3>AI Models</h3>
+          <p>Compare Claude, GPT, Gemini, Llama, and other models. Understand capabilities, costs, and tradeoffs.</p>
+        </a>
+
+        <!-- Security & Compliance -->
+        <a href="/learn/security" class="topic-card">
+          <div class="topic-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>Security & Compliance</h3>
+          <p>Learn about HIPAA, SOC 2, data privacy, and how we keep your information secure.</p>
+        </a>
+
+        <!-- Pricing Guide -->
+        <a href="/learn/pricing" class="topic-card">
+          <div class="topic-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>Pricing Guide</h3>
+          <p>Understand how our pricing works, what's included, and how to estimate costs for your project.</p>
+        </a>
+
+        <!-- Technical Documentation -->
+        <a href="#documentation" class="topic-card">
+          <div class="topic-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3>Technical Docs</h3>
+          <p>API references, architecture guides, and implementation details for developers.</p>
+        </a>
+
+        <!-- Use Cases -->
+        <a href="#use-cases" class="topic-card">
+          <div class="topic-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3>Use Cases</h3>
+          <p>Real-world examples of how companies use AI agents, automation, and private AI.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Getting Started Content + Real-World Use Cases (DARK + TEAL WAVE) -->
+  <section class="learn-content-section" id="getting-started">
+    <!-- Teal Wave Background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,133.3C672,117,768,107,864,122.7C960,139,1056,181,1152,186.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,208C672,213,768,203,864,181.3C960,160,1056,128,1152,122.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <!-- Getting Started Content -->
+    <div class="container">
+      <div class="content-layout">
+        <div class="content-main">
+          <h2>Getting Started with <span class="highlight-box">AI Solutions</span></h2>
+
+          <h3>What are AI Agents?</h3>
+          <p>AI agents are autonomous systems that can understand context, make decisions, and take actions based on your business logic. Unlike simple chatbots, agents can:</p>
+          <ul>
+            <li>Access multiple data sources and APIs</li>
+            <li>Execute multi-step workflows</li>
+            <li>Learn from your data and improve over time</li>
+            <li>Handle complex business rules and decision-making</li>
+          </ul>
+
+          <h3>Intent Agent Models (IAM)</h3>
+          <p>Our IAM approach allows you to customize agent behavior for any workflow. Examples include:</p>
+          <ul>
+            <li><strong>Sales automation:</strong> Lead scoring, outreach, and pipeline management</li>
+            <li><strong>Support automation:</strong> Ticket routing, response generation, and escalation</li>
+            <li><strong>Data processing:</strong> Document analysis, enrichment, and reporting</li>
+            <li><strong>Compliance:</strong> Policy enforcement, audit trails, and monitoring</li>
+          </ul>
+
+          <h3>When Should You Use AI Agents?</h3>
+          <p>AI agents are ideal when you need to:</p>
+          <ul>
+            <li>Automate repetitive tasks that require decision-making</li>
+            <li>Process large volumes of unstructured data</li>
+            <li>Provide 24/7 availability for customer interactions</li>
+            <li>Scale operations without proportional headcount growth</li>
+          </ul>
+
+          <h3>Getting Started Checklist</h3>
+          <ol>
+            <li>Identify the workflow or process you want to automate</li>
+            <li>Gather sample data and define success metrics</li>
+            <li>Schedule a discovery call to discuss requirements</li>
+            <li>Review proposal and timeline</li>
+            <li>Begin implementation with our team</li>
+          </ol>
+
+          <div class="cta-box">
+            <h4>Ready to get <span class="highlight-box">started</span>?</h4>
+            <p>Schedule a discovery call to discuss your needs.</p>
+            <a href="mailto:jeremy@intentsolutions.io" class="btn btn-primary">
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div class="content-sidebar">
+          <div class="sidebar-card">
+            <h4>Quick Links</h4>
+            <ul class="sidebar-links">
+              <li><a href="/agents">AI Agents Overview</a></li>
+              <li><a href="/private-ai">Private AI</a></li>
+              <li><a href="/automation">Automation Solutions</a></li>
+              <li><a href="/cloud">Cloud & Data</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Popular Resources</h4>
+            <ul class="sidebar-links">
+              <li><a href="/learn/models">AI Model Comparison</a></li>
+              <li><a href="/learn/security">Security Guide</a></li>
+              <li><a href="/learn/pricing">Pricing Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Need Help?</h4>
+            <p class="sidebar-text">Have questions? Our team is here to help.</p>
+            <a href="/support" class="btn btn-secondary btn-sm">Contact Support</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Use Cases Content -->
+      <div class="use-cases-content" id="use-cases">
+        <div class="section-header">
+          <h2>Real-World <span class="highlight-box">Use Cases</span></h2>
+          <p>See how companies use our AI solutions</p>
+        </div>
+
+        <div class="use-cases-grid">
+          <div class="use-case-card">
+            <div class="use-case-badge">Sales</div>
+            <h3>SDR Automation</h3>
+            <p>PipelinePilot uses 4 custom IAM agents to automate lead scoring, enrichment, and multi-channel outreach. Reduces manual SDR work by 80%.</p>
+            <a href="https://pipelinepilot-prod.web.app" target="_blank" rel="noopener noreferrer" class="use-case-link">View demo →</a>
+          </div>
+
+          <div class="use-case-card">
+            <div class="use-case-badge">Healthcare</div>
+            <h3>Private AI for HIPAA</h3>
+            <p>Medical practice deploys Private AI for patient communication and documentation. All data stays on their Google Cloud infrastructure.</p>
+          </div>
+
+          <div class="use-case-card">
+            <div class="use-case-badge">Operations</div>
+            <h3>Reporting Automation</h3>
+            <p>n8n workflows pull data from multiple sources, generate reports, and distribute to stakeholders. Eliminates 20 hours/week of manual work.</p>
+          </div>
+
+          <div class="use-case-card">
+            <div class="use-case-badge">Development</div>
+            <h3>Claude Code Setup</h3>
+            <p>Engineering team gets custom Claude Code plugins, workflow optimization, and training. Increases developer productivity by 40%.</p>
+            <a href="/claude-code" class="use-case-link">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</LayoutRedesign>
+
+<style>
+  /* ===================================
+     SECTION 1: Hero + Topics (IMAGE BACKGROUND)
+     =================================== */
+
+  .learn-hero-topics {
+    position: relative;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(10, 15, 26, 0.88) 0%,
+        rgba(10, 15, 26, 0.85) 30%,
+        rgba(10, 15, 26, 0.80) 60%,
+        rgba(10, 15, 26, 0.85) 100%
+      ),
+      url('/images/learn-hero-bg.jpg') center/cover no-repeat;
+    background-attachment: scroll, fixed;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(13, 148, 136, 0.08));
+    pointer-events: none;
+  }
+
+  /* Hero Content */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+  }
+
+  .badge-light {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-light-muted);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Topics Content */
+  .topics-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+
+  .section-header p {
+    font-size: 1.125rem;
+    color: var(--text-light-muted);
+  }
+
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .topics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .topics-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .topic-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .topic-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent-primary);
+    background-color: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-lg);
+  }
+
+  .topic-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .topic-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* ===================================
+     SECTION 2: Getting Started + Use Cases (DARK + TEAL WAVE)
+     =================================== */
+
+  .learn-content-section {
+    position: relative;
+    background: var(--bg-dark);
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  /* Teal Wave Background */
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-animation-1 15s ease-in-out infinite;
+    opacity: 1;
+  }
+
+  .wave-2 {
+    animation: wave-animation-2 20s ease-in-out infinite;
+    opacity: 1;
+  }
+
+  @keyframes wave-animation-1 {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-25px) translateY(-10px);
+    }
+  }
+
+  @keyframes wave-animation-2 {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(25px) translateY(-15px);
+    }
+  }
+
+  /* Content Layout */
+  .content-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .content-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .content-main h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+  }
+
+  .content-main h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+
+  .content-main h4 {
+    color: var(--text-light);
+  }
+
+  .content-main p {
+    margin-bottom: 1rem;
+    color: var(--text-light-muted);
+  }
+
+  .content-main ul,
+  .content-main ol {
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  .content-main ul {
+    list-style-type: disc;
+  }
+
+  .content-main ol {
+    list-style-type: decimal;
+  }
+
+  .content-main li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light-muted);
+  }
+
+  .content-main strong {
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  .cta-box {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .cta-box h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+  }
+
+  .cta-box p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light-muted);
+  }
+
+  /* Sidebar */
+  .content-sidebar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+  }
+
+  .sidebar-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-links a {
+    font-size: 0.9375rem;
+    color: rgba(99, 102, 241, 0.9);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .sidebar-links a:hover {
+    color: rgb(99, 102, 241);
+  }
+
+  .sidebar-text {
+    font-size: 0.875rem;
+    color: var(--text-light-muted);
+    margin-bottom: 1rem;
+  }
+
+  .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Use Cases Content */
+  .use-cases-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 5rem;
+  }
+
+  .use-cases-content .section-header h2 {
+    color: var(--text-light);
+  }
+
+  .use-cases-content .section-header p {
+    color: var(--text-light-muted);
+  }
+
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .use-cases-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .use-case-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+  }
+
+  .use-case-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .use-case-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent-secondary);
+    background: rgba(13, 148, 136, 0.2);
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .use-case-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+  }
+
+  .use-case-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-light-muted);
+    margin-bottom: 1rem;
+  }
+
+  .use-case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-accent-secondary);
+    text-decoration: none;
+    transition: gap var(--transition-fast);
+  }
+
+  .use-case-link:hover {
+    gap: 0.75rem;
+  }
+
+  /* ===================================
+     HIGHLIGHT BOX (LIME/YELLOW)
+     =================================== */
+
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ===================================
+     BUTTONS
+     =================================== */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--color-accent-primary), rgb(67 56 202));
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  }
+
+  .btn-secondary {
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+</style>

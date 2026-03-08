@@ -1,0 +1,178 @@
+---
+// Testimonials Section with Soft Pink Background
+---
+
+<section class="testimonials-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="testimonials-header animate-on-scroll">
+      <span class="section-badge">
+        <span class="badge-dot"></span>
+        CLIENT FEEDBACK
+      </span>
+      <h2 class="section-title">
+        Don't
+        <span class="highlight-box">just take our words</span>
+        for it!
+      </h2>
+    </div>
+
+    <!-- Testimonial Cards -->
+    <div class="testimonials-grid stagger-children">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">
+          "This team made AI simple and accessible for my business. They automated repetitive tasks and saved us hours every week. I finally have time to focus on growth instead of paperwork."
+        </p>
+        <p class="testimonial-author">Development Agency Client</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">
+          "We needed AI but didn't know where to start — this team guided us every step. Their custom automation boosted our efficiency and streamlined operations. The ROI was almost immediate."
+        </p>
+        <p class="testimonial-author">SaaS Startup Client</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">
+          "The Claude Code setup transformed how our developers work. Custom plugins tailored to our workflow and comprehensive training made adoption seamless. Best investment we've made this year."
+        </p>
+        <p class="testimonial-author">Enterprise Tech Team</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: var(--section-padding) 0;
+    background: #fdf2f0; /* Soft pink/peach */
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent-secondary);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .highlight-box {
+    display: inline-block;
+    background-color: var(--color-highlight);
+    color: var(--text-primary);
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0 0.25rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: var(--text-light);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .stars {
+    color: #f97316; /* Orange stars */
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-quote {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-section {
+      padding: 3rem 0;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .testimonial-card {
+      padding: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>

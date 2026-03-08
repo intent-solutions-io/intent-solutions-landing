@@ -1,0 +1,231 @@
+---
+// Final CTA section
+---
+
+<section class="final-cta">
+  <div class="container">
+    <div class="cta-content animate-on-scroll fade-scale">
+      <div class="cta-text">
+        <h2 class="cta-title">Ready to Build Your AI System?</h2>
+        <p class="cta-description">
+          Let's discuss your project and create a custom solution that fits your needs. We typically respond within 24 hours.
+        </p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-primary btn-xl">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Get in Touch</span>
+        </a>
+        <a href="https://calendar.app.google/ZZoyT2DFkMLbLsXw9" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-xl">
+          Schedule a Call →
+        </a>
+      </div>
+
+      <div class="cta-trust">
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>No commitment required</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>24-hour response time</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Free consultation call</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background decorations -->
+    <div class="cta-decoration cta-decoration-1"></div>
+    <div class="cta-decoration cta-decoration-2"></div>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    position: relative;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #6366f1, #4338ca) !important;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-text {
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-xl {
+    padding: 1.125rem 2.5rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .btn-primary {
+    background-color: white;
+    color: rgb(var(--color-accent-primary));
+    border-color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+  }
+
+  .cta-trust {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .trust-item svg {
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Background decorations */
+  .cta-decoration {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+
+  .cta-decoration-1 {
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    right: -150px;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .cta-decoration-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    left: -100px;
+    animation: float 25s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.05);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .final-cta {
+      padding: 4rem 0;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+    }
+
+    .cta-description {
+      font-size: 1.125rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn-xl {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .cta-trust {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cta-decoration-1,
+    .cta-decoration-2 {
+      display: none;
+    }
+  }
+</style>

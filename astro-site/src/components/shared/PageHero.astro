@@ -1,0 +1,128 @@
+---
+// Reusable page hero component
+interface Props {
+  badge: string;
+  title: string;
+  description: string;
+  showCTAs?: boolean;
+  primaryCTA?: { text: string; href: string };
+  secondaryCTA?: { text: string; href: string };
+}
+
+const {
+  badge,
+  title,
+  description,
+  showCTAs = false,
+  primaryCTA,
+  secondaryCTA
+} = Astro.props;
+---
+
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge">{badge}</span>
+      </div>
+
+      <h1 class="hero-title" set:html={title} />
+
+      <p class="hero-description">{description}</p>
+
+      {showCTAs && (primaryCTA || secondaryCTA) && (
+        <div class="hero-ctas">
+          {primaryCTA && (
+            <a href={primaryCTA.href} class="btn btn-primary btn-lg">
+              {primaryCTA.text}
+            </a>
+          )}
+          {secondaryCTA && (
+            <a href={secondaryCTA.href} class="btn btn-secondary btn-lg">
+              {secondaryCTA.text}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(180deg, rgb(var(--color-bg-secondary)) 0%, rgb(var(--color-bg-primary)) 100%);
+  }
+
+  @media (min-width: 768px) {
+    .page-hero {
+      padding: 8rem 0 6rem;
+    }
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    color: rgb(var(--color-accent-primary));
+    background-color: rgb(var(--color-accent-light));
+    border: 1px solid rgb(var(--color-accent-lighter));
+    border-radius: var(--radius-full);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+    }
+  }
+</style>

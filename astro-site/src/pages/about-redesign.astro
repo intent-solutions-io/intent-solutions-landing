@@ -1,0 +1,454 @@
+---
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
+---
+
+<LayoutRedesign title="About Intent Solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge">About</span>
+        </div>
+
+        <h1 class="hero-title">
+          Pioneering AI with<br />operator-first execution
+        </h1>
+
+        <p class="hero-description">
+          intent solutions io sits where practical operations meets modern AI. We design, ship,
+          and maintain production systems that eliminate manual busywork while keeping data private
+          and compliant. Every build is crafted in Gulf Shores, Alabama, and tuned to go live fast.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section class="section expertise-section">
+    <div class="container">
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <h3>AI / ML Expertise</h3>
+          <p>
+            Fine-tuned agents, RAG pipelines, and reasoning systems that deliver measurable wins,
+            not just demos.
+          </p>
+        </div>
+
+        <div class="expertise-card">
+          <h3>Universal Diagnostics</h3>
+          <p>
+            From automotive to healthcare, we build platforms that surface the right insight in the
+            right moment.
+          </p>
+        </div>
+
+        <div class="expertise-card">
+          <h3>Youth Development</h3>
+          <p>
+            The HUSTLE research initiative powers sports families with data-driven coaching and
+            survey-backed insights.
+          </p>
+        </div>
+
+        <div class="expertise-card">
+          <h3>Market Leadership</h3>
+          <p>
+            Active in right-to-repair and emerging AI standards so your infrastructure stays
+            future-ready.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cloud Partnership Section -->
+  <section class="section partnership-section">
+    <div class="container">
+      <div class="partnership-grid">
+        <div class="partnership-content">
+          <h2>Built for Cloud Partnership</h2>
+          <p class="partnership-description">
+            Every system we ship follows enterprise architecture patterns with observability,
+            access control, and rollback strategies baked in. Our experience across Google Cloud,
+            Firebase, and Vertex AI makes us a fast match for platform teams that value velocity and
+            safety.
+          </p>
+          <ul class="partnership-list">
+            <li>
+              <span class="bullet"></span>
+              <span>Enterprise-ready AI/ML workloads delivered with IaC.</span>
+            </li>
+            <li>
+              <span class="bullet"></span>
+              <span>Cloud-native design tuned for scale, redundancy, and compliance.</span>
+            </li>
+            <li>
+              <span class="bullet"></span>
+              <span>Continuous R&D to keep your stack modern without breaking production.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value">AI / ML</div>
+            <p class="stat-label">Core Technology</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Cloud</div>
+            <p class="stat-label">Native Architecture</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Scale</div>
+            <p class="stat-label">Enterprise Ready</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Innovation</div>
+            <p class="stat-label">Continuous R&D</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Systems Section -->
+  <section class="section systems-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Production Systems We've Shipped</h2>
+        <p>
+          We partner directly with operators—dealership principals, partners, and practice owners—to
+          design software that outlasts the hype cycle.
+        </p>
+      </div>
+
+      <div class="systems-grid">
+        <div class="system-card">
+          <h3>DiagnosticPro</h3>
+          <p>
+            AI-powered vehicle diagnostics that triage repair orders across multiple rooftops in
+            real time.
+          </p>
+        </div>
+
+        <div class="system-card">
+          <h3>Enterprise Automation</h3>
+          <p>
+            n8n and Netlify powered flows that offload onboarding, reporting, and compliance tasks
+            across departments.
+          </p>
+        </div>
+
+        <div class="system-card">
+          <h3>Firebase + Firestore</h3>
+          <p>
+            Scalable real-time backends supporting distributed teams and customer-facing analytics.
+          </p>
+        </div>
+
+        <div class="system-card">
+          <h3>Vertex AI Integrations</h3>
+          <p>
+            End-to-end pipelines that run on Google Cloud with guardrails around privacy and cost.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to build something extraordinary?</h2>
+        <p>Let's discuss how we can help your team ship faster and scale confidently.</p>
+        <a href="mailto:jeremy@intentsolutions.io" class="btn btn-primary btn-lg">
+          Get in Touch
+        </a>
+        <p class="cta-note">
+          📧 jeremy@intentsolutions.io | 📍 Gulf Shores, Alabama
+        </p>
+      </div>
+    </div>
+  </section>
+</LayoutRedesign>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(180deg, rgb(var(--color-bg-secondary)) 0%, rgb(var(--color-bg-primary)) 100%);
+  }
+
+  @media (min-width: 768px) {
+    .hero-section {
+      padding: 8rem 0 6rem;
+    }
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgb(var(--color-accent-primary));
+    background-color: rgb(var(--color-accent-light));
+    border: 1px solid rgb(var(--color-accent-lighter));
+    border-radius: var(--radius-full);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgb(var(--color-text-secondary));
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Expertise Section */
+  .expertise-section {
+    background-color: white;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .expertise-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .expertise-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: all var(--transition-base);
+  }
+
+  .expertise-card:hover {
+    border-color: rgb(var(--color-accent-primary));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .expertise-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .expertise-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin: 0;
+  }
+
+  /* Partnership Section */
+  .partnership-section {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .partnership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 1024px) {
+    .partnership-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .partnership-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .partnership-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: rgb(var(--color-text-secondary));
+    margin-bottom: 2rem;
+  }
+
+  .partnership-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .partnership-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--radius-full);
+    background-color: rgb(var(--color-text-primary));
+    flex-shrink: 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stat-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(var(--color-text-primary));
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgb(var(--color-text-tertiary));
+    margin: 0;
+  }
+
+  /* Systems Section */
+  .systems-section {
+    background-color: white;
+  }
+
+  .systems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .systems-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .system-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+
+  .system-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .system-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, rgb(var(--color-accent-primary)), rgb(67 56 202));
+    color: white;
+  }
+
+  .cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+  }
+
+  .cta-content .btn {
+    background-color: white;
+    color: rgb(var(--color-accent-primary));
+    border-color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content .btn:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+  }
+
+  .cta-note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+  }
+</style>

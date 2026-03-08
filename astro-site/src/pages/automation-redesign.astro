@@ -1,0 +1,635 @@
+---
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
+---
+
+<LayoutRedesign title="Automation Programs - Intent Solutions">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge">Automation</span>
+        </div>
+
+        <h1 class="hero-title">
+          Automations that feel<br />like an extra teammate
+        </h1>
+
+        <p class="hero-description">
+          We design n8n and Netlify automation programs that handle the boring stuff—reporting, onboarding,
+          follow-ups—while keeping humans in the driver's seat. Everything is documented, observable, and ready
+          for audits.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Request an Automation Audit
+          </a>
+          <a href="#menu" class="btn btn-secondary btn-lg">
+            View Automation Menu
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation Menu Section -->
+  <section class="section menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <h2>Automation Menu</h2>
+        <p>Choose from our most popular automation workflows or build a custom solution.</p>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card">
+          <h3>Sales & Quoting</h3>
+          <p>
+            Auto-generate proposals, route approvals, and sync updates back to CRM without the copy-paste grind.
+          </p>
+        </div>
+
+        <div class="menu-card">
+          <h3>Customer Onboarding</h3>
+          <p>
+            Collect docs, spin up accounts, assign tasks, and nudge teams when human touch is required.
+          </p>
+        </div>
+
+        <div class="menu-card">
+          <h3>Operations Dashboards</h3>
+          <p>
+            Pull from spreadsheets, ERPs, and APIs to build daily snapshots with alerts for outliers.
+          </p>
+        </div>
+
+        <div class="menu-card">
+          <h3>Revenue Collection</h3>
+          <p>
+            Trigger reminders, process payments, and reconcile ledgers with audit trails intact.
+          </p>
+        </div>
+
+        <div class="menu-card">
+          <h3>Internal Comms</h3>
+          <p>
+            Schedule updates, summarize meetings, and push highlights to Slack, Teams, or email digests.
+          </p>
+        </div>
+
+        <div class="menu-card">
+          <h3>Field Service</h3>
+          <p>
+            Log work orders, sync photos, and dispatch follow-up tasks so nothing slips through the cracks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation Stack Section -->
+  <section class="section stack-section">
+    <div class="container">
+      <div class="stack-grid">
+        <div class="stack-content">
+          <h2>Our Automation Stack</h2>
+          <ul class="stack-list">
+            <li>
+              <strong>n8n:</strong> Visual builders with TypeScript nodes for custom logic.
+            </li>
+            <li>
+              <strong>Netlify Functions:</strong> Lightweight serverless endpoints for quick integrations.
+            </li>
+            <li>
+              <strong>Supabase & Firestore:</strong> Secure storage for state, history, and analytics.
+            </li>
+            <li>
+              <strong>Playwright:</strong> Browser automations for stubborn legacy apps.
+            </li>
+            <li>
+              <strong>Observability:</strong> Structured logging, dashboards, and alerting so ops can debug fast.
+            </li>
+          </ul>
+        </div>
+
+        <div class="process-card">
+          <h3>Implementation Process</h3>
+          <ol class="process-list">
+            <li>Map the current workflow and turnaround expectations.</li>
+            <li>Prototype the automation in a sandbox with sample data.</li>
+            <li>Run a shadow period where humans review every action.</li>
+            <li>Roll into production with monitoring and iterative tweaks.</li>
+          </ol>
+          <p class="process-note">
+            Typical timeline is 10 business days from kickoff to production for a single workflow lane.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- n8n vs Vertex Comparison Section -->
+  <section class="section comparison-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>When to use n8n vs Vertex Agent Engine</h2>
+        <p>
+          We pair them often: n8n for orchestration glue, Vertex Agent Engine for the agent brain. This gives you visual workflow building for integrations while maintaining security and guardrails for AI reasoning.
+        </p>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>n8n (Self-Hosted Low-Code)</th>
+              <th>Vertex Agent Engine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="dimension">Best for</td>
+              <td>Integration glue, webhooks, simple workflows</td>
+              <td>Production agents with LLM reasoning and guardrails</td>
+            </tr>
+            <tr>
+              <td class="dimension">Security</td>
+              <td>App-level credentials, manual controls</td>
+              <td>IAM, VPC-SC, CMEK, audit logs by default</td>
+            </tr>
+            <tr>
+              <td class="dimension">Complexity</td>
+              <td>Quick wins for non-critical automations</td>
+              <td>Complex multi-step reasoning with sensitive data</td>
+            </tr>
+            <tr>
+              <td class="dimension">Deployment</td>
+              <td>Self-hosted or cloud, you manage infrastructure</td>
+              <td>Managed by Google Cloud, auto-scaling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="recommendation-card">
+        <p>
+          <strong>Our recommendation:</strong> Use n8n for orchestration and data flow between systems. Use Vertex Agent Engine when the workflow requires LLM reasoning, sensitive data handling, or production-grade guardrails. We often deploy both together for best results.
+        </p>
+        <a href="/learn/security" class="recommendation-link">
+          Learn more about security comparison →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Runbook & Support Section -->
+  <section class="section support-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Runbook & Support</h2>
+        <p>Everything you need to maintain and evolve your automations over time.</p>
+      </div>
+
+      <div class="support-grid">
+        <div class="support-card">
+          <h3>Documented Playbooks</h3>
+          <p>
+            You get editable runbooks, diagrams, and rollback steps so the program can live beyond any one vendor.
+          </p>
+        </div>
+
+        <div class="support-card">
+          <h3>Training Included</h3>
+          <p>
+            We onboard your operators, teach them how to request new automations, and set up feedback loops.
+          </p>
+        </div>
+
+        <div class="support-card">
+          <h3>Fixed Monthly Support</h3>
+          <p>
+            Flat-rate plans cover monitoring, patching, and incremental tweaks so you can budget confidently.
+          </p>
+        </div>
+
+        <div class="support-card">
+          <h3>Compliance Friendly</h3>
+          <p>
+            Audit logs, access controls, and approval trails keep legal and finance teams comfortable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + FAQ Section -->
+  <section class="section cta-faq-section" id="contact">
+    <div class="container">
+      <div class="cta-faq-grid">
+        <div class="cta-content">
+          <h2>Ready to map an automation trail?</h2>
+          <p>
+            Bring one workflow, we'll show you a path to full automation plus the reporting leadership wants.
+          </p>
+          <a href="mailto:jeremy@intentsolutions.io" class="btn btn-primary btn-lg">
+            Request an Automation Audit
+          </a>
+        </div>
+
+        <div class="faq-card">
+          <h3>FAQ</h3>
+          <div class="faq-item">
+            <p class="faq-question">How do you price automations?</p>
+            <p class="faq-answer">Flat cost per workflow lane + optional monthly retainer for support.</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">Can you integrate with legacy systems?</p>
+            <p class="faq-answer">Yes—screen automation, CSV bridges, and lightweight APIs keep everything talking.</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">How do we request changes?</p>
+            <p class="faq-answer">Submit tweaks via a shared board; most updates ship within 48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</LayoutRedesign>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(180deg, rgb(var(--color-bg-secondary)) 0%, rgb(var(--color-bg-primary)) 100%);
+  }
+
+  @media (min-width: 768px) {
+    .hero-section {
+      padding: 8rem 0 6rem;
+    }
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgb(var(--color-accent-primary));
+    background-color: rgb(var(--color-accent-light));
+    border: 1px solid rgb(var(--color-accent-lighter));
+    border-radius: var(--radius-full);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgb(var(--color-text-secondary));
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Menu Section */
+  .menu-section {
+    background-color: white;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .menu-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .menu-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: all var(--transition-base);
+  }
+
+  .menu-card:hover {
+    border-color: rgb(var(--color-accent-primary));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .menu-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .menu-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin: 0;
+  }
+
+  /* Stack Section */
+  .stack-section {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @media (max-width: 1024px) {
+    .stack-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stack-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .stack-list li {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .stack-list strong {
+    color: rgb(var(--color-text-primary));
+    font-weight: 600;
+  }
+
+  .process-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+
+  .process-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .process-list {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .process-list li {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .process-note {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-tertiary));
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(var(--color-border));
+  }
+
+  /* Comparison Section */
+  .comparison-section {
+    background-color: white;
+  }
+
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+
+  .comparison-table thead {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .comparison-table th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: rgb(var(--color-text-tertiary));
+    border-bottom: 1px solid rgb(var(--color-border));
+  }
+
+  .comparison-table tbody tr {
+    border-bottom: 1px solid rgb(var(--color-border));
+  }
+
+  .comparison-table td {
+    padding: 1rem;
+    color: rgb(var(--color-text-secondary));
+    line-height: 1.6;
+  }
+
+  .comparison-table td.dimension {
+    font-weight: 600;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .recommendation-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-accent-primary));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+
+  .recommendation-card p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: rgb(var(--color-text-secondary));
+    margin: 0 0 1rem 0;
+  }
+
+  .recommendation-card strong {
+    color: rgb(var(--color-text-primary));
+    font-weight: 600;
+  }
+
+  .recommendation-link {
+    font-size: 0.9375rem;
+    color: rgb(var(--color-accent-primary));
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .recommendation-link:hover {
+    color: rgb(var(--color-accent-hover));
+  }
+
+  /* Support Section */
+  .support-section {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .support-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .support-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+
+  .support-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .support-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin: 0;
+  }
+
+  /* CTA + FAQ Section */
+  .cta-faq-section {
+    background-color: white;
+  }
+
+  .cta-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 1024px) {
+    .cta-faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .cta-content p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin-bottom: 2rem;
+  }
+
+  .faq-card {
+    background-color: white;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+
+  .faq-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .faq-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-question {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: rgb(var(--color-text-primary));
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin: 0;
+  }
+</style>

@@ -1,161 +1,579 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/Footer';
+import LayoutRedesign from '../layouts/LayoutRedesign.astro';
 ---
 
-<Layout
-  title="about intent solutions io"
-  description="Meet the team building pragmatic AI systems, automation, and cloud foundations from Gulf Shores, Alabama."
->
-  <SiteNav />
-
-  <main class="bg-zinc-900">
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-3xl">
-          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
-            about
-          </p>
-          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
-            Pioneering AI with operator-first execution
-          </h1>
-          <p class="text-zinc-400 leading-relaxed text-lg">
-            intent solutions io sits where practical operations meets modern AI. We design, ship,
-            and maintain production systems that eliminate manual busywork while keeping data private
-            and compliant. Every build is crafted in Gulf Shores, Alabama, and tuned to go live fast.
-          </p>
+<LayoutRedesign title="About Intent Solutions">
+  <!-- ISSUE 1 FIX: Merged Hero + Features Section with Continuous Image Background -->
+  <section class="about-hero-features">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge badge-light">About</span>
         </div>
-      </div>
-    </section>
 
-    <section class="py-24 border-b border-zinc-800/60 bg-zinc-950">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">AI / ML Expertise</h3>
-            <p class="text-sm text-zinc-400">
-              Fine-tuned agents, RAG pipelines, and reasoning systems that deliver measurable wins,
-              not just demos.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">Universal Diagnostics</h3>
-            <p class="text-sm text-zinc-400">
-              From automotive to healthcare, we build platforms that surface the right insight in the
-              right moment.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">Youth Development</h3>
-            <p class="text-sm text-zinc-400">
-              The HUSTLE research initiative powers sports families with data-driven coaching and
-              survey-backed insights.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">Market Leadership</h3>
-            <p class="text-sm text-zinc-400">
-              Active in right-to-repair and emerging AI standards so your infrastructure stays
-              future-ready.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <h1 class="hero-title">
+          Pioneering AI with<br /><span class="highlight-box">operator-first</span> execution
+        </h1>
 
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-12 lg:grid-cols-2 items-start">
-          <div>
-            <h2 class="text-3xl font-bold text-zinc-50 mb-6">
-              Built for cloud partnership
-            </h2>
-            <p class="text-zinc-400 leading-relaxed mb-4">
-              Every system we ship follows enterprise architecture patterns with observability,
-              access control, and rollback strategies baked in. Our experience across Google Cloud,
-              Firebase, and Vertex AI makes us a fast match for platform teams that value velocity and
-              safety.
-            </p>
-            <ul class="space-y-3 text-sm text-zinc-300">
-              <li class="flex items-center gap-3">
-                <span class="h-2 w-2 rounded-full bg-zinc-200"></span>
-                Enterprise-ready AI/ML workloads delivered with IaC.
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="h-2 w-2 rounded-full bg-zinc-200"></span>
-                Cloud-native design tuned for scale, redundancy, and compliance.
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="h-2 w-2 rounded-full bg-zinc-200"></span>
-                Continuous R&D to keep your stack modern without breaking production.
-              </li>
-            </ul>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">AI / ML</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Core Technology</p>
-            </div>
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">Cloud</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Native Architecture</p>
-            </div>
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">Scale</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Enterprise Ready</p>
-            </div>
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">Innovation</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Continuous R&D</p>
-            </div>
-          </div>
-        </div>
+        <p class="hero-description">
+          intent solutions io sits where practical operations meets modern AI. We design, ship,
+          and maintain production systems that eliminate manual busywork while keeping data private
+          and compliant. Every build is crafted in Gulf Shores, Alabama, and tuned to go live fast.
+        </p>
       </div>
-    </section>
 
-    <section class="py-24">
-      <div class="container mx-auto px-8">
-        <div class="max-w-3xl mb-12">
-          <h2 class="text-3xl font-bold text-zinc-50 mb-4">
-            Production systems we’ve shipped
-          </h2>
-          <p class="text-zinc-400">
-            We partner directly with operators—dealership principals, partners, and practice owners—to
-            design software that outlasts the hype cycle.
+      <!-- Feature Cards Grid -->
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <h3>AI / ML Expertise</h3>
+          <p>
+            Fine-tuned agents, RAG pipelines, and reasoning systems that deliver measurable wins,
+            not just demos.
           </p>
         </div>
-        <div class="grid gap-6 md:grid-cols-2">
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">DiagnosticPro</h3>
-            <p class="text-sm text-zinc-400">
-              AI-powered vehicle diagnostics that triage repair orders across multiple rooftops in
-              real time.
-            </p>
+
+        <div class="expertise-card">
+          <h3>Universal Diagnostics</h3>
+          <p>
+            From automotive to healthcare, we build platforms that surface the right insight in the
+            right moment.
+          </p>
+        </div>
+
+        <div class="expertise-card">
+          <h3>Youth Development</h3>
+          <p>
+            The HUSTLE research initiative powers sports families with data-driven coaching and
+            survey-backed insights.
+          </p>
+        </div>
+
+        <div class="expertise-card">
+          <h3>Market Leadership</h3>
+          <p>
+            Active in right-to-repair and emerging AI standards so your infrastructure stays
+            future-ready.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ISSUE 2 FIX: Merged Cloud Partnership + Team Section with Dark + Teal Wave Background -->
+  <section class="cloud-team-section">
+    <!-- Teal wave background -->
+    <div class="wave-background">
+      <svg class="wave wave-1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(13, 148, 136, 0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="rgba(20, 184, 166, 0.2)" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,144C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <!-- Cloud Partnership Content -->
+      <div class="partnership-grid">
+        <div class="partnership-content">
+          <h2><span class="highlight-box">Built</span> for Cloud Partnership</h2>
+          <p class="partnership-description">
+            Every system we ship follows enterprise architecture patterns with observability,
+            access control, and rollback strategies baked in. Our experience across Google Cloud,
+            Firebase, and Vertex AI makes us a fast match for platform teams that value velocity and
+            safety.
+          </p>
+          <ul class="partnership-list">
+            <li>
+              <span class="bullet"></span>
+              <span>Enterprise-ready AI/ML workloads delivered with IaC.</span>
+            </li>
+            <li>
+              <span class="bullet"></span>
+              <span>Cloud-native design tuned for scale, redundancy, and compliance.</span>
+            </li>
+            <li>
+              <span class="bullet"></span>
+              <span>Continuous R&D to keep your stack modern without breaking production.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value">AI / ML</div>
+            <p class="stat-label">Core Technology</p>
           </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">Enterprise Automation</h3>
-            <p class="text-sm text-zinc-400">
-              n8n and Netlify powered flows that offload onboarding, reporting, and compliance tasks
-              across departments.
-            </p>
+          <div class="stat-card">
+            <div class="stat-value">Cloud</div>
+            <p class="stat-label">Native Architecture</p>
           </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">Firebase + Firestore</h3>
-            <p class="text-sm text-zinc-400">
-              Scalable real-time backends supporting distributed teams and customer-facing analytics.
-            </p>
+          <div class="stat-card">
+            <div class="stat-value">Scale</div>
+            <p class="stat-label">Enterprise Ready</p>
           </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">Vertex AI Integrations</h3>
-            <p class="text-sm text-zinc-400">
-              End-to-end pipelines that run on Google Cloud with guardrails around privacy and cost.
-            </p>
+          <div class="stat-card">
+            <div class="stat-value">Innovation</div>
+            <p class="stat-label">Continuous R&D</p>
           </div>
         </div>
       </div>
-    </section>
-  </main>
 
-  <Footer />
-</Layout>
+      <!-- Team Section -->
+      <div class="team-content">
+        <h2 class="team-title">The Team Behind <span class="highlight-box">Intent Solutions</span></h2>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="/images/team/jeremy longshore.jpeg" alt="Jeremy Longshore" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Jeremy Longshore</h3>
+              <p class="member-role">Founder & CEO</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="/images/team/pablo perez.jpeg" alt="Pablo Perez" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Pablo Perez</h3>
+              <p class="member-role">Co-Founder & Project Manager</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="/images/team/opeyemi ariyo.jpeg" alt="Opeyemi Ariyo" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Opeyemi Ariyo</h3>
+              <p class="member-role">Co-Founder & Chief Technical Officer</p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="/images/team/lutfun nahar.jpeg" alt="Lutfun Nahar" />
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Lutfun Nahar</h3>
+              <p class="member-role">Sales & Marketing Strategist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</LayoutRedesign>
+
+<style>
+  /* ============================================
+     ISSUE 1 FIX: Merged Hero + Features Section
+     ============================================ */
+  .about-hero-features {
+    position: relative;
+    padding: 10rem 0 6rem;
+    background:
+      linear-gradient(rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.9)),
+      url('/images/hero-about.jpg') center/cover no-repeat;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(13, 148, 136, 0.1));
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero-features {
+      padding: 8rem 0 4rem;
+    }
+  }
+
+  /* Container for both hero and features */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Hero Content Styles */
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+  }
+
+  .badge-light {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Feature Cards Grid */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .expertise-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .expertise-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .expertise-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .expertise-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: all var(--transition-base);
+  }
+
+  .expertise-card:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .expertise-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--color-text-primary));
+  }
+
+  .expertise-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgb(var(--color-text-secondary));
+    margin: 0;
+  }
+
+  /* ============================================
+     ISSUE 2 FIX: Merged Cloud Partnership + Team
+     ============================================ */
+  .cloud-team-section {
+    position: relative;
+    background: #0a0f1a;
+    overflow: hidden;
+    padding: 5rem 0 6rem;
+  }
+
+  /* Teal wave background */
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 {
+    animation: wave-float 20s ease-in-out infinite;
+  }
+
+  .wave-2 {
+    animation: wave-float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes wave-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20px) translateY(10px);
+    }
+  }
+
+  /* Cloud Partnership Grid */
+  .partnership-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .partnership-grid {
+      grid-template-columns: 1fr;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .partnership-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+  }
+
+  .partnership-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    margin-bottom: 2rem;
+  }
+
+  .partnership-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .partnership-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+  }
+
+  .bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--radius-full);
+    background-color: #0d9488;
+    flex-shrink: 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .stat-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #0d9488;
+    margin: 0;
+  }
+
+  /* Team Content within Cloud Partnership Section */
+  .team-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .team-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* ISSUE 3 FIX: Aligned Team Grid - Left and Right Columns Perfectly Aligned */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center; /* Center items in each grid cell */
+  }
+
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%; /* Ensure consistent width */
+    max-width: 400px; /* Constrain max width for alignment */
+  }
+
+  @media (max-width: 768px) {
+    .team-member {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  /* Fixed-width photo container to ensure alignment */
+  .member-photo {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0; /* Prevent shrinking - critical for alignment */
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+
+  @media (max-width: 768px) {
+    .member-photo {
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  .team-member:hover .member-photo img {
+    filter: grayscale(0%);
+  }
+
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left; /* Ensure text alignment is consistent */
+  }
+
+  @media (max-width: 768px) {
+    .member-info {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .member-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .member-role {
+    font-size: 1rem;
+    color: #0d9488;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  /* Highlight Box */
+  .highlight-box {
+    display: inline-block;
+    background: var(--color-highlight);
+    color: var(--bg-dark);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (max-width: 768px) {
+    .cloud-team-section {
+      padding: 3rem 0 4rem;
+    }
+  }
+</style>

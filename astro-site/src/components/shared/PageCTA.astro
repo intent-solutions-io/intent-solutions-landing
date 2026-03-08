@@ -1,0 +1,134 @@
+---
+// Reusable page CTA component
+interface Props {
+  title: string;
+  description: string;
+  primaryCTA: { text: string; href: string };
+  secondaryCTA?: { text: string; href: string };
+  note?: string;
+}
+
+const {
+  title,
+  description,
+  primaryCTA,
+  secondaryCTA,
+  note
+} = Astro.props;
+---
+
+<section class="page-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">{title}</h2>
+      <p class="cta-description">{description}</p>
+
+      <div class="cta-actions">
+        <a href={primaryCTA.href} class="btn btn-primary btn-lg">
+          {primaryCTA.text}
+        </a>
+        {secondaryCTA && (
+          <a href={secondaryCTA.href} class="btn btn-outline btn-lg">
+            {secondaryCTA.text}
+          </a>
+        )}
+      </div>
+
+      {note && (
+        <p class="cta-note">{note}</p>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgb(var(--color-accent-primary)), rgb(67 56 202));
+    color: white;
+  }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.0625rem;
+  }
+
+  .btn-primary {
+    background-color: white;
+    color: rgb(var(--color-accent-primary));
+    border-color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+  }
+
+  .cta-note {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-cta {
+      padding: 4rem 0;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn-lg {
+      width: 100%;
+    }
+  }
+</style>

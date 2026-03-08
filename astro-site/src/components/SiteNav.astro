@@ -1,17 +1,13 @@
 ---
 const links = [
-  { href: '/#tiers', label: 'claude code', featured: true },
-  { href: '/projects', label: 'projects' },
+  { href: '/', label: 'home' },
   { href: '/about', label: 'about' },
+  { href: '/private-ai', label: 'private ai' },
   { href: '/agents', label: 'ai agents' },
   { href: '/automation', label: 'automation' },
-  { href: '/cloud', label: 'cloud' },
-];
-
-const ctaLinks = [
-  { href: '/learn', label: 'Learn', style: 'secondary' },
-  { href: '/colab', label: 'Colab', style: 'secondary' },
-  { href: 'https://calendar.app.google/Wqbt8EJuEh5xvvV58', label: 'Book a Call', style: 'primary', external: true },
+  { href: '/cloud', label: 'cloud & data' },
+  { href: '/learn', label: 'learn' },
+  { href: '/resellers', label: 'resellers' },
 ];
 ---
 
@@ -21,79 +17,26 @@ const ctaLinks = [
       <a href="/" class="home-link">
         intent solutions io
       </a>
-
-      {/* Desktop Navigation */}
-      <div class="hidden lg:flex items-center gap-6">
+      <div class="hidden md:flex items-center gap-6">
         {
-          links.map(({ href, label, featured }) => (
+          links.map(({ href, label }) => (
             <a
               href={href}
-              class:list={[
-                'text-sm transition-smooth',
-                featured ? 'text-zinc-50 font-medium' : 'text-zinc-400 hover:text-zinc-100'
-              ]}
+              class="text-sm text-zinc-400 hover:text-zinc-100 transition-smooth"
             >
               {label}
             </a>
           ))
         }
-        <div class="flex items-center gap-3 ml-4 pl-4 border-l border-zinc-700">
-          {
-            ctaLinks.map(({ href, label, style, external }) => (
-              <a
-                href={href}
-                target={external ? '_blank' : undefined}
-                rel={external ? 'noopener' : undefined}
-                class:list={[
-                  'text-sm btn-sm',
-                  style === 'primary' ? 'btn-primary' : 'btn-secondary'
-                ]}
-              >
-                {label}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-
-      {/* Tablet Navigation */}
-      <div class="hidden md:flex lg:hidden items-center gap-3">
-        <a href="/learn" class="btn-secondary btn-sm text-sm">Learn</a>
-        <a href="/colab" class="btn-secondary btn-sm text-sm">Colab</a>
-        <a
-          href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
-          target="_blank"
-          rel="noopener"
-          class="btn-primary btn-sm text-sm"
-        >
-          Book a Call
+        <a href="/#contact" class="btn-primary text-sm">
+          start a project
         </a>
       </div>
-
-      {/* Mobile Navigation */}
-      <div class="md:hidden flex items-center gap-2">
-        <a
-          href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
-          target="_blank"
-          rel="noopener"
-          class="btn-primary btn-sm text-sm"
-        >
-          Book
+      <div class="md:hidden">
+        <a href="/#contact" class="btn-primary text-sm">
+          start
         </a>
       </div>
-    </div>
-  </div>
-
-  {/* Mobile menu links - collapsible on small screens */}
-  <div class="md:hidden border-t border-zinc-800/60 bg-zinc-950/90">
-    <div class="container mx-auto px-6 py-2 flex items-center justify-center gap-4 text-sm">
-      <a href="/projects" class="text-zinc-400 hover:text-zinc-100 transition-smooth">Projects</a>
-      <span class="text-zinc-700">|</span>
-      <a href="/learn" class="text-zinc-400 hover:text-zinc-100 transition-smooth">Learn</a>
-      <span class="text-zinc-700">|</span>
-      <a href="/colab" class="text-zinc-400 hover:text-zinc-100 transition-smooth">Colab</a>
-      <span class="text-zinc-700">|</span>
-      <a href="/#contact" class="text-zinc-400 hover:text-zinc-100 transition-smooth">Contact</a>
     </div>
   </div>
 </nav>
