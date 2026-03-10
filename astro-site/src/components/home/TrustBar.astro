@@ -1,0 +1,166 @@
+---
+const techItems = [
+  'GitHub',
+  'Google Cloud',
+  'Anthropic',
+  'n8n',
+  'Claude',
+  'Firebase',
+  'BigQuery',
+  'Python',
+];
+
+const statBadges = [
+  '270+ Plugins',
+  '1,550+ Stars',
+  '1,537 Agent Skills',
+];
+
+// Interleave badges between tech items for visual variety
+// Duplicate the full sequence for seamless infinite loop
+const sequence = [
+  ...techItems.slice(0, 4),
+  ...statBadges,
+  ...techItems.slice(4),
+];
+---
+
+<div class="trust-bar-wrapper" aria-label="Trust signals and statistics">
+  <p class="label">Trusted by teams building with AI</p>
+
+  <div class="marquee-container" aria-hidden="true">
+    <!-- Fade masks -->
+    <div class="fade-left" aria-hidden="true"></div>
+    <div class="fade-right" aria-hidden="true"></div>
+
+    <div class="marquee-track">
+      <!-- First copy -->
+      <ul class="marquee-list" role="list">
+        {sequence.map((item) => {
+          const isBadge = statBadges.includes(item);
+          return (
+            <li class:list={['marquee-item', isBadge ? 'badge' : 'tech']}>
+              {item}
+            </li>
+          );
+        })}
+      </ul>
+      <!-- Duplicate for seamless loop -->
+      <ul class="marquee-list" role="list" aria-hidden="true">
+        {sequence.map((item) => {
+          const isBadge = statBadges.includes(item);
+          return (
+            <li class:list={['marquee-item', isBadge ? 'badge' : 'tech']}>
+              {item}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .trust-bar-wrapper {
+    width: 100%;
+    padding: 2rem 0;
+    background: rgb(9 9 11); /* zinc-950 */
+    border-top: 1px solid rgb(39 39 42 / 0.6);
+    border-bottom: 1px solid rgb(39 39 42 / 0.6);
+    overflow: hidden;
+  }
+
+  .label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(63 63 70); /* zinc-700 */
+    margin-bottom: 1.25rem;
+  }
+
+  .marquee-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Fade masks using pseudo-overlay divs so they sit above the track */
+  .fade-left,
+  .fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8rem;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .fade-left {
+    left: 0;
+    background: linear-gradient(to right, rgb(9 9 11) 0%, transparent 100%);
+  }
+
+  .fade-right {
+    right: 0;
+    background: linear-gradient(to left, rgb(9 9 11) 0%, transparent 100%);
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    list-style: none;
+    margin: 0;
+  }
+
+  .marquee-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .marquee-item.tech {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(113 113 122); /* zinc-500 */
+    letter-spacing: 0.01em;
+  }
+
+  .marquee-item.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgb(228 228 231); /* zinc-200 */
+    color: rgb(24 24 27); /* zinc-900 */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    letter-spacing: 0.01em;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Shift exactly one copy width — each list is 50% of total track */
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>
