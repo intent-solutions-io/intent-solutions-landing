@@ -1,0 +1,308 @@
+---
+const faqs = [
+  {
+    question: 'What exactly is a Claude Code setup?',
+    answer:
+      'I configure Claude Code for your specific tech stack, team size, and workflows. This includes custom CLAUDE.md files, curated plugin packs, slash commands, MCP server connections, and hooks—everything tuned so your team gets maximum value from day one.',
+  },
+  {
+    question: 'Do I need to know how to code?',
+    answer:
+      'Not at all. The Learn track is specifically designed for decision-makers and team leads. I\'ll show you what Claude Code can do, how it fits your org, and what to watch for—no coding required.',
+  },
+  {
+    question: 'What\'s included in the discovery call?',
+    answer:
+      'A 30-minute conversation where I learn about your team, workflows, and goals. I\'ll give honest recommendations on which tier makes sense—or if Claude Code isn\'t the right fit. No pressure, no pitch deck.',
+  },
+  {
+    question: 'Can you work with teams outside the US?',
+    answer:
+      'Absolutely. I work with remote teams across all time zones. Sessions are scheduled around your availability, and all training materials are async-friendly.',
+  },
+  {
+    question: 'What happens after the initial setup?',
+    answer:
+      'Every tier includes a support window (30–90 days depending on tier). I\'m available for questions, plugin tweaks, and workflow adjustments. Enterprise clients get ongoing retainer relationships with quarterly workshops.',
+  },
+  {
+    question: 'How is this different from just reading the docs?',
+    answer:
+      'The docs tell you what buttons to press. I show you how to build systems that make your team faster. Custom plugins, team workflows, CI/CD integration, and training that sticks—things you won\'t find in any documentation.',
+  },
+];
+---
+
+<section id="faq" class="faq-section" aria-labelledby="faq-title">
+  <div class="container">
+    <h2 id="faq-title" class="section-title">frequently asked questions</h2>
+
+    <div class="faq-list" role="list">
+      {faqs.map((faq, index) => (
+        <div class="faq-item" role="listitem">
+          <button
+            class="faq-trigger"
+            aria-expanded="false"
+            aria-controls={`faq-panel-${index}`}
+            id={`faq-btn-${index}`}
+          >
+            <span class="faq-question">{faq.question}</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg class="icon-plus" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="10" y1="3" x2="10" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="3" y1="10" x2="17" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <svg class="icon-minus" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="10" x2="17" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+
+          <div
+            class="faq-panel"
+            id={`faq-panel-${index}`}
+            role="region"
+            aria-labelledby={`faq-btn-${index}`}
+            hidden
+          >
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 6rem 0;
+    background: rgb(9 9 11); /* zinc-950 */
+  }
+
+  .container {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: rgb(250 250 250); /* zinc-50 */
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    background: rgb(39 39 42 / 0.6);
+    border: 1px solid rgb(39 39 42 / 0.4);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faq-item:has(.faq-trigger[aria-expanded="true"]) {
+    border-color: rgb(82 82 91); /* zinc-600 */
+  }
+
+  .faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .faq-trigger:focus-visible {
+    outline: 2px solid rgb(228 228 231);
+    outline-offset: -2px;
+    border-radius: 0.625rem;
+  }
+
+  .faq-question {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgb(228 228 231); /* zinc-200 */
+    line-height: 1.5;
+    transition: color 0.2s ease;
+  }
+
+  .faq-trigger:hover .faq-question,
+  .faq-trigger[aria-expanded="true"] .faq-question {
+    color: rgb(250 250 250); /* zinc-50 */
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    color: rgb(113 113 122); /* zinc-500 */
+    transition: color 0.2s ease;
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  .faq-trigger:hover .faq-icon,
+  .faq-trigger[aria-expanded="true"] .faq-icon {
+    color: rgb(212 212 216); /* zinc-300 */
+  }
+
+  .icon-plus,
+  .icon-minus {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .icon-minus {
+    opacity: 0;
+  }
+
+  .faq-trigger[aria-expanded="true"] .icon-plus {
+    opacity: 0;
+  }
+
+  .faq-trigger[aria-expanded="true"] .icon-minus {
+    opacity: 1;
+  }
+
+  .faq-panel {
+    /* Panel is toggled via the `hidden` attribute; height animation done via JS */
+    overflow: hidden;
+  }
+
+  .faq-panel[hidden] {
+    display: none;
+  }
+
+  /* When animating, hidden is removed but we still need height transition */
+  .faq-panel.is-animating {
+    display: block !important;
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem;
+    border-top: 1px solid rgb(39 39 42 / 0.6);
+    padding-top: 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: rgb(161 161 170); /* zinc-400 */
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      padding: 0 1.25rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+
+    .faq-trigger {
+      padding: 1rem 1.25rem;
+    }
+
+    .faq-answer {
+      padding: 0 1.25rem 1rem;
+      padding-top: 0.875rem;
+    }
+  }
+</style>
+
+<script>
+  // Smooth accordion with height animation
+  function setupFAQ() {
+    const triggers = document.querySelectorAll<HTMLButtonElement>('.faq-trigger');
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        const panelId = trigger.getAttribute('aria-controls');
+        if (!panelId) return;
+        const panel = document.getElementById(panelId);
+        if (!panel) return;
+
+        if (isExpanded) {
+          // Collapse
+          collapse(trigger, panel);
+        } else {
+          // Close any currently open item first
+          triggers.forEach((otherTrigger) => {
+            if (otherTrigger !== trigger && otherTrigger.getAttribute('aria-expanded') === 'true') {
+              const otherId = otherTrigger.getAttribute('aria-controls');
+              if (!otherId) return;
+              const otherPanel = document.getElementById(otherId);
+              if (otherPanel) collapse(otherTrigger, otherPanel);
+            }
+          });
+          expand(trigger, panel);
+        }
+      });
+    });
+  }
+
+  function expand(trigger: HTMLButtonElement, panel: HTMLElement) {
+    trigger.setAttribute('aria-expanded', 'true');
+    panel.classList.add('is-animating');
+    panel.removeAttribute('hidden');
+
+    const targetHeight = panel.scrollHeight;
+    panel.style.height = '0px';
+
+    // Force reflow
+    panel.offsetHeight;
+
+    panel.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+    panel.style.height = `${targetHeight}px`;
+
+    panel.addEventListener('transitionend', () => {
+      panel.style.height = '';
+      panel.style.transition = '';
+      panel.classList.remove('is-animating');
+    }, { once: true });
+  }
+
+  function collapse(trigger: HTMLButtonElement, panel: HTMLElement) {
+    trigger.setAttribute('aria-expanded', 'false');
+    panel.classList.add('is-animating');
+
+    const startHeight = panel.scrollHeight;
+    panel.style.height = `${startHeight}px`;
+
+    // Force reflow
+    panel.offsetHeight;
+
+    panel.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+    panel.style.height = '0px';
+
+    panel.addEventListener('transitionend', () => {
+      panel.setAttribute('hidden', '');
+      panel.style.height = '';
+      panel.style.transition = '';
+      panel.classList.remove('is-animating');
+    }, { once: true });
+  }
+
+  // Run on DOMContentLoaded and after Astro view transitions
+  document.addEventListener('DOMContentLoaded', setupFAQ);
+  document.addEventListener('astro:page-load', setupFAQ);
+</script>
