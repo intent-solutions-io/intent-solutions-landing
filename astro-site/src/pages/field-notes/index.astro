@@ -5,7 +5,6 @@ import Footer from '../../components/Footer';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('field-notes'))
-  .filter(post => !post.data.featured || post.data.featured !== undefined)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 const title = 'Field Notes | intent solutions io';
