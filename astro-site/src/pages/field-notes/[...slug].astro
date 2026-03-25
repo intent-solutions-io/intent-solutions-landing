@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import Footer from '../../components/Footer';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('field-notes');
+  return posts.map(post => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date,
+  author: {
+    '@type': 'Person',
+    name: 'Jeremy Longshore',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'intent solutions io',
+    url: 'https://intentsolutions.io',
+  },
+  mainEntityOfPage: post.data.canonical || `https://intentsolutions.io/field-notes/${post.id.replace(/\.md$/, '')}`,
+};
+---
+
+<Layout
+  title={`${post.data.title} | Field Notes`}
+  description={post.data.description}
+  canonical={post.data.canonical}
+>
+  <SiteNav />
+
+  <main class="min-h-screen bg-zinc-950">
+    <article class="py-16 sm:py-24">
+      <div class="container mx-auto px-6 sm:px-8 max-w-3xl">
+        <a
+          href="/field-notes"
+          class="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-300 transition-smooth mb-10"
+        >
+          &larr; Field Notes
+        </a>
+
+        <header class="mb-12">
+          <div class="flex flex-wrap items-center gap-3 text-sm text-zinc-500 mb-4">
+            <time datetime={post.data.date}>{formattedDate}</time>
+            {post.data.tags && post.data.tags.length > 0 && (
+              <>
+                <span class="text-zinc-700">&middot;</span>
+                <div class="flex flex-wrap gap-2">
+                  {post.data.tags.map((tag: string) => (
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-zinc-800/60 text-zinc-500 border border-zinc-700/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-4">{post.data.title}</h1>
+          <p class="text-body-lg text-zinc-400">{post.data.description}</p>
+        </header>
+
+        <div class="prose-field-notes">
+          <Content />
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer client:load />
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</Layout>
+

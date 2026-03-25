@@ -23,12 +23,10 @@ export default function Footer() {
               github
             </a>
             <a
-              href="https://startaitools.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/field-notes"
               className="text-zinc-400 hover:text-zinc-200 transition-smooth"
             >
-              blog
+              field notes
             </a>
           </div>
 
