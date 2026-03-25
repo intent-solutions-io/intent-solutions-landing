@@ -47,3 +47,7 @@ Thumbs.db
 
 # CI/CD
 .github/workflows/*.secrets
+
+# Dolt database files (added by bd init)
+.dolt/
+*.db

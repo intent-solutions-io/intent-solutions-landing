@@ -2,8 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import Hero from '../components/Hero';
+import TrustBar from '../components/home/TrustBar.astro';
 import ClaudeCodeTiers from '../components/ClaudeCodeTiers';
-import Products from '../components/Products';
+import ProjectShowcase from '../components/home/ProjectShowcase.astro';
+import FAQSection from '../components/home/FAQSection.astro';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 ---
@@ -12,6 +14,7 @@ import Footer from '../components/Footer';
   <SiteNav />
 
   <Hero client:load />
+  <TrustBar />
   <ClaudeCodeTiers client:visible />
 
   <!-- Learn + Colab -->
@@ -96,7 +99,8 @@ import Footer from '../components/Footer';
     </div>
   </section>
 
-  <Products client:visible />
+  <ProjectShowcase />
   <Contact client:visible />
+  <FAQSection />
   <Footer />
 </Layout>
