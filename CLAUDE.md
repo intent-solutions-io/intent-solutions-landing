@@ -75,6 +75,7 @@ Pages are static Astro files; interactive sections use React islands with `clien
 - **Layout**: `src/layouts/Layout.astro` — SEO (astro-seo), fonts, Firebase Analytics
 - **React Islands**: `src/components/*.tsx` — Interactive sections with Framer Motion + GSAP
 - **Styles**: `src/styles/global.css` — Tailwind 4 + charcoal slate theme
+- **Content**: `src/content/field-notes/*.md` — Astro content collection (40+ posts), schema in `src/content.config.ts`
 
 ### Form Submission Flow (Firebase)
 
@@ -96,13 +97,12 @@ User submits form → POST /api/contact (or /api/partner)
 
 Located in `astro-site/functions/src/` (separate `package.json`, Node 20, compiled to `lib/`):
 
-- `index.ts` — Function exports (submitContact, submitPartnerInquiry)
+- `index.ts` — All handler logic inline (submitContact, submitPartnerInquiry) with Zod validation, honeypot, CORS
 - `services/firestore.ts` — Firestore write operations
 - `services/email.ts` — Resend email templates
 - `services/slack.ts` — Slack notifications for Learn intake
 - `services/vertexai.ts` — Vertex AI Gemini analysis for Learn intake
-- `types/index.ts` — TypeScript interfaces (ContactSubmission, PartnerInquiry, LearnIntake, LearnAnalysis)
-- `types/learn.ts` — Learn-specific types (LearnIntake, LearnAnalysis, SlackActionPayload)
+- `types/` — TypeScript interfaces (ContactSubmission, PartnerInquiry, LearnIntake, LearnAnalysis)
 - `utils/rate-limit.ts` — IP-based rate limiting (Firestore transactional, 1hr sliding window, fail-open)
 
 ### Rate Limiting
@@ -141,7 +141,7 @@ firebase functions:secrets:set RESEND_FROM_EMAIL
 
 ### Testing Infrastructure
 
-- E2E tests in `astro-site/tests/e2e/` using Playwright
+- Playwright config at `astro-site/playwright.config.ts` (testDir: `tests/e2e/`, currently no spec files — scaffold needed)
 - Test server auto-starts on port 8080 (`bun run dev --port 8080`)
 - Projects: Desktop Chrome/Firefox/Safari, iPhone 12/12 Pro, Pixel 5, iPad Pro
 - Failure artifacts: `tests/screenshots/`, `tests/videos/`
@@ -182,21 +182,46 @@ Theme in `src/styles/global.css` (Charcoal Slate / Theme 7):
 
 Colors: Zinc palette (950-50), Inter font family. Animation: Framer Motion (React islands), GSAP (scroll/page), Lenis (smooth scroll).
 
+### Field Notes (Blog/Content Collection)
+
+Astro content collection at `src/content/field-notes/`. Each post is a markdown file with frontmatter:
+
+```yaml
+title: string       # Required
+description: string # Required
+date: string        # Required (YYYY-MM-DD)
+tags: string[]      # Optional
+featured: boolean   # Optional (default false)
+canonical: string   # Optional (URL, for cross-posted content)
+```
+
+Routes: `/field-notes` (listing, sorted newest first), `/field-notes/<slug>` (individual post), `/field-notes/rss.xml` (RSS feed). Posts include JSON-LD structured data (BlogPosting schema).
+
 ## Key Pages
 
 | Route | Purpose |
 |-------|---------|
 | `/` | Homepage — Claude Code Systems + Learn/Colab + secondary services |
 | `/learn` | Learn with Jeremy — training, coaching, workshops |
+| `/learn/security` | Vertex vs self-hosted comparison |
+| `/learn/models` | Model-agnostic delivery |
 | `/colab` | Colab with Jeremy — partnerships, joint ventures |
 | `/contact` | Standalone contact page |
+| `/field-notes` | Technical blog — architecture decisions, production systems |
 | `/agents` | AI Agents (Intent Agent Models — M1/M2/M3) |
+| `/projects` | Project showcase grid |
+| `/about` | About page |
 | `/private-ai` | Private AI infrastructure |
 | `/automation` | n8n automation services |
 | `/cloud` | Google Cloud services |
 | `/resellers` | Distribution partner program |
-| `/learn/security` | Vertex vs self-hosted comparison |
-| `/learn/models` | Model-agnostic delivery |
+| `/a2a` | Agent-to-Agent protocol |
+| `/ai-agents`, `/ai-models` | AI capabilities pages |
+| `/intel-engine` | Intel Engine product page |
+| `/infrastructure`, `/applications` | Service detail pages |
+| `/security-compliance`, `/support` | Compliance and support |
+| `/privacy`, `/terms`, `/acceptable-use` | Legal pages |
+| `/thank-you` | Post-submission confirmation |
 
 ## Content Guidelines
 
