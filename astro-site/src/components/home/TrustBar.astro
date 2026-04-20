@@ -16,82 +16,151 @@ const statBadges = [
   '1,537 Agent Skills',
 ];
 
-// Interleave badges between tech items for visual variety
-// Duplicate the full sequence for seamless infinite loop
-const sequence = [
-  ...techItems.slice(0, 4),
-  ...statBadges,
-  ...techItems.slice(4),
-];
+type Item = { text: string; type: 'tech' | 'badge' | 'sep' };
+
+const raw = [...techItems.slice(0, 4), ...statBadges, ...techItems.slice(4)];
+
+// Interleave diamond separators between items
+const sequence: Item[] = raw.reduce<Item[]>((acc, text, i) => {
+  acc.push({ text, type: statBadges.includes(text) ? 'badge' : 'tech' });
+  if (i < raw.length - 1) acc.push({ text: '◆', type: 'sep' });
+  return acc;
+}, []);
 ---
 
-<div class="trust-bar-wrapper" aria-label="Trust signals and statistics">
-  <p class="label">Trusted by teams building with AI</p>
+<div class="trust-bar" aria-label="Trusted technology stack and proof points">
 
-  <div class="marquee-container" aria-hidden="true">
+  <!-- Fixed left channel label -->
+  <div class="channel-label" aria-hidden="true">
+    <span class="live-dot">
+      <span class="ping"></span>
+      <span class="dot-core"></span>
+    </span>
+    <span class="label-text">Trusted Stack</span>
+  </div>
+
+  <!-- Vertical rule -->
+  <div class="vr" aria-hidden="true"></div>
+
+  <!-- Scrolling marquee -->
+  <div class="marquee-wrap">
     <!-- Fade masks -->
-    <div class="fade-left" aria-hidden="true"></div>
-    <div class="fade-right" aria-hidden="true"></div>
+    <div class="fade fade-left" aria-hidden="true"></div>
+    <div class="fade fade-right" aria-hidden="true"></div>
 
-    <div class="marquee-track">
-      <!-- First copy -->
+    <div class="marquee-track" aria-hidden="true">
+      <!-- First pass -->
       <ul class="marquee-list" role="list">
-        {sequence.map((item) => {
-          const isBadge = statBadges.includes(item);
-          return (
-            <li class:list={['marquee-item', isBadge ? 'badge' : 'tech']}>
-              {item}
-            </li>
-          );
-        })}
+        {sequence.map(({ text, type }) => (
+          <li class:list={['item', type]}>{text}</li>
+        ))}
       </ul>
       <!-- Duplicate for seamless loop -->
       <ul class="marquee-list" role="list" aria-hidden="true">
-        {sequence.map((item) => {
-          const isBadge = statBadges.includes(item);
-          return (
-            <li class:list={['marquee-item', isBadge ? 'badge' : 'tech']}>
-              {item}
-            </li>
-          );
-        })}
+        {sequence.map(({ text, type }) => (
+          <li class:list={['item', type]}>{text}</li>
+        ))}
       </ul>
     </div>
   </div>
 </div>
 
+<!-- Screen-reader accessible version -->
+<p class="sr-only">
+  Trusted by teams using: {techItems.join(', ')}. Proof points: {statBadges.join(', ')}.
+</p>
+
 <style>
-  .trust-bar-wrapper {
+  /* ── Wrapper ── */
+  .trust-bar {
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 2rem 0;
-    background: rgb(9 9 11); /* zinc-950 */
-    border-top: 1px solid rgb(39 39 42 / 0.6);
-    border-bottom: 1px solid rgb(39 39 42 / 0.6);
+    height: 3.25rem;
+    background: rgb(9 9 11);
+    border-top: 1px solid rgba(34, 211, 238, 0.18);
+    border-bottom: 1px solid rgba(39, 39, 42, 0.5);
     overflow: hidden;
   }
 
-  .label {
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgb(63 63 70); /* zinc-700 */
-    margin-bottom: 1.25rem;
+  /* ── Left channel label ── */
+  .channel-label {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0 1.4rem;
+    flex-shrink: 0;
+    height: 100%;
   }
 
-  .marquee-container {
+  /* Pulsing live dot */
+  .live-dot {
     position: relative;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.5rem;
+    height: 0.5rem;
+    flex-shrink: 0;
   }
 
-  /* Fade masks using pseudo-overlay divs so they sit above the track */
-  .fade-left,
-  .fade-right {
+  .ping {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgb(34 211 238);
+    opacity: 0.4;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .dot-core {
+    position: relative;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 9999px;
+    background: rgb(34 211 238);
+    box-shadow: 0 0 6px rgba(34, 211, 238, 0.7);
+  }
+
+  @keyframes ping {
+    0%   { transform: scale(1);   opacity: 0.4; }
+    70%  { transform: scale(2.2); opacity: 0;   }
+    100% { transform: scale(2.2); opacity: 0;   }
+  }
+
+  .label-text {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(34, 211, 238, 0.65);
+    white-space: nowrap;
+  }
+
+  /* ── Vertical rule ── */
+  .vr {
+    width: 1px;
+    height: 1.4rem;
+    background: rgba(39, 39, 42, 0.9);
+    flex-shrink: 0;
+  }
+
+  /* ── Marquee ── */
+  .marquee-wrap {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .fade {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 8rem;
+    width: 5rem;
     z-index: 10;
     pointer-events: none;
   }
@@ -109,7 +178,7 @@ const sequence = [
   .marquee-track {
     display: flex;
     width: max-content;
-    animation: marquee-scroll 40s linear infinite;
+    animation: marquee-scroll 36s linear infinite;
   }
 
   .marquee-track:hover {
@@ -119,48 +188,79 @@ const sequence = [
   .marquee-list {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding: 0 2rem;
+    gap: 1.25rem;
+    padding: 0 1.5rem;
     list-style: none;
     margin: 0;
   }
 
-  .marquee-item {
+  /* ── Item types ── */
+  .item {
     white-space: nowrap;
     flex-shrink: 0;
+    line-height: 1;
   }
 
-  .marquee-item.tech {
-    font-size: 0.875rem;
+  .item.tech {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8rem;
     font-weight: 500;
-    color: rgb(113 113 122); /* zinc-500 */
-    letter-spacing: 0.01em;
+    color: rgb(161 161 170); /* zinc-400 */
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
   }
 
-  .marquee-item.badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    background: rgb(228 228 231); /* zinc-200 */
-    color: rgb(24 24 27); /* zinc-900 */
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    letter-spacing: 0.01em;
+  .marquee-track:hover .item.tech {
+    color: rgb(212 212 216);
   }
 
+  /* Stat badges — live data readout style */
+  .item.badge {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(34 211 238);
+    background: rgba(34, 211, 238, 0.06);
+    border: 1px solid rgba(34, 211, 238, 0.22);
+    border-radius: 3px;
+    padding: 0.22rem 0.65rem;
+    box-shadow:
+      0 0 10px rgba(34, 211, 238, 0.08),
+      inset 0 0 6px rgba(34, 211, 238, 0.03);
+  }
+
+  /* Diamond separator */
+  .item.sep {
+    font-size: 0.35rem;
+    color: rgba(34, 211, 238, 0.18);
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  /* ── Scroll keyframe ── */
   @keyframes marquee-scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      /* Shift exactly one copy width — each list is 50% of total track */
-      transform: translateX(-50%);
-    }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
-  /* Respect reduced motion */
+  /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-      animation: none;
-    }
+    .marquee-track { animation: none; }
+    .ping          { animation: none; }
+  }
+
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 </style>
