@@ -1,3 +1,15 @@
+# Release v2.3.0
+
+**Release Date**: 2026-04-22
+
+## Changes since v2.2.0
+
+- chore: release v2.3.0 [skip ci] (7785620)
+- Merge pull request #13 from intent-solutions-io/feat/shared-layout-components (a84d329)
+- feat: add shared layout components (PageHero, PageCTA, CTASection) (5203858)
+
+---
+
 # Release v2.2.0
 
 **Release Date**: 2026-04-21
