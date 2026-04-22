@@ -1,3 +1,15 @@
+# Release v2.4.0
+
+**Release Date**: 2026-04-22
+
+## Changes since v2.3.0
+
+- chore: release v2.4.0 [skip ci] (4601dd6)
+- Merge pull request #14 from intent-solutions-io/feat/visual-animation-components (5e3e546)
+- feat: add visual/animation components from PR #4 (b9d4f9b)
+
+---
+
 # Release v2.3.0
 
 **Release Date**: 2026-04-22
