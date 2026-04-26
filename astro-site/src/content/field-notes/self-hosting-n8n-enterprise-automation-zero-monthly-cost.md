@@ -1,6 +1,6 @@
 ---
-title: "Self-Hosting n8n on Contabo VPS: Enterprise Automation for $0/Month"
-description: "Self-Hosting n8n on Contabo VPS: Enterprise Automation for $0/Month"
+title: "Self-Hosting n8n on Contabo VPS: Enterprise Automation with Zero Recurring Costs"
+description: "Production-ready n8n deployment on a Contabo VPS — complete architecture, SSL via Caddy, Docker stack, and operational runbook for eliminating recurring SaaS fees."
 date: "2025-10-04"
 tags: ["n8n", "self-hosting", "automation", "devops", "caddy", "ssl", "docker"]
 featured: false
@@ -169,8 +169,8 @@ The n8n CLI handled workflow imports reliably. The API had validation issues wit
 
 ## Related Posts
 
-- [Waygate MCP v2.1.0: Forensic Analysis to Production Enterprise Server](/posts/waygate-mcp-v2-1-0-forensic-analysis-to-production-enterprise-server/)
-- [When Commands Don't Work: Debugging Journey Through Automated Content Systems](/posts/when-commands-dont-work-debugging-journey-through-automated-content-systems/)
+- [Waygate MCP v2.1.0: Forensic Analysis to Production Enterprise Server](https://startaitools.com/posts/waygate-mcp-v2-1-0-forensic-analysis-to-production-enterprise-server/)
+- [When Commands Don't Work: Debugging Journey Through Automated Content Systems](https://startaitools.com/posts/when-commands-dont-work-debugging-journey-through-automated-content-systems/)
 
 ## Next Steps
 

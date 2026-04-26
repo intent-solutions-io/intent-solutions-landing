@@ -11,7 +11,7 @@ export default function Services() {
     {
       title: 'automation programs',
       description:
-        'Design and implement n8n, Netlify Functions, and Vertex AI workflows that replace manual reporting and onboarding tasks.',
+        'Design and implement Cloud Functions, Vertex AI, and Claude Code-driven workflows that replace manual reporting and onboarding tasks.',
     },
     {
       title: 'ai agents & rag systems',

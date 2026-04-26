@@ -549,9 +549,9 @@ test('homepage loads', async ({ page }) => {
 
 ## Related Case Studies
 
-- [GitHub Release Workflow: Semantic Versioning and Automation](/posts/github-release-workflow-uncommitted-changes-semantic-versioning/) - How I automated the complete release process with version management
-- [Enterprise Software Transformation: Waygate MCP Case Study](/posts/enterprise-software-transformation-waygate-mcp-case-study/) - Building production-grade security infrastructure
-- [Building Multi-Platform Developer Tools](/posts/building-multi-platform-developer-tools/) - Cross-platform testing strategies
+- [GitHub Release Workflow: Semantic Versioning and Automation](https://startaitools.com/posts/github-release-workflow-uncommitted-changes-semantic-versioning/) - How I automated the complete release process with version management
+- [Enterprise Software Transformation: Waygate MCP Case Study](/field-notes/enterprise-software-transformation-waygate-mcp-case-study) - Building production-grade security infrastructure
+- [Building Multi-Platform Developer Tools](/field-notes/building-multi-platform-developer-tools) - Cross-platform testing strategies
 
 ## Conclusion: Engineering Excellence Through Quality Assurance
 

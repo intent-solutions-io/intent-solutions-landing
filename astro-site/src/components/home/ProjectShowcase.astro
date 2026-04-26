@@ -48,7 +48,7 @@ const projects = [
     name: 'News Pipeline',
     description:
       'Automated monitoring that converts daily news into structured intelligence briefs for decision makers.',
-    badge: 'n8n · AI Analysis · 10★',
+    badge: 'Workflow Automation · 10★',
     link: 'https://github.com/jeremylongshore/news-pipeline-n8n',
     external: true,
     gradient: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(37,99,235,0.08) 60%, transparent 100%)',
@@ -437,7 +437,7 @@ const projects = [
 
 <script>
   function setupShowcaseObserver() {
-    const cards = document.querySelectorAll<HTMLElement>('.project-card');
+    const cards = document.querySelectorAll<HTMLElement>('.project-card:not([data-showcase-bound])');
     if (!cards.length) return;
 
     const observer = new IntersectionObserver(
@@ -454,9 +454,19 @@ const projects = [
       { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     );
 
-    cards.forEach((card) => observer.observe(card));
+    cards.forEach((card) => {
+      card.dataset.showcaseBound = 'true';
+      observer.observe(card);
+    });
   }
 
   document.addEventListener('DOMContentLoaded', setupShowcaseObserver);
   document.addEventListener('astro:page-load', setupShowcaseObserver);
 </script>
+
+<noscript>
+  <style>
+    /* Progressive enhancement: cards are visible without JS or if observer fails. */
+    .project-card { opacity: 1 !important; transform: none !important; }
+  </style>
+</noscript>
