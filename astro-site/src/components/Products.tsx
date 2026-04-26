@@ -39,8 +39,8 @@ export default function Products() {
     {
       name: 'News Pipeline',
       description:
-        'Automated monitoring that converts daily news into structured intelligence briefs for decision makers.',
-      badge: 'n8n • AI Analysis • 10★',
+        'Automated monitoring pipeline that converts daily news into structured intelligence briefs for decision makers. Open-source archived project.',
+      badge: 'Workflow Automation • 10★',
       link: 'https://github.com/jeremylongshore/news-pipeline-n8n',
     },
     {

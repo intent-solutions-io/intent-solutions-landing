@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 <Layout
   title="Automation Programs"
-  description="Replace repetitive processes with n8n, Netlify, and custom workflows tuned to your ops team."
+  description="Replace repetitive processes with Claude Code, Cloud Functions, and Vertex AI workflows tuned to your ops team."
 >
   <SiteNav />
 
@@ -21,9 +21,9 @@ import Footer from '../components/Footer';
             Automations that feel like an extra teammate
           </h1>
           <p class="text-lg text-zinc-400 leading-relaxed">
-            We design n8n and Netlify automation programs that handle the boring stuff—reporting, onboarding,
-            follow-ups—while keeping humans in the driver’s seat. Everything is documented, observable, and ready
-            for audits.
+            We design automation programs on Claude Code, Cloud Functions, and Vertex AI that handle the boring
+            stuff—reporting, onboarding, follow-ups—while keeping humans in the driver’s seat. Everything is
+            documented, observable, and ready for audits.
           </p>
         </div>
       </div>
@@ -79,9 +79,10 @@ import Footer from '../components/Footer';
           <div>
             <h2 class="text-3xl font-bold text-zinc-50 mb-6">Our automation stack</h2>
             <ul class="space-y-4 text-sm text-zinc-300">
-              <li><span class="font-semibold text-zinc-100">n8n:</span> Visual builders with TypeScript nodes for custom logic.</li>
-              <li><span class="font-semibold text-zinc-100">Netlify Functions:</span> Lightweight serverless endpoints for quick integrations.</li>
-              <li><span class="font-semibold text-zinc-100">Supabase & Firestore:</span> Secure storage for state, history, and analytics.</li>
+              <li><span class="font-semibold text-zinc-100">Claude Code:</span> Agent-driven workflows with audit-grade reasoning logs.</li>
+              <li><span class="font-semibold text-zinc-100">Cloud Functions:</span> Serverless endpoints for integrations and event handlers.</li>
+              <li><span class="font-semibold text-zinc-100">Vertex AI:</span> Managed Gemini endpoints for production reasoning with IAM and VPC-SC.</li>
+              <li><span class="font-semibold text-zinc-100">Firestore & BigQuery:</span> Secure storage for state, history, and analytics.</li>
               <li><span class="font-semibold text-zinc-100">Playwright:</span> Browser automations for stubborn legacy apps.</li>
               <li><span class="font-semibold text-zinc-100">Observability:</span> Structured logging, dashboards, and alerting so ops can debug fast.</li>
             </ul>
@@ -97,65 +98,6 @@ import Footer from '../components/Footer';
             <p class="text-sm text-zinc-400">
               Typical timeline is 10 business days from kickoff to production for a single workflow lane.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- n8n vs Vertex Comparison -->
-    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl font-bold text-zinc-50 mb-8 text-center">
-            when to use n8n vs vertex agent engine
-          </h2>
-          <p class="text-zinc-400 text-center mb-12 max-w-3xl mx-auto">
-            We pair them often: n8n for orchestration glue, Vertex Agent Engine for the agent brain. This gives you visual workflow building for integrations while maintaining security and guardrails for AI reasoning.
-          </p>
-
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-sm">
-              <thead class="text-zinc-400 uppercase text-xs tracking-widest border-b border-zinc-800">
-                <tr>
-                  <th class="py-4 pr-4 font-semibold">dimension</th>
-                  <th class="py-4 px-4 font-semibold">n8n (self-hosted low-code)</th>
-                  <th class="py-4 pl-4 font-semibold">vertex agent engine</th>
-                </tr>
-              </thead>
-              <tbody class="text-zinc-300">
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">best for</td>
-                  <td class="py-4 px-4">Integration glue, webhooks, simple workflows</td>
-                  <td class="py-4 pl-4">Production agents with LLM reasoning and guardrails</td>
-                </tr>
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">security</td>
-                  <td class="py-4 px-4">App-level credentials, manual controls</td>
-                  <td class="py-4 pl-4">IAM, VPC-SC, CMEK, audit logs by default</td>
-                </tr>
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">complexity</td>
-                  <td class="py-4 px-4">Quick wins for non-critical automations</td>
-                  <td class="py-4 pl-4">Complex multi-step reasoning with sensitive data</td>
-                </tr>
-                <tr class="border-b border-zinc-800">
-                  <td class="py-4 pr-4 font-medium text-zinc-100">deployment</td>
-                  <td class="py-4 px-4">Self-hosted or cloud, you manage infrastructure</td>
-                  <td class="py-4 pl-4">Managed by Google Cloud, auto-scaling</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="mt-8 bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-            <p class="text-zinc-300 leading-relaxed">
-              <strong class="text-zinc-100">Our recommendation:</strong> Use n8n for orchestration and data flow between systems. Use Vertex Agent Engine when the workflow requires LLM reasoning, sensitive data handling, or production-grade guardrails. We often deploy both together for best results.
-            </p>
-            <div class="mt-4">
-              <a href="/learn/security" class="text-sm text-indigo-400 hover:text-indigo-300 transition-smooth">
-                Learn more about security comparison →
-              </a>
-            </div>
           </div>
         </div>
       </div>
