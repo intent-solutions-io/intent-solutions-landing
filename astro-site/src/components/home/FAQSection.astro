@@ -357,6 +357,8 @@ const faqs = [
     const triggers = document.querySelectorAll<HTMLButtonElement>('.faq-trigger');
 
     triggers.forEach((trigger) => {
+      if (trigger.dataset.faqBound === 'true') return;
+      trigger.dataset.faqBound = 'true';
       trigger.addEventListener('click', () => {
         const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
         const panelId = trigger.getAttribute('aria-controls');
