@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Task Tracking (Beads / bd)
 
-Use `bd` for all tasks/issues (no markdown TODO lists).
+Use `bd` for all tasks/issues (no markdown TODO lists). Root-level `AGENTS.md` defines the "landing the plane" session-end workflow — work is not complete until `git push` succeeds (pull --rebase → `bd sync` → push → verify "up to date with origin").
 
 ```bash
 bd ready                                    # Start of session
@@ -57,7 +57,9 @@ bun run test:headed           # Run with visible browser
 bun run test:debug            # Step-through debugging
 bun run test:chromium         # Desktop Chrome only
 bun run test:mobile           # Mobile Chrome + Safari
-npx playwright test tests/e2e/<test-file>.spec.ts  # Single test
+bun run test:api              # API specs only (legacy netlify config)
+bun run test:report           # Open last HTML report
+npx playwright test tests/<spec-file>.spec.ts  # Single test
 ```
 
 ## Architecture
@@ -141,10 +143,11 @@ firebase functions:secrets:set RESEND_FROM_EMAIL
 
 ### Testing Infrastructure
 
-- E2E tests in `astro-site/tests/e2e/` using Playwright
+- Playwright config at `astro-site/playwright.config.ts`. `tests/` contains `fixtures/`, `helpers.cjs`, `PRE-LAUNCH-CHECKLIST.md`, `TESTING-QUICK-START.md`, and artifact dirs — no `*.spec.*` files yet (spec scaffolding still needed)
+- Legacy `playwright-netlify.config.cjs` exists alongside the primary `playwright.config.ts` — the `test:api` script targets the netlify config
 - Test server auto-starts on port 8080 (`bun run dev --port 8080`)
 - Projects: Desktop Chrome/Firefox/Safari, iPhone 12/12 Pro, Pixel 5, iPad Pro
-- Failure artifacts: `tests/screenshots/`, `tests/videos/`
+- Failure artifacts: `tests/screenshots/`, `tests/videos/`, `tests/reports/`
 
 ### CI/CD (GitHub Actions)
 
@@ -192,7 +195,7 @@ Colors: Zinc palette (950-50), Inter font family. Animation: Framer Motion (Reac
 | `/contact` | Standalone contact page |
 | `/agents` | AI Agents (Intent Agent Models — M1/M2/M3) |
 | `/private-ai` | Private AI infrastructure |
-| `/automation` | n8n automation services |
+| `/automation` | Workflow automation (Claude Code + Cloud Functions + Vertex AI) |
 | `/cloud` | Google Cloud services |
 | `/resellers` | Distribution partner program |
 | `/learn/security` | Vertex vs self-hosted comparison |
@@ -213,3 +216,15 @@ Colors: Zinc palette (950-50), Inter font family. Animation: Framer Motion (Reac
 - Show public pricing (discovery-first model — all pricing is private)
 - Require rigid form fields (let people choose their contact method)
 - Over-emphasize secondary services on homepage
+
+## Testing baseline (2026-05-01 — Intent Solutions Testing SOP)
+
+This repo participates in the **Intent Solutions Testing SOP** per `~/.claude/CLAUDE.md` § "Intent Solutions Testing SOP" and the VPS-as-the-home program (`OPS-5nm`, Priority 6).
+
+**Installed**: `@intentsolutions/audit-harness v0.1.0` vendored at `.audit-harness/` with wrapper at `scripts/audit-harness`.
+
+**Commands**: `scripts/audit-harness {verify, init, list, escape-scan --staged}`.
+
+**Next step**: run `/audit-tests` to produce `TEST_AUDIT.md`. See `000-docs/078-OD-SOPS-audit-harness-baseline-2026-05-01.md`.
+
+**Upgrade**: `AUDIT_HARNESS_VERSION=vX.Y.Z curl -sSL https://raw.githubusercontent.com/jeremylongshore/audit-harness/main/install.sh | bash`. Or run `/sync-testing-harness` from any session.

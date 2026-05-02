@@ -91,18 +91,18 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 'case-3',
-    title: 'n8n Automation for Customer Onboarding',
+    title: 'Workflow Automation for Customer Onboarding',
     client: 'FinTech Platform',
     industry: 'Financial Services',
     challenge: 'Customer onboarding required 14 manual touchpoints across 5 systems. Average time: 3 days.',
-    solution: 'Built n8n workflows connecting CRM, KYC verification, account provisioning, and email automation.',
+    solution: 'Built integration workflows connecting CRM, KYC verification, account provisioning, and email automation.',
     results: [
       'Onboarding time reduced to 4 hours',
       '95% fewer manual errors',
       'Scaled from 50 to 300 customers/month',
       'Saved $45K annually in operational costs',
     ],
-    tags: ['Automation', 'n8n', 'Workflows'],
+    tags: ['Automation', 'Integration', 'Workflows'],
   },
 ];
 
