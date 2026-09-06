@@ -75,13 +75,16 @@ jobs:
           cd hf-space
           git lfs install --local
 
-          # Replace the Space contents with the fresh build.
-          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-          cp -a ../astro-site/dist/. .
-
-          # HF requires binary media to be tracked in LFS.
+          # HF requires binary media to be tracked in LFS. Track BEFORE replacing the
+          # contents: `git lfs track` touches every already-tracked file that matches,
+          # and exits 2 ("chtimes: no such file") when a previously deployed binary
+          # has been removed from the build (2026-09-06, run 34068001756).
           git lfs track "*.jpg" "*.jpeg" "*.png" "*.gif" "*.webp" "*.avif" "*.ico" \
                         "*.mp4" "*.mov" "*.webm" "*.woff" "*.woff2" "*.ttf" "*.otf" >/dev/null
+
+          # Replace the Space contents with the fresh build (keep .git and .gitattributes).
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.gitattributes' -exec rm -rf {} +
+          cp -a ../astro-site/dist/. .
 
           git add -A
           git commit -m "Deploy intentsolutions.io from CI — ${{ github.sha }}" \
