@@ -1,3 +1,14 @@
+# Release v3.0.1
+
+**Release Date**: 2026-09-06
+
+## Changes since v3.0.0
+
+- chore: release v3.0.1 [skip ci] (4372a27)
+- ci(deploy-hf): track LFS patterns before replacing the Space contents (#50) (46693a5)
+
+---
+
 # Release v3.0.0
 
 **Release Date**: 2026-09-06
