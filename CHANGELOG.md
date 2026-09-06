@@ -1,3 +1,16 @@
+# Release v3.0.0 (unreleased)
+
+**Release Date**: 2026-09-06
+
+## Changes since v2.4.0
+
+- feat(site)!: rebuild the homepage to the gateway brief (the front door for AI implementation), Blueprint light skin, eight static sections, no React
+- feat(receipts): every number renders from src/data/receipts.json with a verified_at date; scripts/refresh-receipts.mjs pulls from GitHub, tonsofskills.com, skills.sh, the Lab, and the field-notes RSS
+- feat(gates): scripts/check-copy.mjs (retired strings, dollar figures, dashes, hand-typed counts, banned pairings) and Playwright specs (home, redirects) wired into deploy-vps.yml
+- fix(contact): the form posted to /api/contact, which nothing serves; it now posts to /api/forms/contact with the door preselected from the query
+- refactor(prune): removed 17 routes, 30 dead components, the two broken Playwright configs, 12.5 MB of unreferenced media, and 20 runtime dependencies; Caddy 301 map in ops/caddy-redirects.md
+- docs: 000-docs/080-RA-AUDT-site-design-audit-2026-09-06.md (before and after), brand/voice-profile.md, brand/copy-home.md, design-system/MASTER.md, CLAUDE.md rewritten
+
 # Release v2.4.0
 
 **Release Date**: 2026-09-06

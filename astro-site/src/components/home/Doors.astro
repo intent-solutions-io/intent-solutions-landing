@@ -1,0 +1,95 @@
+---
+// Copy source: brand/copy-home.md section 3. Three columns separated by rules,
+// not boxes. Sellers fold under Members; no fourth door until the seller
+// track exists.
+const doors = [
+  {
+    id: 'customers',
+    title: 'Customers',
+    body: 'One contract, and it is ours. You buy an outcome with a known shape, delivered by people we vouch for, with the evidence linked before we call it done.',
+    primary: { href: '/contact/?door=customer', label: 'Request an outcome', event: 'door-customer' },
+    secondary: { href: 'https://demos.intentsolutions.io', label: 'See the catalog', event: 'door-customer-catalog', external: true },
+  },
+  {
+    id: 'members',
+    title: 'Members',
+    body: 'Individuals, two-person shops, regional operators. We judge the receipts, not the résumé. Apply, learn the house method, get selected into real work under our paper.',
+    primary: { href: 'https://learn.intentsolutions.io/request-access', label: 'Request access', event: 'door-member', external: true },
+    secondary: { href: 'https://learn.intentsolutions.io/user/login', label: 'Member sign in', event: 'member-signin', external: true },
+  },
+  {
+    id: 'vendors',
+    title: 'Vendors',
+    body: 'A partner of record with certified, active practitioners. Deal registration and co-sell land on Intent Solutions, never on an individual member.',
+    primary: { href: '/contact/?door=vendor', label: 'Request partner-of-record', event: 'door-vendor' },
+    secondary: null,
+  },
+];
+---
+
+<section class="section" aria-labelledby="doors-title">
+  <div class="container-is">
+    <p class="eyebrow">Three doors</p>
+    <h2 id="doors-title" class="text-h2">Who walks through, and what they get.</h2>
+    <div class="doors">
+      {doors.map((d) => (
+        <div class="door" id={`door-${d.id}`}>
+          <h3 class="door-title">{d.title}</h3>
+          <p class="door-body">{d.body}</p>
+          <div class="door-actions">
+            <a
+              href={d.primary.href}
+              class="btn btn-primary"
+              data-umami-event={d.primary.event}
+              data-umami-event-placement="doors"
+              rel={d.primary.external ? 'noopener' : undefined}
+            >{d.primary.label}</a>
+            {d.secondary && (
+              <a
+                href={d.secondary.href}
+                class="link-arrow"
+                data-umami-event={d.secondary.event}
+                rel={d.secondary.external ? 'noopener' : undefined}
+              >{d.secondary.label}</a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .doors {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 2.5rem;
+  }
+  .door {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 2rem 0 0;
+    border-left: 1px solid var(--line);
+    padding-left: 1.5rem;
+  }
+  .door:first-child { border-left: 0; padding-left: 0; }
+  .door-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .door-body { color: var(--ink-dim); flex: 1; }
+  .door-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  @media (max-width: 767px) {
+    .doors { grid-template-columns: 1fr; gap: 2rem; }
+    .door { border-left: 0; padding-left: 0; padding-right: 0; border-top: 1px solid var(--line); padding-top: 2rem; }
+    .door:first-child { border-top: 0; padding-top: 0; }
+  }
+</style>

@@ -1,68 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/home/Footer.astro';
 ---
 
 <Layout
-  title="Contact Us | Intent Solutions - Claude Code Systems"
-  description="Get in touch about Claude Code Systems, AI agents, or custom solutions. We respond within one business day."
+  title="Contact Intent Solutions"
+  description="Request an outcome, request partner-of-record, or ask a question before applying. We reply from jeremy@intentsolutions.io."
 >
   <SiteNav />
-
-  <main class="bg-zinc-900">
-    <div class="container mx-auto px-8 pt-8">
-      <a href="/" class="text-sm text-zinc-400 hover:text-zinc-200 transition-smooth">
-        &larr; Back to Home
-      </a>
-    </div>
-
-    <div class="container mx-auto px-8 pt-12 text-center">
-      <h1 class="text-h1 font-bold text-zinc-50 mb-3">Contact Intent Solutions</h1>
-      <p class="text-zinc-400 max-w-2xl mx-auto">
-        Claude Code Systems, AI agents, or a custom build — tell us what you're working on and we'll respond within one business day.
-      </p>
-    </div>
-
-    <Contact client:load />
-
-    <section class="py-16 bg-zinc-950 border-t border-zinc-800">
-      <div class="container mx-auto px-8">
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-xl font-semibold text-zinc-50 mb-6">Other Ways to Reach Us</h2>
-
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Schedule a Call</h3>
-              <a href="https://calendar.app.google/Dj5qDi9oQjDzGkcq8" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
-                Book a Meeting
-              </a>
-            </div>
-
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Email</h3>
-              <a href="mailto:jeremy@intentsolutions.io" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
-                jeremy@intentsolutions.io
-              </a>
-            </div>
-
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">LinkedIn</h3>
-              <a href="https://linkedin.com/in/jeremylongshore" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-200 transition-smooth text-sm">
-                /in/jeremylongshore
-              </a>
-            </div>
-
-            <div class="card-slate text-center">
-              <h3 class="text-sm font-semibold text-zinc-200 mb-2">Location</h3>
-              <p class="text-zinc-400 text-sm">Gulf Shores, Alabama</p>
-            </div>
-          </div>
-        </div>
+  <main id="main">
+    <section class="section section--first">
+      <div class="container-is">
+        <p class="eyebrow">Contact</p>
+        <h1 class="text-h1">Tell us what you need done.</h1>
+        <p class="text-lede measure" style="margin-top:1rem">
+          Customers request an outcome. Vendors request partner-of-record. Members apply at the learn site, and can ask a question here first. Nobody owes us a reply, a call, or a follow-up.
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-is">
+        <Contact />
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-is">
+        <h2 class="text-h2">Other ways to reach us</h2>
+        <dl class="reach">
+          <div><dt>Email</dt><dd><a href="mailto:jeremy@intentsolutions.io">jeremy@intentsolutions.io</a></dd></div>
+          <div><dt>Members</dt><dd><a href="https://learn.intentsolutions.io/request-access" rel="noopener" data-umami-event="door-member" data-umami-event-placement="contact">Request access at the learn site</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://linkedin.com/in/jeremylongshore" rel="noopener" data-umami-event="outbound" data-umami-event-href="https://linkedin.com/in/jeremylongshore">/in/jeremylongshore</a></dd></div>
+          <div><dt>Location</dt><dd>Gulf Shores, Alabama</dd></div>
+        </dl>
       </div>
     </section>
   </main>
-
   <Footer />
 </Layout>
+
+<style>
+  .reach { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+  .reach dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+  .reach dd { margin: 0.25rem 0 0; }
+</style>

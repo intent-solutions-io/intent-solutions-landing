@@ -1,0 +1,75 @@
+---
+// Footer per the brief: Learn, Marketplace, Labs, Catalog, Field Notes, GitHub,
+// Contact, Gulf Shores, Alabama. Legal links stay. Static; replaces Footer.tsx.
+const links = [
+  { href: 'https://learn.intentsolutions.io', label: 'Learn', external: true },
+  { href: 'https://tonsofskills.com', label: 'Marketplace', external: true },
+  { href: 'https://labs.intentsolutions.io', label: 'Labs', external: true },
+  { href: 'https://demos.intentsolutions.io', label: 'Catalog', external: true },
+  { href: '/field-notes/', label: 'Field Notes' },
+  { href: 'https://github.com/intent-solutions-io', label: 'GitHub', external: true },
+  { href: '/contact/', label: 'Contact' },
+];
+const legal = [
+  { href: '/privacy/', label: 'Privacy' },
+  { href: '/terms/', label: 'Terms' },
+  { href: '/acceptable-use/', label: 'Acceptable use' },
+];
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container-is">
+    <nav class="footer-links" aria-label="Footer">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          rel={l.external ? 'noopener' : undefined}
+          data-umami-event={l.external ? 'outbound' : undefined}
+          data-umami-event-href={l.external ? l.href : undefined}
+        >{l.label}</a>
+      ))}
+    </nav>
+    <div class="footer-meta">
+      <p>Intent Solutions, Gulf Shores, Alabama. &copy; {year}</p>
+      <div class="footer-legal">
+        {legal.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem 0 2rem;
+    font-size: 0.9375rem;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+  .footer-links a {
+    color: var(--ink);
+    text-decoration: none;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .footer-links a:hover { color: var(--signal-dark); text-decoration: underline; text-underline-offset: 3px; }
+  .footer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--ink-faint);
+  }
+  .footer-meta p { margin: 0; }
+  .footer-legal { display: flex; gap: 1rem; }
+  .footer-legal a { color: var(--ink-faint); text-decoration: none; }
+  .footer-legal a:hover { color: var(--ink); text-decoration: underline; }
+</style>

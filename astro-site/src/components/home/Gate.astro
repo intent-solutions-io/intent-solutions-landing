@@ -1,0 +1,96 @@
+---
+// Copy source: brand/copy-home.md section 2. The SVG is the page's one signature
+// element: Blueprint tokens only (paper, ink, muted, rule, accent, accent-dark,
+// link). Linted with workflow-diagram-design/scripts/lint_skin.py.
+---
+
+<section class="section gate" aria-labelledby="gate-title">
+  <div class="container-is">
+    <p class="eyebrow">The gate</p>
+    <h2 id="gate-title" class="text-h2 measure-wide">
+      Intent Solutions owns the relationship between the people who can sell and implement AI and the companies that need it, and proves every piece of work before it is called done.
+    </h2>
+
+    <figure class="gate-figure">
+      <svg
+        viewBox="0 0 720 320"
+        role="img"
+        aria-labelledby="gate-svg-title gate-svg-desc"
+        font-family="Inter, system-ui, sans-serif"
+      >
+        <title id="gate-svg-title">Three parties and Intent Solutions between all of them.</title>
+        <desc id="gate-svg-desc">Vendors connect to Intent Solutions as partner of record. Intent Solutions connects to Customers under one contract. Members, meaning individuals, small teams, and regional operators, are admitted through a door and selected into the arena by Intent Solutions.</desc>
+
+        <!-- Vendors -->
+        <rect x="24" y="72" width="168" height="72" rx="4" fill="#f3f6f4" stroke="#161b1d" stroke-width="1.5" />
+        <text x="108" y="102" text-anchor="middle" font-size="15" font-weight="600" fill="#161b1d">Vendors</text>
+        <text x="108" y="124" text-anchor="middle" font-size="11" fill="#4f5b60">partner programs</text>
+
+        <!-- Intent Solutions (focal) -->
+        <rect x="264" y="60" width="192" height="96" rx="4" fill="rgba(239,90,36,0.08)" stroke="#ef5a24" stroke-width="2" />
+        <text x="360" y="98" text-anchor="middle" font-size="16" font-weight="600" fill="#161b1d">Intent Solutions</text>
+        <text x="360" y="120" text-anchor="middle" font-size="11" fill="#4f5b60">holds every contract</text>
+        <text x="360" y="136" text-anchor="middle" font-size="11" fill="#4f5b60">sets and proves the standard</text>
+
+        <!-- Customers -->
+        <rect x="528" y="72" width="168" height="72" rx="4" fill="#f3f6f4" stroke="#161b1d" stroke-width="1.5" />
+        <text x="612" y="102" text-anchor="middle" font-size="15" font-weight="600" fill="#161b1d">Customers</text>
+        <text x="612" y="124" text-anchor="middle" font-size="11" fill="#4f5b60">buy proven outcomes</text>
+
+        <!-- Members -->
+        <rect x="248" y="232" width="224" height="64" rx="4" fill="#f3f6f4" stroke="#161b1d" stroke-width="1.5" />
+        <text x="360" y="258" text-anchor="middle" font-size="15" font-weight="600" fill="#161b1d">Members</text>
+        <text x="360" y="278" text-anchor="middle" font-size="11" fill="#4f5b60">individuals, small teams, regional operators</text>
+
+        <!-- Edges -->
+        <defs>
+          <marker id="gate-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#2e5c59" />
+          </marker>
+          <marker id="gate-arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#ef5a24" />
+          </marker>
+        </defs>
+
+        <!-- Vendors to IS -->
+        <line x1="192" y1="108" x2="264" y2="108" stroke="#2e5c59" stroke-width="1.5" marker-start="url(#gate-arrow)" marker-end="url(#gate-arrow)" />
+        <text x="228" y="98" text-anchor="middle" font-size="10" fill="#2e5c59">partner of record</text>
+
+        <!-- IS to Customers -->
+        <line x1="456" y1="108" x2="528" y2="108" stroke="#2e5c59" stroke-width="1.5" marker-start="url(#gate-arrow)" marker-end="url(#gate-arrow)" />
+        <text x="492" y="98" text-anchor="middle" font-size="10" fill="#2e5c59">one contract</text>
+
+        <!-- Members to IS, accent edge -->
+        <line x1="360" y1="232" x2="360" y2="156" stroke="#ef5a24" stroke-width="1.5" marker-start="url(#gate-arrow-accent)" marker-end="url(#gate-arrow-accent)" />
+        <text x="372" y="184" font-size="10" fill="#c94213">admitted through a door,</text>
+        <text x="372" y="198" font-size="10" fill="#c94213">selected into the arena</text>
+      </svg>
+    </figure>
+
+    <p class="measure gate-copy">
+      The door is wide: anyone capable can apply. The arena is narrow: we decide who touches real work.
+      The paper is ours: one contract holder, stated as our intent and written into every agreement as they land.
+      Nobody gets rented out.
+    </p>
+  </div>
+</section>
+
+<style>
+  .measure-wide { max-width: 56rem; }
+  .gate-figure {
+    margin: 2.5rem 0 0;
+    max-width: 44rem;
+  }
+  .gate-figure svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* Under 640px the labels drop below 9px if the figure shrinks with the
+     viewport; keep it at a legible width and let it scroll sideways. */
+  @media (max-width: 639px) {
+    .gate-figure { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .gate-figure svg { min-width: 36rem; }
+  }
+  .gate-copy { margin-top: 2rem; }
+</style>

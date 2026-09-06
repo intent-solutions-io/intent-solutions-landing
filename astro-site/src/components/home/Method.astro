@@ -1,0 +1,94 @@
+---
+// Copy source: brand/copy-home.md section 4 (the council's amended six rules,
+// intent-os 165 section 3). Numbered, no icons.
+const rules = [
+  {
+    rule: 'Write the intent, the accountable party, and the failure boundary before the work.',
+    test: 'Is there a plain-English record a stranger could read, does it name whose paper this falls under, and does it say what survives and who restarts if the named person, vendor, or tool dies mid-engagement?',
+  },
+  {
+    rule: 'Enforcement travels with the code.',
+    test: 'Can the rule be bypassed by working from a different machine? If yes, it is not enforced.',
+  },
+  {
+    rule: 'Prove it before you call it done, and keep proving it.',
+    test: 'Where is the evidence, could a stranger re-run it today, is it dated, and is there a scheduled re-check with a named owner tied to the model, vendor, or tool it depends on?',
+  },
+  {
+    rule: 'Every change explains itself to an outsider.',
+    test: 'A stranger reading only the change can say what changed, why, where it sits, how it was verified, how to roll it back, what the risks are, and what is unfinished.',
+  },
+  {
+    rule: 'Memory is governed, cited, append-only, and replicated off the machine that wrote it.',
+    test: 'If that machine died tonight, does the receipt still exist, and can a stranger re-verify it without asking us?',
+  },
+  {
+    rule: 'People before P&L, on the record.',
+    test: 'Before any decision that trades money against a named person\'s situation, is there a dated note, written before the decision, naming who was asked and what the money-favorable option would have been?',
+  },
+];
+---
+
+<section class="section" aria-labelledby="method-title">
+  <div class="container-is">
+    <p class="eyebrow">The Method</p>
+    <h2 id="method-title" class="text-h2">Six rules. Each has a test.</h2>
+    <ol class="rules">
+      {rules.map((r, i) => (
+        <li class="rule-row">
+          <span class="rule-num" aria-hidden="true">{i + 1}</span>
+          <div class="rule-text">
+            <p class="rule-rule">{r.rule}</p>
+            <p class="rule-test"><span class="rule-test-label">Test:</span> {r.test}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="measure method-close">
+      Passes all six, it is Intent Solutions work, whoever did it and whatever model they used. Fails one, it is not.
+      <a href="https://github.com/jeremylongshore/audit-harness" rel="noopener" data-umami-event="method-software">The method as software</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .rules {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem 0 0;
+  }
+  .rule-row {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .rule-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--ink-dim);
+    font-weight: 500;
+  }
+  .rule-rule {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin: 0 0 0.375rem;
+  }
+  .rule-test {
+    color: var(--ink-dim);
+    margin: 0;
+    max-width: 52rem;
+  }
+  .rule-test-label {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .method-close {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .method-close a { margin-left: 0.25rem; }
+</style>

@@ -13,6 +13,11 @@ on:
     paths:
       - 'astro-site/**'
       - '.github/workflows/deploy-vps.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'astro-site/**'
+      - '.github/workflows/deploy-vps.yml'
   workflow_dispatch: {}
 
 permissions:
@@ -41,8 +46,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Refresh receipts from their live sources
+        # Every number on the homepage renders from src/data/receipts.json with a
+        # verified_at date. The committed file is the fallback when a source is
+        # unreachable; the check below fails the deploy if any value is older
+        # than 7 days. See scripts/refresh-receipts.mjs.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run receipts && npm run receipts:check
+
       - name: Build Astro site
         run: npm run build
+
+      - name: Copy gate
+        # Fails the deploy if the built HTML carries a retired string, a dollar
+        # figure, an em or en dash, a hand-typed count, or a banned pairing.
+        # List: astro-site/brand/voice-profile.md; script: scripts/check-copy.mjs.
+        run: npm run check:copy
 
       - name: Indexability regression guard
         # Asserts sitemap/canonical/title/robots/404 invariants from
@@ -66,7 +86,18 @@ jobs:
           fi
           echo "build artifacts present (max line: $MAX_LINE chars)"
 
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end specs against the built artifact
+        # tests/e2e/home.spec.ts (headline, doors, receipts, copy, analytics,
+        # focus, reduced motion) and redirects.spec.ts (removed routes gone,
+        # kept routes build, healthz). Runs astro preview on dist.
+        run: npx playwright test --project=chromium
+
   deploy:
+    # The gate job runs on pull requests too; only a push to main deploys.
+    if: github.event_name != 'pull_request'
     needs: test
     uses: jeremylongshore/.github/.github/workflows/vps-deploy.yml@53d6be37d6c046818157b954acb33667ac095dd8
     with:

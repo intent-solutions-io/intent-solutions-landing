@@ -1,0 +1,45 @@
+---
+// Copy source: brand/copy-home.md section 1. No image, no logo strip, no stat badges.
+const doors = [
+  { href: '/contact/?door=customer', label: 'Request an outcome', event: 'door-customer' },
+  { href: 'https://learn.intentsolutions.io/request-access', label: 'Request access', event: 'door-member', external: true },
+  { href: '/contact/?door=vendor', label: 'Request partner-of-record', event: 'door-vendor' },
+];
+---
+
+<section class="section section--first hero" aria-labelledby="hero-title">
+  <div class="container-is">
+    <h1 id="hero-title" class="text-display">The front door for AI implementation.</h1>
+    <p class="text-lede measure hero-sub">
+      Practitioners and small teams apply, get trained in our method, and get selected into real work.
+      Customers buy proven outcomes from us, delivered by people we vouch for, measured by a lab we run in public.
+      Vendors get a partner of record.
+    </p>
+    <div class="hero-doors">
+      {doors.map((d) => (
+        <a
+          href={d.href}
+          class="btn btn-primary"
+          data-umami-event={d.event}
+          data-umami-event-placement="hero"
+          rel={d.external ? 'noopener' : undefined}
+        >{d.label}</a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero { padding-top: clamp(4rem, 12vw, 8rem); }
+  .hero-sub { margin-top: 1.5rem; }
+  .hero-doors {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+    max-width: 52rem;
+  }
+  @media (max-width: 767px) {
+    .hero-doors { grid-template-columns: 1fr; }
+  }
+</style>

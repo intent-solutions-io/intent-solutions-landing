@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Task Tracking (Beads / bd)
 
-Use `bd` for all tasks/issues (no markdown TODO lists). Root-level `AGENTS.md` defines the "landing the plane" session-end workflow — work is not complete until `git push` succeeds (pull --rebase → `bd sync` → push → verify "up to date with origin").
+Use `bd` for all tasks/issues (no markdown TODO lists). Root-level `AGENTS.md` defines the "landing the plane" session-end workflow: work is not complete until `git push` succeeds (pull --rebase, `bd sync`, push).
 
 ```bash
 bd ready                                    # Start of session
@@ -18,171 +18,93 @@ After upgrading `bd`: run `bd info --whats-new` and `bd hooks install` if warned
 
 ## Repository Overview
 
-Intent Solutions landing page — **Discovery-first engagement model**. Three core offerings: **Learn with Jeremy**, **Consulting**, and **Building (Claude Code Systems)**. No public pricing — potential clients book a discovery call.
+intentsolutions.io: **the front door for AI implementation.** The homepage says one thing, the gateway (intent-os `000-docs/163-PP-gateway-vision/`): practitioners apply and get selected into real work, customers buy proven outcomes, vendors get a partner of record, Intent Solutions holds every relationship. Rebuilt to the council's landing brief (intent-os `165-RA-REVW-gateway-council-review.md` section 6.4) on 2026-09-06; the before-state is `000-docs/080-RA-AUDT-site-design-audit-2026-09-06.md`.
 
-- **Active Project**: `astro-site/` (Astro 5.14 + React 19 + Tailwind 4)
-- **Hosting**: Contabo VPS `intentsolutions` (167.86.106.29) via Caddy `file_server` at `/srv/intentsolutions/dist`. Deploy: push to `main` triggers `.github/workflows/deploy-vps.yml` (Tailscale OIDC + force-command SSH `/usr/local/sbin/deploy-intentsolutions`). No GCP / Firebase dependency — the marketing site is fully self-hosted as of 2026-06-10.
-- **Analytics**: Umami at `https://analytics.intentsolutions.io` (self-hosted on the same VPS). Site ID `474bce85-f97d-409c-aba5-1e1ff36ee571`. Custom events via `window.umami.track('event_name', { props })`.
+- **Active project**: `astro-site/` (Astro 5, Tailwind 4, no React, no client framework). Static output only.
+- **Hosting**: Contabo VPS `intentsolutions` (167.86.106.29) via Caddy `file_server` at `/srv/intentsolutions/dist`. Deploy: push to `main` triggers `.github/workflows/deploy-vps.yml` (Tailscale OIDC + force-command SSH). Redirects for removed routes live in the VPS Caddyfile: `ops/caddy-redirects.md`.
+- **Analytics**: Umami at `https://analytics.intentsolutions.io`, site ID `474bce85-f97d-409c-aba5-1e1ff36ee571`. Custom events are `data-umami-event` attributes per `astro-site/brand/analytics-events.md`; no `umami.track` calls in components.
 - **Deployed at**: https://intentsolutions.io
-- **Plugin Marketplace**: https://claudecodeplugins.io (430+ plugins)
-- **Booking Link**: https://calendar.app.google/Wqbt8EJuEh5xvvV58
-- **Proof Points**: 2,200+ GitHub stars, 430+ plugins, 2,750+ agent skills, 300+ forks, ~53k monthly npm downloads across `@intentsolutionsio/*`, only external Google Agent Starter Pack contributor, 20+ years ops.
-- **Legacy**: `99-Archive/` contains old React/Vite SPA (not in production).
+- **Proof surfaces the site links to** (never restate their numbers by hand): marketplace https://tonsofskills.com (repo `jeremylongshore/tons-of-skills-marketplace`), Lab https://labs.intentsolutions.io, learn site https://learn.intentsolutions.io, catalog https://demos.intentsolutions.io, field notes `/field-notes/` (cross-posts canonical to startaitools.com).
+- **Numbers policy**: every figure on the site renders from `astro-site/src/data/receipts.json`, written by `scripts/refresh-receipts.mjs` from the live sources (GitHub API, tonsofskills.com, skills.sh, the Lab results page, the field-notes RSS) and shown with its `verified_at` date. CI refreshes it before every deploy and fails if any value is older than 7 days. Do not type a star, plugin, skill, install, or cert count into a component or into this file.
+- **No booking link.** Doctrine register is request access / request an outcome / request partner-of-record (CPN `000-docs/007` sections 7.1 and 7.2). The contact form is the only inbound path besides the learn site.
+- **Legacy**: `99-Archive/` contains the old React/Vite SPA (not in production).
 
 ## Commands
 
-All commands run from `astro-site/` directory:
+All commands run from `astro-site/` (npm; the lockfile is npm's).
 
 ```bash
-# Development
-bun install              # Install dependencies
-bun run dev              # Dev server at localhost:4321
-bun run build            # Production build → dist/
-bun run preview          # Preview production build
-bun run audit:indexability  # SEO regression guard (sitemap/canonical/title/404)
-
-# Testing (Playwright)
-bun run test             # All E2E tests headless
-bun run test:ui          # Interactive Playwright UI
-bun run test:headed      # Run with visible browser
-bun run test:debug       # Step-through debugging
-bun run test:chromium    # Desktop Chrome only
-bun run test:mobile      # Mobile Chrome + Safari
-bun run test:report      # Open last HTML report
-npx playwright test tests/<spec-file>.spec.ts  # Single test
+npm install                 # Install dependencies
+npm run dev                 # Dev server at localhost:4321
+npm run build               # Production build to dist/
+npm run preview             # Preview the build
+npm run receipts            # Refresh src/data/receipts.json from live sources
+npm run receipts:check      # Exit 1 if any receipt value is older than 7 days
+npm run audit:indexability  # SEO regression guard (sitemap/canonical/title/404)
+npm run check:copy          # Copy gate on dist/ (retired strings, dollar figures, dashes, hand-typed counts, banned pairings)
+npm run gate                # build + indexability + copy + receipts:check
+npm test                    # Playwright specs against astro preview (chromium + mobile)
+npx playwright test --project=chromium tests/e2e/home.spec.ts   # one spec
 ```
 
 ## Architecture
 
-### Astro + React Islands Pattern
-
-Pages are static Astro files; interactive sections use React islands with `client:load` (immediate) or `client:visible` (lazy) hydration:
-
-```astro
-<Hero client:load />                 <!-- Hydrates immediately (above fold) -->
-<ClaudeCodeTiers client:visible />   <!-- Hydrates when scrolled into view -->
-```
-
-- **Pages**: `src/pages/*.astro` — File-based routing, static content
-- **Layout**: `src/layouts/Layout.astro` — SEO (astro-seo), Organization + WebSite JSON-LD, Umami analytics, `noindex` prop for utility pages
-- **React Islands**: `src/components/*.tsx` — Interactive sections with Framer Motion + GSAP
-- **Styles**: `src/styles/global.css` — Tailwind 4 + charcoal slate theme
+- **Pages**: `src/pages/*.astro`, file-based routing, all static. Nine routes plus `field-notes/[...slug]` (90 posts) and `field-notes/rss.xml`.
+- **Homepage**: `src/pages/index.astro` composes eight components in `src/components/home/`: Hero, Gate (the one SVG figure), Doors, Method, Receipts, Standard, Founder, Footer. Section order and wireframes: `design-system/pages/landing.md`.
+- **Layout**: `src/layouts/Layout.astro`: SEO (astro-seo), Organization + WebSite JSON-LD (`sameAs` = the proof surfaces), self-hosted font preloads, Umami, skip link, `noindex` prop for utility pages.
+- **Nav**: `src/components/SiteNav.astro`: Learn, Labs, Catalog, Field Notes, "Member sign in". No dropdowns.
+- **Contact form**: `src/components/Contact.astro`, plain HTML plus a small inline script that posts JSON to `/api/forms/contact` (the VPS forms-api; Caddy `handle /api/forms/*` to 127.0.0.1:8090). The `?door=customer|vendor|member` query preselects the door and maps onto the backend's `interest` enum (`consulting`, `learn`, `other`); the door is also prefixed into the message. Success lands on `/thank-you/`.
+- **Styles**: `src/styles/global.css`: Blueprint light tokens (shared with the learn site and the diagram skill), `@font-face` for Newsreader (display) and Inter (body) from `public/fonts/`, utilities (`.section`, `.container-is`, `.btn*`, `.tile`, `.eyebrow`, `.link-arrow`), the light `.prose-field-notes` set, and a global reduced-motion rule.
+- **Copy**: `astro-site/brand/copy-home.md` is the homepage copy source; `brand/voice-profile.md` holds the say / never-say lists that `scripts/check-copy.mjs` enforces on the build.
+- **Design system**: `astro-site/design-system/MASTER.md` (tokens, type, spacing, components, motion, anti-patterns, pre-delivery checklist) and `pages/landing.md`.
 
 ### SEO posture (pinned 2026-05-25, see `000-docs/079-OD-AUDT`)
 
-- `trailingSlash: 'always'` + `build.format: 'directory'` — every URL canonical form ends with `/`. Internal links must match (no redirect hops).
-- `@astrojs/sitemap` with content-aware filter — excludes `/thank-you/`, `/404/`, and every `/field-notes/<slug>/` whose frontmatter `canonical` host ≠ `intentsolutions.io` (the 50+ field-notes that cross-post to startaitools.com).
+- `trailingSlash: 'always'` + `build.format: 'directory'`; every URL's canonical form ends with `/`. Internal links must match.
+- `@astrojs/sitemap` with a content-aware filter: excludes `/thank-you/`, `/404/`, and every `/field-notes/<slug>/` whose frontmatter `canonical` host is not `intentsolutions.io`.
 - `public/robots.txt` references `https://intentsolutions.io/sitemap-index.xml`.
-- Branded `src/pages/404.astro` with `noindex` → `dist/404.html`; Caddy `handle_errors` serves it on unmatched paths (real 404 status, not soft-404 homepage).
-- Regression guard `scripts/audit-indexability.mjs` runs in CI before deploy.
+- Branded `src/pages/404.astro` with `noindex`; Caddy `handle_errors` serves it with a real 404 status.
+- `scripts/audit-indexability.mjs` runs in CI before deploy.
 
-### Form Submission Flow (VPS forms-api)
+### Form submission flow (VPS forms-api)
 
 ```
-User submits form → POST /api/forms/contact (or /api/forms/partner)
-  → Caddy reverse_proxy on the VPS to 127.0.0.1:8090
-  → forms-api.service (Node, /srv/forms-api/server.mjs)
-  → Honeypot check + lightweight enum validation + per-IP rate limit (3/hr on lead forms)
-  → Slack webhook (#operation-hired) with all submitted fields formatted as a block
-  → Return JSON response
+Contact.astro  POST /api/forms/contact (JSON)
+  -> Caddy reverse_proxy on the VPS to 127.0.0.1:8090
+  -> forms-api.service (/srv/forms-api/server.mjs): honeypot, enum guard, 3/hr per-IP cap
+  -> Slack webhook (#operation-hired)
+  -> JSON response; the page navigates to /thank-you/
 ```
 
-**Slack-only by design.** No Resend email auto-reply, no Firestore persistence, no Cloud Functions — Slack is the source of truth for lead notifications. The submitter sees a thank-you message in the form UI; Jeremy gets the structured Slack ping.
+Slack-only by design. The backend's `interest` enum still reads `consulting | learn | colab | other`; renaming it to the three doors is a forms-api change, tracked as a follow-up.
 
-Caddy block in `/etc/caddy/Caddyfile`:
-- `handle /api/forms/* { reverse_proxy 127.0.0.1:8090 }` (must come BEFORE the static `handle { ... }` block — see runbook `tonsofskills-forms-api.md` for the directive-ordering gotcha).
-- Frontend was migrated from `/api/contact`+`/api/partner` to `/api/forms/contact`+`/api/forms/partner` on 2026-05-07.
+### Testing
 
-The legacy `astro-site/functions/` Cloud Functions directory was removed on 2026-06-10 — see the SEO/cleanup audit doc. Canonical zod schemas for the form payloads live next to each form component (`src/components/Contact.tsx`, `src/pages/resellers.astro`).
-
-### Testing Infrastructure
-
-- Playwright config at `astro-site/playwright.config.ts`. `tests/` contains `fixtures/`, `helpers.cjs`, `PRE-LAUNCH-CHECKLIST.md`, `TESTING-QUICK-START.md`, and artifact dirs — no `*.spec.*` files yet (spec scaffolding still needed).
-- Test server auto-starts on port 8080 (`bun run dev --port 8080`).
-- Projects: Desktop Chrome/Firefox/Safari, iPhone 12/12 Pro, Pixel 5, iPad Pro.
-- Failure artifacts: `tests/screenshots/`, `tests/videos/`, `tests/reports/`.
+- One Playwright config (`playwright.config.ts`) that starts `astro preview` on the built `dist/` (or uses `BASE_URL` if set).
+- `tests/e2e/home.spec.ts`: one H1 with the headline; the three door CTAs present and resolving; nav has the five links and no booking CTA; receipts render the JSON figures with dates inside 7 days; no retired strings, dollar figures, or dashes in the built HTML; every external link carries an analytics event; skip link takes first focus; reduced motion zeroes transitions.
+- `tests/e2e/redirects.spec.ts`: every removed route is absent from the build (Caddy answers with a 301), every kept route builds, `healthz` is in the artifact.
+- `scripts/check-copy.mjs` and `scripts/refresh-receipts.mjs --check` are the two deterministic gates; both run in CI.
 
 ### CI/CD (GitHub Actions)
 
-**Deploy VPS** (`.github/workflows/deploy-vps.yml`):
-- Triggers on push to main (paths `astro-site/**` or the workflow itself) and manual dispatch.
-- Pre-deploy gate runs `npm ci` + `npm run build` + `npm run audit:indexability` + line-length cap check.
-- Deploy job uses the reusable `jeremylongshore/.github` `vps-deploy.yml` — Tailscale OIDC → force-command SSH on the VPS → `/usr/local/sbin/deploy-intentsolutions` does `git fetch + npm ci + astro build + atomic rsync` to `/srv/intentsolutions/dist`. Health check at `https://intentsolutions.io/healthz`.
-- Smoke validation: `.ok == true` on the healthz response.
-- **Known issue**: when the Tailscale OIDC trust credential at `login.tailscale.com/admin/settings/trust-credentials` is broken, automated deploy fails at the "Connect Tailscale" step (HTTP 403). Manual fallback: `ssh intentsolutions; sudo /usr/local/sbin/deploy-intentsolutions`. Tracked as bead `OPS-b78`.
+**Deploy VPS** (`.github/workflows/deploy-vps.yml`): on push to `main` (paths `astro-site/**`), the `test` job runs `npm ci`, `receipts` + `receipts:check`, `build`, `check:copy`, `audit:indexability`, the artifact and line-length check, then Playwright (chromium). The `deploy` job uses the reusable `jeremylongshore/.github` `vps-deploy.yml` and smokes `https://intentsolutions.io/healthz` (`.ok == true`). Rollback is `git revert` of the merge; the previous dist stays under `/srv/intentsolutions` per the deploy script.
 
-**Release** (`.github/workflows/release.yml`):
-- Auto-detects version bump from commit messages (BREAKING→major, feat→minor, else patch).
-- Updates package.json, creates git tag + GitHub Release with changelog.
+**Deploy HF** (`deploy-hf.yml`) mirrors the same build to the Hugging Face static Space `intent-solutions-io/home`. **Release** (`release.yml`) bumps the version from commit messages and writes the changelog.
 
-## Design System
+## Content rules (load-bearing)
 
-Theme in `src/styles/global.css` (Charcoal Slate / Theme 7):
+Read `astro-site/brand/voice-profile.md` before writing a word. The short version:
 
-| Class | Purpose |
-|-------|---------|
-| `card-slate` | Semi-transparent cards with backdrop blur |
-| `btn-primary` | Zinc-200 background buttons |
-| `btn-secondary` | Transparent with zinc border |
-| `btn-sm` | Smaller button padding |
-| `text-hero` | 3.5rem/2.5rem mobile hero text |
-| `text-h1`, `text-h2` | Heading sizes with tight tracking |
-| `transition-smooth` | Cubic-bezier transitions |
-
-Colors: Zinc palette (950-50), Inter font family. Animation: Framer Motion (React islands), GSAP (scroll/page), Lenis (smooth scroll).
-
-## Key Pages
-
-| Route | Purpose |
-|-------|---------|
-| `/` | Homepage — Claude Code Systems + Learn/Colab + secondary services |
-| `/learn/` | Learn with Jeremy — training, coaching, workshops |
-| `/colab/` | Colab with Jeremy — partnerships, joint ventures |
-| `/contact/` | Standalone contact page |
-| `/agents/` | AI Agents (Intent Agent Models — M1/M2/M3) |
-| `/private-ai/` | Private AI infrastructure (deployed in your own cloud tenancy) |
-| `/automation/` | Workflow automation (Claude Code + custom tooling) |
-| `/cloud/` | Cloud services |
-| `/projects/` | Projects portfolio (includes Kobiton client engagement) |
-| `/field-notes/` | Engineering blog index (posts cross-post to startaitools.com; canonical there) |
-| `/resellers/` | Distribution partner program |
-| `/infrastructure/` | Cloud infrastructure deployment focus (distinct title from /private-ai/) |
-| `/learn/security/` | Vertex vs self-hosted comparison |
-| `/learn/models/` | Model-agnostic delivery |
-
-All internal routes are slash-terminated; the audit guard rejects any sitemap URL whose canonical isn't self-referential.
-
-## Content Guidelines
-
-**Do**:
-- Lead with Claude Code Systems as the primary service.
-- Emphasize "build + train" positioning and discovery-first engagement.
-- Reference 430+ plugins, 2,200+ GitHub stars, 2,750+ agent skills, ~53k monthly npm downloads as proof of capability.
-- All CTAs point to discovery call booking (calendar link), not pricing.
-- Offer flexible contact options (Discord, WhatsApp, LinkedIn, X, phone).
-- Show tiered packages clearly.
-
-**Don't**:
-- Bury Claude Code under other services.
-- Show public pricing (discovery-first model — all pricing is private).
-- Require rigid form fields (let people choose their contact method).
-- Over-emphasize secondary services on homepage.
-- Reintroduce Firebase / GCP dependencies on the marketing site — it's fully self-hosted now (Umami analytics, VPS hosting, forms-api on the VPS).
-
-## Testing baseline (2026-05-01 — Intent Solutions Testing SOP)
-
-This repo participates in the **Intent Solutions Testing SOP** per `~/.claude/CLAUDE.md` § "Intent Solutions Testing SOP" and the VPS-as-the-home program (`OPS-5nm`, Priority 6).
-
-**Installed**: `@intentsolutions/audit-harness v0.1.0` vendored at `.audit-harness/` with wrapper at `scripts/audit-harness`.
-
-**Commands**: `scripts/audit-harness {verify, init, list, escape-scan --staged}`.
-
-**Next step**: run `/audit-tests` to produce `TEST_AUDIT.md`. See `000-docs/078-OD-SOPS-audit-harness-baseline-2026-05-01.md`.
-
-**Upgrade**: `AUDIT_HARNESS_VERSION=vX.Y.Z curl -sSL https://raw.githubusercontent.com/jeremylongshore/audit-harness/main/install.sh | bash`. Or run `/sync-testing-harness` from any session.
+- Say: the front door for AI implementation; selective practice; request access, request an outcome, request partner-of-record; model-agnostic by design; credentials optional, standard required; receipts, evidence, the Lab.
+- Never: outsource / hire our certified / bench; get certified then get projects; "start your AI journey"; a vendor name as the identity of the room; cert counts; dollar figures; time estimates for partner work; "first", "only", "leading"; "Book a call"; vendor logo strips; any Google Cloud, Vertex, Firebase, or BigQuery reference; "Claude" paired with "proven", "verified", or "partner of record" without the program's written approval.
+- No em dashes, no en dashes, anywhere in copy. The build fails on them.
+- Numbers come from `receipts.json` only, always with their date, pass and fail together.
+- Vendor names appear only inside receipt tiles, never as page identity.
 
 ## Reference docs
 
-- `000-docs/079-OD-AUDT-search-console-indexing-audit.md` — SEO posture, robots.txt rationale, subdomain noindex hardening (§ 4a), GSC actions.
-- `000-docs/078-OD-SOPS-audit-harness-baseline-2026-05-01.md` — testing harness baseline.
-- `000-docs/search-console-url-audit.csv` — per-URL audit data from the SEO regression cleanup.
+- `000-docs/080-RA-AUDT-site-design-audit-2026-09-06.md`: the six-lens audit of the site before this rebuild, with before and after scores.
+- `000-docs/079-OD-AUDT-search-console-indexing-audit.md`: SEO posture, robots.txt rationale, GSC actions.
+- `000-docs/078-OD-SOPS-audit-harness-baseline-2026-05-01.md`: testing harness baseline.
+- `ops/caddy-redirects.md`: the VPS redirect block for every removed route.
+- intent-os `000-docs/163-PP-gateway-vision/`: the vision, the council review (section 6.4 is the landing brief), the working session.

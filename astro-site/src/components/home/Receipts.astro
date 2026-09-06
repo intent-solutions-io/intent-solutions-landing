@@ -1,0 +1,101 @@
+---
+// Every number here comes from src/data/receipts.json, written by
+// scripts/refresh-receipts.mjs at build time, and is rendered with its
+// verified_at date. Nothing numeric is typed into this file.
+import receipts from '../../data/receipts.json';
+
+const fmt = (n: number | undefined) => (typeof n === 'number' ? n.toLocaleString('en-US') : null);
+const m = receipts.marketplace;
+const lab = receipts.lab;
+const feed = receipts.feed;
+const predicate = lab.predicates?.[0];
+const labAsOf = lab.as_of ? lab.as_of.slice(0, 10) : null;
+---
+
+<section class="section" aria-labelledby="receipts-title">
+  <div class="container-is">
+    <p class="eyebrow">Receipts</p>
+    <h2 id="receipts-title" class="text-h2">What a stranger can check today.</h2>
+
+    <div class="receipts">
+      <a href={m.url} class="tile" rel="noopener" data-umami-event="receipt-marketplace">
+        <h3 class="tile-title">Marketplace</h3>
+        <p class="tile-body">An open marketplace of agent skills and plugins; the reason strangers trust us before a call.</p>
+        <dl class="tile-figures">
+          {fmt(m.skills) && <div><dt>skills</dt><dd>{fmt(m.skills)}</dd></div>}
+          {fmt(m.plugins) && <div><dt>plugins</dt><dd>{fmt(m.plugins)}</dd></div>}
+          {fmt(m.stars) && <div><dt>GitHub stars</dt><dd>{fmt(m.stars)}</dd></div>}
+          {m.installs_display && <div><dt>installs</dt><dd>{m.installs_display}</dd></div>}
+        </dl>
+        <p class="tile-date font-mono">verified {m.stars_verified_at}</p>
+        <span class="link-arrow">tonsofskills.com</span>
+      </a>
+
+      <a href={lab.url} class="tile" rel="noopener" data-umami-event="receipt-lab">
+        <h3 class="tile-title">The Lab</h3>
+        <p class="tile-body">We grade our own work and publish the pass and fail rows, per predicate, never a blended score.</p>
+        {predicate && (
+          <dl class="tile-figures">
+            <div><dt>pass</dt><dd>{predicate.pass}</dd></div>
+            <div><dt>fail</dt><dd>{predicate.fail}</dd></div>
+            <div><dt>advisory</dt><dd>{predicate.advisory}</dd></div>
+          </dl>
+        )}
+        <p class="tile-date font-mono">as of {labAsOf}, verified {lab.verified_at}</p>
+        <span class="link-arrow">labs.intentsolutions.io</span>
+      </a>
+
+      <a href={receipts.catalog.url} class="tile" rel="noopener" data-umami-event="receipt-catalog">
+        <h3 class="tile-title">Catalog</h3>
+        <p class="tile-body">Working demos you can click through before you buy anything.</p>
+        <span class="link-arrow">demos.intentsolutions.io</span>
+      </a>
+
+      <div class="tile">
+        <h3 class="tile-title">Proof feed</h3>
+        <p class="tile-body">What we shipped and what broke, written up as it happens.</p>
+        <ul class="feed-list">
+          {feed.items?.map((item) => (
+            <li>
+              <a href={item.url} data-umami-event="receipt-feed" data-umami-event-title={item.title}>{item.title}</a>
+              <span class="font-mono feed-date">{item.date}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="tile-date font-mono">fetched {feed.fetched_at}</p>
+        <a href={feed.url} class="link-arrow" data-umami-event="receipt-feed">All field notes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .receipts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .tile-title {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  .tile-body { color: var(--ink-dim); margin: 0; flex: 1; font-size: 0.9375rem; }
+  .tile-figures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+    margin: 0;
+  }
+  .tile-figures div { display: flex; flex-direction: column; }
+  .tile-figures dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+  .tile-figures dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tile-date { font-size: 0.8125rem; color: var(--ink-faint); margin: 0; }
+  .feed-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .feed-list li { display: flex; flex-direction: column; gap: 0.125rem; font-size: 0.9375rem; }
+  .feed-date { font-size: 0.75rem; color: var(--ink-faint); }
+  @media (max-width: 1023px) { .receipts { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 639px) { .receipts { grid-template-columns: 1fr; } }
+</style>

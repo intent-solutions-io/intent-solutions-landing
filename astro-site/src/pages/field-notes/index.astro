@@ -1,90 +1,61 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import SiteNav from '../../components/SiteNav.astro';
-import Footer from '../../components/Footer';
+import Footer from '../../components/home/Footer.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('field-notes'))
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-const title = 'Field Notes | intent solutions io';
-const description = 'Notes from the field — architecture decisions, production systems, and technical leadership from shipping real AI infrastructure.';
+const title = 'Field Notes | Intent Solutions';
+const description = 'The proof feed: what we shipped and what broke, written up as it happens.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
   name: 'Field Notes',
   description,
-  url: 'https://intentsolutions.io/field-notes',
-  author: {
-    '@type': 'Person',
-    name: 'Jeremy Longshore',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'intent solutions io',
-    url: 'https://intentsolutions.io',
-  },
+  url: 'https://intentsolutions.io/field-notes/',
+  author: { '@type': 'Person', name: 'Jeremy Longshore' },
+  publisher: { '@type': 'Organization', name: 'Intent Solutions', url: 'https://intentsolutions.io' },
 };
 ---
 
 <Layout title={title} description={description}>
   <SiteNav />
+  <main id="main">
+    <section class="section section--first">
+      <div class="container-is">
+        <p class="eyebrow">Field Notes</p>
+        <h1 class="text-h1">The proof feed.</h1>
+        <p class="text-lede measure" style="margin-top:1rem">{description}</p>
 
-  <main class="min-h-screen bg-zinc-950">
-    <section class="py-20 sm:py-28">
-      <div class="container mx-auto px-6 sm:px-8 max-w-4xl">
-        <p class="text-xs font-semibold tracking-[0.2em] text-zinc-500 uppercase mb-4">Field Notes</p>
-        <h1 class="text-h1 font-bold text-zinc-50 mb-4">From the field</h1>
-        <p class="text-body-lg text-zinc-400 max-w-2xl mb-16">
-          Architecture decisions, production systems, and technical leadership — notes from actually shipping AI infrastructure.
-        </p>
-
-        <div class="space-y-6">
+        <ul class="posts">
           {posts.map((post) => (
-            <a href={`/field-notes/${post.id.replace(/\.md$/, '')}/`} class="card-slate block group">
-              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                <h2 class="text-lg font-semibold text-zinc-100 group-hover:text-zinc-50 transition-smooth">
-                  {post.data.title}
-                </h2>
-                <time
-                  datetime={post.data.date}
-                  class="text-sm text-zinc-500 shrink-0"
-                >
-                  {new Date(post.data.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric',
-                  })}
-                </time>
+            <li class="post">
+              <time datetime={post.data.date} class="font-mono post-date">{new Date(post.data.date).toISOString().slice(0, 10)}</time>
+              <div>
+                <a href={`/field-notes/${post.id.replace(/\.md$/, '')}/`} class="post-title">{post.data.title}</a>
+                <p class="post-desc muted">{post.data.description}</p>
               </div>
-              <p class="text-sm text-zinc-400 mb-3 line-clamp-2">{post.data.description}</p>
-              {post.data.tags && post.data.tags.length > 0 && (
-                <div class="flex flex-wrap gap-2">
-                  {post.data.tags.slice(0, 4).map((tag: string) => (
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-zinc-800/60 text-zinc-500 border border-zinc-700/30">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </a>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <div class="mt-12 pt-8 border-t border-zinc-800/40 text-center">
-          <a
-            href="/field-notes/rss.xml"
-            class="text-sm text-zinc-500 hover:text-zinc-300 transition-smooth"
-          >
-            RSS Feed
-          </a>
-        </div>
+        <p class="text-small" style="margin-top:2rem"><a href="/field-notes/rss.xml">RSS feed</a></p>
       </div>
     </section>
   </main>
-
-  <Footer client:load />
-
+  <Footer />
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </Layout>
+
+<style>
+  .posts { list-style: none; padding: 0; margin: 2.5rem 0 0; max-width: 52rem; }
+  .post { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+  .post-date { font-size: 0.8125rem; color: var(--ink-faint); padding-top: 0.2rem; }
+  .post-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+  .post-title:hover { color: var(--signal-dark); text-decoration: underline; }
+  .post-desc { margin: 0.25rem 0 0; font-size: 0.9375rem; }
+  @media (max-width: 639px) { .post { grid-template-columns: 1fr; gap: 0.25rem; } }
+</style>
