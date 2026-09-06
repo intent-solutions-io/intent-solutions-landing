@@ -1,48 +1,20 @@
 ---
-// Thank you page for survey completion
 import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/home/Footer.astro';
 ---
 
-<Layout title="Thank You - IntentSolutions">
-  <div class="min-h-screen bg-gradient-to-br from-zinc-900 to-zinc-800 flex items-center justify-center px-4">
-    <div class="max-w-2xl w-full text-center">
-      <div class="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-2xl p-12 shadow-2xl">
-        <div class="mb-8">
-          <svg class="w-20 h-20 mx-auto text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-        </div>
-
-        <h1 class="text-4xl font-bold text-zinc-50 mb-6">Thank You!</h1>
-
-        <div class="text-left text-zinc-300 space-y-4 mb-8 max-w-xl mx-auto">
-          <p class="leading-relaxed">
-            I genuinely appreciate you taking 10 minutes with us. I know how busy life gets juggling work, family, and those never-ending sports schedules.
-          </p>
-
-          <p class="leading-relaxed">
-            I spent 20+ years in the restaurant business, then ran a trucking company before diving into AI and technology. Recently got accepted into the Google Cloud Startup Program. Now I'm building HUSTLE because I live, eat, and breathe soccer—and I know our kids' efforts deserve better than scrambling through phones for stats when recruitment time comes.
-          </p>
-
-          <p class="leading-relaxed">
-            Your responses are going to directly shape this app. I'm reading every single one.
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/50 border border-zinc-700 rounded-lg p-6 mb-8">
-          <h2 class="text-lg font-semibold text-zinc-200 mb-3">Check Your Email</h2>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            You'll receive an email from me shortly with more information about the beta rollout. If you don't see it in your inbox, check your spam folder.
-          </p>
-        </div>
-
-        <a
-          href="/"
-          class="inline-block px-8 py-4 bg-zinc-700 hover:bg-zinc-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-        >
-          ← Return to Home
-        </a>
+<Layout title="Received | Intent Solutions" description="Your message reached us." noindex={true}>
+  <SiteNav />
+  <main id="main">
+    <section class="section section--first">
+      <div class="container-is">
+        <p class="eyebrow">Received</p>
+        <h1 class="text-h1">Your message reached us.</h1>
+        <p class="measure" style="margin-top:1rem">A reply comes from jeremy@intentsolutions.io. If you do not see one, check the spam folder, then write to that address directly.</p>
+        <div style="margin-top:2rem"><a href="/" class="btn btn-primary">Back to the front page</a></div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>

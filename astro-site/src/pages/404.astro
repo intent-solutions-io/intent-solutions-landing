@@ -1,32 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/Footer';
+import Footer from '../components/home/Footer.astro';
 ---
 
 <Layout
-  title="Page Not Found (404) | Intent Solutions"
-  description="The page you were looking for doesn't exist or has moved."
+  title="Page not found | Intent Solutions"
+  description="That page does not exist or has moved."
   noindex={true}
 >
   <SiteNav />
-
-  <main class="min-h-[60vh] bg-zinc-950 flex items-center justify-center px-6">
-    <div class="max-w-xl w-full text-center py-24">
-      <p class="text-sm font-semibold tracking-[0.28em] uppercase text-zinc-500 mb-4">
-        Error 404
-      </p>
-      <h1 class="text-hero font-bold text-zinc-50 mb-4">Page not found</h1>
-      <p class="text-zinc-400 mb-10">
-        The page you're looking for doesn't exist or has moved. Let's get you back on track.
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="/" class="btn-primary btn-sm">Back to Home</a>
-        <a href="/field-notes/" class="btn-secondary btn-sm">Field Notes</a>
-        <a href="/contact/" class="btn-secondary btn-sm">Contact</a>
+  <main id="main">
+    <section class="section section--first">
+      <div class="container-is">
+        <p class="eyebrow">404</p>
+        <h1 class="text-h1">That page does not exist or has moved.</h1>
+        <p class="measure" style="margin-top:1rem">The site was cut down to the front door in September 2026. What you were looking for is probably one of these.</p>
+        <div class="actions">
+          <a href="/" class="btn btn-primary">Front page</a>
+          <a href="/field-notes/" class="btn btn-secondary">Field Notes</a>
+          <a href="https://demos.intentsolutions.io" class="btn btn-secondary" rel="noopener">Catalog</a>
+          <a href="/contact/" class="btn btn-secondary">Contact</a>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
-
-  <Footer client:load />
+  <Footer />
 </Layout>
+
+<style>
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+</style>
