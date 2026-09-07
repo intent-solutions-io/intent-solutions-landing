@@ -1,3 +1,14 @@
+# Release v3.0.2
+
+**Release Date**: 2026-09-07
+
+## Changes since v3.0.1
+
+- chore: release v3.0.2 [skip ci] (29fcbee)
+- revert(site): restore the original intentsolutions.io theme and pages (#51) (4c36fc1)
+
+---
+
 # Release v3.0.1
 
 **Release Date**: 2026-09-06
