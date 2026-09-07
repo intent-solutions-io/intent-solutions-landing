@@ -1,3 +1,14 @@
+# Release v3.1.0
+
+**Release Date**: 2026-09-07
+
+## Changes since v3.0.3
+
+- chore: release v3.1.0 [skip ci] (ddd6989)
+- feat(site): make Intent Solutions the clear network gateway (#52) (7367687)
+
+---
+
 # Release v3.0.3
 
 **Release Date**: 2026-09-07
