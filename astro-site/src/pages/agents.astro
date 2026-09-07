@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout title="AI Agents - Containerized Automation | Intent Solutions">
+  <SiteNav />
+
+  <!-- Hero Section -->
+  <section class="min-h-[60vh] flex items-center bg-gradient-main relative overflow-hidden">
+    <div class="absolute w-96 h-96 bg-zinc-100/5 rounded-full blur-3xl top-0 right-0 -translate-y-1/2 translate-x-1/2" />
+
+    <div class="container mx-auto px-8 py-24 relative z-10">
+      <div class="max-w-4xl">
+        <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-400 mb-6">
+          ai agents · custom built for your workflow
+        </p>
+
+        <h1 class="text-hero font-extrabold text-zinc-50 mb-6">
+          customizable intent agent models (IAM)
+        </h1>
+
+        <p class="text-body-lg text-zinc-400 mb-8 max-w-2xl">
+          We customize Intent Agent Models for any workflow. Below are pre-configured packages (M1/M2/M3) for sales and support. See PipelinePilot MVP for a custom 4-agent SDR automation built with IAM. We configure agents for research, compliance, data processing, content generation, or any business logic you need.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="https://calendar.app.google/Wqbt8EJuEh5xvvV58" target="_blank" rel="noopener" class="btn-primary">
+            Book a Discovery Call
+          </a>
+          <a
+            href="#models"
+            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+          >
+            see the models ↓
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Callout -->
+  <section class="py-6 bg-indigo-500/10 border-y border-indigo-500/20">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-sm text-indigo-300 font-semibold uppercase tracking-widest mb-2">
+          example: customized iam for sdr automation
+        </p>
+        <p class="text-zinc-300 mb-3">
+          PipelinePilot shows what's possible with customized Intent Agent Models. It uses 4 specialized IAM agents (Orchestrator, Data Captain, Content Analyst, Readiness Auditor) configured for SDR workflows—from Clay/Apollo ingestion to multi-step outbound campaigns. The IAE packages below (M1/M2/M3) are pre-configured starters. We customize IAM for any workflow.
+        </p>
+        <a
+          href="https://pipelinepilot-prod.web.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-indigo-400 hover:text-indigo-300 transition-smooth"
+        >
+          See PipelinePilot MVP →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agents Grid -->
+  <section id="models" class="py-24 bg-zinc-950">
+    <div class="container mx-auto px-8">
+      <h2 class="text-2xl font-bold text-zinc-50 mb-8 text-center">intent agent engine (IAE) models</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <!-- IAE: Model 1 -->
+        <a href="/intel-engine/" class="group block bg-zinc-900 border border-zinc-800 hover:border-indigo-500/50 rounded-lg p-8 transition-all hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1">
+          <h3 class="text-2xl font-bold text-zinc-50 group-hover:text-indigo-400 transition-colors mb-3">
+            IAE: Model 1 →
+          </h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Intelligence Core. Analyzes your closed deals, learns your ICP, scores leads from one data source. Intelligence only—no execution. Google Cloud native.
+          </p>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What's Included:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Vertex AI Anthropic</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">1 Data Connector</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">ICP Scoring</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">BigQuery Analytics</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Replaces:</h4>
+            <p class="text-sm text-zinc-400">Replaces 1-2 data analysts.</p>
+          </div>
+        </a>
+
+        <!-- IAE: Model 2 -->
+        <a href="https://calendar.app.google/Wqbt8EJuEh5xvvV58" target="_blank" rel="noopener" class="group block bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-lg p-8 transition-all hover:shadow-lg hover:shadow-zinc-800/50 hover:-translate-y-1">
+          <h3 class="text-2xl font-bold text-zinc-50 group-hover:text-zinc-300 transition-colors mb-3">IAE: Model 2 →</h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Execution Layer. Takes scored leads from M1, executes personalized outreach, captures meeting intelligence, sends feedback to M1. Multi-channel orchestration.
+          </p>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What It Adds:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Outbound Execution</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Email Campaigns</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Meeting Intelligence</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Feedback Loop</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Replaces:</h4>
+            <p class="text-sm text-zinc-400">Replaces 3-5 SDRs. 10x better response rates.</p>
+          </div>
+        </a>
+
+        <!-- IAE: Model 3 -->
+        <a href="https://calendar.app.google/Wqbt8EJuEh5xvvV58" target="_blank" rel="noopener" class="group block bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-lg p-8 transition-all hover:shadow-lg hover:shadow-zinc-800/50 hover:-translate-y-1">
+          <h3 class="text-2xl font-bold text-zinc-50 group-hover:text-zinc-300 transition-colors mb-3">IAE: Model 3 →</h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Support Intelligence. Monitors support tickets, identifies pain points, sends churn signals to M1, drafts responses using M2 execution layer. Human-in-the-loop approval.
+          </p>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">What It Adds:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Ticket Triage</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Response Drafting</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">Churn Prediction</span>
+              <span class="px-2 py-1 bg-zinc-800 text-zinc-300 text-xs rounded">ICP Refinement</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-zinc-50 mb-3">Replaces:</h4>
+            <p class="text-sm text-zinc-400">Replaces 2 support agents. First response in 4 minutes vs 4 hours.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-4">intentional ai, practical solutions</h2>
+        <p class="text-zinc-400 mb-8">
+          Book a 15-minute discovery call to discuss your use case and see which model fits.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary"
+          >
+            Book a Discovery Call
+          </a>
+          <a
+            href="/#contact"
+            class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth"
+          >
+            Send a Message →
+          </a>
+        </div>
+        <p class="text-sm text-zinc-500 mt-6">
+          jeremy@intentsolutions.io · no contracts · no lock-in · export your data anytime
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,34 +1,27 @@
 ---
-// The catalog lives at demos.intentsolutions.io. This route stays as a pointer
-// because it is linked from search results and older posts.
 import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/home/Footer.astro';
+import Footer from '../components/Footer';
+import ProjectsHero from '../components/ProjectsHero';
+import ProjectsGrid from '../components/ProjectsGrid';
+import FeaturedFork from '../components/FeaturedFork';
+import PabloCredits from '../components/PabloCredits';
+import Contact from '../components/Contact';
 ---
 
 <Layout
-  title="Catalog of outcomes | Intent Solutions"
-  description="Working demos you can click through before you buy anything. The catalog lives at demos.intentsolutions.io."
+  title="Projects | Intent Solutions"
+  description="17 active projects shipping to production. From AI agents to developer tools - see what Intent Solutions is building."
 >
   <SiteNav />
-  <main id="main">
-    <section class="section section--first">
-      <div class="container-is">
-        <p class="eyebrow">Catalog</p>
-        <h1 class="text-h1">Working demos, before you buy anything.</h1>
-        <p class="text-lede measure" style="margin-top:1rem">
-          Every demo is a packaged outcome you can click through. Prices are set per engagement; ask for one through the customer door.
-        </p>
-        <div class="actions">
-          <a href="https://demos.intentsolutions.io" class="btn btn-primary" rel="noopener" data-umami-event="receipt-catalog">Open the catalog</a>
-          <a href="/contact/?door=customer" class="link-arrow" data-umami-event="door-customer" data-umami-event-placement="catalog">Request an outcome</a>
-        </div>
-      </div>
-    </section>
+
+  <main class="bg-zinc-900">
+    <ProjectsHero client:load />
+    <ProjectsGrid client:visible />
+    <FeaturedFork client:visible />
+    <PabloCredits client:visible />
+    <Contact client:visible />
   </main>
+
   <Footer />
 </Layout>
-
-<style>
-  .actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
-</style>

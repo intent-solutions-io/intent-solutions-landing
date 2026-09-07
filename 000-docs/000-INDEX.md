@@ -90,7 +90,6 @@ Total Documents: $(ls -1 000-docs/ | grep -E "^[0-9]{3}-" | wc -l)
 - `046-RA-ANLY-diagnosticpro-theme-migration-analysis.md`
 - `047-RA-ANLY-netlify-form-submission-issue.md`
 - `048-RA-ANLY-survey-persistence-investigation.md`
-- `080-RA-AUDT-site-design-audit-2026-09-06.md` (six-lens audit before the gateway rebuild, with after scores)
 
 ### DC - Development & Code
 
@@ -157,7 +156,6 @@ Total Documents: $(ls -1 000-docs/ | grep -E "^[0-9]{3}-" | wc -l)
 - `046-RA-ANLY-diagnosticpro-theme-migration-analysis.md`
 - `047-RA-ANLY-netlify-form-submission-issue.md`
 - `048-RA-ANLY-survey-persistence-investigation.md`
-- `080-RA-AUDT-site-design-audit-2026-09-06.md` (six-lens audit before the gateway rebuild, with after scores)
 - `049-DC-IMPL-doticons-integration-guide.md`
 - `050-DC-IMPL-og-image-social-sharing-fix.md`
 - `051-DC-IMPL-unicorn-studio-integration-guide.md`

@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout
+  title="Private AI Security & Compliance"
+  description="Learn how intent solutions io keeps private AI deployments compliant with encryption, auditability, and residency controls."
+>
+  <SiteNav />
+
+  <main class="bg-zinc-900">
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="max-w-3xl">
+          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
+            security & compliance
+          </p>
+          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
+            Guardrails that satisfy regulators and operators alike
+          </h1>
+          <p class="text-lg text-zinc-400 leading-relaxed">
+            Private AI only works when security is the default. We build encryption, access controls, audit trails, and data
+            residency into every deployment so you can prove compliance without slowing operators down.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-10">Security pillars</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Encryption end to end</h3>
+            <p class="text-sm text-zinc-400">
+              TLS 1.3 in transit, customer-managed keys at rest, and envelope encryption for model weights and prompts.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Role-based access</h3>
+            <p class="text-sm text-zinc-400">
+              Fine-grained RBAC tied to your IdP ensures only cleared personnel can access sensitive models or datasets.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Audit logging</h3>
+            <p class="text-sm text-zinc-400">
+              Immutable logs capture prompts, responses, and administrative actions for forensic review and attestation.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Data residency</h3>
+            <p class="text-sm text-zinc-400">
+              Region-locked storage, VPC peering, and access boundaries honor jurisdictional requirements and client contracts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-12 lg:grid-cols-2 items-start">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-6">Compliance pathways</h2>
+            <p class="text-sm text-zinc-400 mb-4">
+              We align deployments with the frameworks you already follow. Controls map cleanly to your policies so auditors can
+              trace requirements without friction.
+            </p>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li><strong>HIPAA:</strong> Business associate agreements, PHI handling guides, and breach notification workflows.</li>
+              <li><strong>SOC 2:</strong> Control evidence packets covering security, availability, and confidentiality criteria.</li>
+              <li><strong>PCI / CJIS:</strong> Network segmentation, key management, and strict logging for regulated environments.</li>
+              <li><strong>Custom:</strong> We map to industry-specific checklists or internal standards as part of onboarding.</li>
+            </ul>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Shared responsibility</h3>
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li>We operate within your cloud account so your governance policies remain authoritative.</li>
+              <li>Clearly documented roles show which controls you own versus what we manage on your behalf.</li>
+              <li>Quarterly reviews verify that access, encryption, and logging settings stay aligned with evolving policies.</li>
+            </ul>
+            <p class="text-xs text-zinc-500">
+              Need a third-party assessment? We partner with accredited auditors for independent validation and penetration tests.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-zinc-950 border-b border-zinc-800/60">
+      <div class="container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-zinc-50 mb-6">Operational safeguards</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Policy-aware prompting</h3>
+            <p class="text-sm text-zinc-400">
+              Guardrails scrub sensitive data, enforce allowed actions, and flag escalations before responses reach end users.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Segmentation by design</h3>
+            <p class="text-sm text-zinc-400">
+              Dedicated subnets and namespaces isolate workload tiers, preventing lateral movement if a service is compromised.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Incident playbooks</h3>
+            <p class="text-sm text-zinc-400">
+              Joint runbooks cover detection, containment, eradication, and stakeholder communications within required SLAs.
+            </p>
+          </div>
+          <div class="card-slate">
+            <h3 class="text-lg font-semibold text-zinc-100 mb-2">Continuous monitoring</h3>
+            <p class="text-sm text-zinc-400">
+              SIEM integrations, anomaly detection, and drift alerts keep operators ahead of threats and misconfigurations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="container mx-auto px-8">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-bold text-zinc-50 mb-4">Verify compliance before launch</h2>
+            <p class="text-sm text-zinc-400 mb-6">
+              Our team works with your security office to complete risk assessments, architecture reviews, and tabletop exercises
+              before going live.
+            </p>
+            <a href="/#contact" class="btn-primary">Request a compliance workshop</a>
+          </div>
+          <div class="card-slate space-y-4">
+            <h3 class="text-lg font-semibold text-zinc-50">Common questions</h3>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Do you sign BAAs or DPAs?</p>
+              <p class="text-sm text-zinc-400">Yes. We execute agreements aligned with HIPAA, GDPR, or other regulatory requirements.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">How is data residency enforced?</p>
+              <p class="text-sm text-zinc-400">Storage buckets, databases, and backups are pinned to approved regions with automated policy checks.</p>
+            </div>
+            <div>
+              <p class="text-sm text-zinc-300 font-medium">Can we audit the system ourselves?</p>
+              <p class="text-sm text-zinc-400">Absolutely. We provide read-only access, documentation, and support during internal or external audits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

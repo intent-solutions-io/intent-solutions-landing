@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import { readdirSync, readFileSync } from 'node:fs';
 
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -66,12 +67,14 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory' },
 
-  // Kept uncompressed so the deploy gate's HTML line-length guard stays
-  // meaningful on iOS Safari (see deploy-vps.yml). No React islands remain,
-  // so no long inline runtime bundles are expected.
+  // iOS Safari fails to render single HTML lines longer than ~5000 chars.
+  // Same rationale as tonsofskills.com — trade a few KB of gzipped bytes for
+  // safe rendering on every device. Enforced by the deploy-vps.yml line-length
+  // guardrail.
   compressHTML: false,
 
   integrations: [
+    react(),
     sitemap({
       filter: (page) =>
         !EXCLUDED_PATHS.has(page) && !offDomainPosts.has(page),
