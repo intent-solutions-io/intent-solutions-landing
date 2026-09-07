@@ -1,3 +1,14 @@
+# Release v3.0.3
+
+**Release Date**: 2026-09-07
+
+## Changes since v3.0.2
+
+- chore: release v3.0.3 [skip ci] (ae367d1)
+- content(field-notes): add the-corrected-record-was-still-wrong (3ca1073)
+
+---
+
 # Release v3.0.2
 
 **Release Date**: 2026-09-07
