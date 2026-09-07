@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer';
+---
+
+<Layout title="IAE: Model 1 - Intent Agent Engine | Intent Solutions">
+  <SiteNav />
+
+  <!-- Hero Section -->
+  <section class="min-h-[60vh] flex items-center bg-gradient-main relative overflow-hidden">
+    <div class="absolute w-96 h-96 bg-zinc-100/5 rounded-full blur-3xl top-0 right-0 -translate-y-1/2 translate-x-1/2" />
+
+    <div class="container mx-auto px-8 py-24 relative z-10">
+      <div class="max-w-4xl">
+        <div class="inline-block px-3 py-1 bg-zinc-800/50 border border-zinc-700 rounded-full mb-6">
+          <span class="text-xs font-semibold text-zinc-300">IAE: MODEL 1</span>
+        </div>
+
+        <h1 class="text-hero font-extrabold text-zinc-50 mb-6">
+          intelligence before<br />automation
+        </h1>
+
+        <p class="text-body-lg text-zinc-400 mb-8 max-w-2xl">
+          Intent Agent Engine with multi-level agency architecture. Intelligence layer learns from your closed deals and scores every lead. Execution agents handle outreach on high-probability targets only. Continuous feedback loop. Google Cloud native. 10x better response rates.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="https://calendar.app.google/Wqbt8EJuEh5xvvV58" target="_blank" rel="noopener" class="btn-primary">
+            Book a Discovery Call
+          </a>
+          <a href="#how-it-works" class="inline-flex items-center text-zinc-200 hover:text-zinc-50 transition-smooth">
+            see how it works ↓
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-6">the problem with current automation</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+            <div class="text-red-400 font-semibold mb-3">❌ Traditional LinkedIn Automation</div>
+            <ul class="space-y-2 text-sm text-zinc-400">
+              <li>• Scrape 10,000 leads from Apollo</li>
+              <li>• Send generic template to everyone</li>
+              <li>• 0.5% response rate (50 responses)</li>
+              <li>• Burn domain reputation</li>
+              <li>• No learning or improvement</li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-900 border border-indigo-500/30 rounded-lg p-6">
+            <div class="text-green-400 font-semibold mb-3">✓ Intel Engine Approach</div>
+            <ul class="space-y-2 text-sm text-zinc-400">
+              <li>• Analyze your 50+ closed deals</li>
+              <li>• Build ICP model from YOUR wins</li>
+              <li>• Score all 10,000 leads</li>
+              <li>• Contact only top 500 A-tier (5%)</li>
+              <li>• 5-10% response rate (250+ responses)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-zinc-900/50 border border-zinc-800 rounded-lg">
+          <p class="text-zinc-300 text-lg font-semibold mb-2">Result: 5x more meetings from 95% less outreach</p>
+          <p class="text-sm text-zinc-500">Focus on the right leads, not all leads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-24 bg-zinc-950">
+    <div class="container mx-auto px-8">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-12 text-center">how it works</h2>
+
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-zinc-50 mb-3">Intelligence Layer: Data Ingestion</h3>
+                <p class="text-zinc-400 mb-4">
+                  Connects to your data sources and learns from your historical wins
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <div class="text-sm font-semibold text-zinc-300 mb-2">Data Sources:</div>
+                    <ul class="text-sm text-zinc-500 space-y-1">
+                      <li>• Apollo.io (firmographics)</li>
+                      <li>• Sales Navigator (LinkedIn signals)</li>
+                      <li>• HubSpot/CRM (closed deals)</li>
+                      <li>• Clearbit (enrichment)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-zinc-300 mb-2">What It Learns:</div>
+                    <ul class="text-sm text-zinc-500 space-y-1">
+                      <li>• Which verticals close fastest</li>
+                      <li>• Optimal company size range</li>
+                      <li>• Tech stack compatibility</li>
+                      <li>• Funding stage patterns</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-zinc-50 mb-3">Intelligence Layer: ICP Model Training</h3>
+                <p class="text-zinc-400 mb-4">
+                  Builds dynamic scoring model from YOUR closed deals (not industry averages)
+                </p>
+                <div class="bg-zinc-800/50 p-4 rounded border border-zinc-700 font-mono text-xs text-zinc-400">
+                  <div>Example Pattern Discovered:</div>
+                  <div class="mt-2 text-zinc-500">
+                    "Series A fintech companies with 20-50 employees<br/>
+                    using Salesforce convert at 42% in 45 days.<br/>
+                    Healthcare takes 6+ months (deprioritize)."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-zinc-50 mb-3">Intelligence Layer: Lead Scoring</h3>
+              <p class="text-zinc-400 mb-4">
+                Scores every prospect 0-100 and prioritizes A/B/C tiers
+              </p>
+              <ul class="text-sm text-zinc-400 space-y-2">
+                <li>• A-Tier (80-100): Top 5% of leads, highest conversion probability</li>
+                <li>• B-Tier (60-79): Good fit, contact after A-tier exhausted</li>
+                <li>• C-Tier (below 60): Low probability, skip or deprioritize</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-zinc-50 mb-4">Model 1 Output</h3>
+          <p class="text-zinc-400 mb-4">
+            IAE: Model 1 delivers scored leads with detailed reasoning. What you do with them is up to you.
+          </p>
+          <div class="bg-zinc-800/50 p-4 rounded border border-zinc-700 font-mono text-xs">
+            <div class="text-green-400 mb-2">A-Tier Leads (Score: 85+)</div>
+            <div class="text-zinc-500 space-y-1">
+              <div>• Stripe - Score: 94 - Series A fintech, 35 employees, uses Salesforce</div>
+              <div>• Plaid - Score: 89 - Series A fintech, 28 employees, recent $50M raise</div>
+              <div>• Brex - Score: 87 - Series B fintech, 45 employees, fast growth signals</div>
+            </div>
+            <div class="mt-4 text-zinc-400">
+              Intelligence insights ready. Add IAE: Model 2 for execution or export for manual outreach.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-On Models -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-12 text-center">build your intelligence workflow</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Model 2 -->
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <h3 class="text-xl font-bold text-zinc-50 mb-4">IAE: Model 2</h3>
+            <p class="text-sm text-zinc-400 mb-6">
+              Execution Layer. Takes your scored A-tier leads and executes personalized outreach across LinkedIn and email. Meeting intelligence captures insights and feeds them back to M1.
+            </p>
+            <ul class="text-sm text-zinc-400 space-y-2">
+              <li>• LinkedIn connection requests</li>
+              <li>• Personalized email campaigns</li>
+              <li>• Meeting transcription and action items</li>
+              <li>• Response tracking and conversion analytics</li>
+              <li>• Feedback loop to improve M1 accuracy</li>
+            </ul>
+          </div>
+
+          <!-- Model 3 -->
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+            <h3 class="text-xl font-bold text-zinc-50 mb-4">IAE: Model 3</h3>
+            <p class="text-sm text-zinc-400 mb-6">
+              Support Intelligence. Monitors your support tickets, identifies customer pain points, predicts churn risk, drafts responses using M2 execution layer.
+            </p>
+            <ul class="text-sm text-zinc-400 space-y-2">
+              <li>• Zendesk/Intercom integration</li>
+              <li>• Urgent ticket escalation (4 min vs 4 hours)</li>
+              <li>• Response drafting with human approval</li>
+              <li>• Churn prediction signals to M1</li>
+              <li>• Customer health scoring</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Third-Party Connectors -->
+        <div class="mt-8 bg-zinc-900 border border-zinc-800 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-zinc-50 mb-4">Additional Data Connectors</h3>
+          <p class="text-sm text-zinc-400 mb-6">
+            Model 1 includes ONE data source connector (Apollo, Sales Navigator, or HubSpot). Add more sources for richer intelligence.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">Apollo.io</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">Sales Navigator</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">HubSpot</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">Clearbit</div>
+            </div>
+            <div class="text-center p-4 bg-zinc-800/50 rounded border border-zinc-700">
+              <div class="text-sm font-semibold text-zinc-300 mb-1">ZoomInfo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Stack -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-12 text-center">technical architecture</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-zinc-50 mb-4">Intelligence Layer</h3>
+            <ul class="space-y-2 text-sm text-zinc-400">
+              <li>• Vertex AI (Anthropic Claude)</li>
+              <li>• Cloud Run (containerized)</li>
+              <li>• Firestore (real-time data)</li>
+              <li>• BigQuery (analytics)</li>
+              <li>• Google Cloud SDK</li>
+            </ul>
+          </div>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-zinc-50 mb-4">Execution Agents</h3>
+            <ul class="space-y-2 text-sm text-zinc-400">
+              <li>• Cloud Run (multi-agent)</li>
+              <li>• Pub/Sub (event-driven)</li>
+              <li>• Cloud Functions (automation)</li>
+              <li>• Firestore (state management)</li>
+              <li>• Google Cloud APIs</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-zinc-50 mb-4">Multi-Level Agency</h3>
+          <p class="text-sm text-zinc-400 mb-4">
+            Intelligence layer orchestrates multiple execution agents using Google Cloud Pub/Sub for async communication
+          </p>
+          <div class="bg-zinc-800/50 p-4 rounded border border-zinc-700 font-mono text-xs text-zinc-500">
+            Intelligence → Pub/Sub → Execution Agents<br/>
+            Execution Agents → Firestore → Intelligence<br/>
+            Intelligence: Update model and improve
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-zinc-950 border-t border-zinc-800/50">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-h1 font-bold text-zinc-50 mb-4">ready to 10x your outbound?</h2>
+        <p class="text-zinc-400 mb-8">
+          Book a 15-minute discovery call to discuss your use case.
+        </p>
+        <a href="https://calendar.app.google/Wqbt8EJuEh5xvvV58" target="_blank" rel="noopener" class="btn-primary">Book a Discovery Call</a>
+        <p class="text-sm text-zinc-500 mt-6">
+          no contracts · export your data anytime
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

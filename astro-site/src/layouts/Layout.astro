@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title,
-  description = 'The front door for AI implementation. Practitioners apply and get selected into real work. Customers buy proven outcomes, measured by a lab we run in public. Vendors get a partner of record.',
+  description = 'Model-agnostic AI agents, private AI infrastructure, and workflow automation. Vertex-first security, discovery-led engagements, no vendor lock-in.',
   ogImage = `${Astro.site}og-image.svg`,
   canonical,
   noindex = false,
@@ -22,8 +22,8 @@ const {
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
 
 // Site-level structured data (emitted once on every page). Organization +
-// WebSite establish the brand entity. sameAs lists the proof surfaces the
-// homepage links to; every entry is a live property we control.
+// WebSite establish the brand entity and enable sitelinks search box / brand
+// knowledge panel. Claims kept accurate — no LocalBusiness/address.
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://intentsolutions.io';
 const siteJsonLd = [
   {
@@ -33,13 +33,9 @@ const siteJsonLd = [
     url: `${siteUrl}/`,
     logo: `${siteUrl}/favicon.svg`,
     sameAs: [
-      'https://tonsofskills.com',
-      'https://labs.intentsolutions.io',
-      'https://learn.intentsolutions.io',
-      'https://demos.intentsolutions.io',
-      'https://github.com/intent-solutions-io',
       'https://github.com/jeremylongshore',
-      'https://www.youtube.com/@intentsolutions',
+      'https://linkedin.com/in/jeremylongshore',
+      'https://claudecodeplugins.io',
     ],
   },
   {
@@ -56,15 +52,13 @@ const siteJsonLd = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#f3f6f4" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Fonts: self-hosted, preloaded, font-display: swap (declared in global.css).
-         No stylesheet request to a font CDN at render time. -->
-    <link rel="preload" href="/fonts/newsreader-500-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- SEO -->
     <SEO
@@ -82,7 +76,7 @@ const siteJsonLd = [
         },
         optional: {
           description: description,
-          siteName: 'Intent Solutions',
+          siteName: 'intent solutions io',
         }
       }}
       twitter={{
@@ -96,9 +90,10 @@ const siteJsonLd = [
     <!-- Site-level structured data (Organization + WebSite) -->
     <script type="application/ld+json" set:html={JSON.stringify(siteJsonLd)} />
 
-    <!-- Umami analytics, self-hosted at analytics.intentsolutions.io. Page views
-         are automatic; custom events come from data-umami-event attributes
-         (convention: brand/analytics-events.md). -->
+    <!-- Umami analytics — self-hosted at analytics.intentsolutions.io (Intent
+         Solutions VPS). Replaces the Firebase Analytics block on 2026-06-10 to
+         remove the last GCP dependency from the marketing site. Umami auto-
+         tracks page views; emit custom events with window.umami.track(name, props). -->
     <script
       defer
       src="https://analytics.intentsolutions.io/script.js"
@@ -107,24 +102,6 @@ const siteJsonLd = [
     ></script>
   </head>
   <body>
-    <a href="#main" class="skip-link">Skip to content</a>
     <slot />
   </body>
 </html>
-
-<style is:global>
-  .skip-link {
-    position: absolute;
-    left: 1rem;
-    top: -3rem;
-    z-index: 100;
-    padding: 0.5rem 0.75rem;
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: var(--radius);
-    text-decoration: none;
-  }
-  .skip-link:focus {
-    top: 1rem;
-  }
-</style>
