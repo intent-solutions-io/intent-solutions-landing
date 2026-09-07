@@ -1,612 +1,504 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
-import Hero from '../components/Hero';
-import TrustBar from '../components/home/TrustBar.astro';
-import BuiltInTheOpen from '../components/home/BuiltInTheOpen.astro';
-import ContactCta from '../components/home/ContactCta.astro';
 import Footer from '../components/Footer';
 
-const solutions = [
+const paths = [
   {
-    href: '/#solutions',
-    title: 'Claude Code Systems',
-    desc: 'Custom setups, curated plugin packs, slash commands, and team training — Claude Code tuned to your stack from day one.',
-    cta: 'Book a discovery call',
-    ctaHref: 'https://calendar.app.google/Wqbt8EJuEh5xvvV58',
-    featured: true,
+    code: 'BUILD',
+    title: 'I need an agentic system that works.',
+    body: 'Bring us the outcome, operating constraints, and failure boundary. We design the system around the work, not around a preferred provider.',
+    cta: 'Request an outcome',
+    href: '/contact/?door=outcome',
   },
   {
-    href: '/agents',
-    title: 'AI Agents',
-    desc: 'Custom Intent Agent Models for any workflow.',
+    code: 'PROVE',
+    title: 'I need to know whether it actually works.',
+    body: 'Intent Labs publishes the results. Evals maintains the versioned definitions behind each result. Together they form one proof system.',
+    cta: 'Inspect the evidence',
+    href: 'https://labs.intentsolutions.io/',
   },
   {
-    href: '/private-ai',
-    title: 'Private AI',
-    desc: 'ChatGPT-class experience on your own cloud.',
-  },
-  {
-    href: '/automation',
-    title: 'Automation',
-    desc: 'n8n workflows that erase manual work.',
-  },
-  {
-    href: '/cloud',
-    title: 'Cloud & Data',
-    desc: 'Google Cloud-native architectures.',
+    code: 'PRACTICE',
+    title: 'I want to learn the operating method.',
+    body: 'Intent Solutions Learn is a separate practice for serious builders. It teaches the method and points back to live evidence from the Lab.',
+    cta: 'Enter Learn',
+    href: 'https://learn.intentsolutions.io/',
   },
 ];
 
-const engagements = [
-  { href: '/learn', label: 'Learn',              desc: 'Executive onramps & team enablement' },
-  { href: '/colab', label: 'Colab',              desc: 'Implementation partner in your repo', featured: true },
-  { href: 'https://whop.com/claude-code-cowork-accelerator/', label: 'Cowork Accelerator', desc: 'Cohort-based building, live sessions', external: true },
-];
-
-/* photo omitted → initials placeholder shown until a headshot is added */
-const team = [
+const receipts = [
   {
-    photo: '/team/jeremy-longshore.jpeg',
-    name: 'Jeremy Longshore',
-    role: 'Founder & CEO',
+    label: 'Intent Labs',
+    title: 'The result, including the failures.',
+    body: 'Current evaluations, evidence bundles, freshness, and the rows that did not pass.',
+    href: 'https://labs.intentsolutions.io/results/',
+    cta: 'See current results',
   },
   {
-    photo: '/team/opeyemi-ariyo.jpeg',
-    name: 'Opeyemi Ariyo',
-    role: 'Co-Founder & Chief Technical Officer',
+    label: 'Evals',
+    title: 'The definition behind the result.',
+    body: 'Versioned meanings for verdicts, runtime receipts, review states, and regressions.',
+    href: 'https://evals.intentsolutions.io/',
+    cta: 'Read the definitions',
   },
   {
-    photo: '/team/pablo-perez.jpeg',
-    name: 'Pablo Perez',
-    role: 'Co-Founder & Project Manager',
+    label: 'Marketplace',
+    title: 'Tools built in the open.',
+    body: 'A public marketplace of plugins and agent skills that can be inspected before adoption.',
+    href: 'https://tonsofskills.com/',
+    cta: 'Explore the marketplace',
   },
   {
-    photo: '/team/max-sheahan.jpeg',
-    name: 'Max Sheahan',
-    role: 'Lead Instructor',
-  },
-  {
-    photo: '/team/tim-neunzig.png',
-    name: 'Tim Neunzig',
-    role: 'Head of German Operations',
-  },
-  {
-    photo: '/team/tolulope-ariyo.jpeg',
-    name: 'Tolulope Ariyo',
-    role: 'Software & Design Engineer',
+    label: 'Catalog',
+    title: 'Working systems, not pitch-deck mockups.',
+    body: 'A catalog of systems and experiments you can open, use, and judge for yourself.',
+    href: 'https://demos.intentsolutions.io/',
+    cta: 'Open the catalog',
   },
 ];
 
-const initials = (name: string) =>
-  name.split(' ').map((w) => w[0]).slice(0, 2).join('');
+const method = [
+  {
+    number: '01',
+    title: 'Frame',
+    body: 'Write the outcome, authority, constraints, evidence, and stopping conditions before an agent starts generating.',
+  },
+  {
+    number: '02',
+    title: 'Build',
+    body: 'Design context, tools, handoffs, and human control as one operating system around the agent.',
+  },
+  {
+    number: '03',
+    title: 'Prove',
+    body: 'Test the claim, publish the evidence, keep the failures visible, and make the result reproducible.',
+  },
+  {
+    number: '04',
+    title: 'Operate',
+    body: 'Ship with ownership, observability, rollback, cost controls, and a clear response when the agent is wrong.',
+  },
+];
 ---
 
 <Layout
-  title="Intent Solutions | Intelligent Solutions, Intentional Impact"
-  description="We build AI-powered solutions that learn, adapt, and drive real business outcomes — Claude Code systems, AI agents, private AI, and workflow automation."
+  title="Intent Solutions | Agentic Systems, Built and Operated"
+  description="Intent Solutions builds and operates agentic systems, proves their behavior in a public lab, and teaches the operating method through a separate practice."
 >
   <SiteNav />
 
-  <Hero client:load />
-  <TrustBar />
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Intent Solutions · Agentic systems</p>
+          <h1 id="hero-title">We build and operate <span>agentic systems.</span></h1>
+          <p class="hero-lede">
+            The model is one component. We design the context, tools, evaluations, release gates,
+            observability, and human judgment that make an agent useful after the demo.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="/contact/?door=outcome">Request an outcome</a>
+            <a class="button secondary" href="https://labs.intentsolutions.io/">See the proof</a>
+          </div>
+          <a class="quiet-link" href="https://learn.intentsolutions.io/">Learn the operating method <span aria-hidden="true">→</span></a>
+        </div>
 
-  <!-- ═══════════ What We Do ═══════════ -->
-  <section id="solutions" class="wwd-section" aria-labelledby="wwd-title">
-    <!-- Cosmic galaxy backdrop (dimmed) -->
-    <div class="wwd-cosmic" aria-hidden="true"></div>
-    <div class="wwd-cosmic-scrim" aria-hidden="true"></div>
-    <div class="wwd-container">
-
-      <div class="sec-eyebrow" aria-hidden="true">
-        <span class="eyebrow-rule"></span>
-        <span class="eyebrow-label">What We Do</span>
-        <span class="eyebrow-rule"></span>
+        <aside class="system-map" aria-label="How the Intent Solutions network fits together">
+          <p class="map-label">The network, in one view</p>
+          <div class="map-node map-parent">
+            <span>Intent Solutions</span>
+            <strong>Build and operate</strong>
+            <p>The company and accountable operating practice.</p>
+          </div>
+          <div class="map-connector" aria-hidden="true"><span></span></div>
+          <div class="map-pair">
+            <a class="map-node" href="https://labs.intentsolutions.io/">
+              <span>Labs</span>
+              <strong>Publish proof</strong>
+              <p>What ran and what happened.</p>
+            </a>
+            <a class="map-node" href="https://evals.intentsolutions.io/">
+              <span>Evals</span>
+              <strong>Define results</strong>
+              <p>What each result means.</p>
+            </a>
+          </div>
+          <div class="map-separate">
+            <span>Separate practice</span>
+            <a class="map-node" href="https://learn.intentsolutions.io/">
+              <span>Learn</span>
+              <strong>Teach the method</strong>
+              <p>Practice the work using live Lab evidence.</p>
+            </a>
+          </div>
+        </aside>
       </div>
+    </section>
 
-      <h2 id="wwd-title" class="sec-title">
-        AI systems, <span class="hl">built to ship</span>
-      </h2>
-      <p class="sec-subtitle">Five practices, one team — from Claude Code enablement to production cloud systems.</p>
-
-      <div class="wwd-grid">
-        {solutions.map((s, i) => (
-          <a
-            href={s.featured ? s.ctaHref : s.href}
-            target={s.featured ? '_blank' : undefined}
-            rel={s.featured ? 'noopener' : undefined}
-            class:list={['wwd-card', { 'wwd-card--featured': s.featured }]}
-            data-reveal={i}
-          >
-            {s.featured && (
-              <span class="wwd-flag">
-                <span class="wwd-diamond">◆</span> Core Practice
-              </span>
-            )}
-            <span class="wwd-icon">
-              <img src="/images/logo-mark.png" alt="" width={s.featured ? 30 : 20} height={s.featured ? 30 : 20} aria-hidden="true" />
-            </span>
-            <h3 class="wwd-name">{s.title}</h3>
-            <p class="wwd-desc">{s.desc}</p>
-            <span class="wwd-cta">
-              {s.featured ? s.cta : 'Learn more'}
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </a>
-        ))}
-      </div>
-
-      <!-- Ways to work with us -->
-      <div class="eng-strip" data-reveal="5">
-        <p class="eng-label">Ways to work with us</p>
-        <div class="eng-row">
-          {engagements.map(({ href, label, desc, featured, external }) => (
-            <a
-              href={href}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener' : undefined}
-              class:list={['eng-card', { 'eng-card--featured': featured }]}
-            >
-              <span class="eng-name">{label}{external && ' ↗'}</span>
-              <span class="eng-desc">{desc}</span>
+    <section class="paths section" aria-labelledby="paths-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Start here</p>
+          <h2 id="paths-title">Choose the question you have.</h2>
+          <p>No product maze. No provider quiz. Start with the job in front of you.</p>
+        </div>
+        <div class="path-grid">
+          {paths.map((path) => (
+            <a class="path-card" href={path.href}>
+              <span class="card-code">{path.code}</span>
+              <h3>{path.title}</h3>
+              <p>{path.body}</p>
+              <strong>{path.cta} <span aria-hidden="true">→</span></strong>
             </a>
           ))}
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <BuiltInTheOpen />
-
-  <!-- ═══════════ Team ═══════════ -->
-  <section id="team" class="team-section" aria-labelledby="team-title">
-    <div class="team-container">
-      <div class="sec-eyebrow" aria-hidden="true">
-        <span class="eyebrow-rule"></span>
-        <span class="eyebrow-label">The Team</span>
-        <span class="eyebrow-rule"></span>
-      </div>
-
-      <h2 id="team-title" class="sec-title">
-        the brains behind <span class="hl">Intent Solutions</span>
-      </h2>
-      <p class="sec-subtitle">Engineers who build, train, and ship.</p>
-
-      <div class="team-rows">
-        {[team.slice(0, 3), team.slice(3)].map((row) => (
-          <div class="team-row">
-            {row.map((m, i) => (
-              <div class="team-card" data-reveal={i}>
-                <span class="team-photo-ring">
-                  {m.photo ? (
-                    <img class="team-photo" src={m.photo} alt={`${m.name}, ${m.role}`} width="112" height="112" loading="lazy" />
-                  ) : (
-                    <span class="team-photo team-initials" aria-hidden="true">{initials(m.name)}</span>
-                  )}
-                </span>
-                <p class="team-name">{m.name}</p>
-                <p class="team-role">{m.role}</p>
-              </div>
-            ))}
+    <section id="proof" class="proof section" aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="proof-intro">
+          <div class="section-head left">
+            <p class="kicker">Public receipts</p>
+            <h2 id="proof-title">Your agent says it is done. <span>Now prove it.</span></h2>
           </div>
-        ))}
+          <p>
+            We do not ask you to trust a logo wall or a hand-typed metric. Inspect the work,
+            the result, and the definition behind it.
+          </p>
+        </div>
+        <div class="receipt-grid">
+          {receipts.map((receipt) => (
+            <a class="receipt" href={receipt.href}>
+              <span class="receipt-label">{receipt.label}</span>
+              <h3>{receipt.title}</h3>
+              <p>{receipt.body}</p>
+              <strong>{receipt.cta} <span aria-hidden="true">↗</span></strong>
+            </a>
+          ))}
+        </div>
+        <p class="field-note-link">
+          The build keeps a record. <a href="/field-notes/">Read the field notes <span aria-hidden="true">→</span></a>
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <ContactCta />
+    <section id="method" class="method section" aria-labelledby="method-title">
+      <div class="wrap method-grid">
+        <div class="section-head left method-head">
+          <p class="kicker">The operating method</p>
+          <h2 id="method-title">The tools can change. The discipline stays.</h2>
+          <p>
+            Claude, OpenAI, Gemini, open models, MCP servers, and whatever comes next are components.
+            The selection follows the work. The standard follows the system.
+          </p>
+        </div>
+        <ol class="method-list">
+          {method.map((step) => (
+            <li>
+              <span>{step.number}</span>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="founder section" aria-labelledby="founder-title">
+      <div class="wrap founder-grid">
+        <p class="founder-mark" aria-hidden="true">JL</p>
+        <div>
+          <p class="kicker">Who stands behind the work</p>
+          <h2 id="founder-title">Jeremy Longshore founded Intent Solutions to make agentic work operational.</h2>
+          <p>
+            Intent Solutions is the company. Models, providers, runtimes, and distribution channels are components.
+            The work ships under one name, with evidence you can inspect and an operator accountable for what happens next.
+          </p>
+          <a href="/about/">About Intent Solutions <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <video autoplay muted loop playsinline aria-hidden="true">
+        <source src="/astronaut.mp4" type="video/mp4" />
+      </video>
+      <div class="closing-overlay" aria-hidden="true"></div>
+      <div class="wrap closing-copy">
+        <p class="kicker">Bring us the outcome</p>
+        <h2 id="closing-title">Define what done means before the agent starts.</h2>
+        <p>We read every request and answer whether it is a fit. No pressure. No pitch deck.</p>
+        <div class="actions">
+          <a class="button primary" href="/contact/?door=outcome">Request an outcome</a>
+          <a class="button secondary" href="https://labs.intentsolutions.io/start/">Learn how we evaluate</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <Footer />
 </Layout>
 
 <style>
-  /* ─── Shared section furniture ─── */
-  .sec-eyebrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-  }
+  :global(html) { scroll-behavior: smooth; }
+  :global(body) { margin: 0; background: #09090b; }
+  :global(*) { box-sizing: border-box; }
 
-  .eyebrow-rule {
-    display: block;
-    height: 1px;
-    width: 3.5rem;
-    background: linear-gradient(to right, transparent, rgba(249,115,22,0.2));
-  }
+  .wrap { width: min(72rem, calc(100% - 2.5rem)); margin: 0 auto; }
+  .section { padding: clamp(5rem, 9vw, 8rem) 0; }
 
-  .eyebrow-rule:last-child {
-    background: linear-gradient(to left, transparent, rgba(249,115,22,0.2));
-  }
-
-  .eyebrow-label {
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: rgb(251 146 60);
-  }
-
-  .sec-title {
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    font-weight: 700;
-    color: rgb(250 250 250);
-    text-align: center;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-
-  /* Marker highlight — the signature device */
-  .hl {
-    background: linear-gradient(120deg, #FF8A2A, #F26205);
-    color: rgb(9 9 11);
-    padding: 0.02em 0.22em 0.06em;
-    border-radius: 8px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
-
-  .sec-subtitle {
-    text-align: center;
-    font-size: 0.95rem;
-    color: rgb(161 161 170);
-    margin-bottom: 3.25rem;
-  }
-
-  /* Scroll reveal */
-  [data-reveal] {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  [data-reveal].is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ═══════════ What We Do ═══════════ */
-  .wwd-section {
-    padding: 6.5rem 0;
-    background: rgb(9 9 11);
-    border-top: 1px solid rgba(39, 39, 42, 0.5);
+  .hero {
     position: relative;
+    min-height: min(52rem, calc(100vh - 6.15rem));
+    padding: clamp(5rem, 9vw, 8rem) 0;
     overflow: hidden;
+    background: #09090b url('/images/cosmic-bg-dark.jpg') center / cover no-repeat;
+    border-bottom: 1px solid rgba(63, 63, 70, 0.5);
   }
 
-  /* Galaxy image */
-  .wwd-cosmic {
-    position: absolute;
-    inset: 0;
-    background: url('/images/cosmic-bg-dark.jpg') center / cover no-repeat;
-    opacity: 0.72;
-    pointer-events: none;
-  }
-
-  /* Scrim — feathers only the top/bottom edges into the page and adds the
-     ember wash; kept light so the galaxy reads bright. Cards carry their
-     own dark backdrop, so text stays readable over the brighter image. */
-  .wwd-cosmic-scrim {
+  .hero-wash {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(to bottom, rgb(9 9 11) 0%, rgba(9,9,11,0) 16%, rgba(9,9,11,0) 84%, rgb(9 9 11) 100%),
-      radial-gradient(ellipse at 50% 30%, rgba(9,9,11,0.35) 0%, transparent 55%),
-      radial-gradient(circle at 82% 8%, rgba(249,115,22,0.06), transparent 55%);
-    pointer-events: none;
+      linear-gradient(90deg, rgba(9,9,11,0.98) 0%, rgba(9,9,11,0.88) 43%, rgba(9,9,11,0.56) 100%),
+      linear-gradient(0deg, #09090b 0%, transparent 26%);
   }
 
-  .wwd-container {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 0 2rem;
+  .hero-grid {
     position: relative;
-  }
-
-  .wwd-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.1rem;
-  }
-
-  .wwd-card {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    border-radius: 0.875rem;
-    background: rgba(20, 20, 23, 0.82);
-    border: 1px solid rgba(39, 39, 42, 0.75);
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    transition: border-color 0.28s ease, background 0.28s ease, transform 0.22s ease;
-  }
-
-  .wwd-card:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    background: rgba(24, 24, 27, 0.94);
-    transform: translateY(-3px);
-  }
-
-  .wwd-card--featured {
-    grid-column: span 2;
-    background: rgba(18, 18, 20, 0.95);
-    border-color: rgba(249, 115, 22, 0.28);
-    box-shadow: 0 0 0 1px rgba(249,115,22,0.04), 0 24px 64px rgba(0,0,0,0.5);
-  }
-
-  .wwd-card--featured:hover {
-    border-color: rgba(249, 115, 22, 0.45);
-  }
-
-  .wwd-flag {
-    display: flex;
+    grid-template-columns: minmax(0, 1.12fr) minmax(20rem, 0.88fr);
     align-items: center;
-    gap: 0.4rem;
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: 0.58rem;
+    gap: clamp(3rem, 7vw, 7rem);
+    z-index: 1;
+  }
+
+  .kicker,
+  .card-code,
+  .receipt-label,
+  .map-label,
+  .map-node > span,
+  .map-separate > span {
+    color: #fb923c;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.66rem;
     font-weight: 700;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgb(251 146 60);
-    margin-bottom: 1rem;
   }
 
-  .wwd-diamond { font-size: 0.4rem; line-height: 1; }
-
-  .wwd-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.55rem;
-    background: rgba(249, 115, 22, 0.07);
-    border: 1px solid rgba(249, 115, 22, 0.16);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .wwd-name {
+  .hero-copy h1 {
+    max-width: 47rem;
+    margin: 1rem 0 1.5rem;
+    color: #fafafa;
     font-family: 'Syne', system-ui, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: rgb(250 250 250);
-    margin: 0 0 0.5rem;
+    font-size: clamp(3rem, 7.2vw, 6.1rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.96;
   }
 
-  .wwd-card--featured .wwd-name { font-size: 1.3rem; }
+  .hero-copy h1 span,
+  .proof-intro h2 span { color: #ff7a1a; }
 
-  .wwd-desc {
-    font-size: 0.85rem;
-    color: rgb(161 161 170);
-    line-height: 1.6;
-    flex: 1;
-    margin: 0 0 1.25rem;
+  .hero-lede {
+    max-width: 42rem;
+    margin: 0 0 2rem;
+    color: #d4d4d8;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    line-height: 1.75;
   }
 
-  .wwd-cta {
+  .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+  .button {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: rgb(113 113 122);
-    transition: color 0.2s ease;
-    margin-top: auto;
-  }
-
-  .wwd-card:hover .wwd-cta { color: rgb(251 146 60); }
-  .wwd-card--featured .wwd-cta { color: rgb(251 146 60); }
-  .wwd-card--featured:hover .wwd-cta { color: rgb(253 186 116); }
-
-  /* ── Engagement strip ── */
-  .eng-strip {
-    margin-top: 2.75rem;
-    padding-top: 2.25rem;
-    border-top: 1px solid rgba(39, 39, 42, 0.5);
-  }
-
-  .eng-label {
-    text-align: center;
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: rgb(113 113 122);
-    margin: 0 0 1.25rem;
-  }
-
-  .eng-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.875rem;
-  }
-
-  .eng-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    padding: 0.95rem 1.2rem;
-    border-radius: 0.65rem;
-    background: rgba(24, 24, 27, 0.55);
-    border: 1px solid rgba(39, 39, 42, 0.7);
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.72rem 1.15rem;
+    border: 1px solid transparent;
+    border-radius: 0.48rem;
+    font-size: 0.86rem;
+    font-weight: 800;
     text-decoration: none;
-    transition: border-color 0.25s ease, transform 0.2s ease;
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
   }
 
-  .eng-card:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    transform: translateY(-2px);
+  .button:hover,
+  .button:focus-visible { transform: translateY(-1px); }
+  .button.primary { background: #f97316; color: #09090b; }
+  .button.primary:hover,
+  .button.primary:focus-visible { background: #fb923c; }
+  .button.secondary { background: rgba(9,9,11,0.54); border-color: #52525b; color: #fafafa; }
+  .button.secondary:hover,
+  .button.secondary:focus-visible { border-color: #fb923c; }
+
+  .quiet-link {
+    display: inline-flex;
+    gap: 0.4rem;
+    margin-top: 1.4rem;
+    color: #a1a1aa;
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+  .quiet-link:hover,
+  .quiet-link:focus-visible { color: #fafafa; }
+
+  .system-map {
+    padding: 1.25rem;
+    background: rgba(9, 9, 11, 0.78);
+    border: 1px solid rgba(82, 82, 91, 0.72);
+    border-radius: 1rem;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.46);
+    backdrop-filter: blur(16px);
   }
 
-  .eng-card--featured {
-    border-color: rgba(249, 115, 22, 0.28);
-  }
+  .map-label { display: block; margin: 0 0 1rem; color: #71717a; }
 
-  .eng-name {
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: rgb(228 228 231);
-  }
-
-  .eng-card--featured .eng-name { color: rgb(251 146 60); }
-
-  .eng-desc {
-    font-size: 0.75rem;
-    color: rgb(113 113 122);
-  }
-
-  /* ═══════════ Team ═══════════ */
-  .team-section {
-    padding: 6.5rem 0;
-    background: rgb(9 9 11);
-    border-top: 1px solid rgba(39, 39, 42, 0.5);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .team-container {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-  }
-
-  .team-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .team-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.25rem;
-  }
-
-  .team-card {
-    flex: 1 1 14rem;
-    text-align: center;
-    padding: 2rem 1.1rem 1.75rem;
-    border-radius: 0.875rem;
-    background: rgba(24, 24, 27, 0.65);
-    border: 1px solid rgba(39, 39, 42, 0.75);
-    transition: border-color 0.28s ease, transform 0.22s ease;
-  }
-
-  .team-card:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    transform: translateY(-4px);
-  }
-
-  /* Photo — ember ring, monochrome that warms to full colour on hover */
-  .team-photo-ring {
-    display: inline-block;
-    padding: 3px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(249,115,22,0.6), rgba(249,115,22,0.15));
-    margin-bottom: 1.15rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  }
-
-  .team-photo {
+  .map-node {
     display: block;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgb(9 9 11);
-    filter: grayscale(1) contrast(1.02);
-    transition: filter 0.35s ease;
+    padding: 1rem;
+    background: rgba(24, 24, 27, 0.86);
+    border: 1px solid #3f3f46;
+    border-radius: 0.7rem;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 160ms ease, transform 160ms ease;
   }
 
-  .team-card:hover .team-photo {
-    filter: grayscale(0);
-  }
+  a.map-node:hover,
+  a.map-node:focus-visible { border-color: #fb923c; transform: translateY(-2px); }
+  .map-parent { border-color: rgba(249, 115, 22, 0.55); }
+  .map-node > span { display: block; margin-bottom: 0.45rem; }
+  .map-node strong { display: block; color: #fafafa; font-family: 'Syne', system-ui, sans-serif; font-size: 1rem; }
+  .map-node p { margin: 0.3rem 0 0; color: #a1a1aa; font-size: 0.78rem; line-height: 1.5; }
 
-  /* Initials placeholder — same footprint as a photo */
-  .team-initials {
+  .map-connector { display: flex; justify-content: center; height: 1.5rem; }
+  .map-connector span { width: 1px; background: #52525b; }
+  .map-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .map-separate { margin-top: 1.3rem; padding-top: 1.1rem; border-top: 1px dashed #52525b; }
+  .map-separate > span { display: block; margin-bottom: 0.65rem; color: #71717a; }
+
+  .paths { background: #101012; }
+  .section-head { max-width: 47rem; margin: 0 auto 3rem; text-align: center; }
+  .section-head.left { margin-left: 0; text-align: left; }
+  .section-head h2,
+  .founder h2,
+  .closing h2 {
+    margin: 0.8rem 0 1rem;
+    color: #fafafa;
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 750;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
+  .section-head > p:last-child { color: #a1a1aa; font-size: 1rem; line-height: 1.7; }
+
+  .path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .path-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #1f1a17, #141010);
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: rgb(251 146 60);
-    letter-spacing: 0.03em;
-    filter: none;
+    min-height: 22rem;
+    padding: 1.6rem;
+    flex-direction: column;
+    background: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 0.85rem;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 180ms ease, transform 180ms ease;
+  }
+  .path-card:hover,
+  .path-card:focus-visible { border-color: #fb923c; transform: translateY(-3px); }
+  .path-card h3 { margin: 1.5rem 0 0.8rem; color: #fafafa; font-family: 'Syne', system-ui, sans-serif; font-size: 1.35rem; line-height: 1.25; }
+  .path-card p { margin: 0; color: #a1a1aa; font-size: 0.9rem; line-height: 1.7; }
+  .path-card > strong { margin-top: auto; padding-top: 1.5rem; color: #fb923c; font-size: 0.82rem; }
+
+  .proof { background: #09090b; }
+  .proof-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr); align-items: end; gap: 4rem; margin-bottom: 3rem; }
+  .proof-intro .section-head { margin-bottom: 0; }
+  .proof-intro > p { margin: 0 0 0.35rem; color: #a1a1aa; line-height: 1.75; }
+  .receipt-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #3f3f46; border-left: 1px solid #3f3f46; }
+  .receipt {
+    min-height: 16rem;
+    padding: 1.7rem;
+    border-right: 1px solid #3f3f46;
+    border-bottom: 1px solid #3f3f46;
+    color: inherit;
+    text-decoration: none;
+    transition: background 160ms ease;
+  }
+  .receipt:hover,
+  .receipt:focus-visible { background: #18181b; }
+  .receipt h3 { max-width: 28rem; margin: 1.5rem 0 0.7rem; color: #fafafa; font-family: 'Syne', system-ui, sans-serif; font-size: 1.25rem; }
+  .receipt p { max-width: 30rem; margin: 0 0 1.4rem; color: #a1a1aa; font-size: 0.88rem; line-height: 1.65; }
+  .receipt strong { color: #fb923c; font-size: 0.8rem; }
+  .field-note-link { margin: 1.5rem 0 0; color: #71717a; font-size: 0.82rem; text-align: right; }
+  .field-note-link a { color: #d4d4d8; text-decoration: none; }
+  .field-note-link a:hover,
+  .field-note-link a:focus-visible { color: #fb923c; }
+
+  .method { background: #101012; border-top: 1px solid rgba(63,63,70,0.5); border-bottom: 1px solid rgba(63,63,70,0.5); }
+  .method-grid { display: grid; grid-template-columns: minmax(17rem, 0.8fr) minmax(0, 1.2fr); gap: clamp(3rem, 8vw, 8rem); }
+  .method-head { position: sticky; top: 8rem; align-self: start; }
+  .method-list { margin: 0; padding: 0; list-style: none; }
+  .method-list li { display: grid; grid-template-columns: 3rem 1fr; gap: 1.2rem; padding: 1.6rem 0; border-top: 1px solid #3f3f46; }
+  .method-list li:last-child { border-bottom: 1px solid #3f3f46; }
+  .method-list > li > span { color: #fb923c; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.72rem; }
+  .method-list h3 { margin: 0 0 0.45rem; color: #fafafa; font-family: 'Syne', system-ui, sans-serif; font-size: 1.2rem; }
+  .method-list p { margin: 0; color: #a1a1aa; font-size: 0.9rem; line-height: 1.7; }
+
+  .founder { background: #09090b; }
+  .founder-grid { display: grid; grid-template-columns: 10rem minmax(0, 45rem); align-items: start; justify-content: center; gap: clamp(2rem, 6vw, 5rem); }
+  .founder-mark { margin: 0; color: rgba(249,115,22,0.16); font-family: 'Syne', system-ui, sans-serif; font-size: clamp(5rem, 12vw, 9rem); font-weight: 800; letter-spacing: -0.12em; line-height: 0.8; }
+  .founder h2 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
+  .founder div > p:not(.kicker) { color: #a1a1aa; line-height: 1.75; }
+  .founder a { color: #fb923c; font-size: 0.84rem; font-weight: 700; text-decoration: none; }
+
+  .closing { position: relative; min-height: 37rem; display: grid; place-items: center; overflow: hidden; text-align: center; }
+  .closing video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .closing-overlay { position: absolute; inset: 0; background: rgba(9,9,11,0.62); }
+  .closing-copy { position: relative; max-width: 52rem; z-index: 1; }
+  .closing-copy > p:not(.kicker) { max-width: 38rem; margin: 0 auto 2rem; color: #d4d4d8; line-height: 1.7; }
+  .closing .actions { justify-content: center; }
+
+  a:focus-visible { outline: 2px solid #fb923c; outline-offset: 4px; }
+
+  @media (max-width: 880px) {
+    .hero-grid,
+    .proof-intro,
+    .method-grid { grid-template-columns: 1fr; }
+    .system-map { max-width: 38rem; }
+    .path-grid { grid-template-columns: 1fr; }
+    .path-card { min-height: 15rem; }
+    .proof-intro { gap: 0.5rem; }
+    .method-head { position: static; }
   }
 
-  .team-name {
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: rgb(250 250 250);
-    margin: 0 0 0.3rem;
-  }
-
-  .team-role {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: rgb(251 146 60);
-    margin: 0;
-    line-height: 1.4;
-  }
-
-  /* ─── Responsive ─── */
-  @media (max-width: 1024px) {
-    .wwd-grid { grid-template-columns: repeat(2, 1fr); }
-    .wwd-card--featured { grid-column: span 2; }
-  }
-
-  @media (max-width: 680px) {
-    .team-card { flex: 1 1 14rem; }
-  }
-
-  @media (max-width: 640px) {
-    .wwd-section { padding: 5rem 0; }
-    .team-section { padding: 5rem 0; }
-    .wwd-grid, .eng-row { grid-template-columns: 1fr; }
-    .wwd-card--featured { grid-column: span 1; }
-    .wwd-container, .team-container { padding: 0 1.25rem; }
+  @media (max-width: 620px) {
+    .wrap { width: min(100% - 1.5rem, 72rem); }
+    .hero { min-height: auto; padding-top: 4rem; }
+    .hero-copy h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); }
+    .map-pair,
+    .receipt-grid { grid-template-columns: 1fr; }
+    .founder-grid { grid-template-columns: 1fr; }
+    .founder-mark { font-size: 5rem; }
+    .field-note-link { text-align: left; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    [data-reveal] {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
+    :global(html) { scroll-behavior: auto; }
+    .button,
+    .map-node,
+    .path-card { transition: none; }
+    .closing video { display: none; }
+    .closing { background: #18181b url('/images/hero-fallback.jpg') center / cover no-repeat; }
   }
 </style>
-
-<script>
-  function setupReveal() {
-    const els = document.querySelectorAll<HTMLElement>('[data-reveal]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          const index = parseInt(el.dataset.reveal ?? '0', 10);
-          setTimeout(() => el.classList.add('is-visible'), (index % 6) * 90);
-          observer.unobserve(el);
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-    );
-    els.forEach((el) => observer.observe(el));
-  }
-
-  document.addEventListener('DOMContentLoaded', setupReveal);
-  document.addEventListener('astro:page-load', setupReveal);
-</script>

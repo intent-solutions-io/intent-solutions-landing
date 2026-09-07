@@ -59,6 +59,19 @@ const offDomainPosts = offDomainFieldNoteUrls();
 const EXCLUDED_PATHS = new Set([
   `${SITE}/thank-you/`,
   `${SITE}/404/`,
+  `${SITE}/a2a/`,
+  `${SITE}/agents/`,
+  `${SITE}/ai-agents/`,
+  `${SITE}/ai-models/`,
+  `${SITE}/applications/`,
+  `${SITE}/automation/`,
+  `${SITE}/cloud/`,
+  `${SITE}/colab/`,
+  `${SITE}/infrastructure/`,
+  `${SITE}/intel-engine/`,
+  `${SITE}/private-ai/`,
+  `${SITE}/resellers/`,
+  `${SITE}/security-compliance/`,
 ]);
 
 // https://astro.build/config
@@ -77,7 +90,9 @@ export default defineConfig({
     react(),
     sitemap({
       filter: (page) =>
-        !EXCLUDED_PATHS.has(page) && !offDomainPosts.has(page),
+        !EXCLUDED_PATHS.has(page) &&
+        !page.startsWith(`${SITE}/learn/`) &&
+        !offDomainPosts.has(page),
     }),
   ],
 

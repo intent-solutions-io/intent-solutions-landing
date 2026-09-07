@@ -2,155 +2,99 @@
 import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import Footer from '../components/Footer';
+
+const responsibilities = [
+  {
+    title: 'The intent',
+    body: 'We define the outcome, accountable party, authority, constraints, and failure boundary before work begins.',
+  },
+  {
+    title: 'The system',
+    body: 'We design the context, tools, handoffs, human control, and operating loop around the agent.',
+  },
+  {
+    title: 'The evidence',
+    body: 'We test the claim, retain the failures, and publish results that can be inspected and reproduced.',
+  },
+  {
+    title: 'The operation',
+    body: 'We account for ownership, observability, cost, rollback, and what happens when a component fails.',
+  },
+];
 ---
 
 <Layout
-  title="about intent solutions io"
-  description="Meet the team building pragmatic AI systems, automation, and cloud foundations from Gulf Shores, Alabama."
+  title="About Intent Solutions"
+  description="Intent Solutions is the company Jeremy Longshore founded to build, evaluate, and operate agentic systems."
 >
   <SiteNav />
 
-  <main class="bg-zinc-900">
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="max-w-3xl">
-          <p class="uppercase tracking-[0.3em] text-xs font-semibold text-zinc-500 mb-4">
-            about
+  <main class="about">
+    <section class="about-hero">
+      <div class="wrap narrow">
+        <p class="kicker">About Intent Solutions</p>
+        <h1>One company stands behind the work.</h1>
+        <p class="lede">
+          Jeremy Longshore founded Intent Solutions to build and operate agentic systems with a clear
+          owner, a written definition of done, and evidence that survives the demo.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap responsibility-grid">
+        <div>
+          <p class="kicker">What the name means</p>
+          <h2>Intent Solutions is the brand, the practice, and the accountable operator.</h2>
+          <p>
+            Models, providers, runtimes, protocols, and distribution channels are components.
+            We choose them for the job. None of them becomes the identity of the company.
           </p>
-          <h1 class="text-h1 font-bold text-zinc-50 mb-6">
-            Pioneering AI with operator-first execution
-          </h1>
-          <p class="text-zinc-400 leading-relaxed text-lg">
-            intent solutions io sits where practical operations meets modern AI. We design, ship,
-            and maintain production systems that eliminate manual busywork while keeping data private
-            and compliant. Every build is crafted in Gulf Shores, Alabama, and tuned to go live fast.
-          </p>
+        </div>
+        <div class="responsibilities">
+          {responsibilities.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
 
-    <section class="py-24 border-b border-zinc-800/60 bg-zinc-950">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">AI / ML Expertise</h3>
-            <p class="text-sm text-zinc-400">
-              Fine-tuned agents, RAG pipelines, and reasoning systems that deliver measurable wins,
-              not just demos.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">Universal Diagnostics</h3>
-            <p class="text-sm text-zinc-400">
-              From automotive to healthcare, we build platforms that surface the right insight in the
-              right moment.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">Open Source</h3>
-            <p class="text-sm text-zinc-400">
-              430+ Claude Code plugins, 2,750+ agent skills, and the only external contributor to Google's Agent Starter Pack.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-3">Market Leadership</h3>
-            <p class="text-sm text-zinc-400">
-              Active in right-to-repair and emerging AI standards so your infrastructure stays
-              future-ready.
-            </p>
-          </div>
+    <section class="network section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">The public network</p>
+          <h2>Separate rooms. One operating standard.</h2>
+        </div>
+        <div class="network-grid">
+          <a href="https://labs.intentsolutions.io/">
+            <span>Labs + Evals</span>
+            <h3>The proof system</h3>
+            <p>Labs publishes results. Evals defines what those results mean.</p>
+          </a>
+          <a href="https://learn.intentsolutions.io/">
+            <span>Learn</span>
+            <h3>The separate practice</h3>
+            <p>Practitioners learn the method and work against production-shaped evidence.</p>
+          </a>
+          <a href="https://tonsofskills.com/">
+            <span>Marketplace + catalog</span>
+            <h3>The working artifacts</h3>
+            <p>Tools, skills, systems, and demos that can be inspected before adoption.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="py-24 border-b border-zinc-800/60">
-      <div class="container mx-auto px-8">
-        <div class="grid gap-12 lg:grid-cols-2 items-start">
-          <div>
-            <h2 class="text-3xl font-bold text-zinc-50 mb-6">
-              Built for cloud partnership
-            </h2>
-            <p class="text-zinc-400 leading-relaxed mb-4">
-              Every system we ship follows enterprise architecture patterns with observability,
-              access control, and rollback strategies baked in. Our experience across Google Cloud,
-              Firebase, and Vertex AI makes us a fast match for platform teams that value velocity and
-              safety.
-            </p>
-            <ul class="space-y-3 text-sm text-zinc-300">
-              <li class="flex items-center gap-3">
-                <span class="h-2 w-2 rounded-full bg-zinc-200"></span>
-                Enterprise-ready AI/ML workloads delivered with IaC.
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="h-2 w-2 rounded-full bg-zinc-200"></span>
-                Cloud-native design tuned for scale, redundancy, and compliance.
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="h-2 w-2 rounded-full bg-zinc-200"></span>
-                Continuous R&D to keep your stack modern without breaking production.
-              </li>
-            </ul>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">AI / ML</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Core Technology</p>
-            </div>
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">Cloud</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Native Architecture</p>
-            </div>
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">Scale</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Enterprise Ready</p>
-            </div>
-            <div class="card-slate text-center">
-              <div class="text-2xl font-bold text-zinc-100 mb-2">Innovation</div>
-              <p class="text-xs uppercase tracking-widest text-zinc-400">Continuous R&D</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24">
-      <div class="container mx-auto px-8">
-        <div class="max-w-3xl mb-12">
-          <h2 class="text-3xl font-bold text-zinc-50 mb-4">
-            Production systems we’ve shipped
-          </h2>
-          <p class="text-zinc-400">
-            We partner directly with operators—dealership principals, partners, and practice owners—to
-            design software that outlasts the hype cycle.
-          </p>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2">
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">DiagnosticPro</h3>
-            <p class="text-sm text-zinc-400">
-              AI-powered vehicle diagnostics that triage repair orders across multiple rooftops in
-              real time.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">Enterprise Automation</h3>
-            <p class="text-sm text-zinc-400">
-              Cloud Functions and Claude Code-driven flows that offload onboarding, reporting, and
-              compliance tasks across departments.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">Firebase + Firestore</h3>
-            <p class="text-sm text-zinc-400">
-              Scalable real-time backends supporting distributed teams and customer-facing analytics.
-            </p>
-          </div>
-          <div class="card-slate">
-            <h3 class="text-lg font-semibold text-zinc-50 mb-2">Vertex AI Integrations</h3>
-            <p class="text-sm text-zinc-400">
-              End-to-end pipelines that run on Google Cloud with guardrails around privacy and cost.
-            </p>
-          </div>
+    <section class="close section">
+      <div class="wrap narrow">
+        <p class="kicker">Gulf Shores, Alabama</p>
+        <h2>Bring the outcome. We will define the proof with you.</h2>
+        <div class="actions">
+          <a class="primary" href="/contact/?door=outcome">Request an outcome</a>
+          <a class="secondary" href="https://labs.intentsolutions.io/results/">Inspect current results</a>
         </div>
       </div>
     </section>
@@ -158,3 +102,53 @@ import Footer from '../components/Footer';
 
   <Footer />
 </Layout>
+
+<style>
+  :global(body) { margin: 0; background: #09090b; }
+  :global(*) { box-sizing: border-box; }
+  .wrap { width: min(72rem, calc(100% - 2.5rem)); margin: 0 auto; }
+  .narrow { max-width: 54rem; }
+  .section { padding: clamp(5rem, 9vw, 8rem) 0; }
+  .about-hero {
+    padding: clamp(6rem, 12vw, 10rem) 0;
+    background:
+      linear-gradient(90deg, rgba(9,9,11,0.98), rgba(9,9,11,0.68)),
+      url('/images/hero-about.jpg') center / cover no-repeat;
+    border-bottom: 1px solid #3f3f46;
+  }
+  .kicker,
+  .network-grid span { color: #fb923c; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  h1,
+  h2,
+  h3 { font-family: 'Syne', system-ui, sans-serif; }
+  h1 { max-width: 50rem; margin: 1rem 0 1.5rem; color: #fafafa; font-size: clamp(3rem, 7vw, 5.8rem); line-height: 0.98; letter-spacing: -0.05em; }
+  h2 { margin: 0.8rem 0 1rem; color: #fafafa; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; letter-spacing: -0.035em; }
+  .lede { max-width: 46rem; color: #d4d4d8; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.75; }
+  .responsibility-grid { display: grid; grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr); gap: clamp(3rem, 8vw, 8rem); }
+  .responsibility-grid > div:first-child > p:last-child { color: #a1a1aa; line-height: 1.75; }
+  .responsibilities { border-top: 1px solid #3f3f46; }
+  .responsibilities article { padding: 1.4rem 0; border-bottom: 1px solid #3f3f46; }
+  .responsibilities h3 { margin: 0 0 0.45rem; color: #fafafa; font-size: 1.15rem; }
+  .responsibilities p { margin: 0; color: #a1a1aa; font-size: 0.9rem; line-height: 1.7; }
+  .network { background: #101012; border-top: 1px solid #3f3f46; border-bottom: 1px solid #3f3f46; }
+  .section-head { max-width: 50rem; margin-bottom: 3rem; }
+  .network-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .network-grid a { min-height: 18rem; padding: 1.5rem; background: #18181b; border: 1px solid #3f3f46; border-radius: 0.8rem; color: inherit; text-decoration: none; transition: border-color 160ms ease, transform 160ms ease; }
+  .network-grid a:hover,
+  .network-grid a:focus-visible { border-color: #fb923c; transform: translateY(-2px); }
+  .network-grid h3 { margin: 1.4rem 0 0.7rem; color: #fafafa; font-size: 1.3rem; }
+  .network-grid p { margin: 0; color: #a1a1aa; font-size: 0.9rem; line-height: 1.7; }
+  .close { text-align: center; }
+  .close .narrow { display: flex; align-items: center; flex-direction: column; }
+  .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-top: 1rem; }
+  .actions a { padding: 0.8rem 1.15rem; border: 1px solid transparent; border-radius: 0.48rem; font-size: 0.85rem; font-weight: 800; text-decoration: none; }
+  .actions .primary { background: #f97316; color: #09090b; }
+  .actions .secondary { border-color: #52525b; color: #fafafa; }
+  a:focus-visible { outline: 2px solid #fb923c; outline-offset: 4px; }
+  @media (max-width: 800px) {
+    .responsibility-grid,
+    .network-grid { grid-template-columns: 1fr; }
+    .network-grid a { min-height: 13rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .network-grid a { transition: none; } }
+</style>

@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 declare global {
   interface Window {
@@ -30,50 +30,25 @@ const contactSchema = z.object({
   company: z.string().optional(),
   phone: z.string().optional(),
   interest: z.enum(['consulting', 'learn', 'colab', 'other'], {
-    required_error: 'please select what you\'re interested in',
+    required_error: 'please select a request type',
   }),
-  projectType: z.enum(['ai-ml', 'workflow-automation', 'gcp', 'strategy']).optional(),
-  budget: z.enum(['under-5k', '5k-15k', '15k-50k', '50k-plus', 'discuss']).optional(),
-  timeline: z.enum(['immediate', 'this-month', 'this-quarter', 'exploring']).optional(),
-  message: z.string().min(10, 'please tell us a bit more about your project'),
+  message: z.string().min(10, 'please describe the outcome you need'),
   website: z.string().max(0).optional(),
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
 
 const interestOptions = [
-  { value: 'consulting', label: 'Consulting / Custom Build' },
-  { value: 'learn',      label: 'Learn with Jeremy' },
-  { value: 'colab',      label: 'Colab with Jeremy' },
-  { value: 'other',      label: 'Other' },
-] as const;
-
-const projectTypeOptions = [
-  { value: 'ai-ml',               label: 'AI / Machine Learning' },
-  { value: 'workflow-automation', label: 'Workflow Automation' },
-  { value: 'gcp',                 label: 'GCP / Cloud Infrastructure' },
-  { value: 'strategy',            label: 'AI Strategy Consulting' },
-] as const;
-
-const budgetOptions = [
-  { value: 'under-5k', label: 'Under $5K' },
-  { value: '5k-15k',   label: '$5K - $15K' },
-  { value: '15k-50k',  label: '$15K - $50K' },
-  { value: '50k-plus', label: '$50K+' },
-  { value: 'discuss',  label: "Let's Discuss" },
-] as const;
-
-const timelineOptions = [
-  { value: 'immediate',    label: 'Immediate (this week)' },
-  { value: 'this-month',   label: 'This Month' },
-  { value: 'this-quarter', label: 'This Quarter' },
-  { value: 'exploring',    label: 'Just Exploring' },
+  { value: 'consulting', label: 'Request an outcome' },
+  { value: 'learn',      label: 'Ask about the Learn practice' },
+  { value: 'colab',      label: 'Discuss a partnership' },
+  { value: 'other',      label: 'Something else' },
 ] as const;
 
 const steps = [
-  { number: '01', title: 'You reach out',  description: 'Tell us about your project and goals' },
-  { number: '02', title: 'We connect',     description: 'Quick call to understand your needs' },
-  { number: '03', title: 'We ship',        description: 'Build, train, and deploy together' },
+  { number: '01', title: 'Name the outcome', description: 'Tell us what must change and why it matters' },
+  { number: '02', title: 'Define done',       description: 'We write the constraints and proof before work starts' },
+  { number: '03', title: 'Build and prove',   description: 'The system ships with evidence and an operating handoff' },
 ];
 
 /* ── Shared input style (inline) ── */
@@ -140,16 +115,20 @@ export default function Contact() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-    watch,
+    setValue,
   } = useForm<ContactForm>({ resolver: zodResolver(contactSchema) });
 
-  const selectedInterest = watch('interest');
+  useEffect(() => {
+    const door = new URLSearchParams(window.location.search).get('door');
+    if (door === 'outcome') setValue('interest', 'consulting');
+    if (door === 'partner') setValue('interest', 'colab');
+  }, [setValue]);
 
   const onSubmit = async (data: ContactForm) => {
     try {
       setSubmitError(null);
 
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/forms/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -158,9 +137,6 @@ export default function Contact() {
           company:     data.company     || undefined,
           phone:       data.phone       || undefined,
           interest:    data.interest,
-          projectType: data.projectType || undefined,
-          budget:      data.budget      || undefined,
-          timeline:    data.timeline    || undefined,
           message:     data.message,
           website:     data.website     || undefined,
         }),
@@ -174,7 +150,6 @@ export default function Contact() {
       window.gtag?.('event', 'form_submit', {
         form_name: 'enhanced_contact',
         interest:  data.interest,
-        budget:    data.budget,
       });
 
       setSubmitted(true);
@@ -272,7 +247,7 @@ export default function Contact() {
                 color: ORANGE,
               }}
             >
-              Start a Conversation
+              Request an outcome
             </span>
             <span style={{ display: 'block', height: 1, width: '3.5rem', background: 'linear-gradient(to left, transparent, rgba(249,115,22,0.2))' }} />
           </div>
@@ -289,11 +264,11 @@ export default function Contact() {
               textShadow: '0 2px 30px rgba(0,0,0,0.6)',
             }}
           >
-            Let's Build Something That{' '}
-            <span style={HIGHLIGHT}>Ships to Production</span>
+            Start with what must change.{' '}
+            <span style={HIGHLIGHT}>Define done before the build.</span>
           </h2>
           <p style={{ fontSize: '0.95rem', color: 'rgb(228 228 231)', textShadow: '0 1px 14px rgba(0,0,0,0.6)' }}>
-            Tired of AI demos that never make it past the POC phase?
+            Bring us the outcome, the operating constraints, and the evidence you will trust.
           </p>
         </motion.div>
 
@@ -359,7 +334,7 @@ export default function Contact() {
         </motion.div>
 
         <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'rgb(82 82 91)', marginBottom: '2.5rem' }}>
-          We respond within 24 hours
+          We read every request and answer whether it is a fit.
         </p>
 
         {/* ── Form ── */}
@@ -423,7 +398,7 @@ export default function Contact() {
           </div>
 
           {/* Interest */}
-          <Field label="What are you interested in?" required error={errors.interest?.message}>
+          <Field label="What kind of request is this?" required error={errors.interest?.message}>
             <select
               {...register('interest')}
               id="interest"
@@ -431,78 +406,21 @@ export default function Contact() {
               onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
               onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
             >
-              <option value="">Select an option...</option>
+              <option value="">Select a request...</option>
               {interestOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
           </Field>
 
-          {/* Project Type — conditional */}
-          {selectedInterest === 'consulting' && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Field label="Project Type" optional>
-                <select
-                  {...register('projectType')}
-                  id="projectType"
-                  style={{ ...inputStyle, cursor: 'pointer' }}
-                  onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
-                  onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
-                >
-                  <option value="">Select project type...</option>
-                  {projectTypeOptions.map((opt) => (
-                    <option key={opt.value} value={opt.value}>{opt.label}</option>
-                  ))}
-                </select>
-              </Field>
-            </motion.div>
-          )}
-
-          {/* Budget & Timeline */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
-            <Field label="Budget Range" optional>
-              <select
-                {...register('budget')}
-                id="budget"
-                style={{ ...inputStyle, cursor: 'pointer' }}
-                onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
-                onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
-              >
-                <option value="">Select budget...</option>
-                {budgetOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
-            </Field>
-            <Field label="Timeline" optional>
-              <select
-                {...register('timeline')}
-                id="timeline"
-                style={{ ...inputStyle, cursor: 'pointer' }}
-                onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
-                onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
-              >
-                <option value="">Select timeline...</option>
-                {timelineOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
-            </Field>
-          </div>
-
           {/* Message */}
-          <Field label="Project Details" required error={errors.message?.message}>
+          <Field label="What outcome do you need, and how will you know it worked?" required error={errors.message?.message}>
             <textarea
               {...register('message')}
               id="message"
               rows={4}
               style={{ ...inputStyle, resize: 'none', fontFamily: 'inherit' }}
-              placeholder="Tell us about your project, goals, and any specific challenges..."
+              placeholder="Describe the change you need, where it must run, and the evidence that would make you trust it."
               onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
               onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
             />
@@ -517,7 +435,7 @@ export default function Contact() {
           )}
           {submitted && !submitError && (
             <p style={{ fontSize: '0.85rem', color: ORANGE, textAlign: 'center' }}>
-              Thanks for reaching out! We'll be in touch within 24 hours.
+              Request received. We will answer whether it is a fit.
             </p>
           )}
 
@@ -535,7 +453,7 @@ export default function Contact() {
               cursor: isSubmitting || submitted ? 'not-allowed' : 'pointer',
             }}
           >
-            {isSubmitting ? 'Sending...' : submitted ? 'Sent!' : 'Get Started'}
+            {isSubmitting ? 'Sending...' : submitted ? 'Sent' : 'Send request'}
           </button>
         </motion.form>
 
@@ -552,38 +470,9 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p style={{ fontSize: '0.85rem', color: 'rgb(82 82 91)', marginBottom: '1.25rem' }}>
-            or reach out directly:
+            Prefer email?
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-            <a
-              href="https://calendar.app.google/Wqbt8EJuEh5xvvV58"
-              target="_blank"
-              rel="noopener"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                padding: '0.625rem 1.25rem',
-                background: 'rgba(18,18,20,0.7)',
-                border: '1px solid rgba(39,39,42,0.8)',
-                borderRadius: '0.5rem',
-                color: 'rgb(212 212 216)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                textDecoration: 'none',
-                transition: 'border-color 0.25s ease, color 0.25s ease',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(249,115,22,0.3)';
-                (e.currentTarget as HTMLElement).style.color = 'rgb(250 250 250)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(39,39,42,0.8)';
-                (e.currentTarget as HTMLElement).style.color = 'rgb(212 212 216)';
-              }}
-            >
-              Book a Call
-            </a>
             <a
               href="mailto:jeremy@intentsolutions.io"
               style={{
