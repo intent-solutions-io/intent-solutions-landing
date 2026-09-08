@@ -1,3 +1,14 @@
+# Release v3.1.1
+
+**Release Date**: 2026-09-08
+
+## Changes since v3.1.0
+
+- chore: release v3.1.1 [skip ci] (26fef8f)
+- content(field-notes): add the-cost-of-one-feature-in-a-sealed-repo (7362448)
+
+---
+
 # Release v3.1.0
 
 **Release Date**: 2026-09-07
