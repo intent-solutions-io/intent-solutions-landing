@@ -1,3 +1,14 @@
+# Release v3.1.3
+
+**Release Date**: 2026-09-12
+
+## Changes since v3.1.2
+
+- chore: release v3.1.3 [skip ci] (791f1d2)
+- docs: record verified site release and retire stale agent guidance (dee422a)
+
+---
+
 # Release v3.1.2
 
 **Release Date**: 2026-09-12
