@@ -158,6 +158,8 @@ Article instances inherit the field-note route's reader purpose and return to th
 | /field-notes/wrong-mode-green-is-not-a-gate/ | https://startaitools.com/posts/wrong-mode-green-is-not-a-gate/ |
 | /field-notes/zero-to-ci-full-stack-dashboard-one-session/ | https://startaitools.com/posts/zero-to-ci-full-stack-dashboard-one-session/ |
 
+The upstream content rebase also preserved `/field-notes/the-cost-of-one-feature-in-a-sealed-repo/`, canonical to https://startaitools.com/posts/the-cost-of-one-feature-in-a-sealed-repo/ and excluded from this site's XML sitemap.
+
 ## Regression gates
 
 The route contract lives in astro-site/src/data/site-map.mjs. audit-site-map.mjs checks complete source coverage, unique mappings, one H1, intended indexing, and every local link/anchor on static route pages. audit-indexability.mjs separately checks emitted XML URLs, canonical agreement, unique titles, and utility artifacts. Public /site-map/ exposes current company and related-property destinations, not obsolete offers. API endpoints and healthz are infrastructure, not marketing pages.

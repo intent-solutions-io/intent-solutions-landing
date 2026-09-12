@@ -88,7 +88,7 @@ export default function Footer() {
         .footer-brand small {
           color: var(--intent-muted);
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 0.68rem;
+          font-size: 0.75rem;
           letter-spacing: 0.08em;
           text-transform: uppercase;
         }
@@ -96,7 +96,7 @@ export default function Footer() {
           margin: 0 0 1rem;
           color: #fb923c;
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 0.66rem;
+          font-size: 0.75rem;
           letter-spacing: 0.14em;
           text-transform: uppercase;
         }
@@ -105,6 +105,8 @@ export default function Footer() {
           align-items: center;
           min-height: 44px;
           width: fit-content;
+          max-width: 100%;
+          overflow-wrap: anywhere;
           margin-bottom: 0.2rem;
           color: #a1a1aa;
           font-size: 0.86rem;
@@ -128,7 +130,7 @@ export default function Footer() {
         .footer-bottom div { display: flex; flex-wrap: wrap; gap: 1.25rem; }
         .footer-bottom a { display: inline-flex; align-items: center; min-height: 44px; color: var(--intent-muted); font-size: 0.73rem; text-decoration: none; }
         a:focus-visible { outline: 2px solid #fb923c; outline-offset: 3px; }
-        @media (max-width: 720px) {
+        @media (max-width: 960px) {
           .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
           .footer-brand { grid-column: 1 / -1; }
           .footer-bottom { align-items: flex-start; flex-direction: column; }

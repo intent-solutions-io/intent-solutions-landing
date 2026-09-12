@@ -31,4 +31,6 @@ PR CI and main pre-deploy now run the build, indexing, route contract, and inter
 
 Rollback is a reviewed Git revert followed by the same checks and deployment. The superseded page content remains in Git history. No production database or legal-policy contents are changed.
 
+The upstream content rebase preserves the new sealed-repo field note and release metadata; it adds one generated article (120 pages total). Text-reflow testing additionally found fixed footer column widths at 200% text size; the footer now switches to its two-column layout at tablet width. The no-JavaScript assertion inspects rendered body text because Playwright intentionally excludes noscript descendants from its text matcher.
+
 Release evidence will be appended after merge and live verification. Other estate properties and the separate deploy-transport/local-Beads repair issues remain outside this release.
