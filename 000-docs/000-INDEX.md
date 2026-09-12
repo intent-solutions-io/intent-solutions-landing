@@ -1,5 +1,13 @@
 # Document Inventory - intent-solutions-landing
 
+## September 2026 brand audit
+
+- [082: Brand estate research](082-RA-ANLY-brand-estate-research.md)
+- [083: Impeccable estate review](083-RA-AUDT-impeccable-estate-review.md)
+- [084: Approved brand family contract](084-AT-DSGN-brand-family-contract.md)
+- [085: Individual site map and visitor journeys](085-AT-ARCH-site-map.md)
+- [086: Messaging and release record](086-DC-DEVN-customer-first-release.md)
+
 **Generated:** $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 **Standard:** Document Filing System v2.0
 **Structure:** Flat directory, chronological sequence

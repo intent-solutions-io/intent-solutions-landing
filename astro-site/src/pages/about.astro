@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const responsibilities = [
   {
     title: 'The intent',
-    body: 'We define the outcome, accountable party, authority, constraints, and failure boundary before work begins.',
+    body: 'We define the outcome, responsible team, authority, constraints, and failure boundary before work begins.',
   },
   {
     title: 'The system',
@@ -21,22 +21,41 @@ const responsibilities = [
     body: 'We account for ownership, observability, cost, rollback, and what happens when a component fails.',
   },
 ];
+
+const team = [
+  { name: 'Jeremy Longshore', role: 'Founder & CEO' },
+  { name: 'Opeyemi Ariyo', role: 'Co-Founder & Chief Technical Officer' },
+  { name: 'Pablo Perez', role: 'Co-Founder & Project Manager' },
+  { name: 'Max Sheahan', role: 'Lead Instructor' },
+  { name: 'Tim Neunzig', role: 'Head of German Operations' },
+  { name: 'Tolulope Ariyo', role: 'Software & Design Engineer' },
+];
+
+const credentials = [
+  {
+    title: 'Claude Partner Badge · Claude Code',
+    holder: 'Jeremy Longshore',
+    issuer: 'Anthropic',
+    embedUrl: 'https://www.credly.com/embedded_badge/ddf22fb4-0aa6-46b3-a93b-0b45b509e471',
+    frameTitle: 'Claude Partner Badge for Claude Code, held by Jeremy Longshore and verified on Credly',
+  },
+];
 ---
 
 <Layout
   title="About Intent Solutions"
-  description="Intent Solutions is the company Jeremy Longshore founded to build, evaluate, and operate agentic systems."
+  description="Intent Solutions is a team of builders, operators, and instructors who build, evaluate, teach, and run agentic systems."
 >
   <SiteNav />
 
   <main class="about">
     <section class="about-hero">
       <div class="wrap narrow">
-        <p class="kicker">About Intent Solutions</p>
-        <h1>One company stands behind the work.</h1>
+        <h1>A team stands behind the work.</h1>
         <p class="lede">
-          Jeremy Longshore founded Intent Solutions to build and operate agentic systems with a clear
-          owner, a written definition of done, and evidence that survives the demo.
+          Jeremy Longshore founded Intent Solutions. Today, our engineers, operators, instructors, and
+          project leaders build and run agentic systems together—with written definitions of done and
+          evidence that survives the demo.
         </p>
       </div>
     </section>
@@ -45,7 +64,7 @@ const responsibilities = [
       <div class="wrap responsibility-grid">
         <div>
           <p class="kicker">What the name means</p>
-          <h2>Intent Solutions is the brand, the practice, and the accountable operator.</h2>
+          <h2>Intent Solutions is the brand, the practice, and the operating standard.</h2>
           <p>
             Models, providers, runtimes, protocols, and distribution channels are components.
             We choose them for the job. None of them becomes the identity of the company.
@@ -62,6 +81,52 @@ const responsibilities = [
       </div>
     </section>
 
+    <section id="team" class="team section" aria-labelledby="team-title">
+      <div class="wrap team-intro">
+        <div class="section-head">
+          <p class="kicker">Built by practitioners</p>
+          <h2 id="team-title">The people in the operating loop.</h2>
+          <p>
+            The company is founder-led and team-built. These are the people shaping the systems,
+            evaluations, delivery, and learning practice behind the Intent Solutions name.
+          </p>
+        </div>
+
+        <div class="team-list">
+          {team.map((member) => (
+            <article>
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="credentials" aria-labelledby="credentials-title">
+          <div class="credentials-head">
+            <p class="kicker">Team credentials</p>
+            <h3 id="credentials-title">Verified practice, kept in context.</h3>
+            <p>
+              Credentials support the work; they do not replace the evidence. This shelf can grow as
+              the team earns and maintains additional partner credentials.
+            </p>
+          </div>
+          <div class="credentials-list">
+            {credentials.map((credential) => (
+              <article class="credential-item">
+                <iframe
+                  src={credential.embedUrl}
+                  width="150"
+                  height="270"
+                  loading="lazy"
+                  title={credential.frameTitle}></iframe>
+                <p><strong>{credential.title}</strong><span>{credential.holder} · Issued by {credential.issuer}</span></p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="network section">
       <div class="wrap">
         <div class="section-head">
@@ -74,15 +139,20 @@ const responsibilities = [
             <h3>The proof system</h3>
             <p>Labs publishes results. Evals defines what those results mean.</p>
           </a>
+          <a href="https://demos.intentsolutions.io/">
+            <span>Demos</span>
+            <h3>The working catalog</h3>
+            <p>Open systems, architecture walkthroughs, and representative outputs.</p>
+          </a>
           <a href="https://learn.intentsolutions.io/">
             <span>Learn</span>
             <h3>The separate practice</h3>
             <p>Practitioners learn the method and work against production-shaped evidence.</p>
           </a>
           <a href="https://tonsofskills.com/">
-            <span>Marketplace + catalog</span>
-            <h3>The working artifacts</h3>
-            <p>Tools, skills, systems, and demos that can be inspected before adoption.</p>
+            <span>Marketplace</span>
+            <h3>The reusable tools</h3>
+            <p>Plugins and agent skills that can be inspected before adoption.</p>
           </a>
         </div>
       </div>
@@ -130,9 +200,25 @@ const responsibilities = [
   .responsibilities article { padding: 1.4rem 0; border-bottom: 1px solid #3f3f46; }
   .responsibilities h3 { margin: 0 0 0.45rem; color: #fafafa; font-size: 1.15rem; }
   .responsibilities p { margin: 0; color: #a1a1aa; font-size: 0.9rem; line-height: 1.7; }
+  .team { background: #09090b; }
+  .team-intro > .section-head > p:last-child { max-width: 47rem; color: #a1a1aa; line-height: 1.75; }
+  .team-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #3f3f46; }
+  .team-list article { min-height: 8.5rem; padding: 1.5rem 1.25rem 1.5rem 0; border-bottom: 1px solid #3f3f46; }
+  .team-list article:not(:nth-child(3n + 1)) { padding-left: 1.25rem; border-left: 1px solid #3f3f46; }
+  .team-list h3 { margin: 0 0 0.45rem; color: #fafafa; font-size: 1.05rem; }
+  .team-list p { margin: 0; color: #a1a1aa; font-size: 0.82rem; line-height: 1.5; }
+  .credentials { margin-top: 3.5rem; padding: 1.75rem; background: #101012; border: 1px solid #3f3f46; border-radius: 0.8rem; }
+  .credentials h3 { margin: 0.7rem 0; color: #fafafa; font-size: 1.35rem; }
+  .credentials-head > p:last-child { max-width: 42rem; margin: 0; color: #a1a1aa; font-size: 0.88rem; line-height: 1.7; }
+  .credentials-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr)); gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #3f3f46; }
+  .credential-item { display: flex; align-items: center; gap: 1rem; min-width: 0; }
+  .credential-item iframe { flex: 0 0 auto; border: 0; }
+  .credential-item p { display: flex; flex-direction: column; gap: 0.35rem; margin: 0; color: #d4d4d8; font-size: 0.78rem; line-height: 1.45; }
+  .credential-item strong { color: #fafafa; font-size: 0.86rem; }
+  .credential-item span { color: #8b8b95; }
   .network { background: #101012; border-top: 1px solid #3f3f46; border-bottom: 1px solid #3f3f46; }
   .section-head { max-width: 50rem; margin-bottom: 3rem; }
-  .network-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .network-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
   .network-grid a { min-height: 18rem; padding: 1.5rem; background: #18181b; border: 1px solid #3f3f46; border-radius: 0.8rem; color: inherit; text-decoration: none; transition: border-color 160ms ease, transform 160ms ease; }
   .network-grid a:hover,
   .network-grid a:focus-visible { border-color: #fb923c; transform: translateY(-2px); }
@@ -148,7 +234,17 @@ const responsibilities = [
   @media (max-width: 800px) {
     .responsibility-grid,
     .network-grid { grid-template-columns: 1fr; }
+    .team-list { grid-template-columns: 1fr 1fr; }
+    .team-list article:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; }
+    .team-list article:nth-child(even) { padding-left: 1.25rem; border-left: 1px solid #3f3f46; }
+    .credentials { grid-template-columns: 1fr; }
+    .credential-item { min-width: 0; }
     .network-grid a { min-height: 13rem; }
+  }
+  @media (max-width: 520px) {
+    .team-list { grid-template-columns: 1fr; }
+    .team-list article:nth-child(even) { padding-left: 0; border-left: 0; }
+    .credential-item { align-items: flex-start; flex-direction: column; }
   }
   @media (prefers-reduced-motion: reduce) { .network-grid a { transition: none; } }
 </style>

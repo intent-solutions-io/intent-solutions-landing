@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "audit:indexability": "node scripts/audit-indexability.mjs",
+    "audit:site-map": "node scripts/audit-site-map.mjs",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",

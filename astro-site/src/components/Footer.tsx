@@ -4,6 +4,7 @@ const networkLinks = [
   { label: 'Learn', href: 'https://learn.intentsolutions.io/' },
   { label: 'Demos', href: 'https://demos.intentsolutions.io/' },
   { label: 'Marketplace', href: 'https://tonsofskills.com/' },
+  { label: 'Omarchy', href: 'https://oma.intentsolutions.io/' },
 ];
 
 const companyLinks = [
@@ -11,6 +12,8 @@ const companyLinks = [
   { label: 'Field notes', href: '/field-notes/' },
   { label: 'About', href: '/about/' },
   { label: 'Contact', href: '/contact/' },
+  { label: 'Support', href: '/support/' },
+  { label: 'Site map', href: '/site-map/' },
   { label: 'GitHub', href: 'https://github.com/jeremylongshore' },
 ];
 
@@ -29,7 +32,7 @@ export default function Footer() {
             <img src="/images/logo-mark.png" alt="" width="28" height="28" />
             <span>Intent <strong>Solutions</strong></span>
           </a>
-          <p>We build and operate agentic systems, then publish the evidence behind the work.</p>
+          <p>AI implementation with a defined outcome, evidence you can inspect, and a plan for operating the system.</p>
           <small>Gulf Shores, Alabama</small>
         </div>
 
@@ -83,7 +86,7 @@ export default function Footer() {
           line-height: 1.7;
         }
         .footer-brand small {
-          color: #71717a;
+          color: var(--intent-muted);
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
           font-size: 0.68rem;
           letter-spacing: 0.08em;
@@ -98,9 +101,11 @@ export default function Footer() {
           text-transform: uppercase;
         }
         .footer-grid > div:not(.footer-brand) > a {
-          display: block;
+          display: flex;
+          align-items: center;
+          min-height: 44px;
           width: fit-content;
-          margin-bottom: 0.7rem;
+          margin-bottom: 0.2rem;
           color: #a1a1aa;
           font-size: 0.86rem;
           text-decoration: none;
@@ -119,9 +124,9 @@ export default function Footer() {
           padding-top: 1.5rem;
           border-top: 1px solid rgba(63, 63, 70, 0.45);
         }
-        .footer-bottom p { margin: 0; color: #71717a; font-size: 0.73rem; }
+        .footer-bottom p { margin: 0; color: var(--intent-muted); font-size: 0.73rem; }
         .footer-bottom div { display: flex; flex-wrap: wrap; gap: 1.25rem; }
-        .footer-bottom a { color: #71717a; font-size: 0.73rem; text-decoration: none; }
+        .footer-bottom a { display: inline-flex; align-items: center; min-height: 44px; color: var(--intent-muted); font-size: 0.73rem; text-decoration: none; }
         a:focus-visible { outline: 2px solid #fb923c; outline-offset: 3px; }
         @media (max-width: 720px) {
           .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

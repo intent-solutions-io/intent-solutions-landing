@@ -12,8 +12,8 @@ interface Props {
 
 const {
   title,
-  description = 'Intent Solutions builds and operates agentic systems, proves their behavior, and teaches the operating method.',
-  ogImage = `${Astro.site}og-image.svg`,
+  description = 'Intent Solutions builds and operates AI systems around defined outcomes, with tests, human control, and evidence you can inspect.',
+  ogImage = `${Astro.site}og-image.png`,
   canonical,
   noindex = false,
 } = Astro.props;
@@ -37,6 +37,8 @@ const siteJsonLd = [
       'https://linkedin.com/in/jeremylongshore',
       'https://tonsofskills.com',
       'https://labs.intentsolutions.io',
+      'https://evals.intentsolutions.io',
+      'https://demos.intentsolutions.io',
       'https://learn.intentsolutions.io',
     ],
   },
@@ -68,7 +70,7 @@ const siteJsonLd = [
       description={description}
       canonical={canonicalURL}
       noindex={noindex}
-      nofollow={noindex}
+      nofollow={false}
       openGraph={{
         basic: {
           title: title,

@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+:root { --intent-muted: #a1a1aa; }
+input::placeholder, textarea::placeholder { color: #a1a1aa; opacity: 1; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #fb923c !important; outline-offset: 3px; }
+input, select, textarea { caret-color: #fb923c; min-width: 0; }
+html { scroll-padding-top: 5rem; }
+::selection { background: #fb923c; color: #09090b; }
+
 /* Intent Solutions IO - Charcoal Slate Theme (Theme 7) */
 /* Minimal professional gray monochrome design */
 

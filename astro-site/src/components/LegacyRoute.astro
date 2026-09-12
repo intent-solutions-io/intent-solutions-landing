@@ -1,0 +1,13 @@
+---
+import DirectoryLayout from '../layouts/DirectoryLayout.astro';
+import { legacy } from '../data/site-map.mjs';
+const entry = legacy.find((route) => route.path === Astro.url.pathname.replace(/\/?$/, '/'));
+if (!entry) throw new Error(`Unmapped legacy route: ${Astro.url.pathname}`);
+const isLearn = entry.path.startsWith('/learn/');
+---
+<DirectoryLayout title={`${entry.label}: current information`} noindex={true}
+  description={isLearn ? 'Learning and practitioner access now live at Intent Solutions Learn.' : 'This older service page has been retired. It is not a current offer, package, or statement of included support.'}>
+  <p>{isLearn ? 'Visit the practice to see its current method and access requirements.' : 'Intent Solutions starts with the outcome you need. Describe the work so we can review the fit and define the scope. An inquiry does not enroll you in a partner or reseller program.'}</p>
+  <a class="route-action" href={entry.next}>{isLearn ? 'Visit Intent Solutions Learn' : entry.next.startsWith('/projects') ? 'Explore current public work' : entry.next.includes('#method') ? 'Read the operating method' : 'Send a request'}</a>
+  <a class="route-action" href="/site-map/">Find another page</a>
+</DirectoryLayout>

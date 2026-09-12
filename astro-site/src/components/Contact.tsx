@@ -65,12 +65,14 @@ const inputStyle: React.CSSProperties = {
 };
 
 function Field({
+  id,
   label,
   required,
   optional,
   error,
   children,
 }: {
+  id: string;
   label: string;
   required?: boolean;
   optional?: boolean;
@@ -80,6 +82,7 @@ function Field({
   return (
     <div>
       <label
+        htmlFor={id}
         style={{
           display: 'block',
           fontSize: '0.75rem',
@@ -93,11 +96,11 @@ function Field({
       >
         {label}
         {required && <span style={{ color: ORANGE, marginLeft: '0.2rem' }}>*</span>}
-        {optional && <span style={{ color: 'rgb(82 82 91)', marginLeft: '0.3rem', fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>(optional)</span>}
+        {optional && <span style={{ color: 'var(--intent-muted)', marginLeft: '0.3rem', fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>(optional)</span>}
       </label>
       {children}
       {error && (
-        <p style={{ marginTop: '0.375rem', fontSize: '0.78rem', color: 'rgb(248 113 113)' }}>
+        <p id={`${id}-error`} role="alert" style={{ marginTop: '0.375rem', fontSize: '0.78rem', color: 'rgb(248 113 113)' }}>
           {error}
         </p>
       )}
@@ -106,6 +109,7 @@ function Field({
 }
 
 export default function Contact() {
+  const [ready, setReady] = useState(false);
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.08 });
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -119,6 +123,7 @@ export default function Contact() {
   } = useForm<ContactForm>({ resolver: zodResolver(contactSchema) });
 
   useEffect(() => {
+    setReady(true);
     const door = new URLSearchParams(window.location.search).get('door');
     if (door === 'outcome') setValue('interest', 'consulting');
     if (door === 'partner') setValue('interest', 'colab');
@@ -230,7 +235,7 @@ export default function Contact() {
         {/* ── Section header ── */}
         <motion.div
           style={{ textAlign: 'center', marginBottom: '3rem' }}
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
@@ -288,7 +293,7 @@ export default function Contact() {
         {/* ── 3-step process ── */}
         <motion.div
           style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem', marginBottom: '2.5rem' }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
@@ -326,43 +331,52 @@ export default function Contact() {
               <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: '0.8rem', fontWeight: 600, color: 'rgb(228 228 231)', margin: '0 0 0.3rem' }}>
                 {step.title}
               </p>
-              <p style={{ fontSize: '0.75rem', color: 'rgb(82 82 91)', margin: 0 }}>
+              <p style={{ fontSize: '0.75rem', color: 'var(--intent-muted)', margin: 0 }}>
                 {step.description}
               </p>
             </div>
           ))}
         </motion.div>
 
-        <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'rgb(82 82 91)', marginBottom: '2.5rem' }}>
+        <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--intent-muted)', marginBottom: '2.5rem' }}>
           We read every request and answer whether it is a fit.
         </p>
 
         {/* ── Form ── */}
         <motion.form
+          method="post"
           onSubmit={handleSubmit(onSubmit)}
           style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, delay: 0.2 }}
         >
           {/* Name & Email */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
-            <Field label="Name" required error={errors.name?.message}>
+            <Field id="name" label="Name" required error={errors.name?.message}>
               <input
                 {...register('name')}
                 type="text"
                 id="name"
+                autoComplete="name"
+                aria-required="true"
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? 'name-error' : undefined}
                 style={inputStyle}
                 placeholder="Your name"
                 onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
                 onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
               />
             </Field>
-            <Field label="Email" required error={errors.email?.message}>
+            <Field id="email" label="Email" required error={errors.email?.message}>
               <input
                 {...register('email')}
                 type="email"
                 id="email"
+                autoComplete="email"
+                aria-required="true"
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? 'email-error' : undefined}
                 style={inputStyle}
                 placeholder="you@example.com"
                 onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
@@ -373,22 +387,24 @@ export default function Contact() {
 
           {/* Company & Phone */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
-            <Field label="Company" optional>
+            <Field id="company" label="Company" optional>
               <input
                 {...register('company')}
                 type="text"
                 id="company"
+                autoComplete="organization"
                 style={inputStyle}
                 placeholder="Your company"
                 onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
                 onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
               />
             </Field>
-            <Field label="Phone" optional>
+            <Field id="phone" label="Phone" optional>
               <input
                 {...register('phone')}
                 type="tel"
                 id="phone"
+                autoComplete="tel"
                 style={inputStyle}
                 placeholder="+1 555 123 4567"
                 onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
@@ -398,10 +414,13 @@ export default function Contact() {
           </div>
 
           {/* Interest */}
-          <Field label="What kind of request is this?" required error={errors.interest?.message}>
+          <Field id="interest" label="What kind of request is this?" required error={errors.interest?.message}>
             <select
               {...register('interest')}
               id="interest"
+              aria-required="true"
+              aria-invalid={!!errors.interest}
+              aria-describedby={errors.interest ? 'interest-error' : undefined}
               style={{ ...inputStyle, cursor: 'pointer' }}
               onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
               onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
@@ -414,12 +433,15 @@ export default function Contact() {
           </Field>
 
           {/* Message */}
-          <Field label="What outcome do you need, and how will you know it worked?" required error={errors.message?.message}>
+          <Field id="message" label="What outcome do you need, and how will you know it worked?" required error={errors.message?.message}>
             <textarea
               {...register('message')}
               id="message"
+              aria-required="true"
+              aria-invalid={!!errors.message}
+              aria-describedby={errors.message ? 'message-error' : undefined}
               rows={4}
-              style={{ ...inputStyle, resize: 'none', fontFamily: 'inherit' }}
+              style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }}
               placeholder="Describe the change you need, where it must run, and the evidence that would make you trust it."
               onFocus={e => (e.target.style.borderColor = 'rgba(249,115,22,0.35)')}
               onBlur={e => (e.target.style.borderColor = 'rgba(39,39,42,0.8)')}
@@ -431,10 +453,10 @@ export default function Contact() {
 
           {/* Status messages */}
           {submitError && (
-            <p style={{ fontSize: '0.85rem', color: 'rgb(248 113 113)', textAlign: 'center' }}>{submitError}</p>
+            <p role="alert" style={{ fontSize: '0.85rem', color: 'rgb(248 113 113)', textAlign: 'center' }}>{submitError}</p>
           )}
           {submitted && !submitError && (
-            <p style={{ fontSize: '0.85rem', color: ORANGE, textAlign: 'center' }}>
+            <p role="status" style={{ fontSize: '0.85rem', color: ORANGE, textAlign: 'center' }}>
               Request received. We will answer whether it is a fit.
             </p>
           )}
@@ -442,7 +464,7 @@ export default function Contact() {
           {/* Submit */}
           <button
             type="submit"
-            disabled={isSubmitting || submitted}
+            disabled={!ready || isSubmitting || submitted}
             className="btn-primary"
             style={{
               width: '100%',
@@ -453,7 +475,7 @@ export default function Contact() {
               cursor: isSubmitting || submitted ? 'not-allowed' : 'pointer',
             }}
           >
-            {isSubmitting ? 'Sending...' : submitted ? 'Sent' : 'Send request'}
+            {!ready ? 'Loading form...' : isSubmitting ? 'Sending...' : submitted ? 'Sent' : 'Send request'}
           </button>
         </motion.form>
 
@@ -469,7 +491,7 @@ export default function Contact() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p style={{ fontSize: '0.85rem', color: 'rgb(82 82 91)', marginBottom: '1.25rem' }}>
+          <p style={{ fontSize: '0.85rem', color: 'var(--intent-muted)', marginBottom: '1.25rem' }}>
             Prefer email?
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1.5rem' }}>

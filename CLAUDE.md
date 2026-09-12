@@ -18,7 +18,9 @@ After upgrading `bd`: run `bd info --whats-new` and `bd hooks install` if warned
 
 ## Repository Overview
 
-Intent Solutions landing page — **Discovery-first engagement model**. Three core offerings: **Learn with Jeremy**, **Consulting**, and **Building (Claude Code Systems)**. No public pricing — potential clients book a discovery call.
+Intent Solutions company site: accountable AI implementation. Lead with the customer's work, a defined outcome, inspectable evidence, and operating responsibility. The current conversion is **Request an outcome**, not a calendar booking. Practitioner access lives at learn.intentsolutions.io. Do not restore the old service brochure, vendor-led identity, static project counts, or unfinished partner offers.
+
+Current authority: `000-docs/084-AT-DSGN-brand-family-contract.md`, `000-docs/085-AT-ARCH-site-map.md`, and `astro-site/src/data/site-map.mjs`. Older design and service documents are historical where they conflict. The route contract individually classifies every page; legacy URLs are non-indexable handoffs, not advertised services. Run `npm run build`, `npm run audit:indexability`, and `npm run audit:site-map` from `astro-site` before release. Browser checks: `python scripts/test-brand-polish.py <local-preview-url>` (Playwright Python with Chromium).
 
 - **Active Project**: `astro-site/` (Astro 5.14 + React 19 + Tailwind 4)
 - **Hosting**: Contabo VPS `intentsolutions` (167.86.106.29) via Caddy `file_server` at `/srv/intentsolutions/dist`. Deploy: push to `main` triggers `.github/workflows/deploy-vps.yml` (Tailscale OIDC + force-command SSH `/usr/local/sbin/deploy-intentsolutions`). No GCP / Firebase dependency — the marketing site is fully self-hosted as of 2026-06-10.
@@ -122,20 +124,20 @@ Theme in `src/styles/global.css` (Charcoal Slate / Theme 7):
 | Class | Purpose |
 |-------|---------|
 | `card-slate` | Semi-transparent cards with backdrop blur |
-| `btn-primary` | Zinc-200 background buttons |
+| `btn-primary` | Established action styling; homepage uses scoped orange primary buttons |
 | `btn-secondary` | Transparent with zinc border |
 | `btn-sm` | Smaller button padding |
 | `text-hero` | 3.5rem/2.5rem mobile hero text |
 | `text-h1`, `text-h2` | Heading sizes with tight tracking |
 | `transition-smooth` | Cubic-bezier transitions |
 
-Colors: Zinc palette (950-50), Inter font family. Animation: Framer Motion (React islands), GSAP (scroll/page), Lenis (smooth scroll).
+Current brand: orange branching-arrow mark, charcoal/zinc surfaces, Syne display and Inter body text. Preserve this identity. The contact form is a React island; core company and directory content is static Astro. Legacy animation libraries and components are not visual authority for current pages.
 
 ## Key Pages
 
 | Route | Purpose |
 |-------|---------|
-| `/` | Homepage — Claude Code Systems + Learn/Colab + secondary services |
+| `/` | Customer outcome, inspectable work, method, accountable team, request |
 | `/learn/` | Learn with Jeremy — training, coaching, workshops |
 | `/colab/` | Colab with Jeremy — partnerships, joint ventures |
 | `/contact/` | Standalone contact page |

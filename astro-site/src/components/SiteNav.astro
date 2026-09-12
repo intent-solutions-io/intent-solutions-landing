@@ -3,7 +3,9 @@ const network = [
   { href: 'https://intentsolutions.io/', label: 'Intent Solutions', active: true },
   { href: 'https://labs.intentsolutions.io/', label: 'Labs' },
   { href: 'https://evals.intentsolutions.io/', label: 'Evals' },
+  { href: 'https://demos.intentsolutions.io/', label: 'Demos' },
   { href: 'https://learn.intentsolutions.io/', label: 'Learn' },
+  { href: 'https://oma.intentsolutions.io/', label: 'Omarchy' },
 ];
 
 const primary = [
@@ -15,13 +17,13 @@ const primary = [
 ];
 ---
 
-<div class="network-bar" aria-label="Intent Solutions network">
+<nav class="network-bar" aria-label="Intent Solutions network">
   <div class="network-inner">
     {network.map(({ href, label, active }) => (
       <a href={href} aria-current={active ? 'page' : undefined}>{label}</a>
     ))}
   </div>
-</div>
+</nav>
 
 <nav class="site-nav" aria-label="Primary navigation">
   <div class="nav-inner">
@@ -45,6 +47,24 @@ const primary = [
   </div>
 </nav>
 
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('.mobile-menu').forEach((menu) => {
+    const summary = menu.querySelector('summary');
+    menu.addEventListener('click', (event) => {
+      if ((event.target as Element).closest('a')) menu.open = false;
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.open) {
+        menu.open = false;
+        summary?.focus();
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (!menu.contains(event.target as Node)) menu.open = false;
+    });
+  });
+</script>
+
 <style>
   .network-bar {
     background: #050506;
@@ -53,8 +73,9 @@ const primary = [
 
   .network-inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1.35rem;
+    gap: 0 1rem;
     width: min(72rem, calc(100% - 2rem));
     min-height: 2.15rem;
     margin: 0 auto;
@@ -65,10 +86,13 @@ const primary = [
   .network-inner::-webkit-scrollbar { display: none; }
 
   .network-inner a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     flex: 0 0 auto;
-    color: #71717a;
+    color: #8b8b95;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.09em;
     text-decoration: none;
     text-transform: uppercase;
@@ -78,7 +102,7 @@ const primary = [
   .network-inner a:hover,
   .network-inner a:focus-visible { color: #fafafa; }
 
-  .network-inner a[aria-current='page'] { color: #fb923c; }
+  .network-inner a[aria-current='page'] { color: #fb923c; text-decoration: underline; text-underline-offset: 0.35em; }
 
   .site-nav {
     position: sticky;
@@ -121,6 +145,9 @@ const primary = [
 
   .desktop-links > a:not(.nav-cta),
   .mobile-panel > a:not(.nav-cta) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: #a1a1aa;
     font-size: 0.84rem;
     font-weight: 500;
@@ -134,6 +161,10 @@ const primary = [
   .mobile-panel > a:focus-visible { color: #fafafa; }
 
   .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     padding: 0.62rem 0.95rem;
     background: #f97316;
     border-radius: 0.45rem;
@@ -175,7 +206,6 @@ const primary = [
     background: #101012;
     border: 1px solid #3f3f46;
     border-radius: 0.75rem;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
   }
 
   .mobile-panel .nav-cta { margin-top: 0.25rem; text-align: center; }
