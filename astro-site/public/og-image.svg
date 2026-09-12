@@ -1,38 +1,11 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#18181B"/>
-
-  <!-- Gradient overlay -->
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#27272A;stop-opacity:0.5" />
-      <stop offset="100%" style="stop-color:#09090B;stop-opacity:0.8" />
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#grad)"/>
-
-  <!-- Main Title -->
-  <text x="600" y="220" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="900" fill="#FAFAFA" text-anchor="middle">
-    intent solutions io
-  </text>
-
-  <!-- Subtitle -->
-  <text x="600" y="300" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="500" fill="#A1A1AA" text-anchor="middle">
-    ai consultant building real products
-  </text>
-
-  <!-- Services Line 1 -->
-  <text x="600" y="390" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="400" fill="#E4E4E7" text-anchor="middle">
-    automation • rag agents • cloud infrastructure
-  </text>
-
-  <!-- Services Line 2 -->
-  <text x="600" y="440" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="400" fill="#E4E4E7" text-anchor="middle">
-    astro + react products • private ai
-  </text>
-
-  <!-- Domain -->
-  <text x="600" y="540" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#71717A" text-anchor="middle">
-    intentsolutions.io
-  </text>
+  <rect width="1200" height="630" fill="#09090b"/>
+  <g transform="translate(64 54)" fill="none" stroke="#f97316" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16h36v36M14 48 50 16M10 34h22"/></g>
+  <g transform="translate(64 54)" fill="#f97316"><circle cx="14" cy="16" r="7"/><circle cx="10" cy="34" r="7"/><circle cx="14" cy="48" r="7"/></g>
+  <text x="150" y="102" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#fafafa">Intent <tspan fill="#f97316">Solutions</tspan></text>
+  <text x="72" y="255" font-family="Arial,sans-serif" font-size="70" font-weight="700" fill="#fafafa">Bring us the work</text>
+  <text x="72" y="343" font-family="Arial,sans-serif" font-size="78" font-weight="700" fill="#f97316">you need AI to do.</text>
+  <text x="76" y="440" font-family="Arial,sans-serif" font-size="29" fill="#d4d4d8">Define the outcome. Build the system. Publish the evidence.</text>
+  <path d="M72 512h1056" stroke="#3f3f46"/>
+  <text x="76" y="571" font-family="Arial,sans-serif" font-size="25" fill="#a1a1aa">intentsolutions.io</text>
 </svg>

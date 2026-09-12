@@ -1,27 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SiteNav from '../components/SiteNav.astro';
-import Footer from '../components/Footer';
-import ProjectsHero from '../components/ProjectsHero';
-import ProjectsGrid from '../components/ProjectsGrid';
-import FeaturedFork from '../components/FeaturedFork';
-import PabloCredits from '../components/PabloCredits';
-import Contact from '../components/Contact';
+import DirectoryLayout from '../layouts/DirectoryLayout.astro';
+import { properties } from '../data/site-map.mjs';
 ---
-
-<Layout
-  title="Projects | Intent Solutions"
-  description="17 active projects shipping to production. From AI agents to developer tools - see what Intent Solutions is building."
->
-  <SiteNav />
-
-  <main class="bg-zinc-900">
-    <ProjectsHero client:load />
-    <ProjectsGrid client:visible />
-    <FeaturedFork client:visible />
-    <PabloCredits client:visible />
-    <Contact client:visible />
-  </main>
-
-  <Footer />
-</Layout>
+<DirectoryLayout title="Projects and public work" description="Explore the systems, tools, and evidence behind Intent Solutions. Start with the kind of work you want to inspect.">
+  <p>This is a guide to public work, not a list of products available to buy. Check each destination for its current status, documentation, and license.</p>
+  <ul class="directory-list">{properties.filter((property) => !['Learn', 'Jeremy Longshore'].includes(property.label)).map((property) => <li><h2><a href={property.href}>{property.label}</a></h2><p>{property.purpose}</p></li>)}</ul>
+  <h2>Built with contributors</h2>
+  <p>Our public repositories record the people who contribute, the discussions behind changes, and the work that shipped. See each project's contribution history and guidance before getting involved.</p>
+  <a class="route-action" href="https://github.com/jeremylongshore">Explore the repositories</a>
+  <h2>Have a related business problem?</h2>
+  <p>Tell us what your team needs to do. We will review the fit and define the work before proposing an engagement.</p>
+  <a class="route-action" href="/contact/?door=outcome">Request an outcome</a>
+</DirectoryLayout>

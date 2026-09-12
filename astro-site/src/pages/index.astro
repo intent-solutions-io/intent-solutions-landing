@@ -3,30 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import Footer from '../components/Footer';
 
-const paths = [
-  {
-    code: 'BUILD',
-    title: 'I need an agentic system that works.',
-    body: 'Bring us the outcome, operating constraints, and failure boundary. We design the system around the work, not around a preferred provider.',
-    cta: 'Request an outcome',
-    href: '/contact/?door=outcome',
-  },
-  {
-    code: 'PROVE',
-    title: 'I need to know whether it actually works.',
-    body: 'Intent Labs publishes the results. Evals maintains the versioned definitions behind each result. Together they form one proof system.',
-    cta: 'Inspect the evidence',
-    href: 'https://labs.intentsolutions.io/',
-  },
-  {
-    code: 'PRACTICE',
-    title: 'I want to learn the operating method.',
-    body: 'Intent Solutions Learn is a separate practice for serious builders. It teaches the method and points back to live evidence from the Lab.',
-    cta: 'Enter Learn',
-    href: 'https://learn.intentsolutions.io/',
-  },
-];
-
 const receipts = [
   {
     label: 'Intent Labs',
@@ -50,11 +26,11 @@ const receipts = [
     cta: 'Explore the marketplace',
   },
   {
-    label: 'Catalog',
+    label: 'Demos',
     title: 'Working systems, not pitch-deck mockups.',
     body: 'A catalog of systems and experiments you can open, use, and judge for yourself.',
     href: 'https://demos.intentsolutions.io/',
-    cta: 'Open the catalog',
+    cta: 'Open the demos',
   },
 ];
 
@@ -83,8 +59,8 @@ const method = [
 ---
 
 <Layout
-  title="Intent Solutions | Agentic Systems, Built and Operated"
-  description="Intent Solutions builds and operates agentic systems, proves their behavior in a public lab, and teaches the operating method through a separate practice."
+  title="Intent Solutions | Accountable AI Implementation"
+  description="Bring us the work you need AI to do. Intent Solutions defines the outcome, builds and tests the system, and establishes how it will be operated. Inspect our public work."
 >
   <SiteNav />
 
@@ -93,68 +69,43 @@ const method = [
       <div class="hero-wash" aria-hidden="true"></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="kicker">Intent Solutions · Agentic systems</p>
-          <h1 id="hero-title">We build and operate <span>agentic systems.</span></h1>
+          <h1 id="hero-title">Bring us the work <span>you need AI to do.</span></h1>
           <p class="hero-lede">
-            The model is one component. We design the context, tools, evaluations, release gates,
-            observability, and human judgment that make an agent useful after the demo.
+            Intent Solutions builds and operates AI systems around a defined business outcome.
+            We work out what must change, how to test it, and who will be responsible when it runs.
           </p>
           <div class="actions">
             <a class="button primary" href="/contact/?door=outcome">Request an outcome</a>
-            <a class="button secondary" href="https://labs.intentsolutions.io/">See the proof</a>
+            <a class="button secondary" href="#proof">Inspect the work</a>
           </div>
-          <a class="quiet-link" href="https://learn.intentsolutions.io/">Learn the operating method <span aria-hidden="true">→</span></a>
+          <p class="hero-next">Start with the problem. You do not need a model or a technical specification picked out.</p>
+          <a class="quiet-link" href="https://learn.intentsolutions.io/">Here to build with us? Explore the practice <span aria-hidden="true">→</span></a>
         </div>
 
-        <aside class="system-map" aria-label="How the Intent Solutions network fits together">
-          <p class="map-label">The network, in one view</p>
+        <aside class="system-map" aria-label="What we define with you">
+          <h2 class="map-title">What does done look like?</h2>
           <div class="map-node map-parent">
-            <span>Intent Solutions</span>
-            <strong>Build and operate</strong>
-            <p>The company and accountable operating practice.</p>
+            <strong>The work</strong>
+            <p>A task your team needs completed, the information it depends on, and what must stay under human control.</p>
           </div>
           <div class="map-connector" aria-hidden="true"><span></span></div>
           <div class="map-pair">
-            <a class="map-node" href="https://labs.intentsolutions.io/">
-              <span>Labs</span>
-              <strong>Publish proof</strong>
-              <p>What ran and what happened.</p>
+            <a class="map-node" href="#proof">
+              <strong>The evidence</strong>
+              <p>A way to check the result, including what failed.</p>
             </a>
-            <a class="map-node" href="https://evals.intentsolutions.io/">
-              <span>Evals</span>
-              <strong>Define results</strong>
-              <p>What each result means.</p>
+            <a class="map-node" href="#method">
+              <strong>The operation</strong>
+              <p>Ownership, monitoring, and a response when something goes wrong.</p>
             </a>
           </div>
           <div class="map-separate">
-            <span>Separate practice</span>
-            <a class="map-node" href="https://learn.intentsolutions.io/">
-              <span>Learn</span>
-              <strong>Teach the method</strong>
-              <p>Practice the work using live Lab evidence.</p>
+            <a class="map-node" href="/contact/?door=outcome">
+              <strong>The next step</strong>
+              <p>Send the outcome you need. We review the request and answer whether it is a fit.</p>
             </a>
           </div>
         </aside>
-      </div>
-    </section>
-
-    <section class="paths section" aria-labelledby="paths-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">Start here</p>
-          <h2 id="paths-title">Choose the question you have.</h2>
-          <p>No product maze. No provider quiz. Start with the job in front of you.</p>
-        </div>
-        <div class="path-grid">
-          {paths.map((path) => (
-            <a class="path-card" href={path.href}>
-              <span class="card-code">{path.code}</span>
-              <h3>{path.title}</h3>
-              <p>{path.body}</p>
-              <strong>{path.cta} <span aria-hidden="true">→</span></strong>
-            </a>
-          ))}
-        </div>
       </div>
     </section>
 
@@ -162,14 +113,27 @@ const method = [
       <div class="wrap">
         <div class="proof-intro">
           <div class="section-head left">
-            <p class="kicker">Public receipts</p>
-            <h2 id="proof-title">Your agent says it is done. <span>Now prove it.</span></h2>
+            <h2 id="proof-title">See what ran. <span>Check what happened.</span></h2>
           </div>
           <p>
-            We do not ask you to trust a logo wall or a hand-typed metric. Inspect the work,
-            the result, and the definition behind it.
+            A demo shows behavior. A test checks a claim. Our public work gives you both to inspect
+            before you decide to work with us. It is evidence of our method, not a promise about your result.
           </p>
         </div>
+        <article class="proof-specimen" aria-labelledby="specimen-title">
+          <div>
+            <h3 id="specimen-title">A failed evaluation stays in the record.</h3>
+            <p>This published Labs record shows the gate, its decision, and when it ran. Open the bundle to inspect the result in context.</p>
+            <a class="button secondary" href="https://labs.intentsolutions.io/results/jrig/sha256-4668fdaa17dc9d7b330fe84886fb69535516cf39226c030b001571cf818d25b1/">Inspect this evaluation</a>
+          </div>
+          <dl>
+            <div><dt>Gate</dt><dd><code>databricks-cluster-forensics</code></dd></div>
+            <div><dt>Recorded decision</dt><dd class="decision">Fail</dd></div>
+            <div><dt>Evaluated</dt><dd><time datetime="2026-09-12T04:06:46.451Z">12 September 2026 · 04:06 UTC</time></dd></div>
+            <div><dt>Definition</dt><dd><a href="https://evals.intentsolutions.io/gate-result/v1">gate-result/v1</a></dd></div>
+          </dl>
+          <p class="specimen-note">Dated example, checked 12 September 2026. This is one gate result, not a verdict on an entire system. <a href="https://labs.intentsolutions.io/results/">See current results</a>.</p>
+        </article>
         <div class="receipt-grid">
           {receipts.map((receipt) => (
             <a class="receipt" href={receipt.href}>
@@ -189,11 +153,10 @@ const method = [
     <section id="method" class="method section" aria-labelledby="method-title">
       <div class="wrap method-grid">
         <div class="section-head left method-head">
-          <p class="kicker">The operating method</p>
           <h2 id="method-title">The tools can change. The discipline stays.</h2>
           <p>
-            Claude, OpenAI, Gemini, open models, MCP servers, and whatever comes next are components.
-            The selection follows the work. The standard follows the system.
+            The model follows the task, your data constraints, and the tests it needs to pass.
+            You should be able to understand what the system can do, what it cannot do, and who is responsible for it.
           </p>
         </div>
         <ol class="method-list">
@@ -210,17 +173,17 @@ const method = [
       </div>
     </section>
 
-    <section class="founder section" aria-labelledby="founder-title">
-      <div class="wrap founder-grid">
-        <p class="founder-mark" aria-hidden="true">JL</p>
+    <section class="team section" aria-labelledby="team-title">
+      <div class="wrap team-grid">
+        <p class="team-mark" aria-hidden="true">IS</p>
         <div>
-          <p class="kicker">Who stands behind the work</p>
-          <h2 id="founder-title">Jeremy Longshore founded Intent Solutions to make agentic work operational.</h2>
+          <h2 id="team-title">The systems carry one name. The work is done by a team.</h2>
           <p>
-            Intent Solutions is the company. Models, providers, runtimes, and distribution channels are components.
-            The work ships under one name, with evidence you can inspect and an operator accountable for what happens next.
+            Jeremy Longshore founded Intent Solutions. Today, engineers, operators, instructors, and project leaders
+            define, build, test, teach, and run the work together. Models and providers remain components; the team and
+            its operating standard are what make the work durable.
           </p>
-          <a href="/about/">About Intent Solutions <span aria-hidden="true">→</span></a>
+          <a href="/about/#team">See the people and the practice <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -231,9 +194,8 @@ const method = [
       </video>
       <div class="closing-overlay" aria-hidden="true"></div>
       <div class="wrap closing-copy">
-        <p class="kicker">Bring us the outcome</p>
-        <h2 id="closing-title">Define what done means before the agent starts.</h2>
-        <p>We read every request and answer whether it is a fit. No pressure. No pitch deck.</p>
+        <h2 id="closing-title">What work needs to change?</h2>
+        <p>Tell us what your team does today and what a useful result would look like. We review the fit before proposing the work.</p>
         <div class="actions">
           <a class="button primary" href="/contact/?door=outcome">Request an outcome</a>
           <a class="button secondary" href="https://labs.intentsolutions.io/start/">Learn how we evaluate</a>
@@ -251,12 +213,13 @@ const method = [
   :global(*) { box-sizing: border-box; }
 
   .wrap { width: min(72rem, calc(100% - 2.5rem)); margin: 0 auto; }
-  .section { padding: clamp(5rem, 9vw, 8rem) 0; }
+  .hero-next { color: var(--intent-muted); max-width: 55ch; font-size: 0.9rem; line-height: 1.65; }
+  .map-title { margin: 0 0 1.4rem; font-family: 'Syne', sans-serif; font-size: 1.4rem; color: #fafafa; line-height: 1.25; }
+  .section { padding: clamp(3.5rem, 6vw, 5.5rem) 0; }
 
   .hero {
     position: relative;
-    min-height: min(52rem, calc(100vh - 6.15rem));
-    padding: clamp(5rem, 9vw, 8rem) 0;
+    padding: clamp(3rem, 5vw, 5rem) 0;
     overflow: hidden;
     background: #09090b url('/images/cosmic-bg-dark.jpg') center / cover no-repeat;
     border-bottom: 1px solid rgba(63, 63, 70, 0.5);
@@ -273,21 +236,20 @@ const method = [
   .hero-grid {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1.12fr) minmax(20rem, 0.88fr);
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.75fr);
     align-items: center;
-    gap: clamp(3rem, 7vw, 7rem);
+    gap: clamp(2rem, 4vw, 4rem);
     z-index: 1;
   }
 
   .kicker,
-  .card-code,
   .receipt-label,
   .map-label,
   .map-node > span,
   .map-separate > span {
     color: #fb923c;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 0.66rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -298,10 +260,12 @@ const method = [
     margin: 1rem 0 1.5rem;
     color: #fafafa;
     font-family: 'Syne', system-ui, sans-serif;
-    font-size: clamp(3rem, 7.2vw, 6.1rem);
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
     font-weight: 800;
-    letter-spacing: -0.055em;
-    line-height: 0.96;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
 
   .hero-copy h1 span,
@@ -341,6 +305,8 @@ const method = [
   .button.secondary:focus-visible { border-color: #fb923c; }
 
   .quiet-link {
+    min-height: 44px;
+    align-items: center;
     display: inline-flex;
     gap: 0.4rem;
     margin-top: 1.4rem;
@@ -353,19 +319,17 @@ const method = [
 
   .system-map {
     padding: 1.25rem;
-    background: rgba(9, 9, 11, 0.78);
+    background: #09090b;
     border: 1px solid rgba(82, 82, 91, 0.72);
     border-radius: 1rem;
-    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.46);
-    backdrop-filter: blur(16px);
   }
 
-  .map-label { display: block; margin: 0 0 1rem; color: #71717a; }
+  .map-label { display: block; margin: 0 0 1rem; color: var(--intent-muted); }
 
   .map-node {
     display: block;
     padding: 1rem;
-    background: rgba(24, 24, 27, 0.86);
+    background: #18181b;
     border: 1px solid #3f3f46;
     border-radius: 0.7rem;
     color: inherit;
@@ -384,14 +348,14 @@ const method = [
   .map-connector span { width: 1px; background: #52525b; }
   .map-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .map-separate { margin-top: 1.3rem; padding-top: 1.1rem; border-top: 1px dashed #52525b; }
-  .map-separate > span { display: block; margin-bottom: 0.65rem; color: #71717a; }
+  .map-separate > span { display: block; margin-bottom: 0.65rem; color: var(--intent-muted); }
 
-  .paths { background: #101012; }
   .section-head { max-width: 47rem; margin: 0 auto 3rem; text-align: center; }
   .section-head.left { margin-left: 0; text-align: left; }
   .section-head h2,
-  .founder h2,
+  .team h2,
   .closing h2 {
+    overflow-wrap: anywhere;
     margin: 0.8rem 0 1rem;
     color: #fafafa;
     font-family: 'Syne', system-ui, sans-serif;
@@ -402,26 +366,18 @@ const method = [
   }
   .section-head > p:last-child { color: #a1a1aa; font-size: 1rem; line-height: 1.7; }
 
-  .path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  .path-card {
-    display: flex;
-    min-height: 22rem;
-    padding: 1.6rem;
-    flex-direction: column;
-    background: #18181b;
-    border: 1px solid #3f3f46;
-    border-radius: 0.85rem;
-    color: inherit;
-    text-decoration: none;
-    transition: border-color 180ms ease, transform 180ms ease;
-  }
-  .path-card:hover,
-  .path-card:focus-visible { border-color: #fb923c; transform: translateY(-3px); }
-  .path-card h3 { margin: 1.5rem 0 0.8rem; color: #fafafa; font-family: 'Syne', system-ui, sans-serif; font-size: 1.35rem; line-height: 1.25; }
-  .path-card p { margin: 0; color: #a1a1aa; font-size: 0.9rem; line-height: 1.7; }
-  .path-card > strong { margin-top: auto; padding-top: 1.5rem; color: #fb923c; font-size: 0.82rem; }
 
   .proof { background: #09090b; }
+  .proof-specimen { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; padding: clamp(1.25rem, 3vw, 2.5rem); margin-bottom: 2.5rem; border: 1px solid #52525b; background: #101012; }
+  .proof-specimen h3 { margin: 0 0 1rem; font-family: 'Syne', system-ui, sans-serif; color: #fafafa; font-size: clamp(1.3rem, 2.2vw, 1.8rem); line-height: 1.25; }
+  .proof-specimen p { color: var(--intent-muted); line-height: 1.7; }
+  .proof-specimen dl { margin: 0; min-width: 0; }
+  .proof-specimen dl > div { padding: 0.8rem 0; border-bottom: 1px solid #3f3f46; }
+  .proof-specimen dt { font-size: 0.8rem; color: var(--intent-muted); }
+  .proof-specimen dd { margin: 0.35rem 0 0; font-size: 0.9rem; color: #fafafa; overflow-wrap: anywhere; }
+  .proof-specimen dd.decision { color: #fb923c; font-weight: 700; }
+  .proof-specimen a:not(.button) { color: #d4d4d8; text-underline-offset: 0.2em; }
+  .proof-specimen .specimen-note { grid-column: 1 / -1; margin: 0; max-width: 70ch; font-size: 0.8rem; }
   .proof-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr); align-items: end; gap: 4rem; margin-bottom: 3rem; }
   .proof-intro .section-head { margin-bottom: 0; }
   .proof-intro > p { margin: 0 0 0.35rem; color: #a1a1aa; line-height: 1.75; }
@@ -440,7 +396,7 @@ const method = [
   .receipt h3 { max-width: 28rem; margin: 1.5rem 0 0.7rem; color: #fafafa; font-family: 'Syne', system-ui, sans-serif; font-size: 1.25rem; }
   .receipt p { max-width: 30rem; margin: 0 0 1.4rem; color: #a1a1aa; font-size: 0.88rem; line-height: 1.65; }
   .receipt strong { color: #fb923c; font-size: 0.8rem; }
-  .field-note-link { margin: 1.5rem 0 0; color: #71717a; font-size: 0.82rem; text-align: right; }
+  .field-note-link { margin: 1.5rem 0 0; color: var(--intent-muted); font-size: 0.82rem; text-align: right; }
   .field-note-link a { color: #d4d4d8; text-decoration: none; }
   .field-note-link a:hover,
   .field-note-link a:focus-visible { color: #fb923c; }
@@ -455,12 +411,12 @@ const method = [
   .method-list h3 { margin: 0 0 0.45rem; color: #fafafa; font-family: 'Syne', system-ui, sans-serif; font-size: 1.2rem; }
   .method-list p { margin: 0; color: #a1a1aa; font-size: 0.9rem; line-height: 1.7; }
 
-  .founder { background: #09090b; }
-  .founder-grid { display: grid; grid-template-columns: 10rem minmax(0, 45rem); align-items: start; justify-content: center; gap: clamp(2rem, 6vw, 5rem); }
-  .founder-mark { margin: 0; color: rgba(249,115,22,0.16); font-family: 'Syne', system-ui, sans-serif; font-size: clamp(5rem, 12vw, 9rem); font-weight: 800; letter-spacing: -0.12em; line-height: 0.8; }
-  .founder h2 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
-  .founder div > p:not(.kicker) { color: #a1a1aa; line-height: 1.75; }
-  .founder a { color: #fb923c; font-size: 0.84rem; font-weight: 700; text-decoration: none; }
+  .team { background: #09090b; }
+  .team-grid { display: grid; grid-template-columns: 10rem minmax(0, 45rem); align-items: start; justify-content: center; gap: clamp(2rem, 6vw, 5rem); }
+  .team-mark { margin: 0; color: rgba(249,115,22,0.16); font-family: 'Syne', system-ui, sans-serif; font-size: clamp(5rem, 12vw, 9rem); font-weight: 800; letter-spacing: -0.08em; line-height: 0.8; }
+  .team h2 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
+  .team div > p:not(.kicker) { color: #a1a1aa; line-height: 1.75; }
+  .team a { color: #fb923c; font-size: 0.84rem; font-weight: 700; text-decoration: none; }
 
   .closing { position: relative; min-height: 37rem; display: grid; place-items: center; overflow: hidden; text-align: center; }
   .closing video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -474,10 +430,8 @@ const method = [
   @media (max-width: 880px) {
     .hero-grid,
     .proof-intro,
-    .method-grid { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: minmax(0, 1fr); }
     .system-map { max-width: 38rem; }
-    .path-grid { grid-template-columns: 1fr; }
-    .path-card { min-height: 15rem; }
     .proof-intro { gap: 0.5rem; }
     .method-head { position: static; }
   }
@@ -485,19 +439,19 @@ const method = [
   @media (max-width: 620px) {
     .wrap { width: min(100% - 1.5rem, 72rem); }
     .hero { min-height: auto; padding-top: 4rem; }
-    .hero-copy h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); }
+    .hero-copy h1 { font-size: clamp(2rem, 8.8vw, 3.4rem); }
     .map-pair,
+    .proof-specimen,
     .receipt-grid { grid-template-columns: 1fr; }
-    .founder-grid { grid-template-columns: 1fr; }
-    .founder-mark { font-size: 5rem; }
+    .team-grid { grid-template-columns: 1fr; }
+    .team-mark { font-size: 5rem; }
     .field-note-link { text-align: left; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     :global(html) { scroll-behavior: auto; }
     .button,
-    .map-node,
-    .path-card { transition: none; }
+    .map-node { transition: none; }
     .closing video { display: none; }
     .closing { background: #18181b url('/images/hero-fallback.jpg') center / cover no-repeat; }
   }

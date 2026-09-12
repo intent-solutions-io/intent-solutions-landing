@@ -1,0 +1,13 @@
+---
+import DirectoryLayout from '../layouts/DirectoryLayout.astro';
+import { pages, properties } from '../data/site-map.mjs';
+---
+<DirectoryLayout title="Site map" description="Find the right place to request work, inspect the evidence, learn the method, or use our tools.">
+  <h2>Company pages</h2>
+  <ul class="directory-list">{pages.filter((page) => page.index === true && page.path !== '/site-map/').map((page) => <li><h3><a href={page.path}>{page.label}</a></h3><p>{page.purpose}</p></li>)}</ul>
+  <h2>Related sites, each with a different job</h2>
+  <p>These links open separate properties. Their own access requirements, product status, and policies apply.</p>
+  <ul class="directory-list">{properties.map((property) => <li><h3><a href={property.href}>{property.label}</a></h3><p>{property.purpose}</p></li>)}</ul>
+  <h2>Follow the work</h2>
+  <a class="route-action" href="/field-notes/rss.xml">Subscribe with an RSS reader</a>
+</DirectoryLayout>
