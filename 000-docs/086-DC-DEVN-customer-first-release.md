@@ -33,4 +33,15 @@ Rollback is a reviewed Git revert followed by the same checks and deployment. Th
 
 The upstream content rebase preserves the new sealed-repo field note and release metadata; it adds one generated article (120 pages total). Text-reflow testing additionally found fixed footer column widths at 200% text size; the footer now switches to its two-column layout at tablet width. The no-JavaScript assertion inspects rendered body text because Playwright intentionally excludes noscript descendants from its text matcher.
 
-Release evidence will be appended after merge and live verification. Other estate properties and the separate deploy-transport/local-Beads repair issues remain outside this release.
+## Release evidence
+
+- Merged PR: https://github.com/jeremylongshore/intent-solutions-landing/pull/53 at `24b3ebf2574cf2c9b68cb67a8303c980e76291e4` (2026-09-12 23:12 UTC).
+- PR CI: https://github.com/jeremylongshore/intent-solutions-landing/actions/runs/34724690541 passed.
+- Main build, browser gate, automated VPS deploy and health smoke: https://github.com/jeremylongshore/intent-solutions-landing/actions/runs/34724784211 all passed. No manual deployment fallback was needed.
+- The deployment checkout is clean at `4a1abe91a02b644de10112149a2900c8120a9afb`; differences from the tested merge are only automated CHANGELOG.md and version.txt updates.
+- Final local build: 120 generated pages; 10 canonical sitemap URLs; 30 individually mapped route templates and 850 internal links/anchors. Browser regression passed on all four sizes, including reduced motion, form failure/retry/success, no-JS fallback, and 200% text reflow. No real forms were submitted.
+- Additional current company/legal route inspection found no browser runtime errors. Conservative core muted-text, orange-text, and button token contrast checks returned 5.81:1, 5.71:1, and 7.10:1 respectively. This is bounded verification, not an accessibility certification.
+- Live 390px/1440px checks verified the new headline and visible primary action without horizontal overflow. Live Site map, Projects, Support, cloud handoff and Learn security handoff matched their current purpose. All three legal destinations returned 200. Metadata points to the new PNG. Served PNG and favicon SHA-256 digests match the committed assets. The existing Umami site ID remains present; analytics ingestion itself was not retested.
+- Live https://intentsolutions.io/healthz returned `{ "ok": true, "service": "intentsolutions.io" }`.
+
+The landing repository's existing Beads schema mismatch remains tracked in dxtq.9; no automatic migration was attempted. Umbrella tracking synchronized successfully to its Dolt remote. Other estate properties and the separate personal-site deploy-transport follow-up remain outside this release.

@@ -26,9 +26,9 @@ Current authority: `000-docs/084-AT-DSGN-brand-family-contract.md`, `000-docs/08
 - **Hosting**: Contabo VPS `intentsolutions` (167.86.106.29) via Caddy `file_server` at `/srv/intentsolutions/dist`. Deploy: push to `main` triggers `.github/workflows/deploy-vps.yml` (Tailscale OIDC + force-command SSH `/usr/local/sbin/deploy-intentsolutions`). No GCP / Firebase dependency — the marketing site is fully self-hosted as of 2026-06-10.
 - **Analytics**: Umami at `https://analytics.intentsolutions.io` (self-hosted on the same VPS). Site ID `474bce85-f97d-409c-aba5-1e1ff36ee571`. Custom events via `window.umami.track('event_name', { props })`.
 - **Deployed at**: https://intentsolutions.io
-- **Plugin Marketplace**: https://claudecodeplugins.io (430+ plugins)
-- **Booking Link**: https://calendar.app.google/Wqbt8EJuEh5xvvV58
-- **Proof Points**: 2,200+ GitHub stars, 430+ plugins, 2,750+ agent skills, 300+ forks, ~53k monthly npm downloads across `@intentsolutionsio/*`, only external Google Agent Starter Pack contributor, 20+ years ops.
+- **Plugin Marketplace**: https://tonsofskills.com/ (verify current catalog rather than hardcoding counts).
+- **Customer action**: `/contact/?door=outcome`; no calendar funnel.
+- **Proof**: link identifiable public artifacts and qualify what each demonstrates. No unverified counts, exclusivity claims, provider endorsements, or transplanted personal biography.
 - **Legacy**: `99-Archive/` contains old React/Vite SPA (not in production).
 
 ## Commands
@@ -138,37 +138,32 @@ Current brand: orange branching-arrow mark, charcoal/zinc surfaces, Syne display
 | Route | Purpose |
 |-------|---------|
 | `/` | Customer outcome, inspectable work, method, accountable team, request |
-| `/learn/` | Learn with Jeremy — training, coaching, workshops |
-| `/colab/` | Colab with Jeremy — partnerships, joint ventures |
-| `/contact/` | Standalone contact page |
-| `/agents/` | AI Agents (Intent Agent Models — M1/M2/M3) |
-| `/private-ai/` | Private AI infrastructure (deployed in your own cloud tenancy) |
-| `/automation/` | Workflow automation (Claude Code + custom tooling) |
-| `/cloud/` | Cloud services |
-| `/projects/` | Projects portfolio (includes Kobiton client engagement) |
+| `/contact/` | Request and inline success/error state |
+| `/about/` | Team and operating responsibilities |
+| `/support/` | Existing agreements and repository support channels |
+| `/projects/` | Public work and evidence discovery, not a sales catalog |
 | `/field-notes/` | Engineering blog index (posts cross-post to startaitools.com; canonical there) |
-| `/resellers/` | Distribution partner program |
-| `/infrastructure/` | Cloud infrastructure deployment focus (distinct title from /private-ai/) |
-| `/learn/security/` | Vertex vs self-hosted comparison |
-| `/learn/models/` | Model-agnostic delivery |
+| `/site-map/` | Human directory of current company pages and related properties |
+| `/terms/`, `/privacy/`, `/acceptable-use/` | Existing published policies |
+| Legacy service and `/learn/` routes | Individual noindex handoffs defined in `src/data/site-map.mjs` |
 
 All internal routes are slash-terminated; the audit guard rejects any sitemap URL whose canonical isn't self-referential.
 
 ## Content Guidelines
 
 **Do**:
-- Lead with Claude Code Systems as the primary service.
-- Emphasize "build + train" positioning and discovery-first engagement.
-- Reference 430+ plugins, 2,200+ GitHub stars, 2,750+ agent skills, ~53k monthly npm downloads as proof of capability.
-- All CTAs point to discovery call booking (calendar link), not pricing.
-- Offer flexible contact options (Discord, WhatsApp, LinkedIn, X, phone).
-- Show tiered packages clearly.
+- Lead with the business work the visitor needs AI to do.
+- Explain how the outcome is defined, tested, and operated.
+- Link the relevant evidence and state its limits and freshness.
+- Keep Request an outcome as the primary customer action.
+- Route practitioner access to Learn and existing customers to Support.
+- Keep every source page in the route contract and test its links and indexing.
 
 **Don't**:
-- Bury Claude Code under other services.
-- Show public pricing (discovery-first model — all pricing is private).
-- Require rigid form fields (let people choose their contact method).
-- Over-emphasize secondary services on homepage.
+- Make a model vendor the company identity.
+- Publish prices, packages, partner enrollment, or response-time guarantees without an approved current offer.
+- Present demos as purchasable or production-ready merely because they are listed.
+- Add newsletter promises before signup, consent, delivery, and unsubscribe are verified.
 - Reintroduce Firebase / GCP dependencies on the marketing site — it's fully self-hosted now (Umami analytics, VPS hosting, forms-api on the VPS).
 
 ## Testing baseline (2026-05-01 — Intent Solutions Testing SOP)
