@@ -1,3 +1,14 @@
+# Release v3.1.2
+
+**Release Date**: 2026-09-12
+
+## Changes since v3.1.1
+
+- chore: release v3.1.2 [skip ci] (055b3ca)
+- Clarify Intent Solutions messaging and individual site journeys (#53) (24b3ebf)
+
+---
+
 # Release v3.1.1
 
 **Release Date**: 2026-09-08
