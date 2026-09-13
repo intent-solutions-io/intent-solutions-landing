@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const testPort = process.env.PLAYWRIGHT_PORT || '4382';
+
 /**
  * Playwright Configuration for HUSTLE Survey Testing
  *
@@ -30,14 +32,14 @@ export default defineConfig({
 
   // Reporter to use
   reporter: [
-    ['html', { outputFolder: 'test-results/html-report' }],
-    ['json', { outputFile: 'test-results/results.json' }],
+    ['html', { outputFolder: 'tests/reports/playwright-html' }],
+    ['json', { outputFile: 'tests/reports/results.json' }],
     ['list']
   ],
 
   use: {
     // Base URL - dev server
-    baseURL: 'http://localhost:8080',
+    baseURL: `http://127.0.0.1:${testPort}`,
 
     // Collect trace when retrying the failed test
     trace: 'on-first-retry',
@@ -87,8 +89,8 @@ export default defineConfig({
 
   // Run dev server before starting tests
   webServer: {
-    command: 'bun run dev --port 8080',
-    url: 'http://localhost:8080',
+    command: `npm run preview -- --host 127.0.0.1 --port ${testPort}`,
+    url: `http://127.0.0.1:${testPort}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
   },
