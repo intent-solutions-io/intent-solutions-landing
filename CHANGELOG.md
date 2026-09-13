@@ -1,3 +1,14 @@
+# Release v3.2.0
+
+**Release Date**: 2026-09-13
+
+## Changes since v3.1.3
+
+- chore: release v3.2.0 [skip ci] (ec9aa87)
+- feat(site): add mobile conversion baseline (#54) (27a531e)
+
+---
+
 # Release v3.1.3
 
 **Release Date**: 2026-09-12
