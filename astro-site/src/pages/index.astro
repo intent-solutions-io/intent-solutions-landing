@@ -205,6 +205,9 @@ const method = [
   </main>
 
   <Footer />
+  <nav class="mobile-outcome-action" aria-label="Quick action">
+    <a class="button primary" href="/contact/?door=outcome">Request an outcome</a>
+  </nav>
 </Layout>
 
 <style>
@@ -436,7 +439,10 @@ const method = [
     .method-head { position: static; }
   }
 
+  .mobile-outcome-action { display: none; }
+
   @media (max-width: 620px) {
+    :global(body) { padding-bottom: calc(4.75rem + env(safe-area-inset-bottom)); }
     .wrap { width: min(100% - 1.5rem, 72rem); }
     .hero { min-height: auto; padding-top: 4rem; }
     .hero-copy h1 { font-size: clamp(2rem, 8.8vw, 3.4rem); }
@@ -446,6 +452,19 @@ const method = [
     .team-grid { grid-template-columns: 1fr; }
     .team-mark { font-size: 5rem; }
     .field-note-link { text-align: left; }
+    .mobile-outcome-action {
+      position: fixed;
+      z-index: 80;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      padding: 0.65rem 0.75rem max(0.65rem, env(safe-area-inset-bottom));
+      border-top: 1px solid #3f3f46;
+      background: rgba(9, 9, 11, 0.94);
+      backdrop-filter: blur(12px);
+    }
+    .mobile-outcome-action .button { width: 100%; }
   }
 
   @media (prefers-reduced-motion: reduce) {
